@@ -17,6 +17,7 @@ book:
 
 bibliography: 
   - handbook-1ed.bib
+  - introduction.bib
   - radiation-and-optics.bib
   - light-environment.bib
   - references-from-1ed.bib
@@ -27,5 +28,5 @@ format:
   pdf:
     documentclass: scrreprt
 
-editor: visual
+editor: source
 
