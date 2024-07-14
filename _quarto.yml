@@ -1,0 +1,31 @@
+project:
+  type: book
+
+book:
+  title: "Field Methods in Plant Photobiology"
+  subtitle: "From Principles to Practice"
+  editor: "Pedro J. Aphalo, Wolfgang Bilger, Marcel A. K. Jansen, Eva Rosenqvist"
+  date: "14/07/2024"
+  chapters:
+    - preface.qmd
+    - index.qmd
+    - introduction.qmd
+    - radiation-and-optics.qmd
+    - light-environment.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: 
+  - handbook-1ed.bib
+  - radiation-and-optics.bib
+  - light-environment.bib
+  - references-from-1ed.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

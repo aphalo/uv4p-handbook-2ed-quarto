@@ -1,0 +1,36 @@
+---
+date: 2024-07-14
+date-modified: today
+---
+
+# Preface {.unnumbered}
+
+::: callout-note
+This is a book created using the "Quarto book" system. To learn more about Quarto books visit <https://quarto.org/docs/books>.
+:::
+
+The first edition was published as an outcome of the COST Action: UV4Growth. After the end of the Action, the UV4Plants Association was formed. This second edition is being produced under the auspices of the [UV4Plants Association](https://www.uv4plants.org/).
+
+This new edition will be made available as work in progress, i.e., written in the open.
+
+**The planned chapters are:**
+
+1.  Introduction
+
+2.  Radiation and optics
+
+3.  The UV, VIS and NIR environment of plants
+
+4.  Quantifying UV and VIS radiation
+
+5.  Measurement of optical properties of leaves
+
+6.  Manipulating UV and VIS radiation
+
+7.  Imaging in UV, VIS and short IR radiation
+
+8.  Cultivation of plants for UV and other photobiological experiments
+
+9.  Design, planning and data analysis from photobiological experiments
+
+10. Ensuring reproducibility

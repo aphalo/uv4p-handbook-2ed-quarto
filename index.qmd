@@ -1,0 +1,10 @@
+---
+title: Table of Contents
+draft: true
+listing:
+  type: table
+  fields: [title]
+  sort: false
+page-layout: full
+toc: true
+---
