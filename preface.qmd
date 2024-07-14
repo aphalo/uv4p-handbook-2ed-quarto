@@ -3,7 +3,7 @@ date: 2024-07-14
 date-modified: today
 ---
 
-# Preface {.unnumbered}
+# Preface
 
 ::: callout-note
 This is a book created using the "Quarto book" system. To learn more about Quarto books visit <https://quarto.org/docs/books>.

@@ -1,8 +1,12 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/contents.html",
     "items": [
+      "/index.html",
       "/preface.html",
+      "/introduction.html",
+      "/radiation-and-optics.html",
+      "/light-environment.html",
       "/references.html"
     ]
   }

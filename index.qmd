@@ -1,10 +1,9 @@
 ---
-title: Table of Contents
 draft: true
-listing:
-  type: table
-  fields: [title]
-  sort: false
-page-layout: full
-toc: true
 ---
+
+::: callout-note
+This is work in progress towards a second edition of the handbook _Beyond the Visible_ [@Aphalo2012c].
+
+The first edition is available under open-access under [doi:10.31885/9789521083631](http://doi.org/10.31885/9789521083631).
+:::
