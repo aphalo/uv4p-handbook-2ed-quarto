@@ -1,0 +1,1780 @@
+---
+title: "Manipulating UV, VIS and NIR radiation"
+subtitle: "Light sources and light modifiers"
+date: 2024-07-15
+date-modified: today
+draft: true
+---
+
+## Safety considerations {#sec:safety}
+
+### Risks related to sunlight exposure
+
+When working in field experiments, workers and researchers are exposed
+to sunlight as in any other outdoor activity. To avoid health hazards
+adequate protection should be used, either in the form of clothing or
+sun-blocking lotions. In some cases, for example when there is strong
+reflection of radiation by water, sand or snow-covered surfaces, eye
+protection in the form of sunglasses or goggles should be used.
+
+A common and simple parameter of the UV radiation level outdoors is the
+index, which was developed by the World Health Organization (WHO)
+including recommended protection [@whouv02]. The index is used for
+example in weather forecasts in integer numbers from 1 to 11+,
+representing the exposure from low to extreme. [^14]
+
+### Risks related to the use of UV lamps
+
+Lamps emitting and create a higher risk of eye damage than sunlight
+because when radiation is not accompanied by strong visible light the
+eye pupils remain wide open. Also many lamps emit , which is not present
+in sunlight at ground level and is more damaging than . It is important
+to use goggles to protect the eyes not only from radiation from the
+front but also from the sides of the face. It is important to ensure
+that the goggles used are designed to protect from radiation, rather
+than just from the impact of flying particles. The skin should also be
+well protected, because in the same way as for plants, the effect of -B
+on humans is enhanced under low visible light irradiance by the low rate
+of photoreactivation (light-driven repair of DNA damage).
+
+Locations where lamps are in use should have visibly located warning
+signs. Although there is no standardized symbol for radiation hazard,
+the warning symbol for optical radiation (Figure
+[\[fig:warning:optical\]](#fig:warning:optical){reference-type="ref"
+reference="fig:warning:optical"}) accompanied by the text 'UV radiation'
+can be used. Additional text, 'protect eyes and skin' or 'do not look
+directly at light source' can be added. Access to outdoor experiments
+should be restricted by fences with locked gates, and by locking access
+doors to greenhouses, controlled environment rooms and cabinets. This is
+to prevent exposure of people who are unaware of the risks involved.
+Everybody with access to the area should be informed of risks, and
+trained to use the protection and work procedures required to mitigate
+them.
+
+::: figure*
+![image](signs/warning_optical_radiation.pdf){width="0.22\\myfigwidth"}
+![image](signs/warning_electricty.pdf){width="0.22\\myfigwidth"}
+![image](signs/action_eye_protection.pdf){width="0.22\\myfigwidth"}
+![image](signs/action_lock.pdf){width="0.22\\myfigwidth"}
+:::
+
+Lamps also pose risks unrelated to radiation. Fluorescent tubes contain
+mercury and should disposed of as hazardous waste. The glass envelope of
+lamps is fragile, and can cause injuries if it breaks. Xenon-arc lamps
+also present a relatively high risk of explosion, goggles and other face
+and body protection should be used. This risk is caused by the high
+pressure inside this type of lamp and is present irrespective of the
+xenon-arc lamps being on or off.
+
+Lasers, can easily produce injuries, and should be handled with great
+care. Even the very low power laser pointers used during lectures are
+capable of injuring the eye if pointed towards the audience. As with
+light sources, access to any type of laser should be restricted to
+trained users, and eye protection should be worn to match the wavelength
+emitted by each particular laser. Recommendations relating to warning
+signs, given above, apply equally to lasers and UV lamps.
+
+### Risks related to electrical power
+
+Using mains power for either instruments or lamps, involves a risk of
+electric shock and this is especially true in humid conditions and
+outdoors. All components, like connectors, enclosures, and switches,
+should have an IP rating[^15] and any other codes required for their use
+in a particular environment. When using mains power in a room where
+there is water, it is usually a requirement to have grounded mains
+sockets protected with residual current devices (RCD). These sense the
+current imbalance in the power line caused by a current leak to ground,
+for example caused by the accidental flow of current through the body of
+an operator. When this residual current is sensed, the device trips and
+disconnects power in a few milliseconds so preventing serious injury.
+RCDs and earth grounding should be regularly tested. Never use an
+electrical device that has a grounded plug in a mains socket lacking
+ground contacts because this will create a risk of electrocution and in
+addition may negatively affect the functioning of measuring instruments.
+
+### Safety regulations and recommendations
+
+The EU directive 2006/25/EC about protecting workers from optical
+radiation can be found at
+<http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2006:114:0038:0059:EN:PDF>.
+This directive does not apply to solar radiation. It gives maximum
+allowed levels of exposure from artificial optical radiation sources and
+other requirements on how to achieve these and the monitoring of workers
+health. Britain's Health and Safety Executive (HSE) has produced a guide
+on how to apply this directive (not approved yet by EU), that can be
+found at <http://www.hse.gov.uk/radiation/nonionising/optical.htm>. At
+this address, there is also information on sun exposure indicating that
+'UV radiation should be considered an occupational hazard for people who
+work outdoors'. The World Health Organization (WHO) has issued general
+recommendations about protection from the sun, which can be found at
+<http://www.who.int/uv/sun_protection/en/>.
+
+## Artificial sources of UV radiation {#sec:UV:radiation:sources}
+
+### Lamps {#sec:lamps}
+
+#### Fluorescent lamps and tubes {#sec:fluorescent:tubes}
+
+Fluorescent lamps and tubes are low pressure mercury vapour lamps. The
+mercury vapour emits radiation at specific spectral lines, mostly in the
+UV region of the spectrum. Except for the case of germicidal lamps the
+inside of the glass tube is coated with a layer of 'phosphor'[^16] which
+absorbs UV radiation and re-emits the energy as fluorescence, at longer
+wavelengths, either as , , or visible radiation. There are even some
+fluorescent tubes producing far-red radiation around 750 nm. For
+environmental studies we are interested in and emitting lamps. These
+lamps emit across a rather broad wavelength band, and have several minor
+secondary peaks in the and visible regions. Figure
+[\[fig:TL12:UVB313:UVA340\]](#fig:TL12:UVB313:UVA340){reference-type="ref"
+reference="fig:TL12:UVB313:UVA340"} shows the emission spectra of some
+UV lamps.
+
+::: figure*
+![image](figures/fig_UV_lamps_facets.pdf){width="0.8\\myfigwidth"}
+:::
+
+It should be remembered when designing experiments that lamps should be
+always filtered with cellulose diacetate film or some other material to
+remove , otherwise the effects observed will not be only due to but also
+to radiation. The emission of radiation might look small in energy terms
+but, being very effective in eliciting biological effects, it is capable
+of completely distorting the apparent response of plants and other
+organisms to radiation in an experiment. In the case of lamps, both and
+radiation should be removed by filtration.
+
+Ultraviolet emitting fluorescent lamps also emit a small amount of
+visible radiation, even in the red and orange regions of the spectrum.
+This should not be forgotten when using these lamps as the only source
+of radiation. For example the very small amount of red-orange light can
+be enough to enhance germination of silver birch seeds in Petri dishes
+when irradiated with lamps (Pedro J. Aphalo, unpublished data).
+
+The most commonly used and lamps are 1200 mm-long tubes, rated at 40 W
+of electrical power. These lamps are sold for materials testing (Q-Panel
+UVB-313 and UVB-340, Q-Labs Inc., Farnworth, England) and for medical
+use (Philips TL-40 W12, and TL-40 W 01, Philips, Amsterdam, The
+Netherlands). The second of these lamp types from Philips emits over a
+very narrow peak, and are not suited for simulating ozone depletion, but
+might be useful when the aim is not to simulate solar radiation. There
+are also other lamp types available, for example small-sized compact
+fluorescent lamps such as PL-S 9W 01 from Philips.
+
+Using fluorescent lamps requires some additional equipment (Figure
+[\[fig:fluorescent:tube\]](#fig:fluorescent:tube){reference-type="ref"
+reference="fig:fluorescent:tube"}). The main component is a "ballast"
+which limits the current through the lamp. Traditional ballasts are
+electromagnetic, comprising a coil wound on a ferrous core, and require
+one more component, a 'starter' for turning on the lamps. Lamps driven
+by such ballasts run at power-line frequency, 50 Hz in Europe and 60 Hz
+in USA, causing emission to flicker in time. This flicker is not visible
+to humans, but is visible to some insects. The modern alternatives are
+electronic ballasts driving the lamps at high frequency (in the order of
+50--100 kHz) which together with the latency of the phosphor yields an
+almost constant radiation output from the lamps. Consequently, we
+recommend the use of high frequency ballasts to avoid artifacts.
+Electronic ballasts do not require starters.
+
+::: figure*
+![image](figures/Fluorescent_Light.pdf){width="0.8\\myfigwidth"}
+:::
+
+Some types of electronic ballasts are dimming ballasts , allowing the
+adjustment of lamp output from full power down to a
+ballast-type-specific low value, usually somewhere between 1 and 10% of
+full power. Dimming of lamp output can also be achieved using
+electromagnetic ballasts and phase-angle dimming controllers but these
+enhance the visible flicker of the lamps. Some ballasts are designed for
+newer T8 (thin, 26 mm diameter) tubes rather than the old-fashioned T12
+(thick, 38 mm diameter) tubes used for most lamps, which may cause some
+problems with dimming, and affect the lowest power level achievable.
+Dimming ballasts are controlled digitally (for example DSI system for
+Tridonic PCA 1/38 T8 ECO, Tridonic GmbH & Co KG, Dornbirn, Austria) or
+by a direct current voltage signal (for example 1--10 V for Quicktronic
+HF 1X36/230-240 DIM UNV1, Osram, Munich, Germany). Dimming ballasts can
+be useful for adjusting doses for different treatments, or when building
+modulated supplementation systems (see section
+[8.2.6](#sec:modulated){reference-type="ref" reference="sec:modulated"}
+on page ).
+
+Radiation output from fluorescent lamps varies markedly with ambient
+temperature as shown in Figure
+[\[fig:UV:lamp:temperature\]](#fig:UV:lamp:temperature){reference-type="ref"
+reference="fig:UV:lamp:temperature"}. The data in this figure were
+obtained by varying the temperature in a growth chamber where the lamps
+were located, and measuring the spectral irradiance with a
+spectroradiometer maintained at near constant temperature outside the
+chamber. Only the optical fibre entered the chamber through an
+instrumentation port. In non-modulated systems, and in experiments with
+treatments at different temperatures this should be taken into account
+and the irradiance from lamps should always be measured at the same
+temperature as during use of the lamps in the experiments. When the
+ambient temperature fluctuates, the lamp output should be measured
+continuously, or at least at a range of temperatures and irradiances
+estimated from a continuous record of temperature.
+
+::: figure*
+![image](figures/fig_lamp_temp.pdf){width="0.8\\myfigwidth"}
+:::
+
+irradiance should never be adjusted by using different plant to lamp
+distances in different treatments. Changing the distance modifies the
+shading effect of lamp frames, and even small differences in can create
+spurious differences between treatments [see @Flint2009 for details].
+Furthermore, it is essential to have controls both under frames with
+unenergised lamps and also under frames with energized lamps but
+filtered with polyester film to remove the , as the only difference
+between and non-treatments should be the irradiance of [see
+@Newsham1996a]. If we want to assess the effect of shading by lamp
+frames alone an *additional* control with no lamp frames could be added
+to an experiment.
+
+Fluorescent tubes are normally held on metal frames, and each frame
+supports several lamps. Because these tubes are long and narrow, using
+single tubes would provide a very uneven irradiance field. Care should
+be taken when choosing the spacing of the tubes, and the vertical
+distance between the tubes and plants. The model of @Bjorn1993a can be
+used to simulate the spatial distribution of irradiance or fluence rate
+under such an array of lamps (for a reimplementation of the model as an
+R package see section [8.8](#sec:calc:light:field){reference-type="ref"
+reference="sec:calc:light:field"} on page ). Figure
+[\[fig:position:tubes\]](#fig:position:tubes){reference-type="ref"
+reference="fig:position:tubes"} shows the results of six such
+simulations, three for tubes evenly distributed along the frame
+('equidistant') and three for tubes arranged following the projection on
+a plane of what would be equidistant distribution around the perimeter
+of a half circle ('cosine' pattern). The closer together the contour
+lines are, the steeper the change in irradiance. The examples in Figure
+[\[fig:position:tubes\]](#fig:position:tubes){reference-type="ref"
+reference="fig:position:tubes"} are for irradiance, and these results do
+not apply to fluence rate. For each size and number of lamps and size of
+frames, it should be possible to optimize either the evenness of
+irradiance or of fluence rate by means of the model (Figure
+[\[fig:position:tubes:square\]](#fig:position:tubes:square){reference-type="ref"
+reference="fig:position:tubes:square"}). The unevenness of the radiation
+field should be taken into account when deciding where to the place
+plants, and also when measuring exposures under the frames.
+
+When using UV lamps to supplement solar radiation, shading by the lamps
+and their supporting structures can become a problem. This is discussed
+in section [9.10.3](#sec:enhancement:errors){reference-type="ref"
+reference="sec:enhancement:errors"} on page in relation to effective
+doses and enhancement errors.
+
+::: figure*
+![image](figures/fig_irrad_tubes.pdf){width="90%"}
+![image](figures/fig_position_tubes.pdf){width="90%"}
+:::
+
+::: figure*
+![image](figures/fig_light_field2x2.pdf){width="90%"}
+![image](figures/fig_position_2x2.pdf){width="50%"}
+:::
+
+#### Xenon arc lamps {#sec:xenon}
+
+Xenon arc lamps are specialised light sources that produce intense
+visible and UV radiation from an electric discharge in high pressure
+xenon gas. The lamps comprise tungsten electrodes inside a quartz
+envelope and produce an intense plasma ball at the cathode at
+6000--6500 K temperature generating a spectral output throughout the
+visible and UV (Figure
+[\[fig:xenon:lamp:spectrum\]](#fig:xenon:lamp:spectrum){reference-type="ref"
+reference="fig:xenon:lamp:spectrum"}). Xenon arc lamps must be operated
+in a fully enclosed housing (Figure
+[\[fig:xenon:lamp:photo\]](#fig:xenon:lamp:photo){reference-type="ref"
+reference="fig:xenon:lamp:photo"}) that usually provides mirrors and
+focussing adjustments, electrical ignition and ventilation to cool the
+lamp. Xenon arcs provide intense point sources but with careful
+operation and adjustment are sometimes useful for experiments in
+photobiology. They are extremely strong sources and have a very high
+heat output in the infra-red waveband. This heat output typically
+requires their use with a water filter and/or a dichroic mirror
+reflector to reduce heating if used in experiments with plant material.
+A dichroic mirror transmits infra-red onto a heat sink and reflects only
+the required waveband (e.g. UV radiation) onto the target. After removal
+of excessive heat using a water filter or dichroic mirror they can be
+used with narrow band-pass filters for the determination of effects at
+different wavelengths such as action spectra. Care must be taken not to
+focus the source onto the mirror or filter which can be readily damaged
+by excessive heat.
+
+::: figure*
+![image](figures/fig_xenon_spectrum.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](photos/photo_xenon_lamp.pdf){width="0.8\\myfigwidth"}
+:::
+
+In addition to the essential safety considerations when using any UV
+sources (detailed in section [8.1](#sec:safety){reference-type="ref"
+reference="sec:safety"}), important additional safety precautions are
+necessary when using xenon arc lamps. The high pressure inside the lamps
+creates a risk of explosion during installation and during operation,
+which increases with lamp age. An impact resistant face shield and heavy
+protective gloves should be worn when handling a lamp and it must never
+be touched with the fingers as grease marks increase the risk of
+failure. Lamps are supplied in a protective cover which should remain in
+place until installation and they should only be used inside a
+specialised housing that provides explosion protection to contain flying
+glass should an explosion occur. A specialised lamp housing is normally
+provided with a fan for cooling the lamp which gets extremely hot and
+ventilation should continue for at least five minutes after the lamp is
+switched off. This is usually achieved in a specialised housing with
+temperature sensors or timers. However, some lamps (sometimes called
+'UV-enhanced') produce short UV wavelengths ($<$`<!-- -->`{=html}250 nm)
+that generate large quantities of ozone which is toxic and can cause
+respiratory problems and asthma attacks. The ozone must be removed from
+the room and building by additional ventilation systems or absorbed and
+destroyed by special filters. Alternatively, 'ozone-free' lamps are most
+often used and have a quartz envelope that absorbs below 250 nm and so
+prevents excessive ozone formation. A xenon arc lamp is extremely bright
+and the intense visible radiation can damage the eyes in addition to UV
+effects. The arc or its intense image must never be viewed directly as
+it can cause permanent eye damage. When using the equipment, the
+illuminated areas may also be extremely bright and dark coloured goggles
+should be worn, such as those used in welding that also provide UV
+protection, ensuring that the eyes are also protected from side
+illumination as well as directly. It is essential to follow the
+manufacturers' instructions with respect to lamp life and operating
+current in order to maximise their useful life and minimise the risk of
+failure due to explosion. Further information on xenon arc sources and
+other high intensity lamp sources sometimes used in photobiology is
+provided by @Holmes1984a.
+
+### Deuterium lamps {#sec:lamps:deuterium}
+
+High intensity water-cooled deuterium lamps (150 W) have a fairly flat
+radiant intensity curve in the UV-B region (approximately 1.5--3.0
+between 280 and 300 nm at a distance of 30 cm) that is appropriate for
+mechanistic plant UV photobiology studies. This type of radiation
+sources (e.g. produced by Hamamatsu Photonics) requires a dedicated
+control box for operation but is still an affordable alternative to
+lasers, starting at about 2,500€ for a setup. High intensity deuterium
+lamps have been used for wavelength dependence measurements both in
+photobiology [@Kalbin2005; @Kalbina2008] and photochemistry
+[@Kalbin2005] when fitted with the appropriate filters. The lamp has to
+be mounted horizontally to allow efficient water cooling but using
+spreading lenses and a mirror mounted in a 45$^\circ$ angle to the
+incident radiation a full rosette can easily be irradiated
+[@Kalbina2008] and, the UV irradiation can be supplemented with PAR from
+external sources as desired. A drawback of this type of equipment is the
+short life of the radiation source (a few hundred hours). Spare lamps
+cost approximately 1 500 €.
+
+### LEDs {#sec:LEDs}
+
+The principle of a light emitting diode (LED) is totally different to
+conventional incandescent light bulbs. It is a semiconductor consisting
+of two types of layer: one layer releasing electrons as a direct current
+to fill holes in another. Energy is released as a photon at a wavelength
+(colour) that depends on the band gap energy of the materials comprising
+each of the two layers (Figure
+[\[fig:LED:junction\]](#fig:LED:junction){reference-type="ref"
+reference="fig:LED:junction"}).
+
+::: figure*
+![image](figures/PnJunction-LED-E.pdf){width="0.8\\myfigwidth"}
+:::
+
+Due to this emission of photons at a very precise wavelength, the
+typical spectrum of a LED shows one distinct peak. The emitted
+wavelength range can be increased by adding a fluorescing material to
+the LED. This is shown in Figure
+[\[fig:LED\]](#fig:LED){reference-type="ref" reference="fig:LED"}
+together with a measurement of the solar irradiance at the Helmholtz
+Zentrum München in Neuherberg, Germany. The maximum spectral irradiance
+of the LED peak (measurement at 20 cm distance) is more than one order
+of magnitude lower than that of the solar irradiance (which is the
+reason a semilogarithmic scale is used). All measurements were made
+using a double-monochromator spectroradiometer (Bentham, Reading, UK).
+
+::: figure*
+![image](figures/fig_leds.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](figures/fig_uvleds.pdf){width="0.8\\myfigwidth"}
+:::
+
+If the correct semiconductor material is chosen, almost any wavelength
+can be produced even in the UV range. The intensity of LEDs (Figure
+[\[fig:UVLED\]](#fig:UVLED){reference-type="ref" reference="fig:UVLED"})
+is much lower than that of LEDs emitting visible light, even at a
+shorter distance than in Figure
+[\[fig:LED\]](#fig:LED){reference-type="ref" reference="fig:LED"}.
+Normally, the optical power of a LED is around 1 W or less for visible
+radiation and only around 0.5 mW for UV radiation. There are LEDs
+available with higher power (many of them are arrays of tens of chips on
+a single package) but they require an additional cooling device. These
+arrays can emit up to 50 mW of radiation, however, they are very
+expensive. This is one of the most important reasons why LEDs alone are
+not useful *at the moment* for exposing plants to radiation. In
+addition, many different LEDs or specially designed LEDs are necessary
+to approximate the wavelength distribution of the solar spectrum. On the
+other hand, LEDs have been in common use for photosynthesis research for
+a long time [@tennessen1994] and many gas-exchange instruments use LEDs
+as a light source.
+
+LEDs are low voltage direct current (DC) devices. The current through a
+LED must be limited. The simplest current limiter is a resistor
+connected in series with the LED. The calculator at
+<http://ledcalculator.net/> can be used to determine the value of the
+required resistor. There is also a handy pair of Android applications,
+'elektor LED Resistor Calculator' and 'elektor Resistor Color Code',
+available for free from Google Play (<https://play.google.com/>).
+
+### Spectrographs {#sec:spectrographs}
+
+A spectrograph composed of a light source and a
+[monochromator]{acronym-label="monochromator"
+acronym-form="singular+short"} may be used in applications requiring
+spectrally-resolved UV radiation exposure of biological specimens. This
+may be the case when searching for wavelength dependencies in plant
+responses or investigating specific effects known *a priori* to depend
+on wavelength.
+
+The selection of a light source is application driven and depends on the
+requirements imposed by the study. The main requirements concern the
+intensity and the spectral distribution of the radiant output of the
+lamp. The geometry of the setup, including the source-target-distance
+and the area of exposure, sets certain limits not only on the light
+source but also on the characteristics of the monochromator.
+
+A schematic representation of a typical single monochromator is shown in
+Figure [\[fig:spectrograph\]](#fig:spectrograph){reference-type="ref"
+reference="fig:spectrograph"}. The light emitted by the light source is
+directed onto the entrance slit of the monochromator. The collimating
+mirror reflects the light onto the grating that diffracts the light into
+its spectral components. The diffracted light is reflected by the
+focusing mirror onto the exit slit. Two single monochromators may be
+aligned in a way that the exit slit of the first monochromator serves as
+the entrance slit of the second monochromator. This arrangement makes up
+a double monochromator which provides better
+[stray:light]{acronym-label="stray:light" acronym-form="singular+short"}
+rejection than single monochromators. Commercially available
+monochromators of both types exist.
+
+::: figure*
+![image](figures/fig_spectrograph.pdf){width="0.8\\myfigwidth"}
+:::
+
+In the setup of a single monochromator shown in Figure
+[\[fig:spectrograph\]](#fig:spectrograph){reference-type="ref"
+reference="fig:spectrograph"}, photons of only one wavelength would
+ideally exit the exit slit. However, as the slits have finite
+dimensions, the actual output would be a narrow line of radiation,
+peaking around a certain nominal central wavelength. Two approaches are
+commonly adopted to achieve the production of multiple
+spatially-separated lines. The grating may be equipped with a drive arm
+rotating the grating. Ideally, for each position of the grating, only
+radiation of a certain wavelength is reflected and focused onto the exit
+slit one at a time. Alternatively, the focusing mirror may be omitted
+and replaced by a sample exposure plane. Ideally, in each position on
+the plane, only radiation of a certain wavelength would be present
+(Figure [\[fig:UVEMA\]](#fig:UVEMA){reference-type="ref"
+reference="fig:UVEMA"}).
+
+::: figure*
+![image](photos/UVEMA_spectrograph.pdf){width="0.8\\myfigwidth"}
+:::
+
+The main characteristics of a monochromator that should be considered
+include wavelength region, wavelength accuracy, bandwidth of the lines,
+and the amount of stray light. These characteristics set guidelines for
+design of the layout of the optical components, selection of the slit
+widths, and formulation of the specifications for the grating. An
+unavoidable compromise must be made between the wavelength resolution
+and the intensity. Finer separation of the wavelengths comes with lower
+intensities and vice versa. Stray light rejection may be improved by
+placing suitably-designed baffles inside the enclosure of the
+spectrograph. For applications requiring superior stray light rejection,
+a double monochromator should be used.
+
+The main characteristics of the grating include groove spacing and a
+ruled area. For a spectrograph operating at UV radiation wavelengths, a
+holographic grating is a more feasible choice than a ruled grating
+because it can achieve a higher resolution. The main difference between
+ruled and holographic gratings is the process of their manufacture. A
+ruled grating has grooves scribed by a diamond on a ruling machine,
+whereas holographic gratings are produced by a photolithographic process
+using lasers which are able to achieve a higher groove density. Should
+the focal plane be flat, a concave grating must be used. The size of the
+grating has certain practical limits set by the manufacturers. The
+maximum size of the exposure area is essentially limited by the size of
+the grating.
+
+Selection of the light source is defined by the desired wavelengths, the
+intensity levels, and the spectral distribution of the radiation. For
+experiments imitating natural exposure, light sources exhibiting
+radiative characteristics resembling those of natural sunlight, such as
+xenon-arc lamps, should be used. The heat tolerances of the substrates
+of the gratings are limited. As a consequence, the light entering the
+monochromator may have to be filtered to remove excessive infra-red
+radiation which is often achieved using a water filter. (see
+subsubsection [8.2.1.2](#sec:xenon){reference-type="ref"
+reference="sec:xenon"} on page )
+
+In addition to the small spectrographs described above, there are also
+much larger instruments. Many of these dispense with the exit slit, and
+project the dispersed spectrum onto a 'stage'. @Watanabe1982 describe a
+large spectrograph designed for irradiating biological samples. Over a
+curved 10 m-long focal plane covering wavelengths of 250 to 1000 nm,
+many samples can be irradiated simultaneously. There are few such
+spectrographs in the world, but they are important for measuring action
+and response spectra [e.g. @Saitou1993].
+
+### Lasers {#sec:lasers}
+
+*Laser* stands for 'Light Amplification by Stimulated Emission of
+Radiation'. Stimulated emission can be induced in many different
+materials, and when light is confined in a cavity between mirrors the
+stimulated emission is amplified yielding a narrow beam of spatially-
+and temporarily coherent, and [collimated]{acronym-label="collimated"
+acronym-form="singular+short"} light. Lasers usually produce very narrow
+and intense beams of monochromatic light, although there are exceptions.
+Some lasers are tunable, meaning that the wavelength of the emitted
+light beam can be varied. One of the many ways of achieving this is to
+replace the mirror at one end of the cavity with a movable prism or
+grating. The lasing medium can be a solid crystal, a gas or a dye in
+solution. Lasers are said to be 'pumped' by a source of light, for
+example a lamp external to the lasing cavity.
+
+Laser diodes are semiconductor lasers. They are solid state devices
+producing a laser beam based on the same principle as other lasers. They
+are pumped by the light emitted when electrons and 'holes' interact in
+the semiconductor junction. They are used to excite other types of
+lasers, in printers and CD/DVD/BD players. Blu-ray disc players use
+laser diodes which emit blue-violet light. There are emitting laser
+diodes of low power, for example, emitting 20 mW at 375 nm. The
+semiconductor material used in this case is . In addition the catalogue
+of Roithner Lasertechnik GmbH (Vienna, Austria) lists 'diode pumped
+solid state lasers' emitting at 266 nm and at 355 nm. Non solid-state
+lasers that emit in the region are also available. For example argon ion
+lasers continuously emit at wavelengths of 334 and 351 nm.
+
+The power of lasers varies from 1--5 mW for laser pointers to 100 kW for
+lasers under development for military use. The coherent and concentrated
+beam can cause serious damage to eyesight, and safety precautions should
+be taken during their use, unless they are of very low power (see
+section [8.1](#sec:safety){reference-type="ref" reference="sec:safety"}
+on page ).
+
+Lasers can be used for example in characterizing the slit function of
+spectrometers (see section
+[9.7.2.2](#sec:array:calibration){reference-type="ref"
+reference="sec:array:calibration"} on page ), for aligning optics, and
+in the ubiquitous barcode readers used in supermarkets and laser
+pointers used by speakers during lectures. They are used in instruments
+like confocal microscopes and different analytical procedures in
+chemistry and biology. They can also be used to excite photochemical or
+photobiological systems if the target is small.
+
+For the purpose of UV photobiology, tunable optical parametric
+oscillator (OPO) pump lasers (pump wavelength 355 nm) are especially
+useful in mechanistic studies such as in accurate wavelength dependence
+determinations or action spectroscopy (O'Hara, Strid and Jenkins, in
+preparation). Placing a cuvette holder in the beam, a plant extract or a
+protein solution can be accurately irradiated using 50 or 100 cuvettes.
+By using the appropriate optics (lenses, mirrors, etc.; Figure
+[\[fig:tunable:laser\]](#fig:tunable:laser){reference-type="ref"
+reference="fig:tunable:laser"}), the geometry of the beam can be
+manipulated so that a larger area or sample (several cm$^2$) can be
+illuminated. This is large enough for exposing for instance part of an
+rosette, or for simultaneously irradiating two detached leaves. Tuneable
+lasers can also be used for studies of complex mechanistic interactions
+between several plant photoreceptors, since they can be used within a
+short time interval (seconds) at different wavelengths, e.g. for
+irradiation first in the , then in the blue or red.
+
+::: figure*
+![image](photos/Tunable_laser.pdf){width="0.8\\myfigwidth"}
+:::
+
+When using lasers for photobiological purposes, a number of
+circumstances need to be taken into account. Lasers emit their radiation
+in the form of pulses and this should be kept in mind when designing the
+experiments. Usually, both the energy of the pulses and the pulse rate
+can be varied within limits, depending on the sophistication (and
+price!) of the equipment. Pulse rates between 1 to 20 Hz in the more
+affordable machines up to 1000 Hz in the more expensive ones can be
+obtained. The pulses are typically 5--10 ns in length and the linewidth
+is usually around 0.5 nm (Figure
+[\[fig:laser:output\]](#fig:laser:output){reference-type="ref"
+reference="fig:laser:output"}), making this type of instrumentation
+ideal for studies of the initial UV signalling events on the biochemical
+and cell biological levels. Also, due to the physical principles on
+which a tunable laser in the UV region relies, some residual radiation
+with double the desired wavelength may still be present in the beam
+exiting the apparatus. This has to be taken care of by using a filter in
+the light-path blocking the longer wavelengths. For instance, when
+irradiating a plant with a wavelength of 300 nm, care must be taken so
+that any 600 nm component will be blocked out to be sure that the
+biological effect is due to the UV-B alone and not the red light. Of
+course, the laser UV-B radiation can be supplemented with PAR from other
+light sources as required.
+
+::: figure*
+![image](photos/Laser_output_300nm.pdf){width="0.8\\myfigwidth"}
+:::
+
+Laser radiation is measured as the energy emitted (in J) in each pulse
+or in a train of pulses using a pulse energy meter. This then has to be
+related to the area actually irradiated. The maximal output energy for a
+flash at 280 nm typically ranges between 40 and 200 . The spectral
+bandwidth and the accuracy of the wavelength setting should be checked
+prior to use with a calibrated diode array spectroradiometer (Figure
+[\[fig:laser:output\]](#fig:laser:output){reference-type="ref"
+reference="fig:laser:output"}). As might be expected, the major drawback
+of using lasers, in addition to the small area that usually can be
+irradiated, is the cost. Lasers useful for UV-B photobiological purposes
+at present start at approximately 50 000 €.
+
+### Modulated UV-B supplementation systems {#sec:modulated}
+
+There are two types of supplementation systems for use outdoors:
+square-wave and modulated. Square-wave supplementation systems work by
+simply switching the lamps on and off. The only control on the dose of
+is the length of time that the lamps are energized each day. Modulated
+systems work by continuously adjusting lamp -radiation output, which is
+usually called dimming. Furthermore, in modulated systems, the dimming
+of the lamps is adjusted by means of a feedback control system.
+radiation is measured both with supplement and without and the control
+system is programmed so that the treatment is a fixed percent increase
+in above the control condition, or in some cases, above true ambient
+conditions. @McLeod1997 reviews many of the early modulated and
+square-wave systems, and discusses many of the compromises and
+limitations involved in their use and design. Figure
+[\[fig:botania\]](#fig:botania){reference-type="ref"
+reference="fig:botania"} shows one lamp frame from a modulated system,
+and Figure [\[fig:botania:new\]](#fig:botania:new){reference-type="ref"
+reference="fig:botania:new"} shows an overhead view.
+
+::: figure*
+![image](photos/Botania.pdf){width="0.5\\myfigwidth"}
+:::
+
+::: figure*
+![image](photos/Botania_frames_2012.pdf){width="0.8\\myfigwidth"}
+:::
+
+A modulated system automatically adjusts the supplement following
+changes in natural irradiance with time of day and also compensates for
+ageing of cellulose diacetate filters, and changes in lamp output with
+ambient temperature.
+
+@Caldwell1983 describe a modulated system based on custom built
+electronics, which works even at very low ambient temperatures.
+@Aphalo1999a describe a system built from off-the-shelf components and
+controlled by a datalogger, which does not work at temperatures below 0.
+Figure [\[fig:UV:modulated\]](#fig:UV:modulated){reference-type="ref"
+reference="fig:UV:modulated"} shows, for this system, the daily course
+of irradiance under near-ambient control and enhancement frames
+throughout two days with different cloud conditions. Occasionally,
+modulated systems have also been used inside greenhouses [e.g.
+@Hunt1998a]. Another approach is to use a [PID]{acronym-label="PID"
+acronym-form="singular+short"} algorithm in an industrial
+micro-controller module to control the dimming of the lamps. Such a
+modulated systems has been built based on Gantner intelligent modules
+(Gantner Instruments Test & Measurement GmbH, Darmstadt, Germany, Matti
+Savinainen, pers. comm.). It is also possible to use a personal computer
+and a PID control algorithm implemented in a graphical instrument
+control and measurement language like LabVIEW (National Instruments
+Corporation, Austin, TX, USA) or FlowStone (DPS Robotics, UK).
+
+::: figure*
+![image](figures/fig_modulated.pdf){width="0.8\\myfigwidth"}
+:::
+
+Modulated systems, like any other supplementation system, require
+frequent checks and replacement of burnt lamps and aged filters. It is
+recommended to replace acetate filters regularly. For lamps (except for
+the odd 'early deaths') it is recommended that they are replaced
+following a fixed schedule as lamp output degrades with lamp age. This
+is especially important in those systems not having separate feedback
+control for each lamp frame, as having lamps of different ages in
+monitored and slave frames would lead to inaccuracies in the level of
+supplementation between frames.
+
+Modulated systems are preferable to square-wave systems as they avoid
+excessive supplementation during periods of low and low natural
+irradiance. They also compensate for fluctuations in lamp output.
+However, they are more difficult to design and build, and consequently
+more expensive. The drawbacks of square-wave systems can be moderated by
+completely switching off the system on rainy and cloudy days, or by
+automatically switching off supplementation when irradiance goes below a
+certain threshold. The duration of square-wave exposure may also be
+limited to fixed hours either side of solar noon. @Musil2002 evaluated
+the errors involved in the use of square-wave systems and concluded that
+they are not very large, whereas @Diaz2006 concluded that modulated
+systems are preferable. However, it is difficult to assess the effect of
+the unrealistic treatments in square-wave systems on the outcome of
+experiments as comparisons have been solely based on differences in
+irradiation regimes rather than on the responses of plants.
+
+Enhancement errors in the calculation of effective irradiance are
+discussed in section
+[9.10.3](#sec:enhancement:errors){reference-type="ref"
+reference="sec:enhancement:errors"} on page .
+
+### Exposure chambers and sun simulators {#sec:simulators}
+
+Two main types of sun simulators exist: small systems based, for
+example, on xenon-arc lamps (see
+[8.2.1.2](#sec:xenon){reference-type="ref" reference="sec:xenon"} on
+page ), and large systems built by combining several types of lamps and
+filters to achieve a simulation of the solar spectrum; so called "sun
+simulators" and "(walk-in-size) exposure chambers". The latter are
+sometimes called a 'phytotron' [@Bickford1972]. The principal concept of
+how to design plant growth chambers can be found for example in
+@Langhans1997.
+
+Here, a description is given in more detail of the phytotron built at
+the Research Unit Environmental Simulation of the Helmholtz Zentrum
+München, Neuherberg, Germany[^17]. This phytotron facility consists of a
+set of seven closed chambers (length $\cdot$ width $\cdot$ height):
+
+-   four walk-in-size chambers (3.4 m $\times$ 2.8 m $\times$ 2.5 m),
+
+-   two medium-size sun simulators (1.4 m $\times$ 1.4 m $\times$
+    1.0 m),
+
+-   one small sun simulator (1.2 m $\times$ 1.2 m $\times$ 0.4 m).
+
+In order to extrapolate response of plants from experiments to those in
+their natural habitat, these experiments need to be performed under
+realistic and reproducible conditions. The radiation provided must be as
+realistic as possible. Not only the quantity but also the spectral
+quality of radiation has to match the seasonal and diurnal variations
+occurring in nature [@caldw94]. This includes the steep absorption
+characteristics of radiation that result from the filtering of solar
+irradiance by stratospheric ozone as well as the balance between the , ,
+and . As no single artificial light source can simulate both spectral
+quality and spectral quantity of global irradiance, a combination of
+metal halide lamps (400 W HQI Daylight, Osram, Germany), quartz halogen
+lamps (500 W Halostar, Osram, Germany), and blue fluorescent tubes (40 W
+TLD 18, Philips, the Netherlands) are used in order to simulate the
+spectrum from the to the near IR wavelengths. Excess infra-red radiation
+is removed by a layer of water. Underneath this water filter, additional
+quartz halogen lamps (300 W Halostar, Osram, Germany) are installed to
+adjust the mid and far IR radiation. The missing irradiance is
+supplemented by fluorescent tubes (40 W TL 12, Philips, the
+Netherlands). The radiation output of these fluorescent tubes, however,
+extends to well below 280 nm. This portion must be blocked very
+efficiently. Selected borosilicate and lime glass filters as well as
+acrylic 'glass' filters and plastic sheets provide a sufficiently steep
+cut-off at the desired wavelength. Different combinations of these
+glasses and films allow the cut-off wavelength to be altered, thus
+enabling a simulation various scenarios as shown for example in figure
+[\[fig:Poly:Spectra\]](#fig:Poly:Spectra){reference-type="ref"
+reference="fig:Poly:Spectra"} in section
+[7.8](#sec:action:spectra){reference-type="ref"
+reference="sec:action:spectra"} on page . The diurnal variations of the
+irradiance are achieved by switching appropriate groups of lamps on and
+off. The optimised lamp configuration of the ceiling is presented in
+Figure [\[fig:SoSi:Lamps\]](#fig:SoSi:Lamps){reference-type="ref"
+reference="fig:SoSi:Lamps"}. A more detailed description is given by
+@Seckmeyer1993, @doehr96 and @Thiel1996. Figure
+[\[fig:sunsimulator\]](#fig:sunsimulator){reference-type="ref"
+reference="fig:sunsimulator"} shows a picture of a sun simulator and the
+schematic outline.
+
+::: figure*
+![image](figures/lamp_config.pdf){width="80%"}
+:::
+
+::: figure*
+![image](figures/sunsimulator.pdf){width="45%"}![image](figures/sosi_scheme.pdf){width="45%"}
+:::
+
+The lamps are mounted far above the cultivation area in order to obtain
+a homogeneous spatial distribution of the radiation. Deviations from
+homogeneity, indicated by the ratio of spectral irradiance at any
+position to that at the central position, do not exceed 20% for all
+wavelengths but, due to non-symmetric lamp mounting, can depend on
+wavelength. The horizontal distribution of in the cultivation area is
+shown in figure
+[\[fig:SoSi:horizontal\]](#fig:SoSi:horizontal){reference-type="ref"
+reference="fig:SoSi:horizontal"}. The horizontal distribution of and
+radiation is similar and not shown here.
+
+::: figure*
+![image](figures/sosi_horizontal_dist.pdf){width="60%"}
+:::
+
+Figure [\[fig:SoSi:sun\]](#fig:SoSi:sun){reference-type="ref"
+reference="fig:SoSi:sun"} shows a comparison of the spectral irradiance
+of the small sun simulator, provided with a double layer of Tempax glass
+(Schott, Germany), and a typical outdoor spectrum measured at the field
+station of the Helmholtz Zentrum München, Neuherberg, Germany.
+Measurements in the sun simulator show that the steep, realistic shape
+of the edge and the ratio can be simulated very close to nature. The
+ratio of the sun simulator is $1:23:194$ and matches the natural
+conditions of $1:25:206$ very well.
+
+::: figure*
+![image](figures/fig_sosi_sun.pdf){width="0.8\\myfigwidth"}\
+![image](figures/fig_sosi_sun_log.pdf){width="0.8\\myfigwidth"}
+:::
+
+Typical irradiance data from the phytotron compared to a field
+measurement (on 17 April 1996 at the Helmholtz Zentrum München,
+Neuherberg, Germany, solar zenith angle $\theta_s = 38\degree$) are
+listed in table
+[\[tab:SoSi:values\]](#tab:SoSi:values){reference-type="ref"
+reference="tab:SoSi:values"}.
+
+:::: table*
+::: center
+      Small   Large   Outdoor
+  -- ------- ------- ---------
+      1.53    1.20     1.10
+      54.9    22.7     47.2
+       430     250      390
+:::
+::::
+
+Besides the lighting, temperature, and humidity, the atmosphere in the
+chamber is also controlled. Typical gaseous pollutants such as ozone,
+nitric oxides, and combustion residuals can be introduced. The effects
+of carbon dioxide and hydrocarbons on plants can also be studied. Modern
+control technology with central monitoring ensures a safe and
+well-defined operation.
+
+## Filters {#sec:filters}
+
+In UV research, optical filters are used in different contexts, in
+measuring instruments and in UV radiation sources. In the case of
+instruments, they are used in most broadband sensors to achieve the
+desired spectral response. They are also used in some spectrometers to
+improve stray light performance and remove second order artifacts.
+
+They are used in lamp sources like laboratory solar simulators based on
+xenon arc lamps. In experiments with UV-B fluorescent lamps they are
+used to absorb short wavelength radiation in the UV-B treatment and to
+achieve comparable no UV-B controls. These uses are discussed in section
+[8.2.1](#sec:lamps){reference-type="ref" reference="sec:lamps"} on page
+. In the current section, in addition to introducing the optical
+properties of filters, we will mainly discuss the use of filters to
+manipulate the spectrum of sunlight in field experiments.
+
+### Optical properties of filters {#sec:filters:properties}
+
+There are different types of filters. Band-pass filters transmit
+radiation in a given range of wavelengths or band, and absorb or reflect
+light outside this range. The band can be either wide or narrow. Cut-off
+filters can be either long-pass, or short-pass: respectively
+transmitting all radiation of longer wavelengths than a cutoff
+wavelength and transmitting all radiation of wavelengths shorter than a
+cutoff (less common). The transition is a slope that can be steep or
+gradual depending on the filter.
+
+Just like any object, filters reflect, absorb or transmit radiation.
+These are the only three possible fates of incident radiation.
+[reflectance]{acronym-label="reflectance" acronym-form="singular+short"}
+(), [absorptance]{acronym-label="absorptance"
+acronym-form="singular+short"} () and
+[transmittance]{acronym-label="transmittance"
+acronym-form="singular+short"} () are the corresponding fractions of the
+incident radiation such that $\refl + \abst + \trans = 1$ (or if
+expressed as percentages they add up to 100%). Absorptance should not
+the confused with [absorbance]{acronym-label="absorbance"
+acronym-form="singular+short"} () which is a different quantity given by
+$\absb = \log \frac{1}{\trans}$. All these quantities can be defined
+either for a broad band, or for very narrow band (e.g. where $\lambda$
+is the wavelength). In the latter case, we can measure across
+wavelengths obtaining a spectrum.
+
+When describing filters, the main property of interest is spectral
+transmittance. Most filters work by absorbing radiation of the unwanted
+wavelengths. However, some special filters work by reflecting the
+unwanted radiation. This is important when working with high power light
+sources: reflecting filters warm up much less that absorbing filters. An
+example of reflecting filters are the so called heat mirrors, which
+reflect infra-red radiation.
+
+For light absorbing filters, like many of those made from plastic or
+optical glass, the optical characteristics depend not only on the
+material but also on its thickness. For this reason it is important to
+always indicate both type and thickness when describing a filter. In
+many cases one can take advantage of this phenomenon when planning
+experiments as the cutoff wavelength depends on the thickness of the
+filter.
+
+Another important property of filters is whether they scatter radiation
+or not. When light is scattered the diffuse radiation component
+increases. For example, normal glass does not scatter visible radiation
+while opaline (white glass) does. As the proportion of diffuse radiation
+in PAR affects canopy photosynthesis
+[@Okerblom1992; @Urban2007; @Markvart2010; @Urban2012] one should use
+filters with similar scattering properties for all treatments.
+
+Filters can be made from optical glass, gelatine, and many different
+synthetic organic compounds. In many cases, coloured substances are used
+as additives to the whole thickness of the material but sometimes a
+layer is merely applied to the surface or between two layers of
+transparent material. Glass filters tend to be very stable, but many
+plastics and the additives they contain react when illuminated, and
+deteriorate gradually when exposed to visible- and especially UV
+radiation. Filters made from optical glass are a more expensive than
+those made from plastics and tend to be readily available only in small
+sizes. Plastic films used as filters tend to be available in large
+sheets or rolls. Sometimes, liquid filters, usually aqueous solutions of
+chemicals, can also be useful [see Chapter 11 in @Montalti2006 for
+spectral transmittance for several liquid filters]. @Sampath-Wiley2011
+describe a new type of liquid filter which makes it possible to obtain a
+realistic simulation of the solar spectrum under laboratory conditions
+using normal fluorescent lamps.
+
+The engineering quality of atmospheric UV absorption by glass filter
+techniques is sufficient for most plant experiments. However, this
+method has its limitations. Strong UV exposure causes rapid ageing of
+borosilicate glass filters due to a physico-chemical effect known as
+solarisation. This originates in UV-induced changes in the oxidation
+state of iron contaminants present in the glass matrix. The oxidation of
+Fe$^{2+}$ to Fe$^{3+}$ is accompanied by an absorption shift to longer
+wavelengths within the UV range. A decrease in the transmittance of
+fresh glass filters occurs within their first few hours of use, followed
+by a more-gradual long-term decline. Hence, changes in transmission
+during an experiment can be largely avoided by the pre-ageing of new
+filters. In addition, there is a gradient of ageing with the depth of
+the glass. Soda-lime glass exhibits very much reduced ageing compared to
+borosilicate glass. The solarisation of the soda-lime glass ceases after
+a few hours of UV treatment and this may be due to its lower content of
+iron contaminants [@doehr96].
+
+### Manipulating UV radiation in sunlight {#sec:filters:manipulating:sunlight}
+
+When using plastic films in the field they need to be supported in a way
+such that they remain in place even under windy conditions and also so
+that rainwater does not accumulate on top of them. It is important to be
+aware that plastic filters modify the microclimate in several ways. If
+they absorb infra-red radiation, even if transparent at other
+wavelengths, they will alter the energy balance of plants and soil under
+them. This produces a greenhouse effect that increases temperatures. If
+they absorb they will affect photosynthesis, and even small differences
+in transmittance () between treatments could be important. Plants are
+partially protected from wind and completely shielded from rain by the
+filters. In some cases even plasticizer additives (different phthalates)
+added during plastic manufacture have been implicated in artifacts
+caused by the use of cellulose diacetate film in exclusion experiments,
+particularly when ventilation is restricted [@Krizek2004a].
+
+As filters have so many side effects, it is not surprising that a
+comparison against a no-filter control usually yields large differences,
+demonstrating that comparisons examining the effects of UV attenuation
+should always be done against controls under UV transparent films. Of
+course, we may want to know how similar the conditions under control
+filters are to natural conditions. In this case at least two types of
+controls are needed: a control with a UV transparent filter and a
+control without any filter. Figures
+[\[fig:filters:photo:field\]](#fig:filters:photo:field){reference-type="ref"
+reference="fig:filters:photo:field"},
+[\[fig:filters:photo:field1\]](#fig:filters:photo:field1){reference-type="ref"
+reference="fig:filters:photo:field1"},
+[\[fig:filters:photo:one:frame\]](#fig:filters:photo:one:frame){reference-type="ref"
+reference="fig:filters:photo:one:frame"} and
+[\[fig:filters:photo:branch\]](#fig:filters:photo:branch){reference-type="ref"
+reference="fig:filters:photo:branch"} show some typical setups for
+potted plants and branches respectively. Filters on tree branches have
+been used by @Rousseaux2004, @Kotilainen2008 and others. Filters have
+also been used to cover patches of natural vegetation by @Phoenix2003,
+@Robson2004 and others. Filters have been used in experiments with
+potted seedlings or plants by @Hunt1997, @Kotilainen2009, @Morales2010,
+and others.
+
+::: figure*
+![image](photos/filters_in_field_DSC05550.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](photos/Ushuaia_filters_Bog1.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](photos/One_frame_DSC05441-2.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](photos/puu01b.pdf){width="0.8\\myfigwidth"}
+:::
+
+The spectral transmittance of several commonly used films is shown in
+Figure
+[\[fig:filter:T:spectra\]](#fig:filter:T:spectra){reference-type="ref"
+reference="fig:filter:T:spectra"}, and the resulting filtered sunlight
+spectral irradiance in Figure
+[\[fig:filter:sunlight:spectra\]](#fig:filter:sunlight:spectra){reference-type="ref"
+reference="fig:filter:sunlight:spectra"}. For near-ambient-UV controls
+cellulose diacetate, polythene or polytetrafluoroethylene (PTFE) are
+normally used. Cellulose diacetate is not a good option as its optical
+properties deteriorate fast, and after deterioration it absorbs more
+UV-B radiation (Figure
+[\[fig:filter:T:spectra:aging\]](#fig:filter:T:spectra:aging){reference-type="ref"
+reference="fig:filter:T:spectra:aging"}), tears easily, and is affected
+by water. Cellulose diacetate is used for removing from the radiation
+emitted by lamps (see section
+[8.2.1.1](#sec:fluorescent:tubes){reference-type="ref"
+reference="sec:fluorescent:tubes"} on page ). In contrast as there is no
+in solar radiation at ground level, other materials that are more
+durable can be used for near-ambient controls in attenuation
+experiments. Polythene film (types without UV absorbing additives only)
+is very stable, and cheap, but usually scatters light slightly more than
+the films used for UV-B attenuation. PTFE and related polymers (brand
+names Teflon, Hostaflon, etc.) are extremely stable, transmit UV
+radiation very well, and some types produce little scattering[^18]. Also
+films made from polychlorotrifluoroethylene (PCTFE) (sold under the
+trade name ACLAR) can be used. For UV-B attenuation experiments,
+polyester film (e.g. brand names Mylar, Melinex, Autostat) is the filter
+material most frequently used for attenuating with only a small effect
+on irradiance. Sometimes soda glass (normal window glass) or special
+acrylic plates are used instead of polyester. Polyester film produces
+little scattering and glass and acrylic panes almost none. For
+attenuation of the whole UV band, UV-absorbing theatrical gels can be
+used. They are called gels for historical reasons but nowadays either
+polyester or polycarbonate is used as base material. The most useful
+type is the one with code #226, available with similar specifications
+from several manufacturers (Rosco, Lee filters, Formatt filters, see the
+Appendix on page for addresses). Rosco #0 is an UV-A and UV-B
+transparent theatrical gel with spectral transmittance rather similar to
+thin cellulose diacetate. Some polyester films can also remove all UV
+wavelengths (e.g. brand name 'Courtgard'). Some experimental greenhouse
+cladding films have cut-off wavelengths in the middle of the UV-A band
+and provide additional possibilities. Theatrical gels are available only
+in one standard thickness, but cellulose diacetate, polyester, PTFE and
+polythene films are available in several different thicknesses.
+Thickness affects both mechanical and optical properties (Figure
+[\[fig:filter:T:spectra:thickness\]](#fig:filter:T:spectra:thickness){reference-type="ref"
+reference="fig:filter:T:spectra:thickness"}). The most common
+thicknesses used for cellulose diacetate and polyester are 100 to 125 .
+For polythene, thinner films can be used to minimize scattering if
+mechanical strength is not limiting (e.g. 50 ). As PTFE is a strong
+material, thin films can also be used, but one should be careful to
+match PAR transmittance between all treatments.
+
+::: figure*
+![image](figures/fig_filters_UV.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](figures/fig_filters_Matt.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](figures/fig_film_aging.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](figures/fig_acetate_thickness.pdf){width="0.8\\myfigwidth"}
+:::
+
+Filters can be mounted on wooden, metal or wire frames, or sometimes,
+especially when covering branches, on chicken wire net. It is important
+to carefully chose the fastening method. On wooden frames staples or
+thumb pins can be used, but the films tend to tear where they have been
+perforated so reinforcing the edges with transparent or duct tape may be
+necessary. It is important to use tapes that produce no toxic fumes, and
+to use the same amount and type of tape for all treatments (e.g. not use
+more tape for the films that break more easily). In harsh environments,
+the propensity for filters to tear or fracture can be greatly reduced by
+stretching them taut over the filtered plots to keep them still. This
+can be achieved by unrolling filters firmly attached to two cylindrical
+rods/poles clamped under tension to a structure anchored in the ground
+(Figure
+[\[fig:filters:photo:field1\]](#fig:filters:photo:field1){reference-type="ref"
+reference="fig:filters:photo:field1"} on page ), . This approach also
+has the benefit over wooden frames of enabling a large number of filters
+to be carried to the field at once undamaged, so can be of use to
+researchers working at inaccessible field sites. When mounting the
+filters good ventilation should be maintained, to avoid warming up of
+the plants and soil under them. Careful consideration is needed when
+making the compromise between the UV reduction achieved by adding
+plastic curtains to increase the filtration of
+[diffuse:rad]{acronym-label="diffuse:rad" acronym-form="singular+short"}
+(or [direct:rad]{acronym-label="direct:rad"
+acronym-form="singular+short"} when the solar elevation angle is small
+at high latitudes), and the exacerbation of warming and further
+reduction in ventilation that this will cause. In long-term filtration
+experiments, the growth of dense vegetation under and around the filters
+is a common problem which can lead to large unwanted changes in the
+microclimate in experimental plots.
+
+The impracticality of filtering entire trees means that branch filters
+are often the most acceptable substitutes when assessing the effects of
+solar UV radiation on trees. However their installation and maintenance
+involves several additional considerations beyond those attached to
+fixed frames. Branch filters should be located only on the top and sides
+of branches, while the underside should be left open for ventilation and
+access. A structure of chicken wire and aluminium cables can maintain
+the shape of the filter while minimising contact between the filter and
+the treated part of the branch, however the weight of the structure
+should be kept to a minimum to reduce shading and the risk of mechanical
+damage to the tree. Filters mounted on branches behave like flags in the
+wind, so branches on which filters are installed need to be tethered to
+the ground or their movement stabilised using wooden canes attached to a
+different large branch or limb of the tree, or preferably a combination
+of both these restraints, so that they do not move un-naturally or break
+in windy weather. By necessity in such experiments, the filtered area is
+relatively small and requires frequent maintenance to keep the shoots
+and leaves from growing into the filter or growing too far away from the
+filter into areas where they receive too much unfiltered and diffuse UV
+radiation. Particular attention should be given to the orientation of
+branch filters on a tree. For instance, branches and filters orientated
+to the north receive a very different dose of visible and UV radiation
+from those orientated to the south [@Rousseaux2004]. Comparing similar
+branches of the same tree under different filtration treatments is an
+obvious way to reduce the random variability among experimental units,
+but it is important to be aware that signals could potentially pass
+between different filtered branches and unfiltered branches which may
+dilute the response of a particular branch to its UV treatment. One
+method of controlling for communication between branches involves
+excising the phloem of filtered branches. However, this isolation brings
+other problems as the realism of the experiment is reduced, so the need
+to adopt this approach will depend on the aims of each individual
+experiment. Maintaining branch filters in situ during the autumn and
+winter is not always practically feasible, however when using species
+that have determinate growth, their environment, particularly the
+radiation they receive, during bud set and the formation of leaf
+primordia can influence subsequent growth and leaf traits during the
+following growing season.
+
+Sometimes the design of an experiment requires intermediate levels of
+attenuation, and this can be achieved by mounting strips of one type of
+plastic film on a base of another type (Figure
+[\[fig:filters:photo:one:frame\]](#fig:filters:photo:one:frame){reference-type="ref"
+reference="fig:filters:photo:one:frame"}). In such a system the strips
+are usually fastened at the edges of the wooden or wire frame on which
+the whole filter is attached. Unless the frames are small (less than 30
+to 50 cm long sides) it may also be necessary to attach the strips in
+the middle with tape. In such a case the tape used must be clear to both
+PAR and UV radiation. The cheapest old-fashioned stationery tapes use a
+cellulose acetate substrate and are good for this purpose (e.g. Scotch
+Crystal Clear). Strips are usually 10 to 15 mm wide and if the desired
+effect is 50% attenuation, they are attached with a separation equal to
+their own width. Cutting the strips with scissors is a big task, but
+printers' shops can usually cut them efficiently for a small charge. The
+UV irradiance under filters with strips is heterogeneous but the patches
+move with solar transit through the sky. This is more of a problem for
+measurement of irradiances than for the application of the treatments as
+reciprocity between irradiation time and irradiance apparently holds for
+such experiments [@Rosa2001].
+
+Even if we use filters that are totally opaque to UV-B, the treatment
+will not lead to total UV-B exclusion. That is why we use the phrase
+'UV-B attenuation' for such treatments (Figure
+[\[fig:filter:maps\]](#fig:filter:maps){reference-type="ref"
+reference="fig:filter:maps"}). As discussed in section
+[7.4](#sec:solar:radiation){reference-type="ref"
+reference="sec:solar:radiation"} on page , solar UV radiation includes a
+large proportion of diffuse radiation coming from the sky, even under
+non-cloudy conditions. Consequently, some UV radiation penetrates under
+the edges of filters. It is therefore necessary to avoid locating
+experimental plants near the edges of the filters, and we recommend to
+have at least one row of border plants, forming a so-called 'guard row',
+from which no data are collected. Furthermore, it is possible to use
+curtains of the same filter material on the sides of the frames, but one
+should not close all sides as air movement is needed to avoid elevated
+temperatures and unnaturally still air. The filters should not be too
+high above the plants and irradiance should be measured at all the
+different positions where measured plants are located, rather than just
+under the centre of the frame.
+
+::: figure*
+![image](figures/fig_PAR_filter.pdf){width="0.6\\myfigwidth"}\
+![image](figures/fig_UVA_filter.pdf){width="0.6\\myfigwidth"}
+![image](figures/fig_UVB_filter.pdf){width="0.6\\myfigwidth"}
+:::
+
+### Measuring the spectral transmittance of filters
+
+The recommended instrument for measuring filter spectral transmittance
+is a spectrometer or spectrophotometer equipped with an integrating
+sphere. Using an integrating sphere ensures that all transmitted
+radiation, both non-scattered and scattered is taken into account in the
+measurement. For non-scattering filters, one can obtain a reasonable
+approximation of the total spectral transmittance with a regular
+spectrophotometer. In most cases it is adequate to cut a piece of the
+film to the size of a cuvette and insert it carefully in the cuvette
+holder. In some models with an open light path (e.g. HP 8453, Hewlett
+Packard Gmbh, Waldbronn, Germany, now Agilent) it is possible to put a
+larger piece of filter material in the light path outside the cuvette
+holder but close to it. For measuring in the UV-B band one needs an
+instrument using a deuterium lamp as radiation source. The spectral
+resolution is important, and ideally should be 1 or 2 nm.
+
+The optical properties of all filters change with time, even if the
+material from which they are made is stable, because filters get
+scratched and dirty. Dust and pollen stick to the filter surfaces and
+particles attach more tenaciously to some materials than others so that
+the filters in some treatments may become dirtier than in others. In
+addition to cleaning and replacing the filters regularly, it is
+necessary to measure the spectral transmittance of both new and used
+filters. We also recommend that samples of the filters are taken both at
+the start and end of their use and are stored protected from light and
+heat at least until the results of the experiments have been published,
+but preferably for longer.
+
+## Manipulating UV-B in the aquatic environment {#sec:manipulating:aquatic}
+
+### Incubations in the field
+
+In contrast to the situation in terrestrial environments, field
+experimentation with aquatic organisms is constrained not only by the
+underwater light conditions but also by a suite of physical
+perturbations (e.g. wave action, tidal fluctuations, currents,
+sedimentation, etc.). In the case of benthic macrophytes, an important
+factor that has to be considered is their vertical distribution. Deep or
+constantly submerged environments impose different difficulties compared
+to e.g. intertidal locations, which are subjected to changing light
+conditions due to the action of tides. In lakes and rivers, differences
+in the concentration of suspended absorbing substances between the
+surface and deeper habitats can be important. An experimental design for
+the study of seaweeds normally includes different filters cutting-off
+and (see section [8.3](#sec:filters){reference-type="ref"
+reference="sec:filters"} for details).
+
+Algae can be exposed to these different radiation conditions by using
+self-made incubators constructed with plastic frames and nets with
+different diameters and forms depending of the size of the macrophyte
+(Figure
+[\[fig:marine:incubation\]](#fig:marine:incubation){reference-type="ref"
+reference="fig:marine:incubation"}). Both the cylindrical and sheet
+Plexiglass incubators can be covered by appropriate UV cut-off films and
+located at different water depths by using ropes or buoys. E.g. as used
+by @Gomez2005 with the red alga in the Quempillen Estuary (Chile). The
+cylindrical incubators can be also used in intertidal pools, allowing
+them to float or locating them at the bottom of a pool. In general,
+experiments dealing with effects of natural radiation on aquatic
+organisms are carried out in a range of depths between 0 and 10 m to
+represent the penetration depth in coastal waters.
+
+::: figure*
+![image](photos/fig_marine_incubation2.pdf){width="0.8\\myfigwidth"}
+:::
+
+The diurnal variability of solar radiation is one of the most important
+factors to consider when working with aquatic macrophytes in the field.
+In general, at temperate and cold-temperate locations, daily changes in
+the irradiance conditions are also exacerbated by depth, which affects
+the number of hours during which algae are exposed to radiation. It is
+well known that photosynthetic physiology changes during the day with
+maximum rates of photoinhibition (a mechanism of dissipation of excess
+energy) occurring during the highest solar irradiance at midday, while a
+recovery in the photosynthetic capacity is found in the afternoon
+[@Hader1996; @Figueroa1997; @Gomez2004]. This pattern is well
+generalized in macrophytes and strongly dependent on the growth depth:
+individuals growing at shallow depths show a more efficient
+photoinhibition than their deeper counterparts [@Franklin1997]. Thus,
+experimental designs employing transplantation or incubations at
+different depths along the water column should consider these potential
+confounding effects.
+
+Tides are also a relevant factor affecting radiation in shallow marine
+waters, especially for intertidal species. Fluctuations in the height of
+the water column caused by tidal regimes can reduce or increase
+considerably the available UV radiation. For example, in a study
+comparing two coastal systems with different tidal range, @Huovinen2011
+demonstrated that algae from fjords, with tidal ranges close to 7 m,
+exhibited less difference in photosynthetic light demand and
+susceptibility to radiation than algae from an open coast where maximal
+tidal variation was 2 m. Probably, this is a major factor influencing
+experimentation with benthic intertidal macrophytes, especially in
+highly dynamic systems that may also be characterized by strong wave
+action.
+
+### Incubation under artificial lamps
+
+The effect of radiation on aquatic plants can also be studied using
+incubations under controlled illumination conditions (using lamps) in
+the laboratory (Figure
+[\[fig:lab:incubation\]](#fig:lab:incubation){reference-type="ref"
+reference="fig:lab:incubation"}). Normally the sources are similar to
+those used for incubations of terrestrial plants (see section
+[8.2.1](#sec:lamps){reference-type="ref" reference="sec:lamps"}).
+
+::: figure*
+![image](photos/fig_lab_aqua_incubation.pdf){width="0.8\\myfigwidth"}
+:::
+
+In general, experimentation on aquatic plants using small vessels under
+laboratory conditions is designed to test for effects of in isolated
+cells or small sized macrophytes. In the case of large seaweeds
+(e.g. kelps), space limitation restricts incubations to pieces or sample
+discs. In the case of seaweeds, due to their simple morphological
+organization, the use of cut sections still allows a realistic
+extrapolation of the situation in the whole thallus.
+
+The optical characteristics and shape of the vessels containing the
+samples strongly determine the orientation of the sample to the UV
+source and the experimental setup. Often the vessels used in routine
+incubations are opaque to radiation (e.g. Pyrex, and many types of glass
+ware and polycarbonate), and thus lamps should be located above them.
+However, there are various transparent materials, e.g. methacrylate
+(Type GS-2458) or quartz glass, which permits irradiation from different
+sides and mimics better the natural underwater conditions. In
+experimental setups which cover vessels with cut-off filters, bubbles
+from aeration can affect the penetration and diffraction patterns within
+the vessels. Thus, cut-off and neutral filters should be kept at
+sufficient distance from the water.
+
+Due to the heat emission of lamps, temperature within the incubation
+chamber can vary considerably, which should be taken into account,
+similar as with incubations of terrestrial plants. This factor is
+especially relevant for algae subject to small changes in temperature in
+their habitat, e.g. some deep water and polar algae. Thermoregulated
+water baths can minimize this problem
+(Figure [\[fig:lab:incubation\]](#fig:lab:incubation){reference-type="ref"
+reference="fig:lab:incubation"}).
+
+The use of artificial sources presents various advantages. Firstly, the
+manipulation of the :ratio can permit the examination of some processes
+that normally are masked by the prevailing high irradiances in the
+field, as well as simulations of different scenarios. Secondly, it is
+possible to standardize conditions for physiology, a situation not
+normally possible in the natural habitat, where unpredictable
+environment conditions (e.g. water motion, scattered light field) make
+*in situ* experimentation difficult.
+
+## Suitable treatments and controls
+
+In every experiment one must include a suitable control in addition to
+treatments. What is a suitable control will depend on the aims of the
+study. In order to assess the effect of radiation, then the only
+difference between an treatment and the control treatment should be the
+irradiance of . This may seem obvious, but it is important to think
+about the consequence of this for the design of experiments. Many
+sources emit in addition to radiation, , -A and visible radiation.
+Common sources emit in addition to , , and visible radiation. As most
+fluorescent and some other UV sources emit small amounts of radiation,
+which is absent in sunlight, radiation must be removed by filtration.
+See Box [\[ex:lamps:controls\]](#ex:lamps:controls){reference-type="ref"
+reference="ex:lamps:controls"} for descriptions of some typical
+experimental designs and their advantages and pitfalls.
+
+::: example*
+[]{#ex:lamps:controls label="ex:lamps:controls"}
+
+Case
+
+:   We use Q-Panel UVB-313 tubes, or Philips TL12 fluorescent tubes
+    outdoors. These lamps are sold as broadband lamps, but they emit
+    radiation of other wavelengths (, , and visible) in addition to (see
+    Figure
+    [\[fig:TL12:UVB313:UVA340\]](#fig:TL12:UVB313:UVA340){reference-type="ref"
+    reference="fig:TL12:UVB313:UVA340"} on page ). Our objective is to
+    study the effect of radiation.
+
+Design 1
+
+:   We remove from the treatment by filtering the lamps with cellulose
+    diacetate (see Figure
+    [\[fig:filter:T:spectra\]](#fig:filter:T:spectra){reference-type="ref"
+    reference="fig:filter:T:spectra"} on page ). We add (and a very
+    small amount of visible radiation) to the controls by having
+    identical lamps as in the treatments but filtered with polyester
+    film, which absorbs and . This also ensures that any effect of the
+    lamps on the temperature of plants is similar in treated and control
+    plants, and shading of sunlight is similar. This type of control is
+    usually called 'control'.[]{#item:example:lamps:design:one
+    label="item:example:lamps:design:one"}
+
+Design 2
+
+:   As above, but in addition we add a second control with unenergized
+    lamps. We can compare this control to the control to assess whether
+    there is any side effect related to the functioning of the lamps but
+    unrelated to radiation.[]{#item:example:lamps:design:two
+    label="item:example:lamps:design:two"}
+
+Design 3
+
+:   We add a third control with no lamps or frames. By comparing this
+    control with the control with unenergized lamps we can test for the
+    effect of shading by lamps and supporting
+    structures.[]{#item:example:lamps:design:three
+    label="item:example:lamps:design:three"}
+
+Design 4
+
+:   We use cellulose diacetate-filtered lamps for treatments and
+    unenergized lamps for controls. In this case the effect of is
+    confounded with other effects of the lamps, except for
+    shading.[]{#item:example:lamps:design:four
+    label="item:example:lamps:design:four"}
+
+Design 5
+
+:   We use cellulose diacetate-filtered lamps for treatments and no
+    lamps or frames for the controls. In this case the effect of is
+    confounded with all other effects of using
+    lamps.[]{#item:example:lamps:design:five
+    label="item:example:lamps:design:five"}
+
+Caveat
+
+:   When discussing very small effects of treatments and the different
+    controls there is always the risk of misinterpretation as the films
+    used as filters are far from perfect, there is a transition zone
+    between high [absorptance]{acronym-label="absorptance"
+    acronym-form="singular+short"} and high
+    [transmittance]{acronym-label="transmittance"
+    acronym-form="singular+short"} spanning tenths of nanometres in
+    wavelength (see Figure
+    [\[fig:filter:T:spectra\]](#fig:filter:T:spectra){reference-type="ref"
+    reference="fig:filter:T:spectra"}). Consequently, controls will not
+    be exposed to exactly the same irradiance of as treated plants.
+    Usually they will be exposed to a slightly lower irradiance of plus
+    a trace of .
+
+Comparison
+
+:   Design 1 is the simplest design that can be used to test for the
+    effects of . Design 2, is preferable as it allows an assessment of
+    the possible secondary effects of lamps, except for shading.
+    Design 3, is rarely used, but allows an assessment all side-effects
+    of lamps in addition to the effect of . Is useful in an ecological
+    context where we are interested in assessing how much the
+    experimental setup disrupts natural conditions. Design 4 should be
+    avoided as it is unsuitable for testing the effects of radiation as
+    all the different effects of the lamps are confounded with the
+    effect of enhancement, except for shade. Design 5 is the worst
+    possible, and should never be used.
+:::
+
+When using filters, one should take into account the side-effects of
+using them. In addition to absorbing different amounts and wavelengths
+of radiation, filters may have effects on visible and infra-red
+irradiance. No filter transmits 100% of visible light. In addition
+filters block precipitation and wind, and may increase the temperature
+of the air, vegetation and soil below them. So, one should always use,
+as the control for assessing effects of attenuation, a transparent
+filter rather than no filter. See Box
+[\[ex:filters:controls\]](#ex:filters:controls){reference-type="ref"
+reference="ex:filters:controls"} for some examples of good and bad
+experimental setups.
+
+::: example*
+[]{#ex:filters:controls label="ex:filters:controls"}
+
+Case
+
+:   We use polyester ('Mylar') film outdoors to attenuate radiation (see
+    Figure
+    [\[fig:filter:sunlight:spectra\]](#fig:filter:sunlight:spectra){reference-type="ref"
+    reference="fig:filter:sunlight:spectra"} on page ). Our objective is
+    to study the effect of solar radiation.
+
+Design 1
+
+:   We attenuate radiation (but not radiation) in the $-$treatment by
+    filtering sunlight with a polyester film. We use as a control a film
+    that transmits and . This ensures that most of the effect of the
+    films on precipitation, wind and temperature is similar for treated
+    and control plants. Also shading of sunlight by supporting
+    structures is similar. This type of control is usually called 'near
+    ambient control'.[]{#item:example:filters:design:one
+    label="item:example:filters:design:one"}
+
+Design 2
+
+:   As above, but in addition we add a second treatment with a filter
+    absorbing both - and radiation. We can compare this treatment to the
+    attenuation treatment to assess whether there is an effect of
+    radiation. []{#item:example:filters:design:two
+    label="item:example:filters:design:two"}
+
+Design 3
+
+:   We add a second control without filters or frames ('ambient
+    control'). By comparing this control with the near-ambient control
+    we can test for the effect of filters and supporting
+    structures.[]{#item:example:filters:design:three
+    label="item:example:filters:design:three"}
+
+Design 4
+
+:   We attenuate radiation in our $-$treatment by filtering sunlight
+    with a polyester film. We have as controls plots with no filters or
+    supporting structures. In this case the effect of is confounded with
+    other effects of the filters.[]{#item:example:filters:design:four
+    label="item:example:filters:design:four"}
+
+Caveat
+
+:   When discussing very small effects of treatments and the different
+    controls there is always the risk of misinterpretation as the films
+    used as filters are far from perfect, there is a transition zone
+    between high [absorptance]{acronym-label="absorptance"
+    acronym-form="singular+short"} and high
+    [transmittance]{acronym-label="transmittance"
+    acronym-form="singular+short"} spanning tenths of nanometres in
+    wavelength (see Figure
+    [\[fig:filter:T:spectra\]](#fig:filter:T:spectra){reference-type="ref"
+    reference="fig:filter:T:spectra"} on page ). Consequently, near
+    ambient controls will not be exposed to exactly the same irradiance
+    of as plants under the -attenuation treated plants. Usually they
+    will be exposed to a slightly lower irradiance of plus a trace of
+    long wavelength .
+
+Comparison
+
+:   Design 1 is the simplest design that can be used to test for the
+    effects of . Design 2, is preferable as it allows us to also assess
+    the effects of solar radiation. Design 3, is not always used, but
+    allows to assess all side-effects of filters in addition to the
+    effect of radiation. This design is useful in an ecological context
+    where we are interested in assessing how much our experimental setup
+    disrupts natural conditions. Design 4 should be avoided as it is
+    unsuitable for testing the effects of radiation as all the different
+    effects of the filters are confounded with the effect of
+    attenuation.
+:::
+
+In the case of controlled environments, various combinations of lamps
+and filters are used to create different radiation treatments. As
+discussed above, if in order to test for effects of radiation, exposure
+should be the only difference between treatment and control conditions.
+For example, one can have a sun simulator, or at least a combination of
+lamps providing both - and visible radiation and then have different
+filters between the lamps and plants. The same principles as discussed
+in Examples
+[\[ex:lamps:controls\]](#ex:lamps:controls){reference-type="ref"
+reference="ex:lamps:controls"} and
+[\[ex:filters:controls\]](#ex:filters:controls){reference-type="ref"
+reference="ex:filters:controls"} apply to experiments in controlled
+experiments.
+
+## 
+
+### Recommendations for outdoor experiments {#sec:recommend:outdoor:manip}
+
+In this section we list recommendations related to the manipulation of
+radiation in outdoor experiments, and in section
+[8.6.2](#sec:recommend:indoor:manip){reference-type="ref"
+reference="sec:recommend:indoor:manip"} list some additional
+recommendations on radiation manipulations inside greenhouses and
+controlled environments. See section
+[9.15](#sec:recommend:quantifying){reference-type="ref"
+reference="sec:recommend:quantifying"} for recommendations on how to
+quantify radiation, section
+[10.9](#sec:recommend:grow){reference-type="ref"
+reference="sec:recommend:grow"} for recommendations about growing
+conditions, and section
+[11.12](#sec:recommend:stat){reference-type="ref"
+reference="sec:recommend:stat"} for recommendations about statistical
+design of experiments.
+
+1.  Make sure that the only difference between the treatments you
+    compare is what you want to test. If possible make measurements of
+    the environmental conditions in the different treatments and report
+    them in your publications.
+
+    1.  In experiments with lamps avoid differences in irradiance among
+        treatments. Such confounding differences can be caused by shade
+        from lamps and the frames supporting them if they are kept at
+        different heights. All treatments must have lamps that are
+        switched on or off, covered with different filters or dimmed to
+        different radiance values.
+
+    2.  In experiments with filters avoid difference in irradiance and
+        scattering. Filters used to block radiation and the frames
+        supporting them have some attenuating and scattering effect on .
+        All treatments must have similar supporting structures, be
+        positioned at the same height, and the filters themselves must
+        have as similar as possible transmittance in regions of the
+        spectrum outside the region. All filters must have as similar as
+        possible light scattering properties, as even if irradiance is
+        the same, differences in the proportion of diffuse light affects
+        the growth of plants.
+
+    3.  In experiments with lamps avoid differences in temperature among
+        treatments. Keep the distance between lamps and the top of the
+        plants at least 0.4--0.5 m. If enclosures like open-top chambers
+        are used, provide enough ventilation or cooling to remove the
+        heat generated by the lamps.
+
+    4.  In experiments with filters avoid differences in temperature
+        among treatments. The main factor to consider in this case is
+        ventilation and distance from the film to the top of the plants.
+        An additional factor is the transmittance of the different films
+        to longwave infra-red radiation. The filters can affect the
+        temperatures both during the day and at night. If possible,
+        measure the temperature of the plants and soil, in addition to
+        the temperature of the air.
+
+    5.  In experiments with filters avoid artifacts caused by
+        plasticisers used in some plastic films used as filters. Ensure
+        good ventilation and if possible avoid using cellulose diacetate
+        films for near-ambient controls. When not using lamps there is
+        no need to remove radiation and consequently the more stable and
+        less toxic PTFE (Teflon) or polythene films should be used
+        instead.
+
+2.  In experiments with lamps do not use unfiltered lamps. Most lamps
+    also emit some that must be filtered with a cellulose diacetate
+    filter in treated plots. Most lamps also emit , so an additional
+    control should be included in all experiments. This control is
+    achieved by filtering out both and radiation by means of polyester
+    film. The smallest well designed experiment should include three
+    treatments:
+
+3.  If the difference between near-ambient controls and true ambient
+    conditions is of interest, then an additional true ambient control
+    should be included to test how big is the effect of the small
+    differences in air, soil and leaf temperatures, irradiance, air
+    humidity and any other side-effect of the manipulations. In any
+    case, when designing an experiment we should strive to minimize
+    shading, alterations in temperature and ventilation.
+
+4.  In experiments with lamps, if at all possible, use modulated systems
+    that avoid unrealistic ratios between - and irradiances. If the use
+    of a modulated system is impossible, keep the lamps on only a few
+    hours centred on solar noon and switch them off during cloudy
+    weather.
+
+5.  In experiments with lamps use high frequency electronic ballasts
+    rather than electromagnetic ballasts to drive the lamps, so as to
+    avoid flicker in the radiation output, which can affect insect
+    behaviour.
+
+6.  In all experiments using filters check periodically whether the
+    spectral characteristics of the filters have changed and replace
+    them when needed. Cellulose diacetate degrades particularly fast
+    and, for example when used at about 0.3 m from lamps it should be
+    replace after about 50 h of lamp irradiation. If wrapped on lamps,
+    it should be replaced even more frequently. These times are
+    approximate and can also be extended when using modulated systems.
+
+7.  In experiments using filters to attenuate in sunlight, even if the
+    filters are not yet degraded or if they are made of stable materials
+    like glass or PFTE (Teflon) the transmission characteristics will
+    change by the accumulation of dust, dirt and pollen. If this
+    happens, the filters should be cleaned or replaced.
+
+### Recommendations for experiments in greenhouses and controlled environments {#sec:recommend:indoor:manip}
+
+Many of the recommendations in section
+[8.6.1](#sec:recommend:outdoor:manip){reference-type="ref"
+reference="sec:recommend:outdoor:manip"} can be adapted to apply to
+indoor experiments. Here we list additional recommendations applicable
+to experiments in greenhouses and controlled experiments.
+
+1.  Keep the balance between irradiance, irradiance and as similar as
+    possible to that in sunlight and/or vegetation canopies. Many growth
+    chambers and growth rooms achieve relatively low irradiances of .
+    Avoid using high doses of in such cabinets. Some chambers and rooms
+    have sheets of polycarbonate (PC) separating the lamps from the
+    plants, in such chambers levels are negligible. In chambers using
+    bare lamps, irradiance is unrealistically low, but usually not equal
+    to zero. A visible- and radiation spectral composition truly
+    matching sunlight can be achieved only with sun simulators.
+
+2.  Unless you are specifically studying the effect of step changes in
+    irradiance, for annual plants we recommend that the treatment starts
+    at the time of seed germination or earlier, and for perennial plants
+    before budburst.
+
+3.  In greenhouses, depending on the cladding material used, the and
+    irradiances will differ from those outdoors. Irradiances of and are
+    always somewhat lower than outdoors as the cladding materials and
+    the structure of the greenhouse absorb part of the radiation.
+
+4.  Be aware that even though the temperature may be adequate for
+    growing plants in a greenhouse during the winter, light and
+    especially irradiances are much lower than in the summer, even when
+    high pressure sodium or metal halide lamps are used to increase
+    levels. For this reason, in experiments with lamps the balance
+    between and can become very different to that under natural
+    conditions.
+
+5.  Of course, if you are not interested in what happens under natural
+    conditions but are researching the management of crops under cover,
+    then you only have to make sure that your treatments match what can
+    be achieved in commercial production systems.
+
+## Further reading {#sec:protection:links}
+
+The following links are to directives and recommendations concerning
+protection from exposure.
+
+<http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2006:114:0038:0059:EN:PDF>
+(EU directive 2006/25/EC about protecting workers from optical
+radiation)\
+<http://www.hse.gov.uk/radiation/nonionising/optical.htm> (guide on how
+to apply this directive (not approved yet by EU)\
+<http://www.who.int/uv/sun_protection/en/> (general recommendations by
+WHO)
+
+## Appendix: Calculating the radiation field under an array of lamps {#sec:calc:light:field}
+
+This section includes code for calculating the radiation field under
+different arrays of lamps (Figures
+[\[fig:position:tubes\]](#fig:position:tubes){reference-type="ref"
+reference="fig:position:tubes"} and
+[\[fig:position:tubes:square\]](#fig:position:tubes:square){reference-type="ref"
+reference="fig:position:tubes:square"}). The algorithm is that in the
+BASIC program in @Bjorn1993a with a few changes related to the density
+of grid points used, and the area of the grid for which the light field
+is calculated. The grid area is expanded as it is also important to
+assess the distance at which neighbouring arrays can be located. Please,
+see @Bjorn1993a for the details of the algorithm. The algorithm assumes
+that there are no reflecting surfaces near the array, so it is better
+suited for simulating the light field under arrays of lamps located
+outdoors, than for those located in controlled environments.
+
+The functions are in the R package 'lamps' which is available from the
+handbook web site. The following example also uses package ggplot2,
+available from CRAN (comprehensive R archive network, at
+<http://cran.r-project.org/> and many mirror sites). The first example
+(Box [\[box:light:field:R\]](#box:light:field:R){reference-type="ref"
+reference="box:light:field:R"}) is for calculating and plotting the
+radiation field under and array of fluorescent tubes, using mostly the
+defaults. See the package documentation for the many function arguments
+available. The second example shows how to draw the positions of the
+fluorescent tubes (Box
+[\[box:tube:positions:R\]](#box:tube:positions:R){reference-type="ref"
+reference="box:tube:positions:R"}).
+
+::: example*
+[]{#box:light:field:R label="box:light:field:R"}
+![image](listings/light_field_example.pdf){width="\\linewidth"}
+:::
+
+::: example*
+[]{#box:tube:positions:R label="box:tube:positions:R"}
+![image](listings/tube_positions_example.pdf){width="\\linewidth"}
+:::
+
+## Appendix: Suppliers of light sources and filters {#sec:manip:suppliers}
+
+In this section we provide names and web addresses to some suppliers of
+light sources and filters. This is certainly an incomplete list and
+exclusion reflects only our ignorance.
+
+**UV lamps:**\
+<http://www.lighting.philips.com/> (and many other types of lamps)\
+<http://www.q-lab.com/> ('*Q-Panel*' and lamps)\
+**Ballasts for fluorescent lamps**\
+<http://www.osram.com/> ('*Quicktronic*' electronic dimming ballasts)\
+<http://www.tridonic.com/> (electronic dimming ballasts)\
+**LEDs:**\
+<http://www.osram.com/>\
+<http://www.lighting.philips.com/>\
+<http://www.roithner-laser.com/>\
+<http://www.valoya.com/>\
+**Xenon arc lamps:**\
+<http://www.newport.com/oriel/>\
+<http://www.muller-elektronik-optik.de/>\
+**Lasers:**\
+<http://www.opotek.com> (Tunnable UV lasers)\
+<http://www.roithner-laser.com/>\
+**Filters:**\
+<http://www.formatt.co.uk/> (theatrical 'gels')\
+<http://www.leefilters.com/> (theatrical 'gels')\
+<http://www.macdermidautotype.com/> ('*Autostat*' polyester film)\
+<http://www.nordbergstekniska.se> (cellulose diacetate, Mylar and other
+films)\
+<http://www.rosco.com/> (theatrical 'gels')\
+<http://www.schott.com/> (glass filters, and special glasses)\
+<http://www.thermoplast.fi/> ('*Autostat*', '*Aclar*', and many other
+types of films.\

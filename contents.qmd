@@ -6,9 +6,14 @@ listing:
     - "index.qmd"  
     - "preface.qmd"
     - "contents.qmd"
+    - "abbreviations.qmd"
     - "introduction.qmd"
     - "radiation-and-optics.qmd"
     - "light-environment.qmd"
+    - "quantifying-radiation.qmd"
+    - "manipulating-radiation.qmd"
+    - "plant-cultivation.qmd"
+    - "design-of-experiments.qmd"
     - "references.qmd"
   type: table
   fields: [title]

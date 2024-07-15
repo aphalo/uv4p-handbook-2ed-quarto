@@ -1,6 +1,6 @@
 ---
 title: "The UV, VIS and NIR environment of plants"
-subtitle: "Quantity, quality and timing"
+subtitle: "Quantity, quality and timing in nature"
 author: "Pedro J. Aphalo with Andreas Albert, Lars Olof Björn, Lasse Yliantilla"
 date: 2024-06-17
 date-modified: 2024-06-17

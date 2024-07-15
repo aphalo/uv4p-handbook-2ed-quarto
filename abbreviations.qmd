@@ -1,0 +1,127 @@
+---
+title: "Abbreviations"
+---
+
+# List of abbreviations and symbols
+
+For quantities and units used in photobiology we follow, as much as
+possible, the recommendations of the Commission Internationale de
+l'Éclairage as described by @Sliney2007.
+
+::: tabbing
+Definition\
+[absorptance]{acronym-label="absorptance" acronym-form="singular+short"}
+(%).\
+water vapour pressure difference (Pa).\
+emittance ().\
+$\lambda$ wavelength (nm).\
+solar zenith angle (degrees).\
+$\nu$ frequency (Hz or s$^{-1}$).\
+[reflectance]{acronym-label="reflectance" acronym-form="singular+short"}
+(%).\
+$\sigma$ Stefan-Boltzmann constant.\
+[transmittance]{acronym-label="transmittance"
+acronym-form="singular+short"} (%).\
+$\chi$ water vapour content in the air ().\
+[absorbance]{acronym-label="absorbance" acronym-form="singular+short"}
+(absorbance units).\
+ANCOVA analysis of covariance.\
+ANOVA analysis of variance.\
+BSWF [BSWF]{acronym-label="BSWF" acronym-form="singular+short"}.\
+$c$ speed of light in a vacuum.\
+CCD charge coupled device, a type of light detector.\
+CDOM coloured dissolved organic matter.\
+CFC chlorofluorocarbons.\
+c.i. confidence interval.\
+CIE Commission Internationale de l'Éclairage (International Commission
+on Illumination);\
+or when refering to an action spectrum, the erythemal action spectrum
+standardized by CIE.\
+CTC closed-top chamber.\
+DAD diode array detector, a type of light detector based on
+photodiodes.\
+DBP dibutylphthalate.\
+DC direct current.\
+DIBP diisobutylphthalate.\
+DNA(N) action spectrum for 'naked' DNA.\
+DNA(P) action spectrum for DNA in plants.\
+DOM dissolved organic matter.\
+DU Dobson units.\
+$e$ water vapour partial pressure (Pa).\
+(energy) irradiance ().\
+spectral (energy) irradiance ().\
+fluence rate, also called scalar irradiance ().\
+ESR early stage researcher.\
+FACE free air carbon-dioxide enhancement.\
+FEL a certain type of 1000 W incandescent lamp.\
+FLAV action spectrum for accumulation of flavonoids.\
+FWHM full-width half-maximum.\
+GAW Global Atmosphere Watch.\
+GEN generalized plant action spectrum, also abreviated as GPAS
+[@Caldwell1971].\
+GEN(G) mathematical formulation of GEN by @Green1974 .\
+GEN(T) mathematical formulation of GEN by @Thimijan1978.\
+$h$ Planck's constant.\
+$h^\prime$ Planck's constant per mole of photons.\
+exposure, frequently called dose by biologists ().\
+biologically effective (energy) exposure ().\
+biologically effective photon exposure ().\
+HPS high pressure sodium, a type of discharge lamp.\
+HSD honestly signifcant difference.\
+$k_\mathrm{B}$ Boltzmann constant.\
+radiance ().\
+LAI leaf area index, the ratio of projected leaf area to the ground
+area.\
+LED light emitting diode.\
+LME linear mixed effects (type of statistical model).\
+LSD least significant difference.\
+$n$ number of replicates (number of experimental units per treatment).\
+$N$ total number of experimental units in an experiment.\
+$N_\mathrm{A}$ Avogadro constant (also called Avogadro's number).\
+NIST National Institute of Standards and Technology (U.S.A.).\
+NLME non-linear mixed effects (statistical model).\
+OTC open-top chamber.\
+[PAR]{acronym-label="PAR" acronym-form="singular+short"}, 400--700 nm.\
+measured as energy or photon irradiance.\
+PC polycarbonate, a plastic.\
+PG action spectrum for plant growth.\
+PHIN action spectrum for photoinhibition of isolated chloroplasts.\
+PID [PID]{acronym-label="PID" acronym-form="singular+short"} (control
+algorithm).\
+PMMA polymethylmethacrylate.\
+[PPFD]{acronym-label="PPFD" acronym-form="singular+short"}, another name
+for\
+photon irradiance ().\
+PTFE polytetrafluoroethylene.\
+PVC polyvinylchloride.\
+$q$ energy in one photon ('energy of light').\
+$q^\prime$ energy in one mole of photons.\
+photon irradiance ().\
+spectral photon irradiance ().\
+r$_0$ distance from sun to earth.\
+[RAF]{acronym-label="RAF" acronym-form="singular+short"}
+(nondimensional).\
+RH relative humidity (%).\
+energy effectiveness (relative units).\
+spectral energy effectiveness (relative units).\
+quantum effectiveness (relative units).\
+spectral quantum effectiveness (relative units).\
+s.d. standard deviation.\
+SDK software development kit.\
+s.e. standard error of the mean.\
+SR spectroradiometer.\
+$t$ time.\
+$T$ temperature.\
+TUV tropospheric .\
+electric potential difference or voltage (e.g. sensor output in V).\
+ultraviolet radiation ($\lambda =$ 100--400 nm).\
+ultraviolet-A radiation ($\lambda =$ 315--400 nm).\
+ultraviolet-B radiation ($\lambda =$ 280--315 nm).\
+ultraviolet-C radiation ($\lambda =$ 100--280 nm).\
+biologically effective radiation.\
+UTC coordinated universal time, replaces GMT in technical use.\
+VIS radiation visible to the human eye ($\approx$ 400--700 nm).\
+WMO World Meteorological Organization.\
+VPD water vapour pressure deficit (Pa).\
+WOUDC World Ozone and Ultraviolet Radiation Data Centre.\
+:::

@@ -1,0 +1,166 @@
+---
+title: "Preface of 1st edition"
+date: 2024-07-15
+date-modified: today
+draft: true
+---
+
+In this handbook we discuss methods relevant to research on the
+responses of plants to ultraviolet () radiation. We also summarize the
+knowledge needed to make informed decisions about manipulation and
+quantification of radiation, and the design of experiments. We give
+guidelines and practical recommendations for obtaining reliable and
+relevant data and interpretations. We cover research both on terrestrial
+and aquatic plants (seaweeds, marine angiosperms and freshwater higher
+plants are included, but microalgae are excluded from the scope of this
+work). We consider experimentation on ecological, eco-physiological and
+physiological questions.
+
+The handbook will be most useful to early stage researchers (ESRs).
+However, more experienced researchers will also find information of
+interest. The guidelines themselves, we hope, will ensure a high and
+uniform standard of quality for research within our COST action, and the
+whole research community. We have written this text so that it is useful
+both for reading from cover to cover and for reference. It will also be
+useful as a textbook for training workshops aimed at ESRs.
+
+Physiological and eco-physiological experiments can attempt to respond
+to different objective questions: (1) will a future increase in
+radiation affect growth and morphology of plants? (2) what is the effect
+of current radiation levels on plant growth and morphology? (3) what are
+the mechanisms by which plants respond to radiation? Ecological
+experiments can have other objectives, e.g. (1) does radiation in
+sunlight affect plant fitness? (2) does a differential effect of
+radiation between plant species affect the outcome of competition? (3)
+does the exposure to radiation alter plant-pathogen and plant-herbivore
+interactions? Finally applied research related to agricultural and
+horticultural production and produce is based on questions like: (1) can
+manipulations of radiation be used to manage produce quality? (2) can
+manipulation of radiation replace the use of pesticides and growth
+regulators? The approach suitable for a given experiment will depend on
+its objectives.
+
+When doing experiments with terrestrial plants, the medium surrounding
+the stems and leaves is air. At short path lengths air has little
+influence on irradiance and only when considering the whole depth of the
+atmosphere, its transmittance needs to be taken into account. In
+contrast, water and impurities like dissolved organic matter (DOM)
+absorb radiation over relatively short path lengths, which means that in
+water bodies irradiance decreases with depth. Basic concepts of
+photobiology, radiation physics and in the natural environment of plants
+are discussed in chapter [7](#chap:introduction){reference-type="ref"
+reference="chap:introduction"}.
+
+Varied approaches are used in the study of the effects of radition on
+plants. The main dichotomy is whether (1) radiation is added by means of
+special lamps to either sunlight or to visible light from other lamps,
+or (2) radiation in sunlight is excluded or attenuated by means of
+filters. Both approaches are extensively discussed in chapter
+[8](#chap:manipulating){reference-type="ref"
+reference="chap:manipulating"}.
+
+For any experimental approach used in research we need to quantify
+radiation and express it as meaningful physical quantities that allow
+comparison among experiments and to natural conditions. When comparing
+irradiance from sources differing in spectral composition, the
+comparison requires the calculation of biologically effective doses.
+Quantification of radiation is discussed in chapter
+[9](#chap:quantifying){reference-type="ref"
+reference="chap:quantifying"}. The appendices present in detail the
+calculations needed when measuring action spectra, and for calculating
+biologically effective doses both with Excel and R. An R package which
+facilitates such calculations accompanies this handbook, and will be
+made available through CRAN (the Comprehensive R Archive Network) and
+the handbook's web pages at <http://uv4growth.dyndns.org>.
+
+Both for terrestrial and aquatic plants the enclosing materials should
+be carefully chosen based on their transmittance and reflectance
+properties. This is crucial in research, but also in any other research
+with plants using an enclosing structure such as open-top chambers
+(OTC), greenhouses or aquaria. These and many other considerations about
+the cultivation of plants are discussed in chapter
+[10](#chap:growing:conditions){reference-type="ref"
+reference="chap:growing:conditions"}.
+
+Only experiments well designed from the statistical point of view, allow
+valid conclusions to be reached. In addition a valid statistical
+analysis of the data, consistent with the design of the experiment and
+based on as few assumptions as possible, is required. Well designed
+experiments are also efficient in the use of resources (both time and
+money). The design of experiments and the analysis of the data obtained
+are discussed in chapter [11](#chap:statistics){reference-type="ref"
+reference="chap:statistics"}.
+
+Finally a few words about terminology. As the same quantities and units
+are used for measuring visible, and ultraviolet radiation, throughout
+the book we use the word "radiation" to refer to both visible and
+ultraviolet radiation. We prefer "radiation" to "light", since light is
+sometimes, but not always, used for just the portion of the
+electromagnetic spectrum visible to humans.
+
+In the PDF file all links and crossreferences are 'live': just click on
+them to navigate through the file. They are marked by coloured boxes in
+the viewer but these boxes are not printed. In the list of references
+DOIs and URLs are also hyperlinked.
+
+If you find mistakes, or difficult to understand passages, or have
+suggestions on how to improve this handbook, please, send feedback
+directly to the lead editor at
+[mailto:pedro.aphalo@helsinki.fi?subject=UV Handbook Edition01](mailto:pedro.aphalo@helsinki.fi?subject=UV Handbook Edition01){.uri}.
+
+The PDF file can be freely distributed and the latest version will be
+available from the handbook web page at <http://uv4growth.dyndns.org/>.
+Printed copies can be obtained from <http://www.amazon.co.uk>,
+<http://www.amazon.de> or <http://www.amazon.com>.
+
+::: flushright
+Helsinki,*Pedro J. Aphalo*\
+München,*Andreas Albert*\
+Lund,*Lars Olof Björn*\
+Edinburgh,*Andy McLeod*\
+Helsinki,*T. Matthew Robson*\
+Copenhagen,*Eva Rosenqvist*\
+October 2012
+:::
+
+## Acknowledgements
+
+The writing and publication of this book was made possible by COST
+Action FA0906 'UV4growth'. This book is a collaborative effort of all
+members of the technical group on technology of this action, plus four
+authors not participating in the Action. The first conference and
+workshop organized by the Action in Szeged, Hungary, put the authors in
+contact as well as allowing them to realise that a book on research
+methods was needed. Some of the authors met again in Denmark, and spent
+two and a half days of intense writing and discussions thanks to the
+hospitality of Eva Rosenqvist and Carl-Otto Ottosen. We thank Profs. Åke
+Strid and Donat Häder for reading the whole manuscript and giving
+numerous suggestions for improvement.
+
+A preprint of this handbook was used in a training school organised by
+the COST action at the University of Málaga (16--18 April, 2012).
+Corrections of errors, suggestions for improvement and complains about
+difficult to understand passages from participants are acknowledged.
+
+We thank **Avantes** (The Netherlands), **BioSense** (Germany),
+**Biospherical Instruments Inc.** (U.S.A.), **Delta-T Devices Ltd.**
+(U.K.), **EIC (Equipos Intrumentación y Control)** (Spain), **Gooch &
+Housego** (U.S.A.), **Kipp & Zonen B.V.** (The Netherlands),
+**Ocean-Optics** (The Netherlands), **Valoya Oy** (Finland) **Skye
+Instruments Ltd.** (U.K.), **TriOS Mess- und Datentechnik GmbH**
+(Germany) and **Yankee Environmental Systems, Inc.** (U.S.A.) for
+providing illustrations. We thank Prof. Donat Häder for supplying the
+original data used to draw two figures and photographs of the ELDONET
+instrument. We thank Dr. Ulf Riebesell and Jens Christian Nejstgaard for
+photographs.
+
+This work was funded by COST. Pedro J. Aphalo acknowledges the support
+of the Academy of Finland (decisions 116775 and 252548). Félix López
+Figueroa acknowledges the support by the Ministry of Innovation and
+Science of Spain (Project CGL08-05407-C03-01). Andy McLeod acknowledges
+the support of a Royal Society Leverhulme Trust Senior Research
+Fellowship and research awards from the Natural Environment Research
+Council (U.K.). Iván Gómez and Pirjo Huovinen acknowledge the financial
+support by CONICYT (Chile) through grants Fondecyt 1090494, 1060503 and
+1080171.
+

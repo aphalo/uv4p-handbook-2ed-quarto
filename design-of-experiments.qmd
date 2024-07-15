@@ -1,0 +1,860 @@
+---
+title: "Design of Experiments and Statistics"
+subtitle: "Sensitivity, efficiency and reproducibility"
+date: 2024-07-15
+date-modified: today
+draft: true
+---
+
+## Tests of hypotheses and model fitting
+
+The guidelines given here for good experimental design have been
+formulated with particular consideration given to UV manipulation
+experiments. Nevertheless most of the principles behind these guidelines
+can be generally applied to the design of experiments.
+
+Experiments can be designed to test hypotheses or to estimate the values
+of parameters in a model. In the first case, we should be careful not to
+let our knowledge of the data influence the tested hypothesis[^35]. In
+the second case, model choice may to some extent depend on the data, but
+we should be aware that this *a posteriori* choice of a functional
+relationship, could make the $P$-values less strict for testing
+treatment effects.
+
+Fitting models is especially useful when the parameters of the model
+have a biological interpretation. In this case, it is important to
+obtain estimates of the reliability of your estimates of the values
+obtained for the parameters. In other words, we need to present not only
+the fitted values, but also their confidence intervals, or at least
+standard deviations.
+
+All estimates of $P$-values are based on a comparison of the variation
+between differently treated experimental units, and the variation among
+equally treated experimental units[^36]. If we assign treatments
+objectively by randomization, we can expect that in the absence of a
+treatment effect, on average, there will not be more variation among
+differently treated units than between equally treated units. The
+quality of the estimates obtained for the magnitude of these sources of
+variation will depend on the number of replicates measured, on proper
+randomization, and on an adequate design being used to control known
+error sources. The remaining unaccounted variation among equally treated
+units is called *experimental error*.
+
+When using tests of significance one should be aware that the $P$-value
+will depend on both the size of the treatment effect and on the standard
+deviation of the estimate (e.g. standard error of the mean) which
+strongly depends on the number of replicates. In an experiment with
+hundreds of replicates one is very likely to detect treatment effects
+that are statistically-significant, even if these effects are too small
+to be of any biological significance. On the contrary, in an experiment
+with few replicates, one risks biologically-significant effects
+remaining undetected. One should never forget that a large $P$-value
+indicates only that we have been unable to demonstrate an effect of a
+treatment, rather than demonstrating that such an effect did not exist.
+Strictly speaking it is impossible to demonstrate that there is no
+effect. However, what we can do is to estimate the size of the smallest
+effect that our experiment could have detected. This can be done by
+means of 'statistical-power analysis' [see @Cohen1977; @Quinn2002
+Chapter 7].
+
+John W. @Tukey1991 has written:
+
+> Statisticians classically asked the wrong question---and were willing
+> to answer with a lie, one that was often a downright lie. They asked
+> "Are the effects of A and B different?" and they were willing to
+> answer "no."
+>
+> All we know about the world teaches us that the effects of A and B are
+> always different---in some decimal place---for any A and B. Thus
+> asking "Are the effects different?" is foolish.
+>
+> What we should be answering first is "Can we tell the direction in
+> which the effects of A differ from the effects of B?" In other words,
+> can we be confident about the direction from A to B? Is it "up,"
+> "down" or "uncertain"?
+>
+> The third answer to this first question is that we are "uncertain
+> about the direction"---it is not, and never should be, that we "accept
+> the null hypothesis."
+
+## Planning of experiments
+
+It is very important to properly design and plan an experiment in
+advance of its execution. From a well planned experiment one gets more
+interpretable and reliable results, usually with less effort and
+expense, and even sometimes faster. Often, badly planned experiments can
+yield unreliable data or results that do not answer the intended
+objective of a study. There are too many examples in the scientific
+literature of badly designed experiments or invalid statistical analyzes
+leading to erroneous conclusions, and manuscripts submitted for
+publication are frequently rejected by journals on the basis of a poorly
+thought through design.
+
+## Definitions
+
+Quoting @Cox2000:
+
+Experimental units:
+
+:   are the patients, plots, animals, plants, raw material, etc. of the
+    investigation. Formally they correspond to the smallest subdivision
+    of the experimental material such that any two different
+    experimental units might receive different treatments (e.g. filter
+    frames, lamp frames, growth chambers).
+
+Treatments:
+
+:   are clearly defined procedures one of which is to be applied to each
+    experimental unit.
+
+Response:
+
+:   the response measurement specifies the criterion in terms of which
+    the comparison of treatments is to be effected. In many applications
+    there will be several such measures.
+
+See Box
+[\[ex:stats:definifitions\]](#ex:stats:definifitions){reference-type="ref"
+reference="ex:stats:definifitions"} for examples.
+
+::: example*
+[]{#ex:stats:definifitions label="ex:stats:definifitions"}
+
+-   We have 100 plants, we apply pure water to 50 plants, and a
+    fertilizer dissolved in water to the remaining 50 plants. After two
+    weeks we measure the dry weight of all plants.
+
+-   The plants are in individual pots, so each plant might receive
+    fertilizer or not: the plants are the experimental units.
+
+-   The manipulation procedures applied to the plants are: 1) apply
+    water, or 2) apply water + fertilizer. These are the two treatments,
+    which could be called 1) control, 2) fertilization.
+
+-   The response is the criterion we will use to compare the treatments:
+    the dry weight of the plants two weeks after the treatments are
+    applied.
+:::
+
+## Experimental design
+
+As discussed by @Cox2000, the most basic requirement for a good
+experiment is that the questions it addresses should be interesting and
+fruitful. Usually this means examining one or more well-formulated
+research hypothesis. In most cases the more specific the research
+question asked, the greater the chance of obtaining a meaningful result.
+Quoting J. W. Tukey "An approximate answer to the right problem is worth
+a good deal more than an exact answer to an approximate problem."
+
+Once the research hypothesis to test has been chosen:
+
+::: inparaenum
+the experimental units must be defined and chosen,
+
+the treatments must be clearly defined,
+
+the variables to be measured in each unit must be specified, and
+
+the size of the experiment, in particular the number of experimental
+units, has to be decided.
+:::
+
+When we perform an experiment, we choose our experimental units and
+manipulate their environment by controlling the levels of a component
+factor within that environment (*treatments*). We then record the
+*response* of our experimental unit. *Factors* are groups of different
+manipulations of a single variable. Each of the distinct manipulations
+within a factor is called a level: e.g. in an experiment giving plants
+daily exposures to 0, 5, and 10 of , the factor is and it has three
+levels (0, 5, and 10 ). A factor can also be qualitative, e.g. a factor
+where the levels are different chemicals.
+
+Questions detailing the steps:
+
+1.  What is the purpose of the experiment? To which objective questions
+    do we want to find answers?
+
+2.  What treatment is to be applied? At what levels? Do we include an
+    untreated control? Is there any structure within the treatments?
+
+3.  What is the response to be observed and recorded? What is the nature
+    of the observations?
+
+4.  Are there other variables which could affect the response?
+
+5.  How big a difference in response is practically important? How big a
+    difference in response should be detectable?
+
+6.  How many experimental units are appropriate and practical to use?
+
+7.  How do we organize the experiment? What, where, when, how, who\...?
+
+8.  How will the data obtained be analyzed?
+
+In addition to performing these steps, keep notes in a logbook of the
+experimental plan, and everything done during the experiment. This will
+allow you to go back and check if the design was sound and how
+faithfully it was followed. By noting any changes that were made we may
+remember something important to assist in the interpretation of the
+results, or an improvement to make to future experimental designs. If
+necessary, such notes will also allow for any future repetition of the
+whole experiment. See examples in Box
+[\[ex:stats:UVexp:design\]](#ex:stats:UVexp:design){reference-type="ref"
+reference="ex:stats:UVexp:design"}.
+
+::: example*
+[]{#ex:stats:UVexp:design label="ex:stats:UVexp:design"}
+
+1.  Purpose: study the effect of solar radiation on the accumulation of
+    flavonoids in silver birch seedlings.
+
+2.  Response observed: concentration of flavonoids in the upper
+    epidermis of the leaf. Nature of observations: epidermal absorbance
+    measured at 365 nm wavelength with a Dualex FLAV instrument.
+    Sequential measurements once a week.
+
+3.  Treatment: Solar attenuation using filters. Levels 10%, 50%, and 90%
+    attenuation of .
+
+4.  Other variables which could affect the response: age of seedlings,
+    age and size of sampled leaf, soil type, temperature, rainfall,
+    shading, time of application.
+
+5.  Number of experimental units: e.g. 5. Estimated based on item
+    [\[Example:item:sizeof response\]](#Example:item:sizeof response){reference-type="ref"
+    reference="Example:item:sizeof response"} below.
+
+6.  Number of seedlings (subsamples) measured in each experimental unit:
+    e.g. 20.
+
+7.  How do we organize the experiment? What seed provenance, size of
+    pots, sowing date, fertilization date if any, watering frequency,
+    filter frame size and height, soil used, how frequently to sample
+    and when, who does all these things.
+
+8.  Data analysis: compute the mean epidermal absorbance for each
+    experimental unit and date, and test for differences between
+    treatments in an ANOVA for repeated measurements, accounting for any
+    uncontrolled environmental gradients (as blocks or covariates).
+
+9.  Difference in response that is practically important from a
+    biological perspective: e.g. 0.3 absorbance units. Detectable
+    difference: e.g. 0.2 absorbance units.
+    []{#Example:item:sizeof response
+    label="Example:item:sizeof response"}
+:::
+
+## Requirements for a good experiment
+
+Following D. R. @Cox1958 [Chapter 1]:
+
+Precision.
+
+:   Random errors of estimation should be suitably small, and this
+    should be achieved with as few experimental units as possible.
+
+Absence of systematic error.
+
+:   Experimental units receiving different treatments should differ in
+    no systematic way from one another.
+
+Range of validity.
+
+:   The conclusions should have a wide range of validity.
+
+Simplicity.
+
+:   The experiment should be simple in design and analysis.
+
+The calculation of uncertainty.
+
+:   A proper statistical analysis of the results should be possible
+    without making artificial assumptions.
+
+In practice we almost never have too many replicates in experiments, as
+the responses under study tend to be small compared to the random
+variation. For experiments, more frequently the problem at hand is how
+to make the most efficient use of the limited number of true replicates
+that we can afford. Good experimental design helps with this and helps
+us to assess the feasibility of experiments given a limited amount of
+resources. Fulfilling the requirements listed above will ensure that
+conclusions derived from experiments are valid.
+
+## The principles of experimental design
+
+We will consider three 'principles' on which the design of experiments
+should be based: replication, randomization, and grouping into blocks.
+Each of these principles ensures that one aspect of the design of an
+experiment is correct and increases the likelihood that it will yield
+data that can be statistically analyzed without need for unrealistic
+assumptions (Figure
+[\[fig:principles:design:experiments\]](#fig:principles:design:experiments){reference-type="ref"
+reference="fig:principles:design:experiments"}). In the sections below
+we discuss each of these principles in turn and give examples of their
+application.
+
+::: figure*
+1.  Replication $\rightarrow$ control of random variation $\rightarrow$
+    precision.
+
+2.  Randomization $\rightarrow$ elimination of systematic error
+    $\rightarrow$ no bias.
+
+3.  Use of blocks $\rightarrow$ reduction of error variation caused by
+    experimental unit heterogeneity $\rightarrow$ increased power of
+    statistical tests.
+:::
+
+### Replication
+
+When an experiment is done several times, either simultaneously or
+sequentially, each time or repetition is a *replicate*. Replication
+serves several very important roles.
+
+::: inparaenum
+It allows for estimation of the random variation accompanying the
+results. This random variation is called *experimental error*.
+
+Replication increases the precision with which the treatment effect is
+estimated, because each repetition gives additional information about
+the experiment. This can be appreciated from the equation relating the
+variance of the original population to that of the mean:
+$\sigma^2_{\overline{x}} = \frac{\sigma^2}{n}$, where $\overline{x}$ is
+the mean, $n$ the number of replicates, and where $\sigma^2$ is the
+variance (of individual measurements) and $\sigma^2_{\overline{x}}$ is
+the variance of the mean. The standard error of the mean is
+$\sigma_{\overline{x}} = \sqrt{\sigma^2_{\overline{x}}} = \frac{\sigma}{\sqrt{n}}$
+frequently abbreviated to s.e. or S.E.M.
+:::
+
+### Randomization
+
+Which treatment is applied to each experimental unit should be decided
+at random (if appropriate after forming blocks). The idea is to be
+objective. One should avoid any subjective or approximately random
+procedures, which would invalidate any statistical test based on the
+data collected from such an experiment. In addition to assigning
+treatments at random, other possible sources of bias should be avoided
+by randomization:
+
+::: inparaenum
+The order in which measurements are done in the different experimental
+units should be randomized. Never measure all the experimental units
+receiving one level of treatment together and then all those receiving
+another level of treatment together. If the design includes blocks, then
+do the measurements by block, with the order of the different levels of
+treatment assigned at random within blocks. Be particularly careful if
+using more than one machine of the same type to make sure that the
+machines have been cross-calibrated. Likewise, if more than one person
+is working on an experiment, test that both people use the same criteria
+for taking measurements by comparing their readings when measuring a
+subsample of the same experimental units.
+
+If several treatments are applied to each experimental unit in a
+sequential design, the order in which they are applied should be
+randomized.
+
+Everything that can be randomized, should be randomized to avoid bias,
+and to ensure that the assumptions behind statistical tests of
+significance are fulfilled.
+:::
+
+Randomization is of fundamental importance because:
+
+::: inparaenum
+It allows the organization of an experiment to be objective.
+
+It prevents systematic errors from known and unknown sources of
+variation, because when randomized, these sources of variation should
+affect all treatments equally 'on average'. Randomization guarantees
+that the estimators obtained for the treatment effect and of the error
+variance are unbiased. This in turn allows valid conclusions to be
+derived from statistical tests.
+:::
+
+### Blocks and covariates
+
+In designs with blocks we arrange the experimental units into
+homogeneous groups (according to some important characteristics). Each
+of these groups is called a *block*. Treatments are randomized within
+the blocks, normally with all treatments present in each block at least
+once. If blocking is successful it decreases the error variance because
+the systematic variation between the blocks can be separately accounted
+for in the analysis. If blocking is not successful, the estimator of
+error variance is not significantly reduced, but has fewer degrees of
+freedom[^37].
+
+Every effort should be made to use and retain a balanced design
+(i.e. blocks of the same size, and an equal number of replicates for all
+treatments) since this makes analysis and interpretation of results much
+simpler. There are sometimes advantages to the adoption of more complex
+(but still balanced) designs that use the same principles as blocking,
+but allocate treatments to groups based on more than one criterion.
+Examples of these are Latin square and Greco-Latin square designs. See
+Box [\[ex:stats:block\]](#ex:stats:block){reference-type="ref"
+reference="ex:stats:block"}.
+
+::: example*
+[]{#ex:stats:block label="ex:stats:block"}
+
+If the experimental units belong to two, or more, statistical
+populations, then the best option is to use a design that acknowledges
+this. Such populations could be distinct soil series, cultivars or even
+years.
+
+For example if we have three different cultivars of a crop that are
+important in a certain region for which we want the conclusions from our
+experiment to be applicable, we need to include several experimental
+units for each of the cultivars. In this case, structure should be added
+by classifying the units into three blocks one for each cultivar. In
+this way the sensitivity of our test will not be affected by the
+additional variation due to cultivars, but the results will be
+applicable to the three of them, instead of just to one.
+
+If we suspect that the cultivars may respond to UV differently, the
+appropriate design would be a factorial one, which would allow to assess
+this difference through the interaction term.
+:::
+
+Even if it is impossible to group the experimental units into
+homogeneous blocks, it may be possible to measure some relevant property
+of the experimental units before applying the treatments. Afterwards,
+this measured variable can be included as a covariate in an analysis of
+covariance (ANCOVA), or linear mixed effects (LME) or non-linear mixed
+effects (NLME) model. This may improve the performance of the
+statistical tests, by accounting for some of the random variability
+among experimental units. In any case, one should be careful with
+interpretation of ANCOVA results [@Cochran1957; @Smith1957]. Including a
+covariate in a model does not lessen the requirement for proper
+randomization.
+
+The flowchart in Figure
+[\[fig:flowchart:exp:unit\]](#fig:flowchart:exp:unit){reference-type="ref"
+reference="fig:flowchart:exp:unit"} summarizes the designs most suitable
+for different situations based on the characteristics of the
+experimental units.
+
+:::: figure*
+::: center
+![image](figures/experimental_units_flow_chart.pdf)
+:::
+::::
+
+## Experimental units and subsamples
+
+It is very important to understand the difference between experimental
+units and subsamples. This is crucial because correct statistical
+analysis is only possible if we correctly identify the experimental
+units in our experiments. An *experimental unit* is the unit or 'thing'
+to which the treatment is assigned (at random) (e.g. a tray of plants).
+An experimental unit is not necessarily the unit that is measured, which
+can be smaller (e.g. a leaf from a treated plant). A measured object (=
+measurement unit) which is smaller than an experimental unit is called a
+subsample (or subunit).
+
+In a simple design the experimental units are usually easy to identify.
+The same is true for non-hierarchical factorial designs (i.e. when the
+factors are not nested). However, in hierarchical designs, like
+split-plot designs, the experimental units for one factor may be nested
+within the larger experimental units used for another factor. In such a
+case, the error terms in an ANOVA will be different for the different
+factors, and will also have a different number of degrees of freedom.
+Another common situation occurs when treatments are applied to
+experimental units and the same units are measured or sampled repeatedly
+in time. In this case it is not appropriate to apply a factorial design,
+with time as one factor, in an ANOVA since this would assume that all
+observations are independent. Instead one should use a design that takes
+into account the correlation among the repeated measurements. See Box
+[\[ex:stats:units:samples\]](#ex:stats:units:samples){reference-type="ref"
+reference="ex:stats:units:samples"} for examples, and the flowchart in
+Figure
+[\[fig:flowchart:meas:unit\]](#fig:flowchart:meas:unit){reference-type="ref"
+reference="fig:flowchart:meas:unit"} for a summary of how the
+relationship between experimental and measurement units affects the data
+analysis.
+
+::: example*
+[]{#ex:stats:units:samples label="ex:stats:units:samples"}
+
+1.  In an experiment we grow three plants per pot. We have nine pots.
+    The treatments are three different watering regimes, which are
+    assigned to the pots. We measure photosynthesis on individual
+    plants. We get three numbers per pot. The pots are the experimental
+    units. The photosynthesis measurements from each plant are
+    subsamples. The subsamples are not independent observations. The
+    (random) assignment of the treatments was not done on the plants, so
+    the plants are not experimental units. The treatments were assigned
+    to the pots.
+
+    $n = 3, N = 9$
+
+    $n$ is the number of true replicates. $N$ is the number of
+    experimental units in the whole experiment.
+
+2.  In an experiment we grow three plants per pot. We have nine pots.
+    The treatments are three different foliar fertilizers, which are
+    assigned (at random) to the plants within each pot. We measure
+    photosynthesis on individual plants. We get three numbers per pot.
+    The plants are the experimental units. The photosynthesis
+    measurements from the plants are replicates. The three plants in
+    each pot are not independent of each other. To account for this
+    non-independence, the pots are treated as blocks in the statistical
+    analysis. (Depending on the duration of the experiment and the
+    differences in size between plants, in practice, using 27 pots with
+    one plant per pot may be better.)
+
+    $n = 9, N = 27$
+
+3.  In an experiment we grow one plant per pot. We have nine pots. The
+    treatments are three different watering regimes, which are assigned
+    (at random) to the pots. We measure photosynthesis on individual
+    plants. We get one number per pot. The pots (and plants) are the
+    experimental units. The measurement of each plant/pot is a
+    replicate. The replicates are independent observations.
+
+    $n = 3, N = 9$
+:::
+
+:::: figure*
+::: center
+![image](figures/measurement_units_flow_chart.pdf)
+:::
+::::
+
+## Pseudoreplication
+
+Pseudoreplication involves the misidentification of the experimental
+unit as what is really the measurement unit, so giving a higher *n* than
+is truly the case. Examples of pseudoreplication are quite readily found
+in the scientific literature. In UV experiments pseudoreplication is
+particularly prevalent as researchers often mistake the plant for the
+lamp frame or filter as the experimental unit. @Hurlbert1984 was the
+first paper to bring this frequent problem of ecological research to
+light. Pseudoreplication is not just a small annoyance, it is a
+difficult problem in field experiments in ecology, and it frequently
+remains hidden within the Discussion and Conclusions sections of
+scientific papers. The most frequent scenario occurs when experiments
+are designed as a comparison of two *typical* experimental units but
+conclusions are applied to the whole population of units. In other
+words, conclusions are based on subsamples rather than on true
+replicates. @Quinn2002 describes this situation as a mismatch between
+the scale of treatments and the scale of replicates.
+
+Pseudoreplication happens when subsamples are treated as replicates in
+the statistical analysis and interpretation.
+
+When an experiment is thoughtfully planned and the researcher is certain
+about the identity the unit of replication, it should be possible to
+avoid pseudoreplication. However, where an oversight in planning or
+logistics has made pseudoreplication unavoidable, the additional
+assumptions involved in the interpretation of any statistical tests must
+be clearly indicated in reports or publications arising from the study.
+See Box [\[ex:stats:pseudo\]](#ex:stats:pseudo){reference-type="ref"
+reference="ex:stats:pseudo"} for examples of pseudoreplication and
+suggested ways of avoiding this problem.
+
+:::: example*
+[]{#ex:stats:pseudo label="ex:stats:pseudo"}
+
+::: description
+We want to study the effect of radiation on the growth of plants. We
+have two rooms, one with only normal lamps supplying PAR and one with
+some lamps in addition to the normal lamps. We randomly assign 20 plants
+to each room. We measure the height of the plants after one week. This
+experiment has 20 subsamples per treatment, but only one replicate. (The
+treatments were assigned at random to the rooms, not to the plants). It
+is not valid to treat the subsamples as replicates and try to draw
+conclusions about the effect of radiation, since we have only
+pseudoreplicates. In this case pseudoreplication adds the implicit
+**assumption** that the only difference between the rooms was the
+irradiance. Our statistical test really only answers the question: did
+the plants grow differently in the two rooms?
+
+Several remedies are needed to obtain a wider range of validity from
+this experiment. Replicates in time can be created by repeating the
+experiment several times swapping the lamps between rooms. Such a
+situation is far from ideal because it is difficult to maintain plants
+and rooms in an equivalent state over time, since factors such as time
+of year and deterioration of lamps and filters must be accounted for. An
+additional step towards overcoming this problem would be to make a
+pre-experimental trial trying to create 'identical' conditions in both
+growth rooms and checking whether this results in any difference in
+plant performance.
+
+We want to study the differences between high elevation and lowland
+meadow vegetation. We choose one typical lowland meadow (LM) and one
+high elevation meadow (HM). We establish 5 plots, located at random,
+within each meadow. In each plot we mark ten 1 m$^2$ sampling areas at
+random, and record the species composition within these areas.
+
+It is not valid to try to answer the question 'is species $x$ more
+frequent in lowland meadows than in highland meadows' using the plots as
+replicates, since we have only pseudoreplication. The context of the
+question posed is critical in this instance. For this question we have,
+one true replicate (one meadow of each type), 5 subsamples (the plots)
+within each meadow, and 10 subsubsamples within each subsample. If the
+experiment is performed as described, it can only answer the question:
+"Is species $x$ more abundant in meadow 'LM' than meadow 'HM'?" If we
+want to draw conclusions about the two (statistical) populations of
+meadows, we should sample at random from those populations. For example
+compare five different highland meadows to five lowland meadows.
+
+We have three UV-B lamp frames. The radiation from the lamps in one
+frame is filtered with cellulose di-acetate, in another frame the lamps
+are filtered with polyester, and in the third frame the lamps are not
+energized. We chose at random three groups of 100 seedlings and put one
+group under each frame. This is an un-replicated experiment, we have one
+experimental unit (one lamp frame) per treatment. If we use the plants
+as replicates, we commit pseudoreplication. The plants are subsamples,
+not replicates.
+
+Ideally we would try to obtain more lamp frames. If this was impossible,
+a replicated experiment could be created by sub-dividing the area under
+each lamp frame into two separate parts, and allocating one half of each
+containing 50 seedlings to be filtered by cellulose di-acetate and the
+other half by polyester. The unenergised lamp treatment would have to be
+omitted, but this compromise would enable three replicates of the two
+treatments to be created. Each lamp frame would be a block.
+
+We have nine UV-B lamp frames, three for each treatment. We put 100
+plants under each frame as above. We do the statistical analysis based
+on the measurements on each plant considering the plants as replicates,
+we commit pseudoreplication. Our estimate of the error variance is
+wrong, as it does not reflect the variation among frames with the same
+treatment, and degrees of freedom are hugely inflated.
+[]{#item:nine:frames:pseudo label="item:nine:frames:pseudo"}
+
+Alternatively, we do the experiment exactly as in the item above, but we
+calculate means per frame for the measured variable, and then use these
+means in the statistical analysis. In other words we analyse our data
+using the frames as replicates. We have a valid test of significance,
+because the error variance reflects the variation between equally
+treated experimental units (the lamp frames). Logistical constraints
+often require that a decision must be made about whether to measure more
+plants under fewer replicates, or fewer plants under more replicates.
+When such a compromise has to be made, it is nearly always preferable to
+have more experimental units and to measure fewer plants within each
+one, even at the expense of greater allocation of time and resources to
+the maintenance of filters and lamp frames.
+:::
+::::
+
+## Range of validity
+
+The range of validity of the conclusions of an experiment derives from
+the population upon which the experiment was performed. These
+conclusions can not be extrapolated beyond the statistical population
+from which the experimental units were randomly chosen. The wider the
+range of validity, the more generally applicable the information
+obtained from an experiment will be. If we wish to perform an experiment
+with broad applicability we can increase the breadth of the sampled
+population, but in doing so we run the risk of having more heterogeneous
+experimental units. This can make treatment effects more difficult to
+detect, unless we take special measures to control this error variation.
+
+If we do an experiment with only one inbred variety of a crop species
+the results and conclusions will apply only to that variety. If we mix
+the seeds from several varieties and assign the plants at random to the
+treatments, we enlarge the range of validity of the results and
+conclusions but we increase the random variation. We can control for
+this increase in variation by using several varieties as blocks. In this
+way, we increase the range of validity of the results and conclusions
+without increasing the random variation.
+
+The design of an experiment involves many compromises concerning its
+range of validity, these relate to trade-offs between generality,
+precision, and realism, not to mention cost.
+
+### Factorial experiments
+
+One way of increasing the range of validity of the results of a
+scientific study is to use a factorial design for an experiment. For
+example, if we study the effects of radiation on well-watered plants
+only, then the conclusions of our study will be valid only for
+well-watered plants. If we include a second factor in our design with
+three levels, 'drought', 'mild drought' and 'well watered' and include
+all the treatment combinations possible, e.g. based on the three levels
+of watering and three levels of attenuation we have nine treatments and
+the range of validity is greatly expanded. In addition we can
+statistically test whether these two factors interact[^38]. Factorial
+experiments are a very powerful and useful design but if too many
+factors and levels are included their interpretation may become
+difficult. Factorial experiments with many factors and/or levels result
+in a statistical analysis based on many different contrasts[^39]. In
+this case, we should remember that in most analyzes we wish to obtain
+$P$-values per contrast, rather than per experiment. If we want to keep
+the experiment-wise risk level constant, we should use a tight
+contrast-wise risk level, or adjust the $P$-values.
+
+The flowchart in Figure
+[\[fig:flowchart:treatments\]](#fig:flowchart:treatments){reference-type="ref"
+reference="fig:flowchart:treatments"} describes the relationships
+between the structure of treatments and data analysis.
+
+:::: figure*
+::: center
+![image](figures/treatment_assignment_flow_chart.pdf)
+:::
+::::
+
+## When not to make multiple comparisons
+
+In the biological literature, multiple comparison procedures such as
+Tukey's HSD are frequently used in situations where other tests would be
+more effective and easier to interpret. In some other cases multiple
+comparisons are used in situations in which they give misleading
+results. We will discuss the two most common cases of misuse of these
+tests.
+
+### Dose response curves
+
+If we have several levels of the same treatment, for example several
+different irradiances of UV, the most powerful (capable of reliably
+detecting effects) test is to fit a regression (either linear or
+non-linear) of the response on the "dose". From such an analysis we get
+information on the relationship between dose and response, whether it is
+increasing or decreasing, linear or curvilinear, even its shape can be
+inferred. In many cases we can also calculate a confidence band around
+the fitted function. This is all useful and interpretable information.
+
+If instead we calculate for example HSD or LSD and compare the responses
+to all possible pairs of doses, we discard the information about the
+ordering of the doses, and we can get results that do not address our
+research hypothesis, for example, concluding that all pairs of adjacent
+doses do not differ significantly while the extreme doses do differ
+significantly. In this type of experiments we are really interested in
+the slope and shape of a dose response curve.
+
+Multiple comparisons should be carried out only when there is no
+ordering in the levels of a treatment of factor. A regression or ANCOVA
+model should be used instead, if a reasonable model can be fitted.
+
+### Factorial experiments
+
+Factorial experiments are very useful and as discussed above allow
+extending the range of validity of our conclusions. However, the main
+advantage of factorial experiments is that the significance of
+interactions can be tested. The most important part of the statistical
+analysis of a factorial experiment is an ANOVA with a model including
+main effects and interactions. Only after this test, one can *in
+addition*, test the differences among different pairs of treatments.
+This *a posteriori* test provides little extra information and should be
+done only if the interaction term is statistically significant.
+Otherwise, if the levels of a factor are discrete and unordered, and its
+main effect is significant in ANOVA, a multiple comparison test can be
+used to compare the levels of a factor (but not the individual
+combinations of levels of the different factors).
+
+## Presenting data in figures
+
+When using hierarchical designs such as split-plots, the experimental
+errors relevant to comparisons between levels of the different factors
+will be different. In such designs, it is especially important to
+indicate which error term the error bars in figures show. In all cases,
+the figure and table legends should state which statistics are depicted
+by the error bars, and also the number of replicates involved in their
+calculation.
+
+If what one wants to describe is the variability in the original sampled
+population then one should use the standard deviation (s.d.), whose
+expected value does not depend on the number of replicates. If one wants
+to compare treatment or group means, one should use confidence intervals
+(c.i.) or the standard error of the mean (s.e.). These last two
+statistics decrease in size with an increase in the number of
+replicates, reflecting increased reliability of the estimated means.
+
+##  {#sec:recommend:stat}
+
+In this section we list recommendations related to the statistical
+design of experiments for studying the effects of radiation on plants.
+See sections [8.6.1](#sec:recommend:outdoor:manip){reference-type="ref"
+reference="sec:recommend:outdoor:manip"} and
+[8.6.2](#sec:recommend:indoor:manip){reference-type="ref"
+reference="sec:recommend:indoor:manip"} for recommendations on
+manipulation of radiation, section
+[9.15](#sec:recommend:quantifying){reference-type="ref"
+reference="sec:recommend:quantifying"} for recommendations on how to
+quantify radiation, and section
+[10.9](#sec:recommend:grow){reference-type="ref"
+reference="sec:recommend:grow"} for recommendations about plant growing
+conditions.
+
+1.  Avoid pseudoreplication. In most experiments where irradiance is
+    manipulated either with lamps or filters, individual plants or pots
+    are not true replicates. The true replicates are the lamp- or filter
+    frames. Design your experiments and analyze your data taking this
+    into account.
+
+2.  Avoid pseudoreplication. In experiments under controlled conditions,
+    if treatments are assigned to chambers or rooms, these chambers or
+    rooms are the true replicates, not the plants within them. To have
+    true replicates you will need several rooms per treatment. When this
+    is not possible, the experiment can be repeated in time, using the
+    same chambers or rooms, but reassigning the treatments, so that each
+    chamber is used for a different treatment in each iteration of the
+    experiment.
+
+3.  Include enough true replicates in your experiment. Many effects of
+    radiation are small in relation to the mean and subtle in comparison
+    to natural levels of variability. Reliably detecting these effects
+    requires well-replicated experiments.
+
+    As a rough rule of thumb, aim at having at least 32 plants per
+    treatment for growth, ecophysiology and metabolite measurements, in
+    at least four true replicates composed each of eight measured plants
+    in controlled environment and greenhouse studies. When making
+    gas-exchange readings, it is usually impractical to measure from
+    more than four to six plants in each of the four true replicates. If
+    you aim to make an ecologically-orientated outdoor study it would be
+    advisable to have at least five true replicates. In addition to
+    issues of replication, in most cases you will need to have
+    unmeasured border plants surrounding your experimental plants so as
+    to avoid edge effects. Alternatively the positions of plants can be
+    rotated every few days.
+
+4.  Preferably use a design with blocks to control all known or expected
+    sources of error (or background variation) that would otherwise
+    confound the treatment effects. Examples of such sources of
+    variation are different benches in a greenhouse, or measurements
+    done by different observers. If you suspect that a known source of
+    error may interact with your UV treatment, you may decide to
+    consider it as a covariate in your model.
+
+5.  Within the blocks, use randomization to neutralize the effects of
+    other error sources. Randomization is of fundamental importance and
+    should be done properly: i.e. a device that generates a truly random
+    assignment of treatments to experimental units should be employed.
+    Such devices can be as simple as a coin, or die, or can be a table
+    of random numbers in a book, or (pseudo-) random numbers generated
+    by a computer or a pocket calculator.
+
+6.  When designing an experiment use power analysis to determine the
+    number of replicates needed, unless you have a long experience of
+    performing similar experiments, and a good existing understanding of
+    the amount of variability you expect to find in your results.
+
+7.  If your experiment yields a non-significant difference, use *a
+    posteriori* power analysis to demonstrate, if possible, that
+    biologically important differences would have been detected had they
+    existed. However, if power analysis reveals that your experiment was
+    unable to detect biologically important differences, you should
+    repeat the experiment with more replicates or an improved design.
+
+## Further reading {#further-reading-3}
+
+A reliable on-line resource is the *Statistics Stack Exchange*
+(<http://stats.stackexchange.com/>).
+
+There are many text books on statistics, but most introductory
+statistical texts do not discuss the type of hierarchical models usually
+needed for experiments. We recommend the classic book 'Planning of
+Experiments' by @Cox1958 as a good introduction to the principles behind
+the design of experiments. 'Experimental Design and Data Analysis for
+Biologists' by @Quinn2002 describes both experimental design and
+analysis of data at an intermediate level. The books 'Ecological Models
+and Data in R' [@Bolker2008] and 'Mixed effects models and extensions in
+ecology with R' [@Zuur2009b] give advanced up-to-date accounts of
+statistical methods, and approaches, including a discussion of
+hypothesis testing and model fitting. While 'A Beginner's Guide to R'
+[@Zuur2009] and 'Introductory Statistics with R' [@Dalgaard2002] are
+gentle introductions to data analysis with R.

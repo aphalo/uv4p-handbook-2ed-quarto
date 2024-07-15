@@ -1,0 +1,2827 @@
+---
+title: "Quantifying UV, VIS and NIR radiation"
+date: 2024-07-15
+date-modified: today
+draft: true
+---
+
+## Basic concepts and terminology {#sec:basic:concepts}
+
+### Introduction to UV and visible radiation
+
+In this section we will discuss the quantities, units and terminology
+used to describe visible and UV radiation, and explain how to use and
+interpret information about radiation. We will explain the basic
+concepts associated with quantifying radiation and how the different
+aspects of this topic are applied to UV experimentation.
+
+When describing experimental conditions we need to avoid all ambiguity,
+so that our results can be interpreted and experiments repeated. For
+this reason "Light intensity" and "amount of light", which are ambiguous
+terms, should be avoided in scientific contexts unless it is made
+absolutely clear what they stand for.
+
+Radiation always consists of different wavelength components, although
+we often use the term "monochromatic" when the spectral range is narrow.
+Not even a single photon can be assigned an exact wavelength. As
+radiation also travels in various directions, it is also always
+associated with a distribution of directions. When we say
+"[collimated]{acronym-label="collimated" acronym-form="singular+short"}
+radiation", we mean that the angular distribution is very narrow. When
+we say "[diffuse:rad]{acronym-label="diffuse:rad"
+acronym-form="singular+short"}", we mean that the angular distribution
+is wide. In order to fully describe radiation, we must therefore
+describe the distribution of its wavelength components (the spectral
+distribution) and their direction in addition to "amount". Polarization
+is another property of radiation, but it will not be dealt with here.
+Finally, we should consider the time dimension; radiation changes over
+time. Radiation can be measured almost instantaneously and expressed as
+a rate, or integrated over time. Consequently we must distinguish
+between total energy, or the total number (or total number of moles) of
+photons, and the energy-or-photons per unit time. The first case gives
+an accumulated quantity, and the second case gives a rate. A clear
+distinction should also be made between the incident radiation on a
+target and the amount of radiation absorbed. When dealing with ionizing
+radiation, the term "dose" is always used to mean the radiation
+absorbed, however the same term often designates incident radiation when
+used in connection with ultraviolet-B and visible radiation.
+
+A comprehensive glossary of terms relating to visible and ultraviolet
+radiation has been published by @Braslavsky2007. It can be downloaded
+from the Internet (see link in reference list).
+
+### Direction {#sec:basic:concepts:direction}
+
+Daylight radiation has two components: (a) radiation arriving directly
+from the sun, or [direct:rad]{acronym-label="direct:rad"
+acronym-form="singular+short"}, and (b) radiation arriving from the sky,
+or [diffuse:rad]{acronym-label="diffuse:rad"
+acronym-form="singular+short"}. Because it is very distant compared to
+its size, the sun behaves almost as a point source. For this reason
+direct radiation at the Earth surface comes from a single direction, so
+that its 'rays' are parallel or [collimated]{acronym-label="collimated"
+acronym-form="singular+short"}. Diffuse radiation is due to scattering
+and reflection in the atmosphere, and arrives from the whole sky, its
+'rays' are not parallel. Diffuse radiation is not collimated.
+
+Light meters and radiation sensors are usually calibrated using
+radiation from (approximately) a single direction, i.e., collimated
+radiation from a lamp, but in nature (where most plants live!) radiation
+is not collimated. The solar radiation reaching the ground on clear
+cloud-free days as direct sunlight is rather well collimated, but in
+addition to direct radiation there is diffuse radiation from the sky.
+Furthermore, radiation reflected by the ground and objects in the
+surroundings also contributes to the diffuse radiation received by
+plants. A plant scientist wishing to understand how plants use and react
+to radiation has to take both direct and diffuse radiation into account.
+
+Many radiation meters have a flat receiving surface, just like many
+plant leaves, and so should in principle be well suited to measuring the
+radiation reaching a leaf. But if we are interested in the whole plant
+rather than a single leaf the situation is different, since plants are
+three-dimensional not flat and different surfaces on the plant face in
+different directions. In such situations where we wish to obtain an
+approximate estimate of the quantity of radiation incident on a plant,
+it is better to use a sphere than a flat radiation meter. This is
+achieved with a measuring instrument that is equally sensitive to
+radiation from any direction.
+
+This brings us to the distinction between
+
+1.  Irradiance, i.e., radiation power incident on a flat surface of unit
+    area, and[]{#item:irradiance label="item:irradiance"}
+
+2.  Energy fluence rate (or fluence rate for short), i.e., radiation
+    power incident on a sphere of unit cross section. The term fluence
+    rate was introduced by @Rupert1974.[]{#item:fluence:rate
+    label="item:fluence:rate"}
+
+Other terms with the same meaning as energy fluence rate are space
+irradiance, scalar irradiance and actinic flux. The latter is used
+mostly by atmospheric scientists. The term spherical irradiance has been
+used in similar contexts, but means one quarter of the fluence rate.
+Vectorial irradiance is just the same as irradiance.
+
+Both irradiance and energy fluence rate, can also be described in terms
+of photons. For item
+[\[item:irradiance\]](#item:irradiance){reference-type="ref"
+reference="item:irradiance"} above, the corresponding photon
+nomenclature has not yet been standardised. It would be logical to use
+the term photon irradiance, but many people, especially in the
+photosynthesis field, use the term photon flux density and the
+abbreviation PFD (PPFD for [PPFD]{acronym-label="PPFD"
+acronym-form="singular+short"}). For item
+[\[item:fluence:rate\]](#item:fluence:rate){reference-type="ref"
+reference="item:fluence:rate"} the term photon fluence rate is well
+accepted among plant physiologists, but hardly among scientists in
+general (for example meteorologists call it 'actinic flux' or 'scalar
+irradiance'). Energy fluence is the energy fluence rate integrated over
+time. The word energy is frequently omitted, so that 'fluence' has the
+same meaning as 'energy fluence'. In contrast, when 'photon fluence' is
+meant, the word 'photon' is always explicitly mentioned.
+
+When giving a value for irradiance, the direction of the plane for which
+the irradiance is considered must be specified. This is often the
+horizontal plane but will depend on the object studied: for instance,
+the surface a leaf is frequently not horizontal. For
+[collimated]{acronym-label="collimated" acronym-form="singular+short"}
+radiation (coming from a single direction), irradiance and fluence rate
+have the same numerical value if the beam of radiation is perpendicular
+to the plane on which irradiance is measured (Figure
+[\[fig:cosine\]](#fig:cosine){reference-type="ref"
+reference="fig:cosine"}.A). For completely
+[isotropic]{acronym-label="isotropic" acronym-form="singular+short"}
+radiation coming from above (equally from any direction above the
+horizontal) the fluence rate is twice the irradiance on a horizontal
+plane (Figure [\[fig:cosine\]](#fig:cosine){reference-type="ref"
+reference="fig:cosine"}.C). Sometimes one may also have to consider
+radiation from below, especially in aquatic environments (Figure
+[\[fig:cosine\]](#fig:cosine){reference-type="ref"
+reference="fig:cosine"}.D).
+
+::: figure*
+![image](figures/cosine_arrows.pdf){width="0.8\\myfigwidth"}
+:::
+
+When a delimited beam of radiation hits a plane surface perpendicularly,
+it results in the irradiance, , but the same beam when tilted at an
+angle $\alpha$ to the vertical will be more spread out, and thus the
+irradiance will be lower. More specifically, the irradiance will be
+$\irr \cdot \cos \alpha$ (Figure
+[\[fig:cosine\]](#fig:cosine){reference-type="ref"
+reference="fig:cosine"}.B).
+
+### Spectral irradiance
+
+When we deal with *how a quantity of radiation varies with wavelength*,
+for instance when plotting a spectrum, we add "spectral" to the name of
+the quantity to give "spectral irradiance" and "spectral fluence rate".
+We must also adjust the units to account for the width of the part of
+the spectrum that is included in the value specified (in photobiology
+nm$^{-1}$ is often used to indicate wavelength interval, but the scale
+can also be defined in terms of wave number or frequency, as in,
+cm$^{-1}$ or s$^{-1}$ respectively).
+
+### Wavelength {#sec:basic:concepts:wavelength}
+
+It is impractical to always quantify radiation by giving its complete
+spectral composition; so simplifications have to be made that account
+for the most important features of a spectrum. From a purely physical
+viewpoint, there are two basic ways of quantifying radiation. Either we
+express the quantity related to the number of photons, or the quantity
+related to the energy of radiation. When considering radiation of a
+single wavelength, the energy of a photon, or quantum (in a vacuum), is
+inversely proportional to the wavelength and the proportionality
+constant is Planck's constant multiplied by the speed of light in a
+vacuum (see section
+[7.3](#sec:radiation:properties){reference-type="ref"
+reference="sec:radiation:properties"}).
+$$\quantum(\lambda) = h \cdot \nu = h \cdot \frac{c}{\lambda} \label{eq:photon}$$
+where $\quantum(\lambda)$ is a quantum, or the amount of energy that one
+photon has, $h$ is Planck's constant ($h=6.626\times 10^{-34}$ Js),
+$\nu$ is frequency, $\lambda$ is wavelength, and $c$ is the speed of
+light in a vacuum ($c=2.998\times 10^8$ m s$^{-1}$). Please, see section
+[7.4](#sec:solar:radiation){reference-type="ref"
+reference="sec:solar:radiation"} on page for a numerical example. When
+dealing with a band of wavelengths it is necessary to repeat these
+calculations for each wavelength (in practice a very narrow band) and
+only then integrate across wavelengths. For example, PAR in units of W
+m$^{-2}$ is obtained by integrating the spectral irradiance from 400 to
+700 nm. As explained in Box
+[\[box:quantum:quantities\]](#box:quantum:quantities){reference-type="ref"
+reference="box:quantum:quantities"} on page , to determine a quantity in
+terms of photons, an energetic quantity has to be weighted by the number
+of photons, i.e. divided by the energy of a single photon at each
+wavelength from equation
+[\[eq:photon\]](#eq:photon){reference-type="ref" reference="eq:photon"}.
+To get moles of photons, the value has to be divided further by
+Avogadro's number ($N_A=6.022\times 10^{23}$ mol$^{-1}$). For example,
+the photon irradiance or in units of is obtained by
+$$\PPFD = \frac{1}{N_A}\int_{400\;\mathrm{nm}}^{700\,\mathrm{nm}}\frac{\lambda}{hc}\;E(\lambda)\;\mathrm{d}\lambda \label{eq:ppfd}$$
+If we have measured (energy) irradiance, and want to convert this value
+to photon irradiance, the conversion will be possible only if we have
+information about the spectral composition of the radiation we measured.
+For , 1 of "average daylight" (400--700 nm) is approximately 4.6 . This
+figure is exact only if the radiation is equal from 400 to 700 nm,
+because it represents the value at the central wavelength of 550 nm. But
+to make the exact conversion, we must know the spectrum of irradiance
+measured at the time of measurement, as the solar spectrum varies
+through the day and with the seasons. In the band this is even more
+important as the tail of the solar spectrum varies much more than the
+band. When dealing with lamps, we can sometimes use conversion factors
+obtained for a particular sensor and lamp combination to convert
+measured values from energy to photon irradiance. If the lamps are
+filtered, for example with cellulose diacetate, the spectrum transmitted
+by the filter will change as the filter ages, and consequently each time
+irradiance beneath the filter is measured the spectrum of the radiation
+source (i.e. the lamps) must also be measured.
+
+### Units used for photons and energy
+
+Radiation considered as photons can be expressed either as number of
+photons, or as moles of photons (the symbol for moles is mol). An
+obsolete term for a mole of photons is an Einstein (E); it should no
+longer be used. According to Avogadro's number ($N_A$), one mole is
+$6.02217 \times 10^{23}$ photons, but in most cases a more convenient
+unit is $\mymu$mol (micromole of photons, $6.02217 \times 10^{17}$
+photons). Either of these units can be expressed per time and per area
+or (rarely in biological contexts) per volume.
+
+The unit of energy is a joule (J). Energy per time is power, and a joule
+per second is a watt (W). Both can be expressed per area (or, rarely in
+biological contexts, per volume, i.e., energy density or power density).
+Simply giving a value followed by "" without further qualification is
+not meaningful and should be avoided, since this leaves the surface you
+are expressing with m$^2$ undefined. Is it a flat surface or a curved
+one? If it is flat, what is its orientation? When reporting experimental
+conditions, all these factors have to be specified.
+
+### Ratios of UV and visible radiation
+
+As already mentioned in section
+[7.1](#sec:plants:UVB){reference-type="ref" reference="sec:plants:UVB"}
+on page , it is very important to conduct experiments under realistic
+environmental conditions. For the control of these experimental
+conditions, it is helpful---besides using
+[biologically effective exposures]{acronym-label="biologically effective exposure"
+acronym-form="plural+short"}---to calculate ratios and . The ratios can
+also be used for comparison of different experimental conditions or
+experimental conditions with natural conditions outside in the field, as
+for example shown in section
+[8.2.7](#sec:simulators){reference-type="ref"
+reference="sec:simulators"} on page and in table
+[\[tab:typical:irrad:values\]](#tab:typical:irrad:values){reference-type="ref"
+reference="tab:typical:irrad:values"} on page . For the calculation of
+these ratios, it is absolutely essential to use the same quantity of
+radiation or the same weighting procedure, respectively, i.e. energetic
+units or photon units, but not a mixture. The term "energetic" means
+that the spectral irradiance is simply integrated over the respective
+spectral band yielding units like W m$^{-2}$. For the calculation of
+photon ratios it is also necessary to integrate over the respective
+spectral bands, but additionally weighted by the number of photons at
+each wavelength (see section
+[9.1.4](#sec:basic:concepts:wavelength){reference-type="ref"
+reference="sec:basic:concepts:wavelength"}). A function to calculate
+photon ratios in R is described in section
+[9.19.4](#app:R:ratios:photon){reference-type="ref"
+reference="app:R:ratios:photon"} on page .
+
+### A practical example
+
+The importance of indicating the type of sensor and its orientation is
+exemplified by the changing ratio of fluence rate to irradiance
+throughout a day (Figure
+[\[fig:fluence:rate:irradiance\]](#fig:fluence:rate:irradiance){reference-type="ref"
+reference="fig:fluence:rate:irradiance"}). At noon, when the sun is high
+in the sky the ratio is at its minimum. Even then the ratio remains
+larger than one because, other than at the equator, the midday sun never
+reaches the zenith and because the sensor will also always receive
+diffuse radiation from the whole sky. We can say that when measuring
+solar radiation the fluence rate will always be numerically larger than
+the irradiance. Towards both ends of the day the ratio reaches its
+maximum value because irradiance is being measured on a horizontal plane
+but the sun is near the horizon. During twilight, particles in the
+atmosphere will make the distribution of solar radiation more even,
+allowing a relatively large area of the sky to remain bright, and the
+ratio decreases again.
+
+::: figure*
+![image](figures/fluence_rate_irradiance.pdf){width="0.8\\myfigwidth"}
+:::
+
+### Measuring fluence rate and radiance
+
+Spherical sensors, as needed for measuring fluence rate, also called
+scalar irradiance, are not common. LI-COR (Lincoln, NE, USA) sells a
+spherical quantum sensor (LI-193) that can be submerged, and
+Biospherical Instruments Inc. (San Diego, CA, USA) makes both PAR-
+(e.g. QSL-2100 and QSL-2200, terrestrial; QSP series with models that
+can be submerged to thousands of metres) and also narrowband spherical
+sensors for measuring UV- and visible radiation fluence rate.
+Biospherical Instruments Inc. also makes radiance sensors with input
+optics that have a very narrow acceptance angle. Figure
+[\[fig:AMOUR:entrance:optics\]](#fig:AMOUR:entrance:optics){reference-type="ref"
+reference="fig:AMOUR:entrance:optics"} shows the different entrance
+optics available for one series of sensors from Biospherical
+Instruments. Most broadband UV sensors and entrance optics for
+spectroradiometers follow a cosine response. @Bjorn1995 describes a
+method for estimating fluence rate from three or six irradiance
+measurements at a series of specific angles.
+
+::: figure*
+![image](photos/amour_entrance_optics_350.pdf){width="0.8\\myfigwidth"}
+:::
+
+### Sensor output
+
+Radiometer sensors can have either analog or digital outputs. Some
+sensors with an analogue output have an amplifier next to the detector,
+others do not. Sensors with an analog output are usually connected to a
+voltmeter or a datalogger. Some digital sensors are really complete
+radiometers with a digital output. Examples of radiometers with digital
+outputs, are shown in Figure
+[\[fig:AMOUR\]](#fig:AMOUR){reference-type="ref" reference="fig:AMOUR"}.
+RS-232 and USB are digital interfaces frequently used to attach these
+sensors to personal computers[^19].
+
+::: figure*
+![image](photos/amour_300.pdf){width="0.8\\myfigwidth"} 
+:::
+
+### Calibration
+
+To calibrate radiation sensors the relationship must be determined
+between the electrical signal produced by a sensor and the amount of
+radiation impinging on that sensor. The physical value of irradiance, ,
+of the incoming radiation in energy units, is obtained by "comparison"
+of a measurement $X$ with that of a calibrated radiation source
+$X_\mathrm{lamp}$,
+$$\irr = \irr[lamp] \cdot \frac{X\cdot a}{X_\mathrm{lamp}}$$ where
+$\irr[lamp]$ is the calibration file of the lamp provided by the
+calibration survey. The factor $a$ accounts for any difference in the
+lamp to sensor distance between the survey's calibration and your own
+measurement of the lamp. In most modern instruments this "comparison" is
+implicitly done by the software in the instrument itself, or the
+computer it is attached to, by multiplying the electrical signal from
+the detector with a calibration constant. If this is not the case, it is
+necessary to correct all raw measurements, here $X$ and
+$X_\mathrm{lamp}$, before making any further calculations, for example,
+by subtracting the measurement of dark current (the sensor reading in
+the dark).
+
+Although photons can be counted using a photomultiplier and appropriate
+electronics, this approach does not provide an absolute measurement.
+Some photons are always missed and false counts are included due to
+thermal excitation. Therefore, absolute calibration of radiation meters
+can only be provided in energetic terms. For this purpose so-called
+"blackbody radiators" of known temperature are used, since they depend
+only on temperature for the total radiation as well as its spectral
+distribution. Blackbody radiators used for the calibration of lamps, are
+then available for purchase by scientists for use as secondary
+standards.
+
+In the case of broadband sensors used to measure biologically-effective
+irradiances or selected bands of the spectrum, the calibration is
+usually carried out by comparison to readings from a calibrated
+spectroradiometer under a radiation source with a spectrum as similar as
+possible to the one which will be measured with the broadband sensor
+(e.g. sunlight). To calibrate spectroradiometers, in addition to a
+spectral-irradiance calibration against one or more lamps (with a
+continuous spectrum, such as an incandescent lamp), it is necessary to
+do a wavelength calibration against the sun or a lamp (with a an
+emission spectrum with discrete, narrow and stable peaks, such as a low
+pressure mercury lamp).
+
+### Further reading {#further-reading}
+
+@Bjorn1996b treat the same subjects as this section, but in more depth.
+Also the book edited by @Bjorn2007 is a good source of basic information
+about radiation and photobiology.
+
+## Actinometry
+
+Actinometers are chemical systems for the measurement of light and
+ultraviolet radiation. They do not need to be calibrated by the user,
+and thus do not require the purchase of an expensive standard lamp with
+an expensive power supply. Standardization has usually been taken care
+of by those who have designed the actinometer. Another advantage is that
+their geometry can more easily be adjusted to the measurement problem.
+The shape of a liquid actinometer can be made to correspond to the
+overall shape of the irradiated object under study.
+
+In many cases, it is of interest to study a suspension or solution that
+can be put in an ordinary cuvette for spectrophotometry or fluorimetry,
+and the actinometer solution can be put into a similar cuvette. A large
+number of actinometers have been devised. @Kuhn1989 lists, briefly
+describes and gives references for 67 different systems of which they
+recommend five. In general, actinometers are sensitive to short-wave
+radiation ($<$`<!-- -->`{=html}500 nm) and insensitive to long-wave
+radiation ($>$`<!-- -->`{=html}500 nm). Insensitivity to long-wave
+radiation can be both a drawback and an advantage, but by choosing the
+best actinometer for a particular purpose we can avoid their
+disadvantages. One advantage of using an actinometer insensitive to long
+wave radiation is that we can use it for UV work under illumination
+visible to the human eye, without disturbing the measurement. Here we
+shall concentrate on the most popular actinometer for ultraviolet
+radiation---the potassium ferrioxalate or potassium iron(III) oxalate
+actinometer. In addition to using it directly in some experiments, we
+can use it for checking the calibration of other instruments, such as
+spectroradiometers.
+
+The description below is sufficient for a researcher starting to work in
+the field. For more detailed information one should consult @Parker1953
+[@Hatchard1956; @Lee1964; @Goldstein2008]. Complete recipes have also
+been published, e.g., @Seliger1965 [@Jagger1967]. In the ferrioxalate
+actinometer the following photochemical reaction is exploited:
+
+::: centering
+$\frac{1}{2}$ (COO)$_2^{2-}$ + Fe$^{3+}$ + photon $\rightarrow$ CO$_2$ +
+Fe$^{2+}$\
+or\
+Oxalate ion + Fe(III) ion + radiation $\rightarrow$ carbon dioxide +
+Fe(II) ion\
+:::
+
+The quantum yield for this reaction (i.e., the number of iron ions
+reduced per photon absorbed) is slightly wavelength dependent but close
+to 1.26 in the spectral region, 250--500 nm, where the ferrioxalate
+actinometer is used. Usually a 1-cm layer of 0.006 M ferrioxalate
+solution is used. Quantum yield and the fraction of radiation
+(perpendicular to the 1 cm layer) absorbed are shown in Table
+[\[tab:ferrioxlate\]](#tab:ferrioxlate){reference-type="ref"
+reference="tab:ferrioxlate"}.
+
+As seen from Table
+[\[tab:actinometer\]](#tab:actinometer){reference-type="ref"
+reference="tab:actinometer"} the sensitivity of this actinometer (column
+to the right) is constant throughout most of the UV range, which makes
+it very convenient for our work.
+
+The amount of Fe(II) formed can be measured spectrophotometrically after
+the addition of phenanthroline, which gives a strongly absorbing yellow
+complex with Fe(II) ions.
+
+The ferrioxalate (actually potassium ferrioxalate) for the actinometer
+is prepared by mixing 3 volumes of 1.5 M potassium oxalate (COOK$_{2}$)
+with 1 volume of 1.5 M FeCl$_3$ and stirring vigorously. This step and
+all the following procedures involving ferrioxalate should be carried
+out under red light (red fluorescent tubes or LEDs). The precipitated
+should be dissolved in a minimal amount of hot water and the solution
+allowed to cool for crystallization (this crystallization should be
+repeated twice more). Potassium ferrioxalate can also be purchased
+ready-made, but the price difference encourages self-fabrication. The
+following is a recipe for the three solutions required to carry out
+actinometry [see @Goldstein2008 for a different procedure and other
+quantum yields]:
+
+**Solution A:** Dissolve 2.947 g of the purified and dried K$_3$Fe(III)
+oxalate in 800 ml distilled water, add 100 ml 0.5 M sulfuric acid, and
+dilute the solution to 1000 ml. This gives 0.006 M actinometer solution,
+which is suitable for measurement of ultraviolet radiation.
+
+**Solution B:** The phenanthroline solution to be used for developing
+the colour with Fe(II) ions should be 0.1% w/v 1:10 phenanthroline
+monohydrate in distilled water.
+
+**Solution C:** Prepare an acetate buffer by mixing 600 ml of 0.5 M
+sodium acetate with 360 ml of 0.5 M H$_2$SO$_4$.
+
+Solution A is irradiated with the radiation to be measured. The
+geometries of both the container and of the radiation are important and
+must be taken into account when evaluating the result. The simplest case
+is when the radiation is [collimated]{acronym-label="collimated"
+acronym-form="singular+short"}, the container a flat spectrophotometer
+cuvette, the radiation strikes one face of the cuvette perpendicularly,
+and no radiation is transmitted. Even in this case one has to
+distinguish between whether the cuvette or the beam has the greater
+cross section, and correct for reflection in the cuvette surfaces. The
+irradiation time should be adjusted so that no more than 20% of the iron
+is reduced (this corresponds to an
+[absorbance]{acronym-label="absorbance" acronym-form="singular+short"}
+of about 0.66). In the following we shall assume that we use an ordinary
+fused-silica or quartz spectrophotometer cuvette with 10 mm inner
+thickness and containing 3 ml actinometer solution.
+
+After the irradiation and mixing of the actinometer solution, 2 ml of
+the irradiated solution is mixed with 2 ml of solution B and 1 ml of
+solution C, and then diluted to 20 ml with distilled water. After 30
+minutes the absorbance at 510 nm is measured against a blank made up in
+the same way with unirradiated solution A. An absorbance of 0.5
+corresponds to 0.905 $\mymu$mol Fe$^{2+}$. It is a good idea to check
+this relationship with known amounts of FeSO$_4$ if you have not
+previously checked your spectrophotometer for accuracy and linearity.
+You should not use any absorbance above 0.65.
+
+Example of calculation: 3 ml of 0.006 M actinometer solution are
+irradiated by parallel rays of 300 nm UV-B impinging at right angles to
+one surface (and not able to enter any other surface). The radiation
+cross section intercepted by the solution is 2 cm$^2$. Five minutes of
+irradiation produces an absorbance of 0.6. This corresponds to
+$0.6 \cdot 0.905/0.5$ $\mymu$mol = 1.086 $\mymu$mol Fe$^{2+}$, but since
+we have taken 2 out of the 3 ml actinometer solution for analysis,
+multiply by 3/2 to get the total amount of Fe$^{2+}$ formed. Throughout
+the UV-B region the quantum yield is 1.26, so this corresponds to
+absorption of $3 \cdot 1.086/2/1.26$ $\mymu$mol photons. Reflection from
+the surface is estimated to be 7% (by application of Snell's law, or law
+of refraction, giving the angle of refraction for an angle of incidence
+at the boundary of two media like water and glass). None of the
+radiation penetrates the solution to the rear surface, since the
+solution thickness is 1 cm. Therefore the incident radiation is
+$3 \cdot 1.086/(1.26 \cdot 0.93 \cdot 2)$ $\mymu$mol = 1.390 $\mymu$mol
+radiation incident on 2 cm$^2$ in 5 minutes, and the photon irradiance
+(quantum flux density, in this case equal to the photon fluence rate,
+since the rays are parallel and at right angles to the surface) is
+1.390/(2$\cdot$`<!-- -->`{=html}5) $\mymu$mol/cm$^2$/min = 0.1390
+$\mymu$mol/cm$^2$/min = $10000 \cdot 0.1390/60$ $\mymu$mol/m$^2$/s =
+23.2 $\mymu$mol/m$^2$/s.
+
+@Kirk1983 point out errors that might arise if a more concentrated
+actinometer solution is used, in order to absorb more light at long
+wavelengths, and how these errors can be minimized. If an actinometer
+much more concentrated than 0.006 M is used, the quantum yield is lower,
+and we do not recommend this for UV research. @Goldstein2008, using
+0.06 M actinometer solution, find almost the same quantum yield (1.24)
+from 250 to 365 nm, but much higher (1.47) from 205 to 240 nm; the
+latter in marked contrast to the values of @Fernandez1979 in the table
+above, so measurements below 250 nm should be regarded with caution.
+@Bowman1976 warn against exposure of the phenanthroline solution to UV,
+and even against the fluorescent room lighting.
+
+Chemical or biological systems (mostly in a solid state) for recording
+solar radiation and particularly radiation, are widely employed for
+estimating the exposure of people, leaves in a plant canopy, and other
+objects which for various reasons are not easily amenable to
+measurements with electronic devices. These chemical devices are
+generally referred to as dosimeters rather than actinometers, even if
+there is no defined delimitation between these categories. As the
+construction, calibration, and use of chemical and other dosimeters have
+been the subject of frequent reviewing
+[@Berces1999; @Horneck1996; @Marijnissen1987], we shall not dwell on
+them here, only stress that their radiation sensitive components can be
+either chemical substances (natural such as DNA or provitamin D, or
+artificial) or living cells (e.g., various spores and bacteria).
+
+## Dosimeters
+
+Broadband dosimeters have been developed to quantify exposure to UV
+radiation based either upon the photochemical degradation of chemical
+compounds and plastic films or using biological techniques involving
+damage to DNA. The range of experimental methods has been described by
+@Dunne1999 and @Parisi2010a. The most practical and effective dosimeters
+for plant studies include the use of plastic films of polysulphone (PS)
+and poly 2,6-dimethyl-1,4-phenylene oxide (polyphenylene oxide or PPO)
+[see @Geiss2003; @Parisi2010b] and the determination of spore viability
+after UV exposure [see e.g.
+@Quintern1992; @Quintern1994; @Quintern1997; @Furusawa1998].
+
+A commercially available UV-dosimetry system '*Viospor*' (Biosense,
+Germany) uses the DNA molecules of microbial spores immobilised in a
+film mounted in a protective casing with a cosine corrected filter
+system to provide a measurement of biologically-weighted UV exposure
+(Figure
+[\[fig:UV:dosimeters:VS\]](#fig:UV:dosimeters:VS){reference-type="ref"
+reference="fig:UV:dosimeters:VS"}). *Viospor* sensors are available as
+two types: *Viospor* blue-line types I-IV which provide estimates of the
+CIE erythemal exposure (as MED, J m-2, and SED) at a range of exposure
+levels from seconds to several days, and *Viospor* red-line which use
+the DNA damage action spectrum [@Setlow1974] to estimate the DNA
+damaging capacity of UV-B and UV-C radiation and the efficiency of UV-C
+germicidal lamps. After exposure, films are incubated in bacterial
+growth medium to stimulate spore germination and the production of
+proteins that are stained for densitometric quantification. Exposed
+dosimeters are returned to the supplier for analysis (***BioSense***,
+Dr. Hans Holtschmidt, Laboratory for Biosensory Systems, Postfach 5161,
+D-53318 Bornheim, Germany. phone: +49-228-653809, fax: +49-228-653809,
+[mailto:mail@biosense.de](mailto:mail@biosense.de){.uri}, internet:
+<http://www.biosense.de>).
+
+::: figure*
+![image](photos/Viospor1.pdf){height="3.7cm"} ![image](photos/Viospor2.pdf){height="3.7cm"}
+:::
+
+Small dosimeters have also been constructed from 30--45 film of the
+thermoplastic polysulphone and can be used to determine exposure by
+measuring the increase in [absorbance]{acronym-label="absorbance"
+acronym-form="singular+short"} at 330 nm [@Geiss2003; @Parisi2010a]
+ideally using an integrating sphere to minimise the effects of
+scattering (Figure
+[\[fig:UV:dosimeters:PS\]](#fig:UV:dosimeters:PS){reference-type="ref"
+reference="fig:UV:dosimeters:PS"}). Dosimeters can be calibrated in
+sunlight by comparison with erythemally-calibrated broadband radiometers
+or against lamp sources using a double monochromator spectroradiometer.
+Ideally, the calibration should be determined under field conditions
+appropriate for plant studies and if calibrated outside in sunlight the
+calibration is only accurate under the prevailing atmospheric ozone
+column as this modifies the UV spectrum. An erythemal dose can be
+calculated from 40 polysulphone film using a relationship of the form
+[see @Geiss2003]:
+
+$$\mathrm{Radiation\ amount}\ (\Unit{J\,m^{-2}})  = 8025\, (\Delta \mathrm{A}_{330})^2 + 1980.8\, \Delta \mathrm{A}_{330}$$
+
+where is the absorbance at 330 nm before exposure (which should be
+between 0.105 and 0.133) minus the absorbance at 330 nm after exposure
+plus a further 24 h in the dark. The film may also be calibrated against
+other action spectra.
+
+Accuracy of polysulphone dosimetry has been reported to be
+$\pm$`<!-- -->`{=html}10% if is $<$`<!-- -->`{=html}0.3 but decreases to
+$\pm$`<!-- -->`{=html}30% for up to 0.4 [@Diffey1987]. Greater
+variability in occurs with increasing duration of exposure and
+dosimeters saturate at sub-tropical sites in less than one day. However,
+they have also been modified with a filter to provide an extended
+dynamic range of exposure (over 3 to 6 days) without the need to replace
+the dosimeter due to saturation [@Parisi2004a]. Polysulphone dosimeters
+have been combined with a PAR dosimeter to investigate the visible and
+UV radiation environment of plants [@Parisi1998; @Parisi2003] and
+miniature versions have also been developed:
+$1.5~\Unit{cm} \times 1.0~\Unit{cm}$ with an exposure of a 6 mm disc of
+polysulphone [@Parisi2010a].
+
+::: figure*
+![image](photos/Polysulphone1.pdf){width="0.4\\myfigwidth"} ![image](photos/Polysulphone2.pdf){width="0.4\\myfigwidth"}
+:::
+
+For longer exposure periods, dosimeters using an alternative plastic
+film, PPO, have been found more suitable as they saturate at
+sub-tropical locations after 5--10 days. The change in absorbance of PPO
+is quantified at 320 nm and it has been successfully calibrated to
+erythemal exposures [@Lester2003] and by using a mylar (polyester)
+filter for estimation of UV-A exposures [@Turnbull2008]. Both PS and PPO
+dosimeters have been investigated for underwater use where PPO has been
+considered viable when calibrated under water (but not using a
+calibration in air) and under the relevant ozone column conditions of
+the study [@Schouten2007; @Schouten2008]. The duration of use of PPO
+dosimeters in air at sub-tropical locations has been extended from 5 to
+10 days by the use of neutral density filters
+[@Parisi2010b; @Schouten2010].
+
+The use of properly calibrated UV dosimeters can be particularly
+valuable in plant studies when long-term use of spectroradiometers and
+broadband radiometers is restricted by availability of electrical
+supplies or by physical constraints.
+
+## Thermopiles
+
+Most thermopiles have a flat response to (energy) irradiance across a
+wide range wavelengths. They are arrays of thermocouples formed between
+two different metal alloys. In a thermopile some couples are painted
+white and some black (or some other arrangement is used to generate a
+temperature difference dependent on absorbed energy), and the difference
+in temperature induced by the absorption of radiation by the black
+regions generates an electrical signal. A single thermocouple produces a
+very small signal, but connecting them in series generates a large
+signal that is easier to measure. Thermopiles can be either small for
+use in the laboratory or larger, and protected by a quartz dome for use
+in the field. Thermopile pyranometers are used to measure solar
+radiation in the range 285 to 2800 nm. Examples of such instruments are
+the pyranometers in the CMP series from Kipp & Zonen. Thermopile
+pyranometers are standard instruments in weather stations. Thermopiles
+can be also used to measure the (energy) irradiance of monochromatic
+radiation, including radiation, if the dome or 'window' is made from an
+transparent material.
+
+## Broadband instruments
+
+Broadband radiometers are instruments used to measure irradiance over a
+broad region of the solar (or lamp) spectrum, weighted with an
+instrument spectral response. A broadband radiometer consists of a
+sensor that is designed to measure the solar radiation flux density ()
+from a field of view of $2\pi$ steradians (180, or $\pi$ radians, when
+projected on a perpendicular plane). The plane of the sensor is usually
+positioned horizontally, but it can also be located, for example,
+parallel to the surface of a leaf.
+
+UV broadband radiometers integrate over either the UV-A or UV-B band or
+both, which encompasses the entire UV region of daylight. The names
+broadband and narrowband refer to the width of the 'window' or range of
+wavelengths to which a sensor responds. The term full-width half-maximum
+(FWHM) is used to measure this, it means the width of the peak in units
+of wavelength, measured at half the maximum height of the peak along the
+$y$-axis (with the output of the sensor on the $y$-axis plotted on a
+linear scale). A narrow band-pass can have a 10 nm or 20 nm FWHM while a
+wide one can have an 80 nm FWHM for instruments measuring a combination
+of UV-A and UV-B radiation.
+
+Their low cost, fast response (typically milliseconds to seconds),
+stability and low maintenance requirements make them suitable for
+continuous monitoring applications. The most common spectral response is
+one that follows the erythemal action spectrum defined by the Commission
+Internationale de l'Eclairage, or CIE, [@McKinlay1987; @Webb2011], which
+describes the response of the human skin to UV radiation (Figure
+[\[fig:action:spectra\]](#fig:action:spectra){reference-type="ref"
+reference="fig:action:spectra"}, on page ).
+
+However, erythemally effective can be derived from most UV measuring
+instruments if the radiation spectrum is known and fairly stable in time
+such as when measuring sunlight. Hence, in meteorology the UV index is
+taken as a common factor that should be obtained from the data at every
+measuring site. Vice versa, using a correction factor to the
+instrument's output, actual erythemal irradiance in effective can be
+calculated. Data from UV broadband instruments are part of a worldwide
+UV database that is located in the World Ozone and Ultraviolet Radiation
+Data Centre (WOUDC) as a part the Global Atmosphere Watch (GAW)
+programme of the World Meteorological Organization (WMO).
+
+As the spectral response of broadband radiometers only approximately
+follow the needed for the desired response, their use for measuring
+different radiation sources requires source-specific calibration. The
+readings of broadband radiometers calibrated for sunlight should not be
+used to assess doses from lamps without using correction factors
+obtained by calibration. For measuring lamps and LEDs the use of a
+spectroradiometer is strongly recommended.
+
+### Principle of operation {#sec:broadband:principles:operation}
+
+The basic design of broadband instruments has not changed significantly
+since the introduction of the first erythemally weighted solar
+radiometer, the Robertson-Berger meter [@Robertson1972; @Berger1976].
+When direct and scattered solar radiation is transmitted through the
+transmitting quartz dome, the most common way to obtain an erythemal
+weighting is to filter out nearly all visible light using -transmitting
+black-glass blocking filters. The remaining radiation then strikes a
+sensitive fluorescent phosphor to convert UV-B light to visible light,
+i.e. green light emitted by the phosphor. This light is filtered again
+using coloured glass to remove any non-green visible light before
+impinging on a gallium arsenic or a gallium arsenic phosphorus
+photodiode used as detector.
+
+::: figure*
+![image](figures/Yankee_Pedro.pdf){width="0.55\\myfigwidth"}
+:::
+
+A thermally stable amplifier converts the diode's output current to a
+voltage. It drives a line amplifier that provides a low impedance 0 to
++4 V DC output signal. Phosphor efficiency decreases by approximately
+0.5% K$^{-1}$ and its wavelength response curve is shifted by
+approximately 1 nm towards the red every 10 K. This latter effect is
+particularly important because of the slope of the solar radiation curve
+at these wavelengths. The glass filters, phosphor and photodiode are
+held at 25 to 50, depending on the manufacturer, to ensure that the
+output signal is not sensitive to changes in ambient temperature.
+Temperature stabilization is usually achieved by an internal thermistor
+that permits independent monitoring of the sensor's temperature (Figure
+[\[fig:Yankee\]](#fig:Yankee){reference-type="ref"
+reference="fig:Yankee"}). The analogue electrical signal produced by the
+broadband UV instrument is converted into digital format for electronic
+logging. The sampling frequency is usually between once per second (1
+Hz) and once per minute. If the complete data set is not stored then
+data are saved as averages over periods ranging from 10 minutes to not
+more than one hour. Sometimes, the variation around the mean is also
+recorded for each averaging period. This indicates the constancy of the
+conditions during the averaging period (e.g. sun screening by rapidly
+changing cloud cover: broken clouds or clear sky or constant
+cloudiness). The raw signal must be converted into units of erythemal
+irradiance () using a calibration factor, plus several corrections.
+These corrections require additional data: solar zenith angle () and
+ozone column depth at the time of measurement.
+
+Erythemal effective irradiance () is calculated [@Webb2006]:
+$$\irr[CIE] = (\voltage - \voltage[d]) \cdot k \cdot f(\SZA, \TOthree) \cdot f(\temperature) \cdot \Coscor$$
+Where: $\voltage$ is the measured electrical signal from the radiometer,
+$\voltage[d]$ is the electrical offset for dark conditions, $k$ is the
+calibration coefficient, a constant value determined for specific
+conditions, e.g. at of 40and a total ozone column of 300 DU[^20].
+$f(\SZA, \TOthree)$ is a function of the solar zenith angle () and the
+total column of ozone (), i.e. the function can be expressed as a
+calibration matrix (or look up table) and is derived as part of the
+calibration procedure. It is normalized at a solar zenith angle of 40and
+a total ozone column of 300 DU. For solar zenith angles less than 40,
+$f(\SZA, \TOthree)$ is often nearly unity. $f(\temperature)$ is the
+temperature correction function. It is recommended that the instrument
+is temperature stabilized. If this is not applicable then a correction
+should be applied, which is complex and not always successful. $\Coscor$
+is the cosine correction function (if necessary, otherwise =1).
+
+The quality of the broadband instrument depends on the quality of the
+protective quartz dome, the cosine response, the temperature stability,
+and the ability of the manufacturer to match the erythemal curve with a
+combination of glass and diode characteristics. Instrument temperature
+stability is crucial, with respect to both the electronics and the
+response of the phosphor to the incident UV radiation.
+
+More recently, broadband instruments are using thin film metal
+interference filter technology and specially developed silicon
+photodiodes to measure UV erythemal irradiance. This overcomes many
+problems connected with the phosphor technology, but on the other hand
+they have difficulties related to very low photodiode signal levels and
+filter stability. Silicon carbide () photodiodes have good sensitivity
+to radiation and are intrinsically blind to visible radiation.
+
+Other broadband instruments use one of these measurement technologies to
+measure other regions of the spectrum by using either a combination of
+glass filters or interference filters. Some manufacturers of these
+instruments provide simple algorithms to approximate erythemal dosage
+from the unweighted measurements [@WMO2008].
+
+The maintenance of broadband instruments consists of ensuring that the
+domes are cleaned, the instrument is level, the desiccant (if provided)
+is active, and the heating/cooling system is working correctly, if so
+equipped.
+
+### Some commonly used terrestrial instruments {#sec:broadband:instruments}
+
+The most common outdoor broadband radiometers are: SL 501 from Solar
+Light, Inc. (Glenside, PA, USA), YES UVB-1 from Yankee Environmental
+Systems, Inc. (Turners Falls, MA, USA), UVS-E-T (erythemal), UVS-A-T
+(UV-A) and UVS-B-T (UV-B) from Kipp & Zonen (Delft, The Netherlands)
+(Figure
+[\[fig:UV:pyranometers\]](#fig:UV:pyranometers){reference-type="ref"
+reference="fig:UV:pyranometers"}). The principle of operation of these
+meters is basically the same as described in section
+[9.5.1](#sec:broadband:principles:operation){reference-type="ref"
+reference="sec:broadband:principles:operation"}. Unlike the other
+meters, the Scintec UV-S-290-T uses a Teflon diffuser under the quartz
+dome in front of the filters. These three instruments are temperature
+stabilized by means of heating elements and temperature sensors. Solar
+light also sells non-stabilized instruments like the PMA2101 (digital)
+and PMA1101 (analog), which contain a temperature sensor whose output
+can be used to correct in silico for the temperature dependency of the
+UV-B readings.
+
+::: figure*
+![image](photos/Solar_501.pdf){width="0.3\\myfigwidth"} ![image](photos/Broadband_Scintec.pdf){width="0.3\\myfigwidth"} ![image](photos/Broadband_YES.pdf){width="0.3\\myfigwidth"}
+:::
+
+Broadband sensors based on special silicon photodiodes are also
+available, which, are more stable with respect to variation in
+temperature than those based on phosphors. Delta-Ohm (Padova, Italy),
+Delta-T Devices (Cambridge, UK) and Sky instruments (Llandrindod Wells,
+UK) make sensors based on this principle. Examples are the SKU 420, SKU
+430, and SKU 440 (UV-A, UV-B, and erythemal, respectively) from Sky
+Instruments, LP UVA 01/03 and LP UVB 01/03 from Delta-Ohm, and UV3pB-05
+and UV3pA-05 from Delta-T devices (Figure
+[\[fig:UV:diode:sensors\]](#fig:UV:diode:sensors){reference-type="ref"
+reference="fig:UV:diode:sensors"}). All of them are UV radiometers with
+no temperature stabilization or in-built temperature sensors.
+International Light Technologies (Peabody, USA) makes a wide array of
+meters and sensors for measuring radiation. Vital Technologies used to
+make good UV sensors which were popular some years ago, but the company
+is no longer in business. Most of these sensors have built-in
+preamplifiers.
+
+::: figure*
+![image](photos/UV3p+base.pdf){height="5cm"} ![image](photos/UVB-Sensor_Skye.pdf){height="5cm"} 
+:::
+
+### Spectral and angular (cosine) response
+
+Radiation incident on a flat horizontal surface originating from a point
+source with a defined zenith position will have an intensity value
+proportional to the cosine of the zenith angle of incidence. This is
+called the 'cosine law' or 'cosine-response' (see section
+[9.1.2](#sec:basic:concepts:direction){reference-type="ref"
+reference="sec:basic:concepts:direction"} on page ). Ideally, a
+pyranometer has a directional response, which is the same as the
+cosine-law. Nevertheless, directional response in a pyranometer is
+influenced by the quality, dimensions and construction of the (quartz)
+dome and/or Teflon diffuser. Pyranometer cosine-response is defined in
+their manufacturers specification as deviation from the ideal
+cosine-response using the incidence angle up to 80with respect to
+1000 irradiance at normal incidence (0). Most sensors deviate
+considerably from ideal cosine response at angles between 80and 90.
+
+The erythemal response of human skin to UV radiation varies with the
+individual, but for the global evaluation of UV-related health effects
+to succeed, broadband measurements have to be standardized, which means
+that the radiometric characteristics of all meters should be identical.
+The spectral response of every meter should follow exactly the same
+reference action spectrum and the angular response should not deviate
+from the cosine response [@Leszczynski2002]. Hence, the spectral
+response of an ideal erythemally weighted radiometer should follow the
+CIE curve, and the angular response should follow the cosine function.
+Unfortunately, the angular and spectral response of real erythema meters
+are far from ideal; moreover, the characteristics vary from one meter
+unit to another, even within the same meter type [@Leszczynski2002].
+
+Broadband radiometers that do not follow the CIE erythemal action
+spectrum as are also used. For some radiometers the spectral response
+follows a bell-shaped curve centred on the UV-A or UV-B bands (see
+Figure
+[\[fig:UV:sensors:spectra\]](#fig:UV:sensors:spectra){reference-type="ref"
+reference="fig:UV:sensors:spectra"}). Radiometers following the GEN or
+other spectra commonly used as BSWFs in research with plants, are very
+seldom used, and they are currently not available commercially. However,
+almost any UV-B radiometer can be calibrated to measure according to
+these BSWFs, but such calibrations are valid only when the calibration
+light source exactly matches the spectrum of the measured light source.
+
+::: figure*
+![image](figures/fig_Kipp_spectra.pdf){width="0.8\\myfigwidth"} 
+:::
+
+### Calibration and intercomparison {#sec:broadband:calibration}
+
+Each broadband instrument used to measure solar or lamp radiation should
+be characterized for its spectral and angular response, and its
+sensitivity to temperature (and if possible humidity). These
+characteristics should be checked at regular intervals to determine
+their stability. Also, correction is necessary for each instrument, as
+no instrument has a spectral sensitivity identical to the erythemal
+action spectrum.
+
+To calibrate a broadband instrument for solar radiation, the basic
+procedure is to simultaneously measure the spectral irradiance of the
+sun with a calibrated spectroradiometer and the broadband meter under
+cloudless sky conditions. The measured spectrum is weighted with the
+desired spectral sensitivity[^21] of the broadband meter and integrated
+over all wavelengths relevant for the broadband meter. The result is
+given in the units \[detector-weighted \], relative to a defined
+wavelength, usually the maximum of the erythemal action spectrum (CIE)
+at 298 nm or the maximum of the spectral sensitivity of the broadband
+meter. For different atmospheric conditions, such as different solar
+elevation or different thickness of the ozone column, the relationship
+between the detector-weighted spectral integral, measured with a
+spectroradiometer, and the output of the broadband detector, after
+cosine correction, should be constant within the uncertainty estimate;
+if this is not the case, the mismatch indicates that the spectral
+sensitivity of the broadband meter deviates from the that used to
+calculate effective irradiances from the spectral irradiance data
+(e.g. that defined by the CIE standard for erythema), or that the
+spectroradiometric measurements were incorrectly done [@Seckmeyer2005].
+
+When measuring the output from lamps using broadband sensors calibrated
+under sunlight, large errors are incurred. In the example shown in Table
+[\[tab:broadband:cal:errors\]](#tab:broadband:cal:errors){reference-type="ref"
+reference="tab:broadband:cal:errors"}, we use Kipp sensors because this
+manufacturer has published instrument spectral response data plotted on
+a logarithmic scale. Errors of a similar magnitude should be expected
+for equivalent sensors from other manufacturers. When measuring the
+irradiance from lamps under a background of sunlight as in some
+modulated systems, or when the spectrum changes as occurs when profiling
+the radiation change with depth in water bodies, other types of
+instruments like multiband sensors or spectroradiometers are preferable.
+
+### UV radiation monitoring in growth chambers, greenhouses and phytotrons
+
+Erythemal broadband instruments are widely used to monitor UV radiation
+levels in growth chambers. Great care must be taken when using such
+instruments for this purpose since plant action spectra generally
+deviate from the CIE function. In addition, the reflectance of walls and
+other surfaces of growth chambers may affect the readings if the cosine
+response is not good. Great care is needed when artificial light sources
+are used, because their spectra differ greatly from the solar spectrum
+for which broadband instruments are normally calibrated. Correction
+factors for the solar zenith angle and ozone dependence of the
+calibration factors are based on unfiltered solar spectra, so cannot be
+applied to measurements performed in such chambers, hence special
+treatment of data may be necessary. In most cases if absolute readings
+are needed, the broadband sensor should be calibrated against a
+double-monochromator spectroradiometer, for each different light source
+to be measured. Failing to do so can cause huge errors in the
+measurements of doses as shown in Table
+[\[tab:broadband:cal:errors\]](#tab:broadband:cal:errors){reference-type="ref"
+reference="tab:broadband:cal:errors"}.
+
+## Multi-channel filter instruments {#sec:multichannel}
+
+Multichannel instruments are radiometers that measure a series of fixed,
+usually narrow, wavelength bands of radiation. They are more rugged and
+cheaper than high quality spectroradiometers and easier to deploy. Each
+channel has its own detector (e.g. silicon photodiode) and filter
+(e.g. interference filters). Usually there is a single diffuser acting
+as common light collector for all channels. One example of a
+multichannel instrument is the GUV-2511 from Biospherical Instruments
+Inc (San Diego, USA) designed to measure cosine-corrected downwelling
+irradiance at 305, 313, 320, 340, 380, and 395 nm, as well as PAR
+(400--700 nm). When measuring daylight this allows to monitor UV
+radiation in key UV wavebands for biological exposure studies. These
+wavelengths also allow the extraction of cloud optical thickness and
+total column ozone, two critical variables used in modelling the solar
+spectrum. Multichannel sensors are mainly used for long-term monitoring
+of irradiance and its geographic variation. They are also used for
+ground measurements used to calibrate space-borne instruments carried by
+satellites.
+
+Recent multichannel instruments from Biospherical Instruments are
+modular. They are composed of microradiometers of small size, one for
+each channel, which together with input optics and filters are used to
+build the multichannel instruments. Figure
+[\[fig:multichannel\]](#fig:multichannel){reference-type="ref"
+reference="fig:multichannel"}
+
+::: figure*
+![image](photos/microradiometer.pdf){width="0.6\\myfigwidth"}\
+![image](photos/radendnew_350.pdf){width="0.6\\myfigwidth"}
+:::
+
+The ELDONET terrestrial dosimeter consists of three broad band sensors,
+measuring , and irradiance (Figure
+[\[fig:ELDONET:terrestrial\]](#fig:ELDONET:terrestrial){reference-type="ref"
+reference="fig:ELDONET:terrestrial"}). It uses an integrating sphere to
+collect the light, which reaches the detectors after bouncing on the
+sphere walls. The autonomous version includes a built-in datalogger. It
+is waterproof, but it is not submersible. The underwater version is
+described in section
+[9.8.3](#sec:underwater:radiometers){reference-type="ref"
+reference="sec:underwater:radiometers"} on page .
+
+::: figure*
+![image](photos/Eldonet_terrestre.pdf){width="0.6\\myfigwidth"}\
+:::
+
+## Spectroradiometers {#sec:spectroradiometers}
+
+Spectroradiometers[^22] are instruments used to measure spectral
+irradiance. There are two types of spectroradiometer: 1) scanning
+spectroradiometers, and 2) array detector spectroradiometers. The former
+have a single sensor, which is used to sequentially measure the spectral
+irradiance at each wavelength, while the latter have an array of sensors
+onto which the refracted spectrum is projected and measured
+simultaneously at all wavelengths. Sometimes the more general term
+spectrometer is adopted to indicate that the same instrument can be also
+used to measure spectral absorbance, -transmittance, or -reflectance, in
+addition to spectral irradiance. Scanning spectroradiometers scan a
+range of wavelengths. To do this they require mechanically moving parts
+inside the optic path and therefore need very stable housing for the
+instrument. For this reason, scanning spectroradiometers are larger and
+more difficult to transport than array detector spectroradiometers. They
+are also less rugged and usually require mains power. However, in
+scanning spectroradiometers it is possible to use a double monochromator
+arrangement that makes their optical performance far superior to that of
+array spectroradiometers which always use a single monochromator.
+
+### Scanning spectroradiometers
+
+#### Basic structure and principles of operation
+
+The basic components of a scanning spectroradiometer are the following:
+a) input optics for collecting radiation from the sky and guiding it
+further into the spectroradiometer b) a monochromator for resolving the
+input radiation into separate wavelengths c) a photomultiplier tube
+(PMT) for detecting the energy possessed by each spectral component in
+the measured spectrum. In addition, an external computer for
+communication with the microprocessor of the spectroradiometer and for
+collection, processing and storage of data is needed.
+
+The input optics typically consists of a flat teflon diffuser covered by
+a quartz dome. The diffuser collects the incident photons from the
+overhead hemisphere. The resulting diffuse radiation is guided to the
+entrance slit of the monochromator, sometimes by means of an optical
+fibre. The monochromator may be a single or a double monochromator (see
+section [8.2.4](#sec:spectrographs){reference-type="ref"
+reference="sec:spectrographs"} on page ). In scanning
+spectroradiometers, a system based on a step motor drives a mask that
+allows only photons of a certain wavelength at a time to enter the exit
+slit of the monochromator. The exit slit serves as the entrance window
+to the cathode of the PMT. The photon pulses are amplified and
+transmitted to a photon counter for registration.
+
+Some spectroradiometers are constructed on a solar tracker that follows
+the position of the sun. This eliminates the effects of potential
+azimuthal dependencies in the detection of radiation. A measurement head
+at the end of an optical fibre may be also installed on a separate sun
+tracker. The temperature of the instrument is usually either stabilized
+or kept above a certain temperature limit to ensure proper functioning.
+The dome of the measurement head may be equipped with a heater and/or
+air blower to keep the temperature of the teflon within certain limits
+and to avoid emergence of frost onto the dome.
+
+Other spectroradiometers are less rugged and are intended for laboratory
+or spot measurements outdoors. They are more portable but more sensitive
+to temperature extremes and are not water proof. Examples of such
+instruments are Optronics OL 756 and Macam SR9910 spectroradiometers.
+Figure
+[\[fig:Optronics:OL_756\]](#fig:Optronics:OL_756){reference-type="ref"
+reference="fig:Optronics:OL_756"} shows the different parts of the first
+of these instruments.
+
+::: figure*
+![image](figures/OL_756_diagram.pdf){width="0.9\\myfigwidth"}\
+:::
+
+The more rugged instruments, usually permanently installed at a fixed
+location, are commonly used for measuring long (several years long) time
+series of spectral irradiance data. The more portable instruments are
+used for spot measurements in plant canopies, and under lamps, and or
+filters. The first type of instrument is most commonly used by
+meteorologists, while the portable instruments are most useful to
+biologists.
+
+#### Characteristics
+
+**Dark current** and **dead time** are characteristics possessed by the
+PMT. Dark current is a measure of the drift photons going from the
+cathode to the anode of the PMT without any real incident photons
+entering the instrument. Dead time is a measure of that PMT which is in
+a paralysed state after a photon detection event. Stray light is
+composed of photons echoed from wavelengths other than the nominal
+wavelength being measured. In commercially available scanning
+spectroradiometers, these phenomena are usually measured and handled by
+the measurement software.
+
+The **wavelength alignment** of a spectroradiometer has to be checked
+regularly. Most instruments taking daily measurements contain an
+internal mercury lamp aimed at ensuring the stability of the alignment.
+The wavelength and the position of the micrometer turning the grating of
+the monochromator are related to each other by a second-order equation
+using so called dispersion coefficients. The determination of the
+dispersion coefficients should be part of the annual maintenance of the
+instruments.
+
+Solar irradiance spectra sometimes exhibit so called **noise spikes**,
+which mean sudden abnormally high or low intensity readings on a single
+wavelength. The origin of the spikes is not fully resolved, but
+straylight is considered a partial explanation. The spikes can be
+detected and eliminated making use of suitable reference spectra.
+
+Ideally, the angular response of the measurement head follows the shape
+of a cosine curve. In practice, the response deviates somewhat from
+this. Typically, the larger the solar zenith angle, the larger the
+deviation. The **cosine response** of the measurement head should be
+measured in laboratory and a corresponding correction applied to all
+measured data.
+
+If the spectroradiometer is not stabilized for temperature, its response
+usually exhibits **temperature dependence**. This dependence should be
+determined in the laboratory by measuring a calibration lamp with a
+spectroradiometer heated/cooled over a range of different wavelengths.
+The measurements can be used for deriving the temperature correction
+factors to be applied in the post-processing of the sky measurements.
+
+The **slit function** determines the transmittance of a monochromator as
+a function wavelength. The ideal shape of the function would be
+triangular. The full width at half maximum of the slit function is
+commonly used as a quantity characterizing the slit function. The slit
+function can be derived by measuring the irradiance emitted by a tunable
+laser. Removal of the effect of the slit function on the measured
+spectra should be considered if spectra measured by two or several
+instruments are to be compared with each other.
+
+The **spectral responsivity** of a spectroradiometer should be based on
+regular measurements of a certified calibration lamp. If the
+responsivity seems to have changed, basically two alternative ways to
+handle the change exist. The change may be introduced in the
+responsivity of the instrument and the processing of the sky
+measurements as such. A step-wise change in response is hence introduced
+in the time series of the measurements. Alternatively, a gradually
+changing response time-series may be defined using a moving average with
+a suitable time window. In this way, the change in the response is
+introduced gradually in the time series of the sky irradiance
+measurements.
+
+#### Maintenance
+
+The maintenance of a scanning spectroradiometer operating in an outdoor
+environment involves the following practices: a) general daily
+maintenance; b) checks on the wavelength setting and stability of
+irradiance scale; c) calibration of irradiance against primary standards
+in a dark room.
+
+Daily routine maintenance includes cleaning of the quartz dome and
+checking on the general functioning as well as the correct levelling of
+the instrument. The quartz dome should also be cleaned/dried after rain
+or snow. The operator should be familiar with the control software of
+the instrument. Additional simple routines based on, for instance,
+selected reference spectra may be used for instant checking of the
+measured data. These kinds of routines are invaluable in the prompt
+detection of occasional malfunctions of the instrument.
+
+An internal Hg lamp is used for checking of the wavelength scale in some
+spectroradiometers. In these cases, it is convenient to imbed the Hg
+lamp measurement into the daily measurement schedule. If the instrument
+lacks an internal lamp, this check has to be done using an external
+lamp. For checking the stability of the irradiance scale, portable
+calibration units are available. These enable, for instance, stability
+checks of the instrument at the measuring site on a weekly basis. It is
+advisable that the humidity indicators are also checked on a weekly
+basis.
+
+Irradiance calibration of a spectroradiometer should be performed in a
+dark room (Figure
+[\[fig:Brewer:calibration\]](#fig:Brewer:calibration){reference-type="ref"
+reference="fig:Brewer:calibration"}). A primary standard lamp with an
+irradiance certificate provided by a certified laboratory of standards
+is needed. To extend the lifetime of the primary standard lamp, it is
+recommended that it is not used as a regular calibration lamp. Instead,
+the irradiance scale of the primary lamp should be transferred to a
+secondary standard lamp that is used as a working calibration lamp. Use
+of several working lamps is recommended to enable recognition of
+potential drifts in the radiant output of the lamps as they age.
+Calibration against the primary/secondary standard lamp should be
+performed at least every two months. The desiccant bags inside the cover
+of the spectrometer should be taken out and dried at least every two
+months as well. Proper levelling of the instrument has to be ensured
+after having it relocated for outdoor measurements.
+
+::: figure*
+![image](photos/Brewer107_in_dark_room_COST.pdf){width="0.8\\myfigwidth"}
+:::
+
+On the annual maintenance practices of a spectroradiometer, each
+manufacturer has its own services and recommendations. Participation in
+intercomparison campaigns gathering a number of state-of-the-art
+instruments to conduct measurements on a jointly agreed schedule for a
+period of time has proven a fruitful way to investigate the long-term
+stabilities and overall performances of scanning spectroradiometers
+(Figure
+[\[fig:Brewer:intercomparison\]](#fig:Brewer:intercomparison){reference-type="ref"
+reference="fig:Brewer:intercomparison"}).
+
+::: figure*
+![image](photos/Brewer107_in_Huelva_2005_COST.pdf){width="0.8\\myfigwidth"}
+:::
+
+### Array detector spectroradiometers
+
+In contrast to scanning spectroradiometers, array detector instruments
+measure spectral irradiance simultaneously at all wavelengths. The
+detector in this case is a linear array of light sensors, similar in
+structure to the imaging sensors used in digital cameras, but long and
+narrow. The number of detector elements ('pixels') along the array
+varies, 2000 to 3000 pixels being common[^23]. The array can be a
+'charge coupled device' (CCD), or an array of photodiodes (DAD). The
+'image' of the spectrum produced by the monochromator is projected and
+focused by means of mirrors onto the linear detector array, each
+detector in the array receiving light of a certain wavelength. In the
+case of array spectrometers it is not possible to use two monochromators
+in tandem to reduce stray light. Array spectrometers are small and
+portable (Figure
+[\[fig:Maya2000Pro\]](#fig:Maya2000Pro){reference-type="ref"
+reference="fig:Maya2000Pro"}).
+
+::: figure*
+![image](photos/Maya2000Pro.pdf){width="0.4\\myfigwidth"}
+![image](photos/Maya2000Pro-1.pdf){width="0.4\\myfigwidth"}
+:::
+
+For measuring energy or photon spectral irradiance a cosine diffuser is
+used as input optics. This ensures that the angular response follows the
+cosine law, and so the instrument measures the radiation as received on
+a flat surface. Other input optics are also available, for example, with
+a narrow angle of view. However, the quantity measured with them is not
+irradiance. Cosine diffusers differ widely in how closely they follow
+the cosine law. Some cheaper models are prone to large errors,
+especially when radiation impinges at a sharp angle to their surface.
+This will be further discussed in section
+[9.7.2.1](#sec:array:errors){reference-type="ref"
+reference="sec:array:errors"} on page .
+
+The input optics is usually connected to the array spectrometer with an
+optical fibre. The type of fibre to be used depends on the wavelength
+range to be measured. If smaller than the entrance of the
+spectroradiometer, the diameter of the fibre will affect the amount of
+radiation entering the instrument. The diameter also affects the
+mechanical properties of the fibre: thin fibres are more flexible and
+tolerate bending into curves of smaller diameter. Fibres also vary with
+regards to the type of cladding material used to protect them. Fibres
+with metal cladding tolerate rougher handling than those with plastic
+cladding. The most common connector for these fibres and accessories is
+the SMA 905, originally designed for light fibres used in digital
+communication systems. For this reason their positioning upon repeated
+attachment is not exactly the same. Consequently, the recommendation is
+**not** to detach and reattach the fibre from the spectrometer without
+recalibrating the system[^24].
+
+At the entrance of the spectrometer, just behind the connector to which
+the fibre is attached, there is a slit (Figure
+[\[fig:CCD:slit\]](#fig:CCD:slit){reference-type="ref"
+reference="fig:CCD:slit"}), which limits the width and height of the
+incoming light beam. The width is of the order of a few micrometres and
+the exact value chosen determines, together with the monochromator, the
+spectral resolution of the spectroradiometer. The narrower the slit, the
+narrower the beam hitting the monochromator and the better the
+resolution (the narrower the peaks that can be resolved). In a
+Czerny-Turner configuration (Figure
+[\[fig:optical:bench\]](#fig:optical:bench){reference-type="ref"
+reference="fig:optical:bench"}), the next component is a collimating
+mirror which projects the beam onto a monochromator. Gratings are used
+as monochromators. Gratings have a surface with very closely spaced
+rulings of a specific profile, and they separate radiation of different
+wavelengths in a similar way to a prism. One important parameter is the
+density of rulings which is one of the determinants of spectral
+resolution and useful wavelength range. The 'image' produced by the
+grating is focused onto the array detector by another collimating
+mirror. Some newer models of spectrometer from StellarNet
+(e.g. BLACK-Comet spectrometer) and now also from Ocean Optics (Torus
+spectrometer) use a concave grating instead of a planar one. Since the
+grating itself focuses the light onto the array detector, collimating
+mirrors are not needed. Having fewer optical components, an instrument
+with better stray light performance is obtained.
+
+::: figure*
+![image](figures/024-OFLV-200.pdf){width="0.5\\myfigwidth"}
+![image](figures/slits.pdf){width="0.5\\myfigwidth"}
+:::
+
+::: figure*
+![image](figures/avabank.pdf){width="0.8\\myfigwidth"}\
+![image](figures/OO-USBBbench.pdf){width="0.4\\myfigwidth"}
+:::
+
+The array detector normally has rectangular 'pixels', orientated so that
+their shorter dimension is on the axis along which the different
+wavelengths have been separated by the monochromator, and their longer
+dimension is perpendicular to it. The entrance slit is positioned to
+have the long dimension coincident with the long dimension of the
+pixels. In some detectors the long pixels are in reality rows of square
+pixels with their electrical output combined into a single output
+signal. The output signal from the pixels is averaged by the detector
+itself over what is called 'integration time'. The longer the
+integration used, the lower the irradiance that can be measured.
+However, the 'dark noise' increases with the integration time. In
+addition, it is possible to take several scans and average them. A
+coarse dark noise correction is sometimes done by subtracting the signal
+from special pixels at the end of the array that are not exposed to
+radiation. However a dark scan, with the input optics protected from the
+incoming radiation, should also be measured, and its value, wavelength
+by wavelength subtracted from the measurements. The dark noise depends
+on temperature. This has two implications, dark scans should be taken
+frequently, sometimes before or after each measurement, and the
+spectrometer should be allowed to warm up for some minutes before
+starting to take readings. Furthermore, when working outdoors it should
+be protected from direct sunlight, so as to keep its temperature stable
+and close to that at which it was calibrated. Some spectrometers have a
+thermoelement (TE), working according to the Peltier principle, which
+cools the array detector to a preset temperature and thereby stabilizes
+it.
+
+Most current array spectrometers, the exception being some models with
+thermoelectrically cooled detectors, are powered through the USB port of
+a personal computer. For portable use a laptop is frequently used.
+Special software, sold by the manufacturer of the spectrometer, is used
+to control the instrument and acquire and plot the spectra (Figure
+[\[fig:SpectraSuite\]](#fig:SpectraSuite){reference-type="ref"
+reference="fig:SpectraSuite"}). For most instruments there are also
+drivers and software development kits (SDK) available for developing
+programs for special applications. When special corrections, for example
+for stray light, are performed it may be necessary to acquire raw
+spectral data and apply corrections and calibrations off-line using
+other software, for example Excel or R.
+
+::: figure*
+![image](photos/SpectraSuite.pdf){width="0.67\\myfigwidth"}
+:::
+
+#### Measuring errors and limitations in accuracy {#sec:array:errors}
+
+Array spectroradiometers have a great advantage when quickly measuring
+changing radiation as they acquire all wavelengths simultaneously. This
+ensures that the values of spectral irradiance measured at all
+wavelengths are consistent. In contrast, under conditions where
+irradiance varies rapidly with time, the shape of the measured spectrum
+can get badly distorted when measured with a scanning spectroradiometer.
+However, array spectrometers have a serious limitation in that they
+cannot be built with double monochromators. As any spectroradiometer
+with a single monochromator, they suffer from relatively high values of
+stray light. Stray light originates from scattered light of incorrect
+wavelengths falling on a pixel of the array detector. In other words,
+radiation of one wavelength is detected (and measured) as radiation of a
+different wavelength. Perfectly scattered radiation would affect all
+pixels in the same way, but when there are reflections within the
+optical bench that are not perfectly scattered, some pixels in the array
+detector are more affected by stray light than others. Stray light is a
+critical specification when measuring UV-B in sunlight, as UV-B
+irradiance is very low compared to the irradiance of visible and near
+infra-red radiation. Consequently, if even a small proportion of visible
+radiation is scattered and reflected as stray light within the
+instrument, this stray light can generate a signal on the 'UV-B pixels'
+of the array of a magnitude similar to, or larger than, that produced by
+the radiation that we are trying to measure. Stray light is such a big
+problem that without very complicated and special corrections these
+instruments cannot be used at all to measure radiation in sunlight.
+Errors of more than 100%[^25] for biologically effective doses can be
+incurred even with a well calibrated instrument. Failure to take this
+into account has led to important mistakes, like the erroneous
+measurement of solar radiation at ground level by NASA researchers which
+was published in *Geophysical Research Letters*. This was most likely an
+artifact due to the limitations of the array spectrometer used. See the
+paper by @DAntoni2007 and the refutation by @Flint2008 and the answer by
+@DAntoni2008. Equally, the values of the UV-B doses used in many recent
+biological experiments, as reported in the publications, are suspect,
+since they have been based on measurements performed with
+single-monochromator instruments.
+
+Gratings disperse radiation according to what are called 'orders'. For
+example first order dispersion may be 10 nm/mm, second order dispersion
+5 nm/mm, third order dispersion 2.5 nm/mm, and so on. The first order
+spectrum is what is of interest, and is what we want the array detector
+to see. However, any given 'pixel' in the array, in addition to
+radiation corresponding to the first order (e.g. 800 nm), also sees
+radiation corresponding to higher orders (e.g. 400 nm, 266.6 nm, 200 nm,
+and so on) if those wavelengths are present in the incoming radiation.
+The solution to this problem is to use 'order-sorting filters' in the
+light pass. In array spectrometers order-sorting filters may be directly
+coated onto the array detector, or attached to it. For example Ocean
+Optics spectrometers can be bought with a *variable longpass
+order-sorting filter* as an option (Figure
+[\[fig:CCD:slit\]](#fig:CCD:slit){reference-type="ref"
+reference="fig:CCD:slit"}).
+
+Another problem with array detector spectrometers is that the radiation
+may be better focused on some parts of the array than on others, and
+this causes changes in spectral resolution with changing wavelengths. In
+addition, the wavelength difference between adjacent pixels is not
+always the same across the whole spectrum, neither is the step size an
+integer number. Usually the software supplied with the instrument can
+generate files with data at integer steps (e.g. 1 nm, or 5 nm) but this
+is done by interpolating and averaging, rather than changing the
+measurement itself. In contrast the scanning step of scanning
+spectroradiometers can be controlled through its software.
+
+The overall accuracy of the measurements is also reliant on the angular
+response of the entrance optics. For measuring spectral irradiance we
+generally use a cosine diffusor as entrance optics, although it is also
+possible to use an integrating sphere. Deviations of cosine diffusers
+from the theoretical angular response tend to increase at large angles
+from the vertical. If the spectrum of the light coming from different
+angles is different (e.g. sun and sky) not only the irradiance measured
+may be inaccurate but also the shape of the spectrum may be distorted.
+When measuring outdoors, the size of this error will change through a
+day as the sun moves across the sky. The very small cosine diffusers
+sold by the spectrometer manufacturers tend to be prone to large errors,
+and individually calibrated, high quality diffusers like the D7-SMA and
+D7-H-SMA from Bentham (see section
+[9.20](#sec:quant:suppliers){reference-type="ref"
+reference="sec:quant:suppliers"} on page for full address) are
+preferable, although they are much more expensive (Figure
+[\[fig:Bentham:diffuser\]](#fig:Bentham:diffuser){reference-type="ref"
+reference="fig:Bentham:diffuser"}).
+
+::: figure*
+![image](photos/BenthamD7-H-SMA.pdf){width="0.5\\myfigwidth"}
+:::
+
+#### Calibration and corrections {#sec:array:calibration}
+
+When measuring UV-B with an array spectroradiometer it is not enough to
+have it properly calibrated, its optical characteristics (slit function
+at different wavelengths, stray light properties) need to be measured
+and a correction algorithm developed and later applied to each
+measurement. This makes the use of array spectroradiometers for
+characterizing UV-B doses complicated and error prone. This type of use
+has to be attempted only by experienced operators and the correction
+algorithm itself requires lots of effort to develop and implement. Given
+the lack of standardized procedures for stray light correction, its
+implementation requires advanced knowledge of optics and metrology. We
+will first discuss spectral calibration and thereafter stray light
+correction procedures.
+
+Spectral calibration against standard lamps needs to be repeated
+regularly. For measurements not requiring very high precision, annual
+re-calibrations may be enough. However, the main consideration should be
+how valuable is the data that will be acquired. If the spectral
+sensitivity of the instrument has changed significantly from one
+calibration to the next, the data from all measurements done in between
+these calibrations are suspect, and should be discarded. Consequently if
+one does yearly re-calibrations one can lose one year's worth of data,
+while if one does monthly re-calibrations one only risks losing one
+month's worth of data. Consequently, the decision on how frequently to
+calibrate should, in addition to instrument stability, be based on the
+maximum size of the tolerable errors and on the value of the data
+(i.e. the cost of replacing the data if they need to be discarded).
+
+The most common and stable calibration light sources are incandescent
+lamps (e.g. FEL lamps) with electronics in the power source which keeps
+the electrical power at the filament constant within very narrow
+margins. The distance between the lamp and the entrance optics, and
+their alignment, should also fall within a very narrow margin of the
+expected values. Calibration lamps are secondary or tertiary standards,
+connected by a chain of calibration steps to a standard kept at a
+metrology agency like NIST. Calibration lamps are supplied with spectral
+data about their emission characteristics. Calibration of the instrument
+is done by measuring the known spectrum and irradiance of the
+calibration lamp. Of course the output of the lamp will not exactly
+match the data supplied with it, because its original calibration is
+also subject to errors. Furthermore, there are errors deriving from
+slight differences between the burning conditions (current and voltage)
+during measurements and those when it was calibrated at the factory.
+Further errors can be introduced by small differences in the geometry of
+the optical setup. So, do not forget that calibrations are subject to
+errors. Furthermore, you cannot obtain an absolute estimate of
+calibration errors by comparing two instruments calibrated with the same
+lamp, unless this lamp is the primary standard.
+
+Calibrating a spectroradiometer in the UV-B band with a FEL lamp is not
+recommended, because FEL lamps emit very little UV-B. For calibration in
+the UV-B deuterium lamps need to be used. Irradiance emitted by
+deuterium lamps is less stable than that emitted by FEL lamps. For
+coarse calibration the use of a deuterium lamp may be enough, but for
+accurate calibration it is best to use FEL and deuterium lamps in
+tandem. The shape of the spectrum emitted by deuterium lamps is stable,
+by matching the irradiances at wavelengths where the emission of both
+types of lamps overlap, one can extend an accurate calibration to
+shorter wavelengths. Spectrometer manufacturers also sell calibration
+light sources (lamp plus electronics) that may be good for routine
+calibration or especially for checking that calibrations performed in an
+optical bench remain valid. Again, what type of calibration procedure
+and lamp to use will depend on the accuracy required. If we want our
+measurements to be within $\pm 10$% of the true value we will need to
+use very good equipment and protocols for the calibration. If we can
+tolerate errors of, for example, $\pm 25$%, calibrations can be less
+accurate.
+
+It is also very important to do a wavelength calibration and to check
+this calibration regularly. It should not be forgotten when doing this
+calibration that it is affected by the temperature of the instrument as
+temperature affects (by thermal expansion) the dimensions of the optical
+bench and its components. Wavelength calibration is done based on
+elemental emission lines in discharge lamps (or even the sun). For quick
+checks low pressure mercury or germicidal lamps may be used. The
+manufacturers of spectrometers also sell special light sources for
+wavelength calibration. One should choose carefully which wavelengths to
+use (for example 253.652 nm, 296.728 nm, 334.148 nm, and 404.657 nm for
+mercury lamps, as they are simple peaks rather than multiple peaks very
+close together like those at 302 nm, 313 nm and 365 nm). If one desires
+a calibration accurate to a fraction of the wavelength step of the array
+one needs to fit a bell-shaped curve to the pixel showing the highest
+signal and those adjacent to it, to find the true location of the peak
+centre, most likely in-between two pixels.
+
+To keep errors within $\pm 10$% in the UV-B when measuring sunlight, and
+especially to keep errors within $\pm 10$% for biologically effective
+doses, a good calibration is not enough when using single monochromator
+spectroradiometers. There is also a need to correct for stray light. If
+we do not correct for stray light some biologically effective doses will
+be overestimated by more than 100%. The ratio between stray light in the
+UV-B band and the maximum spectral irradiance measured in good single
+monochromator spectrometers is approximately 1$\times 10^{-3}$, while in
+double monochromator spectroradiometers it can be as low as
+$1 \times 10^{-6}$. If time for scanning, cost and lack of portability
+are no obstacles, it's preferable to use double monochromator
+instruments and these should also be used as the main instrument in a
+laboratory.
+
+When applying the stray light correction, a thorough characterization of
+the slit function at different wavelengths and a check of the wavelength
+dependence of stray light are needed. This characterization does not
+need to be repeated, unless changes are made to the optical bench of the
+instrument. So, in contrast to the spectral calibration, the stray light
+characterization needs to be performed only once during the lifetime of
+the instrument unless major repairs or modifications are made.
+
+In some array spectrometers, depending on the configuration, the width
+of the slit function may vary with the wavelength. This can introduce
+errors that are very difficult to correct. In some cases it might be
+preferable to chose a grating giving the instrument a relatively narrow
+wavelength range, for example 250 nm to 500 nm if the intended use is to
+measure irradiance.
+
+The use and calibration of array spectroradiometers for measurement of
+UV-B radiation in sunlight is discussed in detail in the WMO report by
+@Seckmeyer2010. Stray light correction methods are discussed in the
+papers by @Ylianttila2005, @Coleman2008, and @Kreuter2009 and the
+references therein.
+
+## Underwater sensors and profiling
+
+### Measuring underwater UV radiation {#sec:underwater:measuring}
+
+Measuring UV radiation in the aquatic environment is difficult.
+Waterproof UV-measuring devices are needed or sensors protected in water
+proof housings as well as a means of deploying the sensors at the
+desired depth. Frequently, underwater measurements are referenced to the
+(spectral) irradiance at the surface of the water body, measured
+simultaneously with a matched "atmospheric" or terrestrial sensor.
+
+As was mentioned in section [7.6](#sec:UV:aquatic){reference-type="ref"
+reference="sec:UV:aquatic"} on page , measurement of the underwater UV
+field presents particular complexities, mainly related to variable
+attenuation occurring in different water bodies [@Kirk1994]. Depending
+on the physical and chemical characteristics of the water, irradiance
+may decrease much more rapidly than irradiance (this phenomenon is known
+as 'spectral leakage'), resulting in a changing spectrum with depth.
+Thus, underwater UV instruments are normally equipped with different
+filters and photodiodes to minimize these effects and to improve the
+sensitivity to particular wavelengths of interest. As discussed above in
+section [9.5.4](#sec:broadband:calibration){reference-type="ref"
+reference="sec:broadband:calibration"} on page , errors are introduced
+if the spectrum being measured differs from that of the source used for
+calibration of the broadband instrument. This implies that when using
+broadband sensors underwater the errors will depend on the depth at
+which the radiation is being measured. In addition, a general problem
+exists for broadband sensors and spectrometers if sensors are only
+calibrated in air. The same calibration function cannot be used with the
+sensor in air and in water. Wavelength-dependent correction factors, so
+called immersion factors, must be used to adjust the signal if sensors
+are immersed in water as for example described by [@ohdet03].
+
+Water movement and weather conditions can affect the measurements of
+underwater UV radiation. For an accurate determination of UV radiation
+in the field, sunny, cloudless conditions and calm waters are preferred.
+The effect of waves may cause difficulties especially when measuring
+near the surface. On the other hand, clouds and other atmospheric UV
+absorbing phenomena can alter the conditions during the measurement of
+vertical light profiles, especially when the diffuse component of the
+beam is altered.
+
+Solar zenith angle is an important factor which affects the irradiance
+above the water surface, and also the reflectance of the water surface
+for the wavelengths of biological relevance. In addition, the
+[RAF]{acronym-label="RAF" acronym-form="singular+short"} (RAF, see also
+section [\[sec:RAF\]](#sec:RAF){reference-type="ref"
+reference="sec:RAF"}), can be used to estimate the effect of changes in
+the ozone column on biologically effective exposure. Corrections can be
+applied to measurements performed with broadband instruments, but
+measurements with narrow-band multi-filter instruments and
+spectroradiometers are less error prone.
+
+If our objective is to describe the characteristics of the waters,
+radiation should be measured around solar noon, when solar elevation is
+maximal. However, if we are interested in describing the daily exposure
+of some organism, measurements should be done preferably during most of
+the day and at the depths of interest.
+
+### Profiling {#sec:underwater:profiling}
+
+Profiling is the measurement of irradiance or spectral irradiance as a
+function of depth in a water body. Special frames are used for lowering
+the instruments through the water. For light measuring instruments, the
+frame or rig should not occlude the field of view of the radiation
+sensors. A means of determining the depth at which the sensor is
+located, and any deviation from a vertical orientation should also be
+available. Suitable cabling is used to connect the underwater sensors to
+onboard computers or dataloggers.
+
+### Underwater radiometers {#sec:underwater:radiometers}
+
+Various underwater radiometers are currently available and their
+accuracy and characteristics vary considerably. The most appropriate
+instrument to choose depends on the specific goals of a study. Different
+types of radiometers include broadband radiometers, narrow-band
+multifilter radiometers, photodiode array spectroradiometers, and
+scanning spectroradiometers, including single monochromator
+spectroradiometers. Comparisons of the main characteristics of different
+types of instruments have been published
+[@Kirk1994; @Diaz2000; @Kjeldstad2003; @Tedetti2006]. Some commonly-used
+underwater instruments are described below.
+
+The **ELDONET radiometers** (Real Time Computer, Germany) were developed
+within the framework of the European light dosimeter network (Figure
+[\[fig:Eldonet\]](#fig:Eldonet){reference-type="ref"
+reference="fig:Eldonet"}) and have been described in detail
+[@Hader1999]. The dosimeters are three-channel broadband filter devices
+with an entrance optic consisting of an integrating Ulbricht sphere with
+an internal BaSO$_4$ coating [@Khanh1988]. Silicon photodiodes (BPX60
+for the PAR range and SFH291 for the two UV wavebands, both from
+Siemens, Germany) are used in combination with custom-made filters to
+select the wavelength ranges for UV-B (280--315 nm), UV-A (315--400 nm)
+and PAR (400--700 nm), a custom-made interference filter for UV-B (Janos
+Technology, Townshend, VT, USA), a DUG 11 band filter for UV-A (Schott &
+Gen., Mainz, Germany) and a broad band filter for PAR (WBHM, Optical
+Coating Laboratory, Santa Rosa, CA, USA). Eldonet performs 60
+measurements each minute.
+
+::: figure*
+![image](photos/Eldonet_acuatico.pdf){width="0.6\\myfigwidth"}
+:::
+
+**Submergible multichannel radiometers** like PUV 500, PUV 2500 series
+from Biospherical Instruments (San Diego, USA) are equipped with
+narrow-band filter detectors in the range of UV and PAR (Figure
+[\[fig:PUV\]](#fig:PUV){reference-type="ref" reference="fig:PUV"}).
+These radiometers are equipped with depth and temperature sensors and
+thus are well suited for accurate light profiling. The spectral
+characteristics of the five filters used in the PUV 500 instrument are
+as follows: 305$\pm$`<!-- -->`{=html}1 nm (band pass
+7$\pm$`<!-- -->`{=html}1 nm) 320$\pm$`<!-- -->`{=html}2 nm (band pass
+11$\pm$`<!-- -->`{=html}1 nm) 340$\pm$`<!-- -->`{=html}2 nm (band pass
+10$\pm$`<!-- -->`{=html}1 nm) 380$\pm$`<!-- -->`{=html}2 nm (band pass
+10$\pm$`<!-- -->`{=html}1 nm)
+
+On the other hand, the PUV 2500 measures 7 (optionally 8) wavebands of
+downwelling irradiance (305, 313, 320, 340, 380, 395 nm and PAR:
+400--700 nm) with one upwelling radiance channel (natural fluorescence).
+Each channel with 10 nm FWHHM except 305 (controlled by atmospheric
+ozone cutoff). The instrument includes pressure/depth sensing (350 m
+maximum) and temperature control. A 32 channel multiplexer selects
+signals from 8 photodetectors, temperature, pressure and tilt/yaw
+detector. The cosine collector is made of Teflon-covered quartz for use
+in the water.
+
+::: figure*
+![image](figures/Fig_water_FLF_2.pdf){width="0.8\\myfigwidth"}
+:::
+
+The RAMSES family of **hyperspectral radiometers** (Trios GmbH, Germany)
+are miniature single monochromator spectrometers with a resolution of 2
+to 3 nm per pixel and 100 or 190 usable channels in the photodiode array
+(Figure [\[fig:RAMSES\]](#fig:RAMSES){reference-type="ref"
+reference="fig:RAMSES"}). They can be used in air or in water. The
+Ramses ACC-UV is an integrated UV hyperspectral radiometer, and the
+Ramses ACC-VIS is a and visible hyperspectral radiometer, both equipped
+with a cosine collector. Ramses ASC-VIS is equipped with a spherical
+collector shielded so as to measure radiation from one hemisphere. To
+measure scalar irradiance, two of these sensors can be deployed pointing
+in opposite directions. They are calibrated for underwater and air
+measurements (two different calibrations). The device has a small size,
+the signal capture requires some power consumption and portable (laptop)
+terminal at the surface. The detector type is a silicon photodiode array
+designed to capture wavelengths between 320--950 nm for VIS models and
+280--500 nm for the UV models, with an irradiance accuracy better than
+6--10% depending on the spectral range.
+
+::: figure*
+![image](photos/ramses_acc_01_25.pdf){width="0.5\\myfigwidth"}
+:::
+
+Although the LI-1800UW instrument is not currently produced by LI-COR,
+many foundational studies focused on UV penetration during the 1980s and
+1990s were carried out using this spectroradiometer. The optics of this
+scanning spectroradiometer is based on a single holographic
+monochromator grating, a silicon detector and a filter wheel to improve
+stray light rejection. The wavelength range is between 300 and 850 nm,
+with a bandwidth of 8 nm and accuracy of $\pm$`<!-- -->`{=html}1.5 nm.
+Originally optional slits of different widths were available, so these
+specifications vary with the exact configuration used. The whole optical
+bench and the microcomputer system is contained in the massive
+waterproof housing designed for measurements to a depth close to 200 m.
+Being a single monochromator instruments its accuracy is limited by
+stray light when used to measure -B radiation in daylight.
+
+::: figure*
+![image](figures/Fig_water_FLF_3.pdf){width="0.8\\myfigwidth"}
+:::
+
+The OL 754-O-PMT Spectrometer Optics Head (Optronic Laboratories) is
+based on a double monochromator for low stray light and measuring from
+300 to 850 nm. Configurations with other gratings giving different
+wavelength ranges are available. The system utilizes holographic
+gratings with peak efficiencies at 300 nm. The instrument can be fitted
+with an OL IS-470-WP Submersible Sphere Assembly (4-inch integrating
+sphere) attached by means of quartz optical fibre to the non-submersible
+spectroradiometer. The sphere follows a dual port design with an
+entrance port and an exit port located 90$^\circ$ apart. The sphere
+contains an internal baffle in front of the exit port to permit only
+light reflected by internal surface of the sphere to exit the sphere and
+enter the fibre.
+
+Another approach to measuring underwater radiation is to protect a
+regular sensor, as for example, those described in section
+[9.5.2](#sec:broadband:instruments){reference-type="ref"
+reference="sec:broadband:instruments"} on page , within a hermetic
+water-proof housing (Figure
+[\[fig:sensor:in:box\]](#fig:sensor:in:box){reference-type="ref"
+reference="fig:sensor:in:box"}). Of course the enclosure should have an
+transparent window, and the sensors must be calibrated inside the
+enclosure.
+
+## Modelling {#sec:modelling}
+
+For locations and times not covered by measurements, alternative
+approaches have to be considered for estimating the prevailing radiation
+conditions. For this purpose, various methods for modelling the surface
+UV radiation have been developed. These range from simple
+theoretical-empirical methods for estimating the clear-sky surface
+radiation to more sophisticated methods that account also for the
+effects of clouds as inferred either from ground-based station data or
+satellite measurements.
+Table [\[tab:modelling:methods\]](#tab:modelling:methods){reference-type="ref"
+reference="tab:modelling:methods"} gives a simplified view of the main
+features of methods that are available for modelling the surface UV
+radiation.
+
+:::: sidewaystable*
+::: center
+[]{#tab:modelling:methods label="tab:modelling:methods"}
+:::
+
+[]{#methods label="methods"}
+::::
+
+Simple theoretical-empirical methods, such as those of @Bjorn1985 and
+@bird1986, have been widely used thanks to their fairly simple user
+interface. These methods provide spectral surface irradiances,
+optionally on tilted surfaces, and account for the main parameters
+affecting the surface radiation conditions under cloudless skies.
+Results indicate that they predict the surface radiation with reasonable
+accuracy as compared to more detailed radiative transfer calculations
+and measurements [@bird1986].
+
+Another user-friendly alternative is to use an interactive web-based
+interface to radiative transfer simulations, such as the FastRT
+[@engelsen2005 available at
+<http://nadir.nilu.no/~olaeng/fastrt/fastrt.html>] or the QUICK TUV
+(<http://cprm.acd.ucar.edu/Models/TUV/Interactive_TUV/>). Both of these
+are based on rigourous radiative transfer models, which means that their
+accuracy depends mainly on the choice of values for the input
+parameters. Both include a selection of biological weighting functions,
+and FastRT also provides the possibility to account for the effect of
+clouds.
+
+When cloud effects need to be accounted for in detail, either satellite
+methods or so-called reconstruction methods should be considered. The
+reconstruction methods usually rely on ground-based measurements of some
+kind for accounting for the effect of clouds on radiation. Although the
+methods vary in their exact approach, the idea of all of them is to
+utilize available observations to account for the parameters that affect
+the amount of UV radiation reaching the surface. These parameters are,
+most importantly, clouds, total ozone column, surface albedo,
+atmospheric aerosols, and altitude or pressure. In addition, the solar
+zenith angle determines the path length of the
+[direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"}
+through the atmosphere and is therefore the single most important factor
+for the surface UV radiation. The Earth-Sun distance, which varies over
+the course of the year, also needs to be accounted for.
+
+Many station-based methods for reconstructing the surface radiation were
+included in recent European efforts to gain a better understanding of
+past radiation and its climatological behaviour
+[@kopke2006; @denouter2010]. Similar methods have been proposed and
+applied in other parts of the world as well
+[@fioletov2001; @fioletov2004]. Compared to satellite methods, the
+advantage of the station-based methods is that they tend to give more
+accurate estimates of the surface UV radiation. In particular, methods
+using (300--3000 nm), measured by pyranometers at numerous stations
+worldwide, as input for determining the cloud effect typically show
+small bias and fairly small scatter when compared to measurements
+[@kopke2006]. To mention one example, @lindfors2007 estimated daily
+erythemal UV doses at four Nordic stations, and found a systematic
+difference of between 0 and 4%, depending on the station, and a
+root-mean-square error of 5--9% as compared to measurements for the
+summer period.
+
+Satellite methods are based on radiative transfer simulations combined
+with information on, for example, clouds and total ozone column
+retrieved from the satellite observations. Satellite retrieved UV
+irradiances typically show an overestimation of 10% or more, and a large
+scatter, when compared to surface measurements: the root-mean-square
+errors for daily erythemal UV doses tends to be of the order of 30--40%
+[@kujanpaa2010; @tanskanen2007; @lindfors2009b]. The main part of the
+overestimation is usually attributed to aerosol absorption, which is not
+accounted for properly in current satellite UV algorithms. The advantage
+of satellite methods, on the other hand, is their large geographical
+coverage, often global, and easy access to data that they provide.
+
+Most methods, both station-based UV reconstruction methods and satellite
+methods, only provide UV data corresponding to a selection of weighting
+functions (e.g., erythemally weighted ), and, in addition, sometimes
+irradiances for selected wavelengths. Furthermore, the methods typically
+include only irradiances for a horizontal surface. This may become an
+obstacle for biological applications where, for example, a specific
+weighting function or spectral information would be preferred. In
+principle, however, many of the methods could be extended to produce
+spectral irradiances and fluence rates. On the other hand, fluence rates
+can also be estimated based on the horizontal irradiance [e.g.,
+@kylling2003].
+
+Recently, @lindfors2009 presented a method for modelling spectral
+surface irradiances. The method relies on radiative transfer
+simulations, and takes as input (1) the effective cloud optical depth as
+inferred from pyranometer measurements of
+[global:rad]{acronym-label="global:rad" acronym-form="singular+short"};
+(2) the total ozone column; (3) the surface albedo as estimated from
+measurements of snow depth; (4) the total water vapour column; and (5)
+the altitude of the location.
+Figure [\[fig:jok2001\]](#fig:jok2001){reference-type="ref"
+reference="fig:jok2001"} shows a comparison between the daily
+accumulated irradiances at 300 and 320 nm from this method and
+measurements with a Brewer spectroradiometer at Jokioinen, southern
+Finland. At both wavelengths, the reconstructed irradiances closely
+follow the measured ones.
+
+::: figure*
+![image](figures/fig_uv_modelling.pdf){width="0.8\\myfigwidth"}
+:::
+
+A variety of methods for modelling the surface UV radiation are
+available. Which method is the best, or the most appropraite, depends on
+the specific question that is to be answered. In general, the complexity
+of the method tends to grow with increasing accuracy, and the
+pyranometer-based UV reconstruction methods, that are considered to
+provide highest accuracy, typically require an expert user. The use of
+such a method will, however, increase cross-disciplinary collaboration
+and may therefore be worthwhile.
+
+::: example*
+[]{#ex:effective:irradiance label="ex:effective:irradiance"} By
+'biologically effective irradiance' we mean the irradiance weighted
+according to the effectiveness of different wavelengths in eliciting a
+photobiological response. The most frequently used biologically
+effective irradiance quantities are photometric quantities such as those
+described in Box
+[\[box:photometric:quantities\]](#box:photometric:quantities){reference-type="ref"
+reference="box:photometric:quantities"} on page . In the case of
+photometric quantities the (energy) irradiance is weighted according to
+the response of the human eye.
+
+When studying the effects of radiation on plants we use as
+[BSWFs]{acronym-label="BSWF" acronym-form="plural+short"} (BSWFs)
+spectra describing the response of some plant function. For example an
+action spectrum for accumulation of flavonoids, or an action spectrum
+for growth inhibition. To be able to calculate biologically effective
+irradiances using any BSWF, we need to measure the spectral irradiance
+of the light source.
+
+If we integrate the effective irradiance for the duration of an
+experiment then we obtain a biologically effective exposure (usually
+called 'biologically effective dose' by biologists). If we do the time
+integration for one day we obtain a biologically effective daily
+exposure.
+
+These weighted irradiances are usually expressed using units
+corresponding to the underlying energy irradiances, independently of the
+BSWF used. Quantities calculated using different BSWFs are expressed in
+the same units, but the values cannot be compared because in reality
+they are measured on different scales.
+:::
+
+## BSWFs and effective UV doses {#sec:BSWFs:UVeff}
+
+The emission spectrum of UV-B lamps, even filtered with acetate, is
+different to that of the effect of ozone depletion. The spectrum of the
+effect of ozone depletion not only changes with ozone column thickness,
+but also with solar elevation. In other words, it changes through a day
+and with seasons (Figure
+[\[fig:lamp:solar:spectra\]](#fig:lamp:solar:spectra){reference-type="ref"
+reference="fig:lamp:solar:spectra"}). Because of this, it is almost
+impossible to exactly simulate the effect of ozone depletion in field
+experiments. The best we can do is to calculate effective doses.
+
+::: figure*
+![image](figures/fig4ab_lamp_solar.pdf){width="0.8\\myfigwidth"}
+:::
+
+Biologically effective exposures (see Box
+[\[ex:effective:irradiance\]](#ex:effective:irradiance){reference-type="ref"
+reference="ex:effective:irradiance"}) are a way of measuring radiation
+differing in spectral composition with the same 'measuring stick'. This
+'measuring stick' is a biological response. Behind each measurement we
+need to assume the involvement of a biological response. If we know the
+action spectrum for the biological response, we can use it as a BSWF: We
+multiply, wavelength by wavelength the spectral irradiance of the light
+source by the BSWF obtaining a weighted spectrum, giving a
+biologically-effective *spectral* irradiance (Figure
+[\[fig:eff:spectral:irrad\]](#fig:eff:spectral:irrad){reference-type="ref"
+reference="fig:eff:spectral:irrad"}). We then integrate the result over
+wavelengths, to obtain a single number, the biologically effective UV
+irradiance[^26]. In Figure
+[\[fig:eff:spectral:irrad\]](#fig:eff:spectral:irrad){reference-type="ref"
+reference="fig:eff:spectral:irrad"} it also possible to appreciate the
+difference in relative change of this effective irradiance, for a given
+level of ozone depletion, depending on the BSWF used.
+
+It is important to make sure that both the irradiance and the
+effectiveness are measured using compatible units. It is common to
+express action spectra as spectral *quantum* effectiveness and to
+measure light sources as spectral (*energy*) irradiance. In research,
+biologically effective doses are most frequently expressed in weighted
+energy units and to be able to calculate these doses from spectral
+(energy) irradiance measurements for a light source (sunlight or lamps)
+one needs to use an action spectrum expressed in energy effectiveness.
+Most common formulations of action spectra need to be transformed from
+quantum effectiveness to energy effectiveness (one important exception
+is the CIE erythemal spectrum formulation). This is something that is
+often neglected, and is a source of difficulties when comparing doses
+between different publications.
+
+Another possibility for measuring effective doses is to have a broadband
+sensor with a spectral response resembling the action spectrum of
+interest. In practice the spectral response of such sensors is only an
+approximation to the desired and consequently need to be calibrated
+under the light source to be measured, usually by comparison to a double
+monochromator scanning spectroradiometer (see section
+[9.7](#sec:spectroradiometers){reference-type="ref"
+reference="sec:spectroradiometers"} on page ). Most such sensors are
+calibrated for sunlight, and consequently give biased readings when used
+for measuring radiation from most lamps.
+
+::: figure*
+![image](figures/fig56_depl.pdf){width="0.8\\myfigwidth"}
+:::
+
+[]{#sec:RAF label="sec:RAF"}The [RAF]{acronym-label="RAF"
+acronym-form="singular+short"} () gives the percent change in effective
+dose () or, strictly speaking, effective exposure () for each percent
+change in ozone column thickness. It should be calculated using
+logarithms. $$\mathrm{RAF} = \frac{\ln \dose[d] - \ln \dose[n]}%
+        {\ln [\Chem{O_3}]^\mathrm{n} - \ln [\Chem{O_3}]^\mathrm{d}}$$
+where is dose and $[\Chem{O_3}]$ ozone concentration, and superscript
+$\mathrm{d}$ indicates ozone depleted condition, and superscript
+$\mathrm{n}$ indicates normal, or reference, ozone depth condition. The
+value of depends strongly on the action spectrum used to calculate the
+effective dose. Looking at
+fig. [\[fig:eff:spectral:irrad\]](#fig:eff:spectral:irrad){reference-type="ref"
+reference="fig:eff:spectral:irrad"}, it can be understood why is much
+larger for GEN than for PG.
+
+### Weighting scales
+
+Ultraviolet action spectra are usually normalized to quantum
+effectiveness = 1 at 300 nm. This is arbitrary, and especially in the
+older literature, you will find action spectra normalized at other
+wavelengths. In the Materials and Methods section always report the
+normalization used, in addition to the action spectrum used as a BSWF.
+Remember that as the wavelength used for normalization is arbitrary,
+values of effective UV doses calculated using the same BSWF but
+normalized at different wavelengths cannot be directly compared because
+they are expressed on different scales. Of course biologically effective
+irradiances based on different BSWFs cannot be compared to each other
+either.
+
+Using the correct BSWF is very important, as using the wrong BSWF has
+usually serious implications on the interpretation of experimental
+results [@Caldwell2006; @Kotilainen2011].
+
+### Comparing lamps and solar radiation
+
+Frequently we want to compare UV doses in growth chambers to doses
+outdoors. Unless we have a solar simulator the spectra will differ
+significantly. It is especially important to keep the ratio similar to
+that in solar radiation. Table
+[\[tab:UVeff\]](#tab:UVeff){reference-type="ref" reference="tab:UVeff"}
+gives an example comparing a frame with two acetate-filtered Q-Panel
+UVB-313 lamps to sunlight with normal and 20% depleted ozone at
+Jokioinen for 21 May at 11:30.
+
+### Effective doses, enhancement errors and UV-B supplementation {#sec:enhancement:errors}
+
+Ultraviolet-radiation supplementation can be modulated so as to follow
+natural variation in solar UV or just follow a daily square wave pattern
+(see section [8.2.6](#sec:modulated){reference-type="ref"
+reference="sec:modulated"} on page ). It is important that lamps are
+filtered with cellulose di-acetate film (to remove UV-C radiation
+emitted by UV-B lamps, which is absent in natural sunlight) and that
+these filters are replaced regularly, specially in the case of square
+wave systems, as modulated systems with feedback compensate for the
+reduced dose automatically (although not for the change in spectrum)
+[@Newsham1996a]. Even when adequately filtered the emission spectrum of
+UV-B lamps does not match the effect of depletion (Figure
+[\[fig:weighted:lamp:depl:GPAS:PG\]](#fig:weighted:lamp:depl:GPAS:PG){reference-type="ref"
+reference="fig:weighted:lamp:depl:GPAS:PG"}. We need to calculate
+effective doses using BSWFs.
+
+::: figure*
+![image](figures/fig79_depl_lamp_eff.pdf){width="0.8\\myfigwidth"}
+:::
+
+Errors caused by the mismatch between the doses aimed at and those
+achieved when simulating the effect of ozone depletion with UV-B
+enhancement with lamps are called enhancement errors. The main source of
+these errors is the mismatch between the assumed spectral response and
+the real spectral response. This is so because the adjustment of the
+burning time (or power) of the UV-B lamps used for enhancement needs to
+be based on biologically effective doses. However, depending on the
+different BSWFs used, the needed lamp burning time may be long or short
+(Figure
+[\[fig:lamp:burning:times\]](#fig:lamp:burning:times){reference-type="ref"
+reference="fig:lamp:burning:times"}). Another way of looking at this
+problem is to compare the deviation of the achieved when using a
+'wrong'[^27] BSWF compared to the target one---e.g. corresponding to a
+certain magnitude of ozone depletion. Figure
+[\[fig:achieved:CIE\]](#fig:achieved:CIE){reference-type="ref"
+reference="fig:achieved:CIE"} shows this comparison for the frequent
+case of use of a CIE-weighted broadband sensor to control the lamps used
+in experiments with plants. The errors are surprisingly small for GEN
+and PG.
+
+::: figure*
+![image](figures/lamps_figure.pdf){width="0.85\\myfigwidth"}
+:::
+
+::: figure*
+![image](figures/achieved_CIE_figure.pdf){width="0.95\\myfigwidth"}
+:::
+
+An additional source of errors is shading by the lamp frames. If we do
+not attempt to compensate for the shade with UV-B from the lamps the
+error between PG and GEN is small [@Kotilainen2011]. How much the
+effective UV dose decreases with shading does not depend on the BSWF
+used as long as the shade is 'gray' (equally affects all relevant
+wavelengths). However, how much UV from the lamps will be needed to
+compensate for this will depend on the BSWF used (Table
+[\[tab:shading:errors\]](#tab:shading:errors){reference-type="ref"
+reference="tab:shading:errors"}). With some BSWFs the lamp power or
+burning time needed to compensate for shading is much more than that
+needed to simulate ozone depletion, because with spectra like PG, we
+need to replace shaded UV-A with UV-B from lamps. See section
+[\[sec:RAF\]](#sec:RAF){reference-type="ref" reference="sec:RAF"} on
+page for a discussion of the relationship between changes in ozone
+column and changes in effective UV radiation.
+
+To minimize shading errors we must build lamp frames that produce little
+shade. Probably $<\!5$% shading is achievable. We should not attempt to
+compensate for shading by the frames with UV from lamps. Shifting the
+whole experiment's UV baseline dose by a small percentage but keeping
+the size of enhancement at the target level is probably the best
+approach available.
+
+## Effective UV doses outdoors: seasonal and latitudinal variation
+
+The state of the atmosphere (in terms of ozone column thickness,
+cloudiness and aerosol content) together with day-length and daily
+course of the solar zenith angle () are the main factors determining the
+climatology of (and its components, and ) at ground level. For clear sky
+conditions the average spatial and temporal distribution of UV
+irradiance can be computed by means of a radiative transfer model fed
+with proper and aerosol data [@Grifoni2008; @Grifoni2009]. In these
+conditions the latitudinal and temporal distribution of irradiance are
+driven mainly by two factors: day-length and through the day. See
+section [9.9](#sec:modelling){reference-type="ref"
+reference="sec:modelling"} on page for a discussion of different
+approaches to modelling.
+
+To go from the climatology of spectral irradiance to that of the
+biologically effective () exposures (or doses), spectral irradiance has
+to be weighted to account for the different efficiency of each
+wavelength in producing biological effects; this is done applying a
+BSWF---based on the action spectrum of the biological process
+considered. Plant action spectra differ in the weight given to and
+radiation, as it has been illustrated in section
+[7.8](#sec:action:spectra){reference-type="ref"
+reference="sec:action:spectra"} on page . In this analysis @Grifoni2009
+considered two action spectra related to plant response: the so-called
+Generalized Plant Action spectrum [GEN, proposed by @Caldwell1971] and
+the more recent Plant Growth spectrum [PG, @Flint2003a]. The erythemal
+action spectrum [CIE, @McKinlay1987] was also included since instruments
+with a spectral sensibility quite close to it have been used in several
+field experiments. The analysis presented in this section was based on
+spectral global irradiance for cloud-free conditions on horizontal
+surfaces simulated by means of the STAR model
+[@Ruggaber1994; @Schwander2000] for Rome, Italy (lat. 41.88 N,
+long. 12.47 E), Potsdam, Germany (lat. 52.40 N, long. 13.03 E) and
+Trondheim, Norway (lat. 63.42 N, long. 10.42 E) on the first day of each
+month of the year from 1:00 to 23:00 (UTC time) with a 30 min time step.
+Daily doses () were calculated for all these 12 days.
+
+After convoluting the spectral energy irradiances at ground level for
+the three locations and seasons with the three BSWFs, a picture of the
+seasonal of radiation was obtained, which was different depending on
+latitude. The pattern of seasonal and latitudinal variation of the daily
+doses is shown to depend strongly on the BSWF, and day of the year
+(Table [\[tab:doses:seasons\]](#tab:doses:seasons){reference-type="ref"
+reference="tab:doses:seasons"}).
+
+The changes in daily doses occurring through the year relative to the
+yearly average, for the three locations across Europe illustrate the
+effect of action spectra used as BSWFs (Figure
+[\[fig:doses:seasonal\]](#fig:doses:seasonal){reference-type="ref"
+reference="fig:doses:seasonal"}).
+
+::: figure*
+![image](figures/fig_seasons.pdf){width="0.8\\myfigwidth"}
+:::
+
+The largest seasonal variation occurs when the daily doses are computed
+on the basis of action spectra completely or partially excluding the
+contribution of the component, as in the case of GEN and CIE
+respectively. Figure
+[\[fig:doses:seasonal\]](#fig:doses:seasonal){reference-type="ref"
+reference="fig:doses:seasonal"} shows the extent to which latitude
+affects these seasonal changes, which have a larger amplitude as the
+latitude increases. In other words, the climatology of appears to be
+strongly dependent on the action spectrum used, and, as different plant
+responses follow different action spectra, the effective climatology
+will depend on the plant response under study.
+
+These differences in climatology are ecologically relevant, for instance
+for perennial species that may experience different seasonal change in
+the irradiance they are exposed to, depending on the latitude at which
+they are growing and on the biological process/action spectrum studied.
+
+## Effective UV doses in controlled environments
+
+If the light spectrum in a controlled environment differs greatly from
+that under natural conditions, the relative biologically effective
+irradiances will differ greatly depending on the action spectrum used as
+. For example, if irradiance is much lower in daylight than in the
+controlled environment, but irradiance similar to that in daylight, the
+dose calculated using GEN(G) as a BSWF will differ little between the
+controlled environment and daylight, but the dose based on PG will be
+much lower in the controlled environment than in daylight. This example
+shows why we need to use a realistic light spectrum in controlled
+environments when we want to extrapolate the results from such
+experiments to natural conditions. Furthermore, an increased ratio
+between and radiation, and/or radiation and artificially enhances the
+responses of plants to radiation.
+
+## An accuracy ranking of quantification methods
+
+Table
+[\[tab:methods:accuracy\]](#tab:methods:accuracy){reference-type="ref"
+reference="tab:methods:accuracy"} shows a preliminary comparison of
+different methods available for quantifying solar UV radiation and
+estimating biologically effective doses. Bias is the systematic
+directional deviation from the true value, for example overestimation of
+irradiance or doses. Uncertainty is a random deviation that prevents us
+from knowing the true value, but deviations are not systematic
+---measurements from different instruments or the same instruments after
+different recalibrations will deviate by different amounts and in
+different directions from the true value.
+
+A detailed comparison is difficult with the information currently
+available, consequently some gaps remain in the table. However, some
+general recommendations are possible. For outdoors experiments with
+manipulation of solar , the best option is most probably a combination
+of (a) hourly simulation of UV spectral irradiance with a model using
+ground station data as input, plus (b) spot measurements, for example
+under different filters with a spectroradiometer under clear sky
+conditions. It is best to replace modelling (a) with actual continuous
+measurements with a well calibrated double monochromator
+spectroradiometer. However, this is rarely possible in practice, as
+there are few ground stations producing validated spectral data.
+
+For experiments using lamps, the best option from the point of view of
+accuracy is the use of a double monochromator spectroradiometer. From a
+practical viewpoint, using a broadband instrument calibrated against a
+double monochromator spectroradiometer, may be easier. When measuring
+mixed daylight and lamp radiation, or mixed radiation from diverse
+lamps, or when there is degradation of filters, broadband instruments
+are totally unsuitable.
+
+Single monochromator spectroradiometers should be avoided for
+measurements of radiation when there is a background of or visible
+radiation, unless very special handling of stray light is done by a
+combination of special measuring protocols and data processing.
+
+::: table*
+:::
+
+## Sanity checks for data and calculations {#sec:sanity:quantifying}
+
+When quantifying radiation, or in fact when doing any measurement, one
+should compare the values (e.g. irradiances or daily doses) against what
+has earlier been reported in the literature for a similar light source.
+In this way many errors can be detected. To help in this process we
+present in Table
+[\[tab:typical:irrad:values\]](#tab:typical:irrad:values){reference-type="ref"
+reference="tab:typical:irrad:values"} typical values for both unweighted
+and (energy) irradiance, photon irradiance, and biologically effective
+irradiances with the most frequently used BSWFs and wavelength
+normalisations. For radiation outdoors one can use a model (e.g. TUV
+quick simulator) to estimate spectral irradiance values and from them
+calculate effective doses or exposure. We have done these calculations
+for some sites, and present them in Table
+[\[tab:typical:irrad:values\]](#tab:typical:irrad:values){reference-type="ref"
+reference="tab:typical:irrad:values"}. We have also included data for
+some lamps.
+
+##  {#sec:recommend:quantifying}
+
+In this section we list recommendations related to the quantification of
+radiation in experiments. See sections
+[8.6.1](#sec:recommend:outdoor:manip){reference-type="ref"
+reference="sec:recommend:outdoor:manip"} and
+[8.6.2](#sec:recommend:indoor:manip){reference-type="ref"
+reference="sec:recommend:indoor:manip"} for recommendations on
+manipulation of radiation, section
+[10.9](#sec:recommend:grow){reference-type="ref"
+reference="sec:recommend:grow"} for recommendations about plant growing
+conditions, and section
+[11.12](#sec:recommend:stat){reference-type="ref"
+reference="sec:recommend:stat"} for recommendations about statistical
+design of experiments.
+
+1.  Always report in your publications the radiation effective exposure
+    (frequently called effective doses in the biological literature),
+    depending on the type of experiment, as daily integrated values or
+    effective irradiances plus daily exposure time. Calculate effective
+    doses using relevant action spectra and if possible report doses
+    using all the most commonly used ones: CIE, GEN(G), and PG.
+
+2.  Always indicate the name of the quantity measured, the type of
+    sensor and its position during measurement, location of sensor with
+    reference to plants, and unit of measurement. In the case of
+    effective doses, indicate how they were calculated, in particular,
+    cite the bibliographic source for the action spectrum and
+    formulation used, and at which wavelength the spectrum was
+    normalized to effectiveness equal to unity.
+
+3.  Whenever possible include in your publications the emission spectrum
+    of the light source and/or transmittance spectrum of the filters
+    used, or cite an earlier paper where the spectra have already been
+    published.
+
+4.  Use only instruments with recent and valid calibration data for the
+    measurements at hand.
+
+5.  Make sure, in the case of broadband sensors, that the calibration is
+    valid for the light source being measured. For example, broadband
+    sensors calibrated for sunlight should **not** be used for measuring
+    irradiance under lamps.
+
+6.  If high precision is required in the measurements, apply all the
+    necessary corrections. This is important both for broadband and
+    spectral measurements.
+
+7.  Be aware of temperature effects on the functioning of the meter and
+    sensor used and apply the required corrections or use temperature
+    stabilized instruments.
+
+8.  Single monochromator array or scanning spectrometers can be used for
+    measuring effective exposures in sunlight only with very serious
+    limitations and only if complicated corrections are applied to the
+    raw data to take into account stray light and the properties of the
+    slit function. These corrections are not possible with the software
+    provided by the makers of the instruments. Uncorrected measurements
+    from this type of instruments are subject to huge uncertainties and,
+    what is worse, bias. Use double monochromator spectroradiometers
+    instead.
+
+9.  When using spectrometers configured with SMA connectors for optical
+    fibres, do not detach the fibre at the spectrometer end[^28][^29].
+    Doing so invalidates the calibration because the alignment of the
+    fibre with respect to the entrance slit may be different after the
+    fibre is reattached.
+
+10. When measuring, take into account the field of view of the entrance
+    optics of your instrument (e.g. one hemisphere for a cosine
+    corrected irradiance sensor) and make sure that yourself and any
+    other nearby objects do not disturb the radiation 'seen' by the
+    instrument.
+
+11. Take into account that spot measurements of in sunlight under
+    different filters describe only one point in time. Continuous
+    measurements or modelling based on continuous ground-based
+    measurements are needed to fully describe the treatments applied.
+
+12. Outdoor irradiance is affected by cloudiness, so measurements where
+    a single instrument is moved to take sequential measurements under
+    the different treatments should be avoided unless the sky is
+    perfectly clear. In addition, parallel measurement of PAR or global
+    radiation in the open is recommended so as to be able to detect any
+    variation due to clouds.
+
+13. exposure values (also called doses) derived from satellite-based
+    measurements are subject to relatively large errors and bias, so it
+    is better to avoid their use, specially when daily or weekly values
+    are needed. Much of the uncertainty derives from the sparse nature
+    of the satellite data (e.g. one or fewer fly overs per day).
+
+14. Routinely check your instruments. Frequently check that the readings
+    are very close to zero when the sensor is in darkness. Do sanity
+    checks on your data against values expected (e.g. using models or
+    published data). For example if when measuring a sunlight spectrum
+    you get spectral irradiance values different from zero[^30] at
+    wavelengths shorter than 290 nm you can be sure that there is a
+    problem. There may be too much stray light, or a bad correction for
+    the dark signal, or simply the spectrometer is not good enough for
+    the job.
+
+15. When measuring sunlight or lamp spectra for calculating effective
+    doses you need a spectroradiometer with a spectral resolution of at
+    least 1 nm. Furthermore to reduce noise use only averaging of
+    repeated scans rather than 'Boxcar smoothing'. Boxcar smoothing
+    reduces the spectral resolution by doing a moving average across
+    wavelengths.
+
+## Further reading {#further-reading-1}
+
+### UV climatology and modelling
+
+<http://cprm.acd.ucar.edu/Models/TUV/Interactive_TUV/>\
+<http://zardoz.nilu.no/~olaeng/fastrt/>\
+<http://jwocky.gsfc.nasa.gov/teacher/ozone_overhead.html>
+
+### Instrumentation and UV measurement validation
+
+The report [@Bentham1997] describes scanning spectroradiometers. It is
+available at <http://www.bentham.co.uk/pdf/UVGuide.pdf>. The report
+[@Seckmeyer2010] gives guidelines for the use of array spectrometers for
+measuring radiation. This report is available at
+<http://www.wmo.int/pages/prog/arep/gaw/documents/GAW191_TD_No_1538_web.pdf>.
+The report [@Seckmeyer2010a] is available at
+<http://www.wmo.int/pages/prog/arep/gaw/documents/GAW190_TD_No_1537_web.pdf>.
+The report [@Seckmeyer2005] is available at
+<ftp://ftp.wmo.int/Documents/PublicWeb/arep/gaw/final_gaw164_bookmarks_17jul.pdf>,
+while the first report of the series, titled [@Seckmeyer2001] is only
+available in printed form.
+
+### Books
+
+The book edited by @Diffey1989 includes information on detectors and
+methods not described in this handbook, or that are described here in
+less detail.
+:::::::::::::::::::::::::::::::::::::::
+
+## Appendix: Formulations for action spectra used as BSWFs {#app:formulations}
+
+The calculation of biologically effective UV doses requires weighting
+the spectral energy irradiance () or spectral photon irradiance () at
+each wavelength with a weighting value that is typically generated from
+a mathematical formulation fitted to describe the weighting function or
+action spectrum of the biological process---i.e. a
+[BSWF]{acronym-label="BSWF" acronym-form="singular+short"} (BSWF). Data
+obtained from a spectroradiometer are usually provided as spectral
+energy irradiance (units: ) and care should be taken to use the
+appropriate formulation that uses either energy effectiveness () or
+quantum effectiveness () values as appropriate.
+
+The usual approach is to base effective UV doses on energy irradiance
+data, using BSWFs that provide values for relative energy effectiveness
+at each wavelength. However, BSWFs are often defined using quantum
+effectiveness for application to photon irradiance values. Consequently,
+conversion of energy irradiance values measured during experiments to
+photon irradiance is necessary before applying weighting functions
+originally formulated using quantum effectiveness. Conversion of energy
+irradiance values to photon irradiance can be achieved using equation
+[\[eq:photon\]](#eq:photon){reference-type="ref" reference="eq:photon"}
+on page . After conversion, the calculated effective doses will be on a
+different scale than if they are calculated based on energy irradiance
+values. Note that you may find examples in the literature where
+formulations based on quantum effectiveness () have been inappropriately
+applied to spectral energy exposure (unit: ) or spectral energy
+irradiance (unit: ).
+
+The general plant action spectrum of Caldwell (Code GEN in Table
+[\[tab:action:spectra\]](#tab:action:spectra){reference-type="ref"
+reference="tab:action:spectra"} on page ) was originally published
+simply as a graphical figure of quantum effectiveness against wavelength
+[@Caldwell1971] and subsequently two publications have fitted different
+mathematical formulations to describe its use as a weighting function.
+@Green1974 fitted a function that decreases to zero at 313 nm whereas an
+alternative mathematical fit provided by @Thimijan1978 continues to
+weight irradiance values up to 345 nm in the region. Both of these
+functions are shown on Figure
+[\[fig:action:spectra\]](#fig:action:spectra){reference-type="ref"
+reference="fig:action:spectra"} on page as GEN(G) and GEN(T)
+respectively. It is important to specify which mathematical function has
+been used when describing the calculation of effective UV doses in
+experimental methods.
+
+The general plant action spectrum of Caldwell fitted with the
+mathematical function of @Green1974 is given by [Source: @Bjorn1993a]:
+
+$$\qeff[GEN(G)](\lambda) = \begin{cases}
+           2.618 \cdot \left[ 1-\left(\frac{\lambda}{313.3}\right)^2 \right] \cdot %\cr
+\mathrm{e}^{-\frac{\lambda-300}{31.08}} & \text{if $\lambda\le313.3$ nm}\\
+0 & \text{if $\lambda>313.3$ nm}
+\end{cases} \label{eq:GEN.G}$$
+
+and when fitted with the mathematical function of @Thimijan1978 is given
+by [Source: @Bjorn1993a]:
+
+$$\qeff[GEN(T)](\lambda) = \begin{cases}
+\mathrm{e}^{-\left(\frac{265-\lambda}{21}\right)^2} & \text{if $\lambda\le345$ nm}\\
+0 & \text{if $\lambda>345$ nm}
+\end{cases} \label{eq:GEN.T}$$
+
+The DNA damage formulation of @Green1975 is given by:
+
+$$%\qeff[DNA(GM)](\lambda) & = & \exp\left\{ 13.82 \cdot \left[ \left( 1+\exp\left( \frac{\lambda-310}{9} \right)\right)^{-1} -1 \right] \right\} \label{eq:DNA.GM}
+\qeff[DNA(GM)](\lambda) = \mathrm{e}^{ 13.82 \cdot \left[ \left( 1+\mathrm{e}^{ \frac{\lambda-310}{9}} \right)^{-1} -1 \right] } \label{eq:DNA.GM}$$
+
+The doses calculated with this formulation differ significantly from
+doses calculated using tabulated values derived from the figure in
+@Setlow1974. For example the model TUV and the data from the NSF
+monitoring network use the tabulated values rather than the formulation
+by @Green1975.
+
+However, most BSWFs are conventionally used with a value of one at 300
+nm. This may be achieved by simple calculation adjustments within a
+spreadsheet (by dividing each wavelength effectiveness by the
+effectiveness value at 300 nm) or by altering the mathematical formula
+directly. Thus, the mathematical formulation of @Green1974 for GEN(G)
+requires equation [\[eq:GEN.G\]](#eq:GEN.G){reference-type="ref"
+reference="eq:GEN.G"} to be multiplied by 4.596 to normalize it to a
+value of 1 at 300nm and similarly GEN(T) requires equation
+[\[eq:GEN.T\]](#eq:GEN.T){reference-type="ref" reference="eq:GEN.T"} to
+be multiplied by 16.083 and DNA(GM) requires equation
+[\[eq:DNA.GM\]](#eq:DNA.GM){reference-type="ref" reference="eq:DNA.GM"}
+to be multiplied by 30.675.
+
+The formulation of the weighting function published by @Flint2003a for
+plant growth, shown as PG in Figure
+[\[fig:action:spectra\]](#fig:action:spectra){reference-type="ref"
+reference="fig:action:spectra"} on page , was for quantum effectiveness
+and already provides normalization to 1 at 300 nm and is given by:
+
+$$%\qeff[PG](\lambda) & = & \cases{\mathrm{e}^{4.688272\ \cdot
+% \mathrm{e}^{-\mathrm{e}^{0.1703411 \cdot \frac{\lambda-307.867}{1.15} +
+%\left(\frac{390-\lambda}{121.7557}-4.183832\right)}}} & if $\lambda\le390$ nm\cr
+%0 & if $\lambda>390$ nm\cr} \label{eq:PG}
+\qeff[PG](\lambda) =  \begin{cases}\exp\left(4.688272\ \cdot \right. \cr
+\left.
+\ \ \ \exp\left(-\exp\left(0.1703411 \cdot \frac{\lambda-307.867}{1.15}\right)\right) + \right. %\cr
+\left.
+\left(\frac{390-\lambda}{121.7557}-4.183832\right)\right) & \text{if $\lambda\le390$ nm}\\
+0 & \text{if $\lambda>390$ nm}
+\end{cases}
+ \label{eq:PG}$$
+
+Some weighting functions are already defined using energy effectiveness
+values for use with energy irradiance data, one example being the CIE
+erythemal action spectrum [@McKinlay1987; @Webb2011]. The standard was
+revised in 1998 and the updated version should be used instead of the
+original one from 1987 [@Webb2011]. It is important to check that
+published mathematical formulae have been appropriately normalized to
+one at 300 nm. However, whereas most BSWFs are conventionally set to one
+at 300 nm, the CIE98 erythemal weighting function has defined values at
+specific wavelengths [@Webb2011] and is given by:
+
+$$\eeff[CIE](\lambda) = \begin{cases}
+1 & \text{if $250\le\lambda\le298$ nm}\\
+10^{0.094(298-\lambda)} & \text{if $298\le\lambda\le328$ nm}\\
+10^{0.015(140-\lambda)} & \text{if $328\le\lambda\le400$ nm}\\
+0 & \text{if $\lambda > 400$}
+\end{cases} \label{eq:CIE}$$
+
+Weighting functions defined using quantum effectiveness (), and
+normalized to one at 300 nm, can be converted to relative energy
+effectiveness () simply by multiplication, wavelength by wavelength, of
+the quantum effectiveness by by the respective wavelength in nm and
+dividing by 300 (the chosen normalization wavelength in nm). The value
+300 should be changed when using other wavelengths for normalization.
+This is based on equation
+[\[eq:photon\]](#eq:photon){reference-type="ref" reference="eq:photon"}
+giving the energy in one photon, but as Planck's constant ($h$) and the
+speed of light in vacuum ($c$) are constant divisors, and we are
+expressing the effectiveness in relative units, they can be left out of
+the calculation.
+
+It is always essential to specify clearly the normalization wavelength,
+the mathematical formulation and the BSWF used when describing the
+calculation of effective UV doses.
+
+:::::::: multicols
+2
+
+## Appendix: Calculation of effective doses with Excel {#app:Excel}
+
+Let us start with a text file generated by a spectroradiometer and its
+connected computer. With the instruments that I have used this text file
+consists of one column, containing either spectral (energy) irradiance
+or spectral photon irradiance (some instruments, especially for
+underwater use, may have fluence rate instead of irradiance). At the
+start, above the columns, is a heading containing supplementary
+information. Other instruments may have two columns, the first one
+containing wavelength values, the other one spectral irradiance values.
+
+For the Optronics instruments that I have used, the start of a data file
+looks like the listing in Figure
+[\[fig:list:Optronics\]](#fig:list:Optronics){reference-type="ref"
+reference="fig:list:Optronics"}. The heading here contains "a", which in
+this case is the name of the file, the kind of data that is recorded
+(including the unit), the date, the starting wavelength in nm, the end
+wavelength (not shown here) in nm, and the step interval in nm. This
+file can be loaded into an Excel file going to
+`Data`$>$`Get external data`$>$`Load text file`. When you have done
+this, insert a new column to the left of the one containing the measured
+data. In this new column you should fill in the wavelength values, which
+can be done in the following way without typing every value:
+
+:::: figure*
+::: footnotesize
+    "a","Irradiance [W/(cm^2 nm)]",971217,250.00,400.00,1.00
+    1.439562E-010
+    1.797497E-010
+    6.126532E-010
+    4.516362E-009
+    8.027722E-009
+    1.081851E-009
+    2.862175E-010
+    1.728253E-010
+    1.790998E-010
+    1.953554E-010
+    2.570309E-010
+    ...
+:::
+::::
+
+Type the first two values, i.e. in this case first "250" in the cell
+left of the one containing the first radiation value 1.439562E-010.
+Since the step interval is 1.00 nm, the next value is 251. Type this in
+the cell to the left of the value 1.797497E-010. Select the two cells
+that you have just filled in. Put the cursor at the lower left corner of
+the cell containing "251" and see it change appearance, push the (left)
+mouse button and drag down to the cell left of the last radiation value.
+The column will then fill up with the appropriate wavelength values.
+
+You have now filled columns A and B with the appropriate values. Next
+you should generate a column with values of the weighting function.
+Suppose you wish to use the weighting function of @Flint2003a. The
+formula given for this in the publication is Biologically effective UV=
+$\exp[4.688272*\exp(- \exp(0.1703411*(x-307.867)/1.15))+((390-x)/121.7557-4.183832)]$
+in which $x$ stands for wavelength in nm.
+
+Select cells in column C over the rows corresponding to values in
+columns A and B. Go to "Tools" on top of the file, push the mouse button
+and go down and select "Calculator". Type the formula above, with the
+exceptions that you use ordinary parentheses instead of square brackets,
+"A:A" instead of "x" (do not type the quotation marks), and comma
+instead of dot if you use the comma system. When this is done, press OK
+and save the result.
+
+You now have the values of the weighting function in column C. If you
+double-click on the first value in column C you should get the equation
+entered. The top of your file should then look like Figure
+[\[fig:Excel:sheet\]](#fig:Excel:sheet){reference-type="ref"
+reference="fig:Excel:sheet"}. If you insert a new column C to the left
+of your old column C and copy the wavelength values into it you can plot
+your weighting function as a check. If you plot it on a logarithmic
+abscissa, it should look something like Figure
+[\[fig:Excel:PG\]](#fig:Excel:PG){reference-type="ref"
+reference="fig:Excel:PG"}. This can be compared to the plot in the
+original publication by @Flint2003a. Once you have generated a weighting
+function that you wish to use several times, you need of course not
+calculate it like this every time. You can simply transfer the column
+with it to a new sheet or a new Excel file. Since, as newly generated,
+it depends on another column, you need to use the command "Paste
+special" and choose "values".
+
+::: figure*
+![image](screen/Excel_LOB_Weighting_of_a_spectrum1.pdf){width="0.7\\myfigwidth"}
+:::
+
+::: figure*
+![image](screen/Excel_LOB_PG.jpg){width="0.7\\myfigwidth"}
+:::
+
+Now you are ready to do the weighting itself. Select cells in column E
+in rows corresponding to the values in the other columns. Select the
+Calculator, and use it to multiply values in column B with the weighting
+function. Select an empty cell and go a final time to the Calculator.
+Select "Sum" and then the values you have just generated in column E.
+The sum you get in the cell you selected is the weighted radiation
+value. The number is, in this case, 0.000334759 and the unit is W
+cm$^{-2}$, which can also be expressed as 3.35 . The bottom of the file
+should look like Figure
+[\[fig:Excel:sheet:bottom\]](#fig:Excel:sheet:bottom){reference-type="ref"
+reference="fig:Excel:sheet:bottom"}. I have written $\Sigma$ in one cell
+to remember that the value to the right of it is the sum of the values
+above it.
+
+::: figure*
+![image](screen/Excel_LOB_sheet_bottom.jpg){width="0.75\\myfigwidth"}
+:::
+
+Note that if you have another step size than 1 nm, you must multiply the
+sum by that step size. It is recommended that you do not use step sizes
+greater than 1 nm for UV-B spectra, since both the spectra themselves
+and the weighting functions are so steep.
+
+Martyn Caldwell's traditional Generalized Plant Action Spectrum is
+easier to handle, and you should be able now to do a similar exercise
+with it yourself. A formula for this weighting function has been
+published by @Green1974: Weighting function
+$= 2.618\cdot[1 -( \lambda/313.3)2]\cdot \exp[-(\lambda - 300)/31.08],$
+where $\lambda$ stands for wavelength in nm. We abbreviate the name of
+this action spectrum as GEN(G) elsewhere in this text. See section
+[9.17](#app:formulations){reference-type="ref"
+reference="app:formulations"} on page for the equations for other
+commonly used BSWFs.
+
+## Appendix: Calculation of effective doses with R {#app:R}
+
+### Introduction {#introduction}
+
+If you use the R system for statistics (see,
+<http://www.r-project.org/>), or if you need an implementation with
+fewer restrictions, you may want to use R instead of Excel to calculate
+doses and action spectra. R is based on a real programming language
+called S and allows much flexibility. We have developed a package to
+facilitate these calculations. The package is called 'UVcalc' and will
+be soon submitted to CRAN (Comprehensive R archive network) and will be
+available also from this handbook's web page. In addition to functions
+for calculating weighted and unweighted doses, and irradiance and from
+energy irradiance spectra, also functions for calculating photon ratios
+are provided.
+
+### Calculating doses
+
+Currently functions for five are implemented and are listed in Table
+[\[tab:R:dose:functions\]](#tab:R:dose:functions){reference-type="ref"
+reference="tab:R:dose:functions"}. The functions take two arguments one
+vector giving the wavelengths and another vector giving the values of
+spectral energy irradiance at these wavelengths. The spectral irradiance
+or spectral exposure values would come either from measurements with a
+spectroradiometer or from model simulations. All functions accept a
+wavelengths vector with variable and arbitrary step sizes, with the
+condition that the wavelengths are sorted in strictly increasing order,
+something which is especially convenient when dealing with data from
+array spectrometers[^31].
+
+The functions are made available by installing the package `UVcalc`
+(once) and loading it from the library when needed. To load the package
+into the workspace use `library(UVcalc)`. Then load your spectral data
+into R using `read.table()` or `read.csv()`.
+
+A file from a Macam spectroradiometer starts:
+
+``` {lastline="20"}
+Wavelength(nm),W/m2
+270,0
+271,0
+272,1.17E-04
+273,2.42E-04
+274,4.55E-04
+275,8.94E-04
+276,0.00161
+277,0.00263
+278,0.00412
+279,0.00621
+280,0.00904
+281,0.01697
+282,0.02069
+283,0.02663
+284,0.03314
+285,0.04075
+286,0.04895
+287,0.05817
+288,0.0679
+```
+
+For a file like this one, use the code below but replacing \"name\" with
+the name and path to the data file. On Windows systems you need to scape
+backslashes in file paths like this: '`\\`'.
+
+![image](listings/uvcalc_lst1.pdf){width="\\linewidth"}
+
+If our spectral irradiance data is in , and the wavelength in nm, as in
+the case of the Macam spectroradiometer, the functions will return the
+effective irradiance in .
+
+If, for example, the spectral irradiance output by our model or
+spectroradiometer is in m, and the wavelengths are in Ångstrom then to
+obtain the effective irradiance in we will need to convert the units.
+
+![image](listings/uvcalc_lst2.pdf){width="\\linewidth"}
+
+In this example, we take advantage of the behaviour of the S language:
+an operation between a scalar and vector, is equivalent to applying this
+operation to each member of the vector. Consequently, in the code above,
+each value from the vector of wavelengths is divided by 10, and each
+value in the vector of spectral irradiances is divided by 1000.
+
+If the spectral irradiance is in then values should be multiplied by 10
+to convert them to .
+
+It is very important to make sure that the wavelengths are in nanometers
+as this is what the functions expect. If the wavelengths are in the
+wrong units, the BSWF will be wrongly calculated, and the returned value
+for effective irradiance will be wrong.
+
+If we use as input to the functions instead of spectral irradiances,
+time-integrated spectral irradiances in , then the functions will return
+the effective exposure, or 'dose' in . Such time-integrated values are
+more frequently available as the output of models, or by integrating
+observed sequential values of spectral irradiance.
+
+In addition to the functions for calculating biologically effective
+doses and effective irradiances, we provide functions for calculating
+unweighted doses or irradiances of (`PPFD()` or `PAR.q.dose()`, and
+`PAR.e.dose()`), (`UVA.q.dose()` and `UVA.e.dose()`) and (`UVB.q.dose()`
+and `UVB.e.dose()`), where 'e' variants return energy doses, and 'q'
+variants return quantum or photon doses. All functions expect as input
+radiation spectra in energy units, and wavelengths in nm.
+
+### Calculating an action spectrum at given wavelengths
+
+The functions available for calculating action spectra take as argument
+a vector of wavelengths, and return a vector of effectiveness (either
+quantum=photon or energy based) normalized to unity effectiveness at a
+wavelength of 300 nm except when indicated. These functions are listed
+in Table
+[\[tab:R:action:spectra:functions\]](#tab:R:action:spectra:functions){reference-type="ref"
+reference="tab:R:action:spectra:functions"}, and an example of their use
+follows. In these examples we generate the wavelengths vectors in R, but
+they can be also read from a file.
+
+![image](listings/uvcalc_lst3.pdf){width="\\linewidth"}
+
+All functions accept a wavelengths vector with variable and arbitrary
+step sizes, with the condition that the wavelengths are sorted in
+strictly increasing order.
+
+### Calculating photon ratios {#app:R:ratios:photon}
+
+Functions are also provided for calculating photon ratios between
+different pairs of wavebands. These functions are listed in Table
+[\[tab:R:photon:ratios:functions\]](#tab:R:photon:ratios:functions){reference-type="ref"
+reference="tab:R:photon:ratios:functions"}. We follow the most
+frequently used wavelength ranges for the different colours, but also
+provide some generic functions that can be used when other limits are
+needed. Continuing with the example above in which my.data was read and
+attached we calculate UV-B : PAR photon ratio
+
+![image](listings/uvcalc_lst4.pdf){width="\\linewidth"}
+
+The spectral energy irradiance, can be in any energy based unit such as
+, or , as the multipliers cancel out when calculating the ratio.
+However, wavelengths must be always expressed in nanometers. Please, be
+aware that these functions will return erroneous values if used with
+spectra expressed as spectral photon irradiance, even though the
+returned values are photon ratios.
+
+Please, be aware that following common practice in the literature, the
+wavelength range used for red light is different for the different
+photon ratios.
+
+### Documentation
+
+The package includes manual pages for the different functions, and an
+overview and a list of references for the original sources used. The
+definition of the functions can bee seen once the package is loaded by
+entering the name of the function without parameters or parentheses.
+
+There are many resources on the R-System for Statistics and statistics
+in general available on-line. The most useful ones are The R Wiki
+(<http://rwiki.sciviews.org/>), and the documentation included in all R
+installations and accompanying each one of the different packages.
+
+Some classical books on R are those by @Dalgaard2002, @Crawley2005
+[@Crawley2007], and @Venables2002. The book by [@Venables2000] discusses
+programming in S, the language used in R to build new functions and
+packages.
+
+## Appendix: Suppliers of instruments {#sec:quant:suppliers}
+
+In this section we provide names and web addresses to some suppliers of
+instruments. This is certainly an incomplete list and exclusion reflects
+only our ignorance.
+
+**UV measurement:**\
+<http://www.astranetsystems.com/>\
+<http://www.avantes.com/>\
+<http://www.bentham.co.uk/>\
+<http://www.biosense.de/> ('*Viospore*' dosimeters.)\
+<http://www.biospherical.com/>\
+<http://www.deltaohm.com/>\
+<http://www.delta-t.co.uk/>\
+<http://www.gigahertz-optik.de/>\
+<http://www.goochandhousego.com/> ('*Optronics*' spectroradiometers)\
+<http://www.ictinternational.com.au/> (ELDONET terrestrial dosimeters)\
+<http://www.intl-lighttech.com/>\
+<http://www.irradian.co.uk/> ('*Macam*' instruments under new name)\
+<http://www.kippzonen.com/>\
+<http://www.oceanoptics.eu/>\
+<http://www.roithner-laser.com/> (Photodiodes)\
+<http://www.scitec.uk.com/>\
+<http://www.sglux.com/> (SiC photodiodes, and instruments)\
+<http://www.skyeinstruments.com/>\
+<http://www.solarlight.com/>\
+<http://www.spectralproducts.com/>\
+<http://www.stellarnet.us/>\
+<http://trios.de/> (RAMSES radiometers)\
+<http://www.yesinc.com/> (Yankee Environmental Systems)\
+
+

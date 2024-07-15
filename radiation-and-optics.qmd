@@ -1,6 +1,6 @@
 ---
 title: "Radiation and Optics"
-subtitle: "Concepts, physical quantities and units of exprssion"
+subtitle: "Concepts, physical quantities and units of expression"
 author: "Pedro J. Aphalo with Andreas Albert, Lars Olof Björn, Lasse Yliantilla"
 date: 2024-06-08
 date-modified: 2024-06-08

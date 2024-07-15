@@ -1,0 +1,189 @@
+---
+date: 2024-07-15
+date-modified: today
+draft: true
+---
+
+**Footnotes need to be copied to the chapter files just below where they are called.** 
+
+[^1]: Many of these phenolics absorb radiation, so when they accumulate
+    in the epidermis, they act as an shield [see
+    @Julkunen-Tiitto2005; @Schreiner2012 for recent reviews]. Other
+    phenolics may behave as antioxidants
+    [@Julkunen-Tiitto2005; @Schreiner2012].
+
+[^2]: These equations are a system of four partial differential
+    equations describing classical electromagnetism.
+
+[^3]: Wavelength and frequency are related to each other by the speed of
+    light, according to $\nu = c / \lambda$ where $c$ is speed of light
+    in vacuum. Consequently there are two equivalent formulations for
+    equation [\[equ_energy\]](#equ_energy){reference-type="ref"
+    reference="equ_energy"}.
+
+[^4]: Their program is available from the website of [Oregon Medical
+    Laser Center](http://omlc.ogi.edu/software/mc/) at
+    <http://omlc.ogi.edu/software/mc/>
+
+[^5]: Available as ASCII file at PMODWRC,
+    <ftp://ftp.pmodwrc.ch/pub/publications/pmod615.asc>
+
+[^6]: *Tree line* is the highest elevation on a mountain slope at which
+    tree species are naturally able to grow.
+
+[^7]: Data available from [Frigaard's website at the University of
+    Copenhagen](http://www.bio.ku.dk/nuf/resources/scitab/chlabs/index.htm)
+    at <http://www.bio.ku.dk/nuf/resources/scitab/chlabs/index.htm>.
+
+[^8]: Latest software version available at the [PhotochemCAD
+    website](http://photochemcad.com) at <http://photochemcad.com>. Data
+    available at the [PhotochemCAD data
+    site](http://omlc.ogi.edu/spectra/PhotochemCAD/index.html) at
+    <http://omlc.ogi.edu/spectra/PhotochemCAD/index.html>.
+
+[^9]: Inland waters include rivers, streams and lakes.
+
+[^10]: Program available from the website of the Oregon Medical Laser
+    Center at <http://omlc.ogi.edu/software/mc/>
+
+[^11]: Different values of photon fluence can be obtained either by
+    varying the irradiance, or the irradiation time. However, if the
+    irradiation time is varied it is important to check that reciprocity
+    holds. In other words, that the same fluence achieved through
+    different irradiation times elicits the same size of response.
+
+[^12]: Reciprocity refers to the assumption that equal values of photon
+    fluence achieved by irradiation differing in length and photon
+    irradiance, but supplying the same total number of photons, are
+    expected to elicit an identical response.
+
+[^13]: available from
+    <http://extensions.services.openoffice.org/project/NLPSolver>.
+
+[^14]: The index $I_{UV}$ is based on the spectral solar irradiance
+    $\irr(\lambda)$ and is related to the erythemal effective irradiance
+    . The value is calculated using the constant factor $k_{er}=40$
+    m$^2$ W$^{-1}$ and the CIE erythemal action spectrum
+    $\eeff[CIE](\lambda)$ of equation
+    [\[eq:CIE\]](#eq:CIE){reference-type="ref" reference="eq:CIE"} at
+    page :
+    $$I_{UV}=k_{er}\cdot\int_{250\;\mathrm{nm}}^{400\;\mathrm{nm}}\irr(\lambda)\;\eeff[CIE](\lambda)\;\mathrm{d}\lambda \label{eq:uvindex}$$
+
+[^15]: IP stands for 'ingress protection' and usual codes are composed
+    of the letters 'IP' and two digits. The first digit indicates level
+    of protection for solids and the second digit level of protection
+    for water. For example IP20 indicates protection from ingress of
+    fingers, and no protection from water; IP54 means dust and splashing
+    water protected; IP65 means dust tight and protected from water
+    jets; IP67 adds protection to immersion in water to up to 1 m depth.
+
+[^16]: Different phosphorous chemical compounds which fluoresce at
+    different wavelengths, or their mixtures, are used in fluorescent
+    lamps to produce radiation of different wavelengths. These
+    phosphorous compounds are called 'phosphors' in the lamp industry.
+
+[^17]: Website: <http://www.helmholtz-muenchen.de/eus>
+
+[^18]: Some types of PTFE scatter light almost perfectly and are used to
+    manufacture cosine diffusers for broad band sensors and
+    spectroradiometers. Those plastic films useful as filters in UV-B
+    experiments are the non-scattering ones.
+
+[^19]: Many current computers, especially laptops, do not have an RS-232
+    interface but USB to RS-232 adaptors are readily available.
+
+[^20]: Dobson unit: the depth of a column of pure ozone, at ground level
+    and a temperature of 0, equivalent to the ozone content in the
+    atmosphere; 300 DU = 3 mm of pure .
+
+[^21]: The desired or target BSWF used for calculating the effective
+    dose will differ to some extent from the real spectral response of
+    the sensor. This means that the calibration will depend on the
+    spectrum of the radiation source.
+
+[^22]: It is necessary to distinguish between different types of
+    instruments used to measure spectra or
+    [spectrometers]{acronym-label="spectrometer"
+    acronym-form="plural+short"}. A
+    [spectrophotometer]{acronym-label="spectrophotometer"
+    acronym-form="singular+short"} is an instrument used to measure
+    optical properties of objects while a
+    [spectroradiometer]{acronym-label="spectroradiometer"
+    acronym-form="singular+short"} is used to measure radiation.
+
+[^23]: Some instruments with approximately 200 pixel arrays are also
+    available, but these are usually called 'hyperspectral radiometers'
+    instead of spectroradiometers.
+
+[^24]: Errors caused by detaching and reattaching a fibre with an SMA
+    connector can be $\pm 5\%$ [@Nevas2012], but the information
+    available is rather limited, so if the fibre is going to be
+    detached, the errors should be characterized for each individual
+    instrument. Errors caused by attaching and reattaching a fibre with
+    an FC connector are negligible [@Nevas2012]
+
+[^25]: The measured biologically effective irradiance can be as large as
+    twice its true value.
+
+[^26]: Graphically this is the area under the curve.
+
+[^27]: By 'wrong' BSWF we mean one describing the spectral response of a
+    different response than that under study.
+
+[^28]: SMA connectors were originally designed for attaching light
+    fibres used in digital communications, and do not guarantee
+    repeatability of the fibre's alignment. Other types of connectors
+    (e.g. FC) that provide better repeatability are available as an
+    additional cost option from some spectrometer manufacturers.
+
+[^29]: Detaching the fibre from the diffuser does not invalidate the
+    calibration as small changes in alignment will not change the amount
+    of radiation entering the fibre.
+
+[^30]: You may be thinking how close to zero is close enough. For
+    reliably measuring effective doses in sunlight using a
+    spectroradiometer one needs at least four or five orders of
+    magnitude between the highest peak in the visible and the noise
+    signal.
+
+[^31]: It is always best to use in calculations the data at the original
+    wavelength of each pixel of the array of the spectrometer, rather
+    than to produce a spectrum with 'nice' wavelength steps by
+    interpolation.
+
+[^32]: The length of the night is the signal perceived by plants, and
+    this is the reason why an interruption of the night is equivalent to
+    long day conditions.
+
+[^33]: Circulation or cooling of the water is needed to remove the heat
+    from the system, otherwise the water could even boil.
+
+[^34]: At the light compensation point gross photosynthesis and
+    respiration rates cancel each other, and the rate of net carbon
+    exchange is equal to zero.
+
+[^35]: Ideally, if the data suggests a new hypothesis, this new
+    hypothesis should be tested in a new experiment, not using the same
+    data with which hypothesis was formulated. Alternatively, one can
+    use a procedure to adjust $P$-values, as recommended for multiple
+    comparisons.
+
+[^36]: It follows that if we miss-identify the experimental units, the
+    statistical tests are invalid.
+
+[^37]: It is not usually recommended to remove the blocks factor from a
+    statistical analysis if the significance of this term in an ANOVA is
+    non-significant. This post-hoc removal can only be justified when
+    $F < 1.0$ for the blocks term.
+
+[^38]: The main difference between a design with blocks and a factorial
+    design, is that in the first case it is assumed that there is no
+    interaction between treatments and blocks, and the interaction term
+    is used as an estimator of the error variance while in a factorial
+    design we estimate the error variance based on equally treated units
+    and we do not need to assume the lack of interaction effect.
+
+[^39]: In ANOVA, a contrast is a combination of factor level means (two
+    or more) based on multipliers that add to zero. Each contrast
+    defines one of many possible tests of significance.
+

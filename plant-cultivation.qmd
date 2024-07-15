@@ -1,0 +1,1081 @@
+---
+title: "Plant cultivation"
+subtitle: "Monitoring, reporting and control of growing conditions"
+date: 2024-07-15
+date-modified: today
+draft: true
+---
+
+## Introduction {#introduction-1}
+
+By applying the most constant growth conditions that we can in an
+experiment, we try to minimise uncontrolled variation in our measured
+plant data, even though this is not always achieved even with identical
+climate chamber protocols [@Massonnet2010]. However, by growing plants
+in stable controlled environments we will also induce differences in
+their response to any given stress, since natural variation in the
+outdoor climate contributes to plants' ability to cope with stress.
+Plants grown in climate chambers are "softer" than plants grown in
+greenhouses, that are themselves "softer" than plants grown outdoors.
+This softness can be expressed as weaker stems, physically softer leaves
+with less developed cuticles, and a lessened ability to regulate their
+stomata.
+
+Any protected cultivation will invariably differ from natural outdoor
+conditions, and the relative importance of these differences in aspects
+of the climate will vary between controlled and natural environments.
+The most pronounced difference is the constancy of a created climate
+under protected cultivation---and the lack of wind and UV-B radiation!
+In experiments in greenhouses during the winter and in growth chambers,
+the amount of radiation received by plants will be far less than they
+get in summer outside when most plants are active. This is unrealistic,
+unless dealing with obligate shade species.
+
+## Greenhouses
+
+Greenhouses come in many shapes and materials throughout the world. For
+plant production the cladding material can be either glass or plastic.
+Normal glass is opaque to UV-B and only expensive quartz glass allows
+UV-B to penetrate. The latter is used in only a few places where
+near-ambient UV-B radiation is considered important for ecophysiological
+research, but the vast majority of glasshouses provide no natural UV-B
+inside. The use of plastic opens several opportunities for choosing
+materials that are transparent to UV-B. Plastics are available as opaque
+and UV-transparent films that transmit \<1% or \>70% of the radiation \<
+400 nm, respectively. They can be clear (transmitting 87--90% of PAR) or
+milky to diffuse the light (transmitting 85% of PAR). transparent films
+are yet primarily used for increasing the vegetable quality in
+horticultural production in warmer climates.
+
+This chapter will by no means give complete instructions on how to
+manage the climate in a greenhouse, but we have gathered some
+information about possible technical solutions to various climate
+problems and some tips and tricks from personal experience. Greenhouses
+are available that provide different technical solutions for controlling
+the climate. In this section we will focus on glass greenhouses with
+fully automatic climate control regulated by a climate computer. The
+topic of how to apply from lamps has already been covered in section
+[8.2](#sec:UV:radiation:sources){reference-type="ref"
+reference="sec:UV:radiation:sources"} on page .
+
+### Temperature
+
+It is technically easier to heat than to cool a greenhouse and it is
+therefore easier to maintain a stable temperature during cold times of
+the year than during warm weather. As long as the boiler and heating
+system are correctly set-up and able to cope with the maximum expected
+temperature difference between outside and inside, the temperature
+should remain close to the point set by the thermostat. The amount of
+variation around the set point will depend on the sensitivity of the
+on/off signal to the boiler from the thermostat that regulates the
+heating system. Where winters are particularly cold, some greenhouses
+require insulation screens to enable them to maintain e.g. air
+temperature.
+
+Greenhouses with conventional air conditioning are not common due to
+their high running costs, so cooling is normally done by passive
+ventilation, misting systems or fans with cooling pads. Passive cooling
+involves opening vents and/or using shade screens to decrease heat load
+from the sun. The temperature outside will naturally have a huge impact
+on the degree of cooling achieved by ventilation and, if the shade
+screens are used for cooling, it is important to keep a 10% gap between
+them to allow air circulation out of the greenhouse.
+
+In a closed greenhouse in sunshine strong temperature gradients can be
+created. When the temperature at the floor level is ca. 25, it may be
+30just 35 cm above the floor and \>50just under the ridge of the roof. A
+few horizontal fans with moderate rotation in the ceiling can mitigate
+the problem. Regardless if fans are used or not it is important that the
+climate sensors connected to the climate computer are placed close to
+the plants since the plants respond to the microclimate in the canopy,
+not the macroclimate somewhere else in the greenhouse. It is also
+crucial that the temperature sensor is shielded from direct heat
+radiation from the sun or lamps to ensure that the true air temperature
+is measured.
+
+Water-based cooling systems use the principle of evaporative cooling. As
+water evaporates, some sensible heat from the warm air is transferred to
+the water as latent heat during its vaporisation. These cooling systems
+work best in areas with low to moderate air humidity. Misting systems
+can decrease the air temperature by some in moderate humidity and can be
+constructed with or without fans. It is important that they create
+droplets that are small enough to evaporate completely before they have
+fallen down onto the plants. "Rain" under misting systems will
+drastically increase the risk of fungal disease on plants.
+
+Fans with cooling pads regulate temperature using large industrial fans
+mounted in series with pads where water trickles down an enlarged
+surface (e.g. corrugated fibreboard, wood shavings or wheat straw),
+which enhance the area for evaporation. The change in latent heat in the
+evaporated water leads to a corresponding decrease in air temperature.
+
+### Light
+
+Greenhouse conditions should mimic the outdoor conditions of the open
+landscape as much as possible. The light environment in a greenhouse is
+strongly dependent on how much shade is created by its structure. Modern
+greenhouses are constructed to keep shading to a minimum.
+
+The amount of radiation received by the plants can be increased by using
+lamps and decreased by using shade screens but regardless of technical
+installations it will be difficult to create summer light conditions in
+a greenhouse during the winter in latitudes covering most of Europe.
+During the summer in Denmark daily integrals of PAR vary in the range of
+ca. 10--30 between rainy and sunny days inside a greenhouse without
+shade screens, while the values in mid-winter are 0.5--5 with some use
+of supplemental light until 22:00 h in the evening (Figure
+[\[fig:ppfd:greenhouse\]](#fig:ppfd:greenhouse){reference-type="ref"
+reference="fig:ppfd:greenhouse"}).
+
+::: figure*
+![image](figures/fig_pfd_greenhouse_summer.pdf){width="\\myfigwidth"}\
+![image](figures/fig_pfd_greenhouse_winter.pdf){width="\\myfigwidth"}
+:::
+
+Modern greenhouses have two or three screens for different purposes
+(shade, insulation, blackout) but in most greenhouses one shade screen
+can perform a dual function in insulation as well as shading radiation.
+The shade screen may also differentially remove part of the radiation,
+allowing the user to decide what fraction of the radiation load to
+remove up to the maximum shading with the screen fully closed. In many
+cases, the principal role of shade screens is to decrease the heat load
+from the sun, preventing the greenhouse from getting too hot, or as
+insulation screen during the cold season, but we should bear in mind
+that the light environment created by a medium-to-dense screen is
+comparable to that of an overcast day i.e. the PAR is decreased by
+10--90%, depending on screen material.
+
+For plants whose flowering is controlled by day length, blackout screens
+can be used to give short day treatments and incandescent bulbs (low
+red:far-red photon ratio) for night interruption to achieve long day
+treatments[^32]. Either a single pulse, or multiple pulses---e.g. 5 min
+per hour---can be used in practice. In this way flowering can either be
+induced or plants kept in a vegetative state for both short- or long-day
+plants. For the treatment to work, the blackout screens must provide
+completely black conditions without gaps, since phytochrome responds to
+extremely small amounts of light, and even small cracks between screens
+would be enough to interrupt the night length signal.
+
+During the winter season, supplemental light from lamps is needed for
+most species grown in greenhouses at high latitudes. Most greenhouses in
+these regions are supplied with high-pressure sodium (HPS) lamps, which
+give a spectrum from blue to red but predominantly emit orange light
+(Figure
+[\[fig:HPS:greenhouse\]](#fig:HPS:greenhouse){reference-type="ref"
+reference="fig:HPS:greenhouse"}). For photosynthesis, this spectrum is
+not optimal but when it is combined with natural daylight most plants
+grow without any problems. In research greenhouses, high-pressure lamps
+based on elements other than sodium are also used to give more "white"
+light. However, they are not used for plant production because of their
+lower energy efficiency than HPS lamps.
+
+::: figure*
+![image](photos/SON_in_greenhouse.pdf){width="0.8\\myfigwidth"}
+:::
+
+Light-emitting diodes (LEDs) are currently being developed to provide
+greenhouse lighting. They come in many different colours, and can emit
+anything from a narrow to a broad range of wavelengths. For use in
+greenhouses, numerous small companies have developed various LED lamps
+but up to now (summer 2012) large companies like Philips and Osram have
+as yet only released LED modules for use in growth chambers and for
+interlighting rows of vegetable crops (long narrow LED units placed
+between rows of e.g. tomatoes and cucumbers grown in greenhouses). Top
+light, or "ordinary" greenhouse LED lamps, will require LEDs that are
+sufficiently efficient to emit enough radiance while incorporating
+cooling for their electronics. These two factors have to be included in
+the "budget" when the energy efficiency is calculated for new LED lamps
+compared to traditional HPS lamps. Both the energy efficiency and
+lifetime of LEDs will decrease if their electronics are overheated.
+
+Research on the spectral distribution of LED lamps is focusing on red
+light (which requires the least energy to produce per photon) and how
+much additional blue or white light needs to be added for good plant
+growth. One basic problem with this approach is that the human eye is
+most sensitive to green and yellow and less so to blue and red light.
+Since the colour of leaves is based on reflected wavelengths, leaves
+that are only illuminated by blue and red light, which is efficiently
+absorbed by chlorophyll, will appear as dark objects. It may distort our
+judgments of plant health and nutritional status when making
+comparisons, since it is often manifested as yellow chlorosis or reddish
+coloration of the leaves. One would guess that the technical development
+of specific greenhouse lamps will lead to red enriched LED lamps with
+some blue and white (or green) LEDs to improve colour recognition.
+
+Beyond their spectral composition, the main difference between LED and
+HPS lamps is that the latter produce heat radiated in the direction of
+the plants while the former do not. This means that the leaf temperature
+will be higher under HPS lamps than under LED lamps. However, the
+electronics of the LEDs do become warm. When using only one row of
+low-efficiency LEDs, the metal mounts for the LED modules often provide
+enough heat sink to prevent them from over heating (which would
+otherwise decrease their efficiency), whereas high-efficiency LEDs
+require cooling. Most early LED illumination for greenhouses was
+water-cooled and this is one reason that its use in greenhouses has not
+yet been very widespread. Currently there are some high-power LED lamps
+available that are passively cooled by convection (Figure
+[\[fig:LEDs:greenhouse\]](#fig:LEDs:greenhouse){reference-type="ref"
+reference="fig:LEDs:greenhouse"}). Some other LED lamps with passive
+cooling have been designed for research (Figure
+[\[fig:LEDs:greenhouse:Philips\]](#fig:LEDs:greenhouse:Philips){reference-type="ref"
+reference="fig:LEDs:greenhouse:Philips"}) or with active cooling for
+production (Figure
+[\[fig:LEDs:greenhouse:Fionia\]](#fig:LEDs:greenhouse:Fionia){reference-type="ref"
+reference="fig:LEDs:greenhouse:Fionia"}). The colour of the radiation
+emitted depends on the LEDs used, and there are currently two different
+approaches when designing LED lamps: (1) maximising radiation output
+with respect to electricity consumed, and (2) maximising plant yield and
+crop quality irrespective of irradiance per unit of electrical power
+consumed. Because of the present fast technical development of the LED
+technology we can expect to see numerous new LED products for plant
+growth on the market in the next couple of years. From the perspective
+of research into the effects of UV-B in nature, the best PAR sources are
+those with a spectrum similar to sunlight.
+
+::: figure*
+![image](photos/LEDs_in_greenhouse.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](photos/LEDs_Philips.pdf){width="0.8\\myfigwidth"}
+:::
+
+::: figure*
+![image](photos/LEDs_DK.pdf){width="0.8\\myfigwidth"}
+:::
+
+The light distribution in greenhouses can be enhanced by diffusing
+glass, diffusing plastic films or thin diffusing screens. These create a
+more even distribution of light and decrease the differences, such as
+light gradients or patchiness, that are otherwise created by shade from
+the structure. A resultant side effect of diffusers is enhanced growth
+of plants due to better penetration of light into the canopy
+[@Markvart2010].
+
+Commercially-available climate computers are often connected to
+photometric (lux) sensors that measure light visible to humans
+($\approx$`<!-- -->`{=html}400--700 nm, see Box
+[\[box:photometric:quantities\]](#box:photometric:quantities){reference-type="ref"
+reference="box:photometric:quantities"} on page ), whereas
+[global:rad]{acronym-label="global:rad" acronym-form="singular+short"}
+is measured radiometrically (, see Table
+[\[tab:Phys:Quants\]](#tab:Phys:Quants){reference-type="ref"
+reference="tab:Phys:Quants"} on page ) in the range 400--1100 or
+400--3000 nm to provide information for the energy-related control of
+greenhouses (primarily temperature). The latter is the correct way to
+measure irradiance linked to climate control; whereas visible light,
+related to photosynthesis and plant production, should be measured as
+PAR photon irradiance or [PPFD]{acronym-label="PPFD"
+acronym-form="singular+short"} (PPFD, , see Box
+[\[box:quantum:quantities\]](#box:quantum:quantities){reference-type="ref"
+reference="box:quantum:quantities"} on page ) or PAR (energy) irradiance
+(). Modern climate computers can also be directly connected to PPFD
+sensors.
+
+When using supplemental light from various light sources extra care need
+to be taken on the choice of quantum sensor since most supplemental
+greenhouse lamps have a dis-continuous spectrum. Some cheaper quantum
+sensors do not cover the full spectral range 400--700 nm and the sensor
+may not cover the spectrum of red LED's, which can peak close to a
+wavelength of 700 nm.
+
+One should keep in mind, that moving an experiment from the field to a
+greenhouse does not make it independent of the outdoor season, since the
+UV-B dose should be balanced against the integrated daily PPFD if the
+experiment aims to mimic outdoor conditions. Daylight varies
+tremendously between winter and summer. Even with supplemental light the
+PPFD of a sunny winter day in Northern Europe will only correspond to an
+overcast day in the summer (Figure
+[\[fig:ppfd:greenhouse\]](#fig:ppfd:greenhouse){reference-type="ref"
+reference="fig:ppfd:greenhouse"}). The contribution from lamps will be
+less than what is found in sunlight during the summer, even under long
+photoperiods (c.f. Figures
+[\[fig:ppfd:lamps\]](#fig:ppfd:lamps){reference-type="ref"
+reference="fig:ppfd:lamps"} and
+[\[fig:ppfd:greenhouse\]](#fig:ppfd:greenhouse){reference-type="ref"
+reference="fig:ppfd:greenhouse"}).
+
+::: figure*
+![image](figures/fig_PFD_lamps.pdf){width="\\myfigwidth"}
+:::
+
+Except for late successional species that ecologically are adapted to
+obligate shade, most plants will acclimate to the prevailing light
+conditions [@Bazzaz1982]. This means changing chloroplast architecture
+and the stoichiometry of the whole photosynthetic apparatus
+[@Anderson1988] and thus also altering the light response of
+photosynthesis.
+
+Most experiments on light acclimation only discus the light environment
+in terms of "high light" or "low light", regardless if it has been
+created as % of sunlight with permanent shade screens or as a certain
+PPFD in climate chambers. However, the light environment should be
+described by day length, maximum PPFD and integrated daily PPFD. Not
+much is known about which of the parameters of the light environment,
+actually trigger acclimation of photosynthesis. The three light
+parameters mentioned above have been investigated in tomato
+[@VandenBoogard2001], where the day length affected the chlorophyll
+concentration while the integrated daily PPFD affected the maximum rate
+of fixation at light saturation, independent of what the maximum PPFD
+was during the day.
+
+If photosynthesis is being studied in greenhouses in relation to UV-B
+one should be aware of the effect that the seasonal changes in daylight
+has on the photosynthetic apparatus and therefore also on the growth of
+the plants, when comparing different experiments conducted at different
+times of the year.
+
+### Air humidity
+
+Air humidity is difficult to regulate in greenhouses. If few plants are
+grown in a compartment the humidity tends to be low due to the large
+areas of potentially cold glass and concrete that act as dehumidifiers
+through condensation. If the leaf area index (LAI) is high,
+transpiration will make humidity correspondingly high despite
+condensation on the greenhouse surfaces.
+
+Misting systems can increase the humidity but it is important that they
+create mist, not rain. Rain or condensation on the plants will increase
+the risk of fungal disease in the experimental plants.
+
+The humidity will be higher in highly insulated than in single-glass
+greenhouses, where some of the humidity will condense on the glass. High
+air humidity is decreased by opening the vents at the same time as
+turning on the heating system to increase the exchange of air with the
+outside. The effect of dehumidifying ventilation will depend on the
+outdoor weather conditions and on whether dry or moist air is entering
+the greenhouse.
+
+Using traditional climate control, the air humidity is regulated as
+relative humidity (RH, %). The driving force of transpiration is the
+absolute gradient of water vapour from the intercellular spaces inside
+the leaf to the outside air, i.e. the water vapour pressure difference
+(, Pa). As the intercellular spaces are microscopic and the cell walls
+saturated with water it is assumed that the RH in the leaf is 100% at
+the given leaf temperature. Since the absolute content of water vapour
+in air of the same RH is strongly temperature dependent (Figure
+[\[fig:water:vapour\]](#fig:water:vapour){reference-type="ref"
+reference="fig:water:vapour"}), the evaporative demand can differ
+greatly when temperature fluctuates in the greenhouse, even if RH is
+stable.
+
+::: figure*
+![image](figures/fig_water_vapour.pdf){width="\\myfigwidth"}
+:::
+
+In modern climate computers a measured quantity equivalent to VPD
+(i.e. based on absolute difference in humidity, expressed as water mass
+concentration, instead of difference in partial pressure) can be used
+for humidity control, instead of RH. It is called delta-$\chi$
+($\Delta \chi$, , or sometimes simply delta-X) and is the water deficit
+from the saturated value, but expressed based on mass concentration
+instead of vapour pressure. Both VPD and $\Delta\chi$ use saturated
+water vapour content based on air temperature as a reference. To be
+correct we need information about the canopy temperature to use VPD or
+$\Delta\chi$ to estimate the true evaporative demand () as when the
+leaves are transpiring their temperature will be somewhat lower than the
+air temperature, due to evaporative cooling. The canopy temperature is
+not easily measured but in the context of climate control the
+approximation based of VPD or $\Delta\chi$ still provides a better
+approximation to the true evaporative demand created by the atmosphere
+in the greenhouse than RH.
+
+Misting systems using ultrasonic humidifiers have been reported to also
+generate some hydrogen peroxide and may not be appropriate in research
+studies of plant growth [@Arends1988]. Although the evidence is not
+strong, one should be aware of this possible undesired effect.
+
+However, increasing air humidity in greenhouses by forced aerosolization
+of water (creating small droplets by water sprays, jets, ultrasonic
+nebulizers etc.) may cause different problems. These processes cause
+charge separation of water droplets and thus forming high concentrations
+of nano-sized ions, which can damage electronic equipment due to
+electrostatic deposition. The effects of the charged droplets on plants
+are not known. This effect is not seen if water is being evaporated
+directly from a water surface to water vapour e.g. by trickling water in
+fans with cooling pads.
+
+### Elevated carbon dioxide concentration
+
+Modern greenhouses have systems to supply elevated concentration to
+promote crop growth. There are several possible sources of that can be
+used: the three most common ones are liquid from a tank, combustion of
+natural gas for production and produced when burning fossil fuels for
+heat/power production, where the latter two require cleaning of the
+fumes to remove and .
+
+A major difference between elevated supplied in full-scale greenhouses
+compared to open-top chambers or FACE is that the greenhouse is not
+supplied continuously during daytime hours. Because of the vast volume
+of a greenhouse compartment it would be very expensive to supply
+elevated when the vents are open for temperature control. Therefore in
+traditional greenhouse climate control elevated is given only when the
+vents are closed or open by at most 5%. Ethylene contamination, which
+can significantly reduce plant growth, has been reported in some
+supplies and it should be removed by scrubbing if necessary
+[@Morison1984].
+
+Furthermore the isotope composition may differ in liquid compared to
+natural air, which need to be checked if investigations include
+measurements of the ratio e.g. in relation to water balance, and when
+comparing with results in the literature.
+
+###  Growth substrates, irrigation and fertilization
+
+Transferring experiments indoors inevitably means growing the plants in
+pots. It is important to chose a growth substrate that has both good
+water holding and draining properties to meet the demand for water and
+oxygen for the root system. In the horticultural greenhouse industry
+peat mixtures are the most commonly used substrate in pots but also
+coco-peat (granulated husks of coconuts) is used. To ensure good
+aeration perlite or vermiculite is sometimes mixed into the substrate.
+Since the pot volume is limited the fluctuations in water content will
+be greater than in soil, as will be the fluctuations in soil
+temperature. In natural soil the temperature will be both more stable
+and lower than what it is in pots.
+
+The pots are often of dark colour and they absorb heat radiation when
+exposed to sunlight. In commercial production the pot density is kept
+high enough to create shade between the pots and only the outer row of
+pots are potentially exposed to heat radiation from the sun. In
+experiments you often leave some space between the plants, not to have
+excessive shade between them. During sunny days without shade the pot
+temperature can easily increase to levels that are damaging to the root
+system and when knocking the soil/root out of the pot of border plants
+that has been exposed to direct sunlight it is not uncommon to see root
+death on the exposed side of the pot. The temperature of the nutrient
+solution/water also affects the root temperature. If the water is cold a
+growth retarding effect can be seen on the plants. More reflections on
+pot experiments are found in @Passioura2006 and a meta-analysis of the
+effect of pot size on plant growth in @Poorter2012a.
+
+Several types of watering systems exist but the most common ones are
+drip irrigation and ebb/flow systems. Drip irrigation is based on thin
+tubes supplying each pot with nutrient solution from a tank. In an
+ebb/flow system the nutrient solution it pumped up on the bench to
+1--2 cm water depth and kept there for some minutes, before being
+drained off, back into the tank. This system recirculates the nutrient
+solution and with commercial nutrient/watering computers the composition
+is controlled by pH and electric conductivity (EC) of the solution,
+topping up with stock solution or an acid to keep the nutrient
+concentration and pH at desired level.
+
+Irrigation of the plants can be done by timer or on demand. In
+greenhouses plants will have different need for water dependent on the
+weather. If the irrigation is done by timer without adjustment for sunny
+or overcast weather there will be a risk that the plants are
+over-watered during dull days or water stressed on sunny days. Both
+stresses potentially affect the growth of the plants.
+
+Watering by demand can be done by experience or by weighing the plants
+and watering after a pre-determined water loss. Load cells can be
+mounted under ca. 0.5 m$^2$ watering trays or under a section of a
+greenhouse bench, triggering a pump in the tank with nutrient solution
+via a datalogger. Since plants that grow to maturity follow a sigmoid
+growth curve the watering needs to be adjusted accordingly during the
+experiment, to follow the demand.
+
+### Data logging of microclimatic variables
+
+When working in greenhouses it is not enough to report the set points
+used for the most important climate parameters. The climate in a
+greenhouse needs to be measured and the observed values reported. The
+optimum arrangement is to have separate sensors recording the climate to
+those that are controlling the climate, but if this is not possible the
+ones connected to the climate computer can be used, if they are
+calibrated. Light irradiance, air temperature and humidity are the most
+important parameters to record, along with concentration if it is
+applied. Since the natural irradiance can fluctuate rapidly, it is
+important to have a high logging frequency, e.g. every minute.
+Furthermore, it is important that the temperature sensor is shielded
+from direct heat radiation from the sun and the lamps, while still being
+exposed to free air, e.g. in a ventilated box. For ideas on how to
+construct a radiation shield for measurement of air temperature refer to
+the design of weather stations (e.g. <http://www.kippzonen.com>,
+<http://www.skyeinstruments.com> and may others). There are several
+small dataloggers on the market, with built-in air temperature and
+humidity sensors in a plastic housing. They also have to be shielded
+from heat radiation when used in a greenhouse or climate chamber since
+the plastic housing gradually heats up and transfers the body
+temperature to the sensor---in climate chambers with metal halide lamps
+errors larger than 10have been observed when no shielding was used.
+Recommendations for sensors and frequency of data logging are compiled
+in Table
+[\[tab:growth:guidelines\]](#tab:growth:guidelines){reference-type="ref"
+reference="tab:growth:guidelines"}.
+
+:::: sidewaystable*
+[]{#tab:growth:guidelines label="tab:growth:guidelines"}
+
+::: small
+  ----------------------------- ---------------------------------------- ------------------ -------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------- --------------------------------------------------- ---------------------------------------------------------------------------------------------------------
+                                Units                                    Where to measure                                                                                                What to report                                                                                                                      
+                                                                                                                                                                                         Climate chamber                                                                 Greenhouse                                          
+  Radiation                     PPFD                                                        Top of the canopy in the centre of growing area (in greenhouses $> 1$ sensor is preferred)   Start, every 2 weeks and end of experiment                                      n.a.                                                Mean (daytime) and s.d. Radiation source (type, model, manufacturer)
+                                PPFD                                                        As above                                                                                     n.a.                                                                            Logging every minute                                Mean max. daily PAR and s.d. Mean integrated PAR and s.d.. Radiation source (type, model, manufacturer)
+                                Photoperiod                              h                  n.a.                                                                                         n.a.                                                                            n.a.                                                Duration of light and dark period (in greenhouse for start and end of experiment).
+  Temperature                   Air                                                         Top of canopy in the centre of growing area                                                  Daily during each light and dark period, at least 1 h after light/dark change   Logging every 1--5 minutes                          Mean and s.d. for day and night temperature, specification if it does not follow the photoperiod.
+  Air humidity                  Water vapour pressure deficit (VPD)      kPa                Top of canopy in the centre of growing area                                                  As for air temperature                                                          Logging every 1--5 minutes                          Average and standard deviation
+                                $\Delta\chi$                                                As above                                                                                     As above                                                                        As above                                            As above
+                                Relative humidity                        \%                 As above                                                                                     As above                                                                        As above                                            As above (only if VPD or $\Delta\chi$ not available)
+  Carbon dioxide                If elevated and part of the treatment                       Top of canopy                                                                                At least hourly                                                                 Logging every 1--5 minutes (via climate computer)   Mean and s.d.
+  Air velocity                  If available and part of the treatment                      At one or more representative canopy locations                                               At least once during the experiment                                                                                                 Mean and s.d.
+  Substrate                     n.a.                                     n.a.               n.a.                                                                                         At start of experiment                                                          At start of experiment                              Type and volume per container, components of soil(-less) substrate, container dimensions
+  Watering                      n.a.                                     l (litre)          n.a.                                                                                         Daily                                                                           Daily                                               Frequency, amount and type of water added
+  Nutrition or liquid culture   Acidity                                  pH                 In bulk solution                                                                             Before and after pH correction                                                  Before and after pH correction                      Mean and s.d.
+                                Electric conductivity (EC)                                  As above                                                                                     Before and after EC correction                                                  Before and after EC correction                      Average and standard deviation
+                                Ion composition                                             As above                                                                                     Daily or when replenished                                                       Daily or when replenished                           Ionic concentration in initial and added solution. Aeration if any. Volume of initial solution.
+                                Solid media                                                 n.a.                                                                                         When added or replenished                                                       When added or replenished                           Nutrients and their form added to soil media.
+  ----------------------------- ---------------------------------------- ------------------ -------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------- --------------------------------------------------- ---------------------------------------------------------------------------------------------------------
+:::
+::::
+
+## Open top chambers and FACE
+
+Open top chambers (OTC) and, less frequently, closed top chambers (CTC)
+are used to study the effects of elevated concentration and temperature.
+Most of these chambers are built using plastic films, plates, or glass
+that absorb radiation and sometimes also some radiation. In some cases,
+attenuation of radiation has been minimised by use of -transparent
+materials in OTCs and CTCs [e.g. @Visser1997a]. In contrast to OTCs and
+CTCs, free air enhancement (FACE) systems do not significantly affect or
+visible radiation. In some cases, lamps have been used in OTCs and the
+attenuation measured. In controls with unenergised lamps, daily
+integrals of and radiation, and were reduced by 24% [@Booker1992].
+
+## Controlled environments
+
+In controlled environments the spectral distribution of the light
+emitted by the lamps used is especially important since there is no
+contribution from natural light. A skewed spectrum can cause strange
+growth patterns in plants and many lamp types produce distinct emission
+bands, interrupted by bands of very low emission (Figure
+[\[fig:spectra:PAR:lamps\]](#fig:spectra:PAR:lamps){reference-type="ref"
+reference="fig:spectra:PAR:lamps"}). Fluorescent tubes and HPS lamps, in
+particular, emit very little far-red and produce plants with very
+stunted growth, compared to lamps that create a continuous spectrum
+resembling sunlight [@Hogewoning2010]. However, lamps emitting a
+continuous spectrum can also create unexpected differences in plants
+compared to sunlight. An unpublished example is that of white cabbage
+grown in pots outdoors then moved into a climate chamber with metal
+halide bulbs (see Figure
+[\[fig:spectra:PAR:lamps\]](#fig:spectra:PAR:lamps){reference-type="ref"
+reference="fig:spectra:PAR:lamps"}), which developed a distinct red
+coloration after a couple of hours at constant light.
+
+lamps emit some blue light providing a weak visual indicator that the
+lamp is turned on, but the contribution to the light environment will be
+minor in comparison to the overall from the main lamps used for . They
+also emit very small amounts of orange-red radiation.
+
+Most lamps presently used also emit a substantial amount of heat
+radiation. Some of this heat should be removed using a heat filter. The
+most efficient design to achieve this is to have the lamps in a
+separate, ventilated compartment in the ceiling, divided from the growth
+chamber by a transparent glass/plexi-glass sheet. Even so, it is
+important that the temperature sensor measuring air temperature in a
+climate chamber is shielded from the heat radiation from the lamps.
+Water is a good absorber of infra-red radiation, and sometimes a
+transparent tray with circulating water[^33] is used as a barrier
+between lamps and the plant compartment. Most lamp types (e.g. metal
+halide) used in climate chambers can only be turned on/off, not dimmed.
+To create different photon irradiances the lamps has to be turned on in
+different constellations. Even though daylight shows strong and fast
+variations in irradiance (Figure
+[\[fig:light:regime:clouds\]](#fig:light:regime:clouds){reference-type="ref"
+reference="fig:light:regime:clouds"} on page ) the overall light pattern
+is bell shaped. To mimic natural light conditions a gradual or stepwise
+change during the morning/evening hours is preferred. If it is possible
+to get e.g. 600 from the lamps, a 14 h-long day will give an integrated
+of 30 , which corresponds to a sunny day in May in Denmark (Figures
+[\[fig:ppfd:greenhouse\]](#fig:ppfd:greenhouse){reference-type="ref"
+reference="fig:ppfd:greenhouse"} and
+[\[fig:ppfd:lamps\]](#fig:ppfd:lamps){reference-type="ref"
+reference="fig:ppfd:lamps"}). With the present development of the LED
+technology the first climate chambers with LED lighting have been
+introduced to the market, and one can expect that LEDs will be used
+extensivelly for controlled environments in the future. LEDs can be
+dimmed without any drastic changes in their spectral profile and the
+lack of heat radiation in the direction of the plants removes one
+complicating factor for lighting in climate chambers. Figure
+[\[fig:spectra:PAR:lamps\]](#fig:spectra:PAR:lamps){reference-type="ref"
+reference="fig:spectra:PAR:lamps"} shows the photon emission spectra of
+some lamps used as PAR sources in controlled environments and
+greenhouses.
+
+::: figure*
+![image](figures/fig_PAR_lamps_facets.pdf){width="0.95\\myfigwidth"}
+:::
+
+In climate chambers it is often possible to create a fast change between
+the day and night temperatures, though this is unnatural to plants.
+Under natural conditions a 5--10decrease in air temperature normally
+takes hours, allowing e.g. the membrane fluidity to follow. If the
+temperature drop between day and night is big and fast some plants may
+experience transient stress linked to membrane fluidity, which would not
+be the case if the change were slower. This is something to bear in
+mind, when designing the chamber climate. It can also increase the risk
+of fungal disease if the air humidity is high and the plants become
+damp, in the same way as in greenhouses.
+
+If experiments are done at low or high temperatures there may be
+restrictions on how well humidity can be controlled. At low temperature
+there may be limitations on the capacity for dehumidification and at
+high temperatures it may not be possible to sufficiently moisten the
+air.
+
+Numerous plant species lose the ability to effectively regulate their
+stomata when grown at constant high humidity (ca. 70% RH at 20--25). To
+our knowledge, this has been observed in , , and . These plants lose
+their ability to regulate stomatal conductance when subsequently exposed
+to low air humidity e.g. if moved from the greenhouse to a laboratory
+for measurements of photosynthesis. In the worse case scenarios, the
+plants transpire to such an extent that small local spots of necrosis
+develop on the patch where gas exchange has been measured on the leaf.
+However, since results like these are considered as failed experiments
+such observations have not (to our knowledge) been scientifically
+published. Nevertheless, it is important to be aware of this potential
+problem when working with mesophytic leaves, i.e. "average" leaves that
+are adapted neither to dry nor to wet conditions, like the examples
+above.
+
+Data logging of the climate is needed in controlled environments to
+catch irregularities and failings in the climate control. This is
+especially important to test for differences among chambers when the
+climate set points changes. The Committee on Controlled Environment
+Technology and Use under the USDA has issued recommendations for data
+logging of growth chamber climate, which are compiled, with some
+changes, in Tables
+[\[tab:growth:guidelines\]](#tab:growth:guidelines){reference-type="ref"
+reference="tab:growth:guidelines"} and
+[\[tab:growth:envir:describing\]](#tab:growth:envir:describing){reference-type="ref"
+reference="tab:growth:envir:describing"}.
+
+:::: table*
+::: small
+  Parameter               Units    What to report
+  ----------------------- -------- ----------------------------------------------------------------------------------------
+  Manufacturer            n.a.     Name and address (n.a. for greenhouse)
+  Model                   n.a.     Model descriptor if available. Greenhouse type and roof height for greenhouses
+  Size                             Floor area
+  Barrier beneath lamps   Yes/No   Indicate if present and composition. Optical properties if available (not greenhouses)
+  Cladding material       n.a.     Indicate material and optical properties if known (only for greenhouses)
+  Air flow                n.a.     Indicate whether up, down or horizontal (not greenhouses)
+:::
+::::
+
+Recommendations on parameters that should be logged have been published
+by the International Committee for Controlled Environment Guidelines -
+see <http://www.controlledenvironments.org/>,
+<http://www.ceug.ac.uk/ICCEG.htm> and
+<http://www.controlledenvironments.org/guidelines.htm>.
+
+## Material issues in greenhouses and controlled environments
+
+A potentially problematic issue concerning materials in greenhouses and
+climate chambers relates to the use of different types of soft plastic
+materials. Plastics like cellulose acetate, cellulose nitrate or PVC are
+stiff by nature. It is only when they are mixed with a softener i.e. a
+"plasticiser" that they become soft and flexible. The plasticisers may
+be different alkyl esters of phthalic acid. Some of these phthalates are
+phytotoxic, particularly butyl phthalate (DBP) and di-isobutyl phthalate
+(DIBP) [@Hannay1986; @Millar1986]. The phytotoxicity is evident as poor
+growth, chlorosis, necrosis and plant death. At regular intervals since
+the 1950's there have been examples in the greenhouse industry and plant
+research facilities where new plastics have been introduced for
+different purposes, which have caused serious growth problems
+[@Hardwick1987]. Many species are damaged by phthalates but species of
+Brassicaceae seem to be particularly sensitive. Past examples of
+products responsible for phytotoxic problems include plastic tunnels,
+water hoses, drip irrigation tubes, plastic plant pots, glazing strips
+(that seal between the glass and aluminium frames in the greenhouse
+construction), plastic insulation of electrical wires and plastic
+boots---the latter creating growth problems in a greenhouse outside a
+staff changing room. Many of these problems have been created when the
+recipes or composition of products already in use in a greenhouse have
+been changed by the manufacturer. Growth chambers require some fresh air
+inlet for the climate control. There is an example of poor growth and
+bleaching of plants in a climate chamber when the air inlet was close to
+the ventilation outlet of a chemistry laboratory. When the air inlet was
+moved 200 m away and supplied with a compressor, the problem
+disappeared.
+
+## Gas-exchange cuvettes and chambers
+
+Measurement of photosynthesis through gas-exchange with present requires
+modifications of most standard equipment. Most gas-exchange cuvettes
+have windows that attenuate radiation. This means that most leaf
+photosynthesis and stomatal conductance measurements are done in the
+absence of radiation, even when done in sunlight. Stomata have been
+shown to respond to radiation [e.g. @Eisinger2000], and at high
+irradiances the rate of photosynthesis can also be affected [see
+@Rozema1997d for a consice review].
+
+For example, the GFS-3000 system from Walz, can be ordered with cuvette
+windows made of quartz instead of normal glass. Some cuvettes for the
+LI-COR LI-6400 use a plastic film as a window, and it is possible to use
+an -transparent material. The cuvette for CIRAS-2 from PP Systems is
+delivered with Calflex heat filter glass as standard, but can easily be
+fitted with quartz glass for transmission on request.
+
+Frequently used light sources are tungsten-halogen lamps, which emit
+very little radiation, or light sources based on red LEDs in combination
+with blue or white LEDs, which do not emit any radiation.
+
+When designing experiments, especially when leaves or shoots are
+enclosed for more than a couple of minutes in a gas-exchange cuvette,
+one should be aware that the leaves or shoots may be in an unnatural
+light environment, even when measurements are done in full sunshine. To
+avoid surprises, always measure irradiance and especially spectral
+irradiance through the cuvette window, rather than outside the cuvette,
+if you want to describe the radiation environment during measurements.
+
+Plastic and rubber used for tubing have different properties of
+permeability to and water vapour, and absorption of water, which can
+lead to flawed gas-exchange data. These properties are listed in
+@Long1987.
+
+## Plants in the field
+
+One important disturbance in experiments on natural vegetation or field
+crops is that produced by the researchers themselves. Some ecosystems
+like peat bogs get more easily damaged than others, but in most cases
+special precautions are needed whenever repeated access to plots is
+needed. The most common approach is to use catwalks made from wooden
+planks raised some centimetres above the ground. Sometimes when access
+is needed to the centre of the plots ladders are put temporarily, laying
+horizontally bridging two catwalks. Figure
+[\[fig:catwalks:Abisko\]](#fig:catwalks:Abisko){reference-type="ref"
+reference="fig:catwalks:Abisko"} shows some examples from Abisko and
+Figure
+[\[fig:filters:photo:field1\]](#fig:filters:photo:field1){reference-type="ref"
+reference="fig:filters:photo:field1"} on page shows an example from
+Ushuaia.
+
+::: figure*
+![image](photos/Abisko.pdf){width="0.39\\myfigwidth"}
+![image](photos/Abisko-2.pdf){width="0.39\\myfigwidth"}
+:::
+
+Not only the spectrum, but also the temporal variation of irradiance
+differs between controlled environments and natural conditions. The
+temporal light regime depends on the position of the sun and on clouds
+(Figure
+[\[fig:light:regime:clouds\]](#fig:light:regime:clouds){reference-type="ref"
+reference="fig:light:regime:clouds"}), and also on the vegetation itself
+(Figure
+[\[fig:light:regime:sapplings\]](#fig:light:regime:sapplings){reference-type="ref"
+reference="fig:light:regime:sapplings"}). For experiments done in the
+field summaries of data from an in situ or nearby weather station should
+be used to describe the growing conditions. To assess the light
+environment at different locations in a forest understorey,
+hemispherical photographs taken with a fish-eye lens, can be used. There
+is software available---e.g. Hemiview from Delta-T---that allows the
+prediction of the light environment based on the position of the sun in
+the sky at different times of the day and seasons of the year.
+
+::: figure*
+![image](figures/fig_PAR_BF5.pdf){width="1.1\\myfigwidth"}
+:::
+
+::: figure*
+![image](figures/fig_PAR_LI.pdf){width="1.1\\myfigwidth"}
+:::
+
+## Cultivation of aquatic plants
+
+When designing experimental set ups for the cultivation of aquatic
+plants under full solar radiation (+ + ) or under a simulated natural
+radiation field (see section
+[8.4](#sec:manipulating:aquatic){reference-type="ref"
+reference="sec:manipulating:aquatic"} on page ), the spectral
+transmission of the vessels or photobioreactors used must be accounted
+for as well as the absorbtion of radiation by the water, growth medium
+and the aquatic plants themselves (self shading). Most studies
+evaluating photosynthetic activity in algae have been conducted in
+-opaque incubators and this has consequently led to overestimation of
+their photosynthetic capacity, since radiation causes photoinhibition
+and photodamage in aquatic plants
+[@Hader1997; @Villafane2003; @Bischof2006].
+
+The most frequently used photobioreactors have a cylindrical shape and
+they can be transparent or opaque to radiation (Figure
+[\[fig:culture:systems\]](#fig:culture:systems){reference-type="ref"
+reference="fig:culture:systems"}, see section
+[8.4](#sec:manipulating:aquatic){reference-type="ref"
+reference="sec:manipulating:aquatic"} on page ). Some photobioreactors
+are built from rigid plastic such as polycarbonate (PC),
+polymethylmethacrylate (PMM) or polyvinyl chloride (PVC), and others
+from flexible plastic such as cellulose acetate or polyethylene.
+
+::: figure*
+![image](photos/fig_culture_system.pdf){width="0.9\\myfigwidth"}
+:::
+
+The aims of photobioreactor design are:
+
+::: inparaenum
+high volumetric productivity (g l$^{-1}$ d$^{-1}$),
+
+high productivity per unit area (g m$^{-2}$ d$^{-1}$)
+
+high cell concentration (g l$^{-1}$)
+
+high efficiency in the conversion of light (g
+mol$_\mathrm{photons}^{-1}$)
+
+high biomass quality
+
+sustainable and reliable cultivation, and
+
+low construction and operating costs.
+:::
+
+The material for the photostage of the photobioreactors must have:
+
+::: inparaenum
+high transparency,
+
+high mechanical strength,
+
+high durability (resistance to weathering),
+
+chemical stability
+
+ease of cleaning, and
+
+low cost.
+:::
+
+::: figure*
+![image](photos/fig_large_tanks_1.pdf){width="0.8\\myfigwidth"}
+:::
+
+Seaweeds can be also cultivated in large tanks (500--1000 l) made of
+materials such as polyethylene, glass-fibre-reinforced polyester or
+polypropylene---which all attenuate radiation (Figure
+[\[fig:large:tanks:photos\]](#fig:large:tanks:photos){reference-type="ref"
+reference="fig:large:tanks:photos"}). Thus when and visible radiation
+are supplied by artificial lamps, they must be located above the open
+top of the tanks. Likewise when tanks receive natural solar radiation,
+[direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"}
+is available within the tank only at high solar elevation angles,
+whereas [diffuse:rad]{acronym-label="diffuse:rad"
+acronym-form="singular+short"} predominates during the rest of the day.
+Large containers are considerably more expensive than other systems and
+require an ample water supply and frequent maintenance. Facilities
+originally designed for other purposes, e.g. biofiltration of fishpond
+effluents, are often used for the incubation of aquatic plants
+[@Neori1996; @Figueroa2006]. These tanks can be placed outdoors under
+full solar radiation or enclosed inside a greenhouse.
+
+In tanks, incident radiation is generally attenuated very rapidly and
+attenuation depends largely on algal density, the shape and volume of
+the tanks and the amount and type of particulate and dissolved material
+in the water. If we compare the irradiance at different depths in the
+water with different regions of the light-response curve of
+photosynthesis, we can see that PAR irradiance can be high enough to
+cause photoinhibition in the surface layer (Figure
+[\[fig:photosynthesis:in:tanks\]](#fig:photosynthesis:in:tanks){reference-type="ref"
+reference="fig:photosynthesis:in:tanks"}). The smallest irradiance
+causing photoinhibition is denoted in the graph as Q~h~ while the
+irradiance incident at the surface of the water is Q~0~. In the next
+layer below the surface, the incident irradiance is lower than Q~h~ but
+higher than saturating irradiance for photosynthesis (Q~s~). About
+80--90% of photons reach this layer of maximal production. The
+irradiance in the layer below, which is deeper than the layers above, is
+lower than saturating irradiance but higher than
+light-compensation-point irradiance (Q~c~)[^34]. Finally the irradiance
+in the deepest layer at the bottom of the tank is lower still Q~c~, this
+is considered to be a 'dark' layer (in general 70% of the volume of the
+tank). Thus, it is crucial that the algae are vigorously circulated
+through the tanks using air to maintain a light:dark regime adequate for
+growth, i.e. the algae move from the bottom of the tanks, where the
+tubes injecting the air are located, to the upper layers, where photon
+irradiance is higher.
+
+::: figure*
+![image](photos/fig_A_in_tanks_Pedro.pdf){width="\\myfigwidth"}
+:::
+
+To cultivate both fixed or free floating aquatic plants, the plants must
+receive air (with or without enrichment) in addition of light and
+nutrients. Air not only serves as a carbon source but also produces the
+turbulent environment needed to provide nutrients to the algae, which
+under a laminar regime would be less available to some of the algae
+leading to their starvation. Thus, the suitable movement of macrophytes
+within the tank results, not only in their adequate exposure to PAR and
+radiation, but also the provision of nutrition and gas exchange. Thus,
+the appropriate balance between the initial inoculum and the water
+volume should be accurately calculated. Due to circular movement of
+water within a tank, macrophytes are often exposed to variable light
+conditions or, when densities are high, to self-shading. The cultivation
+of subtidal seaweeds in outdoor tanks can cause bleaching or chronic
+photoinhibition because they are not normally exposed to high
+irradiances of . These effects of high irradiance can mask the effects
+of radiation. This can be avoided by the use of neutral shading screens
+that minimise the undesirable effects of excessive light, as exemplified
+in a tank cultivation of three seaweeds from the coast of Baja
+California [@CabelloPasini2000]. By neutral screens, we mean grey or
+black shade-cloth that has little or no effect on the radiation
+spectrum, attenuating all wavelengths by the same relative amount. When
+using more than one layer of shade-cloth, remember that the effect is
+multiplicative rather than additive. For example two layers of a cloth
+with a 50% transmittance each will yield a transmittance of
+approximately 25%.
+
+As an example, in cultures of in semitransparent polyethylene tanks, the
+high algal biomass density caused a drastic reduction in the maximal
+average irradiance at 10 cm depth compared to that at the surface
+[@Figueroa2008]. At 10 cm depth, was reduced by about 87.5% at an algal
+density of 4 g l$^{-1}$, 89.5% at 6 g l$^{-1}$ and 95% at 8 g l$^{-1}$.
+The attenuation of radiation was 94% at 4 g l$^{-1}$, 96% at 6
+g l$^{-1}$ and 99% at 8 g l$^{-1}$. radiation at noon was fully
+attenuated by an algal density of 4 g l$^{-1}$ at 10 cm depth, while
+with this same algal density there was "complete darkness" (less than
+0.1% of incident irradiance) at 25 cm depth.
+
+The shape of the tank and the ratio of surface to volume (S:V) also have
+an effect on the hydrodynamics and the movement of the seaweeds (Figure
+[\[fig:culture:tanks:S:V\]](#fig:culture:tanks:S:V){reference-type="ref"
+reference="fig:culture:tanks:S:V"}). Semicircular tanks of fibre glass
+(750 l) have better hydrodynamics, not only because they allow more
+water movement and a better distribution of the air bubbles in the tank,
+but also because of their higher S:V ratio (2.4 m$^{-1}$) than that of
+cylindric 1500 l tanks of semitransparent polyethylene (S:V = 1
+m$^{-1}$) or 90 l (S:V = 2.2 m$^{-1}$).
+
+::: figure*
+![image](photos/fig_large_tanks_2.pdf){width="0.8\\myfigwidth"}
+:::
+
+Another aspect of good experimental design is choosing the location of
+plants within the culture system, i.e. the merits of fixed- versus
+free-floating aquatic plants. Both fixed and free floating aquatic
+plants absorb radiation to differing extents depending on their pigment
+composition and the thickness of their tissue or thallus. Aquatic
+angiosperms can be anchored to both natural materials, such as stones,
+and artificial materials (rows, epoxy, etc.). Seaweeds are usually
+cultured in free floating systems where they are moved by the injection
+of air, although in nature they are fixed to different substrates. Not
+all species can be cultivated floating freely and in some cases this can
+alter their growth forms, transforming branched forms into a spherical
+forms. Morphological changes affect both bio-optical properties
+(i.e. including absorption) and nutrient assimilation which is higher in
+branched forms than spherical forms due to their higher surface:volume
+ratio (of both cells and the whole plant). Thus, in photobiological
+experiments, it is crucial to optimise both algal density and the light
+field---by using lamps located to one side (lateral position) or above
+the aquarium---so as to reduce or avoid self shading.
+
+Mesocosms have been developed to recreate natural conditions as closely
+as possible on a small scale. They are generally used to study plankton
+communities, however, their use in aquatic macrophyte ecology is
+increasing. For example, floating mesocosms and mesocosms connected to
+land---e.g. attached to a platform or pier---have been developed (Figure
+[\[fig:floating:mesocosms\]](#fig:floating:mesocosms){reference-type="ref"
+reference="fig:floating:mesocosms"}).
+
+::: figure*
+![image](photos/fig_floating_mesocosms_new.pdf){width="0.9\\myfigwidth"}
+:::
+
+Several mesocosm studies have used ambient radiation supplemented with
+radiation from fluorescent lamps to simulate an increase in radiation
+due to ozone depletion. Two methodologies can be applied: (a)
+supplementing a fixed irradiance value ("square wave systems"), or (b)
+supplementing a fixed percentage of ambient irradiance ("modulated
+systems") [@Belzile1998; @Belzile2006]. Modulated systems, which were
+originally developed for terrestrial plants [@Caldwell1983], are better
+than square-wave systems for simulating predicted increases in radiation
+[@Diaz2003; @Diaz2006]. See section
+[8.2.6](#sec:modulated){reference-type="ref" reference="sec:modulated"}
+on page .
+
+When using mesocosms, experimental designs must be as realistic as
+possible in simulating forcing factors as well as their variability. For
+example, when studying the effect of increased , experiments should be
+designed to reproduce diurnal variations in irradiance and episodic
+events such as passing clouds. Recently, experiments using mesocosms
+have been applied to evaluate the interactive effects on macrophytes of
+environmental shifts driven by climate changes (temperature, , radiation
+and nutrient availability). To mimic climate change conditions,
+@Liboriussen2005 designed a flow-through mesocosm in a shallow lake
+which can also be applied to other aquatic ecosystems. Recently, a new
+automatically-operated system providing accurate simulations of the
+increases in radiation and temperature according to climate change
+scenarios has been developed [@Nouguier2007]. All these systems
+reproduce the sort of high degree of environmental variability inherent
+to aquatic systems.
+
+##  {#sec:recommend:grow}
+
+In this section we list recommendations related to the cultivation of
+plants used in experiments studying the effects of radiation. See
+sections [8.6.1](#sec:recommend:outdoor:manip){reference-type="ref"
+reference="sec:recommend:outdoor:manip"} and
+[8.6.2](#sec:recommend:indoor:manip){reference-type="ref"
+reference="sec:recommend:indoor:manip"} for recommendations on
+manipulation of radiation, section
+[9.15](#sec:recommend:quantifying){reference-type="ref"
+reference="sec:recommend:quantifying"} for recommendations on how to
+quantify radiation, and section
+[11.12](#sec:recommend:stat){reference-type="ref"
+reference="sec:recommend:stat"} for recommendations about statistical
+design of experiments.
+
+1.  Include in the methods description in your publications enough
+    information about the growing conditions so that the experiment can
+    be duplicated.
+
+2.  When using growth chambers, growth rooms, or greenhouses with
+    environmental control systems report in addition to model and
+    manufacturer and its address, all the settings used:
+
+    1.  Temperature
+
+    2.  Air humidity
+
+    3.  Lamps.
+
+    4.  Shade/insulation screens.
+
+    5.  supply
+
+    6.  Pots, soil and fertilization.
+
+    7.  Watering.
+
+    8.  Plant material
+
+3.  Check the calibration of the climate sensors that control the
+    greenhouse or controlled environment. For example, PAR sensors
+    should be calibrated once a year, infrared gas analysers (IRGAs)
+    used in control once every week or two (but depends on the
+    instrument, so follow the manufacturer recommendations). Electronic
+    thermometers and capacitive air humidity sensors (such as Vaisala
+    HUMICAP) should be checked a few times per year, and recalibrated
+    when needed.
+
+4.  Program the data logger for logging each minute, either a separate
+    logger with sensor or the climate logging function of the climate
+    computer using the same sensors as are controlling the climate. If
+    you use a separate battery-powered datalogger, the data record will
+    include the time during mains power interruptions or environmental
+    control system failure.
+
+## Further reading {#further-reading-2}
+
+@Poorter2012 have written a practical guide on how to grow plants for
+reproducible results, giving several examples of how variation in the
+climate influence the results, including suggestions for further
+reading. If biomass allocation to different plant organs is studied in
+an experiment, the Tansley review by @Poorter2012b should consulted as
+it presents a meta-analysis of how climate parameters other than UV-B
+affect plant morphology. This is especially important if results from
+different growing seasons are compared. For general introduction to the
+energy, water and carbon balance of plants in relation to the climate we
+refer to @Jones1992 and @Nobel2009, for climate physics in relation to
+plant canopies to @Oke1988 and for more thorough calculations of the
+greenhouse climate to @Bakker1995
+[@Stanhill1999; @Beytes2003; @Stanghellini1987].
