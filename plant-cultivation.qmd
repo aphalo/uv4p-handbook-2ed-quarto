@@ -1,10 +1,18 @@
 ---
 title: "Plant cultivation"
 subtitle: "Monitoring, reporting and control of growing conditions"
+author: "_missing_"
+contributor: "Eva Rosenqvist, F. López Figueroa, Iván Gómez, Pedro J. Aphalo"
 date: 2024-07-15
 date-modified: today
 draft: true
 ---
+
+::: callout-note
+# First edition authors
+
+{{< meta contributor >}}
+:::
 
 ## Introduction {#introduction-1}
 

@@ -1,7 +1,12 @@
 ---
 title: "Radiation and Optics"
 subtitle: "Concepts, physical quantities and units of expression"
-author: "Pedro J. Aphalo with Andreas Albert, Lars Olof Björn, Lasse Yliantilla"
+author:
+  - name: Pedro J. Aphalo
+    orcid: 0000-0003-3385-972X
+    email: pedro.aphalo@helsinki.fi
+    affiliation: University of Helsinki
+contributor: "Andreas Albert, Lars Olof Björn, Lasse Yliantilla"
 date: 2024-06-08
 date-modified: 2024-06-08
 format:
@@ -21,6 +26,12 @@ library(photobiologySun)
 library(photobiologyPlants)
 library(photobiologyFilters)
 ```
+
+::: callout-note
+# First edition authors
+
+{{< meta contributor >}}
+:::
 
 **I have retained the use of quantity symbols and names from the first edition. The SI system was updated in 2019 and the IUPAC Gold Book in 2020. I/we have to check that the symbols and nomenclature we use are up-to-date with these updates.**
 

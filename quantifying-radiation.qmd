@@ -1,13 +1,21 @@
 ---
 title: "Quantifying UV, VIS and NIR radiation"
 date: 2024-07-15
+author: "_missing_"
+contributor: "Lars Olof Björn,  Andy R. McLeod, Pedro J. Aphalo, Andreas Albert, Anders V. Lindfors, Anu Heikkilä, Predag Kolarz, Lasse Ylianttila, Gaetano Zipoli, Daniele Grifoni, Pirjo Huovinen, Iván Gómez, I. and F. López Figueroa"
 date-modified: today
 draft: true
 ---
 
+::: callout-note
+# First edition authors
+
+{{< meta contributor >}}
+:::
+
 ## Basic concepts and terminology {#sec:basic:concepts}
 
-### Introduction to UV and visible radiation
+### Introduction to UV, VIS and NIR radiation
 
 In this section we will discuss the quantities, units and terminology
 used to describe visible and UV radiation, and explain how to use and

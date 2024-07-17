@@ -4,7 +4,22 @@ project:
 book:
   title: "Field Methods in Plant Photobiology"
   subtitle: "From Principles to Practice"
-  author: "Pedro J. Aphalo, Wolfgang Bilger, Marcel A. K. Jansen, Eva Rosenqvist (eds.)"
+  author: 
+    - name: Pedro J. Aphalo
+      orcid: 0000-0003-3385-972X
+      email: pedro.aphalo@helsinki.fi
+      affiliation: University of Helsinki
+    - name: Wolfgang Bilger
+      orcid: 0000-0001-7800-4210
+      affiliation: Christian-Albrechts-Universität zu Kiel
+    - name: Marcel A. K. Jansen
+      orcid: 0000-0003-2014-5859
+      affiliation: University College Cork
+    - name: Eva Rosenqvist
+      orcid: 0000-0001-9288-6248
+      affiliation: University of Copenhagen
+  contributor: "Pedro J. Aphalo, Andreas Albert, Lars Olof Björn, Andy R. McLeod, T. Matthew Robson,  Eva Rosenqvist"
+  license: "CC BY-SA"
   date: "2024-07-15"
   date-format: iso
   chapters:
@@ -17,9 +32,13 @@ book:
     - radiation-and-optics.qmd
     - light-environment.qmd
     - quantifying-radiation.qmd
+    - leaf-optics.qmd
+    - quantifying-responses.qmd
+    - imaging.qmd
     - manipulating-radiation.qmd
     - plant-cultivation.qmd
     - design-of-experiments.qmd
+    - reproducibility.qmd
     - references.qmd
 
 bibliography: 
@@ -35,11 +54,10 @@ format:
     resource-path: 
       - ./images
       - ./figures
+    search: true
+
   pdf:
     documentclass: scrreprt
-    resource-path: 
-      - ./images
-      - ./figures
 
 editor: source
 

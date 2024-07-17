@@ -1,9 +1,25 @@
 ---
+title: Preface to the 2nd edition
+author:
+  - name: Pedro J. Aphalo
+    orcid: 0000-0003-3385-972X
+    email: pedro.aphalo@helsinki.fi
+    affiliation: University of Helsinki
+  - name: Wolfgang Bilger
+    orcid: 0000-0001-7800-4210
+    affiliation: Christian-Albrechts-Universität zu Kiel
+  - name: Marcel A. K. Jansen
+    orcid: 0000-0003-2014-5859
+    affiliation: University College Cork
+  - name: Eva Rosenqvist
+    orcid: 0000-0001-9288-6248
+    affiliation: University of Copenhagen
 date: 2024-07-14
 date-modified: today
+draft: true
 ---
 
-# Preface
+## Plan for the 2nd edition {.unnumbered}
 
 ::: callout-note
 This is a book created using the "Quarto book" system. To learn more about Quarto books visit <https://quarto.org/docs/books>.
@@ -21,13 +37,15 @@ This new edition will be made available as work in progress, i.e., written in th
 
 3.  The UV, VIS and NIR environment of plants
 
-4.  Quantifying UV and VIS radiation
+4.  Quantifying UV, VIS and NIR radiation
 
 5.  Measurement of optical properties of leaves
 
-6.  Manipulating UV and VIS radiation
+3.  Quantifying plants' responses 
 
 7.  Imaging in UV, VIS and short IR radiation
+
+6.  Manipulating UV and VIS radiation
 
 8.  Cultivation of plants for UV and other photobiological experiments
 

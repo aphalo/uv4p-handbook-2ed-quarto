@@ -1,5 +1,12 @@
 ---
-title: "Preface of 1st edition"
+title: "Preface to the 1st edition"
+author: 
+  - name: Pedro J. Aphalo
+  - name: Andreas Albert
+  - name: Lars Olof Björn
+  - name: Andy R. McLeod
+  - name: T. Matthew Robson
+  - name: Eva Rosenqvist
 date: 2024-07-15
 date-modified: today
 draft: true

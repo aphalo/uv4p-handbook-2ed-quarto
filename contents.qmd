@@ -1,6 +1,6 @@
 ---
 title: Table of Contents
-draft: true
+draft: false
 listing:
   contents:
     - "index.qmd"  
@@ -11,13 +11,18 @@ listing:
     - "radiation-and-optics.qmd"
     - "light-environment.qmd"
     - "quantifying-radiation.qmd"
+    - "leaf-optics.qmd"
+    - "quantifying-responses.qmd"
+    - "imaging.qmd"
     - "manipulating-radiation.qmd"
     - "plant-cultivation.qmd"
     - "design-of-experiments.qmd"
+    - "reproducibility.qmd"
     - "references.qmd"
   type: table
   fields: [title]
   sort: false
-page-layout: full
-toc: true
+page-layout: custom
+toc: false
 ---
+
