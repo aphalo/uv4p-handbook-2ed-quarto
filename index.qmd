@@ -8,3 +8,5 @@ This is work in progress towards a second edition of the handbook _Beyond the Vi
 
 The first edition is available under open-access under [doi:10.31885/9789521083631](http://doi.org/10.31885/9789521083631).
 :::
+
+This work is under copyright (2012) EU's COST office and copyright (2012-2024) the authors and editors. The copyright of some illustrations is different and/or has more restrictive licence conditions and are used under permission.
