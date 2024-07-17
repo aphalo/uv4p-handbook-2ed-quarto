@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Field Methods in Plant Photobiology - 11&nbsp; Quantifying plants’ responses</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./imaging.html" rel="next">
+<link href="./leaf-optics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quantifying-responses.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Field Methods in Plant Photobiology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface-1ed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface to the 1st edition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Preface to the 2nd edition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Table of Contents</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abbreviations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Abbreviations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./radiation-and-optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Radiation and Optics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./light-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment of plants</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quantifying-radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quantifying UV, VIS and NIR radiation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./leaf-optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Measurement of optical properties of leaves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quantifying-responses.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./imaging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Imaging in UV, VIS and short IR radiation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manipulating-radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Manipulating UV, VIS and NIR radiation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plant-cultivation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Plant cultivation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./design-of-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Design of Experiments and Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ensuring reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec:action:spectra" id="toc-sec:action:spectra" class="nav-link active" data-scroll-target="#sec\:action\:spectra"><span class="header-section-number">11.1</span> Action and response spectra</a>
+  <ul class="collapse">
+  <li><a href="#constructing-a-monochromatic-action-spectrum" id="toc-constructing-a-monochromatic-action-spectrum" class="nav-link" data-scroll-target="#constructing-a-monochromatic-action-spectrum"><span class="header-section-number">11.1.1</span> Constructing a monochromatic action spectrum</a></li>
+  <li><a href="#sec:polychromatic:action:spectra" id="toc-sec:polychromatic:action:spectra" class="nav-link" data-scroll-target="#sec\:polychromatic\:action\:spectra"><span class="header-section-number">11.1.2</span> Constructing a polychromatic action spectrum</a></li>
+  <li><a href="#action-spectra-in-the-field" id="toc-action-spectra-in-the-field" class="nav-link" data-scroll-target="#action-spectra-in-the-field"><span class="header-section-number">11.1.3</span> Action spectra in the field</a></li>
+  </ul></li>
+  <li><a href="#sec:readings:intro" id="toc-sec:readings:intro" class="nav-link" data-scroll-target="#sec\:readings\:intro"><span class="header-section-number">11.2</span> Further reading</a></li>
+  <li><a href="#sec:appendix:polychromatic:action:spectra" id="toc-sec:appendix:polychromatic:action:spectra" class="nav-link" data-scroll-target="#sec\:appendix\:polychromatic\:action\:spectra"><span class="header-section-number">11.3</span> Appendix: Calculation of polychromatic action spectra with Excel (using add-in “Solver”)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></h1>
+<p class="subtitle lead">Response- and action spectra</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec:action:spectra" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="sec:action:spectra"><span class="header-section-number">11.1</span> Action and response spectra</h2>
+<p>Plants do not respond equally to all wavelengths of , and this spectral response can be described by a response spectrum and/or by an action spectrum. It is important to be aware that an action spectrum is not the same thing as a response spectrum. Although they are both used to describe the wavelength dependency of a biological response to radiation they are measured and used differently. Because they are measured in different ways they yield curves of different shapes. A response spectrum shows the size of the response at a <em>fixed photon fluence</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of radiation across a series of different wavelengths. However, since UV radiation never comes at fixed irradiances over the entire spectrum the response spectrum is of limited use when estimating the physiological response to solar- or broadband UV exposure. In contrast, an action spectrum shows the effectiveness of radiation of different wavelengths in <em>achieving a given size of response</em>. This is a very important difference because dose response curves are not necessarily parallel or linear.</p>
+<p>When estimating biologically effective irradiances (see section <a href="quantifying-radiation.html#sec:BSWFs:UVeff" data-reference-type="ref" data-reference="sec:BSWFs:UVeff">[sec:BSWFs:UVeff]</a> on page ) it is very important to use appropriate action spectra for each biological process. However, since the action spectra of many biological responses are not known, this provides a dilemma for researchers who must try to chose the action spectrum that best approximates the process they are studying. Using the wrong action spectrum can produce very large errors when predicting effective irradiance and, therefore, UV effects on plants due to e.g.&nbsp;ozone depletion <span class="citation" data-cites="Rundel1983 Cullen1997">(<a href="references.html#ref-Rundel1983" role="doc-biblioref">Rundel 1983</a>; <a href="references.html#ref-Cullen1997" role="doc-biblioref">Cullen and Neale 1997</a>)</span>. This is also a good reason for continued efforts to measure action spectra.</p>
+<p>Building a response spectrum is fairly simple; we need to measure a plant response at a single (photon) irradiance (or fluence) for each wavelength (or narrow band), whereas for constructing an action spectrum ones needs to measure the response at several different photon fluence values for each wavelength of interest.</p>
+<section id="constructing-a-monochromatic-action-spectrum" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="constructing-a-monochromatic-action-spectrum"><span class="header-section-number">11.1.1</span> Constructing a monochromatic action spectrum</h3>
+<p>Action spectra are most frequently measured using monochromatic light, i.e.&nbsp;radiation of a single or narrow range of wavelengths. This can be achieved by the use of systems which transmit, or emit, only a defined and usually narrow range of wavelengths, e.g.&nbsp;band-pass filters, LEDs, spectrographs, or lasers (see Chapter <a href="#chap:manipulating" data-reference-type="ref" data-reference="chap:manipulating">[chap:manipulating]</a> for details about radiation sources). It is also possible to build, for example, an UV action spectrum with background irradiation of other wavelengths such us PAR.</p>
+<p><span class="citation" data-cites="Shropshire1972">Shropshire (<a href="references.html#ref-Shropshire1972" role="doc-biblioref">1972</a>)</span> describes in detail the theory behind monochromatic action spectra, and the assumptions needed for an action spectrum to match the absorption spectrum of a photoreceptor pigment. He also considers the problem of how screening by other or the same pigments can distort the shape of action spectra. He gives examples for visible radiation but the theoretical considerations are fully applicable to ultraviolet radiation.</p>
+<p>To construct a true action spectrum we first need to measure dose response curves for radiation of different wavelengths (Figure <a href="#fig:construct:action:spectrum" data-reference-type="ref" data-reference="fig:construct:action:spectrum">[fig:construct:action:spectrum]</a>). The more curves we measure and the narrower the wavelength range used for each of these, the more spectral detail will be visible in the action spectrum built from them. For each of these curves, we should use a range of photon fluences yielding response sizes going from relatively small responses to close to the maximum response size (close to saturation). The photon fluence values used should increase exponentially. Photon fluence can be varied both by varying irradiance and/or irradiation times. If irradiation time is varied, it should be checked that reciprocity holds<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. We fit a curve to each set of dose response data, using the logarithm of the photon fluence as an independent variable. Using a logarithmic scale is expected to yield a more linear response curve than untransformed photon fluence values. From the fitted dose-response curves we calculate by interpolation the photon fluence required at each measured wavelength to obtain a response of the selected target response size. We use the photon fluence values to calculate effectiveness as <span class="math inline">\(1/ (\pfd \cdot t)\)</span> where fluence is given by the product of photon irradiance () by the irradiation time (<span class="math inline">\(t\)</span>), and we finally plot these effectiveness values against wavelength (<span class="math inline">\(\lambda\)</span>). If the dose response curves are not parallel, the shape of the action spectrum will depend on the target response level chosen. Different causes have been suggested for the lack of parallelism of dose response curves that is sometimes observed. Two of these suggestions are self-screening effects and involvement of two or more interacting pigments in the response <span class="citation" data-cites="Shropshire1972">(<a href="references.html#ref-Shropshire1972" role="doc-biblioref">Shropshire 1972</a>)</span>. One can in principle use either quantum (=photon) or energy units, but quantum units are preferable as for any photochemical reaction absorption events always involve quanta. The shape of the spectrum will depend on whether an energy or photon basis is used.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/fig_dose_responses.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>As the main feature of interest is the shape of the curve, UV action spectra are usually normalized to an action that is equal to one at 300 nm. This is achieved, by dividing all the quantum (or photon) effectiveness values measured at different wavelengths, by the effectiveness at 300 nm. The use of <span class="math inline">\(\lambda =300\)</span> nm is an arbitrary convention, of rather recent adoption, so you will find, especially in the older literature, other wavelengths used for the normalization.</p>
+<p>A response spectrum will rarely match the absorption spectrum of the photoreceptor because of non-linearities in later steps between light absorption by the photoreceptor and an observed response. In the case of action spectra, by keeping the size of the response constant across wavelengths we attempt to minimize the effect of these non-linearities on the measured spectrum. Because of this, a properly measured action spectrum will usually closely follow the absorption spectrum of the pigment acting as photoreceptor, except from possible effect from interfering pigments. Figure <a href="#fig:action:spectra" data-reference-type="ref" data-reference="fig:action:spectra">[fig:action:spectra]</a> and Table <a href="#tab:action:spectra" data-reference-type="ref" data-reference="tab:action:spectra">[tab:action:spectra]</a> show several action spectra relevant to research on the effects of UV on plants. See the article by <span class="citation" data-cites="Gorton2010">Gorton (<a href="references.html#ref-Gorton2010" role="doc-biblioref">2010</a>)</span> for a deeper discussion on biological action spectra.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/fig_action_spectra.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec:polychromatic:action:spectra" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="sec:polychromatic:action:spectra"><span class="header-section-number">11.1.2</span> Constructing a polychromatic action spectrum</h3>
+<p>Monochromatic action spectra are useful to understand the nature of a specific response, e.g.&nbsp;damage, but are not suitable for calculating real effects under solar radiation. The response of a plant to light and UV radiation depends on both the amount of energy (dose-response) and the spectral composition of the radiation. Polychromatic action spectroscopy is based on a background of broad-band white light from artificial sources or natural daylight supplemented by various wavelength, for example between 280 and 360 nm <span class="citation" data-cites="Holmes1997">(<a href="references.html#ref-Holmes1997" role="doc-biblioref">Holmes 1997</a>)</span>. This polychromatic approach provides an action spectrum useful for assessing effects of UV under normal plant growing conditions, because the simultaneous exposure to a broad wavelength interval has a different net effect than that of an exposure to separate monochromatic radiation, due to synergisms or antagonisms between complex chemical and biological processes, for example repair mechanisms <span class="citation" data-cites="Coohill1992 madronich1993">(<a href="references.html#ref-Coohill1992" role="doc-biblioref">Coohill 1992</a>; <a href="references.html#ref-madronich1993" role="doc-biblioref">Madronich 1993</a>)</span>. In practice, such a realistic polychromatic radiation spectrum is achieved using a series of cut-off filters, which cut off radiation of wavelengths shorter or longer than a certain wavelength. The effect of such filters can be compared to the effect of the variable thickness of the stratospheric ozone layer. Figure <a href="#fig:Poly:Spectra" data-reference-type="ref" data-reference="fig:Poly:Spectra">[fig:Poly:Spectra]</a> shows examples of spectral irradiance for broad band light from lamps filtered by different cut-off filters. The cut-off wavelength usually refers to the wavelength of 50% transmission.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/fig_polychrom.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>The original approach, so called differential polychromatic action spectroscopy, is described by <span class="citation" data-cites="Rundel1983">Rundel (<a href="references.html#ref-Rundel1983" role="doc-biblioref">1983</a>)</span>. Different biological responses are proportional to different specific treatments, for example exposures. Thus, an action spectrum can be estimated by quantifying differences in responses between successive treatments. The number of treatments required depends on the relative change in response over a wavelength interval. One example of a quantifiable effect would be change in the observed concentrations of flavonols.</p>
+<section id="app:polychromatic:math" class="level4" data-number="11.1.2.1">
+<h4 data-number="11.1.2.1" class="anchored" data-anchor-id="app:polychromatic:math"><span class="header-section-number">11.1.2.1</span> The mathematics behind polychromatic action spectra</h4>
+<p>The average proportionality <span class="math inline">\(\overline{s}\)</span> between differences in the biological effective response of successive treatments <span class="math inline">\(i\)</span>, <span class="math inline">\(\Delta W_{be,i}\)</span>, and differences in exposure (fluence rate multiplied by exposure time), <span class="math inline">\(\Delta\exposure[i]\)</span> is given by an average quantity <span class="math display">\[\overline{s_i} = \frac{\Delta W_{be,i}}{\Delta\exposure[i]}\]</span> All the values of <span class="math inline">\(\overline{s_i}\)</span> together are represented in the action spectrum. If the wavebands of each treatment are small enough, an action spectrum <span class="math inline">\(s(\lambda)\)</span> can be expressed by a mathematical function. Different functions are discussed <span class="citation" data-cites="Rundel1983 Cullen1997">(<a href="references.html#ref-Rundel1983" role="doc-biblioref">Rundel 1983</a>; <a href="references.html#ref-Cullen1997" role="doc-biblioref">Cullen and Neale 1997</a>)</span>. In the simplest case the factors <span class="math inline">\(\overline{s_i}\)</span> are positive and decrease exponentially with increasing wavelength. Thus, one common form of <span class="math inline">\(s(\lambda)\)</span> is <span class="math display">\[s(\lambda) = \mathrm{e}^{-k(\lambda-\lambda_0)} \label{Equ:BSWF:exp}\]</span> where <span class="math inline">\(k\)</span> is a parameter, which has to be obtained for each different biological effect using a fitting procedure, and a wavelength <span class="math inline">\(\lambda_0\)</span>, where the action spectra are normalised to unity, e.g.&nbsp;<span class="math inline">\(\lambda_0=300\)</span> nm. Other functions including a polynomial dependence on <span class="math inline">\(\lambda\)</span> are also possible and perhaps necessary for describing complex mechanisms.</p>
+<p>For the interpretation of the experimental data, the biological effective response <span class="math inline">\(W_{be}\)</span>, it is necessary to consider the wavelength dependency. Thus, it is crucial that the entire spectral irradiance <span class="math inline">\(\irr(\lambda,t)\)</span> during the experiment is known. Broad-band meters are not suitable in most cases. This dependency is included in the biological effective dose function (exposure) <span class="math inline">\(\exposure[be]\)</span>, given by</p>
+<p><span class="math display">\[\begin{aligned}
+\exposure[be] &amp; = &amp; \int_\lambda \int_t \enspace s(\lambda) \cdot \irr(\lambda,t) \enspace{\rm d}t\enspace{\rm d}\lambda \nonumber \\\nopagebreak
+&amp; = &amp; \int_\lambda \enspace s(\lambda) \cdot \exposure(\lambda) \enspace{\rm d}\lambda \label{Equ:Dose:be}
+\end{aligned}\]</span> A mathematical model can separate wavelength and dose dependency for a set of experimental data by the use of mathematical functions describing <span class="math inline">\(W_{be}(\exposure[be])\)</span> and optimisation procedures, e.g.&nbsp;non-linear curve fitting <span class="citation" data-cites="Cullen1997 Ghetti1999 Ibdah2002 goetz10">(<a href="references.html#ref-Cullen1997" role="doc-biblioref">Cullen and Neale 1997</a>; <a href="references.html#ref-Ghetti1999" role="doc-biblioref">Ghetti et al. 1999</a>; <a href="references.html#ref-Ibdah2002" role="doc-biblioref">Ibdah et al. 2002</a>; <a href="references.html#ref-goetz10" role="doc-biblioref">Götz et al. 2010</a>)</span>. The model assumes that photons at different wavelengths act independently, but with different quantum efficiency at the same absorption site, and therefore with the same mechanism. Regarding the shape and saturation of the observed effect, different functions can describe the data of <span class="math inline">\(W_{be}(H_{be})\)</span>, for example a linear, hyperbolic or sigmoid function. A simple linear relation is <span class="math display">\[W_{be}(\exposure[be]) = W_0 \cdot \exposure[be] \label{Equ:Response:lin}\]</span> with the parameter <span class="math inline">\(W_0\)</span>, which has to be determined by the fitting procedure. If for example the exposure time of the radiation is constant and, therefore, not depending on the duration of the experiment <span class="math inline">\(t\)</span>, the combination of Eqs. <a href="#Equ:BSWF:exp" data-reference-type="ref" data-reference="Equ:BSWF:exp">[Equ:BSWF:exp]</a> to <a href="#Equ:Response:lin" data-reference-type="ref" data-reference="Equ:Response:lin">[Equ:Response:lin]</a> yields <span class="math display">\[W_{be}(\exposure[be]) = W_0 \cdot t \cdot \int_\lambda \enspace \mathrm{e}^{-k(\lambda-\lambda_0)} \cdot \irr(\lambda) \enspace{\rm d}\lambda \label{Equ:Response:lin2}\]</span> To solve the equation for the unknown parameters <span class="math inline">\(W_0\)</span> and <span class="math inline">\(k\)</span>, measurements of the biological response <span class="math inline">\(W_{be}\)</span> and the spectral irradiance <span class="math inline">\(\irr(\lambda,t)\)</span> have to be put into a fitting routine, to optimise <span class="math inline">\(W_0\)</span> and <span class="math inline">\(k\)</span> by minimising the differences, e.g.&nbsp;the (root) mean square, between measured and modelled values of <span class="math inline">\(W_{be}\)</span>. In Figure <a href="#fig:Poly:Spectra" data-reference-type="ref" data-reference="fig:Poly:Spectra">[fig:Poly:Spectra]</a> are six different scenarios shown. In this case, the differences among six individual measured and modelled responses have to be calculated and the sum of these needs to be minimised by a non-linear optimisation technique, such as that provided by the add-in “Solver” in Excel.</p>
+</section>
+</section>
+<section id="action-spectra-in-the-field" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="action-spectra-in-the-field"><span class="header-section-number">11.1.3</span> Action spectra in the field</h3>
+<p>Under field conditions it is more difficult to build UV action spectra, and most frequently what are measured are polychromatic action spectra <span class="citation" data-cites="Keiller2003 Cooley2000a">(e.g. <a href="references.html#ref-Keiller2003" role="doc-biblioref">Keiller, Mackerness, and Holmes 2003</a>; <a href="references.html#ref-Cooley2000a" role="doc-biblioref">Cooley et al. 2000</a>)</span>.</p>
+<p>As many whole-plant responses result from a long signal transduction chain, which depends on the action of more than one photoreceptor, the action spectrum for many responses at the whole-plant or organ level, seems to vary among species, with the seasons of the year or growing conditions. For responses like these it is almost impossible to define a unique and stable action spectrum for plants growing outdoors, as these responses are too far decoupled from the photoreceptors.</p>
+<p>Even if they do not faithfully reflect the properties of a single photoreceptor, action spectra can be extremely useful, as we need them as <span data-acronym-label="BSWF" data-acronym-form="plural+short">BSWFs</span> (BSWFs) when calculating biologically effective UV doses (see section <a href="quantifying-radiation.html#sec:BSWFs:UVeff" data-reference-type="ref" data-reference="sec:BSWFs:UVeff">[sec:BSWFs:UVeff]</a> on page ), since the same UV radiation spectrum has a different effect on different plant responses (Figure <a href="#fig:action:spectra" data-reference-type="ref" data-reference="fig:action:spectra">[fig:action:spectra]</a>).</p>
+</section>
+</section>
+<section id="sec:readings:intro" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="sec:readings:intro"><span class="header-section-number">11.2</span> Further reading</h2>
+<p><a href="http://www.photobiology.info/" class="uri">http://www.photobiology.info/</a>, photobiological sciences online. At this web site there are many articles, several of them relevant to plant photobiology. The book by <span class="citation" data-cites="Bjorn2007">Björn (<a href="references.html#ref-Bjorn2007" role="doc-biblioref">2007</a>)</span> is a general introduction to photobiology, that complements well this chapter. The mechanism of ozone depletion and its consequences has been accessibly described by <span class="citation" data-cites="Graedel1993">Graedel and Crutzen (<a href="references.html#ref-Graedel1993" role="doc-biblioref">1993</a>)</span> in the book . The UNEP reports <span class="citation" data-cites="unep2007 unep2003 UNEP2011">(<a href="references.html#ref-unep2007" role="doc-biblioref">UNEP 2007</a>, <a href="references.html#ref-unep2003" role="doc-biblioref">2003</a>; <a href="references.html#ref-UNEP2011" role="doc-biblioref">UNEP 2011</a> and earlier)</span> provide up-to-date reviews on the environmental consequences of stratospheric ozone depletion.</p>
+</section>
+<section id="sec:appendix:polychromatic:action:spectra" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec:appendix:polychromatic:action:spectra"><span class="header-section-number">11.3</span> Appendix: Calculation of polychromatic action spectra with Excel (using add-in “Solver”)</h2>
+<p>This is an example of one possibility to derive the parameters of a polychromatic action spectrum by non-linear optimisation as explained in section <a href="#sec:polychromatic:action:spectra" data-reference-type="ref" data-reference="sec:polychromatic:action:spectra">1.8.2</a> on page . The Excel add-in “Solver” is listed in the menu “Tools”. If this is not the case, it has to be installed in <code>Tools&gt;Add-Ins</code>. This experiment was performed in the small sun simulator of the Helmholtz Zentrum München, Neuherberg, Germany (see section <a href="manipulating-radiation.html#sec:simulators" data-reference-type="ref" data-reference="sec:simulators">[sec:simulators]</a> at page ) in a special cuvette, which allows simultaneous exposure of plants under different radiation <span class="citation" data-cites="Ibdah2002 goetz10">(<a href="references.html#ref-Ibdah2002" role="doc-biblioref">Ibdah et al. 2002</a>; <a href="references.html#ref-goetz10" role="doc-biblioref">Götz et al. 2010</a>)</span>. Figure <a href="#fig:Sosi:Cuvette" data-reference-type="ref" data-reference="fig:Sosi:Cuvette">[fig:Sosi:Cuvette]</a> shows the cuvette placed in the sun simulator with five rows of glass filters from Schott, Mainz, Germany (WG295, WG305, WG320, WG335, WG360).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/sosi_cuvette.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>At the beginning we have to put all our measured data into different sheets in Excel. In this example, the biological response <span class="math inline">\(W_{be}\)</span> is the -induced flavonoid lutonarin (in <span class="math inline">\(\mymu\)</span>mol g<span class="math inline">\(^{-1}\)</span> FW (fresh weight)) of the first leaf of the barley cultivar “Barke”. The amount was estimated by HPLC (high performance liquid chromatography). Three young plants in each of three independent experiments were harvested under six different scenarios, which spectral irradiances are shown in figure <a href="#fig:Poly:Spectra" data-reference-type="ref" data-reference="fig:Poly:Spectra">[fig:Poly:Spectra]</a> in section <a href="#sec:polychromatic:action:spectra" data-reference-type="ref" data-reference="sec:polychromatic:action:spectra">1.8.2</a> on page . The data are put into the first sheet “leaf data” and mean values and standard deviations for each scenario were calculated as illustrated in figure <a href="#fig:App:Poly:Spectra:Sheet1" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Sheet1">[fig:App:Poly:Spectra:Sheet1]</a>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/app_polyspec_sheet1.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>The second sheet “spectra” contains all measured spectra of the six different scenarios under the glass filters. For the calculation of a polychromatic action spectrum in the range it is recommended that the spectrum is measured using a double-monochromator system from 280 to 400 nm in steps of 1 nm. In this experiment, the irradiance was increased from the morning until noon and then decreased until the evening, to simulate natural variation in solar radiation. This was done in four steps as shown in the picture of the third sheet “daily exposure” in figure <a href="#fig:App:Poly:Spectra:Sheet3" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Sheet3">[fig:App:Poly:Spectra:Sheet3]</a>. As an example, typical radiation data under the glass filter WG305, measured during the experiment, are presented in table <a href="#tab:App:Poly:Spectra:UV-PAR" data-reference-type="ref" data-reference="tab:App:Poly:Spectra:UV-PAR">[tab:App:Poly:Spectra:UV-PAR]</a>. This sheet is only necessary to calculate the exposure time at each light level in seconds as shown in the marked cell F8. Sheet “spectra” contains the wavelengths in column A and all the 24 spectra (six scenarios and four light levels) from column B to Y.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/app_polyspec_sheet3.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<div class="table*">
+<div class="center">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Light level</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.152</td>
+<td style="text-align: center;">0.584</td>
+<td style="text-align: center;">1.135</td>
+<td style="text-align: center;">1.531</td>
+<td style="text-align: center;">W m<span class="math inline">\(^{-2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">8.76</td>
+<td style="text-align: center;">19.78</td>
+<td style="text-align: center;">24.67</td>
+<td style="text-align: center;">38.74</td>
+<td style="text-align: center;">W m<span class="math inline">\(^{-2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">114</td>
+<td style="text-align: center;">228</td>
+<td style="text-align: center;">256</td>
+<td style="text-align: center;">363</td>
+<td style="text-align: center;">W m<span class="math inline">\(^{-2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">or</td>
+<td style="text-align: center;">537</td>
+<td style="text-align: center;">1073</td>
+<td style="text-align: center;">1198</td>
+<td style="text-align: center;">1692</td>
+<td style="text-align: center;"><span class="math inline">\(\mymu\)</span>mol m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Now all sheets for input data are finished and the sheets for solving our system of equations has to be prepared. Therefore, the next sheet “weighted spectra” is filled with the information about the action spectrum function as shown in figure <a href="#fig:App:Poly:Spectra:Sheet4" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Sheet4">[fig:App:Poly:Spectra:Sheet4]</a>. This sheet contains the calculation of the biological effective dose function <span class="math inline">\(H_{be}\)</span> as presented in equation <a href="#Equ:Dose:be" data-reference-type="ref" data-reference="Equ:Dose:be">[Equ:Dose:be]</a> on page . First, for the action spectrum <span class="math inline">\(s(\lambda)\)</span> an exponential function in chosen, as explained for equation <a href="#Equ:BSWF:exp" data-reference-type="ref" data-reference="Equ:BSWF:exp">[Equ:BSWF:exp]</a> on page . Column A includes the wavelengths and column B the estimated value of the action spectrum using the parameter <span class="math inline">\(\lambda_0=300\)</span> nm of cell B4 and <span class="math inline">\(k=0.200\)</span> nm<span class="math inline">\(^{-1}\)</span> of cell B5 (marked red in figure <a href="#fig:App:Poly:Spectra:Sheet4" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Sheet4">[fig:App:Poly:Spectra:Sheet4]</a>). This cell is only a link to cell B11 in the next sheet “SOLVER”. Because it is only the starting value of the optimisation procedure, the values of column B do not represent the real action spectrum. These values will change during optimisation. Below row 6, column D and the following columns (in this case to column AA) include the values of the action spectrum of column B multiplied by the spectral irradiances of each scenario and light levels of sheet “spectra”. Row 1 and 2 include the estimation of the doses. The cells in row 2 from column D and the following columns represent the integration over the wavelengths from 280 to 400 nm of each column beneath multiplied by the exposure time of the respective scenario and light level as previously calculated in the sheet “daily exposure”. Integration in Excel is done by adding the values of the cells regarding the wavelength step as shown for the marked cell D2 in figure <a href="#fig:App:Poly:Spectra:Sheet4" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Sheet4">[fig:App:Poly:Spectra:Sheet4]</a>. Here it is 1 nm. To get doses in units of Ws m<span class="math inline">\(^{-2}\)</span> (J m<span class="math inline">\(^{-2}\)</span>), the sum is divided by a factor of 1000 because the spectral irradiances were measured in mW m<span class="math inline">\(^{-2}\)</span> nm<span class="math inline">\(^{-1}\)</span>. The daily dose (in kJ m<span class="math inline">\(^{-2}\)</span>) is then calculated in row 1 for each scenario by adding the four values of the light levels. These daily doses are now needed for further calculations in the next sheet “SOLVER”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/app_polyspec_sheet4.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>The sheet “SOLVER” as illustrated in figure <a href="#fig:App:Poly:Spectra:Solver0" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Solver0">[fig:App:Poly:Spectra:Solver0]</a> includes the comparison of the measured and modelled data—as table and figure. The first five rows are a short explanation of the entire model. Especially row 5 contains the mathematical function describing the measured biological response <span class="math inline">\(W_{be}\)</span>, which was the flavonoid content of lutonarin in the first leaf of barley. Here, a sigmoid function was chosen, given by <span class="math display">\[W_{be} = \frac{W_0}{1+\mathrm{e}^{-\frac{\exposure[be]-\exposure[0]}{b}}} \label{Equ:Response:sigmoid}\]</span> Using this function, the values of each scenario of row 15 were calculated. Therefore, the variable coefficients <span class="math inline">\(W_0\)</span>, <span class="math inline">\(\exposure[0]\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(k\)</span> as well as their constraints from row 8 to 11 were used. Row 14 includes the mean values of each treatment derived in the first sheet “leaf data”. The squared differences of measured and modelled data are calculated in row 16 and added up in cell C17. All cells are now prepared and we can start to optimise our variable coefficients by minimising the value of cell C17. Thus, we mark this cell by clicking on it and choose from the menu <code>Tools</code><span class="math inline">\(&gt;\)</span><code>Solver</code>. A new small window called “Solver Parameters” will appear as shown in the left part of figure <a href="#fig:App:Poly:Spectra:Solverparam" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Solverparam">[fig:App:Poly:Spectra:Solverparam]</a>. Here, the target cell was C17 and the box for minimisation was checked. The optimisation was done by changing the cells B8 to B11 concerning all constraints listed in the sheet. By clicking on the button “Options”, another window will pop up, where the parameters for the optimisation algorithm are defined (right part of figure <a href="#fig:App:Poly:Spectra:Solverparam" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Solverparam">[fig:App:Poly:Spectra:Solverparam]</a>). In this example, a non-linear Newton method was used. The parameters of the upper left part of the window define the number of iterations or the maximum time for calculation as well as the precision or tolerance of the result. After inserting the numbers and checking the necessary boxes, click “OK” to return to the window “Solver Parameters”. Here, the optimisation starts by clicking on “Solve”. After a while, the program returns a message if the search succeeded and by accepting, the result is written into the cells of sheet “SOLVER” chosen for changing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/app_polyspec_solver0.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p><embed src="figures/app_polyspec_solverparam.pdf" class="img-fluid"><embed src="figures/app_polyspec_solveropt.pdf" class="img-fluid" style="width:43.0%"></p>
+<p>The final result for the data in this example is shown in figure <a href="#fig:App:Poly:Spectra:Solved" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Solved">[fig:App:Poly:Spectra:Solved]</a>. The sum of the squared differences was minimised to 0.13. The left graph in the bottom of figure <a href="#fig:App:Poly:Spectra:Solved" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Solved">[fig:App:Poly:Spectra:Solved]</a> shows two bars for each scenario, one for the measured leaf data of row 14 (yellow) and the other one for the modelled data of row 15 (purple). The result looks promising. The most important parameter regarding the action spectrum is <span class="math inline">\(k=0.126\)</span> nm<span class="math inline">\(^{-1}\)</span> in cell B11. This value was used to plot the actual action spectrum of this study in the upper right graph of figure <a href="#fig:App:Poly:Spectra:Solved" data-reference-type="ref" data-reference="fig:App:Poly:Spectra:Solved">[fig:App:Poly:Spectra:Solved]</a>. Our action spectrum is valid for wavelengths between 280 and 400 nm, that interval which was chosen for integration in sheet “weighted spectra”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/app_polyspec_solved.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>This example describes just one possibility to solve a multi-variable and non-linear problem. For example, there is also a plugin available for Calc in OpenOffice.org. Therefore, if using Calc instead of Excel, the file <code>NLPSolver.oxt</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> has to be installed by the extension manager. Other search algorithms are used in this tool, but the result will be the same.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Bjorn2007" class="csl-entry" role="listitem">
+Björn, Lars Olof, ed. 2007. <em>Photobiology: The Science of Life and Light</em>. 2nd ed. Springer.
+</div>
+<div id="ref-Coohill1992" class="csl-entry" role="listitem">
+Coohill, T. P. 1992. <span>“Action Spectroscopy and Stratospheric Ozone Depletion.”</span> In <em><span>UV-B</span> Monitoring Workshop: A Review of the Science and Status of Measuring and Monitoring Programs</em>, C89–112. Science; Policy Associaties, Washington D.C.
+</div>
+<div id="ref-Cooley2000a" class="csl-entry" role="listitem">
+Cooley, N. M., H. M. F. Truscott, M. G. Holmes, and T. H. Attridge. 2000. <span>“Outdoor Ultraviolet Polychromatic Action Spectra for Growth Responses of and .”</span> <em>Journal of Photochemistry and Photobiology B: Biology</em> 59 (1-3): 64–71. <a href="https://doi.org/10.1016/S1011-1344(00)00141-X">https://doi.org/10.1016/S1011-1344(00)00141-X</a>.
+</div>
+<div id="ref-Cullen1997" class="csl-entry" role="listitem">
+Cullen, J. J., and P. J. Neale. 1997. <span>“Biological Weighting Functions for Describing the Effects of Ultraviolet Radiation on Aquatic Systems.”</span> In <em>The Effects of Ozone Depletion on Aquatic Ecosystems</em>, edited by D.-P. Häder, 97–118. Academic Press.
+</div>
+<div id="ref-Ghetti1999" class="csl-entry" role="listitem">
+Ghetti, F., H. Herrmann, D.- P. Häder, and H. K. Seidlitz. 1999. <span>“Spectral Dependence of the Inhibition of Photosynthesis Under Simulated Global Radiation in the Unicellular Green Alga .”</span> <em>Journal of Photochemistry and Photobiology B: Biology</em> 48: 166–73. <a href="https://doi.org/10.1016/S1011-1344(99)00043-3">https://doi.org/10.1016/S1011-1344(99)00043-3</a>.
+</div>
+<div id="ref-Gorton2010" class="csl-entry" role="listitem">
+Gorton, Holly L. 2010. <span>“Biological Action Spectra.”</span> In <em>Photobiological Sciences Online</em>, edited by K. C. Smith. American Society for Photobiology. <a href="http://www.photobiology.info/Gorton.html">http://www.photobiology.info/Gorton.html</a>.
+</div>
+<div id="ref-goetz10" class="csl-entry" role="listitem">
+Götz, M., A. Albert, S. Stich, W. Heller, H. Scherb, A. Krins, C. Langebartels, H. K. Seidlitz, and D. Ernst. 2010. <span>“PAR Modulation of the <span>UV</span>-Dependent Levels of Flavonoid Metabolites in (<span>L</span>.) <span>H</span>eynh. Leaf Rosettes: Cumulative Effects After a Whole Vegetative Growth Period.”</span> <em>Protoplasma</em> 243: 95–103. <a href="https://doi.org/10.1007/s00709-009-0064-5">https://doi.org/10.1007/s00709-009-0064-5</a>.
+</div>
+<div id="ref-Graedel1993" class="csl-entry" role="listitem">
+Graedel, T. E., and P. J. Crutzen. 1993. <em>Atmospheric Change: An Earth System Perspective</em>. New York: WH Freeman.
+</div>
+<div id="ref-Holmes1997" class="csl-entry" role="listitem">
+Holmes, M. G. 1997. <span>“Action Spectra for <span>UV-B</span> Effects on Plants: Monochromatic and Polychromatic Approaches for Analysing Plant Responses.”</span> In <em>Plants and UV-b - Responses to Environmental Change</em>, edited by P. J. Lumsden, 31–50. Cambridge University Press.
+</div>
+<div id="ref-Ibdah2002" class="csl-entry" role="listitem">
+Ibdah, M., A. Krins, H. K. Seidlitz, W. Heller, D. Strack, and T. Vogt. 2002. <span>“Spectral Dependence of Flavonol and Betacyanin Accumulation in Under Enhanced Ultraviolet Radiation.”</span> <em>Plant, Cell and Environment</em> 25 (9): 1145–54. <a href="https://doi.org/doi:10.1046/j.1365-3040.2002.00895.x">https://doi.org/doi:10.1046/j.1365-3040.2002.00895.x</a>.
+</div>
+<div id="ref-Keiller2003" class="csl-entry" role="listitem">
+Keiller, D. R., S. A. H. Mackerness, and M. G. Holmes. 2003. <span>“The Action of a Range of Supplementary Ultraviolet (UV) Wavelengths on Photosynthesis in Brassica Napus l. In the Natural Environment: Effects on PSII, CO2 Assimilation and Level of Chloroplast Proteins.”</span> <em>Photosynthesis Research</em> 75 (2): 139–50. <a href="https://doi.org/10.1023/A:1022812229445">https://doi.org/10.1023/A:1022812229445</a>.
+</div>
+<div id="ref-madronich1993" class="csl-entry" role="listitem">
+Madronich, Sasha. 1993. <span>“The Atmosphere and <span>UV-B</span> Radiation at Ground Level.”</span> In <em>Environmental UV Photobiology</em>, edited by A. R. Young, L. O. Björn, J. Moan, and W. Nultsch. Plenum Press, New York.
+</div>
+<div id="ref-Rundel1983" class="csl-entry" role="listitem">
+Rundel, R. D. 1983. <span>“Action Spectra and Estimation of Biologically Effective <span>UV</span> Radiation.”</span> <em>Physiologia Plantarum</em> 58: 360–66. <a href="https://doi.org/10.1111/j.1399-3054.1983.tb04195.x">https://doi.org/10.1111/j.1399-3054.1983.tb04195.x</a>.
+</div>
+<div id="ref-Shropshire1972" class="csl-entry" role="listitem">
+Shropshire, W. 1972. <span>“Action Spectroscopy.”</span> In <em>Phytochrome</em>, edited by K. Mitrakos and W. Shropshire, 161–81. London: Academic Press.
+</div>
+<div id="ref-unep2003" class="csl-entry" role="listitem">
+UNEP. 2003. <span>“Environmental Effects of Ozone Depletion and Its Interactions with Climate Change: 2002 Assessment.”</span> <em>Photochemical and Photobiological Sciences</em> 2: 1–72.
+</div>
+<div id="ref-unep2007" class="csl-entry" role="listitem">
+———. 2007. <span>“Environmental Effects of Ozone Depletion and Its Interactions with Climate Change: 2006 Assessment.”</span> <em>Photochemical and Photobiological Sciences</em> 6 (3): 201–332.
+</div>
+<div id="ref-UNEP2011" class="csl-entry" role="listitem">
+———. 2011. <span>“2010 Assessment Report of the Environmental Effects of Ozone Depletion and Its Interactions with Climate Change.”</span> Photochemical and Photobiological Sciences 10(2), 165–320.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Different values of photon fluence can be obtained either by varying the irradiance, or the irradiation time. However, if the irradiation time is varied it is important to check that reciprocity holds. In other words, that the same fluence achieved through different irradiation times elicits the same size of response.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Reciprocity refers to the assumption that equal values of photon fluence achieved by irradiation differing in length and photon irradiance, but supplying the same total number of photons, are expected to elicit an identical response.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>available from <a href="http://extensions.services.openoffice.org/project/NLPSolver" class="uri">http://extensions.services.openoffice.org/project/NLPSolver</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./leaf-optics.html" class="pagination-link" aria-label="Measurement of optical properties of leaves">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Measurement of optical properties of leaves</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./imaging.html" class="pagination-link" aria-label="Imaging in UV, VIS and short IR radiation">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Imaging in UV, VIS and short IR radiation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
