@@ -1,0 +1,9 @@
+---
+title: "Ensuring reproducibility"
+subtitle: "Data sharing, code sharing and methods reporting"
+author: "Pedro J. Aphalo et al."
+draft: true
+---
+
+## First section
+

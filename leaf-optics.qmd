@@ -1,0 +1,27 @@
+---
+title: "Measurement of optical properties of leaves"
+subtitle: "_missing_"
+author: "Wolfgang Bilger et al."
+draft: true
+---
+
+## UV radiation within plant leaves {#sec:UV:leaves}
+
+Modelling of UV-B within plant leaves has not so far been successfully achieved. For empirical estimations of UV penetration two methods have mainly been used: fibre-optic measurements and UV-induced fluorescence. Neither of them is ideal and both give only partial information.
+
+### Fibre-optic measurements
+
+This method was introduced for visible light by @Vogelmann1984, and has been adapted for ultraviolet radiation by Vogelmann, Bornman and coworkers [@Bornman1988; @DeLucia1992; @Cen1993]. The method cannot be used for absolute measurements due to uncertainties about the local conditions and the acceptance angle at the fibre tip, but it has yielded valuable comparisons between wavelengths and depth distributions of radiation. Fibre probes can be made more angle-independent [@Garcia-Pichel1995], but then become too bulky for measurements inside plant leaves.
+
+### UV-induced chlorophyll fluorescence
+
+This method has so far only been employed by excitation and measurement at the leaf surface. It thus mainly monitors penetration of UV radiation through the epidermis into the chlorophyll-containing mesophyll, i.e. transmission through the epidermis (Figure [\[fig:Chl:fluorescence\]](#fig:Chl:fluorescence){reference-type="ref" reference="fig:Chl:fluorescence"}). Chlorophyll fluorescence excited by blue light usually serves as a standard [@Bilger1997; @Bilger2001], more recently excitation by red light has also been used to avoid interference by anthocyanins [@Goulas2004]. The principle has been used in commercial instruments that assess the UV [absorbance]{acronym-label="absorbance" acronym-form="singular+short"} of the epidermis [@Kolb2005; @Goulas2004]. The first portable instruments, *UVA-PAM* and *Dualex FLAV* used UV-A radiation for excitation rather than UV-B radiation, but now there is at least one instrument, *Dualex HCA*, measuring UV-B absorbance.
+
+![image](figures/BG+UV-B_ChlFluor_x2_side.pdf){width="1.25\\myfigwidth"}
+
+In principle, chlorophyll fluorescence could also be used for monitoring UV penetration in another way, by recording fluorescence in cross-sections of leaves, as has already been done for the penetration of visible light [@Vogelmann2000; @Vogelmann2002; @Gould2002].
+
+### Factors affecting internal UV levels
+
+Many studies have indicated that UV-absorbing compounds in the vacuoles of epidermal cells have a major role in regulating internal UV levels. However, absorbing compounds located in cell walls and other cell parts can also be important in controlling internal UV penetration. These compounds are usually not easily extractable, and consequently one cannot rely on extracts alone when judging the effectiveness of UV-screening protection. Furthermore, both wax deposits and pubescence may be very important for protection against ultraviolet radiation [@Karabourniotis1999; @Holmes2002]. The amount of protection can also vary over time, even during the day, probably as a result of changes in flavonoid concentrations [@Barnes2008a; @Veit1996]. Of course leaf properties conferring protection also depend on environmental factors, in particular prior UV-B exposure, and great differences exist among plant species.
+
