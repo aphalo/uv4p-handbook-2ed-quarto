@@ -58,7 +58,7 @@ photoreceptors.df <- data.frame(
   Receptor = factor(c("UVR8", "PHOT", "CRY", "ZTL", "PHY", "PHY", "Photosynthesis", "DNA damage", "DNA repair"), 
   levels = c("UVR8", "ZTL", "PHOT", "CRY", "PHY", "Photosynthesis", "DNA damage", "DNA repair")),
   low.wl = c(260, 360, 350, 350, 590, NA, 400, 250, 355),
-  high.wl = c(340, 480, 500, 410, 780, NA, 700, 315, 385),
+  high.wl = c(340, 480, 500, 410, 780, NA, 700, 315, 430),
   min.wl = c(250, 340, 320, 340, 560, 350, 370, 250, 320),
   max.wl = c(345, 500, 600, 490, 790, 480, 750, 330, 450)
 )
