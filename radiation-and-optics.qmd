@@ -59,34 +59,7 @@ Depending on the intensity and timing, radiation of any wavelength from UV-B to 
 Leaf of *Phlomis fruticosa* showing pubescence and an irregular (non-planar) upper-epidermis surface and leaves of *Oxalis acetosella* with "folded" leafleats in response to high irradiance. Both pubescence and surface roughness affect the absorption of *intercepted* radiation while the display of leaflets and leaves affect the interception of radiation and decrease the irradiance per unit leaf(let) surface.
 :::
 
-Sensing of light through photoreceptors as well as its conversion into chemical energy by photosynthesis, start at a photochemical reaction where one (or occasionally two or more) photons transfer energy to a pigment molecule to excite it (@fig-photoreceptors). Quantum physics helps explain phenomena observable at larger scales, such as action spectra for whole-plant responses.
-
-```{r, echo=FALSE, fig.asp=0.33}
-#| label: fig-photoreceptors
-#| fig-cap: Range of wavelengths sensed through different higher-plant photoreceptor families or able to drive photosynthesis. A&#58; photosynthesis, CRY&#58; criptochromes 1 and 2, PHOT&#58; phototropins 1 and 2, ZTL&#58; Zeitloupe, UVR8&#58; "UV-B" photoreceptor, PHY&#58; phytochromes A/B/C/D/E. A dark wide bar indicates wavelengths of high and well demonstrated activity and narrower lighter coloured bars wavelengths for which activity is less important or uncertain. The vertical dashed line indicates the shortest wavelength in sunlight at ground level.
-
-photoreceptors.df <- data.frame(
-  Receptor = factor(c("UVR8", "PHOT", "CRY", "ZTL", "PHY", "PHY", "A"), 
-  levels = c("UVR8", "ZTL", "PHOT", "CRY", "PHY", "A")),
-  low.wl = c(260, 360, 350, 350, 590, NA, 400),
-  high.wl = c(340, 480, 500, 410, 780, NA, 700),
-  min.wl = c(250, 340, 320, 340, 560, 350, 370),
-  max.wl = c(350, 500, 600, 490, 790, 480, 750)
-)
-
-ggplot(photoreceptors.df, aes(y = Receptor)) +
-  geom_vline(xintercept = 293, linetype = "dashed") +
-  geom_segment(aes(x = low.wl, xend= high.wl, 
-                   colour = ifelse(Receptor == "A", "orange", "black")), 
-               linewidth = 5, na.rm = TRUE) +
-  geom_segment(aes(x = min.wl, xend= max.wl, 
-                   colour = ifelse(Receptor == "A", "orange", "black")), linewidth = 3, alpha = 0.4) +
-scale_x_continuous(name = "Wavelength (nm)", 
-                   breaks = (1:9) * 100) +
-scale_color_identity() +
-theme_minimal()
-
-```
+Sensing of light through photoreceptors as well as its conversion into chemical energy by photosynthesis, start at a photochemical reaction where one (or occasionally two or more) photons transfer energy to a pigment molecule to excite it. Quantum physics helps explain phenomena observable at larger scales, such as action spectra for whole-plant responses.
 
 In addition to plant's optical properties, in photobiology research, optics and radiation physics play a crucial role in the design of experiments and reporting of treatment conditions. For example, when studying photosynthesis using chlorophyll fluorescence, the correct interpretation of the measured yield must be based on the absorbed photons, not the incident ones. Radiation needs to be quantified in a way relevant to the object of study. The optical properties of experimental set-ups, need to be adjusted to the aims of each experiment and, crucially, have to be accurately described. This makes it necessary for those doing research in photobiology to have a good command of how UV, visible and infrared radiation interact with different objects and organisms. The aim of this chapter is to provide such a foundation as support for later chapters in the book.
 

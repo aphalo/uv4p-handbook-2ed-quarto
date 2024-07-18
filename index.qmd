@@ -1,6 +1,5 @@
 ---
 draft: true
-chapter-number: false
 ---
 
 ::: callout-note

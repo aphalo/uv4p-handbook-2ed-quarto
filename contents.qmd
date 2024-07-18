@@ -4,6 +4,7 @@ draft: false
 listing:
   contents:
     - "index.qmd"  
+    - "preface-1ed.qmd"
     - "preface.qmd"
     - "contents.qmd"
     - "abbreviations.qmd"
@@ -20,7 +21,9 @@ listing:
     - "reproducibility.qmd"
     - "references.qmd"
   type: table
-  fields: [title]
+  fields: 
+    - title 
+    - author
   sort: false
 page-layout: custom
 toc: false

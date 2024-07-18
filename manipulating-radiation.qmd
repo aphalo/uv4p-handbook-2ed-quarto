@@ -2,7 +2,7 @@
 title: "Manipulating UV, VIS and NIR radiation"
 subtitle: "Light sources and light modifiers"
 author: "_missing_"
-contributor: "Pedro J. Aphalo, Andreas Albert, Andy R. McLeod, Anu R. Heikkilä, Iván Gómez, F. López Figueroa, T. Matthew Robson, Åke Strid"
+contributor: "Pedro J. Aphalo, Andreas Albert, Andy R. McLeod, Anu R. Heikkilä, Iván Gómez, Félix López Figueroa, T. Matthew Robson, Åke Strid"
 date: 2024-07-15
 date-modified: today
 draft: true

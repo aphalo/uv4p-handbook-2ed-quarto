@@ -1,6 +1,8 @@
 ---
 title: "Quantifying plants' responses"
 subtitle: "Response- and action spectra"
+author: 
+  - name: _unknown_
 ---
 
 ## Action and response spectra {#sec:action:spectra}

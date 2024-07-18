@@ -6,7 +6,7 @@ author:
     orcid: 0000-0003-3385-972X
     email: pedro.aphalo@helsinki.fi
     affiliation: University of Helsinki
-contributor: "Andreas Albert, Lars Olof Björn, Lasse Ylianttila, F. López Figueroa, Pirjo Huovinen"
+contributor: "Andreas Albert, Lars Olof Björn, Lasse Ylianttila, Félix López Figueroa, Pirjo Huovinen"
 date: 2024-06-17
 date-modified: 2024-07-17
 format:
