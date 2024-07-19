@@ -1,5 +1,4 @@
 ---
-title: Preface to the 2nd edition
 author:
   - name: Pedro J. Aphalo
     orcid: 0000-0003-3385-972X
@@ -19,36 +18,53 @@ date-modified: today
 draft: true
 ---
 
+# Preface to the 2nd edition {.unnumbered}
+
+{{< lipsum 1-2 >}}
+
 ## Plan for the 2nd edition {.unnumbered}
 
 ::: callout-note
-This is a book created using the "Quarto book" system. To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This is a book created using the "Quarto book" system (version 1.5). To learn more about Quarto books visit <https://quarto.org/docs/books>.
 :::
 
 The first edition was published as an outcome of the COST Action: UV4Growth. After the end of the Action, the UV4Plants Association was formed. This second edition is being produced under the auspices of the [UV4Plants Association](https://www.uv4plants.org/).
 
-This new edition will be made available as work in progress, i.e., written in the open.
+This new edition will be made available on-line as work in progress, i.e., written in the open.
+
+The text and illustrations from the first edition are being updated to the current state of the science and the methods used in research. In addition, text and illustrations from articles published in the UV4Plants Bulletin are being updated and adapted for inclusion in the new edition.
+
+The structure of the book is not yet final. We are following a plan, but as long chapters are unsuitable for on-line use, some of the planned chapters below are likely to be further divided. Chapters are tentatively grouped into parts, in this draft version.
 
 **The planned chapters are:**
 
-1.  Introduction
+I. Basics
 
-2.  Radiation and optics
+  1.  Introduction
+  
+  2.  Radiation and optics
+  
+  3.  The UV, VIS and NIR environment of plants
 
-3.  The UV, VIS and NIR environment of plants
+II. Measurements
 
-4.  Quantifying UV, VIS and NIR radiation
+  4.  Quantifying UV, VIS and NIR radiation
 
-5.  Measurement of optical properties of leaves
+  5.  Measurement of optical properties of leaves
 
-3.  Quantifying plants' responses 
+  6.  Quantifying plants' responses 
 
-7.  Imaging in UV, VIS and short IR radiation
+  7.  Imaging in UV, VIS and short IR radiation
 
-6.  Manipulating UV and VIS radiation
+III. Design and planning
 
-8.  Cultivation of plants for UV and other photobiological experiments
+  8.  Design, planning and data analysis from photobiological experiments
 
-9.  Design, planning and data analysis from photobiological experiments
+  9.  Ensuring reproducibility
+  
+IV. Realization and treatments
 
-10. Ensuring reproducibility
+  10.  Manipulating UV and VIS radiation
+
+  11.  Cultivation of plants for UV and other photobiological experiments
+

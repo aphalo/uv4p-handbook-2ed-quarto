@@ -1,5 +1,4 @@
 ---
-title: Table of Contents
 draft: false
 listing:
   contents:
@@ -29,3 +28,4 @@ page-layout: custom
 toc: false
 ---
 
+# Table of Contents  {.unnumbered}

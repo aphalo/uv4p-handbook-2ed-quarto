@@ -1,5 +1,4 @@
 ---
-title: "Preface to the 1st edition"
 author: 
   - name: Pedro J. Aphalo
   - name: Andreas Albert
@@ -7,10 +6,9 @@ author:
   - name: Andy R. McLeod
   - name: T. Matthew Robson
   - name: Eva Rosenqvist
-date: 2024-07-15
-date-modified: today
-draft: true
 ---
+
+# Preface to the 1st edition {.unnumbered}
 
 In this handbook we discuss methods relevant to research on the
 responses of plants to ultraviolet () radiation. We also summarize the
@@ -130,7 +128,7 @@ Copenhagen,*Eva Rosenqvist*\
 October 2012
 :::
 
-## Acknowledgements
+## Acknowledgements {.unnumbered}
 
 The writing and publication of this book was made possible by COST
 Action FA0906 'UV4growth'. This book is a collaborative effort of all

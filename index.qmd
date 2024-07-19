@@ -2,6 +2,8 @@
 draft: true
 ---
 
+# Welcome {.unnumbered}
+
 ::: callout-note
 This is work in progress towards a second edition of the handbook _Beyond the Visible_ [@Aphalo2012c].
 
@@ -9,3 +11,4 @@ The first edition is available under open-access under [doi:10.31885/97895210836
 :::
 
 This work is under copyright (2012) EU's COST office and copyright (2012-2024) the authors and editors. The copyright of some illustrations is different and/or has more restrictive licence conditions and are used under permission.
+

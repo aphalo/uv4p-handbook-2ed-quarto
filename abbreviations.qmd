@@ -1,6 +1,4 @@
----
-title: "List of abbreviations and symbols"
----
+# List of abbreviations and symbols {.unnumbered}
 
 For quantities and units used in photobiology we follow, as much as
 possible, the recommendations of the Commission Internationale de

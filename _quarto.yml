@@ -24,24 +24,45 @@ book:
   date-format: iso
   chapters:
     - index.qmd
+    
     - preface-1ed.qmd
     - preface.qmd
     - contents.qmd
     - abbreviations.qmd
-    - introduction.qmd
-    - radiation-and-optics.qmd
-    - light-environment.qmd
-    - quantifying-radiation.qmd
-    - leaf-optics.qmd
-    - quantifying-responses.qmd
-    - imaging.qmd
-    - manipulating-radiation.qmd
-    - plant-cultivation.qmd
-    - design-of-experiments.qmd
-    - reproducibility.qmd
+    
+    - part: Basics
+      chapters:
+        - introduction.qmd
+        - radiation-and-optics.qmd
+        - light-environment.qmd
+      
+    - part: Measurements
+      chapters:
+        - quantifying-radiation.qmd
+        - leaf-optics.qmd
+        - quantifying-responses.qmd
+        - imaging.qmd
+      
+    - part: Design and planning
+      chapters:
+        - design-of-experiments.qmd
+        - reproducibility.qmd
+        
+    - part: Realization and treatments
+      chapters:
+        - manipulating-radiation.qmd
+        - plant-cultivation.qmd
+      
     - references.qmd
-
-bibliography: 
+  page-footer:
+    right:
+      - text: "&copy; 2012-2024 COST office and authors"
+    left:
+      - text: "Uv4Plants Association"
+        href: https://www.uv4plants.org
+  draft-mode: visible
+  
+bibliography:
   - handbook-1ed.bib
   - introduction.bib
   - radiation-and-optics.bib
