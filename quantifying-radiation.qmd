@@ -848,7 +848,7 @@ is no longer in business. Most of these sensors have built-in
 preamplifiers.
 
 ::: figure*
-![image](photos/UV3p+base.pdf){height="5cm"} ![image](photos/UVB-Sensor_Skye.pdf){height="5cm"} 
+![image](photos/UV3p+base.jpg){height="5cm"} ![image](photos/UVB-Sensor_Skye.jpg){height="5cm"} 
 :::
 
 ### Spectral and angular (cosine) response
@@ -1003,9 +1003,8 @@ described in section
 [9.8.3](#sec:underwater:radiometers){reference-type="ref"
 reference="sec:underwater:radiometers"} on page .
 
-::: figure*
-![image](photos/Eldonet_terrestre.pdf){width="0.6\\myfigwidth"}\
-:::
+![image](photos/Eldonet_terrestre.jpg)
+
 
 ## Spectroradiometers {#sec:spectroradiometers}
 
@@ -1191,9 +1190,7 @@ of the spectrometer should be taken out and dried at least every two
 months as well. Proper levelling of the instrument has to be ensured
 after having it relocated for outdoor measurements.
 
-::: figure*
-![image](photos/Brewer107_in_dark_room_COST.pdf){width="0.8\\myfigwidth"}
-:::
+![image](photos/Brewer107_in_dark_room_COST.jpg)
 
 On the annual maintenance practices of a spectroradiometer, each
 manufacturer has its own services and recommendations. Participation in
@@ -1205,9 +1202,8 @@ stabilities and overall performances of scanning spectroradiometers
 [\[fig:Brewer:intercomparison\]](#fig:Brewer:intercomparison){reference-type="ref"
 reference="fig:Brewer:intercomparison"}).
 
-::: figure*
-![image](photos/Brewer107_in_Huelva_2005_COST.pdf){width="0.8\\myfigwidth"}
-:::
+![image](photos/Brewer107_in_Huelva_2005_COST.jpg)
+
 
 ### Array detector spectroradiometers
 
@@ -1227,10 +1223,8 @@ portable (Figure
 [\[fig:Maya2000Pro\]](#fig:Maya2000Pro){reference-type="ref"
 reference="fig:Maya2000Pro"}).
 
-::: figure*
-![image](photos/Maya2000Pro.pdf){width="0.4\\myfigwidth"}
-![image](photos/Maya2000Pro-1.pdf){width="0.4\\myfigwidth"}
-:::
+![image](photos/Maya2000Pro.jpg)
+![image](photos/Maya2000Pro-1.jpg)
 
 For measuring energy or photon spectral irradiance a cosine diffuser is
 used as input optics. This ensures that the angular response follows the
@@ -1287,13 +1281,14 @@ mirrors are not needed. Having fewer optical components, an instrument
 with better stray light performance is obtained.
 
 ::: figure*
-![image](figures/024-OFLV-200.pdf){width="0.5\\myfigwidth"}
-![image](figures/slits.pdf){width="0.5\\myfigwidth"}
+![image](figures/024-OFLV-200.pdf)
+![image](figures/slits.pdf)
 :::
 
 ::: figure*
-![image](figures/avabank.pdf){width="0.8\\myfigwidth"}\
-![image](figures/OO-USBBbench.pdf){width="0.4\\myfigwidth"}
+![image](figures/avabank.pdf)
+![image](figures/OO-USBBbench.pdf)
+
 :::
 
 The array detector normally has rectangular 'pixels', orientated so that
@@ -1699,7 +1694,7 @@ designed to capture wavelengths between 320--950 nm for VIS models and
 6--10% depending on the spectral range.
 
 ::: figure*
-![image](photos/ramses_acc_01_25.pdf){width="0.5\\myfigwidth"}
+![image](photos/ramses_acc_01_25.jpg)
 :::
 
 Although the LI-1800UW instrument is not currently produced by LI-COR,
@@ -1717,7 +1712,7 @@ Being a single monochromator instruments its accuracy is limited by
 stray light when used to measure -B radiation in daylight.
 
 ::: figure*
-![image](figures/Fig_water_FLF_3.pdf){width="0.8\\myfigwidth"}
+![image](figures/Fig_water_FLF_3.pdf)
 :::
 
 The OL 754-O-PMT Spectrometer Optics Head (Optronic Laboratories) is
@@ -1858,7 +1853,7 @@ Finland. At both wavelengths, the reconstructed irradiances closely
 follow the measured ones.
 
 ::: figure*
-![image](figures/fig_uv_modelling.pdf){width="0.8\\myfigwidth"}
+![image](figures/fig_uv_modelling.pdf)
 :::
 
 A variety of methods for modelling the surface UV radiation are
@@ -1916,7 +1911,7 @@ impossible to exactly simulate the effect of ozone depletion in field
 experiments. The best we can do is to calculate effective doses.
 
 ::: figure*
-![image](figures/fig4ab_lamp_solar.pdf){width="0.8\\myfigwidth"}
+![image](figures/fig4ab_lamp_solar.pdf)
 :::
 
 Biologically effective exposures (see Box
@@ -1964,7 +1959,7 @@ calibrated for sunlight, and consequently give biased readings when used
 for measuring radiation from most lamps.
 
 ::: figure*
-![image](figures/fig56_depl.pdf){width="0.8\\myfigwidth"}
+![image](figures/fig56_depl.pdf)
 :::
 
 []{#sec:RAF label="sec:RAF"}The [RAF]{acronym-label="RAF"
@@ -2029,7 +2024,7 @@ reference="fig:weighted:lamp:depl:GPAS:PG"}. We need to calculate
 effective doses using BSWFs.
 
 ::: figure*
-![image](figures/fig79_depl_lamp_eff.pdf){width="0.8\\myfigwidth"}
+![image](figures/fig79_depl_lamp_eff.pdf)
 :::
 
 Errors caused by the mismatch between the doses aimed at and those
@@ -2053,11 +2048,11 @@ in experiments with plants. The errors are surprisingly small for GEN
 and PG.
 
 ::: figure*
-![image](figures/lamps_figure.pdf){width="0.85\\myfigwidth"}
+![image](figures/lamps_figure.pdf)
 :::
 
 ::: figure*
-![image](figures/achieved_CIE_figure.pdf){width="0.95\\myfigwidth"}
+![image](figures/achieved_CIE_figure.pdf)
 :::
 
 An additional source of errors is shading by the lamp frames. If we do
@@ -2136,7 +2131,7 @@ effect of action spectra used as BSWFs (Figure
 reference="fig:doses:seasonal"}).
 
 ::: figure*
-![image](figures/fig_seasons.pdf){width="0.8\\myfigwidth"}
+![image](figures/fig_seasons.pdf)
 :::
 
 The largest seasonal variation occurs when the daily doses are computed
