@@ -1,0 +1,54 @@
+---
+title: "Ensuring reproducibility"
+subtitle: "Data sharing, code sharing and methods reporting"
+author: "Pedro J. Aphalo et al."
+draft: true
+---
+
+
+
+
+
+
+
+
+## First section
+
+
+
+
+
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.asp=4}
+library(photobiology)
+library(photobiologyLamps)
+library(photobiologyLEDs)
+library(photobiologyFilters)
+library(photobiologyWavebands)
+library(ggspectra)
+
+photon_as_default()
+
+list("broadband UV-Blamp vs.\ darkness" = lamps.mspct$QPanel.FT.UVB313.40W,
+     "broadband UV-B lamp + CA vs.\ broadband UV-B lamp + PET" = lamps.mspct$QPanel.FT.UVB313.40W * filters.mspct$Courtaulds_CA_115um_age020 - lamps.mspct$QPanel.FT.UVB313.40W *  filters.mspct$McDermit_PET_Autostat_CT5_125um, 
+     "narrowband UV-B lamp vs.\ darkness" = lamps.mspct$Philips.FT.TL.40W.01.uv,
+     "narrowband UV-Blamp + CA vs.\ narrowband UV-B lamp + PET" = lamps.mspct$Philips.FT.TL.40W.01.uv * filters.mspct$Courtaulds_CA_115um_age020 - lamps.mspct$Philips.FT.TL.40W.01.uv * filters.mspct$McDermit_PET_Autostat_CT5_125um,
+     "LED 310 nm (high quality) vs.\ darkness" = leds.mspct$Roithner_UVMAX305,
+     "LED 310 nm (unbranded) vs.\ darkness" = leds.mspct$TaoYuan_LED_310nm)  |>
+  source_mspct() |> 
+  clean() |>
+  fscale(f = q_irrad, w.band = UVB()) -> computed_spectra.mpsct
+
+  autoplot(computed_spectra.mpsct,
+           w.band = Plant_bands("CIE"),
+           range = c(270,600),
+           facets = 1) +
+  geom_vline(xintercept = c(280, 315, 400),
+             linetype = "dotted") +
+    theme_minimal(14)
+  
+ unset_radiation_unit_default()
+```
+
