@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <meta name="quarto:status" content="draft">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -110,8 +139,20 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./preface-1ed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface to the 1st edition</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface to the 2nd edition</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -135,6 +176,24 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./radiation-and-optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Radiation Physics and Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./light-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment of plants</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -148,8 +207,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quantifying-radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantifying UV, VIS and NIR radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./leaf-optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement of optical properties of leaves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./quantifying-responses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./imaging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Imaging in UV, VIS and short IR radiation</span></span></a>
   </div>
 </li>
       </ul>
@@ -163,6 +240,18 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./design-of-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design of Experiments and Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ensuring reproducibility</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -174,6 +263,18 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manipulating-radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulating UV, VIS and NIR radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plant-cultivation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Plant cultivation</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -192,7 +293,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#first-section" id="toc-first-section" class="nav-link active" data-scroll-target="#first-section"><span class="header-section-number">9.1</span> First section</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">9.1</span> Introduction</a></li>
+  <li><a href="#controls-and-treatments-in-uv-research" id="toc-controls-and-treatments-in-uv-research" class="nav-link" data-scroll-target="#controls-and-treatments-in-uv-research"><span class="header-section-number">9.2</span> Controls and treatments in UV research</a></li>
+  <li><a href="#incomplete-methods-description" id="toc-incomplete-methods-description" class="nav-link" data-scroll-target="#incomplete-methods-description"><span class="header-section-number">9.3</span> Incomplete methods description</a></li>
+  <li><a href="#unrealistic-assumptions" id="toc-unrealistic-assumptions" class="nav-link" data-scroll-target="#unrealistic-assumptions"><span class="header-section-number">9.4</span> Unrealistic assumptions</a>
+  <ul class="collapse">
+  <li><a href="#light-sources" id="toc-light-sources" class="nav-link" data-scroll-target="#light-sources"><span class="header-section-number">9.4.1</span> Light sources</a></li>
+  <li><a href="#petri-dishes-microscope-cover-slides-and-other-barriers" id="toc-petri-dishes-microscope-cover-slides-and-other-barriers" class="nav-link" data-scroll-target="#petri-dishes-microscope-cover-slides-and-other-barriers"><span class="header-section-number">9.4.2</span> Petri dishes, microscope cover slides and other barriers</a></li>
+  </ul></li>
+  <li><a href="#mistakes-and-surprises" id="toc-mistakes-and-surprises" class="nav-link" data-scroll-target="#mistakes-and-surprises"><span class="header-section-number">9.5</span> Mistakes and surprises</a></li>
+  <li><a href="#data-sharing" id="toc-data-sharing" class="nav-link" data-scroll-target="#data-sharing"><span class="header-section-number">9.6</span> Data sharing</a></li>
+  <li><a href="#computer-code-sharing" id="toc-computer-code-sharing" class="nav-link" data-scroll-target="#computer-code-sharing"><span class="header-section-number">9.7</span> Computer-code sharing</a></li>
+  <li><a href="#pre-registration" id="toc-pre-registration" class="nav-link" data-scroll-target="#pre-registration"><span class="header-section-number">9.8</span> Pre-registration</a></li>
+  <li><a href="#correction-of-errors" id="toc-correction-of-errors" class="nav-link" data-scroll-target="#correction-of-errors"><span class="header-section-number">9.9</span> Correction of errors</a></li>
   </ul>
 </nav>
     </div>
@@ -225,15 +338,198 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="first-section" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="first-section"><span class="header-section-number">9.1</span> First section</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter is based on the column <em>Reproducibility of UV-research with plants</em> <span class="citation" data-cites="Aphalo2020">(<a href="references.html#ref-Aphalo2020" role="doc-biblioref"><strong>Aphalo2020?</strong></a>)</span>. doi:10.19232/uv4pb.2020.1.00</p>
+</div>
+</div>
+<section id="introduction" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">9.1</span> Introduction</h2>
+<p>Lack of reproducibility in scientific research is a broad problem that has woken up the interest of politicians and the general public (Fineberg2019). For example the US Congress requested the US National Academy of Sciences to produce a report about this problem (Fineberg2019). This chapter deals with problems that keep reappearing both in submitted manuscripts and published articles related reproducibility of photobiological research with plants.</p>
+<p>We can divide problems of reproducibility into two broad categories: 1) contradictory conclusions in experiments intended to test the same hypothesis using different experimental set ups or methods, and 2) inconsistent results between an earlier experiment and a new instance of the same experiment following exactly the methods description of the earlier experiment.</p>
+<p>In the first case, the design of the treatments or the interpretation of the results can be flawed, usually because of unfulfilled implicit or explicit assumptions or an invalid data analysis. In the second case, the likely problem is a mismatch between the description of methods and what has been actually done. It is not uncommon that both categories of problems coexist, because of the lack of description of an unrecognised false assumption.</p>
+<p>In our field of research, the main sources of difficulties seem to be the mismatch between methods and research aims, the incomplete description of methods and the misinterpretation of experimental results by ignoring the limitations of the protocols and methods used. Even though rather few papers published in our field are flawed in ways that would require retraction, a very large proportion of papers are unnecessarily weakened in their usefulness and trustworthiness to some degree by these problems.</p>
+<p>The problem is not a phenomenon restricted to low impact journals but it affects also very highly ranked journals. Given that papers with avoidable flaws are being accepted for publication, the problem concerns authors, reviewers and editors. The problem of reproducibility affects many fields of research and improvements are possible, and in many cases, even easy to implement. It also means, that as readers, we need abide by the good practice of critical reading and not accepting at face value conclusions from published papers. Examples follow, starting with one related to the first category: the artificial radiation treatments that are frequently interpreted as roughly equivalent tests of responses to UV-B radiation by plants.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Frequent problems
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use of controls and/or treatments unsuitable to the aims of a study and the consequent misinterpretation of the results is “bad science”, that contributes to inefficient use of resources and contaminates the corpus of shared scientific knowledge.</p>
+<p>Statistical analysis based on unrealistic assumptions leads to wrong conclusions. If the original data are not shared it can be impossible to validate the conclusions using an alternative approach to the analysis, or to effectively combine the data with that from other studies in a metaanalysis.</p>
+<p>Incompletely described methods hinder a knowledgeable reassessment of conclusions by readers and prevent the verification of the results of an experiment by replicating it. They also hinder the reuse of the results in meatanalysis. Most importantly, when results between experiments are contradictory, incomplete knowledge of the differences in methods, hinder the design and execution further research that could find the root of the contradictory results, whether a flaw or not. In many cases, a full description, implies full disclosure of the raw data,</p>
+</div>
+</div>
+</section>
+<section id="controls-and-treatments-in-uv-research" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="controls-and-treatments-in-uv-research"><span class="header-section-number">9.2</span> Controls and treatments in UV research</h2>
+<p>In any comparative study, controls and treatments are equally important. Control and treatment conditions must be chosen with equal care and described in the same detail. <em>The “treatment” is the sum of all differences present between treatment and control, both intended and not intended.</em></p>
+<p>Obviously the reliability of what we infer from this comparison is limited by the sum of the weaknesses of the two. The question of suitable controls in UV research has been already discussed in depth, most frequently in relation to UV-supplementation studies carried out outdoors (Newsham et al.1996). The same argumentation concerns laboratory and controlled environments experiments.</p>
+<p>In all cases, the question is to identify all relevant differences between treatments and controls, and design both controls and treatments in a way that makes the observed effects interpretable as a test of the scientific hypothesis under evaluation.</p>
+<p>All light sources have side effects like emission of radiation at wavelengths shorter and longer than UV-B including thermal radiation. Lamps can also shade radiation from other sources and potentially create electromagnetic fields.</p>
+<p>There are huge differences among UV-B radiation treatments in frequent use both when expressed as a flux of photons <a href="#fig-spectra-uvb-treatments" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> or using different weighting functions <a href="#fig-GEN-weighted-spectra-uvb-treatments" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>. A key difference is in the amount of radiation outside the UV-B waveband and in which wavelength within the UV-B band predominate.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="reproducibility_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-spectra-uvb-treatments" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spectra-uvb-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reproducibility_files/figure-html/fig-spectra-uvb-treatments-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectra-uvb-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Difference spectra between different pairs of UV-B treatments and controls for frequently used experimental setups in controlled environemnets. The spectra are scaled to an equal UV-B irradiance difference of <span class="math inline">\(1\,\mu \mathrm{mol}\,m^{-2}\,s^{-1}\)</span>. The numbers on the bars indicate the proportion of the total irradiance difference in each wvaveband.
+</figcaption>
 </figure>
 </div>
+</div>
+</div>
+<p>When using a photon flux to describe the treatment, one should keep in mind that the waveband definitions in the UV region are rather arbitrary when used with plants, and that the effectiveness of photons varies in most cases, continuously with wavelength both within and between the standardised definitions of UV-B and UV-A radiation. Thus, the same UV-B photon irradiance from two different UV-B sources is unlikely to trigger responses that are quantitatively equal, and in many cases, not even qualitatively consistent.</p>
+<p>We can attempt to match the effects of different UV sources using biological spectral weighting functions (BSWFs). The problem is that different responses follow different spectra for effectiveness, and these responses may be triggered concurrently. Thus, the use of BSWFs gives only an approximation to the real effectiveness in relation to a specific response. One frequently used BSWF is the generalised plant damage spectrum <span class="citation" data-cites="CaldwellXXXX">(<a href="references.html#ref-CaldwellXXXX" role="doc-biblioref"><strong>CaldwellXXXX?</strong></a>)</span> shown in <a href="#fig-GENM-spectrum" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-GENM-spectrum" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-GENM-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reproducibility_files/figure-html/fig-GENM-spectrum-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GENM-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: Caldwell’s generalised plant damage spectrum extrapolated to 250 nm using Micheletti’s formulation. The numbers on the bars indicate the proportion of the total irradiance difference in each wvaveband.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Using the the generalised plant damage spectrum a BSWF we obtain an spectrum of the expected effect of different wavelengths as present in the output of a light source. The areas under curves in <a href="#fig-GEN-weighted-spectra-uvb-treatments" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> describe the expected effect from the same UV-B photon irradiance from the different UV sources from <a href="#fig-spectra-uvb-treatments" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-GEN-weighted-spectra-uvb-treatments" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-GEN-weighted-spectra-uvb-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reproducibility_files/figure-html/fig-GEN-weighted-spectra-uvb-treatments-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GEN-weighted-spectra-uvb-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.3: Difference spectra between different pairs of UV-B treatments and controls for frequently used experimental setups in controlled environements weighted with Caldwell’s generalised plant damage spectrum. The spectra were scaled to an equal UV-B irradiance difference of <span class="math inline">\(1\,\mu \mathrm{mol}\,m^{-2}\,s^{-1}\)</span> before applying the biological spectral weighting function. The numbers on the bars indicate the proportion of the total irradiance difference in each wvaveband.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The action spectrum of UV responses mediated by UVR8 can be expected to have the same shape as the absorption spectrum of the UVR8 protein. We can use this spectrum, shown in <a href="#fig-UVR8-abs-spectrum" class="quarto-xref">Figure&nbsp;<span>9.4</span></a> as a BSWF to obtain the curves in <a href="#fig-UVR8-weighted-spectra-uvb-treatments" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-UVR8-abs-spectrum" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-UVR8-abs-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reproducibility_files/figure-html/fig-UVR8-abs-spectrum-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVR8-abs-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.4: In-vitro absorption spectrum of the UVR8 protein, expressed as absorbance. Normalised. The numbers on the bars indicate the proportion of the total irradiance difference in each wvaveband.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-UVR8-weighted-spectra-uvb-treatments" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-UVR8-weighted-spectra-uvb-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reproducibility_files/figure-html/fig-UVR8-weighted-spectra-uvb-treatments-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVR8-weighted-spectra-uvb-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.5: Difference spectra between UV-B treatments and their controls for frequently used experimental setups in controlled environements weighted with the in-vitro absorption spectrum of the UVR8 protein. The spectra were scaled to an equal UV-B irradiance difference of <span class="math inline">\(1\,\mu \mathrm{mol}\,m^{-2}\,s^{-1}\)</span> before applying the biological spectral weighting function. The numbers on the bars indicate the proportion of the total irradiance difference between treatment and controls in each wvaveband.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It is naïve to expect plants to respond similarly to all of the different combinations of UV sources and controls. Quantitative reproducibility can be expected only when comparing identical or very similar irradiation setups. Thus, it is hugely important that the actual treatment and control used are described in enough detail.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Which treatments are “wrong”?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>A treatment is “wrong” only if it does not address the aim of the study.</em> Goodness or badness stems from a match or mismatch between aims, treatment and interpretation of the results.</p>
+<ul>
+<li><p>A comparison between unfiltered broad-band UV-B lamps and darkness, does not inform about the effect of UV-B radiation, because only 34% of the emitted short-wave radiation is in the UV-B. However, it does inform about the effect of the lamps on their own, which in some applications may be of interest.</p></li>
+<li><p>Outdoors at ground level, only wavelengths longer than 293 nm are present. Thus any treatment that includes shorter wavelengths is of doubtful relevance to plants growing outdoors: this includes both unfiltered narrow-band-, broad-band UV-B lamps and many UV-B LEDs. If all radiation is between 280 nm and 315 nm, such treatments are valid tests for the effect of UV-B radiation, but not a good test of the effect of solar UV-B radiation.</p></li>
+<li><p>In nature UVR8 is activated by both UV-B and UV-A2, thus in some cases UV-B sources that also emit UV-A2 may be the best match to the aims of an study, while being a bad choice to test for the effect of UV-B radiation.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="incomplete-methods-description" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="incomplete-methods-description"><span class="header-section-number">9.3</span> Incomplete methods description</h2>
+<p>A surprisingly large number of papers reporting on experiments carried out in the laboratory fail to mention if the UV-treatments were applied under a background of white light or in darkness. We are also only rarely told under which conditions the controls were kept while the treatments were applied (e.g., same irradiance of visible light, same temperature, etc.).</p>
+<p>The spectrum and irradiance of the background UV, visible and NIR radiation is almost never reported. The lack of this information makes experiments not reproducible by independent researchers and can easily make results from different studies seem contradictory. This tends to be the result of authors relying on implicit, and frequently unwarranted, assumptions for the interpretation of results, such as “weak background illumination can be ignored”. Does this matter? Yes, because the ratio between different wavelengths affects responses (Krizek2004; Yan et al.2020) through signalling interactions downstream of UVR8 and other photoreceptors (Lau et al.2019; Morales et al.2015; Moriconi et al.2018; Rai et al.2019,2020; Tissot and Ulm2020) and because UVR8 can also participate in the perception of UV-A2 radiation (Rai etal. 2020).</p>
+<p>Consequently, the interpretation and the range of applicability of the results of an experiment about UV-B or any other narrow region of the spectrum, depends on information about the whole spectrum to which plants are exposed. Results from earlier studiesthat describe methods in enough detail can be re-interpretedin the light of later advances, but those reported with incomplete methods,cannot.</p>
+</section>
+<section id="unrealistic-assumptions" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="unrealistic-assumptions"><span class="header-section-number">9.4</span> Unrealistic assumptions</h2>
+<section id="light-sources" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="light-sources"><span class="header-section-number">9.4.1</span> Light sources</h3>
+<p>Unrealsitic assumptions are not only about plants, they can also affect the instruments and equipment such as light sources.</p>
+<p>Specifying a lamp type in many cases does not provide enough information. In the long run manufacturers tend to revise the specifications of the lamps they sell without changing the type name or code. There is variation from batch to batch, and for LEDs even between individual LEDs of the same type, so much that many classify them into “bins” or subtypes based on the measured peak wavelength and emission efficiency. Specially the “fantasy names” like “UV-B lamps or UV LEDs” used by some lamp sellers are far from informative. UV-B, UV-A, and black light broadband lamps all emit visible light and UV-radiation at other wavelengths than those expected from their names. In many cases even codes derived from such names are inconsistently used.</p>
+<p>The peaks of emission can be at different wavelengths for equivalent lamps from different suppliers (e.g., “black light blue” or BLB lamps have maximum emission at either 385 nm or 368 nm depending on supplier or vintage). In addition the output of both fluorescent lamps and LEDs depends on ambient temperature and on their age. In the case of UV-B fluorescent lamps the effect of temperature on the irradiance is very large, something that many researchers seem not to be aware of. In the case of white flourescent tubes, not only the irradiance but also the emission spectrum can be affected by temperature.</p>
+<p>Be aware that reflections from walls, tables, glass and metal objects, and even clothes can distort the spectrum impinging on plants. Not only reflection is important in the case of UV radiation, many objects fluoresce strongly in the blue or other regions when illuminated with UV radiation, e.g., whitepaper and clothes, and laundry powders contain fluorescent additives that are added so that paper and clothes look whiter (Björn et al.2012).</p>
+<p>Whenever possible we should provide a measured spectrum for the UV and visible radiation source(s) actually used, measured under the same ambient conditions and at the same physical location as in the reported experiment. Measurements should be done close in time to when the sources were used if not at the same time. Do not trust previous measurements or manufacturer specifications to be representative of your use case.</p>
+</section>
+<section id="petri-dishes-microscope-cover-slides-and-other-barriers" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="petri-dishes-microscope-cover-slides-and-other-barriers"><span class="header-section-number">9.4.2</span> Petri dishes, microscope cover slides and other barriers</h3>
+<p>Rarely the existence or not of a barrier and whether the irradiance or spectra have been measured behind the barrier or in front of it is reported. Even less frequently the exact type and supplier are reported. If light or UV treatments are applied through the lids of Petri dishes, a cover-slip or microscope slide, a water layer or there is anything else than air in the path of the radiation, the spectrum and irradiance could be significantly affected. As we do not see in the UV or NIR, what looks transparent, may not be so in UV or NIR.</p>
+<p>The shape of the barrier or vessel can also make it function as a lens. So irradiation of liquid samples is best done in vessels with a square cross section, i.e., the same reason why spectrophotometry cuvettes are almost never round like normal test tubes. We need always to measure (or at least estimate) the spectrum and irradiance and define treatments as received by the target organism behind any barrier that separates it from the radiaiton source. We also have to remember to take into account that the angle of incidence matters both for glass or plastic barrier and the organism.</p>
+</section>
+</section>
+<section id="mistakes-and-surprises" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="mistakes-and-surprises"><span class="header-section-number">9.5</span> Mistakes and surprises</h2>
+<p>Over reaction to surprising results. Over-interpretation and too-early dumping of surprising results are embarrassing and wasteful, respectively. Over- and misinterpretation of results are common, specially in those journals that too easily accept newsworthy and controversial reports. In the case of surprising results that are discarded too early we can only guess that this can also easily happen.</p>
+<p>Reported values that are incompatible with the description of what and how was measured are worryingly common in publications. It is almost always possible for researchers to assess the “sanity” of the measured values obtained. For example molar extinction coefficient values for proteins can roughly and easily be estimated on the basis of the amino acid sequence. This is only an approximation, but if our measured values are nearly two orders of magnitude larger, we should carefully investigate what is going on.</p>
+<p>If our estimate of water vapour pressure is higher than that expected at 100% relative humidity we should check our instruments and their calibration. If the UV-B irradiance from our lamps is many times lower than what others have reported for the same lamps, filters and distance, we should check calculations and measuring instruments. These examples are real, and for the last one I know of two cases, due to different problems. Of these four examples two made all the way to publication and two were caught in time. In the first two cases, I have no idea of the cause behind the bad data. In one of last two cases, calculation errors were the cause, and in the other case a completely wrong calibration of a new spectrometer, supplied by the manufacturer caused the problem.</p>
+<p>This may sound disappointing, but in my experience, most unusual and surprising results from routine measurements using usual methods and applying similar treatments as others have earlier used are caused by methodological problems and mistakes. On the other hand, surprising results can be real, and tell an unexpected story, even if caused by mistakes, when the nature of the mistake is known.</p>
+<p>Deeper problems are caused by jumping to conclusions too easily. The solution is to be distrustful of any results, specially those that seem too good or too bad to be true. Cool down your enthusiasm or despair, imagine yourself for a while as an external reviewer, picky and suspicious of everything. But, of course, do remember to switch back to your positive and enthusiastic self once you have checked your data and before you deal with the problems you may have found!</p>
+</section>
+<section id="data-sharing" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="data-sharing"><span class="header-section-number">9.6</span> Data sharing</h2>
+</section>
+<section id="computer-code-sharing" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="computer-code-sharing"><span class="header-section-number">9.7</span> Computer-code sharing</h2>
+</section>
+<section id="pre-registration" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="pre-registration"><span class="header-section-number">9.8</span> Pre-registration</h2>
+</section>
+<section id="correction-of-errors" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="correction-of-errors"><span class="header-section-number">9.9</span> Correction of errors</h2>
+<p>The self-correction mechanisms of science are made sluggish by the persistence of misconceptions and the continued use of methods known to be bad (due to tradition?), e.g., the recent growth in popularity of Arnon’s equation for quantification of chlorophyll concentration by spectrophotometry, even though it has been known for well over three decades that it yields wrong estimates of the concentration (Porra and Scheer2018). Scientific knowledge advances by the revision and correction of previous theories and hypotheses (see Godfrey-Smith2003, for an introduction to the phylosophy of science). This concerns science as a whole, but also each one of us. We develop as researchers and advance in our career by the same process. There is no shame or problem in changing our opinion and we should be open about these changes. If you are a young researcher, do not be afraid of changing your mind during the course of your career. This is how one grows as a researcher. In the same way that we may want to criticise earlier publications or suggest changes or replacements for views from other authors we should be ready to criticise and revise the ideas we have proposed in our earlier publications.</p>
+<p>A research report usually contributes data and ideas. These are linked, and this link builds upon earlier ideas and data. Depending on the case, the data or the ideas will be relevant for a longer time, while the link between them will frequently become outdated first. Data for which methods are incomplete have little value in themselves, as they cannot be reinterpreted in the light of new ideas. Conclusions and knowledge that are built upon evidence whose strength or reliability cannot be independently assessed contribute little to scientific progress. If they guide subsequent research unnecessarily into conceptual dead-ends they disturb the normal progress of scientific research causing expensive distraction of resources. So, we should strive as a community to retroactively correct if possible or alternatively highlight the flaws and inaccuracies in our own and in other authors’ publications, both old and recent. This is simply how science issupposed to self-correct errors and we should not be afraid of doing so.</p>
+<p>Both in terms of career progress and contribution to society we have to avoid thinking only in the short term or with a narrow view. More broadly, the evaluation and rewards systems used for scientific research need to be reformulated so that the premium for doing reproducible and useful scientific research vs.&nbsp;flashy and unwarranted controversial or hastily done but overinterpreted studies is very clearly in favour of the first.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The bottom line
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Research is expensive, but justified based on the benefits it can provide to our society. Bad science derails decision making and biases resource allocation. Even if “bad science”, intentional and accidental, has a much more direct and dramatic impact in medicine and health care (Goldacre2010) than in our research field, the same principles apply and are applicable to efforts to improve plant production and food security (Sadras et al.2020). There is constant tension in the allocation of funding to research, as most research ultimately competes for taxpayers’ money that could be used to improve voters’ well-being in other more direct ways. We ensure that our work provides the maximum benefit to society if the fruits of our work can be trusted and the quality and relevance of the data we generate can be properly and independently assessed. Transfer of knowledge to stakeholders is a crucial step, but first we need to generate knowledge that stakeholders can trust and use with benefit.</p>
 </div>
 </div>
 
