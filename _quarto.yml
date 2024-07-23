@@ -67,6 +67,7 @@ bibliography:
   - introduction.bib
   - radiation-and-optics.bib
   - light-environment.bib
+  - statistics-reproducibility.bib
   - references-from-1ed.bib
 
 format:

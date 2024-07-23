@@ -6,7 +6,7 @@ draft: true
 ---
 
 ::: callout-note
-This chapter is based on the column _Reproducibility of UV-research with plants_ [@Aphalo2020]. doi:10.19232/uv4pb.2020.1.00
+This chapter is based on the column _Reproducibility of UV-research with plants_ [@Aphalo2020e]. doi:10.19232/uv4pb.2020.1.00
 :::
 
 ## Introduction
@@ -224,12 +224,32 @@ Deeper problems are caused by jumping to conclusions too easily. The solution is
 
 ## Data sharing
 
+Openly sharing of primary data makes the validation of data analysis possible, reanalysis under different assumptions or using different methods possible and their use to compile larger composite data sets with broader applicability for independent studies. By expanding the use and usefulness it increases the return on time and funding spent in research.
+
+The sharing of the original data has become a requirement for publication in many scientific journals (e.g., ) although some authors still try to avoid making this effective. Sharing of data does not mean showing averages in plots, it means sharing the primary data as computer readable files with no access restrictions.
+
+This is achieved by publishing or depositing the data in a public repository that guarantees the future permanent access to the data. Some research organizations keep their own repositories but also independent or public repositories exist. Some are subject-oriented and others agnostic about the subject. All those worthwhile considering assing identifiers to each data object or set of them, such as a DOI. This makes data not only accessible but identifiable and citable in ways that the originator of the data can get the credit for its use in a similar ways as for citations to articles and books.
+
+::: callout-note
+# Preparing data sets for publication
+
+:::
 
 ## Computer-code sharing
+
+In the case of complex data analyses or pre-processing of primary data, validation makes it necessary to share not only the data but also the computer code used. The most realiable way describing the steps followed for a data analysis is to share a _script_ that when run by others can exactly reproduce the steps used by the authors of the study. In most cases, sharing a script with commands that are used in the analysis is the most reliable way of reporting them, even though full reproducibility makes it necessary in many cases to have access to the same versions of the software used. Here is where the use of free open-source software that is also archived and with all past versions freely available makes reproducibility nearly unrestricted. The use of non-free and closed-source software restricts reproducibility to those able to afford the cost of the software. In addition, rarely commercial suppliers of software maintain all earlier versions readily available to users.
+
+For bigger sets of tools, authors may opt to publish the software, such as R packages, separately from the data or paper, and even describe it in a separate methods paper. This is frequently worthwhile the effort as when adopted by users they may the cited many times (for example R package 'vegan' for the analysis of vegetation data has nearly 50000 ciatations).
+
+::: callout-note
+# Publication of computer code
+
+:::
 
 
 ## Pre-registration
 
+Pre-registration is becoming a requirement in some fields of research such as medicine. It consists in depositing in a independently managed data base the plan for an experiment before its execution. It is mostly a tool to prevent wrongdoing as well as unintentional bias and intentional cherry picking of results. This is not yet a requirement in our field, but it is possible that in the future some funding agencies will require it or it could become a requirement for research with major implications for the health of our environment.
 
 ## Correction of errors
 

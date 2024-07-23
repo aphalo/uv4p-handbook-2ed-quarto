@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -139,20 +159,8 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Welcome</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./preface-1ed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface to the 1st edition</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface to the 2nd edition</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -176,24 +184,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./radiation-and-optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Radiation Physics and Optics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./light-environment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment of plants</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -207,26 +197,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quantifying-radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantifying UV, VIS and NIR radiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./leaf-optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement of optical properties of leaves</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./quantifying-responses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./imaging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Imaging in UV, VIS and short IR radiation</span></span></a>
   </div>
 </li>
       </ul>
@@ -240,18 +212,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./design-of-experiments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design of Experiments and Statistics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ensuring reproducibility</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -263,18 +223,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./manipulating-radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulating UV, VIS and NIR radiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./plant-cultivation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Plant cultivation</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -348,7 +296,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This chapter is based on the column <em>Reproducibility of UV-research with plants</em> <span class="citation" data-cites="Aphalo2020">(<a href="references.html#ref-Aphalo2020" role="doc-biblioref"><strong>Aphalo2020?</strong></a>)</span>. doi:10.19232/uv4pb.2020.1.00</p>
+<p>This chapter is based on the column <em>Reproducibility of UV-research with plants</em> <span class="citation" data-cites="Aphalo2020e">(<a href="references.html#ref-Aphalo2020e" role="doc-biblioref">Aphalo 2020</a>)</span>. doi:10.19232/uv4pb.2020.1.00</p>
 </div>
 </div>
 <section id="introduction" class="level2" data-number="9.1">
@@ -507,12 +455,44 @@ Which treatments are “wrong”?
 </section>
 <section id="data-sharing" class="level2" data-number="9.6">
 <h2 data-number="9.6" class="anchored" data-anchor-id="data-sharing"><span class="header-section-number">9.6</span> Data sharing</h2>
+<p>Openly sharing of primary data makes the validation of data analysis possible, reanalysis under different assumptions or using different methods possible and their use to compile larger composite data sets with broader applicability for independent studies. By expanding the use and usefulness it increases the return on time and funding spent in research.</p>
+<p>The sharing of the original data has become a requirement for publication in many scientific journals (e.g., ) although some authors still try to avoid making this effective. Sharing of data does not mean showing averages in plots, it means sharing the primary data as computer readable files with no access restrictions.</p>
+<p>This is achieved by publishing or depositing the data in a public repository that guarantees the future permanent access to the data. Some research organizations keep their own repositories but also independent or public repositories exist. Some are subject-oriented and others agnostic about the subject. All those worthwhile considering assing identifiers to each data object or set of them, such as a DOI. This makes data not only accessible but identifiable and citable in ways that the originator of the data can get the credit for its use in a similar ways as for citations to articles and books.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Preparing data sets for publication
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
 <section id="computer-code-sharing" class="level2" data-number="9.7">
 <h2 data-number="9.7" class="anchored" data-anchor-id="computer-code-sharing"><span class="header-section-number">9.7</span> Computer-code sharing</h2>
+<p>In the case of complex data analyses or pre-processing of primary data, validation makes it necessary to share not only the data but also the computer code used. The most realiable way describing the steps followed for a data analysis is to share a <em>script</em> that when run by others can exactly reproduce the steps used by the authors of the study. In most cases, sharing a script with commands that are used in the analysis is the most reliable way of reporting them, even though full reproducibility makes it necessary in many cases to have access to the same versions of the software used. Here is where the use of free open-source software that is also archived and with all past versions freely available makes reproducibility nearly unrestricted. The use of non-free and closed-source software restricts reproducibility to those able to afford the cost of the software. In addition, rarely commercial suppliers of software maintain all earlier versions readily available to users.</p>
+<p>For bigger sets of tools, authors may opt to publish the software, such as R packages, separately from the data or paper, and even describe it in a separate methods paper. This is frequently worthwhile the effort as when adopted by users they may the cited many times (for example R package ‘vegan’ for the analysis of vegetation data has nearly 50000 ciatations).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Publication of computer code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
 <section id="pre-registration" class="level2" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="pre-registration"><span class="header-section-number">9.8</span> Pre-registration</h2>
+<p>Pre-registration is becoming a requirement in some fields of research such as medicine. It consists in depositing in a independently managed data base the plan for an experiment before its execution. It is mostly a tool to prevent wrongdoing as well as unintentional bias and intentional cherry picking of results. This is not yet a requirement in our field, but it is possible that in the future some funding agencies will require it or it could become a requirement for research with major implications for the health of our environment.</p>
 </section>
 <section id="correction-of-errors" class="level2" data-number="9.9">
 <h2 data-number="9.9" class="anchored" data-anchor-id="correction-of-errors"><span class="header-section-number">9.9</span> Correction of errors</h2>
@@ -534,6 +514,11 @@ The bottom line
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Aphalo2020e" class="csl-entry" role="listitem">
+Aphalo, Pedro José. 2020. <span>“Reproducibility of UV-Research with Plants.”</span> <em>UV4Plants Bulletin</em> 2020 (1): 61–71. <a href="https://doi.org/10.19232/uv4pb.2020.1.24">https://doi.org/10.19232/uv4pb.2020.1.24</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

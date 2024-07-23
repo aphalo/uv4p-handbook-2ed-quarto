@@ -1,16 +1,16 @@
 ---
 title: "Design of Experiments and Statistics"
-subtitle: "Sensitivity, efficiency and reproducibility"
+subtitle: "Sensitivity and efficiency"
 date: 2024-07-15
 date-modified: today
 draft: true
 ---
 
+
 ## Tests of hypotheses and model fitting
 
 The guidelines given here for good experimental design have been
-formulated with particular consideration given to UV manipulation
-experiments. Nevertheless most of the principles behind these guidelines
+formulated with particular consideration given to experiments based on the manipulation of the UV, VIS and NIR radiation environemnt. Nevertheless most of the principles behind these guidelines
 can be generally applied to the design of experiments.
 
 Experiments can be designed to test hypotheses or to estimate the values
@@ -18,8 +18,7 @@ of parameters in a model. In the first case, we should be careful not to
 let our knowledge of the data influence the tested hypothesis[^35]. In
 the second case, model choice may to some extent depend on the data, but
 we should be aware that this *a posteriori* choice of a functional
-relationship, could make the $P$-values less strict for testing
-treatment effects.
+relationship, could make the $P$-values less strict and thus invalid for testing the significance of treatment effects.
 
 Fitting models is especially useful when the parameters of the model
 have a biological interpretation. In this case, it is important to
@@ -244,32 +243,24 @@ reference="ex:stats:UVexp:design"}.
     label="Example:item:sizeof response"}
 :::
 
-## Requirements for a good experiment
+::: callout-note
+# Requirements for a good experiment
 
-Following D. R. @Cox1958 [Chapter 1]:
+Following @Cox1958 [Chapter 1]:
 
-Precision.
+* __Precision.__ Random errors of estimation should be suitably small, and
+this should be achieved with as few experimental units as
+possible (a sort of cost/benefit analysis).
 
-:   Random errors of estimation should be suitably small, and this
-    should be achieved with as few experimental units as possible.
+* __Absence of systematic error.__ Experimental units receiving different treatments should differ in no systematic way from one another (to avoid bias confounded with effects of interest).
 
-Absence of systematic error.
+* __Range of validity.__ The conclusions should have as wide a range of validity as needed for the problem under study.
 
-:   Experimental units receiving different treatments should differ in
-    no systematic way from one another.
+* __Simplicity.__ The experiment should be as simple as possible in design and data analysis.
 
-Range of validity.
+* __Assessment of uncertainty.__ A proper statistical analysis of the results should be possible _without making artificial assumptions_. (The fewer and more plausible the assumptions are, the more credible results and conclusions will be.)
 
-:   The conclusions should have a wide range of validity.
-
-Simplicity.
-
-:   The experiment should be simple in design and analysis.
-
-The calculation of uncertainty.
-
-:   A proper statistical analysis of the results should be possible
-    without making artificial assumptions.
+:::
 
 In practice we almost never have too many replicates in experiments, as
 the responses under study tend to be small compared to the random
@@ -287,23 +278,21 @@ should be based: replication, randomization, and grouping into blocks.
 Each of these principles ensures that one aspect of the design of an
 experiment is correct and increases the likelihood that it will yield
 data that can be statistically analyzed without need for unrealistic
-assumptions (Figure
-[\[fig:principles:design:experiments\]](#fig:principles:design:experiments){reference-type="ref"
-reference="fig:principles:design:experiments"}). In the sections below
-we discuss each of these principles in turn and give examples of their
-application.
+assumptions.
 
-::: figure*
-1.  Replication $\rightarrow$ control of random variation $\rightarrow$
-    precision.
+::: callout-note
+# Principles of experimental design
 
-2.  Randomization $\rightarrow$ elimination of systematic error
-    $\rightarrow$ no bias.
+1. Replication $\rightarrow$ control of random variation $\rightarrow$ precision.
 
-3.  Use of blocks $\rightarrow$ reduction of error variation caused by
-    experimental unit heterogeneity $\rightarrow$ increased power of
-    statistical tests.
+1. Randomisation $\rightarrow$ elimination of systematic error.
+
+1. Use of blocks or covariates $\rightarrow$ reduction of error variation caused by
+experimental unit heterogeneity.
 :::
+
+In the sections below we discuss each of these principles in turn and give
+examples of their application.
 
 ### Replication
 
@@ -311,12 +300,10 @@ When an experiment is done several times, either simultaneously or
 sequentially, each time or repetition is a *replicate*. Replication
 serves several very important roles.
 
-::: inparaenum
-It allows for estimation of the random variation accompanying the
-results. This random variation is called *experimental error*.
+ 1.  Replication allows for estimation of the random variation accompanying the results. This random variation is called *experimental error*.
 
-Replication increases the precision with which the treatment effect is
-estimated, because each repetition gives additional information about
+ 1.  Replication increases the precision with which the treatment effect
+is estimated, because each repetition gives additional information about
 the experiment. This can be appreciated from the equation relating the
 variance of the original population to that of the mean:
 $\sigma^2_{\overline{x}} = \frac{\sigma^2}{n}$, where $\overline{x}$ is
@@ -325,7 +312,6 @@ variance (of individual measurements) and $\sigma^2_{\overline{x}}$ is
 the variance of the mean. The standard error of the mean is
 $\sigma_{\overline{x}} = \sqrt{\sigma^2_{\overline{x}}} = \frac{\sigma}{\sqrt{n}}$
 frequently abbreviated to s.e. or S.E.M.
-:::
 
 ### Randomization
 
@@ -337,8 +323,7 @@ data collected from such an experiment. In addition to assigning
 treatments at random, other possible sources of bias should be avoided
 by randomization:
 
-::: inparaenum
-The order in which measurements are done in the different experimental
+ 1.  The order in which measurements are done in the different experimental
 units should be randomized. Never measure all the experimental units
 receiving one level of treatment together and then all those receiving
 another level of treatment together. If the design includes blocks, then
@@ -350,27 +335,24 @@ is working on an experiment, test that both people use the same criteria
 for taking measurements by comparing their readings when measuring a
 subsample of the same experimental units.
 
-If several treatments are applied to each experimental unit in a
+ 1.  If several treatments are applied to each experimental unit in a
 sequential design, the order in which they are applied should be
 randomized.
 
-Everything that can be randomized, should be randomized to avoid bias,
+ 1.  Everything that can be randomized, should be randomized to avoid bias,
 and to ensure that the assumptions behind statistical tests of
 significance are fulfilled.
-:::
 
 Randomization is of fundamental importance because:
 
-::: inparaenum
-It allows the organization of an experiment to be objective.
+ 1.  It allows the organization of an experiment to be objective.
 
-It prevents systematic errors from known and unknown sources of
+ 1.  It prevents systematic errors from known and unknown sources of
 variation, because when randomized, these sources of variation should
 affect all treatments equally 'on average'. Randomization guarantees
 that the estimators obtained for the treatment effect and of the error
 variance are unbiased. This in turn allows valid conclusions to be
 derived from statistical tests.
-:::
 
 ### Blocks and covariates
 
@@ -394,8 +376,8 @@ Examples of these are Latin square and Greco-Latin square designs. See
 Box [\[ex:stats:block\]](#ex:stats:block){reference-type="ref"
 reference="ex:stats:block"}.
 
-::: example*
-[]{#ex:stats:block label="ex:stats:block"}
+::: callout-tip
+# Examples
 
 If the experimental units belong to two, or more, statistical
 populations, then the best option is to use a design that acknowledges
@@ -428,17 +410,11 @@ interpretation of ANCOVA results [@Cochran1957; @Smith1957]. Including a
 covariate in a model does not lessen the requirement for proper
 randomization.
 
-The flowchart in Figure
-[\[fig:flowchart:exp:unit\]](#fig:flowchart:exp:unit){reference-type="ref"
-reference="fig:flowchart:exp:unit"} summarizes the designs most suitable
-for different situations based on the characteristics of the
+The flowchart below summarizes the designs most suitable
+for different _simple_ cases based on the characteristics of the
 experimental units.
 
-:::: figure*
-::: center
-![image](figures/experimental_units_flow_chart.pdf)
-:::
-::::
+![Choice of statistical design based on the type of variation among the available experimental units.](figures/experimental_units_flow_chart.png){width=50%}
 
 ## Experimental units and subsamples
 
@@ -464,12 +440,7 @@ experimental units and the same units are measured or sampled repeatedly
 in time. In this case it is not appropriate to apply a factorial design,
 with time as one factor, in an ANOVA since this would assume that all
 observations are independent. Instead one should use a design that takes
-into account the correlation among the repeated measurements. See Box
-[\[ex:stats:units:samples\]](#ex:stats:units:samples){reference-type="ref"
-reference="ex:stats:units:samples"} for examples, and the flowchart in
-Figure
-[\[fig:flowchart:meas:unit\]](#fig:flowchart:meas:unit){reference-type="ref"
-reference="fig:flowchart:meas:unit"} for a summary of how the
+into account the correlation among the repeated measurements. See examples, and the flowchart for a summary of how the
 relationship between experimental and measurement units affects the data
 analysis.
 
@@ -515,11 +486,7 @@ analysis.
     $n = 3, N = 9$
 :::
 
-:::: figure*
-::: center
-![image](figures/measurement_units_flow_chart.pdf)
-:::
-::::
+![Measurement units and experimental units. The flowchart describes their possible nesting relationships and the corresponding matching statistical designs.](figures/measurement_units_flow_chart.png){width=75%}
 
 ## Pseudoreplication
 
@@ -686,16 +653,11 @@ $P$-values per contrast, rather than per experiment. If we want to keep
 the experiment-wise risk level constant, we should use a tight
 contrast-wise risk level, or adjust the $P$-values.
 
-The flowchart in Figure
-[\[fig:flowchart:treatments\]](#fig:flowchart:treatments){reference-type="ref"
-reference="fig:flowchart:treatments"} describes the relationships
-between the structure of treatments and data analysis.
+The flowchart below describes the relationships
+between the structure of treatments and suitable methods for tests of significance.
 
-:::: figure*
-::: center
-![image](figures/treatment_assignment_flow_chart.pdf)
-:::
-::::
+![Choice of type of model fitting or statisitical test of significance based on the design of the experiment and approaches used for treatment assignment or randomization.](figures/treatment_assignment_flow_chart.png){width=100%}
+
 
 ## When not to make multiple comparisons
 
