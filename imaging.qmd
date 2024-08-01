@@ -2,7 +2,6 @@
 title: "Imaging in UV, VIS and short IR radiation"
 subtitle: "Methods and equipment"
 author: "Pedro J. Aphalo, (Eva Rosenqvist), (Lasse Ylianttila)"
-draft: true
 ---
 
 ## First section

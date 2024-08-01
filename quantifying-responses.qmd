@@ -5,6 +5,84 @@ author:
   - name: _unknown_
 ---
 
+::: {.hidden}
+$$
+\newcommand{\Chem}[1]{{\mathrm{#1}}\xspace}
+\newcommand{\Unit}[1]{{\mathrm{#1}}\xspace}
+\newcommand{\mymu}{\mu}
+
+\newcommand{\um}{\Unit{\mymu m}}
+\newcommand{\ulitre}{\Unit{\mymu l}}
+\newcommand{\ms}{\Unit{m\,s^{-1}}}
+\newcommand{\umolflow}{\Unit{\mymu mol\,s^{-1}}}
+\newcommand{\umol}{\Unit{\mymu mol\,m^{-2}\,s^{-1}}}
+\newcommand{\molms}{\Unit{mol\,m^{-2}\,s^{-1}}}
+\newcommand{\umolt}{\Unit{\frac{\mymu mol}{m^2\,s}}}
+\newcommand{\umolnm}{\Unit{\mymu mol\,m^{-2}\,s^{-1}\,nm^{-1}}}
+\newcommand{\mmol}{\Unit{mmol\,m^{-2}\,s^{-1}}}
+\newcommand{\mmolt}{\Unit{\frac{mmol}{m^2\,s}}}
+\newcommand{\mol}{\Unit{mol\,m^{-2}\,s^{-1}}}
+\newcommand{\ppm}{\Unit{\mymu mol\,mol^{-1}}}
+\newcommand{\ppmt}{\Unit{\frac{\mymu mol}{mol}}}
+\newcommand{\mmolmol}{\Unit{mmol\,mol^{-1}}}
+\newcommand{\mmolmolt}{\Unit{\frac{mmol}{mol}}}
+\newcommand{\molday}{\Unit{mol\,m^{-2}\,d^{-1}}}
+\newcommand{\kjday}{\Unit{kJ\,m^{-2}\,d^{-1}}}
+\newcommand{\kjhour}{\Unit{kJ\,m^{-2}\,h^{-1}}}
+\newcommand{\kjdaynm}{\Unit{kJ\,m^{-2}\,d^{-1}\,nm^{-1}}}
+\newcommand{\kjmole}{\Unit{kJ\,mol^{-1}}}
+\newcommand{\jsecond}{\Unit{J\,s}}
+\newcommand{\msecond}{\Unit{m\,s^{-1}}}
+\newcommand{\Js}{\Unit{J\,s}}
+\newcommand{\watt}{\Unit{W\,m^{-2}}}
+\newcommand{\wattcm}{\Unit{W\,cm^{-2}}}
+\newcommand{\wattt}{\Unit{\frac{W}{m^2}}}
+\newcommand{\wattsr}{\Unit{W\,sr^{-1}\,m^{-2}}}
+\newcommand{\wattnm}{\Unit{W\,m^{-2}\,nm^{-1}}}
+\newcommand{\mwattnm}{\Unit{mW\,cm^{-2}\,nm^{-1}}}
+\newcommand{\mwattmnm}{\Unit{mW\,m^{-2}\,nm^{-1}}}
+\newcommand{\wattcmnm}{\Unit{W\,cm^{-2}\,nm^{-1}}}
+\newcommand{\gmcubic}{\Unit{g\,m^{-3}}}
+
+\newcommand{\irr}[1][]{{E_{\mathrm{#1}}}\xspace}
+\newcommand{\sirr}[1][]{{E_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\pfd}[1][]{{Q_{\mathrm{#1}}}\xspace}
+\newcommand{\spfd}[1][]{{Q_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\quantum}[1][]{{q^{\mathrm{#1}}}\xspace}
+\newcommand{\molequanta}{\quantum[\prime]}
+\newcommand{\flrat}{\irr[0]} % fluence rate
+\newcommand{\PAR}{{\mathrm{PAR}}\xspace}
+\newcommand{\PPFD}{{\mathrm{PPFD}}\xspace}
+\newcommand{\RAF}{{\mathrm{RAF}}\xspace}
+\newcommand{\eeff}[1][]{{s_{\mathrm{#1}}}\xspace}
+\newcommand{\seeff}[1][]{{s_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\qeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}}\xspace}
+\newcommand{\sqeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}(\lambda)}\xspace}
+\newcommand{\intensity}[1][]{{I_{\mathrm{#1}}}\xspace}
+\newcommand{\radiance}[1][]{{L_{\mathrm{#1}}}\xspace}
+\newcommand{\exposure}[1][]{{H_{\mathrm{#1}}}\xspace}
+\newcommand{\dose}[1][]{{H^{\mathrm{#1}}}\xspace}
+\newcommand{\sdose}[1][]{{H^{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\qdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}}\xspace}
+\newcommand{\sqdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}(\lambda}\xspace}
+\newcommand{\rad}[1][]{{L_{\mathrm{#1}}}\xspace}
+\newcommand{\trans}[1][]{{\tau_{\mathrm{#1}}}\xspace}
+\newcommand{\strans}[1][]{{\tau_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\absb}[1][]{{A_{\mathrm{#1}}}\xspace}
+\newcommand{\abst}[1][]{{\alpha_{\mathrm{#1}}}\xspace}
+\newcommand{\sabst}[1][]{{\alpha_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\refl}[1][]{{\rho_{\mathrm{#1}}}\xspace}
+\newcommand{\srefl}[1][]{{\rho_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\emitt}[1][]{{\epsilon_{\mathrm{#1}}}\xspace}
+\newcommand{\SZA}{{\theta}\xspace}
+\newcommand{\TOthree}{{\omega}\xspace}
+\newcommand{\degree}{{\mathrm{^{\circ}}}\xspace}
+\newcommand{\voltage}[1][]{{U_{\mathrm{#1}}}\xspace}
+\newcommand{\temperature}[1][]{{T_{\mathrm{#1}}}\xspace}
+\newcommand{\Coscor}{{\varphi}\xspace}
+$$
+:::
+
 ## Action and response spectra {#sec:action:spectra}
 
 Plants do not respond equally to all wavelengths of , and this spectral response can be described by a response spectrum and/or by an action spectrum. It is important to be aware that an action spectrum is not the same thing as a response spectrum. Although they are both used to describe the wavelength dependency of a biological response to radiation they are measured and used differently. Because they are measured in different ways they yield curves of different shapes. A response spectrum shows the size of the response at a *fixed photon fluence*[^7] of radiation across a series of different wavelengths. However, since UV radiation never comes at fixed irradiances over the entire spectrum the response spectrum is of limited use when estimating the physiological response to solar- or broadband UV exposure. In contrast, an action spectrum shows the effectiveness of radiation of different wavelengths in *achieving a given size of response*. This is a very important difference because dose response curves are not necessarily parallel or linear.
@@ -48,7 +126,7 @@ The average proportionality $\overline{s}$ between differences in the biological
 For the interpretation of the experimental data, the biological effective response $W_{be}$, it is necessary to consider the wavelength dependency. Thus, it is crucial that the entire spectral irradiance $\irr(\lambda,t)$ during the experiment is known. Broad-band meters are not suitable in most cases. This dependency is included in the biological effective dose function (exposure) $\exposure[be]$, given by
 
 $$\begin{aligned}
-\exposure[be] & = & \int_\lambda \int_t \enspace s(\lambda) \cdot \irr(\lambda,t) \enspace{\rm d}t\enspace{\rm d}\lambda \nonumber \\\nopagebreak
+\exposure[be] & = & \int_\lambda \int_t \enspace s(\lambda) \cdot \irr(\lambda,t) \enspace{\rm d}t\enspace{\rm d}\lambda \nonumber \\
  & = & \int_\lambda \enspace s(\lambda) \cdot \exposure(\lambda) \enspace{\rm d}\lambda \label{Equ:Dose:be}
 \end{aligned}$$ A mathematical model can separate wavelength and dose dependency for a set of experimental data by the use of mathematical functions describing $W_{be}(\exposure[be])$ and optimisation procedures, e.g. non-linear curve fitting [@Cullen1997; @Ghetti1999; @Ibdah2002; @goetz10]. The model assumes that photons at different wavelengths act independently, but with different quantum efficiency at the same absorption site, and therefore with the same mechanism. Regarding the shape and saturation of the observed effect, different functions can describe the data of $W_{be}(H_{be})$, for example a linear, hyperbolic or sigmoid function. A simple linear relation is $$W_{be}(\exposure[be]) = W_0 \cdot \exposure[be] \label{Equ:Response:lin}$$ with the parameter $W_0$, which has to be determined by the fitting procedure. If for example the exposure time of the radiation is constant and, therefore, not depending on the duration of the experiment $t$, the combination of Eqs. [\[Equ:BSWF:exp\]](#Equ:BSWF:exp){reference-type="ref" reference="Equ:BSWF:exp"} to [\[Equ:Response:lin\]](#Equ:Response:lin){reference-type="ref" reference="Equ:Response:lin"} yields $$W_{be}(\exposure[be]) = W_0 \cdot t \cdot \int_\lambda \enspace \mathrm{e}^{-k(\lambda-\lambda_0)} \cdot \irr(\lambda) \enspace{\rm d}\lambda \label{Equ:Response:lin2}$$ To solve the equation for the unknown parameters $W_0$ and $k$, measurements of the biological response $W_{be}$ and the spectral irradiance $\irr(\lambda,t)$ have to be put into a fitting routine, to optimise $W_0$ and $k$ by minimising the differences, e.g. the (root) mean square, between measured and modelled values of $W_{be}$. In Figure [\[fig:Poly:Spectra\]](#fig:Poly:Spectra){reference-type="ref" reference="fig:Poly:Spectra"} are six different scenarios shown. In this case, the differences among six individual measured and modelled responses have to be calculated and the sum of these needs to be minimised by a non-linear optimisation technique, such as that provided by the add-in "Solver" in Excel.
 

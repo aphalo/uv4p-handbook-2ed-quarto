@@ -56,7 +56,7 @@ Specular reflection, like in a mirror, affects the angle of the beam consitently
 
 $$R^\mathrm{tot} = R^\mathrm{spcl} + R^\mathrm{diff}$$
 
-![Specular and diffuse reflection [source](https://commons.wikimedia.org/wiki/File:Lambert2.svg) temporary fill to be replaced by figure redrawn from Gates, D (1980) Figure 8.35.](figures/Lambert2.svg){#fig-reflection fig-alt="Diagram" fig-align="center" width="33%"}
+![Specular and diffuse reflection [source](https://commons.wikimedia.org/wiki/File:Lambert2.svg) temporary fill to be replaced by figure redrawn from Gates, D (1980) Figure 8.35.](figures/Lambert2.png){#fig-reflection fig-alt="Diagram" width="50%"}
 
 ::: callout-note
 # Gloss {#sec-optics-gloss}

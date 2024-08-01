@@ -38,6 +38,85 @@ library(ggpp)
 library(lubridate)
 ```
 
+::: {.hidden}
+$$
+\newcommand{\Chem}[1]{{\mathrm{#1}}\xspace}
+\newcommand{\Unit}[1]{{\mathrm{#1}}\xspace}
+\newcommand{\mymu}{\mu}
+
+\newcommand{\um}{\Unit{\mymu m}}
+\newcommand{\ulitre}{\Unit{\mymu l}}
+\newcommand{\ms}{\Unit{m\,s^{-1}}}
+\newcommand{\umolflow}{\Unit{\mymu mol\,s^{-1}}}
+\newcommand{\umol}{\Unit{\mymu mol\,m^{-2}\,s^{-1}}}
+\newcommand{\molms}{\Unit{mol\,m^{-2}\,s^{-1}}}
+\newcommand{\umolt}{\Unit{\frac{\mymu mol}{m^2\,s}}}
+\newcommand{\umolnm}{\Unit{\mymu mol\,m^{-2}\,s^{-1}\,nm^{-1}}}
+\newcommand{\mmol}{\Unit{mmol\,m^{-2}\,s^{-1}}}
+\newcommand{\mmolt}{\Unit{\frac{mmol}{m^2\,s}}}
+\newcommand{\mol}{\Unit{mol\,m^{-2}\,s^{-1}}}
+\newcommand{\ppm}{\Unit{\mymu mol\,mol^{-1}}}
+\newcommand{\ppmt}{\Unit{\frac{\mymu mol}{mol}}}
+\newcommand{\mmolmol}{\Unit{mmol\,mol^{-1}}}
+\newcommand{\mmolmolt}{\Unit{\frac{mmol}{mol}}}
+\newcommand{\molday}{\Unit{mol\,m^{-2}\,d^{-1}}}
+\newcommand{\kjday}{\Unit{kJ\,m^{-2}\,d^{-1}}}
+\newcommand{\kjhour}{\Unit{kJ\,m^{-2}\,h^{-1}}}
+\newcommand{\kjdaynm}{\Unit{kJ\,m^{-2}\,d^{-1}\,nm^{-1}}}
+\newcommand{\kjmole}{\Unit{kJ\,mol^{-1}}}
+\newcommand{\jsecond}{\Unit{J\,s}}
+\newcommand{\msecond}{\Unit{m\,s^{-1}}}
+\newcommand{\Js}{\Unit{J\,s}}
+\newcommand{\watt}{\Unit{W\,m^{-2}}}
+\newcommand{\wattcm}{\Unit{W\,cm^{-2}}}
+\newcommand{\wattt}{\Unit{\frac{W}{m^2}}}
+\newcommand{\wattsr}{\Unit{W\,sr^{-1}\,m^{-2}}}
+\newcommand{\wattnm}{\Unit{W\,m^{-2}\,nm^{-1}}}
+\newcommand{\mwattnm}{\Unit{mW\,cm^{-2}\,nm^{-1}}}
+\newcommand{\mwattmnm}{\Unit{mW\,m^{-2}\,nm^{-1}}}
+\newcommand{\wattcmnm}{\Unit{W\,cm^{-2}\,nm^{-1}}}
+\newcommand{\gmcubic}{\Unit{g\,m^{-3}}}
+
+\newcommand{\irr}[1][]{{E_{\mathrm{#1}}}\xspace}
+\newcommand{\sirr}[1][]{{E_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\pfd}[1][]{{Q_{\mathrm{#1}}}\xspace}
+\newcommand{\spfd}[1][]{{Q_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\quantum}[1][]{{q^{\mathrm{#1}}}\xspace}
+\newcommand{\molequanta}{\quantum[\prime]}
+\newcommand{\flrat}{\irr[0]} % fluence rate
+\newcommand{\PAR}{{\mathrm{PAR}}\xspace}
+\newcommand{\PPFD}{{\mathrm{PPFD}}\xspace}
+\newcommand{\RAF}{{\mathrm{RAF}}\xspace}
+\newcommand{\eeff}[1][]{{s_{\mathrm{#1}}}\xspace}
+\newcommand{\seeff}[1][]{{s_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\qeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}}\xspace}
+\newcommand{\sqeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}(\lambda)}\xspace}
+\newcommand{\intensity}[1][]{{I_{\mathrm{#1}}}\xspace}
+\newcommand{\radiance}[1][]{{L_{\mathrm{#1}}}\xspace}
+\newcommand{\exposure}[1][]{{H_{\mathrm{#1}}}\xspace}
+\newcommand{\dose}[1][]{{H^{\mathrm{#1}}}\xspace}
+\newcommand{\sdose}[1][]{{H^{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\qdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}}\xspace}
+\newcommand{\sqdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}(\lambda}\xspace}
+\newcommand{\rad}[1][]{{L_{\mathrm{#1}}}\xspace}
+\newcommand{\trans}[1][]{{\tau_{\mathrm{#1}}}\xspace}
+\newcommand{\strans}[1][]{{\tau_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\absb}[1][]{{A_{\mathrm{#1}}}\xspace}
+\newcommand{\abst}[1][]{{\alpha_{\mathrm{#1}}}\xspace}
+\newcommand{\sabst}[1][]{{\alpha_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\refl}[1][]{{\rho_{\mathrm{#1}}}\xspace}
+\newcommand{\srefl}[1][]{{\rho_{\mathrm{#1}}(\lambda)}\xspace}
+\newcommand{\emitt}[1][]{{\epsilon_{\mathrm{#1}}}\xspace}
+\newcommand{\SZA}{{\theta}\xspace}
+\newcommand{\TOthree}{{\omega}\xspace}
+\newcommand{\degree}{{\mathrm{^{\circ}}}\xspace}
+\newcommand{\voltage}[1][]{{U_{\mathrm{#1}}}\xspace}
+\newcommand{\temperature}[1][]{{T_{\mathrm{#1}}}\xspace}
+\newcommand{\Coscor}{{\varphi}\xspace}
+$$
+:::
+
+
 ## UV radiation in aquatic environments {#sec:UV:aquatic}
 
 As solar radiation passes through a body of water, its spectrum changes with depth in a wavelength-dependent manner, determined by the optical characteristics of that water body. The penetration of UV radiation through water bodies can vary from only few centimetres in highly humic lakes [@Kirk1994; @Kirk1994b; @Huovinen2003] to dozens of metres in the oceans [@Smith1992; @Kirk1994; @Kirk1994b]. Some irradiance is reflected at the water surface, but the extent to which wavelengths in the UV to IR range penetrate water bodies depends mainly on (1) attenuation by water itself, (2) coloured dissolved organic matter (CDOM), and seston. Seston is the sum of living organic material (mainly phytoplankton) and non-living material (tripton). Non-living particles are further distinguished between organic material (detritus) and inorganic suspended matter. Each fraction has its own characteristic spectral absorption and scattering properties [reviewed by @dekke93; @Kirk1994; @Kirk1994b; @Hargreaves2003; @Wozniak2007].
