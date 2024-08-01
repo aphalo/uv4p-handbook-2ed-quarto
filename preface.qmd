@@ -15,7 +15,6 @@ author:
     affiliation: University of Copenhagen
 date: 2024-07-14
 date-modified: today
-draft: true
 ---
 
 # Preface to the 2nd edition {.unnumbered}
@@ -34,7 +33,7 @@ This new edition will be made available on-line as work in progress, i.e., writt
 
 The text and illustrations from the first edition are being updated to the current state of the science and the methods used in research. In addition, text and illustrations from articles published in the UV4Plants Bulletin are being updated and adapted for inclusion in the new edition.
 
-The structure of the book is not yet final. We are following a plan, but as long chapters are unsuitable for on-line use, some of the planned chapters below are likely to be further divided. Chapters are tentatively grouped into parts, in this draft version.
+The structure of the book is not yet final. We are following a plan, but as long chapters are unsuitable for on-line reading, some of the originally planned chapters below have been further divided. In this draft version, chapters have been tentatively grouped into parts.
 
 **The planned chapters are:**
 
@@ -42,29 +41,34 @@ I. Basics
 
   1.  Introduction
   
-  2.  Radiation and optics
+  2.  Radiation
   
-  3.  The UV, VIS and NIR environment of plants
+  3.  Optics
+  
+  4.  The UV, VIS and NIR environment of terrestrial plants
+
+  5.  The UV, VIS and NIR environment of aquatic plants
 
 II. Measurements
 
-  4.  Quantifying UV, VIS and NIR radiation
+  6.  Quantifying UV, VIS and NIR radiation
 
-  5.  Measurement of optical properties of leaves
+  7.  Measurement of optical properties of leaves
 
-  6.  Quantifying plants' responses 
+  8.  Quantifying plants' responses 
 
-  7.  Imaging in UV, VIS and short IR radiation
+  9.  Imaging in UV, VIS and short IR radiation
 
 III. Design and planning
 
-  8.  Design, planning and data analysis from photobiological experiments
+  10.  Design, planning and data analysis from photobiological experiments
 
-  9.  Ensuring reproducibility
+  11.  Ensuring reproducibility
   
 IV. Realization and treatments
 
-  10.  Manipulating UV and VIS radiation
+  12.  Manipulating UV and VIS radiation
 
-  11.  Cultivation of plants for UV and other photobiological experiments
+  13.  Cultivation of terrestrial plants for UV and other photobiological experiments
 
+  14.  Cultivation of aquatic plants for UV and other photobiological experiments

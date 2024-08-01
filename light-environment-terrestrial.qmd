@@ -1,0 +1,476 @@
+---
+title: "The UV, VIS and NIR environment of terrestrial plants"
+subtitle: "Quantity, quality and timing in nature"
+author:
+  - name: Pedro J. Aphalo
+    orcid: 0000-0003-3385-972X
+    email: pedro.aphalo@helsinki.fi
+    affiliation: University of Helsinki
+contributor: "Andreas Albert, Lars Olof Björn, Lasse Ylianttila"
+date: 2024-06-17
+date-modified: 2024-07-17
+format:
+  html:
+    embed-resources: false
+editor: source
+abstract: | 
+  This chapter discusses the light environment of terrestrial plants.
+---
+
+::: callout-note
+# First edition authors
+
+{{< meta contributor >}}
+:::
+
+```{r, include=FALSE, message=FALSE}
+library(dplyr)
+library(photobiology)
+library(photobiologySun)
+library(ggspectra)
+library(ggpp)
+library(lubridate)
+```
+
+## Solar radiation at ground level {#sec:solar:radiation}
+
+### Position of the sun
+
+When studying plants we frequently need to describe the position of the sun because of its effect on spectral irradiance and as a determinant of day length. The azimuth angle ($\phi$) is usually measured clockwise from the North on a horizontal plane. The position on the vertical plane is measured either as the zenith angle ($\theta$) downwards from the zenith, or as an elevation angle ($h$) upwards from the horizon. Consequently $h + \theta = 90^\circ = \frac{\pi}{2}\,$radians. When describing the position of the sun as in @fig-solar-position the observer is situated at the origin of the system of coordinates used to describe the angles.
+
+![Diagram showing the angles used to describe the position of the sun in the sky, viewed from the East. h: sun elevation angle, θ: zenith angle, Φ: azimuth angle.](figures/solar-position.png){#fig-solar-position width=67%}
+
+The daily path of the sun in the sky depends on the time of the year and the latitude. The time of solar noon depends on the actual geographic location, and nearly always differs from the local-time noon which is based on a time zone and possibly affected by a shift of one or more hours to enhance daylight use, especially in summer time.
+
+Highly accurate astronomical formulas are available and can be used to compute the current, past and future positions of the sun in the sky [e.g., @Meeus1998]. Less accurate, but simpler to compute, formulas also exist. These formulas can also be use to compute day- and night lengths based on different twilight definitions.
+
+::: callout-note
+The accuracy of astronomical formulas is less when the sun is near the horizon because, as seen in the previous chapter, the transition from vacuum to the atmosphere introduces a small angular displacement of the light beam depending on the refractive index and angle of incidence. The difficulty is that the refractive index ($\nu$) of the air depends on its water content, which is not constant.
+:::
+
+The path of the sun in the sky determines the lengths of the day and night. The most frequently used criterion for the day to night and night to days transitions is that the upper rim of the solar disk coincides with the astronomical horizon. As the solar disk is approximately 2 degrees in diameter, the transition between day and night is in this case when the centre of the solar disk is one degree below the horizon. Alternatively, the centre of the solar disk can be used coinciding with the astronomical horizon can be used as the criterion.
+
+![Position of the sun at sunrise, sunset, dawn and dusk. Figure by TWCarlson available at [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Twilight_description_full_day.svg) under CC-BY-SA 3.0.](images/twilight-full-day.png){#fig-twilight-full-day width=67%}
+
+Twilight is the period before sunrise and after sunset when there is more intense diffuse light than further into the night (@fig-twilight-full-day). The definitions of twilight are based on practical considerations of human activities, and called *civil*, *naval* and *astronomical* (@fig-twilight-angles). During civil twilight artificial lighting is usually not needed in cities. For nautical twilight I have seen two descriptions: 1) before nautical dawn and after nautical dawn it is possible to navigate based on the stars, and 2) after nautical dawn and before nautical dusk navigation by sight is possible. Before astronomical dawn and after astronomical dusk stars of sixth magnitude are visible. These three descriptions are very approximate, as they do not consider the effect of clouds, light pollution from artificial sources, or other source of light.
+
+![Criteria defining twilight based on the position of the sun. The angles when expressed as sun elevation ($h$) are negative. Only dawn and sunrise shown. The same angles are used between sunset and dusk. Figure by TWCarlson available at [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Twilight_description_full_day.svg) under CC-BY-SA 3.0., edited](images/twilight-dawn-angles.png){#fig-twilight-angles width=67%}
+
+The day length through the year computed for three cities, one of them, Ivalo at the northern latitude within the Artic circle.
+
+```{r, echo=FALSE}
+#| label: fig-day-length
+#| fig-cap: Day length through the year at different latitudes.
+
+days <- seq(from = ymd("2024-01-01"), to = ymd("2024-12-31"), by = 1)
+cities <- c("Ivalo, Finland", "Helsinki, Finland", "Athens, Greece")
+geocodes <- data.frame(lon = c(27.53971, 24.93838, 23.72754),
+                       lat = c(68.65764, 60.16986, 37.98381),
+                       address = cities)
+times <-
+  day_night(date = days,
+            geocode = geocodes,
+            tz = "EET",
+            unit.out = "hour")
+
+ggplot(times,
+       aes(x = day, y = daylength, linetype=address)) +
+  geom_line(linewidth = 1) +
+  scale_y_continuous(name = "Day length (h)",
+                     breaks=c(0,12,24), limits=c(0,24)) +
+  scale_x_datetime(name = "Date (yyyy-mm-dd)",
+                   date_labels = "%Y-%m-%d") +
+  scale_linetype(name = "Location") +
+  theme_minimal() + theme(legend.position = "top")
+```
+
+If we include twilight, the estimated length of the photoperiod increases (@fig-daylength-twilight).
+
+```{r, echo=FALSE}
+#| label: fig-daylength-twilight
+#| fig-cap: Photoperiod duration computed for sunrise/sunset or for dawn/dusk according to different twilight definitions. The curve describes the elevation angle of the sun through the day at Helsinki, Finalnd, on the 21 March 2024. The horizontal lines show the elevation angles used as the boundary of the "photoperiod" and the numbers above each of these lines give the corresponding length of the photoperiod in hours.
+
+geocode_He <- data.frame(lon = 24.93838, lat = 60.16986)
+hours <- seq(from = ymd_hm("2024-03-21 00:00", tz = "EET"),
+             by = "1 min",
+             length.out = 24 * 60)
+angles_He <- sun_angles(hours,
+                        geocode = geocode_He)
+
+twilight.tb <-
+  data.frame(angle = c(-1, -6, -12, -18),
+             location = factor(c("Horizon", "Civil",
+                       "Nautical",
+                       "Astronomical"), 
+                       levels = c("Horizon", "Civil",
+                       "Nautical",
+                       "Astronomical")),
+             time = min(hours))
+
+get_middle_rows <- 
+  function(x) {
+    z <- x[nrow(x) %/% 2 + -1:2, ]
+    z$twilight <- twilight.tb$angle
+    daylength <- numeric(nrow(z))
+    for (i in 1:nrow(z)) {
+      daylength[i] <- day_length(date = z[i, ]$time, 
+                               geocode = geocode_He,
+                               twilight = z[i, ]$twilight)
+    }
+    z$daylength <- round(daylength, digits = 1L)
+    z
+  }
+
+ggplot(angles_He,
+       aes(x = time, y = elevation)) +
+  geom_line(linewidth = 1) +
+  geom_hline(data = twilight.tb,
+             aes(yintercept = angle, linetype = location),
+             linewidth = 0.5) +
+  geom_text(data = get_middle_rows,
+            mapping = aes(label = paste(daylength, "h"),
+            y = twilight + 2, x = time)) +
+  scale_x_datetime(date_labels = "%H:%M", expand = expansion(0.02, 0.02)) +
+  labs(y = "Sun elevation angle at Helsinki (degrees)",
+       x = "Time UTC + 2 (hh:mm)", linetype = "Dawn/dusk") +
+  theme_minimal() + theme(legend.position = "top")
+```
+
+::: callout-tip
+Even though day length or photoperiod duration is normally based on the astronomical horizon, in many cases there are obstacles that occlude the sun from view until later at dawn or earlier at dusk: mountains, vegetation, buildings, etc. Thus, in some cases it may be more relevant for a scientific study with plants to consider sun elevation angles $h > 0$ as the criterion; even different angles can be used for day start and day end.
+
+The question remains of what light level is actually detected by plants and other organisms as the night-day and day-night transitions. Most likely the exact value depends on the genotype and the realized phenotype. However, at dawn and dusk irradiance increases and decreases, respectively, qquite fast at low and medium latitudes. At high latitudes, at some times the year twilight lasts for a long time making the change in irradiance more gradual. At civil dawn/dusk irradiance is already very low.
+:::
+
+The dependency of the elevation angle on time of the year and latitude is illustrated in @fig-sun-elevation-world.
+
+```{r, echo=FALSE}
+#| label: fig-sun-elevation-world
+#| fig-cap: Sun elevation angle through the day at five different latitudes and four dates. The horizontal dotted lines show the horizon ($h = 0$). The range limits for the _x_ and _y_ axes are consistent  across all plots. 
+
+make_sun_elevation_plot <- function(date, geocode) {
+  # 97 points in time from midnight to midnight
+  t <- rep(date, 24 * 4 + 1) +
+         hours(c(rep(0:23, each = 4), 24)) +
+         minutes(c(rep(c(0, 15, 30, 45), times = 24), 0))
+  e <- sun_elevation(time = t, geocode = geocode)
+  ggplot(data.frame(t, e), aes(t, e)) +
+    geom_hline(yintercept = 0, linetype = "dotted") +
+    geom_line() +
+    expand_limits(y = c(-90, 90)) +
+    scale_x_datetime(date_labels = "%H:%m", expand = expansion()) +
+    scale_y_continuous(expand = expansion()) +
+    theme_void() +
+    theme(panel.background = element_rect(fill = "grey95",
+                                          color = NA),
+          panel.border = element_blank())
+}
+
+dates <- ymd(c("2020-02-20", "2020-03-21", "2020-6-21",
+               "2020-09-21", "2020-12-21", "2021-01-22"))
+date.ticks <- dates[2:5]
+date.ends <- dates[c(1, 6)]
+
+geocodes <-
+  tibble::tibble(lon = c(0, 0, 0, 0, 0),
+         lat = c(66.5634, 23.4394, 0, -23.4394, -66.5634),
+         address = c("Northern\nPolar\nCircle", "Tropic of\nCancer", "Equator",
+                     "Tropic of\nCapricorn", "Southern\nPolar\nCircle"))
+sun_elevation.tb <-
+  tibble::tibble(when = rep(dates, nrow(geocodes)),
+         where = rep(geocodes$address, each = length(dates)),
+         plots = c(lapply(dates, make_sun_elevation_plot, geocode = geocodes[1, ]),
+                   lapply(dates, make_sun_elevation_plot, geocode = geocodes[2, ]),
+                   lapply(dates, make_sun_elevation_plot, geocode = geocodes[3, ]),
+                   lapply(dates, make_sun_elevation_plot, geocode = geocodes[4, ]),
+                   lapply(dates, make_sun_elevation_plot, geocode = geocodes[5, ])))
+sun_elevation.tb$where <-
+  factor(sun_elevation.tb$where, levels = rev(geocodes$address))
+
+ggplot(sun_elevation.tb, aes(x = when, y = where, label = plots)) +
+  geom_plot(data = . %>% filter(day(when) == 21),
+            inherit.aes = TRUE,
+            vp.width = 0.18, vp.height = 0.15, vjust = 0.5, hjust = 0.5) +
+  scale_x_date(name = "", breaks = date.ticks,
+               limits = date.ends,
+               date_labels = "%d %b") +
+  scale_y_discrete(name = "") +
+  # labs(title = "Solar elevation through the day",
+  #      subtitle = "The dotted line indicates the horizon (h = 0)",
+  #      caption = "Inset plots are drawn using consistent x and y scale limits.") +
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank())
+```
+
+
+***Add links to previous chapter***
+
+### The spectrum of solar radiation
+
+The solar "constant" varies between 1.361 and 1.362 $W m^{-2}$ due to changes in solar activity. The solar spectrum at the top of the atmosphere varies very little in time, and is usually assumed constant.
+
+In outer space, in vacuum, no scattering takes place as the light travels, and because of this, the sky looks completely black. Planets and the Moon do reflect light allowing us to see them.
+
+Before reaching the Earth's surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to *AM1* when the sun is at the zenith, i.e., *AM1* stands for one atmosphere thickness and *AM1.5* indicates that the length of the path through the atmosphere is 1.5 times that when the sun is at the zenith.
+
+The length of the path through the atmosphere is, in reality, not exactly the length computed by trigonometry, but close to it. An empirical formula can be used as an approximation [@Kasten1989] to compute AM values from the elevation angle ($h$) (@fig-AM-h).  
+
+```{r, echo=FALSE}
+#| label: fig-AM-h
+#| fig-cap: Plot of the empirical relationship between sun elevation ($h$) or zenith anglr ($\theta$) and "equivalent" atmosphere thickness traversed by solar radiation between outer space and the Earth's surface (at sea level). AM1
+#|  is indicated by the horizontal dotted line.
+
+h <- 1:90
+AMx <- relative_AM(h)
+ggplot(data.frame(h, AMx), aes(h, AMx)) +
+  geom_hline(yintercept = 1, linetype = "dotted") +
+  geom_line(linewidth = 1) +
+  scale_x_continuous(name = expression("Sun elevation angle, "*italic(h)),
+                     breaks = c(0, 30, 60, 90),
+                     sec.axis = sec_axis(transform = function(x) {90 - x},
+                     name = expression("Zenith angle, "*italic(theta)))) +
+  scale_y_continuous(name = "AM") +
+  theme_minimal()
+```
+
+Light when travelling through the atmosphere interacts with the gases and particles composing it. The light is attenuated and scattered . Different wavelengths are differently affected by these processes, giving us a blue sky and warmer coloured direct sunlight. In other words, the daylight spectrum depends on the position of the sun in the sky, and on the composition of the atmosphere along this path (@fig-sun-spectra-energy and @fig-sun-spectra-photons). In addition to molecular absorption and scattering, aerosols, both liquid like water and solid like ice and dust, interact with light.
+
+```{r, echo=FALSE}
+#| label: fig-sun-spectra-energy
+#| fig-cap: The spectrum of solar radiation above the atmosphere (AM0) and a typical spectrum at ground level (AM1.5). Spectral energy irradiance for the wavelength range called _shortwave radiation_ in meteorology.
+
+ggplot(clip_wl(sun_reference.mspct[c("WMO.Wehrli.AM0",
+                                     "ASTM.G173.global")],
+               range=c(NA,3000)), unit.out = "energy") + 
+  aes(color= spct.idx) +
+  geom_line() +
+  scale_color_manual(name= "",
+                     labels=c("AM0","AM1.5"),
+                  values=c("purple","blue")) +
+  scale_x_wl_continuous() + 
+  scale_y_s.e.irrad_continuous(expand=c(0,0))  +
+  annotate(geom= "text",
+           x =c(750,950,1150,1450,1900),
+           y =c(0.1,0.1,0.7,0.5,0.3),
+           label=c("O[2]","H[2]*O","H[2]*O","H[2]*O","H[2]*O~CO[2]"),
+           parse= TRUE) +
+  theme_minimal() +
+  theme(legend.position= "top")
+```
+
+
+```{r, echo=FALSE}
+#| label: fig-sun-spectra-photons
+#| fig-cap: The spectrum of solar radiation above the atmosphere (AM0) and a typical spectrum at ground level (AM1.5). Spectral photon irradiance for the range 250 to 900 nm.
+
+ggplot(clip_wl(sun_reference.mspct[c("WMO.Wehrli.AM0",
+                                     "ASTM.G173.global")],
+               range=c(240,1000)), unit.out = "photon") + 
+  aes(color = spct.idx) +
+  geom_line() +
+  scale_color_manual(name= "",
+                     labels=c("AM0","AM1.5"),
+                  values=c("purple","blue")) +
+  scale_x_wl_continuous() + 
+  scale_y_s.q.irrad_continuous(expand=c(0,0))  +
+  theme_minimal() +
+  theme(legend.position= "top")
+```
+
+Above, we used the word *light* with its everyday meaning. Its technical definition is of radiation visible to humans. Ultraviolet, visible and infrared radiation (taken together are called in meteorolgy *shortwave radiation*) are components of solar radiation.
+
+::: callout-note
+Radiation from the sun reaches the Earth's surface in about eight minutes ($t$ = time, $r_0$ = distance sun to earth, $c$ = velocity of light in vacuum): $$t = \frac{r_0}{c} \approx \frac{150 \times 10^9 ~{\rm m}}{3 \times 10^8 ~\frac{\rm m}{\rm s}} = 500 ~{\rm s} = 8.3 ~{\rm min}$$.
+:::
+
+The energy radiance ($L$) of radiation emitted by the sun is similar, but not identical, to the emission spectrum of a *black body*. The solar spectrum has a fine structure of peaks and valleys arising from the atoms and molecules in the sun while black body emission is described by a smooth curve. A "match" based on the wavelength at which spectral _energy_ radiance is at its maximum can be used as criterion to estimate the temperature of the sun's surface. Obviously, we use the extraterrestrial spectrum for this match. We see in the AM0 curve in @fig-sun-spectra-energy that the wavelength at the maximum is near 500 nm. In reality the temperature of the sun surface is not uniform, and different sources mention as its average temperatures between 5800 K and 5500 K. Comparing the AM0 curve in @fig-sun-spectra-energy to the 5800 K curve in @fig-blackbody-emission the similary of their shapes is clear.
+
+```{r, echo=FALSE}
+#| label: fig-blackbody-emission
+#| fig-cap: Radiance spectra for black bodies at three different temperatures; 5800 K (blue), 5000 K (orange) and 3700 K (red).
+
+h <- 6.626e-34 # J s-1
+c <- 2.998e8 # m s-1
+kB <- 1.381e-23 # J K-1
+black_body_spectrum <- function(w.length, Tabs) {
+  w.length <- w.length * 1e-9 # nm -> m
+  ((2 * h * c^2) / w.length^5) *
+    1 / (exp((h * c / (kB * Tabs * w.length))) - 1)
+}
+
+ggplot(data=data.frame(x=c(50,3000)), aes(x)) +
+  stat_function(fun=black_body_spectrum,
+                args = list(Tabs=5800),
+                colour="blue") +
+  stat_function(fun=black_body_spectrum,
+                args = list(Tabs=5000),
+                colour="orange") +
+  stat_function(fun=black_body_spectrum,
+                args = list(Tabs=3700),
+                colour="red") +
+  labs(y=expression(Spectral~~radiance~~(W~sr^-1~m^-3)),
+       x="Wavelength (nm)") +
+  theme_minimal()
+```
+
+Planck's law describes black body emission at temperature $T$ (@fig-blackbody-emission), expressed as absolute temperature measured in degrees Kelvin (K):
+
+$$L_s(\lambda,T) = \frac{2hc^2}{\lambda^5}\cdot\frac{1}{\mathrm{e}^{(hc/k_\mathrm{B}T\lambda)}-1}$$
+
+with Boltzmann's constant $k_\mathrm{B}=1.381\times 10^{-23}$ .
+
+The "equivalent temperature" of a black body is given by Wien's displacement law (@fig-wein-wl), which gives the wavelength at which the radiative energy emitted by a black body is at its maximum as a function of its absolute temperature. 
+
+$$\lambda_\mathrm{max} \cdot T = 2.898 \times 10^6 \,{\rm nm\,K}$$ 
+
+```{r, echo=FALSE}
+#| label: fig-wein-wl
+#| fig-cap: The peak wavelength of radiation emission by a black body as a function of its absolute (surface) temperature. The approximate temperature of the sun $T_\mathrm{sun} \approx 5800\,\mathrm{K}$ is highlighted by a yellow-filled circle.
+
+k.wein <- 2.8977721e6 # nm K
+black_body_peak_wl <- function(Tabs) {
+  k.wein / Tabs
+}
+
+ggplot(data=data.frame(Tabs = c(2000,7000)), aes(x = Tabs)) +
+  stat_function(fun = black_body_peak_wl) +
+  labs(x = "Temperature (K)",
+       y = "Wavelength at peak of emission (nm)") +
+  annotate(geom = "point",
+           x = 5800, y = black_body_peak_wl(5800),
+           fill = "yellow", colour = "black",
+           shape = "circle filled", size = 3) +
+  theme_minimal()
+```
+
+::: callout-tip
+The concept of "colour temperature" used for describing the emission of lamps used for illumination and more generaly in photography differs in that it takes into account human colour vision when determining the match between the black body emission spectrum and the spectrum of an arbitrary light source. The coordinated colour temperature (CCT) for the AM1.5 solar spectrum is `r round(photobiologyInOut::spct_CCT(photobiologySun::sun_reference.mspct$ASTM.G173.global))` K. 
+:::
+
+The spectral irradiance of the sun $\irr[s](\lambda)$ can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table [\[tab:Phys:Quants\]](#tab:Phys:Quants){reference-type="ref" reference="tab:Phys:Quants"}. The intensity of the sun $\intensity[s](\lambda)$ is given by the radiance $\radiance[s](\lambda)$ multiplied by the apparent sun surface (a non-tilted disk of radius $r_s=7\times 10^5$ km). To calculate the decreased solar irradiance at the moment of reaching the Earth's atmosphere, the distance of the sun to the Earth ($r_0=150\times 10^6$ km) has to be taken into account due to the inverse square law of irradiance of equation ([\[equ_r2law\]](#equ_r2law){reference-type="ref" reference="equ_r2law"}). Thus, the extraterrestrial solar irradiance is $$\irr[s](\lambda)=\radiance[s](\lambda)\cdot\frac{\pi r_s^2}{r_0^2}\label{equ_extraterrestrial}$$ Remembering the solid angle of equation ([\[equ_solidangle\]](#equ_solidangle){reference-type="ref" reference="equ_solidangle"}), the right multiplication factor represents the solid angle of the sun's disk as seen from the Earth's surface ($\approx 6.8\times 10^{-5}$ sr). Figure [\[fig_sun\]](#fig_sun){reference-type="ref" reference="fig_sun"} shows the spectrum of the measured extraterrestrial solar radiation (Wehrli, 1985)[^1] and the spectrum calculated by equation 1.14 using Planck's law of equation 1.12 at a black body temperature of 5800 K. Integrated over all wavelengths, $\irr[s]$ is about 1361 to 1362 at top of the atmosphere [@Kopp2011]. This value is called the 'solar constant'. In former times, depending on different measurements, $\irr[s]$ varies by a few percent [@iqbal83]. For example, the irradiance at the top of the atmosphere (the integrated value) changes by $\pm 50$ (3.7 %) during the year due to distance variation caused by orbit excentricity [@moble94]. More accurate measurements during the last 25 years by spaceborne radiometers show a variability of the solar radiation of a few tenth of a percent. A detailed analysis is given by @froeh04. $\irr[s]$ can also be calculated by the Stefan-Boltzmann Law: the total energy emitted from the surface of a black body is proportional to the fourth power of its temperature. For an isotropically emitting source (Lambertian emitter), this means $$\radiance = \frac{\sigma}{\pi} \cdot T^4 \label{equ_boltzmann}$$ with the Stefan-Boltzmann constant $\sigma=5.6705\times 10^{-8}$ W m$^{-2}$ K$^{-4}$. With $T = 5800$ K equation [\[equ_boltzmann\]](#equ_boltzmann){reference-type="ref" reference="equ_boltzmann"} gives the radiance of the solar disc. From this value, we can obtain an approximation of the solar constant, by taking into account the distance from the Earth to the Sun and the apparent size of the solar disc (see equations [\[equ_solidangle\]](#equ_solidangle){reference-type="ref" reference="equ_solidangle"} and [\[equ_r2law\]](#equ_r2law){reference-type="ref" reference="equ_r2law"}).
+
+[^1]: Available as ASCII file at PMODWRC, <ftp://ftp.pmodwrc.ch/pub/publications/pmod615.asc>
+
+![image](figures/fig_sun.pdf){width="0.8\\myfigwidth"}
+
+The total solar irradiance covers a wide range of wavelengths. Using some of the 'colours' introduced in table [\[tab:Waverange\]](#tab:Waverange){reference-type="ref" reference="tab:Waverange"}, table [\[tab_sun\]](#tab_sun){reference-type="ref" reference="tab_sun"} lists the irradiance and fraction of $\irr[s]$ of different wavelength intervals.
+
+::: table*
+::: center
+|     Colour     | Wavelength (nm) | Irradiance () | Fraction of $\irr[s]$ (%) |
+|:--------------:|:---------------:|:-------------:|:-------------------------:|
+|                |   100 -- 280    |       7       |            0.5            |
+|                |   280 -- 315    |      17       |            1.2            |
+|                |   315 -- 400    |      84       |            6.1            |
+|      VIS       |   400 -- 700    |      531      |           38.9            |
+|    near IR     |  700 -- 1000   |      309      |           22.6            |
+| mid and far IR |    $>$ 1000    |      419      |           30.7            |
+|     total      |                 |     1367     |           100.0           |
+:::
+:::
+
+The extraterrestrial solar spectrum differs from that at ground level due to the absorption of radiation by the atmosphere, because the absorption peaks of water, and other components of the atmosphere, cause corresponding valleys to appear in the solar spectrum at ground level. For example, estimates from measurements of the total global irradiance at Helmholtz Zentrum München (11.60$\degree$ E, 48.22$\degree$ N, 490 m above sea level) on two sunny days (17$^{\rm th}$ April 1996, sun zenith angle of 38$^\circ$ and 27$^{\rm th}$ May 2005, 27$^\circ$) result in about 5% for wavelengths below 400 nm, about 45% from 400 to 700 nm, and about 50% above 700 nm. In relation to plant research, only the coarse structure of peaks and valleys is relevant, because absorption spectra of pigments *in vivo* have broad peaks and valleys. However, the solar spectrum has a much finer structure, due to emission and absorption lines of elements, which is not observable with the spectroradiometers normally used in plant research.
+
+At the Earth's surface, the incident radiation or [*global:rad*]{acronym-label="global:rad" acronym-form="singular+short"} has two components, [direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"} and [diffuse:rad]{acronym-label="diffuse:rad" acronym-form="singular+short"}. Direct radiation is radiation travelling directly from the sun, while diffuse radiation is that scattered by the atmosphere. Diffuse radiation is what gives the blue colour to the sky and white colour to clouds. The relative contribution of direct and diffuse radiation to global radiation varies with wavelength and weather conditions. The contribution of diffuse radiation is larger in the UV region, and in the presence of clouds (Figures [\[fig:sky:photos\]](#fig:sky:photos){reference-type="ref" reference="fig:sky:photos"} and [\[fig:diffuse:UV\]](#fig:diffuse:UV){reference-type="ref" reference="fig:diffuse:UV"}).
+
+![image](photos/Lasse_sky_composite.pdf){width="\\myfigwidth"}
+
+![image](figures/fig_diffuse_TUV.pdf){width="0.8\\myfigwidth"}
+
+Not only total irradiance, but also the wavelength distribution of the solar spectrum changes with the seasons of the year and time of day. The spectral wavelength distribution is also changed by the amount of -absorbing ozone in the atmosphere, known as the ozone column. Figure [\[fig:solar:spectra:one:day\]](#fig:solar:spectra:one:day){reference-type="ref" reference="fig:solar:spectra:one:day"} shows how spectral irradiance changes throughout one day. When the whole spectrum is plotted using a linear scale the effect of ozone depletion is not visible, however, if we plot only the region (Figure [\[fig:solarUV:spectrum:noon\]](#fig:solarUV:spectrum:noon){reference-type="ref" reference="fig:solarUV:spectrum:noon"}) or use a logarithmic scale (Figure [\[fig:solar:spectra:one:day:log\]](#fig:solar:spectra:one:day:log){reference-type="ref" reference="fig:solar:spectra:one:day:log"}), the effect becomes clearly visible. In addition, on a log scale, it is clear that the relative effect of ozone depletion on the spectral irradiance at a given wavelength increases with decreasing wavelength.
+
+![image](figures/fig000_norm_AMs.pdf){width="0.8\\myfigwidth"}
+
+
+![image](figures/fig0_depl_norm_09UTC.pdf){width="0.8\\myfigwidth"}
+
+![image](figures/fig1_depl_norm_log_am.pdf){width="0.8\\myfigwidth"}
+
+Seasonal variation in irradiance has a larger relative amplitude than variation in (Figure [\[fig:diffuse.light\]](#fig:diffuse.light){reference-type="ref" reference="fig:diffuse.light"}). This causes a seasonal variation in the : ratio (Figure [\[fig:UVB:Erlangen\]](#fig:UVB:Erlangen){reference-type="ref" reference="fig:UVB:Erlangen"}). In addition to the regular seasonal variation, there is random variation as a result of changes in clouds (Figure [\[fig:UVB:Erlangen\]](#fig:UVB:Erlangen){reference-type="ref" reference="fig:UVB:Erlangen"}). Normal seasonal and spatial variation in can be sensed by plants, and could play a role in their adaptation to seasons and/or their position in the canopy.
+
+![image](figures/fig_diffuse_Flint.pdf){width="0.4\\myfigwidth"} ![image](figures/fig_seasonal_Brown.pdf){width="0.4\\myfigwidth"}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label: fig-UVB-Erlangen
+#| fig-cap: Seasonal variation in daily UV-B energy exposure Erlangen, Germany ($54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}$, 280 m asl). Top&#58; daily UV-B energy exposure; bottom&#58; UV-B:PhR daily-energy-exposures ratio. Measured with ELDONET instruments [see, @Haeder2007].
+
+library(lubridate)
+library(ggplot2)
+library(patchwork)
+
+Erlangen.data <- read.csv("./light-environment-data/Erlangen_data.csv") |>
+  subset(!grepl("1997$", Datum))
+
+Erlangen.data <- within(Erlangen.data, date <- as.Date(Datum, "%d/%m/%Y"))
+
+fig <- ggplot(data=Erlangen.data,aes(x=date,y=UVB/1000)) + 
+  geom_point(size=1, colour="black", alpha=0.33) + 
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") + 
+  labs(x="Time (date)", y=expression("Daily UV-B exposure"~~(kJ~m^{-2}))) +
+  theme_minimal(11)
+
+fig_ratio <- ggplot(data=Erlangen.data,aes(x=date,y=UVB/PAR*1000)) +
+  geom_point(size=1, colour="black", alpha=0.33) + 
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") + 
+  labs(x="Time (date)", y=expression("UV-B:PhR daily ratio"~~(1%*%10^3))) +
+  theme_minimal(11)
+
+print(fig / fig_ratio + plot_layout(axes = "collect") )
+```
+
+irradiance increases with elevation in mountains and with decreasing latitude [@fig-UVB-latitude] and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line[^2] in these mountains [@Flenley1992].
+
+[^2]: *Tree line* is the highest elevation on a mountain slope at which tree species are naturally able to grow.
+
+```{r, echo=FALSE, message=FALSE}
+#| label: fig-UVB-latitude
+#| fig-cap: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments [see, @Haeder2007].
+
+library(ggplot2)
+library(ggpp)
+library(ggpmisc)
+library(ggrepel)
+library(patchwork)
+
+latitudinal.data <- 
+  read.csv("./light-environment-data/latitudinal_data.csv") |>
+  within(latitude <- degrees + minutes/60)
+
+fig_UVB <- ggplot(data=latitudinal.data,aes(x=latitude,y=UVB)) + 
+  stat_poly_line(linetype = "dashed", se = FALSE) +
+  geom_point(size=3, pch=16, colour="red")+ 
+  geom_text_repel(aes(label=Location), colour="Black", size=3.5,
+                  position = position_nudge_line(x = 0.3, y = 0.4, direction = "split",
+                                                 line_nudge = 3.5),
+                  min.segment.length = 0, point.padding = 0.4, box.padding = 0.5) +
+  expand_limits(y = c(0,13), x = c(25,75)) + 
+  labs(x="Latitude N (degrees)", y=expression("UV-B annual exposure"~~(MJ~m^{-2}))) + 
+  theme_minimal()
+# print(fig_UVB)
+
+fig_UVA <- ggplot(data=latitudinal.data,aes(x=latitude,y=UVA)) + 
+  stat_poly_line(linetype = "dashed", se = FALSE) +
+  geom_point(size=3, pch=16, colour="red")+ 
+  geom_text_repel(aes(label=Location), colour="Black", size=3.5,
+            position = position_nudge_line(x = 0.3, y = 100, direction = "split",
+                                           line_nudge = 3.5),
+            min.segment.length = 0, point.padding = 0.4, box.padding = 0.5) +
+  expand_limits(y = c(0,3300), x = c(25,75)) + 
+  labs(x="Latitude N (degrees)", y=expression("UV-A annual exposure"~~(MJ~m^{-2}))) + 
+  theme_minimal()
+# print(fig_UVA)
+
+print(fig_UVB + fig_UVA)
+```
+
+An increase in the irradiance is caused by depletion of the ozone layer in the stratosphere, mainly as a consequence of the release of chlorofluorocarbons (CFCs), used in cooling devices such as refrigerators and air conditioners, and in some spray cans [see @Graedel1993]. The most dramatic manifestation of this has been the seasonal formation of an "ozone hole" over Antarctica. It is controversial whether a true ozone hole has already formed in the Arctic, but strong depletion has occurred in year 2011 [@Manney2011] and atmospheric conditions needed for the formation of a "deep" ozone hole are not very different from those prevalent in recent years. Not so dramatic, but consistent, depletion has also been observed at mid-latitudes in both hemispheres. CFCs and some other halocarbons have been phased out following the Montreal agreement and later updates. However, as CFCs have a long half life in the atmosphere, of the order of 100 years, their effect on the ozone layer will persist for many years, even after their use has been drastically reduced. Model-based predictions of changes in atmospheric circulation due to global climate change have been used to derive future trends in index and ozone column thickness [@Hegglin2009]. In addition, increased cloudiness and pollution, could lead to decreased and , sometimes called 'global dimming' [e.g. @Stanhill2001]. It should be noted that, through reflection, broken clouds can locally increase irradiance to values above those under clear-sky conditions [@Frederick1993; @Diaz1996].
+
+## UV radiation within plant canopies
+
+The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. Here we give only a description of the simplest approach, the use of an approximation based on Beer's law as modified by @Monsi1953, reviewed by @Hirose2005. Beer's law (Equation [\[eq:Beer-Lambert\]](#eq:Beer-Lambert){reference-type="ref" reference="eq:Beer-Lambert"}) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). $$I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}$$ Equation [\[eq:Monsi:Saeki\]](#eq:Monsi:Saeki){reference-type="ref" reference="eq:Monsi:Saeki"} describes the radiation attenuated as a function of leaf area index ($L$ or ) at a given canopy depth ($z$). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical extinction coefficient ($K$) obtained may vary depending on these factors. $K$ is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year---as a consequence of solar zenith angle---and degree of scattering of the incident radiation. As the degree of scattering depends on clouds, and also on wavelength, the extinction coefficient is different for and visible radiation. Radiation extinction in canopies has yet to be studied in detail with respect to radiation, mainly because of difficulties in the measurement of radiation compared to , a spectral region which has been extensively studied.
+
+Ultraviolet radiation is strongly absorbed by plant surfaces, although cuticular waxes and pubescence on leaves can sometimes increase reflectance. The diffuse component of radiation is larger than that of visible light (Figure [[fig:diffuse.light]](#fig:diffuse.light){reference-type="ref" reference="fig:diffuse.light"}). In sunlit patches in forest gaps the diffuse radiation percentage is lower than in open areas, because [direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"} is not attenuated but part of the sky is occluded by the surrounding forest. Attenuation with canopy depth is on average usually more gradual for than for . The irradiance decreases with depth in tree canopies, but the ratio tends to increase [see @Brown1994]. In contrast, @Deckmyn2001 observed a decrease in ratio in white clover canopies with planophyle leaves. @Allen1975 modelled the penetration in plant canopies, under normal and depleted ozone conditions. @Parisi1996 measured doses within model plant canopies using dosimeters. The position of leaves affects exposure, and it has been observed that heliotropism can moderate exposure and could be a factor contributing to differences in tolerance among crop cultivars [@Grant1998; @Grant1999; @Grant1999a; @Grant2004].
+
+Detailed accounts of different models describing the interaction of radiation and plant canopies, taking into account the properties of foliage, are given by @Campbell1998 and @Monteith2008.
+

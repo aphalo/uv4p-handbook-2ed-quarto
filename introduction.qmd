@@ -17,7 +17,6 @@ author:
     affiliation: University of Copenhagen
 date: 2024-03-26
 date-modified: today
-draft: true
 ---
 
 ```{r, include=FALSE}

@@ -33,9 +33,11 @@ book:
     - part: Basics
       chapters:
         - introduction.qmd
-        - radiation-and-optics.qmd
-        - light-environment.qmd
-      
+        - radiation.qmd
+        - optics.qmd
+        - light-environment-terrestrial.qmd
+        - light-environment-aquatic.qmd
+        
     - part: Measurements
       chapters:
         - quantifying-radiation.qmd

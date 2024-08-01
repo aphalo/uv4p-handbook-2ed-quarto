@@ -1,8 +1,11 @@
 ---
-title: "Measurement of optical properties of leaves"
-subtitle: "_missing_"
-author: "Wolfgang Bilger et al."
-draft: true
+title: "Quantifying Optical Properties"
+subtitle: "Leaves and vegetation"
+author:
+  - name: Wolfgang Bilger
+    orcid: 0000-0001-7800-4210
+    affiliation: Christian-Albrechts-Universität zu Kiel
+  - name: others
 ---
 
 ## UV radiation within plant leaves {#sec:UV:leaves}

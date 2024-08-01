@@ -1,0 +1,802 @@
+---
+title: "Radiation-matter Interactions and Optics"
+subtitle: "Concepts, quantities and units of expression"
+author:
+  - name: Pedro J. Aphalo
+    orcid: 0000-0003-3385-972X
+    email: pedro.aphalo@helsinki.fi
+    affiliation: University of Helsinki
+contributor: "Andreas Albert, Lars Olof Björn, Lasse Yliantilla"
+date: 2024-08-01
+date-modified: 2024-08-01
+format:
+  html:
+    embed-resources: true
+abstract: | 
+  This chapter discusses radiation-matter interactions and optics from the point of view of biological systems and their scientific study and practical management. It provides the foundation for subsequent chapters in the book.
+---
+
+```{r, include=FALSE}
+library(grid)
+library(magick)
+library(tibble)
+library(ggspectra)
+library(ggpp)
+library(ggrepel)
+library(photobiologyWavebands)
+library(photobiologySun)
+library(photobiologyPlants)
+library(photobiologyFilters)
+library(patchwork)
+library(wrapr)
+```
+
+::: callout-note
+# First edition authors
+
+{{< meta contributor >}}
+:::
+
+::: callout-note
+# UV4Plants Bulletin
+
+This chapter is in part based on an article published in the UV4Plants Bulletin [@Aphalo2020b]
+:::
+
+**I have retained the use of quantity symbols and names from the first edition. The SI system was updated in 2019 and the IUPAC Gold Book in 2020. I/we have to check that the symbols and nomenclature we use are up-to-date with these updates.**
+
+
+## Interactions of Light with Matter {#sec-optics-light-matter-interactions}
+
+### Reflection {#sec-optics-reflection}
+
+Collimated light reflected from a mirror surface remains collimated, while its direction changes. Light reflected from a white surface is scattered, and if previously collimated, after being reflected it becomes more diffuse, i.e., it leaves the surface in multiple directions. A black surface does not reflect the incident light, it absorbs it. A clear or transparent object transmits all the light incident on its surface, similarly to reflection from mirrors and white surfaces, a clear object can scatter the light passing through it or not. Real objects share some of the properties of these theoretical objects. For example, the atmosphere is not perfectly clear and does partly scatter and partly absorb radiation, depending on the wavelength of the incoming or outgoing radiation. The same applies to water. In both cases, interactions take place as the light travels through them, as well as at the interface between media with different refractive index.
+
+Specular reflection, like in a mirror, affects the angle of the beam consitently, thus, preserving the image. Diffuse reflection consists in scattered light, thus the image is not preserved, light on a white matte wall (@fig-reflection). The sum of specular and diffuse reflection is called total reflection.
+
+$$R^\mathrm{tot} = R^\mathrm{spcl} + R^\mathrm{diff}$$
+
+![Specular and diffuse reflection [source](https://commons.wikimedia.org/wiki/File:Lambert2.svg) temporary fill to be replaced by figure redrawn from Gates, D (1980) Figure 8.35.](figures/Lambert2.svg){#fig-reflection fig-alt="Diagram" fig-align="center" width="33%"}
+
+::: callout-note
+# Gloss {#sec-optics-gloss}
+
+Gloss is assessed as specular reflectance. Depending on the type of surface, different angles of incidence for the collimated light beam are used. "Gloss meters" are frequently used in industrial quality control, but have been occasonally used to characterize the surface optical properties of individual plant leaves (add reference).
+:::
+
+At the boundary between two materials with different refractive index, the direction of the light beam changes, and depending on the difference in refractive index and the angle of incidence, a varying fraction of the incident light is reflected at the interface (@fig-refl-vs-angle). On a flat surface like a glass plate or polished metal surface the applicable equation is that derived from Snell's law, which mathematically is given by
+
+$$n_1 \times sin(\theta_1) = n_2 \times sin(\theta_2)$$
+
+where $n_1$ and $n_2$ are the refractive indexes of two materials, such as air and glass, and $\theta_1$ and $\theta_2$ and the refraction angles.
+
+Reflectance can be estimated from the difference in refractive index and the angle of incidende of the light onto the plane of the interface. Reflectance depends on the contribution of $s$ and $p$ polarised components.
+
+$$R_p = \left(\frac{n^2 \times \cos(\theta) - \sqrt{n^2 - \sin(\theta)^2}}
+{n^2 \times \cos(\theta) + 
+        \sqrt{n^2 - \sin(\theta)^2}}\right)^2$$
+
+and
+
+$$R_s = \left(\frac{\cos(\theta) - \sqrt{n^2 - \sin(\theta)^2}}
+{\cos(\theta) + 
+        \sqrt{n^2 - \sin(\theta)^2}}\right)^2$$
+
+Combining both formulas above, weighted based on the contributions of $p$ and $s$ components. The reflectance of a single interface can be calculated as
+
+$$R = R_p \times f_p + R_s \times f_s$$
+
+with $f_p + f_s = 1$, for the fraction of the radiation with $p$ and $s$ polarization planes. Using these equations, the reflectance at a glass window in contact with air of both sides can be computed. The refractive index of air is 1 and that of glass 1.5, so reflectance for a relative refractive index of $n = 1.5$ is shown in @fig-refl-vs-angle simulates a single and a double interface.
+
+The reflectance for two surfaces can be computed taking into account multiple back and forth reflections within the glass pane as well as its internal absorbance, or *approximated* ignoring them, as in @fig-refl-vs-angle. For a clear glass pane the error is not too large, but for some other materials could cause significant bias in the estimates.
+
+```{r, echo=FALSE}
+#| label: fig-refl-vs-angle
+#| fig-cap: Reflectance of a crown glass or acrylic pane in air as a function of the angle of incidence of light. The dark grey area under the dashed line describes the light reflected by the air to glass (or entrance) interface and the pale grey area describes the light reflected at the glass to air (or exit) interface and the solid line the sum of them. The minimum reflectance at the first interface is 4%. Computed based on a relative refractive index ($n$) of 1.5, ignoring the higher order reflections of light bouncing back and forth within the glass.
+
+refl_n.tb <- data.frame(angle = seq(from = 0, to = 90, length.out = 91))
+refl_n.tb$Rfr <- Rfr_from_n(angle_deg = refl_n.tb$angle)
+ggplot(refl_n.tb, aes(x = angle)) +
+  geom_area(aes(y = (1 - (1- Rfr)^2) * 100), fill = "grey90", colour = "black") +
+  geom_area(aes(y = Rfr * 100), fill = "grey80", colour = "black", linetype = "dashed") +
+  scale_x_continuous(breaks = c(0, 30, 60, 90)) +
+  labs(x = "Light incidence angle (degrees from normal)",
+       y = "Reflectance of visible light (%)") +
+  theme_minimal()
+```
+
+::: callout-tip
+# Practical examples {#sec-optics-greenhouse-example}
+
+The fraction of the incident light reflected by the glass or plastic roof of a greenhouse depends on the angle of incidence of the light, making the orientation and inclination of the roof play an important role in determining the transmittance of daylight at different times of the day and seasons of the year.
+
+The same applies to plastic films and sheets used to filter-out UV radiation in field experiments: the transmittance of the filters will vary reflecting proportionally more PAR and UV radiation when the angle of incidence of sunlight is shallower.
+:::
+
+The refractive index, $n$, is dependent on wavelength $\lambda$. How strong is this dependency, depends on the material. As the refractive index of air is $n = 0$, this simplifies computattions for interfaces involving air. The wavelength dependency of $n_\lambda$ determines the wavelength dependency of spectral reflectance, $R_\lambda$, of a non-scattering surface (@fig-refl-from-n).
+
+```{r, echo=FALSE}
+#| label: fig-refl-from-n
+#| fig-cap: Spectral reflectance of different materials computed from the spectral refractive index $n_\lambda$ for an angle of incidence of $60^\circ$ away from the normal. Within each type of material $n_\lambda$ can vary and a result of oxydation of metal surfaces and additives and surface coatings on glass and plastic sheets. 
+
+autoplot(
+  reflector_mspct(
+    list(germanium = Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["Ge"]]),
+         nickel = Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["Ni"]]),
+         water = Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["water"]]),
+         titanium = Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["Ti"]]),
+         polycarbonate = Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["PC"]]))),
+  annotations = list(c("+", "boundaries"), c("-", "peaks", "boxes", "labels")),
+range = c(400, 1000)) +
+labs(linetype = "Material") +
+theme_minimal()
+```
+
+On a rough surface, different points of the receiving surface are at different angles to the light beam, thus the equations above do not apply to the angle between the light beam and the plate as a whole. In addition, inclusions like air bubbles and small particles of a material with a different $n$ than the material matrix create additional interfaces within the plate. In all these cases, different photons are reflected at different angles, scattering the light. These are some of the properties used for making diffusive plates from clear materials. In a perfect diffuser internal absorptance $A_i = 0$, and half of the incoming photons exit from each face of a thin plate.
+
+::: callout-note
+# Refractive index {#sec-refractive-index}
+
+The refractive index, $n$, is a property of a material, but we must remember that, for example, corrosion of the surface of a metal plate, changes the material at the interface with air into an oxide. Thus, the corresponding value of $n$ also changes. Furthermore, corrosion of a polished metal surface frequently increases roughness, and thus scattering of the reflected light can also increase.
+:::
+
+When the material does not absorb any of the photons travelling through it, i.e., its internal absorptance $A_i = 0$, and consequently, its internal transmittance $T_i = 1$, total transmittance is given by $T_t = 1 - R_t$, where $R_t$ is the total reflectance.
+
+::: callout-tip
+# Examples {#sec-optics-examples-water-reflection}
+
+The surface of a water body reflects more light when the sun is low in the sky than at noon, at least if the surface of the air-water interface is horizontal and undisturbed by waves. Waves can be expected to increase reflectance when the sun is high in the sky by changing the average angle of incidence away from the normal, but to decrease it when the sun is low in the sky by altering the average angle of incidence in the opposite direction.
+
+In the absence of waves, specular reflection predominates, and how the surface looks to us depends on our position relative to the sun and clouds. With waves, how the water surface looks to us will be less dependent on our position and we will no longer recognize the reflection of clouds and the sun (@fig-water-swan).
+
+![Sunlight reflection from the surface of a water body depends on the angle of incidence of the sun onto the surface. In this example, bright specular reflections towards the camera are seen only for specific angles between the water surface, the sun and the camera.](images/water-reflections-swan.jpg){#fig-water-swan width="67%"}
+:::
+
+Many materials do absorb photons as they travel through them. The proportion of the photons incident at the surface and not reflected, i.e., entering the medium that remain at different depths in the medium depends on how many are absorbed or have deviated from their original direction of travel. Thus, absorption and scattering within a medium attenuate the light beam as photons travel through the medium, as discussed next.
+
+### Attenuation {#sec-optics-attenuation}
+
+We use the term *attenuation* irrespective of whether the decrease in irradiance and radiance is due to absorption, scattering or reflection. *Absorption* implies that the energy is transferred to the medium causing the attenuation, while *reflection* and *scattering* as discussed above, are due to changes in the angle or direction in which light propagates. Absorption and scattering are "inherent optical processes", because they depend on the characteristics of the material itself and are independent of the light field. In addition, re-emission of absorbed photons as fluorescence can moderate overall attenuation as well as alter the spectral composition. Bioluminiscence, emission of light by conversion of other forms of energy into light is possible, and can be important in aquatic systems. We next discuss how light interacts with a medium as it travels through it, considering absorption and scattering.
+
+The number of photons absorbed, or amount of energy transferred, depends on the distance travelled within the medium, thus a gradient is created along the light path. In the simple case of a light beam normal to the boundaries of a "slice" of a non scattering material, such as a true solution in the cuvette of a spectrophotometer, the length of the path is given by the thickness of the "slice".
+
+At shallower angles of incidence, the effective path becomes longer (@fig-beam-displ). However, the angle used to compute the length of the path is not the angle of incidence $\alpha$ because refraction changes this angle into $\beta$. Specular reflectance takes place symmetrically to the incidence angle, at angle $\alpha^\prime$. The value of $\beta$ is dependent on $n$, the diagram was computed for $n = 1.36$ (@fig-beam-displ).
+
+![Refraction alters the angle of the beam, creating reflection but also displaces the transmitted light beam, modifying the path length. [From Wiki Commons](https://commons.wikimedia.org/wiki/File:Beam-displacement-inv.svg)](figures/Beam-displacement-inv.svg){#fig-beam-displ width="67%"}
+
+Even if continuous, we can conceptually divide media into layers to describe how light is attenuated as photons travel through them. Here we consider a layer between horizontal planes $z_0$ and $z_1$, within the matrix of the medium (@fig-radtrans). Thus, we can ignore refraction and reflectance at material interfaces. The processes responsible for the changes in the radiance $L(\lambda,\theta,\phi)$ as a radiation beam travels through a material, are primarily absorption $a$ and scattering $s$, where $\lambda$ stands for wavelength, and $\theta$ and $\phi$ are angles relative to the planes delimiting the slice.
+
+Radiance is not only attenuated, it can also be added to the directly transmitted beam, coming from different directions, due to elastic scattering, by which a photon changes direction but not wavelength or energy level[^radiation-and-optics-3]. An example of this is Raleigh scattering by very small particles, which causes the scattering of light in a rainbow. A further, wavelength-specific gain of radiance into the direct path is possible through inelastic processes like fluorescence, where a photon is absorbed by the material and reemitted as a photon with a longer wavelength and lower energy level, and through Raman scattering. The elastic and inelastic scattered radiances are denoted as $L^E$ and $L^I$, respectively. Internal sources of radiance, $L^S$, like bioluminescence of biological organisms or cells contribute also to the detected radiance. The path of the light beam through a thin horizontal layer with thickness $\Delta z=z_1-z_0$ is shown schematically in @fig-radtrans.
+
+[^radiation-and-optics-3]: If the beam is very narrow, like from a laser, no contribution from scaterring outside the beam will be present, but if the beam can be considered to extend across the plane of the slice, scattering in the beam will in part be compensated by nearby scattering.
+
+![Path of the radiance and influences of absorbing and scattering particles in a thin homogeneous horizontal layer of air or water. The layer is separated from other layers of different characteristics by boundary lines at height $z_0$ and $z_1$.](figures/light-path-radiance.png){#fig-radtrans fig-alt="Diagram" fig-align="center" width="67%"}
+
+Putting together the different components described above, the radiative transfer equation is obtained $$\cos\theta\,\frac{{\rm d}L}{{\rm d}z} = -(a+s)\times L + L^E + L^I + L^S \label{equ_rte}$$ The dependencies of $L$ on $\lambda$, $\theta$, and $\phi$ are omitted here for brevity. No exact analytical solution to the radiative transfer equation exists, hence it is necessary either to use numerical models or to use analytical approximations.
+
+The parameters of the light field can be simulated by modelling the paths of photons, also called "ray tracing". For an infinite number of photons, the light field parameters reach their exact values asymptotically. The advantage of numerical simulation methods is a relatively simple structure of the program, but its disadvantage is the time-consuming computation involved. Details of the application of the Monte Carlo method to simulations are explained for example by @prahl89, @Wang1995[^radiation-and-optics-4], or @moble94.
+
+[^radiation-and-optics-4]: Their programs are available from the website of [Oregon Medical Laser Center](http://omlc.ogi.edu/software/mc/) at <http://omlc.ogi.edu/software/mc/>
+
+The other way to solve the radiative transfer equation is through the development of analytical approximations for all the quantities needed. In this case, the result is not exact, but it has the advantage of fast computation and that the analytical equations can be inverted easily. This leads to the idealised case of a source-free ($L^S=0$) and non-scattering media, i.e., $b=0$ and therefore $L^E=L^I=0$. Then, equation XXXX can be integrated easily to yield
+
+$$L(z_1) = L(z_0)\times \mathrm{e}^{-\frac{a\cdot(z_1-z_0)}{\cos\theta}}$$
+
+The radiance value at the upper boundary, $L(z_0)$, is presumed known. This equation is known as Beer's law (or Lambert's law, Bouguer's law, Beer-Lambert law), and describes any instance of exponential attenuation of light and is exact only for purely absorbing media---i.e., media that do not scatter radiation. It is of direct application in analytical chemistry, as it describes the direct proportionality of absorbance ($A$) to the concentration of a "coloured" solute in a transparent solvent. True solutions are optically homogeneous, while suspensions and aerosols are not. The latter scatter light and their behaviour is different from that described by Beer's law. In chemistry, Beer's law is formulated in a simplified way by assuming a collimated light beam incident at 90 degrees
+
+$$I_\lambda(z_1) = I_\lambda(z_0) \times \mathrm{e}^{-k_\lambda\times c\times l}$$ where $I_\lambda(z_0)$ and $I_\lambda(z_1)$ are irradiances, $k_\lambda$ is the attenuation coefficient of the solute, $c$ is the concentration of the solute, and $l = z_1 - z_0$ is the path length. As the value of $k_\lambda$ is a function of wavelength, $\lambda$, how much $I$ is attenuated also depends on $\lambda$.
+
+This equation can be used to compute irradiance at any point in the path by varying $l$ if $k_\lambda$ and $c$ are known. In chemical analysis, the equation is used to estimate $c$ with $k_\lambda$ and $l$ known. For a valid estimate, all the quantities must be expressed in coherent units, and the solvent should not absorb photons in the wavelength range of interest. In practice, in most cases both the pure solvent and the solution are measured, and the effect of the solute obtained by difference. A calibration curve based on a dilution series of known concentrations is safest when the pure solute is available.
+
+Irradiance in a solution changes with path length following an exponential attenuation curve, i.e., the curve is asymptotic (@fig-Beer-Lambert).
+
+```{r, echo=FALSE}
+#| label: fig-Beer-Lambert
+#| fig-cap: Hypothetical light attenuation curve computed with the Beer-Lambert equation assuming $k \times c = 5$. This figure illustrates the shape of the curve, while the $z_i - z_0$ are arbitrary path lengths $l$.
+ggplot() +
+  xlim(0, 1) +
+  stat_function(fun = function(x) {1 * exp(-5 * x)}) +
+  labs(x = expression(italic(l[i]*`=`*z[i] - z[0])),
+       y = expression(italic(I(z[i])))) +
+  theme_minimal()
+```
+
+::: callout-note
+# Radiation transfer models {#sec-optics-radiation-transfer-models}
+
+Radiation transfer models like TUV and libradtran simulate the modifying effect of the atmosphere on extraterrestrial solar spectral irradiance to estimate the daylight spectrum at ground level or at different elevations within the atmosphere. Importantly, these models compute the effect of the surface albedo, aerosols, clouds and particles in the atmosphere.
+
+The output from both models can be either spectral irradiance or spectral radiance. They also estimate the direct and diffuse components, as well as the upwelling scattered radiation from the ground surface.
+
+Both [libradtran](https://www.libradtran.org/) [@Emde2016] and [TUV](https://www2.acom.ucar.edu/modeling/tuv-download) models can be installed and run locally, while a simplified interactive on-line application [Quick TUV Calculator](https://www.acom.ucar.edu/Models/TUV/Interactive_TUV/) is available. R package 'photobiologyInOut' can import data generated by these models into R objects. R package 'forqat' can do simulation with TUV, either locally installed or using the Quick TUV API, directly from within R.
+
+Radiation transfer models have also been developed for simulation of the within canopies [e.g., @Chelle1998; @Chelle2007a] and as well as within leaves, e.g. PROSPECT [@Feret2008; @Li2023].
+:::
+
+### Radiation, Atoms and Molecules {#sec-radiation-atoms-molecules}
+
+**I propose here a new section, that needs to be consistent with what Wolfgang will write about related subjects.**
+
+A *pigment* is a light absorbing chemical or biochemical molecule. Which wavelengths are absorbed or not is determined by the allowed energy levels and transitions because only photons with "matching" energy can be absorbed. Pigment molecules with enhanced energy states as a result of an interaction with one or more photons are said to be "excited". The additional energy absorbed from photons can be dissipated through different excitation decay mechanisms. Excitation can also lead to conformational changes in proteins and modify their readiness to interact with other molecules.
+
+::: callout-note
+# The principles of photochemistry {#sec-radiation-photochemistry-principles}
+
+Light is electromagnetic radiation of wavelengths to which the human eye, as well as the photosynthetic apparatus, is sensitive ($\lambda \approx$ 400 to 700 nm). However, sometimes the word light is also used to refer to other nearby regions of the spectrum: ultraviolet (shorter wavelengths than visible light) and infra-red (longer wavelengths). Both particle and wave attributes of radiation are needed for a complete description of its behaviour. Light particles or quanta are called photons.
+
+Sensing of visible and radiation by plants and other organisms starts as a photochemical event, and is ruled by the basic principles of photochemistry:
+
+**Grotthuss law:** Only radiation that is actually absorbed can produce a chemical change.
+
+**Stark-Einstein law:** Each absorbed quantum activates only one molecule.
+
+As electrons in molecules can have only discrete energy levels, only photons that provide a quantity of energy adequate for an electron to 'jump' to another possible energetic state can be absorbed. The consequence of this is that substances have colours, i.e. they absorb photons with only certain energies. See @Nobel2009 and @Bjorn2007 for detailed descriptions of the interactions between light and matter.
+:::
+
+In the case of photoreceptors the operationally relevant mechanism is triggering a cascade of events in a transduction change, most frequently, but not only, resulting in changes in gene expression, protein localization or membrane permeability.
+
+Fluorescence is the "decay" of part of the energy acquired through absorption of radiation, by emission of radiation of longer wavelength (photos of lower energy) (@fig-jablonski). This red-shift is caused by action of competing routes for energy dissipation, such as thermal energy loss.
+
+![The Perrin-Jablonski diagram showing energy states. The absorption of a photon is depicted together with the different pathways for energy disipation. Energy increases upwards on the vertical axis. (Modified from [diagram by Germain Salvato-Vallverdu](https://texample.net/tikz/examples/the-perrin-jablonski-diagram/).)](figures/perrin-jablonski-diagram.png){#fig-jablonski fig-alt="Diagram" fig-align="center" width="66%"}
+
+::: callout-note
+# Spectral absorptance {#sec-optics-absorptance}
+
+Absorptance, $\alpha$, and absorbance, $A$, are wavelength dependent. We perceive this as colour. The colour of things is ultimately determined by the allowed energy states of molecules "selecting" which photons are absorbed or not, and fluorescence of which wavelength is emitted. This is because, as seen above the energy of a photon corresponds to matching wavelength, and thus, also colour.
+
+When fluorescence occurs as the result of the interaction of a molecule with a single photon, fluorescence is necessarily emitted as photons of at most slightly lower energy than the absorbed ones. There are *exceptional* cases when the energy gained from more than one photon drives the emission of a single photon of higher energy, and thus shorter wavelength. Obviously the flux of energy emitted as radiation remains less than that absorbed, but shared among fewer photons.
+
+Large molecules like photoreceptors contain many electrons and can change in configuration after absorption of a photon. With many allowed energy states they tend to display spectra with multiple broad peaks.
+:::
+
+For molecules in an ideal solution their interaction with the medium modifies the allowed energy states and thus, also their absorption spectrum, but, usually, only slightly (@fig-chlorophyll). In this same case, of molecules in solution, it is convenient to express their ability to absorb light per mole. The IUPAC-recommended name for this property is called *molecular attenuance*.
+
+```{r, warning=FALSE, echo=FALSE}
+#| label: fig-chlorophyll
+#| fig-cap: Normalised absorbance spectrum of chlorophyll _a_ in methanol and diethyl ether.
+autoplot(chlorophylls.mspct[c("Chl_a_MethOH", "Chl_a_DME")],
+  plot.qty = "absorbance", annotations = c("-", "peaks")) %+%
+  stat_peaks(span = 151, ignore_threshold = 0.21, colour = "red") +
+  stat_peaks(span = 151, geom = "text_repel", hjust = 0, 
+             label.fmt = "%.3g nm", size = 3, 
+             ignore_threshold = 0.21, colour = "red",
+             direction = "x", box.padding = 0.46,
+             min.segment.length = 0,
+             position = position_nudge_keep(x = c(-15, -20, +15, -20))) +
+  scale_linetype(name = "Solvent:", labels = c("methanol", "diethyl ether")) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+When light drives a photochemical reaction, the quantity *quantun yield* describes the reaction efficiency as the ratio between the rate at which the product molecules are pruced and the rate at which photons are being absorbed. The units are mol mol$^{-1}$.
+
+Finally it is possible to combine *molecular attenuance* and *quantun yield* to describe the rate of a photochemical reaction relative to incident radiation.
+
+**Some ideas of what could be still**
+
+-   Decay/quenching: thermal, fluorescence, phosphorescence
+-   Luminescence
+-   molar cross section
+
+# Absorbance, absorptance and friends
+
+## Introduction {#introduction}
+
+Most photobiologists sooner or later have to measure light absorption by
+objects such as plant leaves, optical filters or solutes in a liquid
+medium. The physical quantities we measure may vary: absorbance, optical
+density, absorptance, transmittance and reflectance. For each of these
+quantities there is also variation in how they are defined and in the
+symbols used to represent them. The main authority for chemical notation
+is the *International Union of Pure and Applied Chemistry* (IUPAC) and
+as photochemistry is closely related to photobiology, IUPAC definitions
+are suitable and broadly used in plant physiology [@Braslavsky2007]. I
+will use the definitions and symbols recommended by IUPAC
+[@Cohen2007; @Braslavsky2007] and the *Système international d'unités*
+(SI units). @Johnsen2012 discusses the proliferation of units and
+describes a subset of them, based on the uses in his field of research,
+and several of the definitions he gives are not consistent with those
+currently recommended by IUPAC. Even if in the field of plant
+photobiology the IUPAC definitions are usually followed, as I will do
+here, researchers should be very attentive both as readers and writers
+about the existence of alternative definitions and the use of the same
+symbols for different physical quantities. In addition, some of the
+consistently used and named quantities can be difficult to distinguish
+from each other for non-experts. My aim here is to provide guidance for
+the use of these quantities in research on plants.
+
+## Reflectance {#reflectance}
+
+Reflectance is the fraction of the incident radiation that is reflected,
+$\rho = P_\mathrm{refl} / P_0$, where $P_\mathrm{refl}$ is the reflected
+radiation and $P_0$ the incident radiation. Simple enough, but in most
+cases $\rho$ depends on the angle of incidence of the illumination, so
+for $\rho$ to be interpretable this must be described. How we collect
+the reflected light also matters, giving rise to two different
+quantities, specular reflectance $\rho_\mathrm{specular}$ and total
+reflectance $\rho$. In the case of $\rho$ we usually use collimated
+light for illumination at only a small angle of incidence compared to
+normal (90$^\circ$) and collect all reflected light with an integrating
+sphere. In this case we normally use as white reference a surface that
+scatters the light. In the case of $\rho_\mathrm{specular}$ we use
+collimated light for illumination and measure reflected light from the
+same direction as illumination over a narrow angle. In this second case,
+we can take readings at different angles to describe how $\rho$ varies.
+In addition, while $\rho$ is defined over a broad range of wavelengths,
+determined by light source and sensor, if we use a light source with a
+wide emission spectrum and measure the reflected component with a
+spectrometer we obtain spectral reflectance, given by
+$\rho(\lambda) = P_\mathrm{refl}(\lambda) / P_0(\lambda)$, where
+$\lambda$ stands for wavelength. For objects that scatter light,
+$\rho_\mathrm{specular} < \rho_\mathrm{total}$.
+
+```{r, echo=FALSE}
+#| label: fig-aphaloabs0
+#| fig-cap: Reflectance of a single plane interface as a function of the angle of incidence ($\theta_{1}$). Computations are for an interface between air and crown glass, i.e., for relative refractive index $n=1.5$.
+
+inset.bm <- image_read("figures/refraction.png")
+grob.tb <- tibble(x = 0.05, y = 0.9,
+                  width = 0.33, height = 0.5,
+                  grob = list(rasterGrob(image = inset.bm)))
+
+glass.tb <- data.frame(angle = (0:899) / 10, Rfr = Rfr_from_n((0:899) / 10, n = 1.5))
+ggplot(glass.tb, aes(angle, Rfr)) +
+  geom_grob_npc(data = grob.tb,
+                aes(npcx = x, npcy = y,
+                    label = grob,
+                    vp.width = width, vp.height = height)) +
+  geom_line() +
+  scale_x_continuous(breaks = c(0, 30, 60, 90)) +
+  labs(x = "Angle of incidence (degrees)", y = "Reflectance (/1)") +
+  theme_minimal()
+```
+
+For a plane interface, such as that between air and a polished glass
+plate, the reflectance at different angles can be calculated from the
+refractive indexes (Figure [1.1](#fig:aphaloabs0){reference-type="ref"
+reference="fig:aphaloabs0"}). It depends on the relative refractive
+index between two media, such as air and glass. I assumed an interface
+with a relative refractive index of 1.5, which is close to that between
+crown glass or acrylic and air. If light is moving from air into the
+glass or acrylic, $\rho \lesssim 0.1$ for incidence angles $<30^\circ$
+and then increases rapidly reaching $\rho \approx 0.5$ at an angle of
+$15^\circ$ and $\rho = 1$ when the light beam is parallel to the surface
+(Figure [1.1](#fig:aphaloabs0){reference-type="ref"
+reference="fig:aphaloabs0"}). In most cases we are dealing with two
+interfaces, one on each face of the glass or acrylic pane, resulting in
+a further decrease in transmittance. The dependency on the angle of
+incidence is, obviously, important when using wavelength-selective
+filters but also crucial for the design of glass-houses at medium and
+high latitudes.
+
+The same formulae apply to metals, but in the case of metals the
+refractive index is given a complex number with a Real component $n$ and
+an imaginary component $k$. Reflection of diffuse, i.e., Lambertian,
+light at plane interfaces and reflection of collimated light by
+scattering media are beyond the aims of this paper.
+
+## Transmittance {#transmittance}
+
+Total transmittance is the fraction of the incident radiation that is
+transmitted through an object, $\tau = P_\mathrm{tr} / P_0$, where
+$P_\mathrm{tr}$ is the transmitted radiation and $P_0$ the incident
+radiation. In practice we usually measure $\tau$ with normal
+illumination and collect all the transmitted light, which in the case of
+objects that scatter the transmitted light requires an integrating
+sphere for measurement. Transmittance can be also expressed as internal
+transmittance,
+$\tau_\mathrm{internal} = P_\mathrm{tr} / (P_0 - P_\mathrm{refl})$,
+i.e., using as reference the light actually "entering" the object,
+rather than the incident one. For some objects which do not scatter
+light, such as glass filters with a polished surface, $\rho$ varies
+little with $\lambda$ and a constant conversion factor can be used to
+inter convert internal and total transmittance. For objects like plant
+leaves, the conversion requires that $\rho(\lambda)$ is known. As above
+if measured across the spectrum, we obtain the spectral equivalents,
+$\tau(\lambda)$ and $\tau_\mathrm{internal}(\lambda)$.
+
+## Absorptance {#absorptance}
+
+Absorptance is the fraction of the incident radiation that is absorbed
+by an object, $\alpha = P_\mathrm{abs} / P_0$, where $P_\mathrm{abs}$ is
+the absorbed radiation and $P_0$ the incident radiation. As above if
+measured across the spectrum, we obtain the spectral equivalents,
+$\alpha(\lambda)$.
+
+As there is no other fate possible for incident radiation,
+$\rho + \tau + \alpha = 1$, and consequently, in theory, each of $\rho$,
+$\tau$ and $\alpha$ can take values in the range zero to one. If we
+exclude reflectance we get $\tau_\mathrm{internal} + \alpha = 1$. On the
+other hand $\rho_\mathrm{especular} + \tau + \alpha \leq 1$, because
+$\rho_\mathrm{especular} \leq \rho$ as the diffuse component of
+reflectance has been left out.
+
+```{r, fig.asp=2, echo=FALSE}
+#| label: fig-aphaloabs1
+#| fig-cap: Optical properties of the adaxial side of an Arabidospis (Ler) leaf. A. Total spectral transmittance, spectral absorptance and spectral reflectance from the same leaf; B. Total spectral transmittance; C. Internal spectral transmittance. One observation from \autocite{Wang2020}. See Appendix for code used.
+
+(autoplot(Ler_leaf.spct, annotations = "boundaries") /
+     autoplot(Ler_leaf_trns.spct, annotations = "boundaries") /
+         autoplot(Ler_leaf_trns_i.spct, annotations = "boundaries")) + theme_minimal()
+```
+
+The easiest way of demonstrating the importance of the difference between
+internal and total transmittance is using an example. In @fig-aphaloabs1 A
+$\rho(\lambda)$, $\tau(\lambda)$ and $\alpha(\lambda)$ are plotted as a stack,
+showing that their sum is always equal to 1. In @fig-aphaloabs1 B we plot only
+$\tau(\lambda)$, or total spectral transmittance, which is identical to the
+lower layer of the stack in Figure
+@fig-aphaloabs1 A. In Figure
+@fig-aphaloabs1 C we plot $\tau_\mathrm{internal}(\lambda)$, where we see that
+$\tau_\mathrm{internal}(\lambda) + \alpha(\lambda) = 1$.
+
+## Absorbance {#absorbance}
+
+In this case we have two definitions in use, mostly in different fields
+of research: (decadic) absorbance, $A_\mathrm{10}$ or $A$, and napierian
+absorbance, $A_\mathrm{e}$. Such that
+$A_\mathrm{e} = -log_\mathrm{10}(1 - \alpha)$ and
+$A_\mathrm{e} = -log_\mathrm{e}(1 - \alpha)$. From this follows that
+$A_\mathrm{10} = A_\mathrm{e} \cdot log_\mathrm{e}(10)$. As above if
+measured across the spectrum, we obtain the spectral equivalents,
+$A_\mathrm{10}(\lambda)$ and $A_\mathrm{e}(\lambda)$.
+
+Absorbance can be equivalently formulated as
+$A_\mathrm{10}(\lambda) = log_\mathrm{10}(1 / \tau_\mathrm{internal}(\lambda))$,
+while optical density,
+$\mathrm{OD}(\lambda) = log_\mathrm{10}(1 / \tau_\mathrm{total}(\lambda))$,
+is the equivalent of absorbance but based on total transmittance instead
+of internal transmittance.
+
+```{r, echo=FALSE}
+#| label: fig-aphaloabs1a
+#| fig-cap: Light attenuation in a homogeneous semi-transparent medium. Relative irradiance ($I_l$) is plotted as a function of the length ($l$) of the light path. Plotted values were computed using Lambert-Beer's law assuming solutions  of quercitrin at concentrations of 10 and 25 $\mathrm{mol}\,\mathrm{m}^{-3}$ and extinction coefficient $\epsilon = 16\times10^4\,\mathrm{m}^{2}\,\mathrm{mol}^{-1}$ \autocite[$\epsilon$ for $\lambda = 350\,\mathrm{nm}$ from ][, Figure 1]{Latouche2012}. See Appendix for code used.
+
+k <- 16e4
+# concentration 1 mM
+beerlamb_1mM.tb <- data.frame(z = 0:100 / 100 * 1e-3)
+beerlamb_1mM.tb$I_z <- exp(-1 * 10e-3 * beerlamb_1mM.tb$z * k)
+beerlamb_1mM.tb$Concentration <- "10"
+# concentration 5 mM
+beerlamb_5mM.tb <- data.frame(z = 0:100 / 100 * 1e-3)
+beerlamb_5mM.tb$I_z <- exp(-1 * 25e-3 * beerlamb_5mM.tb$z * k)
+beerlamb_5mM.tb$Concentration <- "25"
+# both
+beerlamb.tb <- rbind(beerlamb_1mM.tb, beerlamb_5mM.tb)
+ggplot(beerlamb.tb, aes(z * 1e3, I_z, linetype = Concentration)) +
+  geom_line() +
+  expand_limits(y = 0) +
+  labs(x = "Path length (mm)", y = "Relative irradiance (/1)") +
+  labs(linetype = "Solute concentration:") +
+  theme_minimal() + theme(legend.position = "top")
+```
+
+
+Absorption of light by homogeneous semi-transparent media is a
+cumulative process along the light pass, resulting in exponential decay,
+described by Lambert-Beer's law (Figure
+[1.2](#fig:aphaloabs1a){reference-type="ref"
+reference="fig:aphaloabs1a"}). This relationship is the reason why
+absorptance is not proportional to solute concentration or path length
+while absorbance is. The simulated data in Figure
+[1.2](#fig:aphaloabs1a){reference-type="ref"
+reference="fig:aphaloabs1a"} simulate a thin layer of a 1 mM quercetin
+solution. We can see that we need a path length of almost 0.5 mm to
+achieve a 50% attenuation in the UVA region (Figure
+[1.2](#fig:aphaloabs1a){reference-type="ref"
+reference="fig:aphaloabs1a"}) and longer paths at wavelengths in the
+shoulders of the absorption peak. As described by the Lambert-Beer's
+law, $$I_l = I_0\,\mathrm{e}^{-c\,l\,\epsilon},$$ attenuation of
+radiation passing through homogeneous media is exponential with the
+length of the light path ($l$) and with increasing values of the
+absorption coefficient, $a$ ($K$ also used), where $a$ is expressed in
+$\mathrm{m}^{-1}$). While, $a = A_\mathrm{10} / l$, is an intensive
+property of a material, $A_\mathrm{10}$ is an extensive property of an
+object. When we are interested in the concentration of a solute, we
+define the molar absorption coefficient $\epsilon = a / c$, where $c$ is
+the molar concentration. Coefficient $\epsilon$ is expressed in
+$\mathrm{m}^2 \mathrm{mol}^{-1}$, assuming concentration $c$ is
+expressed in $\mathrm{mol}\,\mathrm{m}^{-3}$.
+
+## Units and symbols {#units-and-symbols}
+
+All of $\rho$, $\tau$, $\alpha$ $A$ and $\mathrm{OD}$ are unitless
+quantities, describing ratios between values expressed in the same
+units. While $A$ and $\mathrm{OD}$ are always expressed as some small
+positive number, $\rho$, $\tau$, and $\alpha$ can be expressed either as
+fractions of one ($/1$) or as percentages (%).
+
+The symbols $R$, $T$ and $A$ are also commonly used in place of $\rho$,
+$\tau$, and $\alpha$. However, although IUPAC accepts this use of $R$
+and $T$, it reserves $A$ for absorbance. Not being these quantities
+fundamental or directly derived from such quantities, no symbols are
+defined for them in the SI standard.
+
+## Practical considerations and applications {#practical-considerations-and-applications}
+
+::: callout-tip
+# Example
+Because absorbance, $A$, is proportional to the concentration of a
+light-absorbing solute, $A_\mathrm{10} \propto [\mathrm{solute}]$, it is
+used widely in spectrophotometry. Similarly, the Dualex instruments
+(Force-A, Orsay) measure a quantity that approximates the absorbance of
+the epidermis of leaves on a band centred at
+$\lambda = \mathrm{375\,nm}$ [@Goulas2004]. This index quantity is
+assumed to be useful as a proxy of the concentration flavonoids in the
+epidermis. However, when we are interested in the degree of protection,
+transmittance, $\tau$, is more informative than absorbance. This
+instrument measures the attenuation of radiation reaching the
+chlorophyll in the leaf mesophyll by comparing the excitation of
+chlorophyll fluorescence by radiation of different wavelengths. The
+conversion of $A(\lambda = 375\,\mathrm{nm})$ into
+$\tau(\lambda = 375\,\mathrm{nm})$ is straighforward. As
+$\tau = 10^{-A_\mathrm{10}}$, it follows that a value of
+$A_\mathrm{epidermis} = 2$ from the Dualex can be interpreted as meaning
+that $\approx1\%$ of the UVA at $\lambda \approx \mathrm{375\,nm}$
+impinging on the epidermis reaches the mesophyll and $\approx99\%$ is
+attenuated. Because of the way the Dualex works, comparing two
+wavelengths, only the difference in epidermal reflectance between
+$\lambda \approx \mathrm{375\,nm}$ and
+$\lambda \approx \mathrm{655\,nm}$ is measured and consequently the $A$
+estimate from the Dualex is not a true absorbance neither a true optical
+density, $\mathrm{OD}$, estimate but instead something in-between. This
+must be taken into consideration when discussing protection for leaves
+that are highly reflective in the visible, because true UVA protection
+will be significantly better than that estimated by Dualex instruments.
+:::
+
+Depending on the aims of a study, or the problem at hand, $\rho$,
+$\tau$, $\alpha$, $A$ or $\mathrm{OD}$ may be the most informative
+quantity. Depending on the object measured and equipment used, $\tau$ or
+$\tau$ may be easier to obtain. In many cases by default or as only
+option an instrument may provide values for a quantity that is not the
+one most appropriate. In such cases, the relationships and equations
+described above may allow us to convert the measured values (see, Box
+[\[box:hints1\]](#box:hints1){reference-type="ref"
+reference="box:hints1"}).
+
+If we measure a solution in a cuvette with a spectrophotometer and we
+use as reference the same or an identical cuvette with solvent as
+reference, we can assume that we have discounted the effect of
+reflections. Instead if we measure a filter, such as a piece of
+polyester film, and the reference is no film, our measurement includes
+the effect of reflections at the film surface. If we express the
+readings as transmittance, in the first case we have measured
+$\tau_\mathrm{internal}$ while in the second cases $\tau$ (total). If we
+use logs then we obtain absorbance $A$ and optical density
+$\mathrm{OD}$, respectively.
+
+```{r, echo=FALSE}
+#| label: fig-aphaloabs2
+#| fig-cap: Effect of celullose diacetate film thickness on total transmittance.
+
+CA.mspct <- filters.mspct[acetate_filters[c(1, 9, 10)]]
+autoplot(CA.mspct, range = c(280, 500),
+         annotations = list(c("-", "peaks"), c("+", "boundaries"))) %+%
+  scale_linetype_discrete(name = "Thickness:",
+                          labels = c(expression(115~mu*m),
+                                     expression(250~mu*m),
+                                     expression(480~mu*m))) + 
+  theme_minimal() + theme(legend.position = "top")
+```
+
+Internal transmittance, $\tau_\mathrm{internal}$, makes it easy to
+compute the effect of changes in transmission with changes in the length
+of the light pass, such as different spectrophotometer cuvettes of ionic
+filter glass thickness. This is easy to understand from first
+principles: $\rho$ in non-scattering media is defined by the surface, so
+$\rho$ is not affected by the thickness of the material. That in the
+formula below we use the ratio between the thicknesses of the filter
+material as an exponent, stems from the exponential extinction
+relationship described by the Lambers-Beer law.
+$$\tau_\mathrm{internal, d2} = \tau_\mathrm{internal, d1}^{(d1/d2)},$$
+where $\mathrm{d1}$ is the thickness corresponding to the known
+$\tau_\mathrm{d1}$ and $\mathrm{d2}$ the thickness for which we want to
+compute the corresponding $\tau_\mathrm{d2}$. Figure
+[\[fig:aphaloabs2\]](#fig:aphaloabs2){reference-type="ref"
+reference="fig:aphaloabs2"} shows measurements of transmittance for
+cellulose diacetate. Increasing the thickness four times alters the
+shape of the curve and shifts the wavelength for 50% transmittance by
+8.6 nm towards longer wavelength and decreases the UVA transmittance by
+20%.
+
+If we compare a standard spectrophotometer cuvette with 10 mm light path
+to a cuvette with a path of 50 mm, a solution that yields $A = 0.2$ in
+the first cuvette will yield $A = 0.2 \cdot 5 = 1.0$ in the second
+cuvette. When we need to measure very low concentrations using a longer
+light path is very useful and using a short light path helps when
+concentrations are high. Cuvettes with light-paths lengths bewteen 1  mm
+and 100 mm are easily available, an can greatly increase the range of
+concentrations that can be measured with a given instrument, as long as
+they physically fit into the spectrophotometer.
+
+::: callout-note
+When using opposing integrating spheres like in the SpectroClip-TR
+(Ocean Insight, Dunedin, FL, formerly Ocean Optics), an important
+problem is created. Part of the transmitted photons will bounce on the
+lower integrating sphere impinging onto the lower surface of the object
+and may be transmitted back through the object into the upper sphere.
+This means that some photons will contribute to both the transmittance
+and reflectance measurements, which can result in erroneous measurements
+that seem to indicate that $\rho + \tau + \alpha \geq 1$. The problem
+affects more those samples with high values of $\tau$. For example, in
+spectral measurements of leaves in the far-red region
+($\lambda \gtrsim 700\,\mathrm{nm}$) $\alpha$ is very small and $\tau$
+nearly 50%, a situation where unless a black object is put behind the
+leaf during the measurement of $\rho$, the estimate of $\rho$ will be
+biased towards values larger than the true ones. It is also possible to
+apply a correction when processing the data. For the data in Figure 1 a
+black object was put behind the leaf during the measurement of $\rho$,
+and the minimum calculated $\alpha(\lambda)$ was very close to zero. The
+best light absorber that is easily available and thin, is the black
+flocking sold for covering the inside of optical instruments and cameras
+(Arax, Kiev; <https://araxfoto.com/>) or special black paint for this
+same purpose such as *Kameralack Spray* (Tetenal, Norderstedt;
+<https://www.tetenal.com/>) sprayed on a suitable base material. Not
+being aware of the limitations introduced by the Spectro Clip's design
+can lead to substantially wrong data being reported.
+:::
+
+In the first part of this section we have considered only non-scattering
+materials. This is the simplest case because if we measure in a normal
+spectrophotometer a non-scattering material like an homogeneous solution
+or a piece of glass or acrylic with well polished surfaces estimates of
+$\tau$ will be reliable as the light beam direction will not be
+disturbed. In contrast, if we measure a suspension of particles in a
+solvent or a thick film of polythene or similar plastic, we will grossly
+underestimate $\tau$. The reason is simple, the transmitted light that
+is no longer collimated will not reach the sensor and will not be
+measured. In this case, to obtain a reliable measurement, we need to use
+an integrating sphere to collect the photons leaving the measured object
+in all possible directions. The obvious way to recognize that scattering
+is biasing the measurements is to look at the measured transmittance at
+wavelengths were the material is known to have very high transmittance
+such as the visible region for polythene. If the measured transmittance
+is less than 0.9, then the measurement has been biased by the scattering
+and wrong. Of course, unless scattering is minimal, we can also see its
+effect when looking through the materials. Depending on how the
+integrating spheres are attached to the sample, additional complications
+may arise (see, Box [\[box:hints2\]](#box:hints2){reference-type="ref"
+reference="box:hints2"}).
+
+In the previous examples in this section we have considered objects that
+attenuate irradiance mainly through absorption of light that travels
+through them. There are filters that attenuate light through selective
+reflection, with such filters thickness of the base material only
+minimally affects transmittance, i.e., $\alpha \ll \rho$. Interference
+filters are produced by deposition of very think layers on the surface
+of the substrate and $\rho(\lambda)$ is controlled by their thickness.
+The opposite effect is also possible, and is used to produce
+anti-reflection (AR) coatings in glass and plastic filters and windows.
+AR multi-coating (MC) can achieve $\rho < 0.5\%$ over the whole visible
+region. If we "stack" filters of either type, as long as air gaps remain
+between them, they can be thought as "functioning independently" of each
+other.
+
+To estimate $\tau(\lambda)$ for such a stack of filters separated by air
+gaps, we need to convolute the spectra---i.e., we need to multiply them
+wavelength by wavelength. The stacking order is in theory and frequently
+also in reality irrelevant---i.e., it is transitive as for
+multiplication in algebra:
+$$\tau_{1+2}(\lambda) = \tau_1(\lambda) \times \tau_2(\lambda).$$ In the
+case of absorbances we have to add them instead because of the log
+transformation: $$A_{1+2}(\lambda) = A_1(\lambda) + A_2(\lambda).$$
+
+Normally transmittance is measured for a light beam impinging on the
+surface of a filter at $90^\circ$. However, the angle of incidence can
+affect in various ways light attenuation. We will first consider
+$\tau_\mathrm{internal}$ and how the length of the light path through
+the filter depends on the angle of incidence of the light beam. If we
+discount the effect of refraction at the air-filter interfaces, and
+assume the direction of the beam remains the same inside the filter, we
+can use sinple trigonometry to compute the approximate path length. As
+an example we will consider the spectral transmittance of polyester
+0.125 mm-thick, and that the sun will shine on it at $90^\circ$ at noon
+but at $23^\circ$ later in the afternoon. This is a difference of
+$62^\circ$, corresponding to a doubling in the path length.
+
+```{r, echo=FALSE}
+#| label: fig-aphaloabs3
+#| fig-cap: Effect of the angle of incidence on the internal transmittance of polyester film 0.125\,mm-thick. See Appendix for code used.
+
+polyester.spct |>
+  convertTfrType("internal") -> short_path.spct
+
+# compute transmittance assuming radiation path-length doubles
+polyester.spct |>
+  convertTfrType("internal") |>
+  convertThickness(thickness = 0.250e-3) -> long_path.spct
+
+list(midday = short_path.spct, afternoon = long_path.spct) |>
+     filter_mspct() |>
+     autoplot(range = c(280, 500)) +
+  labs(linetype = "Time of day:") +
+  theme_minimal() + theme(legend.position = "top")
+```
+
+Above I mentioned that reflectance, $\rho$, depends on the angle of
+incidence, and it increases at shallower angles of incidence. So this
+two effects add up. The angle between the solar beam and the filters
+tend to be only infrequently explicitly considered when designing light
+filtration experiments. Although the path length may not have a huge
+effect for good quality glass or acrylic, reflection will decrease PAR
+even for clear materials. In the case of reflective or interference
+filters which wavelengths are transmitted and which reflected, depends
+on the angle of incidence, so spectral transmittance in specifications
+is given at a specific angle of incidence. Usually this angle is normal
+to the surface, but some filters, in particular many of those reflecting
+infrared radiation, or hot mirrors, are designed to be installed at
+other angles, such as $45^\circ$ so that the thermal radiation is not
+reflected back towards the light source but instead to the side.
+
+## The optics leaves and flowers {#the-optics-leaves-and-flowers}
+
+The same analysis as above could be, in principle, applied to an object
+with a heterogeneous internal structure, like a plant leaf with its
+multiple internal air-water interfaces, but one would have to consider
+the multiple internal interfaces and their positions. The presence of
+these interfaces at different angles, plus small particles, cause strong
+scattering, and thus in this case $\rho$ depends on both surface and
+internal properties of the leaf. We can still measure $\rho$, $\tau$ and
+$\alpha$ but predicting based on optical theory the effects of changes
+in leaf thickness or pigment concentration becomes daunting if at all
+possible.
+
+One way of demonstrating the role of air-water interfaces within leaf
+tissues is to infiltrate a leaf with water using a vacuum chamber. The
+effect is most spectacular in a variegated leaf such as those from some
+clones of English ivy: after infiltration with water the green areas
+become translucent green and the white areas almost transparent. The
+internal structure of leaves is extremely efficient at trapping light,
+to the point that it has been copied in a recent design for high
+efficiency solar cells [@Yun2019]. There is also evidence that shade
+leaves are better light traps per unit dry mass than sun leaves. On the
+other hand, modelling of the optical properties of leaves is still in
+its infancy. The optics of leaves, flowers and fruits are described in
+detail in the book [@Lee2007].
+
+
+### Quantities Describing Light-Matter Interactions {#sec-radiation-quantities-matter-interactions}
+
+Radiation incident on an object can be partitioned into three components based on its fate,
+
+$$1 = R^\mathrm{tot} + \alpha + T^\mathrm{tot}$$ where $R^\mathrm{tot}$, $\alpha$, and $T^\mathrm{tot}$ are expressed as fractions [@tbl-light-matter-quantites]. Alternatively, they can be expressed as percentages.
+
+If $I_0$ is the irradiance on the surface of an object, the "irradiance" entering the body of the object is given by $I_0 \times (1 - R^\mathrm{tot})$. The irradiance exiting the opposite side of the object is given by $I_0 \times T^\mathrm{tot}$.
+
+Internal transmittance $T^\mathrm{int}$ considers only the radiation entering the object, thus,
+
+$$1 = \alpha + T^\mathrm{int}$$ from which it follows that always $T^\mathrm{int} \geq T^\mathrm{tot}$. To convert $T^\mathrm{int}$ into $T^\mathrm{tot}$ we need to know $R^\mathrm{tot}$,
+
+$$T^\mathrm{tot} = T^\mathrm{int} \times (1 - R^\mathrm{tot})$$ and $$T^\mathrm{int} = \frac{T^\mathrm{tot}}{1 - R^\mathrm{tot}}$$
+
+Absorbance ($A$) is a logarithm-transformed quantity. In Chemistry $A$ is most frequently computed using base-10 logarithm, while is some other fiels natural or $e$-based logarithms are used.
+
+$$A = -\log_{10}(1 - \alpha) = -\log_{10}(T^\mathrm{int}) = -\log_{10}(R^\mathrm{tot} + T^\mathrm{tot})$$
+
+We use $A$ as symbol for decadic absorbance, for which $A_{10}$ may be used in other publications. We use the subscript to indicate the wavelength in nanometres (nm), e.g., $A_{663}$.
+
+::: callout-tip
+# Example {#sec-optics-example-spectrophotometry}
+
+As discussed earlier in this chapter, in the Beer-Lambert equation solute concentration enters as an exponent, i.e., a power of $e$. Thus, $A \propto c$, and a convenient quantity for assessing concentrations of a solute as $c = A \times k$ where $k$ is the slope of an empirical calibration curve.
+
+In chemistry and biochemistry when using a spectrophotometer it is the norm to measure a *blank* as reference. The assumption is that $R^\mathrm{tot}$ is the same for the blank and the sample, thus the difference between blank and sample, corresponds to absorptance, $\alpha$, or $1 - T^\mathrm{int}$. As the solvent is used for the blank, the difference in absorptance can be attributed to the solute.
+:::
+
+::: table*
+::: center
+|      Symbol       |   Unit   | Description             |
+|:-----------------:|:--------:|:------------------------|
+| $R^\mathrm{tot}$  | fraction | Total reflectance:      |
+| $R^\mathrm{spcl}$ | fraction | Specular reflectance:   |
+| $R^\mathrm{diff}$ | fraction | Diffuse reflectance:    |
+|        $n$        | numeric  | Refractive index:       |
+| $T^\mathrm{tot}$  | fraction | Total transmittance:    |
+| $T^\mathrm{int}$  | fraction | Internal transmittance: |
+|     $\alpha$      | fraction | Absorptance:            |
+|        $A$        |   a.u.   | Absorbance:             |
+
+: Physical quantities that describe the interaction of objects and light and related quantities describing intensive properties of materials. {#tbl-light-matter-quantites}
+:::
+:::

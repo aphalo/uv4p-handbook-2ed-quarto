@@ -1,9 +1,21 @@
 ---
 title: "Design of Experiments and Statistics"
 subtitle: "Sensitivity and efficiency"
+author:
+  - name: Pedro J. Aphalo
+    orcid: 0000-0003-3385-972X
+    email: pedro.aphalo@helsinki.fi
+    affiliation: University of Helsinki
+  - name: Harri Högmander
+    orcid: 0000-0001-9406-7668
+    affiliation: University of Jyväskylä
 date: 2024-07-15
 date-modified: today
-draft: true
+format:
+  html:
+    embed-resources: true
+abstract: | 
+  This chapter discusses design of experiments and data analysis from the perspective of basic and applied research in plant photobiology, providing geenral guidelines and specific example cases.
 ---
 
 
