@@ -62,12 +62,17 @@ book:
     left:
       - text: "Uv4Plants Association"
         href: https://www.uv4plants.org
+  page-navigation: true
   announcement: 
     icon: info-circle
     dismissable: true
     content: "**EARLY DRAFT:**"
     type: primary
-    position: below-navbar  
+    position: below-navbar
+  comments: 
+    hypothesis:
+      theme: clean
+      openSidebar: true
   draft-mode: visible
   
 bibliography:

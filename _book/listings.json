@@ -7,14 +7,18 @@
       "/preface.html",
       "/abbreviations.html",
       "/introduction.html",
+      "/radiation.html",
+      "/optics.html",
+      "/light-environment-terrestrial.html",
+      "/light-environment-aquatic.html",
       "/quantifying-radiation.html",
       "/leaf-optics.html",
       "/quantifying-responses.html",
       "/imaging.html",
-      "/manipulating-radiation.html",
-      "/plant-cultivation.html",
       "/design-of-experiments.html",
       "/reproducibility.html",
+      "/manipulating-radiation.html",
+      "/plant-cultivation.html",
       "/references.html"
     ]
   }
