@@ -418,9 +418,9 @@ reflectance has been left out.
 #| label: fig-aphaloabs1
 #| fig-cap: Optical properties of the adaxial side of an Arabidospis (Ler) leaf. A. Total spectral transmittance, spectral absorptance and spectral reflectance from the same leaf; B. Total spectral transmittance; C. Internal spectral transmittance. One observation from \autocite{Wang2020}. See Appendix for code used.
 
-(autoplot(Ler_leaf.spct, annotations = "boundaries") /
-     autoplot(Ler_leaf_trns.spct, annotations = "boundaries") /
-         autoplot(Ler_leaf_trns_i.spct, annotations = "boundaries")) + theme_minimal()
+(autoplot(Ler_leaf.spct, annotations = "boundaries") + theme_minimal()) /
+     (autoplot(Ler_leaf_trns.spct, annotations = "boundaries") + theme_minimal()) /
+         (autoplot(Ler_leaf_trns_i.spct, annotations = "boundaries") + theme_minimal())
 ```
 
 The easiest way of demonstrating the importance of the difference between
