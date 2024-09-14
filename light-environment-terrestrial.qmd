@@ -435,7 +435,44 @@ The spectral irradiance of the sun $\irr[s](\lambda)$ can be estimated assuming 
 
 [^1]: Available as ASCII file at PMODWRC, <ftp://ftp.pmodwrc.ch/pub/publications/pmod615.asc>
 
-![image](figures/fig_sun.pdf){width="0.8\\myfigwidth"}
+```{r, echo=FALSE}
+#| label: fig-sun-black-body
+#| fig-cap: The extraterrestrial solar spectrum compared to black body emission. The black body emission spectrum has been scaled to match the energy irradiance of the solar spectrum at the top of the atmosphere (AM0) within the range of wavelengths shown. 
+
+energy_as_default()
+
+w.lengths <- seq(200, 3000, length.out = 201)
+
+sun.spct <- 
+  clip_wl(
+    sun_reference.mspct[["WMO.Wehrli.AM0"]],
+    range = range(w.lengths))
+
+black_body.spct <-
+  source_spct(w.length = w.lengths,
+              s.e.irrad = black_body_spectrum(w.lengths, 5800))
+
+black_body.spct <- 
+  fscale(black_body.spct, 
+         f = e_irrad,
+         target = e_irrad(sun.spct))
+
+plot.spectra <- 
+  source_mspct(
+    list(AM0 = sun.spct,
+         "Black body at 5800K" = black_body.spct)
+    )
+
+ggplot(plot.spectra, unit.out = "energy") + 
+  aes(color = spct.idx) +
+  geom_line() +
+  scale_color_manual(name= "",
+                     values=c("purple","blue")) +
+  scale_x_wl_continuous() + 
+  scale_y_s.e.irrad_continuous(expand=c(0,0))  +
+  theme_minimal() +
+  theme(legend.position= "top")
+```
 
 The total solar irradiance covers a wide range of wavelengths. Using some of the 'colours' introduced in table [\[tab:Waverange\]](#tab:Waverange){reference-type="ref" reference="tab:Waverange"}, table [\[tab_sun\]](#tab_sun){reference-type="ref" reference="tab_sun"} lists the irradiance and fraction of $\irr[s]$ of different wavelength intervals.
 
@@ -457,7 +494,31 @@ The extraterrestrial solar spectrum differs from that at ground level due to the
 
 At the Earth's surface, the incident radiation or [*global:rad*]{acronym-label="global:rad" acronym-form="singular+short"} has two components, [direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"} and [diffuse:rad]{acronym-label="diffuse:rad" acronym-form="singular+short"}. Direct radiation is radiation travelling directly from the sun, while diffuse radiation is that scattered by the atmosphere. Diffuse radiation is what gives the blue colour to the sky and white colour to clouds. The relative contribution of direct and diffuse radiation to global radiation varies with wavelength and weather conditions. The contribution of diffuse radiation is larger in the UV region, and in the presence of clouds (Figures [\[fig:sky:photos\]](#fig:sky:photos){reference-type="ref" reference="fig:sky:photos"} and [\[fig:diffuse:UV\]](#fig:diffuse:UV){reference-type="ref" reference="fig:diffuse:UV"}).
 
-![image](photos/Lasse_sky_composite.pdf){width="\\myfigwidth"}
+![image](photos/Lasse_sky_composite.jpg)
+
+```{r}
+#| label: fig-diffuse-TUV
+#| fig-cap: Fraction of total radiation that is diffuse under a clear sky. Based on simulations with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300? DU. A: Dependency on sun elevation of the diffuse fraction of PAR, assuming a low amount aerosols. A: Dependency on sun elevation of the diffuse fraction of PAR, assuming a low amount aerosols. B:  Dependency on sun elevation of the diffuse fraction of selected wavelengths, assuming a low amount aerosols.
+
+## PAR
+
+clear_sky_PAR_diff_frac.fun <-
+  readRDS("light-environment-data/spline-fun.RDS")
+
+PAR.tb <- data.frame(SEA = -10:90)
+
+PAR_diffuse.fig <-
+  ggplot(PAR.tb, aes(SEA)) +
+  stat_function(fun = clear_sky_PAR_diff_frac.fun, 
+                n = 201,
+                xlim = c(-10, 90), colour = "black") +
+  scale_x_continuous(name = "Solar elevation angle (degrees)",
+                     breaks = c(-10, 0, 15, 30, 45, 60, 75, 90)) +
+  labs(y = expression("PAR diffuse fraction, "*Q[s] / Q[t])) +
+  expand_limits(y = 0) +
+  theme_minimal()
+
+```
 
 ![image](figures/fig_diffuse_TUV.pdf){width="0.8\\myfigwidth"}
 

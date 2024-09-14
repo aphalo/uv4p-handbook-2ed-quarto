@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Pedro J. Aphalo">
+<meta name="author" content="T. Matthew Robson">
+<meta name="author" content="Maxime Durand">
 <meta name="author" content="(Andreas Albert)">
 <meta name="author" content="(Lars Olof Björn)">
 <meta name="author" content="(Lasse Yliantilla)">
@@ -372,6 +374,16 @@ window.Quarto = {
           </p>
       </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">T. Matthew Robson </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Maxime Durand </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+      </div>
+    <div class="quarto-title-meta-contents">
     <p class="author">(Andreas Albert) </p>
   </div>
   <div class="quarto-title-meta-contents">
@@ -660,11 +672,19 @@ Tip
 </div>
 </div>
 <p>The spectral irradiance of the sun <span class="math inline">\({E_{\mathrm{s}}}(\lambda)\)</span> can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table <a href="#tab:Phys:Quants" data-reference-type="ref" data-reference="tab:Phys:Quants">[tab:Phys:Quants]</a>. The intensity of the sun <span class="math inline">\({I_{\mathrm{s}}}(\lambda)\)</span> is given by the radiance <span class="math inline">\({L_{\mathrm{s}}}(\lambda)\)</span> multiplied by the apparent sun surface (a non-tilted disk of radius <span class="math inline">\(r_s=7\times 10^5\)</span> km). To calculate the decreased solar irradiance at the moment of reaching the Earth’s atmosphere, the distance of the sun to the Earth (<span class="math inline">\(r_0=150\times 10^6\)</span> km) has to be taken into account due to the inverse square law of irradiance of equation (<a href="#equ_r2law" data-reference-type="ref" data-reference="equ_r2law">[equ_r2law]</a>). Thus, the extraterrestrial solar irradiance is <span class="math display">\[{E_{\mathrm{s}}}(\lambda)={L_{\mathrm{s}}}(\lambda)\cdot\frac{\pi r_s^2}{r_0^2}\label{equ_extraterrestrial}\]</span> Remembering the solid angle of equation (<a href="#equ_solidangle" data-reference-type="ref" data-reference="equ_solidangle">[equ_solidangle]</a>), the right multiplication factor represents the solid angle of the sun’s disk as seen from the Earth’s surface (<span class="math inline">\(\approx 6.8\times 10^{-5}\)</span> sr). Figure <a href="#fig_sun" data-reference-type="ref" data-reference="fig_sun">[fig_sun]</a> shows the spectrum of the measured extraterrestrial solar radiation (Wehrli, 1985)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and the spectrum calculated by equation 1.14 using Planck’s law of equation 1.12 at a black body temperature of 5800 K. Integrated over all wavelengths, <span class="math inline">\({E_{\mathrm{s}}}\)</span> is about 1361 to 1362 at top of the atmosphere <span class="citation" data-cites="Kopp2011">(<a href="references.html#ref-Kopp2011" role="doc-biblioref">Kopp and Lean 2011</a>)</span>. This value is called the ‘solar constant’. In former times, depending on different measurements, <span class="math inline">\({E_{\mathrm{s}}}\)</span> varies by a few percent <span class="citation" data-cites="iqbal83">(<a href="references.html#ref-iqbal83" role="doc-biblioref">Iqbal 1983</a>)</span>. For example, the irradiance at the top of the atmosphere (the integrated value) changes by <span class="math inline">\(\pm 50\)</span> (3.7 %) during the year due to distance variation caused by orbit excentricity <span class="citation" data-cites="moble94">(<a href="references.html#ref-moble94" role="doc-biblioref">Mobley 1994</a>)</span>. More accurate measurements during the last 25 years by spaceborne radiometers show a variability of the solar radiation of a few tenth of a percent. A detailed analysis is given by <span class="citation" data-cites="froeh04">Fröhlich and Lean (<a href="references.html#ref-froeh04" role="doc-biblioref">2004</a>)</span>. <span class="math inline">\({E_{\mathrm{s}}}\)</span> can also be calculated by the Stefan-Boltzmann Law: the total energy emitted from the surface of a black body is proportional to the fourth power of its temperature. For an isotropically emitting source (Lambertian emitter), this means <span class="math display">\[{L_{\mathrm{}}}= \frac{\sigma}{\pi} \cdot T^4 \label{equ_boltzmann}\]</span> with the Stefan-Boltzmann constant <span class="math inline">\(\sigma=5.6705\times 10^{-8}\)</span> W m<span class="math inline">\(^{-2}\)</span> K<span class="math inline">\(^{-4}\)</span>. With <span class="math inline">\(T = 5800\)</span> K equation <a href="#equ_boltzmann" data-reference-type="ref" data-reference="equ_boltzmann">[equ_boltzmann]</a> gives the radiance of the solar disc. From this value, we can obtain an approximation of the solar constant, by taking into account the distance from the Earth to the Sun and the apparent size of the solar disc (see equations <a href="#equ_solidangle" data-reference-type="ref" data-reference="equ_solidangle">[equ_solidangle]</a> and <a href="#equ_r2law" data-reference-type="ref" data-reference="equ_r2law">[equ_r2law]</a>).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="figures/fig_sun.pdf" class="img-fluid"></p>
-<figcaption>image</figcaption>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sun-black-body" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sun-black-body-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-sun-black-body-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-black-body-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.12: The extraterrestrial solar spectrum compared to black body emission. The black body emission spectrum has been scaled to match the energy irradiance of the solar spectrum at the top of the atmosphere (AM0) within the range of wavelengths shown.
+</figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>The total solar irradiance covers a wide range of wavelengths. Using some of the ‘colours’ introduced in table <a href="#tab:Waverange" data-reference-type="ref" data-reference="tab:Waverange">[tab:Waverange]</a>, table <a href="#tab_sun" data-reference-type="ref" data-reference="tab_sun">[tab_sun]</a> lists the irradiance and fraction of <span class="math inline">\({E_{\mathrm{s}}}\)</span> of different wavelength intervals.</p>
 <div class="table*">
@@ -774,13 +794,13 @@ Tip
 <img src="light-environment-terrestrial_files/figure-html/fig-UVB-Erlangen-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVB-Erlangen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.12: Seasonal variation in daily UV-B energy exposure Erlangen, Germany (<span class="math inline">\(54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}\)</span>, 280 m asl). Top: daily UV-B energy exposure; bottom: UV-B:PhR daily-energy-exposures ratio. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+Figure&nbsp;4.13: Seasonal variation in daily UV-B energy exposure Erlangen, Germany (<span class="math inline">\(54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}\)</span>, 280 m asl). Top: daily UV-B energy exposure; bottom: UV-B:PhR daily-energy-exposures ratio. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>irradiance increases with elevation in mountains and with decreasing latitude <a href="#fig-UVB-latitude" class="quarto-xref">Figure&nbsp;<span>4.13</span></a> and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in these mountains <span class="citation" data-cites="Flenley1992">(<a href="references.html#ref-Flenley1992" role="doc-biblioref">Flenley 1992</a>)</span>.</p>
+<p>irradiance increases with elevation in mountains and with decreasing latitude <a href="#fig-UVB-latitude" class="quarto-xref">Figure&nbsp;<span>4.14</span></a> and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in these mountains <span class="citation" data-cites="Flenley1992">(<a href="references.html#ref-Flenley1992" role="doc-biblioref">Flenley 1992</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-UVB-latitude" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -789,7 +809,7 @@ Figure&nbsp;4.12: Seasonal variation in daily UV-B energy exposure Erlangen, Ger
 <img src="light-environment-terrestrial_files/figure-html/fig-UVB-latitude-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVB-latitude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.13: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+Figure&nbsp;4.14: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
 </figcaption>
 </figure>
 </div>
