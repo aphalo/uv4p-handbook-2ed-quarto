@@ -2,7 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
+<<<<<<< HEAD
 <meta name="generator" content="quarto-1.5.57">
+=======
+<meta name="generator" content="quarto-1.5.56">
+>>>>>>> from.laptop
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -26,6 +30,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -345,7 +383,9 @@ window.Quarto = {
   <li><a href="#sec:solar:radiation" id="toc-sec:solar:radiation" class="nav-link active" data-scroll-target="#sec\:solar\:radiation"><span class="header-section-number">4.1</span> Solar radiation at ground level</a>
   <ul class="collapse">
   <li><a href="#position-of-the-sun" id="toc-position-of-the-sun" class="nav-link" data-scroll-target="#position-of-the-sun"><span class="header-section-number">4.1.1</span> Position of the sun</a></li>
-  <li><a href="#the-spectrum-of-solar-radiation" id="toc-the-spectrum-of-solar-radiation" class="nav-link" data-scroll-target="#the-spectrum-of-solar-radiation"><span class="header-section-number">4.1.2</span> The spectrum of solar radiation</a></li>
+  <li><a href="#solar-radiation-at-the-top-of-the-atmosphere" id="toc-solar-radiation-at-the-top-of-the-atmosphere" class="nav-link" data-scroll-target="#solar-radiation-at-the-top-of-the-atmosphere"><span class="header-section-number">4.1.2</span> Solar radiation at the top of the atmosphere</a></li>
+  <li><a href="#solar-radiation-at-the-top-of-the-atmosphere-1" id="toc-solar-radiation-at-the-top-of-the-atmosphere-1" class="nav-link" data-scroll-target="#solar-radiation-at-the-top-of-the-atmosphere-1"><span class="header-section-number">4.1.3</span> Solar radiation at the top of the atmosphere</a></li>
+  <li><a href="#solar-radiation-at-ground-level" id="toc-solar-radiation-at-ground-level" class="nav-link" data-scroll-target="#solar-radiation-at-ground-level"><span class="header-section-number">4.1.4</span> Solar radiation at ground level</a></li>
   </ul></li>
   <li><a href="#uv-radiation-within-plant-canopies" id="toc-uv-radiation-within-plant-canopies" class="nav-link" data-scroll-target="#uv-radiation-within-plant-canopies"><span class="header-section-number">4.2</span> UV radiation within plant canopies</a></li>
   </ul>
@@ -561,56 +601,29 @@ Figure&nbsp;4.6: Sun elevation angle through the day at five different latitudes
 </div>
 <p><strong><em>Add links to previous chapter</em></strong></p>
 </section>
-<section id="the-spectrum-of-solar-radiation" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="the-spectrum-of-solar-radiation"><span class="header-section-number">4.1.2</span> The spectrum of solar radiation</h3>
+<section id="solar-radiation-at-the-top-of-the-atmosphere" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="solar-radiation-at-the-top-of-the-atmosphere"><span class="header-section-number">4.1.2</span> Solar radiation at the top of the atmosphere</h3>
+<p>We can measure irradiance outside the atmosphere at a know distance from the sun and we can also measure the apparent diameter of the sun at this same distance. Based on this we can calculate the total radiant energy emitted by the sun and from it, irradiance at arbitrary distances.</p>
+</section>
+<section id="solar-radiation-at-the-top-of-the-atmosphere-1" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="solar-radiation-at-the-top-of-the-atmosphere-1"><span class="header-section-number">4.1.3</span> Solar radiation at the top of the atmosphere</h3>
+<p>We can measure irradiance outside the atmosphere at a know distance from the sun and we can also measure the apparent diameter of the sun at this same distance. Based on this we can calculate the total radiant energy emitted by the sun and irradiance at arbitrary distances.</p>
+<p>In outer space, in vacuum, no scattering takes place as the light travels, and because of this, the sky looks completely black. Planets and the Moon do reflect light allowing us to see them. As the distance to the sun increases irradiance decreases as the flux spreads into a large area represented by the surface of a sphere, without scattering, this becomes a geometric computations in 3D.</p>
+<p>At the time scales relevant to plants and humans, the distance between the Sun and the Earth varies little, as well as the emission from the surface of the sun. Thus, we can use a “solar constant” as a useful and nearly perfect approximation. The solar “constant”, the irradiance at the top of the atmosphere, varies between <span class="math inline">\(1\,361\)</span> and <span class="math inline">\(1\,362~\mathrm{W m^{-2}}\)</span> due to changes in solar activity. In addition to the irradiance, the shape of the solar spectrum at the top of the atmosphere varies very little in time, and is usually assumed constant.</p>
 <p>The solar “constant” varies between 1.361 and 1.362 <span class="math inline">\(W m^{-2}\)</span> due to changes in solar activity. The solar spectrum at the top of the atmosphere varies very little in time, and is usually assumed constant.</p>
-<p>In outer space, in vacuum, no scattering takes place as the light travels, and because of this, the sky looks completely black. Planets and the Moon do reflect light allowing us to see them.</p>
-<p>Before reaching the Earth’s surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to <em>AM1</em> when the sun is at the zenith, i.e., <em>AM1</em> stands for one atmosphere thickness and <em>AM1.5</em> indicates that the length of the path through the atmosphere is 1.5 times that when the sun is at the zenith.</p>
-<p>The length of the path through the atmosphere is, in reality, not exactly the length computed by trigonometry, but close to it. An empirical formula can be used as an approximation <span class="citation" data-cites="Kasten1989">(<a href="references.html#ref-Kasten1989" role="doc-biblioref">Kasten and Young 1989</a>)</span> to compute AM values from the elevation angle (<span class="math inline">\(h\)</span>) (<a href="#fig-AM-h" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-AM-h" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-AM-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="light-environment-terrestrial_files/figure-html/fig-AM-h-1.png" class="img-fluid figure-img" width="672">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-AM-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: Plot of the empirical relationship between sun elevation (<span class="math inline">\(h\)</span>) or zenith anglr (<span class="math inline">\(\theta\)</span>) and “equivalent” atmosphere thickness traversed by solar radiation between outer space and the Earth’s surface (at sea level). AM1 is indicated by the horizontal dotted line.
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-</div>
-<p>Light when travelling through the atmosphere interacts with the gases and particles composing it. The light is attenuated and scattered . Different wavelengths are differently affected by these processes, giving us a blue sky and warmer coloured direct sunlight. In other words, the daylight spectrum depends on the position of the sun in the sky, and on the composition of the atmosphere along this path (<a href="#fig-sun-spectra-energy" class="quarto-xref">Figure&nbsp;<span>4.8</span></a> and <a href="#fig-sun-spectra-photons" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>). In addition to molecular absorption and scattering, aerosols, both liquid like water and solid like ice and dust, interact with light.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-sun-spectra-energy" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sun-spectra-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="light-environment-terrestrial_files/figure-html/fig-sun-spectra-energy-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-spectra-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.8: The spectrum of solar radiation above the atmosphere (AM0) and a typical spectrum at ground level (AM1.5). Spectral energy irradiance for the wavelength range called <em>shortwave radiation</em> in meteorology.
-</figcaption>
-</figure>
+<div class="callout-body-container callout-body">
+<p>The spectral irradiance of the sun <span class="math inline">\({E_{\mathrm{s}}}(\lambda)\)</span> can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table <a href="#tab:Phys:Quants" data-reference-type="ref" data-reference="tab:Phys:Quants">[tab:Phys:Quants]</a>. The intensity of the sun <span class="math inline">\({I_{\mathrm{s}}}(\lambda)\)</span> is given by the radiance <span class="math inline">\({L_{\mathrm{s}}}(\lambda)\)</span> multiplied by the apparent sun surface (a non-tilted disk of radius <span class="math inline">\(r_s=7\times 10^5\)</span> km). To calculate the decreased solar irradiance at the top of the Earth’s atmosphere, the distance of the sun to the Earth (<span class="math inline">\(r_0=150\times 10^6\)</span> km) has to be taken into account applying the inverse square law of irradiance of equation (<a href="#equ_r2law" data-reference-type="ref" data-reference="equ_r2law">[equ_r2law]</a>). Thus, the extraterrestrial solar irradiance is <span class="math display">\[{E_{\mathrm{s}}}(\lambda)={L_{\mathrm{s}}}(\lambda)\cdot\frac{\pi r_s^2}{r_0^2}\label{equ_extraterrestrial}\]</span> Remembering the solid angle of equation (<a href="#equ_solidangle" data-reference-type="ref" data-reference="equ_solidangle">[equ_solidangle]</a>), the right multiplication factor represents the solid angle of the sun’s disk as seen from the Earth’s surface (<span class="math inline">\(\approx 6.8\times 10^{-5}\)</span> sr).</p>
 </div>
 </div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-sun-spectra-photons" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sun-spectra-photons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="light-environment-terrestrial_files/figure-html/fig-sun-spectra-photons-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-spectra-photons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.9: The spectrum of solar radiation above the atmosphere (AM0) and a typical spectrum at ground level (AM1.5). Spectral photon irradiance for the range 250 to 900 nm.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Above, we used the word <em>light</em> with its everyday meaning. Its technical definition is of radiation visible to humans. Ultraviolet, visible and infrared radiation (taken together are called in meteorolgy <em>shortwave radiation</em>) are components of solar radiation.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -624,7 +637,7 @@ Note
 <p>Radiation from the sun reaches the Earth’s surface in about eight minutes (<span class="math inline">\(t\)</span> = time, <span class="math inline">\(r_0\)</span> = distance sun to earth, <span class="math inline">\(c\)</span> = velocity of light in vacuum): <span class="math display">\[t = \frac{r_0}{c} \approx \frac{150 \times 10^9 ~{\rm m}}{3 \times 10^8 ~\frac{\rm m}{\rm s}} = 500 ~{\rm s} = 8.3 ~{\rm min}\]</span>.</p>
 </div>
 </div>
-<p>The energy radiance (<span class="math inline">\(L\)</span>) of radiation emitted by the sun is similar, but not identical, to the emission spectrum of a <em>black body</em>. The solar spectrum has a fine structure of peaks and valleys arising from the atoms and molecules in the sun while black body emission is described by a smooth curve. A “match” based on the wavelength at which spectral <em>energy</em> radiance is at its maximum can be used as criterion to estimate the temperature of the sun’s surface. Obviously, we use the extraterrestrial spectrum for this match. We see in the AM0 curve in <a href="#fig-sun-spectra-energy" class="quarto-xref">Figure&nbsp;<span>4.8</span></a> that the wavelength at the maximum is near 500 nm. In reality the temperature of the sun surface is not uniform, and different sources mention as its average temperatures between 5800 K and 5500 K. Comparing the AM0 curve in <a href="#fig-sun-spectra-energy" class="quarto-xref">Figure&nbsp;<span>4.8</span></a> to the 5800 K curve in <a href="#fig-blackbody-emission" class="quarto-xref">Figure&nbsp;<span>4.10</span></a> the similary of their shapes is clear.</p>
+<p>The energy radiance (<span class="math inline">\(L\)</span>) of radiation emitted by the sun is similar, but not identical, to the emission spectrum of a <em>black body</em>. The solar spectrum has a fine structure of peaks and valleys arising from the atoms and molecules in the sun while black body emission is described by a smooth curve. A “match” based on the wavelength at which spectral <em>energy</em> radiance is at its maximum can be used as criterion to estimate the temperature of the sun’s surface. Obviously, we use the extraterrestrial spectrum for this match. We see in the AM0 curve in <a href="#fig-sun-spectra-energy" class="quarto-xref">Figure&nbsp;<span>4.11</span></a> that the wavelength at the maximum is near 500 nm. In reality the temperature of the sun surface is not uniform, and different sources mention as its average temperatures between 5800 K and 5500 K. Comparing the AM0 curve in <a href="#fig-sun-spectra-energy" class="quarto-xref">Figure&nbsp;<span>4.11</span></a> to the 5800 K curve in <a href="#fig-blackbody-emission" class="quarto-xref">Figure&nbsp;<span>4.7</span></a> the similary of their shapes is clear.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-blackbody-emission" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -633,16 +646,16 @@ Note
 <img src="light-environment-terrestrial_files/figure-html/fig-blackbody-emission-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blackbody-emission-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.10: Radiance spectra for black bodies at three different temperatures; 5800 K (blue), 5000 K (orange) and 3700 K (red).
+Figure&nbsp;4.7: Radiance spectra for black bodies at three different temperatures; 5800 K (blue), 5000 K (orange) and 3700 K (red).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Planck’s law describes black body emission at temperature <span class="math inline">\(T\)</span> (<a href="#fig-blackbody-emission" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>), expressed as absolute temperature measured in degrees Kelvin (K):</p>
+<p>Planck’s law describes black body emission at temperature <span class="math inline">\(T\)</span> (<a href="#fig-blackbody-emission" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>), expressed as absolute temperature measured in degrees Kelvin (K):</p>
 <p><span class="math display">\[L_s(\lambda,T) = \frac{2hc^2}{\lambda^5}\cdot\frac{1}{\mathrm{e}^{(hc/k_\mathrm{B}T\lambda)}-1}\]</span></p>
 <p>with Boltzmann’s constant <span class="math inline">\(k_\mathrm{B}=1.381\times 10^{-23}\)</span> .</p>
-<p>The “equivalent temperature” of a black body is given by Wien’s displacement law (<a href="#fig-wein-wl" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>), which gives the wavelength at which the radiative energy emitted by a black body is at its maximum as a function of its absolute temperature.</p>
+<p>The “equivalent temperature” of a black body is given by Wien’s displacement law (<a href="#fig-wein-wl" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>), which gives the wavelength at which the radiative energy emitted by a black body is at its maximum as a function of its absolute temperature.</p>
 <p><span class="math display">\[\lambda_\mathrm{max} \cdot T = 2.898 \times 10^6 \,{\rm nm\,K}\]</span></p>
 <div class="cell">
 <div class="cell-output-display">
@@ -652,7 +665,7 @@ Figure&nbsp;4.10: Radiance spectra for black bodies at three different temperatu
 <img src="light-environment-terrestrial_files/figure-html/fig-wein-wl-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wein-wl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.11: The peak wavelength of radiation emission by a black body as a function of its absolute (surface) temperature. The approximate temperature of the sun <span class="math inline">\(T_\mathrm{sun} \approx 5800\,\mathrm{K}\)</span> is highlighted by a yellow-filled circle.
+Figure&nbsp;4.8: The peak wavelength of radiation emission by a black body as a function of its absolute (surface) temperature. The approximate temperature of the sun <span class="math inline">\(T_\mathrm{sun} \approx 5800\,\mathrm{K}\)</span> is highlighted by a yellow-filled circle.
 </figcaption>
 </figure>
 </div>
@@ -680,7 +693,11 @@ Tip
 <img src="light-environment-terrestrial_files/figure-html/fig-sun-black-body-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-black-body-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<<<<<<< HEAD
 Figure&nbsp;4.12: The extraterrestrial solar spectrum compared to black body emission. The black body emission spectrum has been scaled to match the energy irradiance of the solar spectrum at the top of the atmosphere (AM0) within the range of wavelengths shown.
+=======
+Figure&nbsp;4.9: The extraterrestrial solar spectrum compared to black body emission. The black body emission spectrum has been scaled to match the energy irradiance of the solar spectrum at the top of the atmosphere (AM0) within the range of wavelengths shown.
+>>>>>>> from.laptop
 </figcaption>
 </figure>
 </div>
@@ -751,6 +768,55 @@ Figure&nbsp;4.12: The extraterrestrial solar spectrum compared to black body emi
 </table>
 </div>
 </div>
+</section>
+<section id="solar-radiation-at-ground-level" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="solar-radiation-at-ground-level"><span class="header-section-number">4.1.4</span> Solar radiation at ground level</h3>
+<p>Above, we used the word <em>light</em> with its everyday meaning. Its technical definition is of radiation visible to humans. Ultraviolet, visible and infrared radiation (taken together are called in meteorolgy <em>shortwave radiation</em>) are components of solar radiation.</p>
+<p>Before reaching the Earth’s surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to <em>AM1</em> when the sun is at the zenith, i.e., <em>AM1</em> stands for one atmosphere thickness and <em>AM1.5</em> indicates that the length of the path through the atmosphere is 1.5 times that when the sun is at the zenith.</p>
+<p>The length of the path through the atmosphere is, in reality, not exactly the length computed by trigonometry, but close to it. An empirical formula can be used as an approximation <span class="citation" data-cites="Kasten1989">(<a href="references.html#ref-Kasten1989" role="doc-biblioref">Kasten and Young 1989</a>)</span> to compute AM values from the elevation angle (<span class="math inline">\(h\)</span>) (<a href="#fig-AM-h" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-AM-h" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-AM-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-AM-h-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-AM-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.10: Plot of the empirical relationship between sun elevation (<span class="math inline">\(h\)</span>) or zenith anglr (<span class="math inline">\(\theta\)</span>) and “equivalent” atmosphere thickness traversed by solar radiation between outer space and the Earth’s surface (at sea level). AM1 is indicated by the horizontal dotted line.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Light when travelling through the atmosphere interacts with the gases and particles composing it. The light is attenuated and scattered. Different wavelengths are differently affected by these processes, giving us a blue sky and warmer coloured direct sunlight. In other words, the daylight spectrum depends on the position of the sun in the sky, and on the composition of the atmosphere along this path (<a href="#fig-sun-spectra-energy" class="quarto-xref">Figure&nbsp;<span>4.11</span></a> and <a href="#fig-sun-spectra-photons" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>). In addition to molecular absorption and scattering, aerosols, both liquid like water and solid like ice and dust, interact with light.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sun-spectra-energy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sun-spectra-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-sun-spectra-energy-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-spectra-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.11: The spectrum of solar radiation above the atmosphere (AM0) and a typical spectrum at ground level (AM1.5). Spectral energy irradiance for the wavelength range called <em>shortwave radiation</em> in meteorology.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sun-spectra-photons" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sun-spectra-photons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-sun-spectra-photons-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-spectra-photons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.12: The spectrum of solar radiation above the atmosphere (AM0) and a typical spectrum at ground level (AM1.5). Spectral photon irradiance for the range 250 to 900 nm.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>The extraterrestrial solar spectrum differs from that at ground level due to the absorption of radiation by the atmosphere, because the absorption peaks of water, and other components of the atmosphere, cause corresponding valleys to appear in the solar spectrum at ground level. For example, estimates from measurements of the total global irradiance at Helmholtz Zentrum München (11.60<span class="math inline">\({\mathrm{^{\circ}}}\)</span> E, 48.22<span class="math inline">\({\mathrm{^{\circ}}}\)</span> N, 490 m above sea level) on two sunny days (17<span class="math inline">\(^{\rm th}\)</span> April 1996, sun zenith angle of 38<span class="math inline">\(^\circ\)</span> and 27<span class="math inline">\(^{\rm th}\)</span> May 2005, 27<span class="math inline">\(^\circ\)</span>) result in about 5% for wavelengths below 400 nm, about 45% from 400 to 700 nm, and about 50% above 700 nm. In relation to plant research, only the coarse structure of peaks and valleys is relevant, because absorption spectra of pigments <em>in vivo</em> have broad peaks and valleys. However, the solar spectrum has a much finer structure, due to emission and absorption lines of elements, which is not observable with the spectroradiometers normally used in plant research.</p>
 <p>At the Earth’s surface, the incident radiation or <span data-acronym-label="global:rad" data-acronym-form="singular+short"><em>global:rad</em></span> has two components, <span data-acronym-label="direct:rad" data-acronym-form="singular+short">direct:rad</span> and <span data-acronym-label="diffuse:rad" data-acronym-form="singular+short">diffuse:rad</span>. Direct radiation is radiation travelling directly from the sun, while diffuse radiation is that scattered by the atmosphere. Diffuse radiation is what gives the blue colour to the sky and white colour to clouds. The relative contribution of direct and diffuse radiation to global radiation varies with wavelength and weather conditions. The contribution of diffuse radiation is larger in the UV region, and in the presence of clouds (Figures <a href="#fig:sky:photos" data-reference-type="ref" data-reference="fig:sky:photos">[fig:sky:photos]</a> and <a href="#fig:diffuse:UV" data-reference-type="ref" data-reference="fig:diffuse:UV">[fig:diffuse:UV]</a>).</p>
 <div class="quarto-figure quarto-figure-center">
@@ -760,6 +826,7 @@ Figure&nbsp;4.12: The extraterrestrial solar spectrum compared to black body emi
 </figure>
 </div>
 <div class="cell">
+<<<<<<< HEAD
 <div class="cell-output-display">
 <div id="fig-diffuse-TUV" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -772,6 +839,25 @@ Figure&nbsp;4.13: Fraction of total radiation that is diffuse under a clear sky.
 </figure>
 </div>
 </div>
+=======
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## PAR</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>clear_sky_PAR_diff_frac.fun <span class="ot">&lt;-</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">readRDS</span>(<span class="st">"light-environment-data/spline-fun.RDS"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>PAR.tb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">SEA =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">90</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>PAR_diffuse.fig <span class="ot">&lt;-</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(PAR.tb, <span class="fu">aes</span>(SEA)) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> clear_sky_PAR_diff_frac.fun, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">n =</span> <span class="dv">201</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">90</span>), <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Solar elevation angle (degrees)"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">90</span>)) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(<span class="st">"PAR diffuse fraction, "</span><span class="sc">*</span>Q[s] <span class="sc">/</span> Q[t])) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expand_limits</span>(<span class="at">y =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> from.laptop
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -808,13 +894,21 @@ Figure&nbsp;4.13: Fraction of total radiation that is diffuse under a clear sky.
 <img src="light-environment-terrestrial_files/figure-html/fig-UVB-Erlangen-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVB-Erlangen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<<<<<<< HEAD
 Figure&nbsp;4.14: Seasonal variation in daily UV-B energy exposure Erlangen, Germany (<span class="math inline">\(54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}\)</span>, 280 m asl). Top: daily UV-B energy exposure; bottom: UV-B:PhR daily-energy-exposures ratio. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+=======
+Figure&nbsp;4.13: Seasonal variation in daily UV-B energy exposure Erlangen, Germany (<span class="math inline">\(54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}\)</span>, 280 m asl). Top: daily UV-B energy exposure; bottom: UV-B:PhR daily-energy-exposures ratio. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+>>>>>>> from.laptop
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <p>irradiance increases with elevation in mountains and with decreasing latitude <a href="#fig-UVB-latitude" class="quarto-xref">Figure&nbsp;<span>4.15</span></a> and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in these mountains <span class="citation" data-cites="Flenley1992">(<a href="references.html#ref-Flenley1992" role="doc-biblioref">Flenley 1992</a>)</span>.</p>
+=======
+<p>irradiance increases with elevation in mountains and with decreasing latitude <a href="#fig-UVB-latitude" class="quarto-xref">Figure&nbsp;<span>4.14</span></a> and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in these mountains <span class="citation" data-cites="Flenley1992">(<a href="references.html#ref-Flenley1992" role="doc-biblioref">Flenley 1992</a>)</span>.</p>
+>>>>>>> from.laptop
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-UVB-latitude" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -823,7 +917,11 @@ Figure&nbsp;4.14: Seasonal variation in daily UV-B energy exposure Erlangen, Ger
 <img src="light-environment-terrestrial_files/figure-html/fig-UVB-latitude-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVB-latitude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<<<<<<< HEAD
 Figure&nbsp;4.15: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+=======
+Figure&nbsp;4.14: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+>>>>>>> from.laptop
 </figcaption>
 </figure>
 </div>
