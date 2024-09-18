@@ -31,11 +31,14 @@ abstract: |
 ```{r, include=FALSE, message=FALSE}
 library(dplyr)
 library(photobiology)
+library(photobiologyWavebands)
 library(photobiologyInOut)
 library(photobiologySun)
 library(ggspectra)
 library(ggpp)
 library(lubridate)
+
+theme_set(theme_minimal() + theme(legend.position = "top"))
 ```
 
 ::: {.hidden}
@@ -287,6 +290,11 @@ ggplot(sun_elevation.tb, aes(x = when, y = where, label = plots)) +
         panel.grid.major = element_blank())
 ```
 
+Three images from fig 3.6 in Graedel and Crutzen, 1993. Scanned. Have to be redrawn.
+
+![Equinox](images/Earth-equinox.png){width=30%}
+![N hemisphere summer](images/Earth-N-summer.png){width=30%}
+![S hemisphere summer](images/Earth-S-summer.png){width=30%}
 
 ***Add links to previous chapter***
 
@@ -299,7 +307,10 @@ In outer space, in vacuum, no scattering takes place as the light travels, and b
 ::: callout-note
 # Geometric calculation
 
-The spectral irradiance of the sun $\irr[s](\lambda)$ can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table [\[tab:Phys:Quants\]](#tab:Phys:Quants){reference-type="ref" reference="tab:Phys:Quants"}. The intensity of the sun $\intensity[s](\lambda)$ is given by the radiance $\radiance[s](\lambda)$ multiplied by the apparent sun surface (a non-tilted disk of radius $r_s=7\times 10^5$ km). To calculate the decreased solar irradiance at the top of the Earth's atmosphere, the distance of the sun to the Earth ($r_0=150\times 10^6$ km) has to be taken into account applying the inverse square law of irradiance of equation ([\[equ_r2law\]](#equ_r2law){reference-type="ref" reference="equ_r2law"}). Thus, the extraterrestrial solar irradiance is $$\irr[s](\lambda)=\radiance[s](\lambda)\cdot\frac{\pi r_s^2}{r_0^2}\label{equ_extraterrestrial}$$ Remembering the solid angle of equation ([\[equ_solidangle\]](#equ_solidangle){reference-type="ref" reference="equ_solidangle"}), the right multiplication factor represents the solid angle of the sun's disk as seen from the Earth's surface ($\approx 6.8\times 10^{-5}$ sr). 
+The spectral irradiance of the sun $\irr[s](\lambda)$ can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table [\[tab:Phys:Quants\]](#tab:Phys:Quants){reference-type="ref" reference="tab:Phys:Quants"}. The intensity of the sun $\intensity[s](\lambda)$ is given by the radiance $\radiance[s](\lambda)$ multiplied by the apparent sun surface (a non-tilted disk of radius $r_s=7\times 10^5$ km). To calculate the decreased solar irradiance at the top of the Earth's atmosphere, the distance of the sun to the Earth ($r_0=150\times 10^6$ km) has to be taken into account applying the inverse square law of irradiance of equation ([\[equ_r2law\]](#equ_r2law){reference-type="ref" reference="equ_r2law"}). Thus, the extraterrestrial solar irradiance is 
+
+$$\irr[s](\lambda)=\radiance[s](\lambda)\cdot\frac{\pi r_s^2}{r_0^2}$$ 
+Remembering the solid angle of equation ([\[equ_solidangle\]](#equ_solidangle){reference-type="ref" reference="equ_solidangle"}), the right multiplication factor represents the solid angle of the sun's disk as seen from the Earth's surface ($\approx 6.8\times 10^{-5}$ sr). 
 :::
 
 At the time scales relevant to plants and humans, the distance between the Sun and the Earth varies little, as well as the emission from the surface of the sun. Thus, we can use a "solar constant" as a useful and nearly perfect approximation. The solar "constant", the irradiance at the top of the atmosphere, varies between $1\,361$ and $1\,362~\mathrm{W m^{-2}}$ due to changes in solar activity. In addition to the irradiance, the shape of the solar spectrum at the top of the atmosphere varies very little in time, and is usually assumed constant.
@@ -368,8 +379,8 @@ ggplot(data=data.frame(Tabs = c(2000,7000)), aes(x = Tabs)) +
   theme_minimal()
 ```
 
-::: callout-waening
-The concept of "colour temperature" used for describing the emission of lamps used for illumination and more generaly in photography differs in that it takes into account human colour vision when determining the match between the black body emission spectrum and the spectrum of an arbitrary light source. The coordinated colour temperature (CCT) for the AM1.5 solar spectrum is `r round(photobiologyInOut::spct_CCT(photobiologySun::sun_reference.mspct$ASTM.G173.global))` K. 
+::: callout-caution
+The concept of "colour temperature" used for describing the emission of lamps used for illumination and more generaly in photography differs in that it takes into account human colour vision when determining the match between the black body emission spectrum and the spectrum of an arbitrary light source. The coordinated colour temperature (CCT) for the AM1.5 solar spectrum is `r round(photobiologyInOut::spct_CCT(photobiologySun::sun_reference.mspct$ASTM.G173.global))` K and for the AM0 spectrum is `r round(photobiologyInOut::spct_CCT(photobiologySun::sun_reference.mspct$WMO.Wehrli.AM0))` K. 
 :::
 
 The spectral irradiance of the sun $\irr[s](\lambda)$ can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table [\[tab:Phys:Quants\]](#tab:Phys:Quants){reference-type="ref" reference="tab:Phys:Quants"}. The intensity of the sun $\intensity[s](\lambda)$ is given by the radiance $\radiance[s](\lambda)$ multiplied by the apparent sun surface (a non-tilted disk of radius $r_s=7\times 10^5$ km). To calculate the decreased solar irradiance at the moment of reaching the Earth's atmosphere, the distance of the sun to the Earth ($r_0=150\times 10^6$ km) has to be taken into account due to the inverse square law of irradiance of equation ([\[equ_r2law\]](#equ_r2law){reference-type="ref" reference="equ_r2law"}). Thus, the extraterrestrial solar irradiance is 
@@ -420,17 +431,28 @@ ggplot(plot.spectra, unit.out = "energy") +
 
 The total solar irradiance covers a wide range of wavelengths. Using some of the 'colours' introduced in table [\[tab:Waverange\]](#tab:Waverange){reference-type="ref" reference="tab:Waverange"}, table [\[tab_sun\]](#tab_sun){reference-type="ref" reference="tab_sun"} lists the irradiance and fraction of $\irr[s]$ of different wavelength intervals.
 
+```{r, include=FALSE}
+AM0_e_irrads <-
+  round(e_irrad(sun.spct, w.band = c(UV_bands("CIE"), list(PhR()), IR_bands("CIE"))), 2)
+AM0_e_irrad_tot <- sum(AM0_e_irrads)
+AM0_e_irrads
+AM0_e_irrad_tot
+signif(AM0_e_irrads / AM0_e_irrad_tot * 100, 3)
+```
+
+
 ::: table*
 ::: center
-|     Colour     | Wavelength (nm) | Irradiance () | Fraction of $\irr[s]$ (%) |
+| Waveband       | Wavelength $\lambda$ (nm) | Irradiance $\irr$  ($W m^{-2}$) | Irradiance $\irr$ (%) |
 |:--------------:|:---------------:|:-------------:|:-------------------------:|
-|                |   100 -- 280    |       7       |            0.5            |
-|                |   280 -- 315    |      17       |            1.2            |
-|                |   315 -- 400    |      84       |            6.1            |
-|      VIS       |   400 -- 700    |      531      |           38.9            |
-|    near IR     |  700 -- 1000   |      309      |           22.6            |
-| mid and far IR |    $>$ 1000    |      419      |           30.7            |
-|     total      |                 |     1367     |           100.0           |
+| UV-C           |   100 -- 280    |       7       |            0.5            |
+| UV-B           |   280 -- 315    |      17       |            1.3            |
+| UV-A2          |   315 -- 340    |      21       |            1.6            |
+| UV-A1          |   340 -- 400    |      63       |            4.7            |
+| PhR            |   400 -- 700    |      531      |           39.6            |
+| IR-A (CIE)     |  700 -- 1400    |      517      |           38.6            |
+| IR-B (CIE)     |  1400 -- 3000   |      184      |           13.7            |
+| **TOTAL**      |                 |  **1339**     |        **100.0**          |
 :::
 :::
 
@@ -438,9 +460,9 @@ The total solar irradiance covers a wide range of wavelengths. Using some of the
 
 Above, we used the word *light* with its everyday meaning. Its technical definition is of radiation visible to humans. Ultraviolet, visible and infrared radiation (taken together are called in meteorolgy *shortwave radiation*) are components of solar radiation.
 
-Before reaching the Earth's surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to *AM1* when the sun is at the zenith, i.e., *AM1* stands for one atmosphere thickness and *AM1.5* indicates that the length of the path through the atmosphere is 1.5 times that when the sun is at the zenith.
+Before reaching the Earth's surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to *AM0* for above the atmosphere, *AM1* when the sun is at the zenith, i.e., one atmosphere thickness and *AM1.5* when the length of the air mass traversed is 1.5 times that when the sun is at the zenith.
 
-The length of the path through the atmosphere is, in reality, not exactly the length computed by trigonometry, but close to it. An empirical formula can be used as an approximation [@Kasten1989] to compute AM values from the elevation angle ($h$) (@fig-AM-h).  
+The air mass traversed is, in reality, not exactly proportional to the distance computed by trigonometry, but not far from it. An empirical formula [@Kasten1989] can be used as a better approximation to the computation of AM values from the elevation angle ($h$) (@fig-AM-h).  
 
 ```{r, echo=FALSE}
 #| label: fig-AM-h
@@ -477,9 +499,9 @@ ggplot(clip_wl(sun_reference.mspct[c("WMO.Wehrli.AM0",
   scale_x_wl_continuous() + 
   scale_y_s.e.irrad_continuous(expand=c(0,0))  +
   annotate(geom= "text",
-           x =c(750,950,1150,1450,1900),
-           y =c(0.1,0.1,0.7,0.5,0.3),
-           label=c("O[2]","H[2]*O","H[2]*O","H[2]*O","H[2]*O~CO[2]"),
+           x =c(245, 750,950,1150,1450,1900),
+           y =c(0.4, 0.08,0.08,0.7,0.43,0.27),
+           label=c("O[3]","O[2]","H[2]*O","H[2]*O","H[2]*O","H[2]*O~CO[2]"),
            parse= TRUE) +
   theme_minimal() +
   theme(legend.position= "top")
@@ -505,46 +527,208 @@ ggplot(clip_wl(sun_reference.mspct[c("WMO.Wehrli.AM0",
 ```
 
 
-The extraterrestrial solar spectrum differs from that at ground level due to the absorption of radiation by the atmosphere, because the absorption peaks of water, and other components of the atmosphere, cause corresponding valleys to appear in the solar spectrum at ground level. For example, estimates from measurements of the total global irradiance at Helmholtz Zentrum München (11.60$\degree$ E, 48.22$\degree$ N, 490 m above sea level) on two sunny days (17$^{\rm th}$ April 1996, sun zenith angle of 38$^\circ$ and 27$^{\rm th}$ May 2005, 27$^\circ$) result in about 5% for wavelengths below 400 nm, about 45% from 400 to 700 nm, and about 50% above 700 nm. In relation to plant research, only the coarse structure of peaks and valleys is relevant, because absorption spectra of pigments *in vivo* have broad peaks and valleys. However, the solar spectrum has a much finer structure, due to emission and absorption lines of elements, which is not observable with the spectroradiometers normally used in plant research.
+The extraterrestrial solar spectrum differs from that at ground level due to the absorption of radiation by the atmosphere, because the absorption peaks of water, and other components of the atmosphere, cause corresponding valleys to appear in the solar spectrum at ground level. The solar spectrum has a much finer structure, due to emission and absorption lines of elements, this fine structure is not observable with the spectroradiometers normally used in plant research. For plant research, finr structure of peaks and valleys is considered irrelevant because plant pigments *in vivo* have broader peaks and valleys in their spectra.
 
-At the Earth's surface, the incident radiation or _global radiation_ has two components, _direct radiation_ and _diffuse radiation_. Direct radiation is radiation travelling directly from the sun, while diffuse radiation is that scattered by the atmosphere. Diffuse radiation is what gives the blue colour to the sky and white colour to clouds. The relative contribution of direct and diffuse radiation to global radiation varies with wavelength and weather conditions. The contribution of diffuse radiation is more in the UV region, and in the presence of clouds (Figures [\[fig:sky:photos\]](#fig:sky:photos){reference-type="ref" reference="fig:sky:photos"} and [\[fig:diffuse:UV\]](#fig:diffuse:UV){reference-type="ref" reference="fig:diffuse:UV"}).
+Not only total irradiance, but also the wavelength distribution and the diffuse fraction of the solar spectrum changes with the seasons of the year and time of day. This changes are in large part explained by the change in sun elevation. In what follows we describe these changes as a function of solar elevation. The increasing air mass traversed with decreasing sun elevation affects the shape of the spectrum, by stronger attenuation of the shorter wavelengths. An increased air mass also increases scattering in the atmosphere.
+
+```{r, include=FALSE}
+# prepare data for upcoming figures
+
+sun_elevation.mspct <- subset2mspct(sun_elevation.spct, drop.idx = FALSE)
+
+# each spectrum contains three columns with spectral data that we separate
+sun_elevation_tot.mspct <- source_mspct()
+sun_elevation_diff.mspct <- source_mspct()
+sun_elevation_dir.mspct <- source_mspct()
+for (n in names(sun_elevation.mspct)) {
+  sun_elevation_tot.mspct[[n]] <-
+    sun_elevation.mspct[[n]][ , c("w.length", "s.e.irrad")]
+  sun_elevation_diff.mspct[[n]] <-
+    with(sun_elevation.mspct[[n]], 
+         source_spct(w.length = w.length, 
+                     s.e.irrad = s.e.irrad.diff.down))
+  sun_elevation_dir.mspct[[n]] <-
+    with(sun_elevation.mspct[[n]], 
+         source_spct(w.length = w.length, 
+                     s.e.irrad = s.e.irrad.dir))
+}
+
+wavebands <- c(list(PAR = PAR()), Plant_bands("sensory"))
+wbands_tot.tb <- 
+  q_irrad(sun_elevation_tot.mspct, wavebands, scale.factor = 1e6)
+wbands_dir.tb <- 
+  q_irrad(sun_elevation_dir.mspct, wavebands, scale.factor = 1e6)
+wbands_diff.tb <- 
+  q_irrad(sun_elevation_diff.mspct, wavebands, scale.factor = 1e6)
+
+wbands.tb <-
+  data.frame(
+    SZA = as.numeric(gsub("tuv-", "", wbands_tot.tb$spct.idx)),
+    SEA = 90 - as.numeric(gsub("tuv-", "", wbands_tot.tb$spct.idx))
+  )
+
+for (col in setdiff(colnames(wbands_tot.tb), "spct.idx")) {
+  wbands.tb[[paste(col, "tot", sep = ".")]] <- wbands_tot.tb[[col]]
+  wbands.tb[[paste(col, "dir", sep = ".")]] <- wbands_dir.tb[[col]]
+  wbands.tb[[paste(col, "diff", sep = ".")]] <- wbands_diff.tb[[col]]
+  wbands.tb[[paste(col, "diff_fr", sep = ".")]] <- 
+    wbands_diff.tb[[col]] / wbands_tot.tb[[col]]
+}
+
+# shorten column names
+colnames(wbands.tb) <- 
+  gsub("Q_]|Q_|\\.ISO|\\.CIE|\\.Sellaro|\\.Smith20", "", colnames(wbands.tb))
+```
+
+A figure of spectral irradiance is difficult to read as both the shape of the curve and the maximum spectral irradiance change in parallel [@fig-spectra-sun-elevatio].
+
+```{r, echo=FALSE}
+#| label: fig-spectra-sun-elevation
+#| fig-cap: Change in spectral irradiance with sun elevation angle. Based on simulations with the TUV model for an ozone column of 300 DU under clear sky.
+
+five_angles.mspct <- sun_elevation.mspct[c("tuv-00", "tuv-30", "tuv-45", "tuv-60", "tuv-75", "tuv-85")]
+names(five_angles.mspct) <- 
+  as.character(90L - as.integer(gsub("^tuv-", "", names(five_angles.mspct))))
+
+autoplot(five_angles.mspct, 
+         unit.out = "photon", 
+         annotations = c("-", "peaks"),
+         w.band = Plant_bands("CIE")) %+%
+  labs(linetype = "Sun elevation\n(degrees)")
+```
+If we rescale the curves to equal PAR irradiance the change in shape is easier to observe [@fig-uv-spectra-sun-elevation-scaled and @fig-nir-spectra-sun-elevation-scaled].
+
+```{r, echo=FALSE}
+#| label: fig-uv-spectra-sun-elevation-scaled
+#| fig-cap: Change in scaled spectral irradiance with sun elevation angle. UV region of the spectrum. Based on simulations with the TUV model for an ozone column of 300 DU under clear sky. Spectra scaled to PAR = $1\,000\,\mu mol\,s^{-1}\,m^{-2}$.
+
+autoplot(fscale(five_angles.mspct, f = q_irrad, w.band = PAR(), target = 1e-3),
+         range = UV(),
+         unit.out = "photon", 
+         annotations = c("-", "peaks"),
+         w.band = Plant_bands("CIE")) %+%
+  labs(linetype = "Sun elevation\n(degrees)")
+```
+```{r, echo=FALSE}
+#| label: fig-nir-spectra-sun-elevation-scaled
+#| fig-cap: Change in scaled spectral irradiance with sun elevation angle. Red-FR region of the spectrum. Based on simulations with the TUV model for an ozone column of 300 DU under clear sky. Spectra scaled to PAR = $1\,000\,\mu mol\,s^{-1}\,m^{-2}$.
+
+autoplot(fscale(five_angles.mspct, f = q_irrad, w.band = PAR(), target = 1e-3),
+         range = c(600,700),
+         unit.out = "photon", 
+         annotations = c("-", "peaks"),
+         w.band = Plant_bands("CIE")) %+%
+  labs(linetype = "Sun elevation\n(degrees)")
+```
+Plotting the normalised photon irradiance for different wavebands [@fig-wbands-elevation-normalized] shows that the daily course of UV-B photon irradiance is different than that for other bands, even the adjacent UV-A2. UV-B irradiance decreases faster with decreasing sun elevation ($h$).
+
+```{r, echo=FALSE}
+#| label: fig-wbands-elevation-normalized
+#| fig-cap: Change in irradiance with sun elevation angle for different regions of the spectrum. PAR. orange, UVA-1. violet, UV-A2. purple, and UV-B. black. Based on simulations with the TUV model for an ozone column of 300 DU.
+
+ggplot(wbands.tb, aes(x = SEA)) +
+  geom_line(aes(y = PAR.tot / max(PAR.tot)), colour = "orange") +
+  geom_line(aes(y = UVA1.tot / max(UVA1.tot)), colour = "violet") +
+  geom_line(aes(y = UVA2.tot / max(UVA2.tot)), colour = "purple") +
+  geom_line(aes(y = UVB.tot / max(UVB.tot)), colour = "black") +
+  scale_x_continuous(name = "Sun elevation angle (degrees)",
+                     breaks = c(0, 30, 60, 90),
+                     sec.axis = sec_axis(name = "Sun zenith angle (degrees)",
+                                         transform = function(x) {90 - x},
+                                         breaks = c(0, 30, 60, 90))) +
+  scale_y_continuous(name = expression("Photon irradiance, "*italic(Q)~~("rel. units"))) +
+    expand_limits(y = 0)
+```
+
+
+At the Earth's surface, the incident radiation or _global radiation_ has two distinct components, _direct radiation_ and _diffuse radiation_. Direct radiation is radiation travelling directly from the sun, while diffuse radiation is that scattered by the atmosphere. Diffuse radiation is what gives the blue colour to the sky and white colour to clouds. The relative contribution of direct and diffuse radiation to global radiation varies with wavelength and weather conditions. The contribution of diffuse radiation is more in the UV region, and in the presence of clouds (Figures [\[fig:sky:photos\]](#fig:sky:photos){reference-type="ref" reference="fig:sky:photos"} and [\[fig:diffuse:UV\]](#fig:diffuse:UV){reference-type="ref" reference="fig:diffuse:UV"}).
 
 ![image](photos/Lasse_sky_composite.jpg)
 
+```{r, include=FALSE}
+# create spline functions
+
+# We fit splines to the diffuse fraction obtaining functions 
+# that can be used to obtain by interpolation estimates for 
+# any solar elevation.
+
+spl_funs.ls <- list()
+diff_fr_cols <- grep("diff[_]fr", colnames(wbands.tb), value = TRUE)
+
+for (col in diff_fr_cols) {
+  spl_funs.ls[[col]] <- splinefun(wbands.tb[["SEA"]], wbands.tb[[col]])
+}
+
+```
+
 ```{r, echo=FALSE}
 #| label: fig-diffuse-TUV
-#| fig-cap: Fraction of total radiation that is diffuse under a clear sky. Based on simulations with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300? DU. A. Dependency on sun elevation of the diffuse fraction of PAR, assuming a low amount aerosols. B. Dependency on sun elevation of the diffuse fraction of selected wavelengths, assuming a low amount aerosols.
+#| fig-cap: Fraction of total radiation that is diffuse under a clear sky as a function of sun elevation angle. PAR, orange dashed; Red, red; Green, green; Blue, blue; UVA-1, violet; UV-A2, purple; UV-B, black. Based on simulations with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300 DU, assuming a low optical density of aerosols.
 
-## PAR
 
-clear_sky_PAR_diff_frac.fun <-
-  readRDS("light-environment-data/spline-fun.RDS")
-
-PAR.tb <- data.frame(SEA = -10:90)
-
-PAR_diffuse.fig <-
-  ggplot(PAR.tb, aes(SEA)) +
-  stat_function(fun = clear_sky_PAR_diff_frac.fun, 
-                n = 201,
-                xlim = c(-10, 90), colour = "black") +
+ggplot(wbands.tb, aes(SEA)) +
+  geom_hline(yintercept = c(0, 1), linetype = "dashed") +
+  stat_function(fun = spl_funs.ls[["UVB.diff_fr"]], xlim = c(-10, 90), colour = "black") +
+  stat_function(fun = spl_funs.ls[["UVA2.diff_fr"]], xlim = c(-10, 90), colour = "purple") +
+  stat_function(fun = spl_funs.ls[["UVA1.diff_fr"]], xlim = c(-10, 90), colour = "violet") +
+  stat_function(fun = spl_funs.ls[["Blue.diff_fr"]], xlim = c(-10, 90), colour = "blue") +
+  stat_function(fun = spl_funs.ls[["Green.diff_fr"]], xlim = c(-10, 90), colour = "green") +
+  stat_function(fun = spl_funs.ls[["Red.diff_fr"]], xlim = c(-10, 90), colour = "red") +
+  stat_function(fun = spl_funs.ls[["PAR.diff_fr"]], xlim = c(-10, 90), colour = "orange",
+                linetype = "dashed") +
   scale_x_continuous(name = "Solar elevation angle (degrees)",
                      breaks = c(-10, 0, 15, 30, 45, 60, 75, 90)) +
-  labs(y = expression("PAR diffuse fraction, "*Q[s] / Q[t])) +
-  expand_limits(y = 0) +
-  theme_minimal()
-PAR_diffuse.fig
+  scale_y_continuous(name = expression("Diffuse fraction, "*Q[s] / Q[t]~~(""/1)),
+       sec.axis = sec_axis(name = expression("Direct fraction, "*Q[d] / Q[t]~~(""/1)),
+       transform = function(x) {1 - x} )) +
+  expand_limits(y = 0)
 ```
 
 ![image](figures/fig_diffuse_TUV.pdf){width="0.8\\myfigwidth"}
 
-Not only total irradiance, but also the wavelength distribution of the solar spectrum changes with the seasons of the year and time of day. The spectral wavelength distribution is also changed by the amount of -absorbing ozone in the atmosphere, known as the ozone column. Figure [\[fig:solar:spectra:one:day\]](#fig:solar:spectra:one:day){reference-type="ref" reference="fig:solar:spectra:one:day"} shows how spectral irradiance changes throughout one day. When the whole spectrum is plotted using a linear scale the effect of ozone depletion is not visible, however, if we plot only the region (Figure [\[fig:solarUV:spectrum:noon\]](#fig:solarUV:spectrum:noon){reference-type="ref" reference="fig:solarUV:spectrum:noon"}) or use a logarithmic scale (Figure [\[fig:solar:spectra:one:day:log\]](#fig:solar:spectra:one:day:log){reference-type="ref" reference="fig:solar:spectra:one:day:log"}), the effect becomes clearly visible. In addition, on a log scale, it is clear that the relative effect of ozone depletion on the spectral irradiance at a given wavelength increases with decreasing wavelength.
+The spectral wavelength distribution is also changed by the amount of absorbing ozone in the atmosphere, known as the ozone column [@fig-UVB-PAR-ozone].
 
-![image](figures/fig000_norm_AMs.pdf){width="0.8\\myfigwidth"}
+```{r, echo=FALSE}
+#| label: fig-uv-spectra-ozone-scaled
+#| fig-cap: Change in scaled spectral irradiance with sun elevation angle. UV-B and UV-A2 regions of the spectrum. Spectra scaled to PAR = $1\,000\,\mu mol\,s^{-1}\,m^{-2}$. Based on simulations with libradtran for 300 DU and 240 DU, a 20% depletion at Jokioinen, Finland. Data from Anders Lindfors.
+
+six_ozone.mspct <- subset2mspct(sun_hourly_ozone.spct)
+six_ozone.mspct <- six_ozone.mspct[grepl("-10$", names(six_ozone.mspct))]
+
+autoplot(fscale(six_ozone.mspct, f = q_irrad, w.band = PAR(), target = 1e-3),
+         range = c(NA, 340),
+         unit.out = "photon", 
+         annotations = c("-", "peaks"),
+         w.band = Plant_bands("CIE")) %+%
+  scale_linetype_manual(name = "Ozone column (DU)",
+                 breaks = c("normO3-10", "m20percO3-10"),
+                 labels = c("300", "240"),
+                 values = c("solid", "32"))
+```
 
 
-![image](figures/fig0_depl_norm_09UTC.pdf){width="0.8\\myfigwidth"}
+```{r, echo=FALSE}
+#| label: fig-UVB-PAR-ozone
+#| fig-cap: Daily time course of UV-B:PAR photon ratio under a clear sky, under normal and 20% depleted ozone column. Based on simulations with libradtran for 300 DU and 240 DU, a 20% depletion at Jokioinen, Finland. Data from Anders Lindfors.
 
-![image](figures/fig1_depl_norm_log_am.pdf){width="0.8\\myfigwidth"}
+sun_ozone_irrads <- q_irrad(sun_hourly_ozone.spct, w.band = Plant_bands("CIE"))
+sun_ozone_irrads$ozone <- factor(ifelse(grepl("^m20per", sun_ozone_irrads$spct.idx),
+                                 "240",
+                                 "300"),
+                                 levels = c("300", "240"))
+
+ggplot(sun_ozone_irrads, 
+       aes(when.measured + hours(2), `Q_]UVB.CIE` / Q_PAR * 1e3, linetype = ozone)) +
+  geom_line() +
+  expand_limits(y = 0) +
+  labs(x = "Time of day (hh:mm)",
+       y = expression("UV-B:PAR ratio "*(mmol~mol^{-1})),
+       linetype = "Ozone column (DU)")
+```
+
+Above we have ignored the effects of clouds and relied heavily on simulations. Next we will consider the effect of clouds and use as examples measurements at different time scales.
+
+Figure [] shows how spectral irradiance changes throughout one day. When the whole spectrum is plotted using a linear scale the effect of ozone depletion is not visible, however, if we plot only the region (Figure [\[fig:solarUV:spectrum:noon\]](#fig:solarUV:spectrum:noon){reference-type="ref" reference="fig:solarUV:spectrum:noon"}) the effect becomes clearly visible.
 
 Seasonal variation in irradiance has a larger relative amplitude than variation in (Figure [\[fig:diffuse.light\]](#fig:diffuse.light){reference-type="ref" reference="fig:diffuse.light"}). This causes a seasonal variation in the : ratio (Figure [\[fig:UVB:Erlangen\]](#fig:UVB:Erlangen){reference-type="ref" reference="fig:UVB:Erlangen"}). In addition to the regular seasonal variation, there is random variation as a result of changes in clouds (Figure [\[fig:UVB:Erlangen\]](#fig:UVB:Erlangen){reference-type="ref" reference="fig:UVB:Erlangen"}). Normal seasonal and spatial variation in can be sensed by plants, and could play a role in their adaptation to seasons and/or their position in the canopy.
 
