@@ -496,11 +496,9 @@ At the Earth's surface, the incident radiation or [*global:rad*]{acronym-label="
 
 ![image](photos/Lasse_sky_composite.jpg)
 
-```{r}
+```{r, echo=FALSE}
 #| label: fig-diffuse-TUV
-#| fig-cap: Fraction of total radiation that is diffuse under a clear sky. Based on simulations with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300? DU. A: Dependency on sun elevation of the diffuse fraction of PAR, assuming a low amount aerosols. A: Dependency on sun elevation of the diffuse fraction of PAR, assuming a low amount aerosols. B:  Dependency on sun elevation of the diffuse fraction of selected wavelengths, assuming a low amount aerosols.
-
-## PAR
+#| fig-cap: Fraction of total radiation that is diffuse under a clear sky. Based on simulations with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300? DU. A. Dependency on sun elevation of the diffuse fraction of PAR, assuming a low amount aerosols. B.  Dependency on sun elevation of the diffuse fraction of selected wavelengths, assuming a low amount aerosols.
 
 clear_sky_PAR_diff_frac.fun <-
   readRDS("light-environment-data/spline-fun.RDS")
@@ -518,6 +516,7 @@ PAR_diffuse.fig <-
   expand_limits(y = 0) +
   theme_minimal()
 
+PAR_diffuse.fig
 ```
 
 ![image](figures/fig_diffuse_TUV.pdf){width="0.8\\myfigwidth"}
