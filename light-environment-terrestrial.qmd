@@ -36,9 +36,19 @@ library(photobiologyInOut)
 library(photobiologySun)
 library(ggspectra)
 library(ggpp)
+library(ggpmisc)
+library(gganimate)
+library(ggdensity)
+library(ggrepel)
+library(quantreg)
 library(lubridate)
+library(patchwork)
 
-theme_set(theme_minimal() + theme(legend.position = "top"))
+theme_set(theme_minimal() + 
+            theme(legend.position = "top",
+                  plot.tag.position = c(0.1, 0.95),
+                  plot.tag = element_text(hjust = 0, size = 10))
+          )
 ```
 
 ::: {.hidden}
@@ -460,6 +470,10 @@ signif(AM0_e_irrads / AM0_e_irrad_tot * 100, 3)
 
 Above, we used the word *light* with its everyday meaning. Its technical definition is of radiation visible to humans. Ultraviolet, visible and infrared radiation (taken together are called in meteorolgy *shortwave radiation*) are components of solar radiation.
 
+#### Spectrum under clear sky
+
+**We could include a plot of scalar spectral irradiance (easy to generate with TUV) or of hemispherical spectral irradiance measured with a hemispherical diffuser (I have data). A comparison to spectral irradiance on a horizontal plane could be very informative.**
+
 Before reaching the Earth's surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to *AM0* for above the atmosphere, *AM1* when the sun is at the zenith, i.e., one atmosphere thickness and *AM1.5* when the length of the air mass traversed is 1.5 times that when the sun is at the zenith.
 
 The air mass traversed is, in reality, not exactly proportional to the distance computed by trigonometry, but not far from it. An empirical formula [@Kasten1989] can be used as a better approximation to the computation of AM values from the elevation angle ($h$) (@fig-AM-h).  
@@ -474,10 +488,12 @@ AMx <- relative_AM(h)
 ggplot(data.frame(h, AMx), aes(h, AMx)) +
   geom_hline(yintercept = 1, linetype = "dotted") +
   geom_line(linewidth = 1) +
-  scale_x_continuous(name = expression("Sun elevation angle, "*italic(h)),
+  scale_x_continuous(name = expression("Sun elevation angle, "*italic(h)*"(degrees)"),
                      breaks = c(0, 30, 60, 90),
                      sec.axis = sec_axis(transform = function(x) {90 - x},
-                     name = expression("Zenith angle, "*italic(theta)))) +
+                                         breaks = rev(c(0, 30, 60, 90)),
+                                         name = expression("Sun zenith angle,
+                                                           "*italic(theta)*"(degrees)"))) +
   scale_y_continuous(name = "AM") +
   theme_minimal()
 ```
@@ -529,7 +545,7 @@ ggplot(clip_wl(sun_reference.mspct[c("WMO.Wehrli.AM0",
 
 The extraterrestrial solar spectrum differs from that at ground level due to the absorption of radiation by the atmosphere, because the absorption peaks of water, and other components of the atmosphere, cause corresponding valleys to appear in the solar spectrum at ground level. The solar spectrum has a much finer structure, due to emission and absorption lines of elements, this fine structure is not observable with the spectroradiometers normally used in plant research. For plant research, finr structure of peaks and valleys is considered irrelevant because plant pigments *in vivo* have broader peaks and valleys in their spectra.
 
-Not only total irradiance, but also the wavelength distribution and the diffuse fraction of the solar spectrum changes with the seasons of the year and time of day. This changes are in large part explained by the change in sun elevation. In what follows we describe these changes as a function of solar elevation. The increasing air mass traversed with decreasing sun elevation affects the shape of the spectrum, by stronger attenuation of the shorter wavelengths. An increased air mass also increases scattering in the atmosphere.
+Not only total irradiance, but also the wavelength distribution and the diffuse fraction of the solar spectrum changes with the seasons of the year and time of day. This changes are in large part explained by the change in sun elevation. In what follows we describe these changes as a function of sun elevation. The increasing air mass traversed with decreasing sun elevation affects the shape of the spectrum, by stronger attenuation of the shorter wavelengths. An increased air mass also increases scattering in the atmosphere.
 
 ```{r, include=FALSE}
 # prepare data for upcoming figures
@@ -580,7 +596,7 @@ colnames(wbands.tb) <-
   gsub("Q_]|Q_|\\.ISO|\\.CIE|\\.Sellaro|\\.Smith20", "", colnames(wbands.tb))
 ```
 
-A figure of spectral irradiance is difficult to read as both the shape of the curve and the maximum spectral irradiance change in parallel [@fig-spectra-sun-elevatio].
+A figure of spectral irradiance is difficult to read as both the shape of the curve and the maximum spectral irradiance change in parallel [@fig-spectra-sun-elevation].
 
 ```{r, echo=FALSE}
 #| label: fig-spectra-sun-elevation
@@ -632,25 +648,39 @@ ggplot(wbands.tb, aes(x = SEA)) +
   geom_line(aes(y = UVA2.tot / max(UVA2.tot)), colour = "purple") +
   geom_line(aes(y = UVB.tot / max(UVB.tot)), colour = "black") +
   scale_x_continuous(name = "Sun elevation angle (degrees)",
-                     breaks = c(0, 30, 60, 90),
+                     breaks = c(-10, 0, 30, 60, 90),
                      sec.axis = sec_axis(name = "Sun zenith angle (degrees)",
                                          transform = function(x) {90 - x},
-                                         breaks = c(0, 30, 60, 90))) +
+                                         breaks = c(0, 30, 60, 90, 100))) +
   scale_y_continuous(name = expression("Photon irradiance, "*italic(Q)~~("rel. units"))) +
     expand_limits(y = 0)
 ```
 
+#### Diffuse fraction under clear sky
 
 At the Earth's surface, the incident radiation or _global radiation_ has two distinct components, _direct radiation_ and _diffuse radiation_. Direct radiation is radiation travelling directly from the sun, while diffuse radiation is that scattered by the atmosphere. Diffuse radiation is what gives the blue colour to the sky and white colour to clouds. The relative contribution of direct and diffuse radiation to global radiation varies with wavelength and weather conditions. The contribution of diffuse radiation is more in the UV region, and in the presence of clouds (Figures [\[fig:sky:photos\]](#fig:sky:photos){reference-type="ref" reference="fig:sky:photos"} and [\[fig:diffuse:UV\]](#fig:diffuse:UV){reference-type="ref" reference="fig:diffuse:UV"}).
 
 ![image](photos/Lasse_sky_composite.jpg)
+
+Simultaneous spectral measurements of direct and diffuse solar radiation are infrequent. Radiation transfer models such as TUV estimate these components, as shown in @fig-spectra-diffuse-TUV-45. The diffuse fraction is larger at shorter wavelengths. Under overcast conditions or any other situation when the solar disk is fully occluded the diffuse fraction is equal to one. However, only in outer space the diffuse fraction approaches zero.
+
+```{r, echo=FALSE}
+#| label: fig-spectra-diffuse-TUV-45
+#| fig-cap: Spectral energy irradiance under a clear sky and sun elevation of 45 degrees. Simulation with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300 DU, assuming a low optical density of aerosols. The black line shown total spectral energy irradiance, the orange-filled area is the direct component and the blue-filled area is the diffuse or scattered component.
+
+ggplot(sun_elevation.mspct[["tuv-45"]]) +
+  geom_spct(fill = "skyblue", colour = "black") +
+  geom_spct(aes(y = s.e.irrad.dir), fill = "orange") +
+  scale_x_wl_continuous() +
+  scale_y_s.e.irrad_continuous()
+```
 
 ```{r, include=FALSE}
 # create spline functions
 
 # We fit splines to the diffuse fraction obtaining functions 
 # that can be used to obtain by interpolation estimates for 
-# any solar elevation.
+# any sun elevation.
 
 spl_funs.ls <- list()
 diff_fr_cols <- grep("diff[_]fr", colnames(wbands.tb), value = TRUE)
@@ -660,6 +690,8 @@ for (col in diff_fr_cols) {
 }
 
 ```
+
+In @fig-spectra-diffuse-TUV-45 the spectrum at a single sun elevation is shown. In @fig-diffuse-TUV the diffuse fraction from simulations under the same atmospheric conditions are shown as a function of sun elevation. The diffuse fraction is largest for shorter wavelengths and for each waveband it increases as the sun elevation decreases. This change is not linear, and has a similar shape as the change in air mass traversed [@fig-AM-h].
 
 ```{r, echo=FALSE}
 #| label: fig-diffuse-TUV
@@ -676,17 +708,26 @@ ggplot(wbands.tb, aes(SEA)) +
   stat_function(fun = spl_funs.ls[["Red.diff_fr"]], xlim = c(-10, 90), colour = "red") +
   stat_function(fun = spl_funs.ls[["PAR.diff_fr"]], xlim = c(-10, 90), colour = "orange",
                 linetype = "dashed") +
-  scale_x_continuous(name = "Solar elevation angle (degrees)",
-                     breaks = c(-10, 0, 15, 30, 45, 60, 75, 90)) +
+  scale_x_continuous(name = "Sun elevation angle (degrees)",
+                     breaks = c(-10, 0, 15, 30, 45, 60, 75, 90),
+                     sec.axis = sec_axis(name = "Sun zenith angle (degrees)",
+                                         transform = function(x) {90 - x},
+                                         breaks = c(0, 30, 60, 90, 100))) +
   scale_y_continuous(name = expression("Diffuse fraction, "*Q[s] / Q[t]~~(""/1)),
        sec.axis = sec_axis(name = expression("Direct fraction, "*Q[d] / Q[t]~~(""/1)),
        transform = function(x) {1 - x} )) +
   expand_limits(y = 0)
 ```
 
-![image](figures/fig_diffuse_TUV.pdf){width="0.8\\myfigwidth"}
+#### Ozone column
 
-The spectral wavelength distribution is also changed by the amount of absorbing ozone in the atmosphere, known as the ozone column [@fig-UVB-PAR-ozone].
+The spectral wavelength distribution is also modified by the amount of ozone in the atmosphere, known as the ozone column and measured in Dobson units (DU = mm of pure ozone) [@fig-UVB-PAR-ozone]. As expected, it is also affected by the air mass traversed, which depends on sun elevation. The UV-B:PAR photon ratior is more strongly dependent on the thickness of the ozone column at low sun elevations, when the ratio it smallest [@fig-UVB-PAR-ozone].
+
+::: callout-tip
+# Climate change and ozone depletion
+
+An increase in the UV-B and UV-A2 irradiance is caused by depletion of the ozone layer in the stratosphere, mainly as a consequence of the release of chlorofluorocarbons (CFCs), used in cooling devices such as refrigerators and air conditioners, and in some spray cans [see @Graedel1993]. The most dramatic manifestation of this has been the seasonal formation of an "ozone hole" over Antarctica. It is controversial whether a true ozone hole has already formed in the Arctic, but strong depletion has occurred in year 2011 [@Manney2011] and atmospheric conditions needed for the formation of a "deep" ozone hole are not very different from those prevalent in recent years. Not so dramatic, but consistent, depletion has also been observed at mid-latitudes in both hemispheres. CFCs and some other halocarbons have been phased out following the Montreal agreement and later updates. However, as CFCs have a long half life in the atmosphere, of the order of 100 years, their effect on the ozone layer will persist for many years, even after their use has been drastically reduced. Model-based predictions of changes in atmospheric circulation due to global climate change have been used to derive future trends in index and ozone column thickness [@Hegglin2009]. In addition, increased cloudiness and pollution, could lead to decreased global irradiance, sometimes called 'global dimming' [e.g. @Stanhill2001].
+:::
 
 ```{r, echo=FALSE}
 #| label: fig-uv-spectra-ozone-scaled
@@ -726,21 +767,217 @@ ggplot(sun_ozone_irrads,
        linetype = "Ozone column (DU)")
 ```
 
-Above we have ignored the effects of clouds and relied heavily on simulations. Next we will consider the effect of clouds and use as examples measurements at different time scales.
+#### Clouds
 
-Figure [] shows how spectral irradiance changes throughout one day. When the whole spectrum is plotted using a linear scale the effect of ozone depletion is not visible, however, if we plot only the region (Figure [\[fig:solarUV:spectrum:noon\]](#fig:solarUV:spectrum:noon){reference-type="ref" reference="fig:solarUV:spectrum:noon"}) the effect becomes clearly visible.
+Above we have ignored the effects of clouds and relied heavily on simulations for clear-sky conditions. Next we will consider the effect of clouds and use as examples measurements and simulations that include the effect of clouds. We will consider variation at different time scales. We start with a time series of hourly mean spectra for one day, scaled to equal PAR photon irradiance to illustrate how the shape of the spectrum can change during the course of day [@fig-spectra-whole-day-anim].
 
-Seasonal variation in irradiance has a larger relative amplitude than variation in (Figure [\[fig:diffuse.light\]](#fig:diffuse.light){reference-type="ref" reference="fig:diffuse.light"}). This causes a seasonal variation in the : ratio (Figure [\[fig:UVB:Erlangen\]](#fig:UVB:Erlangen){reference-type="ref" reference="fig:UVB:Erlangen"}). In addition to the regular seasonal variation, there is random variation as a result of changes in clouds (Figure [\[fig:UVB:Erlangen\]](#fig:UVB:Erlangen){reference-type="ref" reference="fig:UVB:Erlangen"}). Normal seasonal and spatial variation in can be sensed by plants, and could play a role in their adaptation to seasons and/or their position in the canopy.
+```{r, include=FALSE}
+# prepare data
+sun_one_day.spct <- sun_hourly_august.spct
+sun_one_day.spct <- subset(sun_one_day.spct, day(UTC) == 21)
+sun_one_day.spct <- setIdFactor(sun_one_day.spct, idfactor = "UTC")
+idfactor <- getIdFactor(sun_one_day.spct)
+sun_one_day.spct[["time"]] <- sun_one_day.spct[[idfactor]]
+sun_one_day.spct[[idfactor]] <- factor(sun_one_day.spct[[idfactor]])
+```
 
-![image](figures/fig_diffuse_Flint.pdf){width="0.4\\myfigwidth"} ![image](figures/fig_seasonal_Brown.pdf){width="0.4\\myfigwidth"}
+```{r, echo=FALSE, warning=FALSE}
+#| label: fig-spectra-whole-day-anim
+#| fig-cap: Time scaled spectral photon irradiance during one day. Hourly mean spectra scaled to PAR = 1000 $\mu mol\,s^{-1}\,m^{-2}$ to emphasize the change in shape. Simulated with libradtran including the effect of clouds for Kumpula, Helsinki, Finland. Data from Andes Lindfors.
+
+anim <- ggplot(data = fscale(sun_one_day.spct, f = q_irrad, target = 1e-3, w.band = PAR()),
+               unit.out = "photon") +
+  geom_spct() +
+  scale_x_wl_continuous() +
+  scale_y_s.q.irrad_continuous(name = s.q.irrad_label(scaled = TRUE)) +
+  transition_states(get(idfactor),
+                    transition_length = 2,
+                    state_length = 1) +
+  ggtitle('Now showing {closest_state} UTC',
+          subtitle = 'Frame {frame} of {nframes}')
+animate(anim, duration = 20, fps = 10)
+```
+
+It should be noted that, through reflection, broken clouds can locally increase irradiance to values above those under clear-sky conditions [@Frederick1993; @Diaz1996]. These are transient increases of short duration and easily detected with fast measurements, and the irradiance increase can be 30% or more compared to under a clear sky. This is well illustrated by measurements at 1 min interval during four consecutive days [@fig-PAR-four-days].
+
+```{r, echo=FALSE}
+#| label: fig-PAR-four-days
+#| fig-cap: Time course of PAR, UV-A and UV-B photon irradiance during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s. The step changes at very low sun elevations are caused by shading from far-away buildings.
+
+((ggplot(four_days_1min.data, aes(time_EET, PAR_umol)) +
+  geom_spct() +
+    annotate(geom = "text_npc", label = "PAR", npcy = 0.95, npcx = 0.05) +
+    labs(x = "Local time", y = "")) /
+(ggplot(four_days_1min.data, aes(time_EET, UVA_umol)) +
+  geom_spct() +
+    annotate(geom = "text_npc", label = "UV-A", npcy = 0.95, npcx = 0.05) +
+    labs(x = "Local time", y = expression("Photon irradiance "*(mu*mol~s^{-1}~m^{-2})))) /
+(ggplot(four_days_1min.data, aes(time_EET, UVB_umol)) +
+  geom_spct()) +
+    annotate(geom = "text_npc", label = "UV-B", npcy = 0.95, npcx = 0.05) +
+    labs(x = "Time", y = "")) + 
+  plot_layout(axes = 'collect')
+```
+
+The photon ratios for the same four days [@fig-ratios-four-days] shows the 
+influence of clouds and of sun elevation, both affecting the PAR diffuse 
+fraction. In particular, broken clouds on 
+10 July cause momentary nearly doubling of the UV-A:PAR and UV-B:PAR photon 
+ratios. The short-term effect on the R:FR is smaller, but the differences
+between days larger, possibly because of its dependence on the atmospheric
+water content [@kotilainenxxxx].
+
+```{r, echo=FALSE}
+#| label: fig-ratios-four-days
+#| fig-cap: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings.
+
+((ggplot(four_days_1min.data, 
+         aes(time_EET, 
+             ifelse(sun_elevation > 0, red_umol / far_red_umol, NA),
+             colour = PAR_diff_fr)) +
+  geom_point(na.rm = TRUE, size = 0.3) +
+    annotate(geom = "text_npc", label = "R:FR", npcy = 0.95, npcx = 0.05) +
+    labs(x = "Local time", y = "",
+         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t]))) /
+(ggplot(four_days_1min.data, 
+        aes(time_EET, 
+            ifelse(sun_elevation > 0, UVA_umol / PAR_umol, NA),
+             colour = PAR_diff_fr)) +
+  geom_point(na.rm = TRUE, size = 0.3) +
+    annotate(geom = "text_npc", label = "UV-A:PAR", npcy = 0.95, npcx = 0.05) +
+    labs(x = "Local time", y = expression("Photon ratio "*(mol~mol^{-1})),
+         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t]))) /
+(ggplot(four_days_1min.data, aes(time_EET, 
+            ifelse(sun_elevation > 0, UVB_umol / PAR_umol, NA),
+             colour = PAR_diff_fr)) +
+  geom_point(na.rm = TRUE, size = 0.3) +
+    annotate(geom = "text_npc", label = "UV-B:PAR", npcy = 0.95, npcx = 0.05) +
+    labs(x = "Time", y = "",
+         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t])))) + 
+  plot_layout(axes = 'collect', guides = 'collect')
+```
+
+In @fig-ratios-four-days we can see fast changes in the ratios towards the end of the day. The time-series of spectra measured once a minute during 5 minutes shows how the shape of the spectrum can rapidly change leading to rapid changes in the R:FR photon ratio [@fig-spectra-anim-five-min].
+
+```{r, include=FALSE}
+# prepare data
+my_sun.spct <- sun_evening.spct
+time <- when_measured(my_sun.spct, as.df = TRUE)
+my_sun.spct$spct.idx <- 
+  factor(my_sun.spct$spct.idx, 
+         levels = time[["spct.idx"]], 
+         labels = as.character(round_date(time[["when.measured"]], unit = "minute")))
+```
+
+```{r, echo=FALSE}
+#| label: fig-spectra-anim-five-min
+#| fig-cap: Time series of spectra near sunset. Five minutes of solar spectra measurements. Measured with an array spectrometer at Viikki, Helsinki, Finland.
+
+ggplot(data = my_sun.spct, unit.out = "photon") +
+  geom_spct() +
+  scale_x_wl_continuous() +
+  scale_y_s.q.irrad_continuous() +
+  transition_states(spct.idx,
+                    transition_length = 2,
+                    state_length = 1) +
+  ggtitle('Now showing {closest_state} UTC',
+          subtitle = 'Frame {frame} of {nframes}')
+```
+The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloudflecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function [@fig-cloudflecks-edf]. The distribution is not Normal, and skewed to the right.
+
+```{r, echo=FALSE}
+#| label: fig-cloudflecks-edf
+#| fig-cap: xxxxxxxxxxxxxxx. In the main panel a quantile regression is shown, with the line repesenting the median, the dark band enclosing the two central quantiles (simmilar to the box in a box plot) and the pale band enclosing 90% of the observations. The inset shows the fitted empirical density function (EDF) for the duration of the cloudflecks. Source @Sellaro2024.
+
+dfS <- read.csv("light-environment-data/dfCloudfleck_figure.csv")
+
+p2 <-
+  ggplot(data = dfS, aes(percDiff * 100, duration)) +
+  stat_quant_band(formula = y ~ qss(x, lambda = 50, constraint = "I"), method = "rqss:sfnc",
+                  quantiles = c(0.05, 0.5, 0.95), alpha = 0.2) +
+  stat_quant_band(formula = y ~ qss(x, lambda = 50, constraint = "I"), method = "rqss:sfnc") +
+  stat_quadrant_counts(quadrants = 0L,
+                       label.x = 0.95,
+                       label.y = 0.05) +
+  labs(x = "PAR attenuation during cloudfleck (%)",
+       y = "Cloudfleck duration (min)") +
+  theme_classic()
+
+p3 <- ggplot(data = dfS, aes(duration)) +
+  stat_density(bw = "nrd", alpha = 0.3) +
+  scale_x_log10(breaks = c(2, 5, 10, 20, 50, 100, 200, 500)) +
+  expand_limits(x = c(1.7, 500)) +
+  labs(x = "Cloudfleck duration (min)",
+       y = "Empirical probability density")
+
+print(p2 + scale_y_continuous(breaks = c(0, 60, 120, 180, 240, 300)) +
+  annotate(geom = "plot", x = I(0.05), y = I(1), label = p3, vp.width = 2/3, vp.height = 2/3))
+```
+
+Irradiance is much lower during a cloudfleck than in full sunlight [@fig-spectrum-cloudfleck A]. The spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight [@fig-spectrum-cloudfleck B]. 
+
+```{r, echo=FALSE}
+#| label: fig-spectrum-cloudfleck
+#| fig-cap: Spectra during and immediately after a cloudfleck. A&#58; photon spectral irradiance as measured, B&#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$. Source @Sellaro2024.
+
+## cloudfleck spectrum
+
+{
+  photon_as_default()
+
+CSCLDY.df <- read.csv("light-environment-data/dfCSCLDY.csv")[ , -1]
+
+names(CSCLDY.df)[names(CSCLDY.df) == "s.q.irrad"] <- "s.e.irrad" # error in data file
+
+CSCLDY.df <- subset(CSCLDY.df, w.length > 295 & w.length < 850)
+CSCLDY.df$type.label <- gsub("\\.", " ", CSCLDY.df$type)
+
+CSCLDY.spct <- as.source_spct(CSCLDY.df,
+                              idfactor = "type",
+                              multiple.wl = length(unique(CSCLDY.df$type)))
+
+CSCLDY.mspct <- e2q(subset2mspct(CSCLDY.spct))
+
+p.cloudy.scaled <-
+  ggplot(data = fscale(CSCLDY.spct,
+                       f = q_irrad , target = 1e-3, w.band = PAR()),
+         aes(w.length, s.q.irrad, colour = type)) +
+#  geom_vline(xintercept = c(400, 700), linetype = "dotted") +
+  stat_wl_strip(ymin = -0.015e-6, ymax = -0.003e-6) +
+  scale_fill_identity() +
+  geom_line() +
+  scale_y_s.q.irrad_continuous(unit.exponent = -6) +
+  scale_x_wl_continuous() +
+  scale_colour_manual(values = c("steelblue3", "grey20")) +
+  labs(tag = "B", colour = "")
+
+p.cloudy.irrad <-
+  ggplot(data = e2q(CSCLDY.spct),
+         aes(w.length, s.q.irrad, colour = type)) +
+#  geom_vline(xintercept = c(400, 700), linetype = "dotted") +
+  stat_wl_strip(ymin = -0.19e-6, ymax = -0.03e-6) +
+  geom_line() +
+  scale_fill_identity() +
+  scale_y_s.q.irrad_continuous(unit.exponent = -6) +
+  scale_x_wl_continuous() +
+  scale_colour_manual(values = c("steelblue3", "grey20")) +
+  labs(tag = "A", colour = "")
+
+p.cloudy.irrad / p.cloudy.scaled +
+  plot_layout(axes = "collect", guides = "collect")
+}
+```
+#### Seasons and latitude
+
+**Maps for PAR, UV-A and UV-A could be added to this section.**
+
+**I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added.**
+
+Considering a longer time scale of years, seasonal and daily variation are combined. The seasonal pattern of variation in UV-B daily exposure is very clear but has day to day variation superimposed [@fig-UVB-Erlangen A]. The strong change in the UV-B:PAR photon ratio with sun elevation creates a strong seasonal pattern in this photon ratio [@fig-UVB-Erlangen B].
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 #| label: fig-UVB-Erlangen
-#| fig-cap: Seasonal variation in daily UV-B energy exposure Erlangen, Germany ($54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}$, 280 m asl). Top&#58; daily UV-B energy exposure; bottom&#58; UV-B:PhR daily-energy-exposures ratio. Measured with ELDONET instruments [see, @Haeder2007].
-
-library(lubridate)
-library(ggplot2)
-library(patchwork)
+#| fig-cap: Seasonal variation in daily UV-B energy exposure Erlangen, Germany ($54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}$, 280 m asl). A&#58; daily UV-B energy exposure; B&#58; UV-B:PhR daily-energy-exposures ratio. Note&#58; there are gaps with missing data in the time-series data. Measured with ELDONET instruments [see, @Haeder2007].
 
 Erlangen.data <- read.csv("./light-environment-data/Erlangen_data.csv") |>
   subset(!grepl("1997$", Datum))
@@ -748,33 +985,29 @@ Erlangen.data <- read.csv("./light-environment-data/Erlangen_data.csv") |>
 Erlangen.data <- within(Erlangen.data, date <- as.Date(Datum, "%d/%m/%Y"))
 
 fig <- ggplot(data=Erlangen.data,aes(x=date,y=UVB/1000)) + 
-  geom_point(size=1, colour="black", alpha=0.33) + 
+  geom_spct() +
+#  geom_point(size=1, colour="black", alpha=0.33) + 
   scale_x_date(date_breaks = "1 year", date_labels = "%Y") + 
-  labs(x="Time (date)", y=expression("Daily UV-B exposure"~~(kJ~m^{-2}))) +
-  theme_minimal(11)
+  labs(x="Time", y=expression("UV-B exposure"~~(kJ~d^{-1}~m^{-2})),
+       tag = "A")
 
 fig_ratio <- ggplot(data=Erlangen.data,aes(x=date,y=UVB/PAR*1000)) +
-  geom_point(size=1, colour="black", alpha=0.33) + 
+  geom_spct() +
+#  geom_point(size=1, colour="black", alpha=0.33) + 
   scale_x_date(date_breaks = "1 year", date_labels = "%Y") + 
-  labs(x="Time (date)", y=expression("UV-B:PhR daily ratio"~~(1%*%10^3))) +
-  theme_minimal(11)
+  labs(x="Time", y=expression("UV-B:PhR ratio"~~(1%*%10^3)),
+       tag = "B")
 
-print(fig / fig_ratio + plot_layout(axes = "collect") )
+print((fig / fig_ratio) + plot_layout(axes = "collect") )
 ```
 
-irradiance increases with elevation in mountains and with decreasing latitude [@fig-UVB-latitude] and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line[^2] in these mountains [@Flenley1992].
+UV-B irradiance increases with elevation in mountains and with decreasing latitude [@fig-UVB-latitude] and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line[^2] in these mountains [@Flenley1992].
 
 [^2]: *Tree line* is the highest elevation on a mountain slope at which tree species are naturally able to grow.
 
 ```{r, echo=FALSE, message=FALSE}
 #| label: fig-UVB-latitude
 #| fig-cap: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments [see, @Haeder2007].
-
-library(ggplot2)
-library(ggpp)
-library(ggpmisc)
-library(ggrepel)
-library(patchwork)
 
 latitudinal.data <- 
   read.csv("./light-environment-data/latitudinal_data.csv") |>
@@ -784,32 +1017,34 @@ fig_UVB <- ggplot(data=latitudinal.data,aes(x=latitude,y=UVB)) +
   stat_poly_line(linetype = "dashed", se = FALSE) +
   geom_point(size=3, pch=16, colour="red")+ 
   geom_text_repel(aes(label=Location), colour="Black", size=3.5,
-                  position = position_nudge_line(x = 0.3, y = 0.4, direction = "split",
-                                                 line_nudge = 3.5),
-                  min.segment.length = 0, point.padding = 0.4, box.padding = 0.5) +
+                  position = position_nudge_line(x = 0.05, y = 0.5, direction = "split",
+                                                 line_nudge = 5),
+                  min.segment.length = 0, point.padding = 0.4, box.padding = 0.3) +
   expand_limits(y = c(0,13), x = c(25,75)) + 
-  labs(x="Latitude N (degrees)", y=expression("UV-B annual exposure"~~(MJ~m^{-2}))) + 
-  theme_minimal()
-# print(fig_UVB)
+  labs(x="Latitude N (degrees)", 
+       y=expression("Annual exposure"~~(MJ~m^{-2})),
+       tag = "UV-B")
 
 fig_UVA <- ggplot(data=latitudinal.data,aes(x=latitude,y=UVA)) + 
   stat_poly_line(linetype = "dashed", se = FALSE) +
   geom_point(size=3, pch=16, colour="red")+ 
   geom_text_repel(aes(label=Location), colour="Black", size=3.5,
-            position = position_nudge_line(x = 0.3, y = 100, direction = "split",
-                                           line_nudge = 3.5),
-            min.segment.length = 0, point.padding = 0.4, box.padding = 0.5) +
+            position = position_nudge_line(x = 0.03, y = 200, direction = "split",
+                                           line_nudge = 3),
+            min.segment.length = 0, point.padding = 0.4, box.padding = 0.3) +
   expand_limits(y = c(0,3300), x = c(25,75)) + 
-  labs(x="Latitude N (degrees)", y=expression("UV-A annual exposure"~~(MJ~m^{-2}))) + 
-  theme_minimal()
-# print(fig_UVA)
+  labs(x="Latitude N (degrees)", 
+       y=expression("Annual exposure"~~(MJ~m^{-2})),
+       tag = "UV-A")
 
-print(fig_UVB + fig_UVA)
+print((fig_UVB / fig_UVA) + plot_layout(axes = "collect"))
 ```
 
-An increase in the irradiance is caused by depletion of the ozone layer in the stratosphere, mainly as a consequence of the release of chlorofluorocarbons (CFCs), used in cooling devices such as refrigerators and air conditioners, and in some spray cans [see @Graedel1993]. The most dramatic manifestation of this has been the seasonal formation of an "ozone hole" over Antarctica. It is controversial whether a true ozone hole has already formed in the Arctic, but strong depletion has occurred in year 2011 [@Manney2011] and atmospheric conditions needed for the formation of a "deep" ozone hole are not very different from those prevalent in recent years. Not so dramatic, but consistent, depletion has also been observed at mid-latitudes in both hemispheres. CFCs and some other halocarbons have been phased out following the Montreal agreement and later updates. However, as CFCs have a long half life in the atmosphere, of the order of 100 years, their effect on the ozone layer will persist for many years, even after their use has been drastically reduced. Model-based predictions of changes in atmospheric circulation due to global climate change have been used to derive future trends in index and ozone column thickness [@Hegglin2009]. In addition, increased cloudiness and pollution, could lead to decreased and , sometimes called 'global dimming' [e.g. @Stanhill2001]. It should be noted that, through reflection, broken clouds can locally increase irradiance to values above those under clear-sky conditions [@Frederick1993; @Diaz1996].
+#### Elevation
 
-## UV radiation within plant canopies
+**We have three options: 1) generate suitable data with TUV, 2) show measured data from the literature, or 3) both.** 
+
+## Solar radiation within plant canopies
 
 The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. Here we give only a description of the simplest approach, the use of an approximation based on Beer's law as modified by @Monsi1953, reviewed by @Hirose2005. Beer's law (Equation [\[eq:Beer-Lambert\]](#eq:Beer-Lambert){reference-type="ref" reference="eq:Beer-Lambert"}) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). $$I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}$$ Equation [\[eq:Monsi:Saeki\]](#eq:Monsi:Saeki){reference-type="ref" reference="eq:Monsi:Saeki"} describes the radiation attenuated as a function of leaf area index ($L$ or ) at a given canopy depth ($z$). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical extinction coefficient ($K$) obtained may vary depending on these factors. $K$ is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year---as a consequence of solar zenith angle---and degree of scattering of the incident radiation. As the degree of scattering depends on clouds, and also on wavelength, the extinction coefficient is different for and visible radiation. Radiation extinction in canopies has yet to be studied in detail with respect to radiation, mainly because of difficulties in the measurement of radiation compared to , a spectral region which has been extensively studied.
 

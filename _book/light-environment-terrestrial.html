@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -348,7 +348,7 @@ window.Quarto = {
   <li><a href="#solar-radiation-at-the-top-of-the-atmosphere" id="toc-solar-radiation-at-the-top-of-the-atmosphere" class="nav-link" data-scroll-target="#solar-radiation-at-the-top-of-the-atmosphere"><span class="header-section-number">4.1.2</span> Solar radiation at the top of the atmosphere</a></li>
   <li><a href="#solar-radiation-at-ground-level" id="toc-solar-radiation-at-ground-level" class="nav-link" data-scroll-target="#solar-radiation-at-ground-level"><span class="header-section-number">4.1.3</span> Solar radiation at ground level</a></li>
   </ul></li>
-  <li><a href="#uv-radiation-within-plant-canopies" id="toc-uv-radiation-within-plant-canopies" class="nav-link" data-scroll-target="#uv-radiation-within-plant-canopies"><span class="header-section-number">4.2</span> UV radiation within plant canopies</a></li>
+  <li><a href="#solar-radiation-within-plant-canopies" id="toc-solar-radiation-within-plant-canopies" class="nav-link" data-scroll-target="#solar-radiation-within-plant-canopies"><span class="header-section-number">4.2</span> Solar radiation within plant canopies</a></li>
   </ul>
 </nav>
     </div>
@@ -734,8 +734,11 @@ Figure&nbsp;4.9: The extraterrestrial solar spectrum compared to black body emis
 <section id="solar-radiation-at-ground-level" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="solar-radiation-at-ground-level"><span class="header-section-number">4.1.3</span> Solar radiation at ground level</h3>
 <p>Above, we used the word <em>light</em> with its everyday meaning. Its technical definition is of radiation visible to humans. Ultraviolet, visible and infrared radiation (taken together are called in meteorolgy <em>shortwave radiation</em>) are components of solar radiation.</p>
-<p>Before reaching the Earth’s surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to <em>AM1</em> when the sun is at the zenith, i.e., <em>AM1</em> stands for one atmosphere thickness and <em>AM1.5</em> indicates that the length of the path through the atmosphere is 1.5 times that when the sun is at the zenith.</p>
-<p>The length of the path through the atmosphere is, in reality, not exactly the length computed by trigonometry, but close to it. An empirical formula can be used as an approximation <span class="citation" data-cites="Kasten1989">(<a href="references.html#ref-Kasten1989" role="doc-biblioref">Kasten and Young 1989</a>)</span> to compute AM values from the elevation angle (<span class="math inline">\(h\)</span>) (<a href="#fig-AM-h" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>).</p>
+<section id="spectrum-under-clear-sky" class="level4" data-number="4.1.3.1">
+<h4 data-number="4.1.3.1" class="anchored" data-anchor-id="spectrum-under-clear-sky"><span class="header-section-number">4.1.3.1</span> Spectrum under clear sky</h4>
+<p><strong>We could include a plot of scalar spectral irradiance (easy to generate with TUV) or of hemispherical spectral irradiance measured with a hemispherical diffuser (I have data). A comparison to spectral irradiance on a horizontal plane could be very informative.</strong></p>
+<p>Before reaching the Earth’s surface radiation from the sun travels through the atmosphere. The sun elevation angle affects the length of the path that the light arriving from the sun travels through the atmosphere. In atmospheric physics it is common to describe spectra as corresponding to <em>AM0</em> for above the atmosphere, <em>AM1</em> when the sun is at the zenith, i.e., one atmosphere thickness and <em>AM1.5</em> when the length of the air mass traversed is 1.5 times that when the sun is at the zenith.</p>
+<p>The air mass traversed is, in reality, not exactly proportional to the distance computed by trigonometry, but not far from it. An empirical formula <span class="citation" data-cites="Kasten1989">(<a href="references.html#ref-Kasten1989" role="doc-biblioref">Kasten and Young 1989</a>)</span> can be used as a better approximation to the computation of AM values from the elevation angle (<span class="math inline">\(h\)</span>) (<a href="#fig-AM-h" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-AM-h" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -780,8 +783,8 @@ Figure&nbsp;4.12: The spectrum of solar radiation above the atmosphere (AM0) and
 </div>
 </div>
 <p>The extraterrestrial solar spectrum differs from that at ground level due to the absorption of radiation by the atmosphere, because the absorption peaks of water, and other components of the atmosphere, cause corresponding valleys to appear in the solar spectrum at ground level. The solar spectrum has a much finer structure, due to emission and absorption lines of elements, this fine structure is not observable with the spectroradiometers normally used in plant research. For plant research, finr structure of peaks and valleys is considered irrelevant because plant pigments <em>in vivo</em> have broader peaks and valleys in their spectra.</p>
-<p>Not only total irradiance, but also the wavelength distribution and the diffuse fraction of the solar spectrum changes with the seasons of the year and time of day. This changes are in large part explained by the change in sun elevation. In what follows we describe these changes as a function of solar elevation. The increasing air mass traversed with decreasing sun elevation affects the shape of the spectrum, by stronger attenuation of the shorter wavelengths. An increased air mass also increases scattering in the atmosphere.</p>
-<p>A figure of spectral irradiance is difficult to read as both the shape of the curve and the maximum spectral irradiance change in parallel <span class="quarto-unresolved-ref">?fig-spectra-sun-elevatio</span>.</p>
+<p>Not only total irradiance, but also the wavelength distribution and the diffuse fraction of the solar spectrum changes with the seasons of the year and time of day. This changes are in large part explained by the change in sun elevation. In what follows we describe these changes as a function of sun elevation. The increasing air mass traversed with decreasing sun elevation affects the shape of the spectrum, by stronger attenuation of the shorter wavelengths. An increased air mass also increases scattering in the atmosphere.</p>
+<p>A figure of spectral irradiance is difficult to read as both the shape of the curve and the maximum spectral irradiance change in parallel <a href="#fig-spectra-sun-elevation" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-spectra-sun-elevation" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -796,7 +799,7 @@ Figure&nbsp;4.13: Change in spectral irradiance with sun elevation angle. Based 
 </div>
 </div>
 </div>
-<p>If we rescale the curves to equal PAR irradiance the change in shape is easier to observe <span class="quarto-unresolved-ref">?fig-spectra-sun-elevation-scaled</span>.</p>
+<p>If we rescale the curves to equal PAR irradiance the change in shape is easier to observe <a href="#fig-uv-spectra-sun-elevation-scaled" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-uv-spectra-sun-elevation-scaled" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -825,6 +828,7 @@ Figure&nbsp;4.15: Change in scaled spectral irradiance with sun elevation angle.
 </div>
 </div>
 </div>
+<p>Plotting the normalised photon irradiance for different wavebands <a href="#fig-wbands-elevation-normalized" class="quarto-xref">Figure&nbsp;<span>4.16</span></a> shows that the daily course of UV-B photon irradiance is different than that for other bands, even the adjacent UV-A2. UV-B irradiance decreases faster with decreasing sun elevation (<span class="math inline">\(h\)</span>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-wbands-elevation-normalized" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -839,6 +843,9 @@ Figure&nbsp;4.16: Change in irradiance with sun elevation angle for different re
 </div>
 </div>
 </div>
+</section>
+<section id="diffuse-fraction-under-clear-sky" class="level4" data-number="4.1.3.2">
+<h4 data-number="4.1.3.2" class="anchored" data-anchor-id="diffuse-fraction-under-clear-sky"><span class="header-section-number">4.1.3.2</span> Diffuse fraction under clear sky</h4>
 <p>At the Earth’s surface, the incident radiation or <em>global radiation</em> has two distinct components, <em>direct radiation</em> and <em>diffuse radiation</em>. Direct radiation is radiation travelling directly from the sun, while diffuse radiation is that scattered by the atmosphere. Diffuse radiation is what gives the blue colour to the sky and white colour to clouds. The relative contribution of direct and diffuse radiation to global radiation varies with wavelength and weather conditions. The contribution of diffuse radiation is more in the UV region, and in the presence of clouds (Figures <a href="#fig:sky:photos" data-reference-type="ref" data-reference="fig:sky:photos">[fig:sky:photos]</a> and <a href="#fig:diffuse:UV" data-reference-type="ref" data-reference="fig:diffuse:UV">[fig:diffuse:UV]</a>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -846,6 +853,22 @@ Figure&nbsp;4.16: Change in irradiance with sun elevation angle for different re
 <figcaption>image</figcaption>
 </figure>
 </div>
+<p>Simultaneous spectral measurements of direct and diffuse solar radiation are infrequent. Radiation transfer models such as TUV estimate these components, as shown in <a href="#fig-spectra-diffuse-TUV-45" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>. The diffuse fraction is larger at shorter wavelengths. Under overcast conditions or any other situation when the solar disk is fully occluded the diffuse fraction is equal to one. However, only in outer space the diffuse fraction approaches zero.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-spectra-diffuse-TUV-45" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spectra-diffuse-TUV-45-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-spectra-diffuse-TUV-45-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectra-diffuse-TUV-45-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.17: Spectral energy irradiance under a clear sky and sun elevation of 45 degrees. Simulation with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300 DU, assuming a low optical density of aerosols. The black line shown total spectral energy irradiance, the orange-filled area is the direct component and the blue-filled area is the diffuse or scattered component.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In <a href="#fig-spectra-diffuse-TUV-45" class="quarto-xref">Figure&nbsp;<span>4.17</span></a> the spectrum at a single sun elevation is shown. In <a href="#fig-diffuse-TUV" class="quarto-xref">Figure&nbsp;<span>4.18</span></a> the diffuse fraction from simulations under the same atmospheric conditions are shown as a function of sun elevation. The diffuse fraction is largest for shorter wavelengths and for each waveband it increases as the sun elevation decreases. This change is not linear, and has a similar shape as the change in air mass traversed <a href="#fig-AM-h" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-diffuse-TUV" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -854,19 +877,29 @@ Figure&nbsp;4.16: Change in irradiance with sun elevation angle for different re
 <img src="light-environment-terrestrial_files/figure-html/fig-diffuse-TUV-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diffuse-TUV-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.17: Fraction of total radiation that is diffuse under a clear sky as a function of sun elevation angle. PAR, orange dashed; Red, red; Green, green; Blue, blue; UVA-1, violet; UV-A2, purple; UV-B, black. Based on simulations with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300 DU, assuming a low optical density of aerosols.
+Figure&nbsp;4.18: Fraction of total radiation that is diffuse under a clear sky as a function of sun elevation angle. PAR, orange dashed; Red, red; Green, green; Blue, blue; UVA-1, violet; UV-A2, purple; UV-B, black. Based on simulations with the TUV radiation transfer and atmospheric chemistry model for an ozone column on 300 DU, assuming a low optical density of aerosols.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="figures/fig_diffuse_TUV.pdf" class="img-fluid"></p>
-<figcaption>image</figcaption>
-</figure>
+</section>
+<section id="ozone-column" class="level4" data-number="4.1.3.3">
+<h4 data-number="4.1.3.3" class="anchored" data-anchor-id="ozone-column"><span class="header-section-number">4.1.3.3</span> Ozone column</h4>
+<p>The spectral wavelength distribution is also modified by the amount of ozone in the atmosphere, known as the ozone column and measured in Dobson units (DU = mm of pure ozone) <a href="#fig-UVB-PAR-ozone" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>. As expected, it is also affected by the air mass traversed, which depends on sun elevation. The UV-B:PAR photon ratior is more strongly dependent on the thickness of the ozone column at low sun elevations, when the ratio it smallest <a href="#fig-UVB-PAR-ozone" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>The spectral wavelength distribution is also changed by the amount of absorbing ozone in the atmosphere, known as the ozone column <a href="#fig-UVB-PAR-ozone" class="quarto-xref">Figure&nbsp;<span>4.19</span></a>.</p>
+<div class="callout-title-container flex-fill">
+Climate change and ozone depletion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An increase in the UV-B and UV-A2 irradiance is caused by depletion of the ozone layer in the stratosphere, mainly as a consequence of the release of chlorofluorocarbons (CFCs), used in cooling devices such as refrigerators and air conditioners, and in some spray cans <span class="citation" data-cites="Graedel1993">(see <a href="references.html#ref-Graedel1993" role="doc-biblioref">Graedel and Crutzen 1993</a>)</span>. The most dramatic manifestation of this has been the seasonal formation of an “ozone hole” over Antarctica. It is controversial whether a true ozone hole has already formed in the Arctic, but strong depletion has occurred in year 2011 <span class="citation" data-cites="Manney2011">(<a href="references.html#ref-Manney2011" role="doc-biblioref">Manney et al. 2011</a>)</span> and atmospheric conditions needed for the formation of a “deep” ozone hole are not very different from those prevalent in recent years. Not so dramatic, but consistent, depletion has also been observed at mid-latitudes in both hemispheres. CFCs and some other halocarbons have been phased out following the Montreal agreement and later updates. However, as CFCs have a long half life in the atmosphere, of the order of 100 years, their effect on the ozone layer will persist for many years, even after their use has been drastically reduced. Model-based predictions of changes in atmospheric circulation due to global climate change have been used to derive future trends in index and ozone column thickness <span class="citation" data-cites="Hegglin2009">(<a href="references.html#ref-Hegglin2009" role="doc-biblioref">Hegglin and Shepherd 2009</a>)</span>. In addition, increased cloudiness and pollution, could lead to decreased global irradiance, sometimes called ‘global dimming’ <span class="citation" data-cites="Stanhill2001">(e.g. <a href="references.html#ref-Stanhill2001" role="doc-biblioref">Stanhill and Cohen 2001</a>)</span>.</p>
+</div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-uv-spectra-ozone-scaled" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -875,7 +908,7 @@ Figure&nbsp;4.17: Fraction of total radiation that is diffuse under a clear sky 
 <img src="light-environment-terrestrial_files/figure-html/fig-uv-spectra-ozone-scaled-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uv-spectra-ozone-scaled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.18: Change in scaled spectral irradiance with sun elevation angle. UV-B and UV-A2 regions of the spectrum. Spectra scaled to PAR = <span class="math inline">\(1\,000\,\mu mol\,s^{-1}\,m^{-2}\)</span>. Based on simulations with libradtran for 300 DU and 240 DU, a 20% depletion at Jokioinen, Finland. Data from Anders Lindfors.
+Figure&nbsp;4.19: Change in scaled spectral irradiance with sun elevation angle. UV-B and UV-A2 regions of the spectrum. Spectra scaled to PAR = <span class="math inline">\(1\,000\,\mu mol\,s^{-1}\,m^{-2}\)</span>. Based on simulations with libradtran for 300 DU and 240 DU, a 20% depletion at Jokioinen, Finland. Data from Anders Lindfors.
 </figcaption>
 </figure>
 </div>
@@ -889,15 +922,111 @@ Figure&nbsp;4.18: Change in scaled spectral irradiance with sun elevation angle.
 <img src="light-environment-terrestrial_files/figure-html/fig-UVB-PAR-ozone-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVB-PAR-ozone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.19: Daily time course of UV-B:PAR photon ratio under a clear sky, under normal and 20% depleted ozone column. Based on simulations with libradtran for 300 DU and 240 DU, a 20% depletion at Jokioinen, Finland. Data from Anders Lindfors.
+Figure&nbsp;4.20: Daily time course of UV-B:PAR photon ratio under a clear sky, under normal and 20% depleted ozone column. Based on simulations with libradtran for 300 DU and 240 DU, a 20% depletion at Jokioinen, Finland. Data from Anders Lindfors.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Figure [] shows how spectral irradiance changes throughout one day. When the whole spectrum is plotted using a linear scale the effect of ozone depletion is not visible, however, if we plot only the region (Figure <a href="#fig:solarUV:spectrum:noon" data-reference-type="ref" data-reference="fig:solarUV:spectrum:noon">[fig:solarUV:spectrum:noon]</a>) the effect becomes clearly visible.</p>
-<p>Seasonal variation in irradiance has a larger relative amplitude than variation in (Figure <a href="#fig:diffuse.light" data-reference-type="ref" data-reference="fig:diffuse.light">[fig:diffuse.light]</a>). This causes a seasonal variation in the : ratio (Figure <a href="#fig:UVB:Erlangen" data-reference-type="ref" data-reference="fig:UVB:Erlangen">[fig:UVB:Erlangen]</a>). In addition to the regular seasonal variation, there is random variation as a result of changes in clouds (Figure <a href="#fig:UVB:Erlangen" data-reference-type="ref" data-reference="fig:UVB:Erlangen">[fig:UVB:Erlangen]</a>). Normal seasonal and spatial variation in can be sensed by plants, and could play a role in their adaptation to seasons and/or their position in the canopy.</p>
-<p><embed src="figures/fig_diffuse_Flint.pdf" class="img-fluid"> <embed src="figures/fig_seasonal_Brown.pdf" class="img-fluid"></p>
+</section>
+<section id="clouds" class="level4" data-number="4.1.3.4">
+<h4 data-number="4.1.3.4" class="anchored" data-anchor-id="clouds"><span class="header-section-number">4.1.3.4</span> Clouds</h4>
+<p>Above we have ignored the effects of clouds and relied heavily on simulations for clear-sky conditions. Next we will consider the effect of clouds and use as examples measurements and simulations that include the effect of clouds. We will consider variation at different time scales. We start with a time series of hourly mean spectra for one day, scaled to equal PAR photon irradiance to illustrate how the shape of the spectrum can change during the course of day <a href="#fig-spectra-whole-day-anim" class="quarto-xref">Figure&nbsp;<span>4.21</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-spectra-whole-day-anim" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spectra-whole-day-anim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-spectra-whole-day-anim-1.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectra-whole-day-anim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.21: Time scaled spectral photon irradiance during one day. Hourly mean spectra scaled to PAR = 1000 <span class="math inline">\(\mu mol\,s^{-1}\,m^{-2}\)</span> to emphasize the change in shape. Simulated with libradtran including the effect of clouds for Kumpula, Helsinki, Finland. Data from Andes Lindfors.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It should be noted that, through reflection, broken clouds can locally increase irradiance to values above those under clear-sky conditions <span class="citation" data-cites="Frederick1993 Diaz1996">(<a href="references.html#ref-Frederick1993" role="doc-biblioref">Frederick et al. 1993</a>; <a href="references.html#ref-Diaz1996" role="doc-biblioref">Díaz et al. 1996</a>)</span>. These are transient increases of short duration and easily detected with fast measurements, and the irradiance increase can be 30% or more compared to under a clear sky. This is well illustrated by measurements at 1 min interval during four consecutive days <a href="#fig-PAR-four-days" class="quarto-xref">Figure&nbsp;<span>4.22</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-PAR-four-days" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-PAR-four-days-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-PAR-four-days-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-PAR-four-days-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.22: Time course of PAR, UV-A and UV-B photon irradiance during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s. The step changes at very low sun elevations are caused by shading from far-away buildings.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The photon ratios for the same four days <a href="#fig-ratios-four-days" class="quarto-xref">Figure&nbsp;<span>4.23</span></a> shows the influence of clouds and of sun elevation, both affecting the PAR diffuse fraction. In particular, broken clouds on 10 July cause momentary nearly doubling of the UV-A:PAR and UV-B:PAR photon ratios. The short-term effect on the R:FR is smaller, but the differences between days larger, possibly because of its dependence on the atmospheric water content <span class="citation" data-cites="kotilainenxxxx">(<a href="references.html#ref-kotilainenxxxx" role="doc-biblioref"><strong>kotilainenxxxx?</strong></a>)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ratios-four-days" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ratios-four-days-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-ratios-four-days-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ratios-four-days-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.23: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In <a href="#fig-ratios-four-days" class="quarto-xref">Figure&nbsp;<span>4.23</span></a> we can see fast changes in the ratios towards the end of the day. The time-series of spectra measured once a minute during 5 minutes shows how the shape of the spectrum can rapidly change leading to rapid changes in the R:FR photon ratio <a href="#fig-spectra-anim-five-min" class="quarto-xref">Figure&nbsp;<span>4.24</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-spectra-anim-five-min" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spectra-anim-five-min-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-spectra-anim-five-min-1.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectra-anim-five-min-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.24: Time series of spectra near sunset. Five minutes of solar spectra measurements. Measured with an array spectrometer at Viikki, Helsinki, Finland.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloudflecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function <a href="#fig-cloudflecks-edf" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>. The distribution is not Normal, and skewed to the right.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-cloudflecks-edf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cloudflecks-edf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-cloudflecks-edf-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cloudflecks-edf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.25: xxxxxxxxxxxxxxx. In the main panel a quantile regression is shown, with the line repesenting the median, the dark band enclosing the two central quantiles (simmilar to the box in a box plot) and the pale band enclosing 90% of the observations. The inset shows the fitted empirical density function (EDF) for the duration of the cloudflecks. Source <span class="citation" data-cites="Sellaro2024">Sellaro et al. (<a href="references.html#ref-Sellaro2024" role="doc-biblioref">2024</a>)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Irradiance is much lower during a cloudfleck than in full sunlight <a href="#fig-spectrum-cloudfleck" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>. The spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight <a href="#fig-spectrum-cloudfleck" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-spectrum-cloudfleck" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spectrum-cloudfleck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="light-environment-terrestrial_files/figure-html/fig-spectrum-cloudfleck-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectrum-cloudfleck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.26: Spectra during and immediately after a cloudfleck. A: photon spectral irradiance as measured, B: same data scaled to equal PAR of <span class="math inline">\(1\,000 \mu mol\,s^{-1}\,m^{-2}\)</span>. Source <span class="citation" data-cites="Sellaro2024">Sellaro et al. (<a href="references.html#ref-Sellaro2024" role="doc-biblioref">2024</a>)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="seasons-and-latitude" class="level4" data-number="4.1.3.5">
+<h4 data-number="4.1.3.5" class="anchored" data-anchor-id="seasons-and-latitude"><span class="header-section-number">4.1.3.5</span> Seasons and latitude</h4>
+<p><strong>Maps for PAR, UV-A and UV-A could be added to this section.</strong></p>
+<p><strong>I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added.</strong></p>
+<p>Considering a longer time scale of years, seasonal and daily variation are combined. The seasonal pattern of variation in UV-B daily exposure is very clear but has day to day variation superimposed <a href="#fig-UVB-Erlangen" class="quarto-xref">Figure&nbsp;<span>4.27</span></a>. The strong change in the UV-B:PAR photon ratio with sun elevation creates a strong seasonal pattern in this photon ratio <a href="#fig-UVB-Erlangen" class="quarto-xref">Figure&nbsp;<span>4.27</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-UVB-Erlangen" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -906,13 +1035,13 @@ Figure&nbsp;4.19: Daily time course of UV-B:PAR photon ratio under a clear sky, 
 <img src="light-environment-terrestrial_files/figure-html/fig-UVB-Erlangen-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVB-Erlangen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.20: Seasonal variation in daily UV-B energy exposure Erlangen, Germany (<span class="math inline">\(54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}\)</span>, 280 m asl). Top: daily UV-B energy exposure; bottom: UV-B:PhR daily-energy-exposures ratio. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+Figure&nbsp;4.27: Seasonal variation in daily UV-B energy exposure Erlangen, Germany (<span class="math inline">\(54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}\)</span>, 280 m asl). A: daily UV-B energy exposure; B: UV-B:PhR daily-energy-exposures ratio. Note: there are gaps with missing data in the time-series data. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>irradiance increases with elevation in mountains and with decreasing latitude <a href="#fig-UVB-latitude" class="quarto-xref">Figure&nbsp;<span>4.21</span></a> and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in these mountains <span class="citation" data-cites="Flenley1992">(<a href="references.html#ref-Flenley1992" role="doc-biblioref">Flenley 1992</a>)</span>.</p>
+<p>UV-B irradiance increases with elevation in mountains and with decreasing latitude <a href="#fig-UVB-latitude" class="quarto-xref">Figure&nbsp;<span>4.28</span></a> and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in these mountains <span class="citation" data-cites="Flenley1992">(<a href="references.html#ref-Flenley1992" role="doc-biblioref">Flenley 1992</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-UVB-latitude" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -921,17 +1050,21 @@ Figure&nbsp;4.20: Seasonal variation in daily UV-B energy exposure Erlangen, Ger
 <img src="light-environment-terrestrial_files/figure-html/fig-UVB-latitude-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-UVB-latitude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.21: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
+Figure&nbsp;4.28: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments <span class="citation" data-cites="Haeder2007">(see, <a href="references.html#ref-Haeder2007" role="doc-biblioref">Häder et al. 2007</a>)</span>.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>An increase in the irradiance is caused by depletion of the ozone layer in the stratosphere, mainly as a consequence of the release of chlorofluorocarbons (CFCs), used in cooling devices such as refrigerators and air conditioners, and in some spray cans <span class="citation" data-cites="Graedel1993">(see <a href="references.html#ref-Graedel1993" role="doc-biblioref">Graedel and Crutzen 1993</a>)</span>. The most dramatic manifestation of this has been the seasonal formation of an “ozone hole” over Antarctica. It is controversial whether a true ozone hole has already formed in the Arctic, but strong depletion has occurred in year 2011 <span class="citation" data-cites="Manney2011">(<a href="references.html#ref-Manney2011" role="doc-biblioref">Manney et al. 2011</a>)</span> and atmospheric conditions needed for the formation of a “deep” ozone hole are not very different from those prevalent in recent years. Not so dramatic, but consistent, depletion has also been observed at mid-latitudes in both hemispheres. CFCs and some other halocarbons have been phased out following the Montreal agreement and later updates. However, as CFCs have a long half life in the atmosphere, of the order of 100 years, their effect on the ozone layer will persist for many years, even after their use has been drastically reduced. Model-based predictions of changes in atmospheric circulation due to global climate change have been used to derive future trends in index and ozone column thickness <span class="citation" data-cites="Hegglin2009">(<a href="references.html#ref-Hegglin2009" role="doc-biblioref">Hegglin and Shepherd 2009</a>)</span>. In addition, increased cloudiness and pollution, could lead to decreased and , sometimes called ‘global dimming’ <span class="citation" data-cites="Stanhill2001">(e.g. <a href="references.html#ref-Stanhill2001" role="doc-biblioref">Stanhill and Cohen 2001</a>)</span>. It should be noted that, through reflection, broken clouds can locally increase irradiance to values above those under clear-sky conditions <span class="citation" data-cites="Frederick1993 Diaz1996">(<a href="references.html#ref-Frederick1993" role="doc-biblioref">Frederick et al. 1993</a>; <a href="references.html#ref-Diaz1996" role="doc-biblioref">Díaz et al. 1996</a>)</span>.</p>
+</section>
+<section id="elevation" class="level4" data-number="4.1.3.6">
+<h4 data-number="4.1.3.6" class="anchored" data-anchor-id="elevation"><span class="header-section-number">4.1.3.6</span> Elevation</h4>
+<p><strong>We have three options: 1) generate suitable data with TUV, 2) show measured data from the literature, or 3) both.</strong></p>
 </section>
 </section>
-<section id="uv-radiation-within-plant-canopies" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="uv-radiation-within-plant-canopies"><span class="header-section-number">4.2</span> UV radiation within plant canopies</h2>
+</section>
+<section id="solar-radiation-within-plant-canopies" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="solar-radiation-within-plant-canopies"><span class="header-section-number">4.2</span> Solar radiation within plant canopies</h2>
 <p>The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. Here we give only a description of the simplest approach, the use of an approximation based on Beer’s law as modified by <span class="citation" data-cites="Monsi1953">Monsi and Saeki (<a href="references.html#ref-Monsi1953" role="doc-biblioref">1953</a>)</span>, reviewed by <span class="citation" data-cites="Hirose2005">Hirose (<a href="references.html#ref-Hirose2005" role="doc-biblioref">2005</a>)</span>. Beer’s law (Equation <a href="#eq:Beer-Lambert" data-reference-type="ref" data-reference="eq:Beer-Lambert">[eq:Beer-Lambert]</a>) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). <span class="math display">\[I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}\]</span> Equation <a href="#eq:Monsi:Saeki" data-reference-type="ref" data-reference="eq:Monsi:Saeki">[eq:Monsi:Saeki]</a> describes the radiation attenuated as a function of leaf area index (<span class="math inline">\(L\)</span> or ) at a given canopy depth (<span class="math inline">\(z\)</span>). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical extinction coefficient (<span class="math inline">\(K\)</span>) obtained may vary depending on these factors. <span class="math inline">\(K\)</span> is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year—as a consequence of solar zenith angle—and degree of scattering of the incident radiation. As the degree of scattering depends on clouds, and also on wavelength, the extinction coefficient is different for and visible radiation. Radiation extinction in canopies has yet to be studied in detail with respect to radiation, mainly because of difficulties in the measurement of radiation compared to , a spectral region which has been extensively studied.</p>
 <p>Ultraviolet radiation is strongly absorbed by plant surfaces, although cuticular waxes and pubescence on leaves can sometimes increase reflectance. The diffuse component of radiation is larger than that of visible light (Figure <a href="#fig:diffuse.light" data-reference-type="ref" data-reference="fig:diffuse.light">[fig:diffuse.light]</a>). In sunlit patches in forest gaps the diffuse radiation percentage is lower than in open areas, because <span data-acronym-label="direct:rad" data-acronym-form="singular+short">direct:rad</span> is not attenuated but part of the sky is occluded by the surrounding forest. Attenuation with canopy depth is on average usually more gradual for than for . The irradiance decreases with depth in tree canopies, but the ratio tends to increase <span class="citation" data-cites="Brown1994">(see <a href="references.html#ref-Brown1994" role="doc-biblioref">Brown, Parker, and Posner 1994</a>)</span>. In contrast, <span class="citation" data-cites="Deckmyn2001">Deckmyn, Cayenberghs, and Ceulemans (<a href="references.html#ref-Deckmyn2001" role="doc-biblioref">2001</a>)</span> observed a decrease in ratio in white clover canopies with planophyle leaves. <span class="citation" data-cites="Allen1975">Allen, Gausman, and Allen (<a href="references.html#ref-Allen1975" role="doc-biblioref">1975</a>)</span> modelled the penetration in plant canopies, under normal and depleted ozone conditions. <span class="citation" data-cites="Parisi1996">Parisi and Wong (<a href="references.html#ref-Parisi1996" role="doc-biblioref">1996</a>)</span> measured doses within model plant canopies using dosimeters. The position of leaves affects exposure, and it has been observed that heliotropism can moderate exposure and could be a factor contributing to differences in tolerance among crop cultivars <span class="citation" data-cites="Grant1998 Grant1999 Grant1999a Grant2004">(<a href="references.html#ref-Grant1998" role="doc-biblioref">Grant 1998</a>, <a href="references.html#ref-Grant1999" role="doc-biblioref">1999a</a>, <a href="references.html#ref-Grant1999a" role="doc-biblioref">1999b</a>, <a href="references.html#ref-Grant2004" role="doc-biblioref">2004</a>)</span>.</p>
 <p>Detailed accounts of different models describing the interaction of radiation and plant canopies, taking into account the properties of foliage, are given by <span class="citation" data-cites="Campbell1998">Campbell and Norman (<a href="references.html#ref-Campbell1998" role="doc-biblioref">1998</a>)</span> and <span class="citation" data-cites="Monteith2008">Monteith and Unsworth (<a href="references.html#ref-Monteith2008" role="doc-biblioref">2008</a>)</span>.</p>
@@ -1012,6 +1145,9 @@ Monteith, John, and Mike Unsworth. 2008. <em>Principles of Environmental Physics
 </div>
 <div id="ref-Parisi1996" class="csl-entry" role="listitem">
 Parisi, A. V., and J. C. F. Wong. 1996. <span>“Plant Canopy Shape and the Influences on <span>UV</span> Exposures to the Canopy.”</span> <em>Photochemistry and Photobiology</em> 63 (6): 143–48. <a href="https://doi.org/10.1111/j.1751-1097.1996.tb02434.x">https://doi.org/10.1111/j.1751-1097.1996.tb02434.x</a>.
+</div>
+<div id="ref-Sellaro2024" class="csl-entry" role="listitem">
+Sellaro, Romina, Maxime Durand, Pedro J. Aphalo, and Jorge J. Casal. 2024. <span>“Making the Most of Canopy Light: Shade Avoidance Under Afluctuating Spectrum and Irradiance.”</span> <em>Journal of Experimental Botany</em>.
 </div>
 <div id="ref-Stanhill2001" class="csl-entry" role="listitem">
 Stanhill, Gerald, and Shabtai Cohen. 2001. <span>“Global Dimming: A Review of the Evidence for a Widespread and Significant Reduction in Global Radiation with Discussion of Its Probable Causes and Possible Agricultural Consequences.”</span> <em>Agricultural and Forest Meteorology</em> 107: 255–78. <a href="https://doi.org/10.1016/S0168-1923(00)00241-0">https://doi.org/10.1016/S0168-1923(00)00241-0</a>.

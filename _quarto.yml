@@ -95,4 +95,5 @@ format:
     documentclass: scrreprt
 
 editor: source
+freeze: false
 
