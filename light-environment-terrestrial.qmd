@@ -783,7 +783,7 @@ sun_one_day.spct[[idfactor]] <- factor(sun_one_day.spct[[idfactor]])
 
 ```{r, echo=FALSE, warning=FALSE}
 #| label: fig-spectra-whole-day-anim
-#| fig-cap: Time scaled spectral photon irradiance during one day. Hourly mean spectra scaled to PAR = 1000 $\mu mol\,s^{-1}\,m^{-2}$ to emphasize the change in shape. Simulated with libradtran including the effect of clouds for Kumpula, Helsinki, Finland. Data from Andes Lindfors.
+#| fig-cap: Time series of scaled spectral photon irradiance during one day. Hourly mean spectra scaled to PAR = 1000 $\mu mol\,s^{-1}\,m^{-2}$ to emphasize the change in shape. Simulated with libradtran including the effect of clouds for Kumpula, Helsinki, Finland. Data from Andes Lindfors.
 
 anim <- ggplot(data = fscale(sun_one_day.spct, f = q_irrad, target = 1e-3, w.band = PAR()),
                unit.out = "photon") +
@@ -829,7 +829,7 @@ water content [@kotilainenxxxx].
 
 ```{r, echo=FALSE}
 #| label: fig-ratios-four-days
-#| fig-cap: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings.
+#| fig-cap: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings. The PAR diffuse ratio varies with sun elevation in the range 0.12 to 1.0, as shown in @fig-diffuse-TUV for clear sky conditions. With the solar disk fully occluded by clouds or objects the diffuse ratio approches 1 at all sun elevations. 
 
 ((ggplot(four_days_1min.data, 
          aes(time_EET, 
@@ -883,7 +883,7 @@ ggplot(data = my_sun.spct, unit.out = "photon") +
   ggtitle('Now showing {closest_state} UTC',
           subtitle = 'Frame {frame} of {nframes}')
 ```
-The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloudflecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function [@fig-cloudflecks-edf]. The distribution is not Normal, and skewed to the right.
+The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloud flecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function for their duration [@fig-cloudflecks-edf inset]. The distribution is not Normal, and skewed to the right. Semi-transparent and small clouds attenuate irradiance less that large thick clouds and at the same time create cloud flecks of shorter duration [@fig-cloudflecks-edf main panel].
 
 ```{r, echo=FALSE}
 #| label: fig-cloudflecks-edf
@@ -914,12 +914,7 @@ print(p2 + scale_y_continuous(breaks = c(0, 60, 120, 180, 240, 300)) +
   annotate(geom = "plot", x = I(0.05), y = I(1), label = p3, vp.width = 2/3, vp.height = 2/3))
 ```
 
-Irradiance is much lower during a cloudfleck than in full sunlight [@fig-spectrum-cloudfleck A]. The spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight [@fig-spectrum-cloudfleck B]. 
-
 ```{r, echo=FALSE}
-#| label: fig-spectrum-cloudfleck
-#| fig-cap: Spectra during and immediately after a cloudfleck. A&#58; photon spectral irradiance as measured, B&#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$. Source @Sellaro2024.
-
 ## cloudfleck spectrum
 
 {
@@ -937,6 +932,17 @@ CSCLDY.spct <- as.source_spct(CSCLDY.df,
                               multiple.wl = length(unique(CSCLDY.df$type)))
 
 CSCLDY.mspct <- e2q(subset2mspct(CSCLDY.spct))
+}
+```
+
+Irradiance is much lower under cloud cover than in full sunlight under a clear sky [@fig-spectrum-cloudfleck A]. The cloud light spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight, more easily seen after scaling the spectra to equal irradiance [@fig-spectrum-cloudfleck B]. For this example the coordinated colour temperature (CCT) was `r round(spct_CCT(CSCLDY.mspct[["overcast"]]), -1)` K and `r round(spct_CCT(CSCLDY.mspct[["clear.sky"]]), -1)` K for the overcast and clear sky, respectively. 
+
+```{r, echo=FALSE}
+#| label: fig-spectrum-cloudfleck
+#| fig-cap: Spectra during and immediately after a cloudfleck. A&#58; photon spectral irradiance as measured, B&#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$. Source @Sellaro2024.
+
+{
+  photon_as_default()
 
 p.cloudy.scaled <-
   ggplot(data = fscale(CSCLDY.spct,
@@ -971,7 +977,7 @@ p.cloudy.irrad / p.cloudy.scaled +
 
 **Maps for PAR, UV-A and UV-A could be added to this section.**
 
-**I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added.**
+**I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added. Maybe a figure with daily averages per month of week. Or a moving average.**
 
 Considering a longer time scale of years, seasonal and daily variation are combined. The seasonal pattern of variation in UV-B daily exposure is very clear but has day to day variation superimposed [@fig-UVB-Erlangen A]. The strong change in the UV-B:PAR photon ratio with sun elevation creates a strong seasonal pattern in this photon ratio [@fig-UVB-Erlangen B].
 
@@ -1043,6 +1049,7 @@ print((fig_UVB / fig_UVA) + plot_layout(axes = "collect"))
 #### Elevation
 
 **We have three options: 1) generate suitable data with TUV, 2) show measured data from the literature, or 3) both.** 
+
 
 ## Solar radiation within plant canopies
 

@@ -940,7 +940,7 @@ Figure&nbsp;4.20: Daily time course of UV-B:PAR photon ratio under a clear sky, 
 <img src="light-environment-terrestrial_files/figure-html/fig-spectra-whole-day-anim-1.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectra-whole-day-anim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.21: Time scaled spectral photon irradiance during one day. Hourly mean spectra scaled to PAR = 1000 <span class="math inline">\(\mu mol\,s^{-1}\,m^{-2}\)</span> to emphasize the change in shape. Simulated with libradtran including the effect of clouds for Kumpula, Helsinki, Finland. Data from Andes Lindfors.
+Figure&nbsp;4.21: Time series of scaled spectral photon irradiance during one day. Hourly mean spectra scaled to PAR = 1000 <span class="math inline">\(\mu mol\,s^{-1}\,m^{-2}\)</span> to emphasize the change in shape. Simulated with libradtran including the effect of clouds for Kumpula, Helsinki, Finland. Data from Andes Lindfors.
 </figcaption>
 </figure>
 </div>
@@ -970,7 +970,7 @@ Figure&nbsp;4.22: Time course of PAR, UV-A and UV-B photon irradiance during fou
 <img src="light-environment-terrestrial_files/figure-html/fig-ratios-four-days-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ratios-four-days-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.23: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings.
+Figure&nbsp;4.23: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings. The PAR diffuse ratio varies with sun elevation in the range 0.12 to 1.0, as shown in <a href="#fig-diffuse-TUV" class="quarto-xref">Figure&nbsp;<span>4.18</span></a> for clear sky conditions. With the solar disk fully occluded by clouds or objects the diffuse ratio approches 1 at all sun elevations.
 </figcaption>
 </figure>
 </div>
@@ -991,7 +991,7 @@ Figure&nbsp;4.24: Time series of spectra near sunset. Five minutes of solar spec
 </div>
 </div>
 </div>
-<p>The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloudflecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function <a href="#fig-cloudflecks-edf" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>. The distribution is not Normal, and skewed to the right.</p>
+<p>The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloud flecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function for their duration <a href="#fig-cloudflecks-edf" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>. The distribution is not Normal, and skewed to the right. Semi-transparent and small clouds attenuate irradiance less that large thick clouds and at the same time create cloud flecks of shorter duration <a href="#fig-cloudflecks-edf" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-cloudflecks-edf" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1006,7 +1006,7 @@ Figure&nbsp;4.25: xxxxxxxxxxxxxxx. In the main panel a quantile regression is sh
 </div>
 </div>
 </div>
-<p>Irradiance is much lower during a cloudfleck than in full sunlight <a href="#fig-spectrum-cloudfleck" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>. The spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight <a href="#fig-spectrum-cloudfleck" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>.</p>
+<p>Irradiance is much lower under cloud cover than in full sunlight <a href="#fig-spectrum-cloudfleck" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>. The spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight, more easily seen after scaling the spectra to equal irradiance <a href="#fig-spectrum-cloudfleck" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>. For this example the coordinated colour temperature (CCT) was 6190 K and 5580 K for the cloudfleck and sun, respectively.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-spectrum-cloudfleck" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1025,7 +1025,7 @@ Figure&nbsp;4.26: Spectra during and immediately after a cloudfleck. A: photon s
 <section id="seasons-and-latitude" class="level4" data-number="4.1.3.5">
 <h4 data-number="4.1.3.5" class="anchored" data-anchor-id="seasons-and-latitude"><span class="header-section-number">4.1.3.5</span> Seasons and latitude</h4>
 <p><strong>Maps for PAR, UV-A and UV-A could be added to this section.</strong></p>
-<p><strong>I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added.</strong></p>
+<p><strong>I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added. Maybe a figure with daily averages per month of week. Or a moving average.</strong></p>
 <p>Considering a longer time scale of years, seasonal and daily variation are combined. The seasonal pattern of variation in UV-B daily exposure is very clear but has day to day variation superimposed <a href="#fig-UVB-Erlangen" class="quarto-xref">Figure&nbsp;<span>4.27</span></a>. The strong change in the UV-B:PAR photon ratio with sun elevation creates a strong seasonal pattern in this photon ratio <a href="#fig-UVB-Erlangen" class="quarto-xref">Figure&nbsp;<span>4.27</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
