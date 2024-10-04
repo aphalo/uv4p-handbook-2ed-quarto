@@ -732,33 +732,6 @@ infrared radiation, or hot mirrors, are designed to be installed at
 other angles, such as $45^\circ$ so that the thermal radiation is not
 reflected back towards the light source but instead to the side.
 
-## The optics leaves and flowers {#the-optics-leaves-and-flowers}
-
-The same analysis as above could be, in principle, applied to an object
-with a heterogeneous internal structure, like a plant leaf with its
-multiple internal air-water interfaces, but one would have to consider
-the multiple internal interfaces and their positions. The presence of
-these interfaces at different angles, plus small particles, cause strong
-scattering, and thus in this case $\rho$ depends on both surface and
-internal properties of the leaf. We can still measure $\rho$, $\tau$ and
-$\alpha$ but predicting based on optical theory the effects of changes
-in leaf thickness or pigment concentration becomes daunting if at all
-possible.
-
-One way of demonstrating the role of air-water interfaces within leaf
-tissues is to infiltrate a leaf with water using a vacuum chamber. The
-effect is most spectacular in a variegated leaf such as those from some
-clones of English ivy: after infiltration with water the green areas
-become translucent green and the white areas almost transparent. The
-internal structure of leaves is extremely efficient at trapping light,
-to the point that it has been copied in a recent design for high
-efficiency solar cells [@Yun2019]. There is also evidence that shade
-leaves are better light traps per unit dry mass than sun leaves. On the
-other hand, modelling of the optical properties of leaves is still in
-its infancy. The optics of leaves, flowers and fruits are described in
-detail in the book [@Lee2007].
-
-
 ### Quantities Describing Light-Matter Interactions {#sec-radiation-quantities-matter-interactions}
 
 Radiation incident on an object can be partitioned into three components based on its fate,

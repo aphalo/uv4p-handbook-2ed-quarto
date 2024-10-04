@@ -25,7 +25,7 @@ format:
     embed-resources: false
 editor: source
 abstract: | 
-  This chapter discusses the light environment of plants. Plants themeselves alter the light environment by selective absorption and reflection. In the case of terrestrial plants the air medium sourrounding the plants has little if any inpact on radiation within vegetation canopies. In the case of aquatic plants, the light received by submerged parts is affected in quality and quantity by the properties of water and solutes in addition to the effects of other plants. In the case of both terrestrial and aquatic plants the temporal dynamics of illumination are different than in the open.
+  This chapter discusses the light environment of plants. Plants themselves alter the light environment by selective absorption and reflection. In the case of terrestrial plants the air medium sourrounding the plants has little if any inpact on radiation within vegetation canopies. In the case of aquatic plants, the light received by submerged parts is affected in quality and quantity by the properties of water and solutes in addition to the effects of other plants. In the case of both terrestrial and aquatic plants the temporal dynamics of illumination are different than in the open.
   
 ---
 
@@ -124,11 +124,61 @@ $$
 
 ## Radiation in terrestrial plants' environment
 
-The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. Here we give only a description of the simplest approach, the use of an approximation based on Beer's law as modified by @Monsi1953, reviewed by @Hirose2005. Beer's law (Equation [\[eq:Beer-Lambert\]](#eq:Beer-Lambert){reference-type="ref" reference="eq:Beer-Lambert"}) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). $$I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}$$ Equation [\[eq:Monsi:Saeki\]](#eq:Monsi:Saeki){reference-type="ref" reference="eq:Monsi:Saeki"} describes the radiation attenuated as a function of leaf area index ($L$ or ) at a given canopy depth ($z$). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical extinction coefficient ($K$) obtained may vary depending on these factors. $K$ is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year---as a consequence of solar zenith angle---and degree of scattering of the incident radiation. As the degree of scattering depends on clouds, and also on wavelength, the extinction coefficient is different for and visible radiation. Radiation extinction in canopies has yet to be studied in detail with respect to radiation, mainly because of difficulties in the measurement of radiation compared to , a spectral region which has been extensively studied.
+### Attenuation of PAR
 
-Ultraviolet radiation is strongly absorbed by plant surfaces, although cuticular waxes and pubescence on leaves can sometimes increase reflectance. The diffuse component of radiation is larger than that of visible light (Figure [[fig:diffuse.light]](#fig:diffuse.light){reference-type="ref" reference="fig:diffuse.light"}). In sunlit patches in forest gaps the diffuse radiation percentage is lower than in open areas, because [direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"} is not attenuated but part of the sky is occluded by the surrounding forest. Attenuation with canopy depth is on average usually more gradual for than for . The irradiance decreases with depth in tree canopies, but the ratio tends to increase [see @Brown1994]. In contrast, @Deckmyn2001 observed a decrease in ratio in white clover canopies with planophyle leaves. @Allen1975 modelled the penetration in plant canopies, under normal and depleted ozone conditions. @Parisi1996 measured doses within model plant canopies using dosimeters. The position of leaves affects exposure, and it has been observed that heliotropism can moderate exposure and could be a factor contributing to differences in tolerance among crop cultivars [@Grant1998; @Grant1999; @Grant1999a; @Grant2004].
+The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. We start with one of the simplest approaches to the description of light attenuation with canopy depth: the use of an approximation based on Beer's law as modified by @Monsi1953, reviewed by @Hirose2005. Beer's law (Equation [\[eq:Beer-Lambert\]](#eq:Beer-Lambert){reference-type="ref" reference="eq:Beer-Lambert"}) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). $$I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}$$ The equation above describes the radiation attenuated as a function of leaf area index ($L$ or ) at a given canopy depth ($z$). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical attenuation (= extinction) coefficient ($K$) obtained may vary depending on these factors. $K$ is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year---as a consequence of solar zenith angle---and degree of scattering of the incident radiation. As the formula shown here is only a parametrization of Beer's original equation for homogeneous media, as long as we assume that $K$ does not change with depth in the canopy, it describes an exponential decay as Beer's law does ([@fig-Beer-Lambert]), except that we use leaf area index (LAI) in place of distance ($l$).
+
+As the degree of scattering depends on clouds, sun elevation and on wavelength, the empirical attenuation coefficient ($K$) is different for UV and VIS radiation, time of day, seasons and state of the vegetation. Radiation attenuation in canopies has yet to be studied in detail with respect to UV radiation, mainly because of difficulties in the measurement of UV radiation compared to VIS radiation, a spectral region that has been extensively studied.
+
+### Spectrum wihtin vegetation
+
+Ultraviolet radiation is strongly absorbed by plant surfaces, although cuticular waxes and pubescence on leaves can increase UV reflectance. The diffuse fraction of UV radiation in daylight is larger than that of visible light ([@fig-diffuse-TUV]). In sunlit patches in forest gaps, the diffuse radiation fraction is smaller than in open areas because direct radiation is not attenuated while part of the sky is occluded by the surrounding forest. Attenuation with canopy depth is on average usually more gradual in tall vegetation like forests than in low vegetation, because of increased size of the area in penumbra. 
+
+The UV-B irradiance decreases with depth in tree canopies, but the UV-B:PAR ratio tends to increase [see @Brown1994], as it also does when clouds occlude the solar disk ([@fig-ratios-four-days]). In contrast, @Deckmyn2001 observed a decrease in the UV-B:PAR ratio in white clover canopies with planophyle leaves. @Allen1975 modelled the penetration in plant canopies, under normal and depleted ozone conditions. @Parisi1996 measured doses within model plant canopies using dosimeters. The position of leaves affects exposure, and it has been observed that heliotropism can moderate exposure and could be a factor contributing to differences in tolerance among crop cultivars [@Grant1998; @Grant1999; @Grant1999a; @Grant2004].
 
 Detailed accounts of different models describing the interaction of radiation and plant canopies, taking into account the properties of foliage, are given by @Campbell1998 and @Monteith2008.
+
+Measurement of spectral irradiance within plant canopies is challenging because of the temporal dynamics and the spatial heterogeneity. One needs to measure all wavelengths within milliseconds and sample in a 3D space. The best tools are array spectrometers, which however, do not natively have a big enough signal to noise ratio to measure UV-B spectral irradiance in the presence of strong visible radiation, as is the case in sunlight and canopy light. Some broadband sensors are visible blind, but they do not resolve spectral irradiance but instead measure the irradiance integrated over a waveband. This technical limitations non-withstanding, progress since the first edition has been very significant in the characterisation of the light environment within different plant canopies.
+
+### Temporal dynamics and spatial heterogeneity
+
+
+### Spectral irradiance at the plant surface
+
+**Ray tracing models, etc.**
+
+### Radiation within leaves {#the-optics-leaves-and-flowers}
+
+The same analysis as done for optical filters in section XXX with only two parallel air-glass interfaces, can in principle, be applied to an object
+with a heterogeneous internal structure, like a plant leaf with its
+multiple internal air-water interfaces. However, one would need to consider
+these multiple internal interfaces and their positions. The presence of
+these interfaces at different angles, plus small particles, cause strong
+scattering, and thus in this case $\rho$ depends on both surface and
+internal properties of the leaf. We can still measure $\rho$, $\tau$ and
+$\alpha$ but predicting them based on optical theory becomes daunting if at all
+possible. Simulation models based on a simplified description of leaves' 
+structure and pigments, such as PROSPECT can provide good approximations. 
+
+
+One way of demonstrating and/or measuring the role of air-water interfaces
+within leaf tissues on its optical properties is to infiltrate a leaf with water
+using a vacuum chamber so as to fill with water all air spaces within the leaf.
+The effect is most spectacular in a variegated leaf such as those from some
+clones of English ivy: after infiltration with water the green areas become
+translucent green and the white areas almost transparent. Obviously, the ability
+to greatly increase the number of photons absorbed with the same number of
+pigment molecules can greatly increase the efficiency of photosynthesis as well
+as the ability of photoreceptors to sense very low irradiances.
+
+The internal structure of leaves has evolved to be extremely efficient at
+trapping light, to the point that it has been copied in a recent design for high
+efficiency solar cells [@Yun2019]. There is also evidence that shade leaves are
+better light traps per unit dry mass than sun leaves. On the other hand,
+modelling of the optical properties of leaves is still in its infancy. The
+optics of leaves, flowers and fruits are described in detail in the book
+[@Lee2007].
+
 
 
 

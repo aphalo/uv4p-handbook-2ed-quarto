@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Maxime Durand">
+<meta name="author" content="Pirjo Huovinen">
+<meta name="author" content="(Iván Gómez)">
+<meta name="author" content="T. Matthew Robson">
+<meta name="author" content="(Félix López Figueroa)">
+<meta name="author" content="Pedro J. Aphalo">
+<meta name="dcterms.date" content="2024-06-17">
+
+<title>5&nbsp; The UV, VIS and NIR environment of plants – Field Methods in Plant Photobiology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./quantifying-radiation.html" rel="next">
+<link href="./light-environment-terrestrial.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": true
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Basics</a></li><li class="breadcrumb-item"><a href="./light-environment-plants.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment of plants</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Field Methods in Plant Photobiology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface-1ed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface to the 1st edition</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface to the 2nd edition</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table of Contents</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abbreviations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">List of abbreviations and symbols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Basics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Radiation Physics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Radiation-matter Interactions and Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./light-environment-terrestrial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment above vegetation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./light-environment-plants.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment of plants</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Measurements</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quantifying-radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantifying radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./leaf-optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Quantifying Optical Properties</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quantifying-responses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./imaging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Imaging in UV, VIS and short IR radiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Design and planning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./design-of-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Design of Experiments and Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ensuring reproducibility</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Realization and treatments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manipulating-radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Manipulating UV, VIS and NIR radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plant-cultivation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plant cultivation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#radiation-in-terrestrial-plants-environment" id="toc-radiation-in-terrestrial-plants-environment" class="nav-link active" data-scroll-target="#radiation-in-terrestrial-plants-environment"><span class="header-section-number">5.1</span> Radiation in terrestrial plants’ environment</a>
+  <ul class="collapse">
+  <li><a href="#attenuation-of-par" id="toc-attenuation-of-par" class="nav-link" data-scroll-target="#attenuation-of-par"><span class="header-section-number">5.1.1</span> Attenuation of PAR</a></li>
+  <li><a href="#spectrum-wihtin-vegetation" id="toc-spectrum-wihtin-vegetation" class="nav-link" data-scroll-target="#spectrum-wihtin-vegetation"><span class="header-section-number">5.1.2</span> Spectrum wihtin vegetation</a></li>
+  <li><a href="#temporal-dynamics-and-spatial-heterogeneity" id="toc-temporal-dynamics-and-spatial-heterogeneity" class="nav-link" data-scroll-target="#temporal-dynamics-and-spatial-heterogeneity"><span class="header-section-number">5.1.3</span> Temporal dynamics and spatial heterogeneity</a></li>
+  <li><a href="#spectral-irradiance-at-the-plant-surface" id="toc-spectral-irradiance-at-the-plant-surface" class="nav-link" data-scroll-target="#spectral-irradiance-at-the-plant-surface"><span class="header-section-number">5.1.4</span> Spectral irradiance at the plant surface</a></li>
+  <li><a href="#the-optics-leaves-and-flowers" id="toc-the-optics-leaves-and-flowers" class="nav-link" data-scroll-target="#the-optics-leaves-and-flowers"><span class="header-section-number">5.1.5</span> Radiation within leaves</a></li>
+  </ul></li>
+  <li><a href="#radiation-in-aquatic-plants-environment" id="toc-radiation-in-aquatic-plants-environment" class="nav-link" data-scroll-target="#radiation-in-aquatic-plants-environment"><span class="header-section-number">5.2</span> Radiation in aquatic plants’ environment</a>
+  <ul class="collapse">
+  <li><a href="#refraction" id="toc-refraction" class="nav-link" data-scroll-target="#refraction"><span class="header-section-number">5.2.1</span> Refraction</a></li>
+  <li><a href="#absorption-and-scattering-by-pure-water" id="toc-absorption-and-scattering-by-pure-water" class="nav-link" data-scroll-target="#absorption-and-scattering-by-pure-water"><span class="header-section-number">5.2.2</span> Absorption and scattering by pure water</a></li>
+  <li><a href="#absorption-and-scattering-by-water-constituents" id="toc-absorption-and-scattering-by-water-constituents" class="nav-link" data-scroll-target="#absorption-and-scattering-by-water-constituents"><span class="header-section-number">5.2.3</span> Absorption and scattering by water constituents</a></li>
+  <li><a href="#results-and-effects" id="toc-results-and-effects" class="nav-link" data-scroll-target="#results-and-effects"><span class="header-section-number">5.2.4</span> Results and effects</a></li>
+  <li><a href="#modelling-of-underwater-radiation" id="toc-modelling-of-underwater-radiation" class="nav-link" data-scroll-target="#modelling-of-underwater-radiation"><span class="header-section-number">5.2.5</span> Modelling of underwater radiation</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Basics</a></li><li class="breadcrumb-item"><a href="./light-environment-plants.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment of plants</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment of plants</span></h1>
+<p class="subtitle lead">Quantity, quality and timing in nature</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Maxime Durand </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Helsinki
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Pirjo Huovinen <a href="https://orcid.org/0000-0002-7754-4933" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad Austral de Chile
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">(Iván Gómez) <a href="https://orcid.org/0000-0001-8381-3792" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad Austral de Chile
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">T. Matthew Robson </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Cumbria
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">(Félix López Figueroa) </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Pedro J. Aphalo <a href="mailto:pedro.aphalo@helsinki.fi" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0003-3385-972X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Helsinki
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 17, 2024</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">July 17, 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>This chapter discusses the light environment of plants. Plants themselves alter the light environment by selective absorption and reflection. In the case of terrestrial plants the air medium sourrounding the plants has little if any inpact on radiation within vegetation canopies. In the case of aquatic plants, the light received by submerged parts is affected in quality and quantity by the properties of water and solutes in addition to the effects of other plants. In the case of both terrestrial and aquatic plants the temporal dynamics of illumination are different than in the open.</p>
+  </div>
+</div>
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+First edition authors
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Andreas Albert, Félix López Figueroa, Pirjo Huovinen</p>
+</div>
+</div>
+<div class="hidden">
+$$
+% fluence rate
+<p>$$</p>
+</div>
+<section id="radiation-in-terrestrial-plants-environment" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="radiation-in-terrestrial-plants-environment"><span class="header-section-number">5.1</span> Radiation in terrestrial plants’ environment</h2>
+<section id="attenuation-of-par" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="attenuation-of-par"><span class="header-section-number">5.1.1</span> Attenuation of PAR</h3>
+<p>The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. We start with one of the simplest approaches to the description of light attenuation with canopy depth: the use of an approximation based on Beer’s law as modified by <span class="citation" data-cites="Monsi1953">Monsi and Saeki (<a href="references.html#ref-Monsi1953" role="doc-biblioref">1953</a>)</span>, reviewed by <span class="citation" data-cites="Hirose2005">Hirose (<a href="references.html#ref-Hirose2005" role="doc-biblioref">2005</a>)</span>. Beer’s law (Equation <a href="#eq:Beer-Lambert" data-reference-type="ref" data-reference="eq:Beer-Lambert">[eq:Beer-Lambert]</a>) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). <span class="math display">\[I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}\]</span> The equation above describes the radiation attenuated as a function of leaf area index (<span class="math inline">\(L\)</span> or ) at a given canopy depth (<span class="math inline">\(z\)</span>). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical attenuation (= extinction) coefficient (<span class="math inline">\(K\)</span>) obtained may vary depending on these factors. <span class="math inline">\(K\)</span> is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year—as a consequence of solar zenith angle—and degree of scattering of the incident radiation. As the formula shown here is only a parametrization of Beer’s original equation for homogeneous media, as long as we assume that <span class="math inline">\(K\)</span> does not change with depth in the canopy, it describes an exponential decay as Beer’s law does (<a href="optics.html#fig-Beer-Lambert" class="quarto-xref">Figure&nbsp;<span>3.7</span></a>), except that we use leaf area index (LAI) in place of distance (<span class="math inline">\(l\)</span>).</p>
+<p>As the degree of scattering depends on clouds, sun elevation and on wavelength, the empirical attenuation coefficient (<span class="math inline">\(K\)</span>) is different for UV and VIS radiation, time of day, seasons and state of the vegetation. Radiation attenuation in canopies has yet to be studied in detail with respect to UV radiation, mainly because of difficulties in the measurement of UV radiation compared to VIS radiation, a spectral region that has been extensively studied.</p>
+</section>
+<section id="spectrum-wihtin-vegetation" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="spectrum-wihtin-vegetation"><span class="header-section-number">5.1.2</span> Spectrum wihtin vegetation</h3>
+<p>Ultraviolet radiation is strongly absorbed by plant surfaces, although cuticular waxes and pubescence on leaves can increase UV reflectance. The diffuse fraction of UV radiation in daylight is larger than that of visible light (<a href="light-environment-terrestrial.html#fig-diffuse-TUV" class="quarto-xref">Figure&nbsp;<span>4.18</span></a>). In sunlit patches in forest gaps, the diffuse radiation fraction is smaller than in open areas because direct radiation is not attenuated while part of the sky is occluded by the surrounding forest. Attenuation with canopy depth is on average usually more gradual in tall vegetation like forests than in low vegetation, because of increased size of the area in penumbra.</p>
+<p>The UV-B irradiance decreases with depth in tree canopies, but the UV-B:PAR ratio tends to increase <span class="citation" data-cites="Brown1994">(see <a href="references.html#ref-Brown1994" role="doc-biblioref">Brown, Parker, and Posner 1994</a>)</span>, as it also does when clouds occlude the solar disk (<a href="light-environment-terrestrial.html#fig-ratios-four-days" class="quarto-xref">Figure&nbsp;<span>4.23</span></a>). In contrast, <span class="citation" data-cites="Deckmyn2001">Deckmyn, Cayenberghs, and Ceulemans (<a href="references.html#ref-Deckmyn2001" role="doc-biblioref">2001</a>)</span> observed a decrease in the UV-B:PAR ratio in white clover canopies with planophyle leaves. <span class="citation" data-cites="Allen1975">Allen, Gausman, and Allen (<a href="references.html#ref-Allen1975" role="doc-biblioref">1975</a>)</span> modelled the penetration in plant canopies, under normal and depleted ozone conditions. <span class="citation" data-cites="Parisi1996">Parisi and Wong (<a href="references.html#ref-Parisi1996" role="doc-biblioref">1996</a>)</span> measured doses within model plant canopies using dosimeters. The position of leaves affects exposure, and it has been observed that heliotropism can moderate exposure and could be a factor contributing to differences in tolerance among crop cultivars <span class="citation" data-cites="Grant1998 Grant1999 Grant1999a Grant2004">(<a href="references.html#ref-Grant1998" role="doc-biblioref">Grant 1998</a>, <a href="references.html#ref-Grant1999" role="doc-biblioref">1999a</a>, <a href="references.html#ref-Grant1999a" role="doc-biblioref">1999b</a>, <a href="references.html#ref-Grant2004" role="doc-biblioref">2004</a>)</span>.</p>
+<p>Detailed accounts of different models describing the interaction of radiation and plant canopies, taking into account the properties of foliage, are given by <span class="citation" data-cites="Campbell1998">Campbell and Norman (<a href="references.html#ref-Campbell1998" role="doc-biblioref">1998</a>)</span> and <span class="citation" data-cites="Monteith2008">Monteith and Unsworth (<a href="references.html#ref-Monteith2008" role="doc-biblioref">2008</a>)</span>.</p>
+<p>Measurement of spectral irradiance within plant canopies is challenging because of the temporal dynamics and the spatial heterogeneity. One needs to measure all wavelengths within milliseconds and sample in a 3D space. The best tools are array spectrometers, which however, do not natively have a big enough signal to noise ratio to measure UV-B spectral irradiance in the presence of strong visible radiation, as is the case in sunlight and canopy light. Some broadband sensors are visible blind, but they do not resolve spectral irradiance but instead measure the irradiance integrated over a waveband. This technical limitations non-withstanding, progress since the first edition has been very significant in the characterisation of the light environment within different plant canopies.</p>
+</section>
+<section id="temporal-dynamics-and-spatial-heterogeneity" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="temporal-dynamics-and-spatial-heterogeneity"><span class="header-section-number">5.1.3</span> Temporal dynamics and spatial heterogeneity</h3>
+</section>
+<section id="spectral-irradiance-at-the-plant-surface" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="spectral-irradiance-at-the-plant-surface"><span class="header-section-number">5.1.4</span> Spectral irradiance at the plant surface</h3>
+<p><strong>Ray tracing models, etc.</strong></p>
+</section>
+<section id="the-optics-leaves-and-flowers" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="the-optics-leaves-and-flowers"><span class="header-section-number">5.1.5</span> Radiation within leaves</h3>
+<p>The same analysis as done for optical filters in section XXX with only two parallel air-glass interfaces, can in principle, be applied to an object with a heterogeneous internal structure, like a plant leaf with its multiple internal air-water interfaces. However, one would need to consider these multiple internal interfaces and their positions. The presence of these interfaces at different angles, plus small particles, cause strong scattering, and thus in this case <span class="math inline">\(\rho\)</span> depends on both surface and internal properties of the leaf. We can still measure <span class="math inline">\(\rho\)</span>, <span class="math inline">\(\tau\)</span> and <span class="math inline">\(\alpha\)</span> but predicting them based on optical theory becomes daunting if at all possible. Simulation models based on a simplified description of leaves’ structure and pigments, such as PROSPECT can provide good approximations.</p>
+<p>One way of demonstrating and/or measuring the role of air-water interfaces within leaf tissues on its optical properties is to infiltrate a leaf with water using a vacuum chamber so as to fill with water all air spaces within the leaf. The effect is most spectacular in a variegated leaf such as those from some clones of English ivy: after infiltration with water the green areas become translucent green and the white areas almost transparent. Obviously, the ability to greatly increase the number of photons absorbed with the same number of pigment molecules can greatly increase the efficiency of photosynthesis as well as the ability of photoreceptors to sense very low irradiances.</p>
+<p>The internal structure of leaves has evolved to be extremely efficient at trapping light, to the point that it has been copied in a recent design for high efficiency solar cells <span class="citation" data-cites="Yun2019">(<a href="references.html#ref-Yun2019" role="doc-biblioref">Yun et al. 2019</a>)</span>. There is also evidence that shade leaves are better light traps per unit dry mass than sun leaves. On the other hand, modelling of the optical properties of leaves is still in its infancy. The optics of leaves, flowers and fruits are described in detail in the book <span class="citation" data-cites="Lee2007">(<a href="references.html#ref-Lee2007" role="doc-biblioref">D. Lee 2007</a>)</span>.</p>
+</section>
+</section>
+<section id="radiation-in-aquatic-plants-environment" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="radiation-in-aquatic-plants-environment"><span class="header-section-number">5.2</span> Radiation in aquatic plants’ environment</h2>
+<p>As solar radiation passes through a body of water, its spectrum changes with depth in a wavelength-dependent manner, determined by the optical characteristics of that water body. The penetration of UV radiation through water bodies can vary from only few centimetres in highly humic lakes <span class="citation" data-cites="Kirk1994 Kirk1994b Huovinen2003">(<a href="references.html#ref-Kirk1994" role="doc-biblioref">Kirk 1994a</a>, <a href="references.html#ref-Kirk1994b" role="doc-biblioref">1994b</a>; <a href="references.html#ref-Huovinen2003" role="doc-biblioref">P. S. Huovinen, Penttilä, and Soimasuo 2003</a>)</span> to dozens of metres in the oceans <span class="citation" data-cites="Smith1992 Kirk1994 Kirk1994b">(<a href="references.html#ref-Smith1992" role="doc-biblioref">Smith et al. 1992</a>; <a href="references.html#ref-Kirk1994" role="doc-biblioref">Kirk 1994a</a>, <a href="references.html#ref-Kirk1994b" role="doc-biblioref">1994b</a>)</span>. Some irradiance is reflected at the water surface, but the extent to which wavelengths in the UV to IR range penetrate water bodies depends mainly on (1) attenuation by water itself, (2) coloured dissolved organic matter (CDOM), and seston. Seston is the sum of living organic material (mainly phytoplankton) and non-living material (tripton). Non-living particles are further distinguished between organic material (detritus) and inorganic suspended matter. Each fraction has its own characteristic spectral absorption and scattering properties <span class="citation" data-cites="dekke93 Kirk1994 Kirk1994b Hargreaves2003 Wozniak2007">(reviewed by <a href="references.html#ref-dekke93" role="doc-biblioref">Dekker 1993</a>; <a href="references.html#ref-Kirk1994" role="doc-biblioref">Kirk 1994a</a>, <a href="references.html#ref-Kirk1994b" role="doc-biblioref">1994b</a>; <a href="references.html#ref-Hargreaves2003" role="doc-biblioref">Hargreaves 2003</a>; <a href="references.html#ref-Wozniak2007" role="doc-biblioref">Wozniak and Dera 2007</a>)</span>.</p>
+<p>Particularly in coastal areas and shallow areas of lakes and streams, irradiance reflected from the ground or sea-bed beneath the water (henceforth bottom) influences the profile of radiation through the aquatic environment. This reflectance is described by a bidirectional reflectance distribution function (BRDF), which is wavelength specific and depends on the incident and reflected angle. If the reflectance is equally distributed in all directions, the bottom is a so called Lambertian reflector and the BRDF is constant. The bottom reflectance is greatly influenced by its slope and properties, i.e.&nbsp;whether the bottom is bare sediment or covered by algae and submersed vegetation <span class="citation" data-cites="marit94 alber03 moble03a moble03b pinne07">(e.g. <a href="references.html#ref-marit94" role="doc-biblioref">Maritorena, Morel, and Gentili 1994</a>; <a href="references.html#ref-alber03" role="doc-biblioref">Albert and Mobley 2003</a>; <a href="references.html#ref-moble03a" role="doc-biblioref">Mobley and Sundman 2003</a>; <a href="references.html#ref-moble03b" role="doc-biblioref">Mobley, Zhang, and Voss 2003</a>; <a href="references.html#ref-pinne07" role="doc-biblioref">Pinnel 2007</a>)</span>.</p>
+<section id="refraction" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="refraction"><span class="header-section-number">5.2.1</span> Refraction</h3>
+<p>The refraction of incoming (downwelling) radiance at the water surface can be determined by Snell’s law, which describes the angular refraction of the incident beam. The radiation passes the first medium with a refractive index <span class="math inline">\(n_1\)</span> and then the second medium with a refractive index <span class="math inline">\(n_2\)</span>. If the incoming direction of the radiation is given by the angle <span class="math inline">\(\theta_1\)</span>, the beam is refracted to the angle <span class="math inline">\(\theta_2\)</span>. Snell’s law is <span class="math display">\[n_1 \cdot \sin\theta_1 = n_2 \cdot \sin\theta_2\]</span> For the case of radiation arriving from the air under the incident angle <span class="math inline">\(\theta_i\)</span> and going into the water with the transmitted angle <span class="math inline">\(\theta_t\)</span>, this yields a refractive index for the air of <span class="math inline">\(n_a=1\)</span> and for the water of <span class="math inline">\(n_W=1.33\)</span> <span class="math display">\[\theta_t = \arcsin \left( 0.75\cdot \sin\theta_i \right)\]</span></p>
+<p>Theoretically, <span class="math inline">\(n_W\)</span> is not constant but depends on temperature, wavelength and salinity, as described by <span class="citation" data-cites="quanx95">Quan and Fry (<a href="references.html#ref-quanx95" role="doc-biblioref">1995</a>)</span>. In principle, the shorter the wavelength, the higher the refractive index of water, but in practice the wavelength-dependent difference in refraction is unimportant. For example comparing the values at 400 and 800 nm for 20and no salinity produces a difference of <span class="math inline">\(&lt;\)</span> 0.5%. If the wind speed is high, the slope of surface waves also has to be taken into account. A rough surface reflects and transmits the incoming radiation beam in more directions and makes the radiation field more diffuse than a smooth surface.</p>
+</section>
+<section id="absorption-and-scattering-by-pure-water" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="absorption-and-scattering-by-pure-water"><span class="header-section-number">5.2.2</span> Absorption and scattering by pure water</h3>
+<p>Water itself absorbs and scatters radiation. The optical properties of the water in the visible and ultraviolet (UV) spectrum are not precisely known, since no theoretical model exists which exactly describes the absorption and scattering properties of pure water. Therefore, it is necessary to rely on laboratory measurements to approximate the values of these parameters. Investigations into absorption by water <span class="math inline">\(a_W\)</span> were initially documented by <span class="citation" data-cites="morel74">Morel (<a href="references.html#ref-morel74" role="doc-biblioref">1974</a>)</span>, <span class="citation" data-cites="smith76">Smith and Tyler (<a href="references.html#ref-smith76" role="doc-biblioref">1976</a>)</span>, <span class="citation" data-cites="smith81">Smith and Baker (<a href="references.html#ref-smith81" role="doc-biblioref">1981</a>)</span>, <span class="citation" data-cites="pegau93">Pegau and Zaneveld (<a href="references.html#ref-pegau93" role="doc-biblioref">1993</a>)</span> and more recently by <span class="citation" data-cites="buite94">Buiteveld, Hakvoort, and Donze (<a href="references.html#ref-buite94" role="doc-biblioref">1994</a>)</span> and <span class="citation" data-cites="hakvo94">Hakvoort (<a href="references.html#ref-hakvo94" role="doc-biblioref">1994</a>)</span>. The absorption properties of water also depend on temperature. The influence of temperature is weak below 700 nm, but its effect increases with increasing wavelength; so, for example, a temperature increase of 10 K produces a <span class="math inline">\(\approx\)</span><!-- -->7% change in the absolute value of <span class="math inline">\(a_W\)</span> at 740 nm.</p>
+<p>The scattering of radiation by molecules in liquids has been modelled theoretically by <span class="citation" data-cites="smolu08">Smoluchowski (<a href="references.html#ref-smolu08" role="doc-biblioref">1908</a>)</span> and <span class="citation" data-cites="einst10">Einstein (<a href="references.html#ref-einst10" role="doc-biblioref">1910</a>)</span>. This approach is based on statistical thermodynamics and is called the theory of fluctuation. Theoretically, the scattering function is wavelength-dependent and follows the <span class="math inline">\(\lambda^{-4}\)</span> law. Experiments show a slight deviation from the model, giving a better correlation with <span class="math inline">\(\lambda^{-4.32}\)</span> <span class="citation" data-cites="morel74">(<a href="references.html#ref-morel74" role="doc-biblioref">Morel 1974</a>)</span> due to the effects of isothermal compressibility, the refractive index of water, and the pressure derivative of the refractive index of water <span class="citation" data-cites="hakvo94">(<a href="references.html#ref-hakvo94" role="doc-biblioref">Hakvoort 1994</a>)</span>.</p>
+<p>The wavelength dependency of the absorption and scattering coefficients of pure water are shown in Figure <a href="#fig:Water:Abs_Scat" data-reference-type="ref" data-reference="fig:Water:Abs_Scat">[fig:Water:Abs_Scat]</a> using data from <span class="citation" data-cites="hakvo94">Hakvoort (<a href="references.html#ref-hakvo94" role="doc-biblioref">1994</a>)</span>. Water mainly contributes to the attenuation of PAR and IR wavelengths, since absorption by pure water increases from around 550 nm towards longer wavelengths.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/fig_waterabs.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</section>
+<section id="absorption-and-scattering-by-water-constituents" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="absorption-and-scattering-by-water-constituents"><span class="header-section-number">5.2.3</span> Absorption and scattering by water constituents</h3>
+<p>Absorption and scattering by water constituents is the sum of (1) absorption by CDOM, sometimes also called yellow or humic substances, gilvin or gelbstoff, (2) absorption and scattering by living material like phytoplankton, and (3) absorption and scattering by dead organic and inorganic particles. The influence of each constituent on the scattering process depends on wavelength, particle size, concentration, and refractive index. Theoretical details are explained in, for example, <span class="citation" data-cites="vhuls81">Hulst (<a href="references.html#ref-vhuls81" role="doc-biblioref">1981</a>)</span>.</p>
+<p>CDOM mainly refers to coloured dissolved humic materials and consists of humic and fulvic acids, originating from decomposed plant material suspended in the water or entering from the surrounding catchment area. The pigments in humic and fulvic acids absorb strongly in the blue and UV wavelengths and are dissolved and therefore do not scatter irradiance. <span class="citation" data-cites="kalle66">Kalle (<a href="references.html#ref-kalle66" role="doc-biblioref">1966</a>)</span> recognised that CDOM absorption decreases exponentially with increasing wavelength in the visible part of the spectra. Following the study of <span class="citation" data-cites="morel76">Morel and Prieur (<a href="references.html#ref-morel76" role="doc-biblioref">1976</a>)</span>, <span class="citation" data-cites="brica81">Bricaud, Morel, and Prieur (<a href="references.html#ref-brica81" role="doc-biblioref">1981</a>)</span> expressed this relationship in the following model: for a known absorption at a wavelength <span class="math inline">\(\lambda_0=440\)</span> nm, the CDOM absorption <span class="math inline">\(a_Y\)</span> can be determined by <span class="math display">\[a_Y(\lambda) = a_Y(\lambda_0)\cdot {\rm e}^{-s_Y(\lambda-\lambda_0)} \label{equ_ay}\]</span> Although the exponential coefficient <span class="math inline">\(s_Y\)</span> is variable, a standard value of <span class="math inline">\(s_Y=0.014\)</span> nm<span class="math inline">\(^{-1}\)</span> is commonly used. <span class="citation" data-cites="brica81">Bricaud, Morel, and Prieur (<a href="references.html#ref-brica81" role="doc-biblioref">1981</a>)</span> compared the value of <span class="math inline">\(s_Y\)</span> across many data sets and reported a standard deviation of only <span class="math inline">\(\Delta s_Y=\pm 0.003\)</span> nm<span class="math inline">\(^{-1}\)</span>. The amount of CDOM in water is determined by filtration using membrane filters of 0.2 <span class="math inline">\(\mu\)</span>m pore size. The filtrate is collected into a quartz cuvette with length <span class="math inline">\(l\)</span> and put into a (double beam) spectrophotometer to measure its <span data-acronym-label="absorbance" data-acronym-form="singular+short">absorbance</span> (optical density) <span class="math inline">\(A(\lambda)\)</span>. Then, <span class="math inline">\(a_Y(\lambda)=2.303\cdot\frac{A(\lambda)}{l}\)</span> <span class="citation" data-cites="Kirk1994">(<a href="references.html#ref-Kirk1994" role="doc-biblioref">Kirk 1994a</a>)</span>. The absorption coefficient at 440 nm has been used as an indication of optical colour <span class="citation" data-cites="Kirk1994">(<a href="references.html#ref-Kirk1994" role="doc-biblioref">Kirk 1994a</a>)</span>, while size of humic molecules has been estimated from the ratio <span class="math inline">\(\frac{a_Y(\lambda=250{\rm nm})}{a_Y(\lambda={\rm 365 nm})}\)</span>, with increasing size indicated by smaller ratios <span class="citation" data-cites="DeHaan1972 DeHaan1987 DeHaan1993">(<a href="references.html#ref-DeHaan1972" role="doc-biblioref">Haan 1972</a>, <a href="references.html#ref-DeHaan1993" role="doc-biblioref">1993</a>; <a href="references.html#ref-DeHaan1987" role="doc-biblioref">Haan, Boer, and T 1987</a>)</span>. To determine <span class="math inline">\(a_Y\)</span> from clearer (e.g.&nbsp;oceanic) waters, a cuvette with a 10 cm path-length is generally needed due to their low values of absorption.</p>
+<p>Phytoplankton can contribute to the attenuation of PAR through absorption by their photosynthetic pigments such as chlorophyll and pheophytin, but they can also cause scattering. The absorption by phytoplankton <span class="math inline">\(a_P\)</span> is the sum of absorption by each pigment multiplied each by their concentrations. Due to the fact that many species of phytoplankton occur in aquatic environments and every species contains more than one pigment, it is more practicable to calculate the absorption by mean specific absorption coefficients for each different algal species separately. This has been done by <span class="citation" data-cites="gegep98">Gege (<a href="references.html#ref-gegep98" role="doc-biblioref">1998</a>)</span> for freshwater Lake Constance in Germany and by <span class="citation" data-cites="prieu81">Prieur and Sathyendranath (<a href="references.html#ref-prieu81" role="doc-biblioref">1981</a>)</span> for an oceanic environment. Besides these examples, there are other models for oceanic waters that use the specific <em>in vivo</em> absorption coefficient and concentration of chlorophyll-<em>a</em>, <span class="math inline">\(a_{chl}^*\)</span> and <span class="math inline">\(C_{chl}\)</span>, respectively. <span class="citation" data-cites="morel91">Morel (<a href="references.html#ref-morel91" role="doc-biblioref">1991</a>)</span> found that the power law <span class="math inline">\(a_P = 0.06\, a_{chl}^*\, [C_{chl}]^{0.65}\)</span>, which was first proposed by <span class="citation" data-cites="prieu81">Prieur and Sathyendranath (<a href="references.html#ref-prieu81" role="doc-biblioref">1981</a>)</span>, provided the best estimate of the absorption coefficient for his data set. <span class="math inline">\(C_{chl}\)</span> is the concentration of chlorophyll-<em>a</em> in units of <span class="math inline">\(\mu\)</span>g l<span class="math inline">\(^{-1}\)</span>. Figure <a href="#fig:Phyto:Abs" data-reference-type="ref" data-reference="fig:Phyto:Abs">[fig:Phyto:Abs]</a> shows the specific oceanic chlorophyll absorption coefficient from <span class="citation" data-cites="morel91">Morel (<a href="references.html#ref-morel91" role="doc-biblioref">1991</a>)</span> normalized to maximum absorption at 440 nm. Figure <a href="#fig:Phyto:Abs" data-reference-type="ref" data-reference="fig:Phyto:Abs">[fig:Phyto:Abs]</a> also shows laboratory measurements of chlorophyll-<em>a</em> and chlorophyll-<em>b</em> absorption<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> after <span class="citation" data-cites="frigaard1996">Frigaard, Larsen, and Cox (<a href="references.html#ref-frigaard1996" role="doc-biblioref">1996</a>)</span>. Spectra for chlorophyll absorption, and that of various other photochemically-relevant substances, are also available in computer software such as PhotochemCAD<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="citation" data-cites="lindsey1998 lindsey2005">(<a href="references.html#ref-lindsey1998" role="doc-biblioref">Du et al. 1998</a>; <a href="references.html#ref-lindsey2005" role="doc-biblioref">Dixon, Taniguchi, and Lindsey 2005</a>)</span>. The empirical model of <span class="citation" data-cites="brica95">Bricaud et al. (<a href="references.html#ref-brica95" role="doc-biblioref">1995</a>)</span> parameterises the specific absorption coefficient from <span class="math inline">\(C_{chl}\)</span>. This model draws on extensive studies of more than 800 spectra to give <span class="math inline">\(a_P^*(\lambda) = A(\lambda)[C_{chl}]^{-B(\lambda)}\)</span> with positive empirical coefficients <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> depending on wavelength. The model incorporates both the package effect of phytoplankton cells and the effect of the varying pigment composition on absorption.</p>
+<p>The particulate structure of phytoplankton cells causes scattering. The influence of phytoplankton on the total scattering coefficient depends on the other constituents of the water body. For water containing a low concentration of inorganic suspended sediment scattering is driven by the concentration of phytoplankton (as occurs in the open ocean). <span class="citation" data-cites="gordo83">Gordon and Morel (<a href="references.html#ref-gordo83" role="doc-biblioref">1983</a>)</span> developed an empirical model, which directly correlates scattering with the pigment concentration of chlorophyll-<em>a</em> <span class="math inline">\(C_{chl}\)</span> in units of <span class="math inline">\(\mu\)</span>g l<span class="math inline">\(^{-1}\)</span>. The scattering coefficient of phytoplankton <span class="math inline">\(b_P\)</span> in units of m<span class="math inline">\(^{-1}\)</span> is given by <span class="math display">\[b_P(\lambda) = B \cdot [C_{chl}]^{0.62} \cdot \left(\frac{\lambda_0}{\lambda}\right) \label{equ_bp_emp}\]</span> with <span class="math inline">\(\lambda_0=550\)</span> nm and <span class="math inline">\(B=0.3\)</span> as mean values for oceanic waters dominated by phytoplankton. The equation (<a href="#equ_bp_emp" data-reference-type="ref" data-reference="equ_bp_emp">[equ_bp_emp]</a>) is valid for a range of phytoplankton concentrations from 0.05 to 1 <span class="math inline">\(\mu\)</span>g l<span class="math inline">\(^{-1}\)</span>. <span class="citation" data-cites="gordo83">Gordon and Morel (<a href="references.html#ref-gordo83" role="doc-biblioref">1983</a>)</span> found that oceanic waters have a value of <span class="math inline">\(B\le 0.45\)</span>. Higher values are used for other aquatic environments, for example turbid coastal waters. In coastal regions, <span class="citation" data-cites="sathy89">Sathyendranath, Prieur, and Morel (<a href="references.html#ref-sathy89" role="doc-biblioref">1989</a>)</span> proposed that the scattering coefficient is indirectly proportional to absorption by phytoplankton: <span class="math inline">\(b_P(\lambda) \propto 1/a_P(\lambda)\)</span>. The proportionality factor depends on the concentration of chlorophyll-<em>a</em> in the same manner as the scattering coefficient of equation (<a href="#equ_bp_emp" data-reference-type="ref" data-reference="equ_bp_emp">[equ_bp_emp]</a>). <span class="citation" data-cites="dekke93">Dekker (<a href="references.html#ref-dekke93" role="doc-biblioref">1993</a>)</span> investigated the contribution to scattering of each water constituent in inland waters<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. He found that the composition of scattering particles was more variable in inland waters than in the ocean and it depended on the trophic state of the water and therefore on the distribution of organic and inorganic particulate matter. The scattering and backscattering coefficient of phytoplankton can be determined by <span class="math inline">\(b_P(\lambda)=b_P^*(\lambda) \cdot C_P\)</span> where the specific scattering coefficient of phytoplankton is <span class="math inline">\(b_P^*\)</span>. For lakes <span class="citation" data-cites="dekke93">Dekker (<a href="references.html#ref-dekke93" role="doc-biblioref">1993</a>)</span> reported that the specific scattering coefficient of phytoplankton ranges from 0.12 to 0.18 m<span class="math inline">\(^2\)</span>mg<span class="math inline">\(^{-1}\)</span> at a wavelength of 550 nm. The specific scattering coefficients can be obtained by integrating the scattering phase function of the observed matter, here, phytoplankton. Extensive and commonly used measurements were done by <span class="citation" data-cites="petzo77">Petzold (<a href="references.html#ref-petzo77" role="doc-biblioref">1977</a>)</span>. Other functions can be found for example in <span class="citation" data-cites="moble94">Mobley (<a href="references.html#ref-moble94" role="doc-biblioref">1994</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/fig_chlabs.pdf" class="img-fluid"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>Particulate matter in water bodies consists of organic and inorganic material. The organic constituents are contained in phytoplankton cells or are fragments of dead plankton and faecal pellets of zooplankton. These parts are often called detritus. Inorganic particles include suspended mineral coming from inflows or resuspension at coastal regions. They mainly consist of quartz, clay, and calcite. There are only a few published values of the specific absorption coefficients of suspended particles in water from aquatic environments because they are difficult to separate into their individual constituent parts. A comparison of these values is given by <span class="citation" data-cites="pozdn03">Pozdnyakov and Grassl (<a href="references.html#ref-pozdn03" role="doc-biblioref">2003</a>)</span>. In general, absorption by all suspended particles in most water bodies is very low and it is negligible for inorganic particles. <span class="citation" data-cites="roesl89">Roesler, Perry, and Carder (<a href="references.html#ref-roesl89" role="doc-biblioref">1989</a>)</span> produced the following relationship for absorption by detritus in coastal waters which is very similar that of CDOM: <span class="math display">\[a_X(\lambda) = a_X(\lambda_0) \cdot {\rm e}^{-s_X(\lambda-\lambda_0)} \label{equ_adet}\]</span> with a mean value of <span class="math inline">\(s_X=0.011\)</span> nm<span class="math inline">\(^{-1}\)</span> and <span class="math inline">\(a_X(\lambda_0)=0.09\)</span> m<span class="math inline">\(^{-1}\)</span> at <span class="math inline">\(\lambda_0=400\)</span> nm for their data. Particulate matter in general causes more scattering of irradiance than it absorbs. In coastal waters and freshwater, scattering is higher than in oceanic waters due to the additional presence of particles not related to phytoplankton. These particles come from suspended inorganic sediments of different sizes. Scattering is caused by differences in the refractive indices of the two materials (the water medium and the material of the particles) and are due to the ratio of particle size to wavelength. Different functions of scattering coefficients and phase functions are, for example, described by <span class="citation" data-cites="moble94">Mobley (<a href="references.html#ref-moble94" role="doc-biblioref">1994</a>)</span>. Especially turbid and coastal waters, or rivers and lakes, are dominated by large particles (<span class="math inline">\(&gt;1\)</span> <span class="math inline">\(\mu\)</span>m and a refraction index of 1.03). Therefore, the scattering coefficient of non-living particles <span class="math inline">\(b_X\)</span> can be estimated while neglecting their size distribution and wavelength dependence. Thus, <span class="math inline">\(b_X\)</span> is derived from <span class="math inline">\(b_X(\lambda) = b_X^* \cdot C_X\)</span>, with the concentration of the total suspended matter <span class="math inline">\(C_X\)</span> and the specific scattering coefficients <span class="math inline">\(b_X^*\)</span>. <span class="citation" data-cites="dekke93">Dekker (<a href="references.html#ref-dekke93" role="doc-biblioref">1993</a>)</span> gave example specific scattering coefficients of 0.23 to 0.79 m<span class="math inline">\(^2\)</span> g<span class="math inline">\(^{-1}\)</span> for different trophic states in lakes.</p>
+</section>
+<section id="results-and-effects" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="results-and-effects"><span class="header-section-number">5.2.4</span> Results and effects</h3>
+<p>In summary, after considering all the components that absorb radiation, in very clear non-productive oceanic waters blue-green wavelengths in the PAR spectrum dominate, whereas in highly-coloured, humic inland waters blue wavelengths are rapidly attenuated. In humic lakes, CDOM largely governs UV attenuation <span class="citation" data-cites="Kirk1994 Kirk1994b Scully1994 Huovinen2003">(e.g. <a href="references.html#ref-Kirk1994" role="doc-biblioref">Kirk 1994a</a>, <a href="references.html#ref-Kirk1994b" role="doc-biblioref">1994b</a>; <a href="references.html#ref-Scully1994" role="doc-biblioref">Scully and Lean 1994</a>; <a href="references.html#ref-Huovinen2003" role="doc-biblioref">P. S. Huovinen, Penttilä, and Soimasuo 2003</a>)</span>), whereas in oceans <span class="citation" data-cites="Smith1979">(<a href="references.html#ref-Smith1979" role="doc-biblioref">Smith and Baker 1979</a>)</span> and clear lakes containing low CDOM concentrations the contribution of phytoplankton to UV attenuation can be significant <span class="citation" data-cites="Sommaruga1997">(<a href="references.html#ref-Sommaruga1997" role="doc-biblioref">Sommaruga and Psenner 1997</a>)</span>. If very turbid water contains a large amount of inorganic particles, CDOM is bonded by calcium carbonate contained in the particles, and consequently the colour of the water returns to blue.</p>
+<p>There is marked variation in the penetration of UV radiation among water bodies, and within a water body during the year. Global changes, such as climate warming and acidification <span class="citation" data-cites="Schindler1996 Yan1996 Donahue1998">(<a href="references.html#ref-Schindler1996" role="doc-biblioref">Schindler et al. 1996</a>; <a href="references.html#ref-Yan1996" role="doc-biblioref">Yan et al. 1996</a>; <a href="references.html#ref-Donahue1998" role="doc-biblioref">Donahue et al. 1998</a>)</span> can lead to increased underwater UV penetration, likewise UV-B radiation itself which can positively affect its own penetration through the photodegradation of CDOM <span class="citation" data-cites="Morris1997">(<a href="references.html#ref-Morris1997" role="doc-biblioref">Morris and Hargreaves 1997</a>)</span>. Variation in the absorption properties of dissolved organic compounds with the seasons and according to their origin and molecular weight <span class="citation" data-cites="Stewart1980 Hessen1998 Lean1998">(<a href="references.html#ref-Stewart1980" role="doc-biblioref">Stewart and Wetzel 1980</a>; <a href="references.html#ref-Hessen1998" role="doc-biblioref">Hessen and Tranvik 1998</a>; <a href="references.html#ref-Lean1998" role="doc-biblioref">Lean 1998</a>)</span>, interferes with our estimation of UV penetration based on CDOM concentrations. Temporal changes in the absorption characteristics of CDOM have also been reported, with fresh CDOM being photochemically more active than older CDOM <span class="citation" data-cites="Lean1998">(<a href="references.html#ref-Lean1998" role="doc-biblioref">Lean 1998</a>)</span>. It is also notable that UV radiation has been shown to penetrate deeper in saline prairie lakes than in fresh waters of corresponding CDOM concentrations <span class="citation" data-cites="Arts2000">(<a href="references.html#ref-Arts2000" role="doc-biblioref">Arts et al. 2000</a>)</span>.</p>
+<p>Estimations of CDOM are relatively easy to perform and therefore often used for <em>in situ</em> and remote sensing measurements of optical properties. However, another parameter called dissolved organic carbon (DOC, in units of mg l<span class="math inline">\(^{-1}\)</span>) is also useful to measure, since it is more interpretable for studies of carbon cycling and in the context of global change research. <span class="citation" data-cites="kowal10">Kowalczuk et al. (<a href="references.html#ref-kowal10" role="doc-biblioref">2010</a>)</span>, report that CDOM contributes approximately 20% to the total DOC pool in the open ocean and up to 70% in coastal areas. Unfortunately, on a global scale it has not yet been possible to make a direct link between CDOM and DOC due to the heterogeneous organic composition of CDOM. Until that connection is made, estimation of the universal bulk carbon-specific CDOM absorption coefficient, defined as the ratio of CDOM absorption to DOC concentration, remains almost impossible <span class="citation" data-cites="Wozniak2007">(<a href="references.html#ref-Wozniak2007" role="doc-biblioref">Wozniak and Dera 2007</a>)</span>, but at least there are good correlations between <span class="math inline">\(a_Y\)</span> and DOC concentrations in coastal areas <span class="citation" data-cites="kowal10">(<a href="references.html#ref-kowal10" role="doc-biblioref">Kowalczuk et al. 2010</a>)</span>.</p>
+<p>Aquatic organisms can be affected not only directly but also indirectly through UV-dependent changes in the surrounding water, e.g.&nbsp;through increased formation of photochemical reaction products such as singlet oxygen and hydrogen peroxide. Especially in lakes with low DOC concentrations, photoenhanced toxicity of some environmental contaminants or release of complexed metals into the water can occur due to the photodegradation of organic matter <span class="citation" data-cites="Zepp1982 Palenik1991 Hessen1994 Arfsten1996 Scully1997">(<a href="references.html#ref-Zepp1982" role="doc-biblioref">Zepp 1982</a>; <a href="references.html#ref-Palenik1991" role="doc-biblioref">Palenik, Price, and Morel 1991</a>; <a href="references.html#ref-Hessen1994" role="doc-biblioref">Hessen and Donk 1994</a>; <a href="references.html#ref-Arfsten1996" role="doc-biblioref">Arfsten, Schaeffer, and Mulveny 1996</a>; <a href="references.html#ref-Scully1997" role="doc-biblioref">Scully et al. 1997</a>)</span>. Despite the potential for detrimental effects, the final impact of UV radiation on organisms may be mitigated by their protective and repair mechanisms <span class="citation" data-cites="Karentz1991 Mitchell1993 Vincent1993">(<a href="references.html#ref-Karentz1991" role="doc-biblioref">Karentz, Cleaver, and Mitchell 1991</a>; <a href="references.html#ref-Mitchell1993" role="doc-biblioref">Mitchell and Karentz 1993</a>; <a href="references.html#ref-Vincent1993" role="doc-biblioref">Vincent and Roy 1993</a>)</span>, which somehow also depend on certain wavelengths of irradiation. When evaluating the exposure of seaweeds to UV radiation, it should be taken into account that other factors, such as kelp canopies, can markedly reduce the PAR and UV radiation reaching their understorey. Furthermore, the underwater radiation received by seaweeds can be significantly altered depending on the tidal range <span class="citation" data-cites="Huovinen2011">(<a href="references.html#ref-Huovinen2011" role="doc-biblioref">P. Huovinen and Gómez 2011</a>)</span>. Phenolic compounds released from large brown algae into the surrounding water can also locally attenuate UV radiation.</p>
+<p>Classifications of water bodies based on their optical characteristics have been developed as general tools in order to allow comparisons between different water bodies. <span class="citation" data-cites="Jerlov1976">Jerlov (<a href="references.html#ref-Jerlov1976" role="doc-biblioref">1976</a>)</span> traditional and widely-used classification of marine waters, based on their transmittance of irradiance at different wavelengths, recognizes three oceanic (I–III) and nine coastal (1–9) types of water body (Figure <a href="#fig:Jerlov" data-reference-type="ref" data-reference="fig:Jerlov">[fig:Jerlov]</a>). <span class="citation" data-cites="Morel1977">Morel and Prieur (<a href="references.html#ref-Morel1977" role="doc-biblioref">1977</a>)</span> classified ocean waters into two types based on their optically dominant components: (i) phytoplankton and their products dominate case-i waters, (ii) particles and dissolved coloured material dominate case-ii waters. The classification proposed by <span class="citation" data-cites="Kirk1980">Kirk (<a href="references.html#ref-Kirk1980" role="doc-biblioref">1980</a>)</span> is principally suited to inland waters and is based on the spectral absorption of the soluble and particulate fractions. <span class="citation" data-cites="Kirk1980">Kirk (<a href="references.html#ref-Kirk1980" role="doc-biblioref">1980</a>)</span> defined type G waters, in which CDOM is the dominant light-absorbing component, compared with type T, W and A waters, where tripton, water itself and phytoplankton dominate respectively. Beyond these scales, various other optical classifications have also been proposed <span class="citation" data-cites="Kirk1994 Hargreaves2003">(reviewed by <a href="references.html#ref-Kirk1994" role="doc-biblioref">Kirk 1994a</a>; <a href="references.html#ref-Hargreaves2003" role="doc-biblioref">Hargreaves 2003</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/fig_Jerlov.pdf" class="img-fluid" style="width:50.0%"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</section>
+<section id="modelling-of-underwater-radiation" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="modelling-of-underwater-radiation"><span class="header-section-number">5.2.5</span> Modelling of underwater radiation</h3>
+<p>Following Beer’s law (Equation <a href="#eq:Beer-Lambert" data-reference-type="ref" data-reference="eq:Beer-Lambert">[eq:Beer-Lambert]</a>), for deep water (no reflection from bottom), radiance <span class="math inline">\(L(\lambda)\)</span> decreases exponentially with depth <span class="math inline">\(z\)</span> in the water column: <span class="math display">\[L(z,\lambda) = L(z=0,\lambda)\cdot\mathrm{e}^{-\frac{a\cdot z}{\cos\theta}} \label{equ_beer}\]</span> alternatively written as <span class="math display">\[\cos\theta\,\frac{{\rm d}L(z,\lambda)}{{\rm d}z} = -a\cdot L(z,\lambda) \label{equ_dbeer}\]</span> <span class="math inline">\(\theta\)</span> is the zenith angle of the incoming (downwelling) radiance in water. Note that Eqs. <a href="#equ_beer" data-reference-type="ref" data-reference="equ_beer">[equ_beer]</a> and <a href="#equ_dbeer" data-reference-type="ref" data-reference="equ_dbeer">[equ_dbeer]</a> are only valid if the water column is homogeneous with depth and there are no scattering particles and internal sources of light in the water, i.e.&nbsp;no fluorescence, raman scattering, nor bioluminescence. Thus, calculation of actual radiative transfer in water (not under idealised conditions) is much more complicated and can only be solved approximately by using empirical, semi-analytical or computational models <span class="citation" data-cites="dekke93 moble94 leezp02 alber06">(<a href="references.html#ref-dekke93" role="doc-biblioref">Dekker 1993</a>; <a href="references.html#ref-moble94" role="doc-biblioref">Mobley 1994</a>; <a href="references.html#ref-leezp02" role="doc-biblioref">Z. P. Lee, Carder, and Arnone 2002</a>; <a href="references.html#ref-alber06" role="doc-biblioref">Albert and Gege 2006</a>)</span>.</p>
+<p>The radiative transfer equations <a href="#equ_beer" data-reference-type="ref" data-reference="equ_beer">[equ_beer]</a> and <a href="#equ_dbeer" data-reference-type="ref" data-reference="equ_dbeer">[equ_dbeer]</a> are valid for radiance <span class="math inline">\(L\)</span>, which represents the <span data-acronym-label="collimated" data-acronym-form="singular+short">collimated</span> beam from one specific direction. Due to their construction, radiance detectors do not measure a beam from an infinitely small solid angle, they have an aperture of typically one or two degrees. Other types of detectors sense light from more than one direction, they measure the entire sphere or hemisphere (for details see also section <a href="quantifying-radiation.html#sec:basic:concepts" data-reference-type="ref" data-reference="sec:basic:concepts">[sec:basic:concepts]</a> on page ), by integrating the incoming radiance over all directions. Another useful relationship between irradiance and fluence rate can be obtained using the Gershun equation: <span class="math display">\[\frac{\rm d}{{\rm d}z} E(z,\lambda) = -a \, E_0(z,\lambda) \label{equ_gershun}\]</span> If, for example, only the downwelling irradiance <span class="math inline">\(E_d(z,\lambda)\)</span> is measured or necessary for calculating radiative transfer, Equation <a href="#equ_dbeer" data-reference-type="ref" data-reference="equ_dbeer">[equ_dbeer]</a> yields <span class="math display">\[\frac{{\rm d}E_d(z,\lambda)}{{\rm d}z} = -K_d\cdot E_d(z,\lambda) \label{equ_downirr}\]</span> giving the diffuse attenuation coefficient for downwelling irradiance, <span class="math inline">\(K_d\)</span>. <span class="math inline">\(K_d\)</span> is related to the total absorption <span class="math inline">\(a\)</span> and scattering <span class="math inline">\(b\)</span> as well as to <span class="math inline">\(\theta\)</span> and also the solar zenith angle <span class="math inline">\(\theta_s\)</span> <span class="citation" data-cites="kirkj91 alber03">(<a href="references.html#ref-kirkj91" role="doc-biblioref">Kirk 1991</a>; <a href="references.html#ref-alber03" role="doc-biblioref">Albert and Mobley 2003</a>)</span>. A practical and often-used method to estimate <span class="math inline">\(K_d\)</span>, and therefore the transparency of the water, is the Secchi disk test. The visibility of a submerged white disk can be correlated to downwelling diffuse attenuation <span class="citation" data-cites="tyler68">(<a href="references.html#ref-tyler68" role="doc-biblioref">Tyler 1968</a>)</span>. This and also the penetration depth <span class="math inline">\(z_d\)</span> give useful information about the water body. The penetration of irradiance important for photosynthesis (primary production) is often expressed as the depth at which, for example, 1% or 10% of the value just below the water surface is reached. The depth, where 1% of PAR is reached, separates the euphotic zone from the aphotic zone. After <span class="citation" data-cites="Kirk1994">Kirk (<a href="references.html#ref-Kirk1994" role="doc-biblioref">1994a</a>)</span>, <span class="math inline">\(z_d\)</span> can be obtained from <span class="math inline">\(K_d\)</span>: <span class="math inline">\(z_d(1\%) = 4.6/K_d\)</span> and <span class="math inline">\(z_d(10\%) = 2.3/K_d\)</span>. In Figure <a href="#fig:Valdivia" data-reference-type="ref" data-reference="fig:Valdivia">[fig:Valdivia]</a>, an example of spectral attenuation of solar radiation at different depths, as well as the penetration depths of UV-B, UV-A radiation and PAR are given for coastal waters of the south-eastern Pacific Ocean (off the coast of Chile).</p>
+<p>A very useful tool to simulate spectral radiance and irradiance under water, depending on different concentrations of the water constituents or bottom depth and type, is called WASI (water colour simulator, <span class="citation" data-cites="gegep04">(<a href="references.html#ref-gegep04" role="doc-biblioref">Gege 2004</a>)</span>). The software includes different analytical parameterisations and it can also be used for inverse calculations, i.e.&nbsp;for estimating optical properties and concentrations of water constituents from (remote sensing) measurements. The software program including the manual is available free of charge using an anonymous login at the ftp server <a href="ftp://ftp.dfd.dlr.de/pub/WASI" class="uri">ftp://ftp.dfd.dlr.de/pub/WASI</a>. Other models, which include angular distributions of radiation under water are, for example, the Monte Carlo method <span class="citation" data-cites="prahl89 Wang1995">(<a href="references.html#ref-prahl89" role="doc-biblioref">Prahl et al. 1989</a>; <a href="references.html#ref-Wang1995" role="doc-biblioref">Wang, Jacques, and Zheng 1995</a>)</span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, HydroLight (technique described by <span class="citation" data-cites="moble94">(<a href="references.html#ref-moble94" role="doc-biblioref">Mobley 1994</a>)</span>), or EcoLight-S <span class="citation" data-cites="moble11">(<a href="references.html#ref-moble11" role="doc-biblioref">Mobley 2011</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="figures/fig_Valdivia2.pdf" class="img-fluid" style="width:90.0%"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-alber06" class="csl-entry" role="listitem">
+Albert, A., and P. Gege. 2006. <span>“Inversion of Irradiance and Remote Sensing Reflectance in Shallow Water Between 400 and 800 Nm for Calculations of Water and Bottom Properties.”</span> <em>Applied Optics</em> 45: 2331–43. <a href="https://doi.org/10.1364/AO.45.002331">https://doi.org/10.1364/AO.45.002331</a>.
+</div>
+<div id="ref-alber03" class="csl-entry" role="listitem">
+Albert, A., and C. D. Mobley. 2003. <span>“An Analytical Model for Subsurface Irradiance and Remote Sensing Reflectance in Deep and Shallow Case-2 Waters.”</span> <em>Optics Express</em> 11 (22): 2873–90. <a href="http://www.opticsexpress.org/abstract.cfm?URI=OPEX-11-22-2873">http://www.opticsexpress.org/abstract.cfm?URI=OPEX-11-22-2873</a>.
+</div>
+<div id="ref-Allen1975" class="csl-entry" role="listitem">
+Allen, L. H., H. W. Gausman, and W. A. Allen. 1975. <span>“Solar Ultraviolet Radiation in Terrestrial Plant Communities.”</span> <em>Journal of Environmental Quality</em> 4 (3): 285–94. <a href="https://doi.org/10.2134/jeq1975.00472425000400030001x">https://doi.org/10.2134/jeq1975.00472425000400030001x</a>.
+</div>
+<div id="ref-Arfsten1996" class="csl-entry" role="listitem">
+Arfsten, D. P., D. J. Schaeffer, and D. C. Mulveny. 1996. <span>“The Effects of Near Ultraviolet Radiation on the Toxic Effects of Polycyclic Aromatic Hydrocarbons in Animals and Plants: A Review.”</span> <em>Ecotoxicology and Environment Safety</em> 33: 1–24. <a href="https://doi.org/10.1006/eesa.1996.0001">https://doi.org/10.1006/eesa.1996.0001</a>.
+</div>
+<div id="ref-Arts2000" class="csl-entry" role="listitem">
+Arts, M. T., R. D. Robarts, F. Kasai, M. J. Waiser, V. P. Tumber, A. J. Plante, H. Rai, and H. J. de Lange. 2000. <span>“The Attenuation of Ultraviolet Radiation in High Dissolved Organic Carbon Waters of Wetlands and Lakes on the Northern Great Plains.”</span> <em>Limnology and Oceanography</em> 45: 292–99. <a href="http://www.jstor.org/stable/2670483">http://www.jstor.org/stable/2670483</a>.
+</div>
+<div id="ref-brica95" class="csl-entry" role="listitem">
+Bricaud, A., M. Babin, A. Morel, and H. Claustre. 1995. <span>“Variability in the Chlorophyll-Specific Absorption Coefficients of Natural Phytoplankton: Analysis and Parameterization.”</span> <em>Journal of Geophysical Research</em> 100 (C7): 13321–32.
+</div>
+<div id="ref-brica81" class="csl-entry" role="listitem">
+Bricaud, A., A. Morel, and L. Prieur. 1981. <span>“Absorption by Dissolved Organic Matter of the Sea (Yellow Substance) in the UV and Visible Domains.”</span> <em>Limnology and Oceanography</em> 26 (1): 43–53. <a href="http://www.jstor.org/stable/2835805">http://www.jstor.org/stable/2835805</a>.
+</div>
+<div id="ref-Brown1994" class="csl-entry" role="listitem">
+Brown, M. J., G. G. Parker, and N. E. Posner. 1994. <span>“A Survey of Ultraviolet-<span>B</span> Radiation in Forests.”</span> <em>Journal of Ecology</em> 82 (4): 843–54. <a href="http://www.jstor.org/stable/2261448">http://www.jstor.org/stable/2261448</a>.
+</div>
+<div id="ref-buite94" class="csl-entry" role="listitem">
+Buiteveld, H., J. H. M. Hakvoort, and M. Donze. 1994. <span>“The Optical Properties of Pure Water.”</span> In <em>Proceedings of SPIE <span>“Ocean Optics XII”</span></em>, 2258:174–83. International Society for Optical Engineering.
+</div>
+<div id="ref-Campbell1998" class="csl-entry" role="listitem">
+Campbell, G. S., and J. M. Norman. 1998. <em>An Introduction to Environmental Biophysics</em>. 2nd ed. New York: Springer.
+</div>
+<div id="ref-Deckmyn2001" class="csl-entry" role="listitem">
+Deckmyn, Gaby, Erwin Cayenberghs, and Reinhart Ceulemans. 2001. <span>“<span>UV-B</span> and <span>PAR</span> in Single and Mixed Canopies Grown Under Different <span>UV-B</span> Exclusions in the Field.”</span> <em>Plant Ecology</em> 154: 125–33. <a href="https://doi.org/10.1023/A:1012920716047">https://doi.org/10.1023/A:1012920716047</a>.
+</div>
+<div id="ref-dekke93" class="csl-entry" role="listitem">
+Dekker, A. G. 1993. <span>“Detection of Optical Water Quality Parameters for Eutrophic Waters by High Resolution Remote Sensing.”</span> <em>Cip-Gegevens Koninklijke Bibliotheek, Den Haag</em>. PhD thesis, Vrije Universiteit Amsterdam.
+</div>
+<div id="ref-lindsey2005" class="csl-entry" role="listitem">
+Dixon, J. M., M. Taniguchi, and J. S. Lindsey. 2005. <span>“<span>PhotochemCAD</span> 2: A Refined Program with Accompanying Spectral Data Bases for Photochemical Calculations.”</span> <em>Photochemistry and Photobiology</em> 81 (1): 212–13. <a href="https://doi.org/10.1111/j.1751-1097.2005.tb01544.x">https://doi.org/10.1111/j.1751-1097.2005.tb01544.x</a>.
+</div>
+<div id="ref-Donahue1998" class="csl-entry" role="listitem">
+Donahue, W. F., D. W. Schindler, S. J. Page, and M. P. Stainton. 1998. <span>“Acid-Induced Changes in DOC Quality in an Experimental Whole-Lake Manipulation.”</span> <em>Environmental Science and Technology</em> 32: 2954–60. <a href="https://doi.org/10.1021/es980306u">https://doi.org/10.1021/es980306u</a>.
+</div>
+<div id="ref-lindsey1998" class="csl-entry" role="listitem">
+Du, H., R.- C. A. Fuh, J. Li, L. A. Corkan, and J. S. Lindsey. 1998. <span>“<span>PhotochemCAD</span>: A Computer-Aided Design and Research Tool in Photochemistry.”</span> <em>Photochemistry and Photobiology</em> 68 (2): 141–42. <a href="https://doi.org/10.1111/j.1751-1097.1998.tb02480.x">https://doi.org/10.1111/j.1751-1097.1998.tb02480.x</a>.
+</div>
+<div id="ref-einst10" class="csl-entry" role="listitem">
+Einstein, A. 1910. <span>“Theorie Der Opaleszenz von Homogenen Fl<span>ü</span>ssigkeiten Und Fl<span>ü</span>ssigkeitsgemischen in Der n<span>ä</span>he Des Kritischen Zustandes.”</span> <em>Annalen Der Physik IV. Folge</em> 33 (16): 1275–98.
+</div>
+<div id="ref-frigaard1996" class="csl-entry" role="listitem">
+Frigaard, N.- U., K. L. Larsen, and R. P. Cox. 1996. <span>“Spectrochromatography of Photosynthetic Pigments as a Fingerprinting Technique for Microbial Phototrophs.”</span> <em>FEMS Microbiology Ecology</em> 20: 69–77. <a href="https://doi.org/10.1111/j.1574-6941.1996.tb00306.x">https://doi.org/10.1111/j.1574-6941.1996.tb00306.x</a>.
+</div>
+<div id="ref-gegep98" class="csl-entry" role="listitem">
+Gege, P. 1998. <span>“Characterization of the Phytoplankton in <span>L</span>ake <span>C</span>onstance for Classification by Remote Sensing.”</span> <em>Archiv f<span>ü</span>r Hydrobiologie, Special Issues: Advances in Limnology</em> 53: 179–93.
+</div>
+<div id="ref-gegep04" class="csl-entry" role="listitem">
+———. 2004. <span>“The Water Color Simulator <span>WASI</span>: An Integrating Software Tool for Analysis and Simulation of Optical in Situ Spectra.”</span> <em>Computers and Geosciences</em> 30: 523–32. <a href="https://doi.org/10.1016/j.cageo.2004.03.005">https://doi.org/10.1016/j.cageo.2004.03.005</a>.
+</div>
+<div id="ref-gordo83" class="csl-entry" role="listitem">
+Gordon, H. R., and A. Y. Morel. 1983. <em>Remote Assessment of Ocean Color for Interpretation of Satellite Visible Imagery: A Review</em>. Edited by R. T. Barber, C. N. K. Mooers, M. J. Bowman, and B. Zeitzschel. Vol. 4. Lecture Notes on Coastal and Estuarine Studies. New York: Springer Verlag.
+</div>
+<div id="ref-Grant1998" class="csl-entry" role="listitem">
+Grant, Richard H. 1998. <span>“Ultraviolet Irradiance of Inclined Planes at the Top of Plant Canopies.”</span> <em>Agricultural and Forest Meteorology</em> 89: 281–93. <a href="https://doi.org/10.1016/S0168-1923(97)00067-1">https://doi.org/10.1016/S0168-1923(97)00067-1</a>.
+</div>
+<div id="ref-Grant1999" class="csl-entry" role="listitem">
+———. 1999a. <span>“Potential Effect of Soybean Heliotropism on Ultraviolet-b Irradiance and Dose.”</span> <em>Agronomy Journal</em> 91: 1017–23. <a href="https://doi.org/doi:10.2134/agronj1999.9161017x">https://doi.org/doi:10.2134/agronj1999.9161017x</a>.
+</div>
+<div id="ref-Grant1999a" class="csl-entry" role="listitem">
+———. 1999b. <span>“Ultraviolet-b and Photosynthetically Active Radiation Environment of Inclined Leaf Surfaces in a Maize Canopy and Implications for Modeling.”</span> <em>Agricultural and Forest Meteorology</em> 95: 187–201. <a href="https://doi.org/10.1016/S0168-1923(99)00023-4">https://doi.org/10.1016/S0168-1923(99)00023-4</a>.
+</div>
+<div id="ref-Grant2004" class="csl-entry" role="listitem">
+———. 2004. <span>“UV Radiation Penetration in Plant Canopies.”</span> <em>Encyclopedia of Plant and Crop Science</em>, 1261–64. <a href="https://doi.org/10.1081/E-EPCS-120010624">https://doi.org/10.1081/E-EPCS-120010624</a>.
+</div>
+<div id="ref-DeHaan1972" class="csl-entry" role="listitem">
+Haan, H. De. 1972. <span>“Molecule-Size Distribution of Soluble Humic Compounds from Different Natural Waters.”</span> <em>Freshwater Biology</em> 2: 235–41. <a href="https://doi.org/10.1111/j.1365-2427.1972.tb00052.x">https://doi.org/10.1111/j.1365-2427.1972.tb00052.x</a>.
+</div>
+<div id="ref-DeHaan1993" class="csl-entry" role="listitem">
+———. 1993. <span>“Solar UV-Light Penetration and Photodegradation of Humic Substances in Peaty Lake Water.”</span> <em>Limnology and Oceanográphy</em> 38: 1072–76. <a href="http://www.jstor.org/stable/2838095">http://www.jstor.org/stable/2838095</a>.
+</div>
+<div id="ref-DeHaan1987" class="csl-entry" role="listitem">
+Haan, H. De, De Boer, and T. 1987. <span>“Applicability of Light Absorbance and Fluorescence as Measures of Concentration and Molecular Size of Dissolved Organic Carbon in Humic Lake Tjeukemeer.”</span> <em>Water Research</em> 21: 731–34. <a href="https://doi.org/10.1016/0043-1354(87)90086-8">https://doi.org/10.1016/0043-1354(87)90086-8</a>.
+</div>
+<div id="ref-hakvo94" class="csl-entry" role="listitem">
+Hakvoort, J. H. M. 1994. <span>“Absorption of Light by Surface Water.”</span> <em>Delft Studies in Integrated Water Management 2, Delft University Press</em>. PhD thesis, Delft University of Technology.
+</div>
+<div id="ref-Hargreaves2003" class="csl-entry" role="listitem">
+Hargreaves, B. R. 2003. <span>“Water Column Optics and Penetration of UVR.”</span> In <em>UV Effects in Aquatic Organisms and Ecosystems</em>, edited by E. W. Helbling and H. Zagarese, 59–105. Cambridge, UK: The Royal Society of Chemistry.
+</div>
+<div id="ref-Hessen1994" class="csl-entry" role="listitem">
+Hessen, D. O., and E. Van Donk. 1994. <span>“Effects of UV-Radiation of Humic Water on Primary and Secondary Production.”</span> <em>Water, Air &amp; Soil Pollution</em> 75: 325–38. <a href="https://doi.org/10.1007/BF00482944">https://doi.org/10.1007/BF00482944</a>.
+</div>
+<div id="ref-Hessen1998" class="csl-entry" role="listitem">
+Hessen, D. O., and L. J Tranvik. 1998. <em>Aquatic Humic Substances</em>. Berlin Heidelberg: Springer-Verlag.
+</div>
+<div id="ref-Hirose2005" class="csl-entry" role="listitem">
+Hirose, Tadaki. 2005. <span>“Development of the Monsi–Saeki Theory on Canopy Structure and Function.”</span> <em>Annals of Botany</em> 95: 483–94. <a href="https://doi.org/10.1093/aob/mci047">https://doi.org/10.1093/aob/mci047</a>.
+</div>
+<div id="ref-vhuls81" class="csl-entry" role="listitem">
+Hulst, H. C. van de. 1981. <em>Light Scattering by Small Particles</em>. New York: Dover Publications Inc.
+</div>
+<div id="ref-Huovinen2003" class="csl-entry" role="listitem">
+Huovinen, P. S., H. Penttilä, and M. R. Soimasuo. 2003. <span>“Spectral Attenuation of Solar Ultraviolet Radiation in Humic Lakes in Central Finland.”</span> <em>Chemosphere</em> 51: 205–14. <a href="https://doi.org/10.1016/S0045-6535(02)00634-3">https://doi.org/10.1016/S0045-6535(02)00634-3</a>.
+</div>
+<div id="ref-Huovinen2011" class="csl-entry" role="listitem">
+Huovinen, P., and I. Gómez. 2011. <span>“Spectral Attenuation of Solar Radiation in <span>Patagonian</span> Fjords and Coastal Waters and Implications for Algal Photobiology.”</span> <em>Continental Shelf Research</em> 31: 254–59. <a href="https://doi.org/10.1016/j.csr.2010.09.004">https://doi.org/10.1016/j.csr.2010.09.004</a>.
+</div>
+<div id="ref-Jerlov1976" class="csl-entry" role="listitem">
+Jerlov, N. 1976. <em>Marine Optics</em>. 2nd ed. Amsterdam: Elsevier.
+</div>
+<div id="ref-kalle66" class="csl-entry" role="listitem">
+Kalle, K. 1966. <span>“The Problem of the Gelbstoff in the Sea.”</span> <em>Oceanography and Marine Biology Annual Review</em> 4: 91–104.
+</div>
+<div id="ref-Karentz1991" class="csl-entry" role="listitem">
+Karentz, D., J. E. Cleaver, and D. L. Mitchell. 1991. <span>“Cell Survival Characteristics and Molecular Responses of Antarctic Phytoplankton to Ultraviolet-b Radiation.”</span> <em>Journal of Phycology</em> 27: 326–41. <a href="https://doi.org/10.1111/j.0022-3646.1991.00326.x">https://doi.org/10.1111/j.0022-3646.1991.00326.x</a>.
+</div>
+<div id="ref-Kirk1980" class="csl-entry" role="listitem">
+Kirk, J. T. O. 1980. <span>“Spectral Absorption Properties of Natural Waters: Contribution of the Soluble and Particulate Fractions to Light Absorption in Some Inland Waters of Southeastern Australia.”</span> <em>Australian Journal of Marine and Freshwater Research</em> 31: 287–96. <a href="https://doi.org/10.1071/MF9800287">https://doi.org/10.1071/MF9800287</a>.
+</div>
+<div id="ref-kirkj91" class="csl-entry" role="listitem">
+———. 1991. <span>“Volume Scattering Function, Average Cosine, and the Underwater Light Field.”</span> <em>Limnology and Oceanography</em> 36 (3): 455–67. <a href="http://www.jstor.org/stable/2837511">http://www.jstor.org/stable/2837511</a>.
+</div>
+<div id="ref-Kirk1994" class="csl-entry" role="listitem">
+———. 1994a. <em>Light and Photosynthesis in Aquatic Ecosystems</em>. 2nd ed. Cambridge, UK: Cambridge University Press.
+</div>
+<div id="ref-Kirk1994b" class="csl-entry" role="listitem">
+———. 1994b. <span>“Optics of UV-b Radiation in Natural Waters.”</span> <em>Arch. Hydrobiol. Beih. Ergebn. Limnol</em> 43: 1–166.
+</div>
+<div id="ref-kowal10" class="csl-entry" role="listitem">
+Kowalczuk, P., M. Zabłocka, S. Sagan, and K. Kuliński. 2010. <span>“Fluorescence Measured in Situ as a Proxy of <span>CDOM</span> Absorption and <span>DOC</span> Concentration in the <span>B</span>altic Sea.”</span> <em>Oceanologia</em> 52 (3): 431–71.
+</div>
+<div id="ref-Lean1998" class="csl-entry" role="listitem">
+Lean, D. 1998. <span>“Attenuation of Solar Radiation in Humic Waters.”</span> In <em>Aquatic Humic Substances</em>, edited by D. O. Hessen and L. J. Tranvik, 109–24. Berlin Heidelberg: Springer-Verlag.
+</div>
+<div id="ref-Lee2007" class="csl-entry" role="listitem">
+Lee, David. 2007. <em>Nature’s Palette : The Science of Plant Color</em>. Chicago: University of Chicago Press.
+</div>
+<div id="ref-leezp02" class="csl-entry" role="listitem">
+Lee, Z. P., K. L. Carder, and R. A. Arnone. 2002. <span>“Deriving Inherent Optical Properties from Water Color: A Multiband Quasi-Analytical Algorithm for Optically Deep Water.”</span> <em>Applied Optics</em> 41 (27): 5755–72. <a href="https://doi.org/10.1364/AO.41.005755">https://doi.org/10.1364/AO.41.005755</a>.
+</div>
+<div id="ref-marit94" class="csl-entry" role="listitem">
+Maritorena, S., A. Morel, and B. Gentili. 1994. <span>“Diffuse Reflectance of Oceanic Shallow Waters: Influence of Water Depth and Bottom Albedo.”</span> <em>Limnology and Oceanography</em> 39 (7): 1689–1703. <a href="http://www.jstor.org/stable/2838204">http://www.jstor.org/stable/2838204</a>.
+</div>
+<div id="ref-Mitchell1993" class="csl-entry" role="listitem">
+Mitchell, D. L., and D. Karentz. 1993. <span>“The Induction and Repair of DNA Photodamage in the Environment.”</span> In <em>Environmental UV Photobiology</em>, edited by A. R. Young, L. O. Björn, J. Moan, and W. Nultsch, 345–77. New York: Plenum Press.
+</div>
+<div id="ref-moble94" class="csl-entry" role="listitem">
+Mobley, C. D. 1994. <em>Light and Water - Radiative Transfer in Natural Waters</em>. San Diego: Academic Press. <a href="http://www.curtismobley.com/lightandwater.zip">http://www.curtismobley.com/lightandwater.zip</a>.
+</div>
+<div id="ref-moble11" class="csl-entry" role="listitem">
+———. 2011. <span>“Fast Light Calculations for Ocean Ecosystem and Inverse Models.”</span> <em>Optics Express</em> 19 (20): 18927–44. <a href="https://doi.org/10.1364/OE.19.018927">https://doi.org/10.1364/OE.19.018927</a>.
+</div>
+<div id="ref-moble03a" class="csl-entry" role="listitem">
+Mobley, C. D., and L. K. Sundman. 2003. <span>“Effects of Optically Shallow Bottoms on Upwelling Radiances: Inhomogeneous and Sloping Bottoms.”</span> <em>Limnology and Oceanography, Light in Shallow Waters</em> 48 (1, part 2): 329–36. <a href="http://www.jstor.org/stable/3597753">http://www.jstor.org/stable/3597753</a>.
+</div>
+<div id="ref-moble03b" class="csl-entry" role="listitem">
+Mobley, C. D., H. Zhang, and K. J. Voss. 2003. <span>“Effects of Optically Shallow Bottoms on Upwelling Radiances: Bidirectional Reflectance Distribution Function Effects.”</span> <em>Limnology and Oceanography, Light in Shallow Waters</em> 48 (1, part 2): 337–45. <a href="http://www.jstor.org/stable/3597754">http://www.jstor.org/stable/3597754</a>.
+</div>
+<div id="ref-Monsi1953" class="csl-entry" role="listitem">
+Monsi, M, and T. Saeki. 1953. <span>“Über Den Lichfaktor in Den Pflanzengesellschaften Und Seine Bedeutung Für Die Stoffproduktion.”</span> <em>Japanese Journal of Botany</em> 14: 22–52.
+</div>
+<div id="ref-Monteith2008" class="csl-entry" role="listitem">
+Monteith, John, and Mike Unsworth. 2008. <em>Principles of Environmental Physics</em>. 3rd ed. Academic Press.
+</div>
+<div id="ref-morel74" class="csl-entry" role="listitem">
+Morel, A. 1974. <span>“Optical Properties of Pure Water and Pure Sea Water.”</span> In <em>Optical Aspects of Oceanography</em>, edited by N. G. Jerlov and E. Steemann Nielsen, 1–24. London: Academic Press.
+</div>
+<div id="ref-morel91" class="csl-entry" role="listitem">
+———. 1991. <span>“Light and Marine Photosynthesis: A Spectral Model with Geochemical and Climatological Implications.”</span> <em>Progress in Oceanography</em> 26: 263–306. <a href="https://doi.org/10.1016/0079-6611(91)90004-6">https://doi.org/10.1016/0079-6611(91)90004-6</a>.
+</div>
+<div id="ref-morel76" class="csl-entry" role="listitem">
+Morel, A., and L. Prieur. 1976. <span>“Analyse Spectrale de l’absorption Par Les Substances Dissoutes (Substances Jaunes).”</span> <em>Publ. CNEXO</em> 10 (Sect. 1.1.11): 1–9.
+</div>
+<div id="ref-Morel1977" class="csl-entry" role="listitem">
+———. 1977. <span>“Analysis of Variations in Ocean Colour.”</span> <em>Limnology Oceanography</em> 22: 709–22. <a href="http://www.jstor.org/stable/2835253">http://www.jstor.org/stable/2835253</a>.
+</div>
+<div id="ref-Morris1997" class="csl-entry" role="listitem">
+Morris, D. P., and B. R. Hargreaves. 1997. <span>“The Role of Photochemical Degradation of Dissolved Organic Carbon in Regulating the UV Transparency of Three Lakes on the Pocono Plateau.”</span> <em>Limnology and Oceanography</em> 42: 239–49. <a href="http://www.jstor.org/stable/2838552">http://www.jstor.org/stable/2838552</a>.
+</div>
+<div id="ref-Palenik1991" class="csl-entry" role="listitem">
+Palenik, B., N. M. Price, and F. M. M. Morel. 1991. <span>“Potential Effects of UV-b on the Chemical Environment of Marine Organisms: A Review.”</span> <em>Environmental Pollution</em> 70: 117–30. <a href="https://doi.org/10.1016/0269-7491(91)90084-A">https://doi.org/10.1016/0269-7491(91)90084-A</a>.
+</div>
+<div id="ref-Parisi1996" class="csl-entry" role="listitem">
+Parisi, A. V., and J. C. F. Wong. 1996. <span>“Plant Canopy Shape and the Influences on <span>UV</span> Exposures to the Canopy.”</span> <em>Photochemistry and Photobiology</em> 63 (6): 143–48. <a href="https://doi.org/10.1111/j.1751-1097.1996.tb02434.x">https://doi.org/10.1111/j.1751-1097.1996.tb02434.x</a>.
+</div>
+<div id="ref-pegau93" class="csl-entry" role="listitem">
+Pegau, W. S., and J. R. V. Zaneveld. 1993. <span>“Temperature-Dependent Absorption of Water in the Red and Near-Infrared Portions of the Spectrum.”</span> <em>Limnology and Oceanography</em> 38 (1): 188–92. <a href="http://www.jstor.org/stable/2837903">http://www.jstor.org/stable/2837903</a>.
+</div>
+<div id="ref-petzo77" class="csl-entry" role="listitem">
+Petzold, T. J. 1977. <span>“Volume Scattering Functions for Selected Ocean Waters.”</span> In <em>Light in the Sea</em>, edited by J. E. Tyler, 152–74. Dowden, Hutchinson &amp; Ross, Strouddberg.
+</div>
+<div id="ref-pinne07" class="csl-entry" role="listitem">
+Pinnel, N. 2007. <span>“A Method for Mapping Submersed Macrophytes in Lakes Using Hyperspectral Remote Sensing.”</span> <em>Fakult<span>ä</span>t Wissenschaftszentrum Weihenstephan f<span>ü</span>r Ern<span>ä</span>hrung, Landnutzung Und Umwelt, Department f<span>ü</span>r <span>Ö</span>kologie Und <span>Ö</span>kosystemmanagement, Fachbereich f<span>ü</span>r Limnologie</em>. PhD thesis, Technische Universit<span>ä</span>t M<span>ü</span>nchen. <a href="http://mediatum2.ub.tum.de/node?id=604557">http://mediatum2.ub.tum.de/node?id=604557</a>.
+</div>
+<div id="ref-pozdn03" class="csl-entry" role="listitem">
+Pozdnyakov, D., and H. Grassl. 2003. <em>Colour of Inland and Coastal Waters - a Methodology for Its Interpretation</em>. Berlin/Heidelberg/New York andChichester: Springer Verlag; Praxis Publishing Ltd.
+</div>
+<div id="ref-prahl89" class="csl-entry" role="listitem">
+Prahl, S. A., M. Keijzer, S. L. Jacques, and A. J. Welch. 1989. <span>“A <span>M</span>onte <span>C</span>arlo Model of Light Propagation in Tissue.”</span> In <em>SPIE Proceedings of Dosimetry of Laser Radiation in Medicine and Biology</em>, edited by G. J. Müller and D. H. Sliney, IS 5:102–11.
+</div>
+<div id="ref-prieu81" class="csl-entry" role="listitem">
+Prieur, L., and S. Sathyendranath. 1981. <span>“An Optical Classification of Coastal and Oceanic Waters Based on the Specific Spectral Absorption Curves of Phytoplankton Pigments, Dissolved Organic Matter, and Other Particulate Materials.”</span> <em>Limnology and Oceanography</em> 26 (4): 671–89. <a href="http://www.jstor.org/stable/2836033">http://www.jstor.org/stable/2836033</a>.
+</div>
+<div id="ref-quanx95" class="csl-entry" role="listitem">
+Quan, X., and E. S. Fry. 1995. <span>“Empirical Equation for the Index of Refraction of Seawater.”</span> <em>Applied Optics</em> 34 (18): 3477–80. <a href="https://doi.org/10.1364/AO.34.003477">https://doi.org/10.1364/AO.34.003477</a>.
+</div>
+<div id="ref-roesl89" class="csl-entry" role="listitem">
+Roesler, C. S., M. J. Perry, and K. L. Carder. 1989. <span>“Modeling in Situ Phytoplankton Absorption from Total Absorption Spectra in Productive Inland Marine Waters.”</span> <em>Limnology and Oceanography</em> 34 (8): 1510–23. <a href="http://www.jstor.org/stable/2837036">http://www.jstor.org/stable/2837036</a>.
+</div>
+<div id="ref-sathy89" class="csl-entry" role="listitem">
+Sathyendranath, S., L. Prieur, and A. Morel. 1989. <span>“A Three-Component Model of Ocean Colour and Its Application to Remote Sensing of Phytoplankton Pigments in Coastal Waters.”</span> <em>International Journal of Remote Sensing</em> 10 (8): 1373–94. <a href="https://doi.org/10.1080/01431168908903974">https://doi.org/10.1080/01431168908903974</a>.
+</div>
+<div id="ref-Schindler1996" class="csl-entry" role="listitem">
+Schindler, D. W., P. J. Curtis, B. R. Parker, and M. P. Stainton. 1996. <span>“Consequences of Climate Warming and Lake Acidification for UV-b Penetration in North American Boreal Lakes.”</span> <em>Nature</em> 379: 705–8. <a href="https://doi.org/10.1038/379705a0">https://doi.org/10.1038/379705a0</a>.
+</div>
+<div id="ref-Scully1994" class="csl-entry" role="listitem">
+Scully, N. M., and D. R. S. Lean. 1994. <span>“The Attenuation of Ultraviolet Radiation in Temperate Lakes.”</span> <em>Arch. Hydrobiol. Beih.</em> 43: 135–44.
+</div>
+<div id="ref-Scully1997" class="csl-entry" role="listitem">
+Scully, N. M., W. F. Vincent, D. R. S. Lean, and W. J. Cooper. 1997. <span>“Implications of Ozone Depletion for Surface-Water Photochemistry: Sensitivity of Clear Lakes.”</span> <em>Aquatic Sciences</em> 59: 260–74. <a href="https://doi.org/10.1007/BF02523277">https://doi.org/10.1007/BF02523277</a>.
+</div>
+<div id="ref-Smith1979" class="csl-entry" role="listitem">
+Smith, R. C., and K. S Baker. 1979. <span>“Penetration of UV-b and Biologically Effective Dose-Rates in Natural Waters.”</span> <em>Photochemistry and Photobiology</em> 29: 311–23. <a href="https://doi.org/10.1111/j.1751-1097.1979.tb07054.x">https://doi.org/10.1111/j.1751-1097.1979.tb07054.x</a>.
+</div>
+<div id="ref-smith81" class="csl-entry" role="listitem">
+Smith, R. C., and K. S. Baker. 1981. <span>“Optical Properties of the Clearest Natural Waters (200-800 Nm).”</span> <em>Applied Optics</em> 20 (2): 177–84. <a href="https://doi.org/10.1364/AO.20.000177">https://doi.org/10.1364/AO.20.000177</a>.
+</div>
+<div id="ref-Smith1992" class="csl-entry" role="listitem">
+Smith, R. C., B. B. Prézelin, K. S. Baker, R. R. Bidigare, N. P. Boucher, T. Coley, D. Karentz, et al. 1992. <span>“Ozone Depletion: Ultraviolet Radiation and Phytoplankton Biology in Antarctic Waters.”</span> <em>Science</em> 255: 952–59. <a href="https://doi.org/10.1126/science.1546292">https://doi.org/10.1126/science.1546292</a>.
+</div>
+<div id="ref-smith76" class="csl-entry" role="listitem">
+Smith, R. C., and J. E. Tyler. 1976. <span>“Transmission of Solar Radiation into Natural Waters.”</span> Edited by K. C. Smith, Photochemical and photobiological reviews, 1: 117–55.
+</div>
+<div id="ref-smolu08" class="csl-entry" role="listitem">
+Smoluchowski, M. 1908. <span>“Molekular-Kinetische Theorie Der Opaleszenz von Gasen Im Kritischen Zustande, Sowie Einiger Verwandter Erscheinungen.”</span> <em>Annalen Der Physik</em> 25: 205–26.
+</div>
+<div id="ref-Sommaruga1997" class="csl-entry" role="listitem">
+Sommaruga, R., and R. Psenner. 1997. <span>“Ultraviolet Radiation in a High Mountain Lake of the Austrian Alps: Air and Underwater Measurements.”</span> <em>Photochemistry and Photobiology</em> 65: 957–63. <a href="https://doi.org/10.1111/j.1751-1097.1997.tb07954.x">https://doi.org/10.1111/j.1751-1097.1997.tb07954.x</a>.
+</div>
+<div id="ref-Stewart1980" class="csl-entry" role="listitem">
+Stewart, A. J., and R. G. Wetzel. 1980. <span>“Fluorescence: Absorbance Ratios–a Molecular-Weight Tracer of Dissolved Organic Matter.”</span> <em>Limnology and Oceanography</em> 25: 559–64. <a href="http://www.jstor.org/stable/2835308">http://www.jstor.org/stable/2835308</a>.
+</div>
+<div id="ref-tyler68" class="csl-entry" role="listitem">
+Tyler, J. E. 1968. <span>“The <span>S</span>ecchi Disc.”</span> <em>Limnology and Oceanography</em> 13 (1): 1–6. <a href="http://www.jstor.org/stable/2833820">http://www.jstor.org/stable/2833820</a>.
+</div>
+<div id="ref-Vincent1993" class="csl-entry" role="listitem">
+Vincent, W. F., and S. Roy. 1993. <span>“Solar Ultraviolet-b Radiation and Aquatic Primary Production: Damage, Protection, and Recovery.”</span> <em>Environmental Reviews</em> 1: 1–12. <a href="https://doi.org/10.1139/a93-001">https://doi.org/10.1139/a93-001</a>.
+</div>
+<div id="ref-Wang1995" class="csl-entry" role="listitem">
+Wang, L.- H., S. L. Jacques, and L.- Q. Zheng. 1995. <span>“<span>MCML</span> - <span>M</span>onte <span>C</span>arlo Modeling of Photon Transport in Multi-Layered Tissues.”</span> <em>Computer Methods and Programs in Biomedicine</em> 47: 131–46. <a href="https://doi.org/10.1016/0169-2607(95)01640-F">https://doi.org/10.1016/0169-2607(95)01640-F</a>.
+</div>
+<div id="ref-Wozniak2007" class="csl-entry" role="listitem">
+Wozniak, B., and J. Dera. 2007. <em>Light Absorption in Sea Water</em>. Vol. 33. Atmospheric and Oceanographic Sciences Library. Springer, Dordrecht.
+</div>
+<div id="ref-Yan1996" class="csl-entry" role="listitem">
+Yan, N. D., W. Keller, N. M. Scully, D. R. S. Lean, and P. J. Dillon. 1996. <span>“Increased UV-b Penetration in a Lake Owing to Drought-Induced Acidification.”</span> <em>Nature</em> 381: 141–43. <a href="https://doi.org/10.1038/381141a0">https://doi.org/10.1038/381141a0</a>.
+</div>
+<div id="ref-Yun2019" class="csl-entry" role="listitem">
+Yun, Min Ju, Yeon Hyang Sim, Seung I. Cha, and Dong Yoon Lee. 2019. <span>“Leaf Anatomy and 3-d Structure Mimic to Solar Cells with Light Trapping and 3-d Arrayed Submodule for Enhanced Electricity Production.”</span> <em>Scientific Reports</em> 9 (1). <a href="https://doi.org/10.1038/s41598-019-46748-x">https://doi.org/10.1038/s41598-019-46748-x</a>.
+</div>
+<div id="ref-Zepp1982" class="csl-entry" role="listitem">
+Zepp, R. G. 1982. <span>“Photochemical Transformations Induced by Solar Ultraviolet Radiation in Marine Ecosystems.”</span> In <em>The Role of Solar Ultraviolet Radiation in Marine Ecosystems</em>, edited by J. Calkins, 293–307. New York: Plenum Press.
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Data available from <a href="http://www.bio.ku.dk/nuf/resources/scitab/chlabs/index.htm">Frigaard’s website at the University of Copenhagen</a> at <a href="http://www.bio.ku.dk/nuf/resources/scitab/chlabs/index.htm" class="uri">http://www.bio.ku.dk/nuf/resources/scitab/chlabs/index.htm</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Latest software version available at the <a href="http://photochemcad.com">PhotochemCAD website</a> at <a href="http://photochemcad.com" class="uri">http://photochemcad.com</a>. Data available at the <a href="http://omlc.ogi.edu/spectra/PhotochemCAD/index.html">PhotochemCAD data site</a> at <a href="http://omlc.ogi.edu/spectra/PhotochemCAD/index.html" class="uri">http://omlc.ogi.edu/spectra/PhotochemCAD/index.html</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Inland waters include rivers, streams and lakes.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Program available from the website of the Oregon Medical Laser Center at <a href="http://omlc.ogi.edu/software/mc/" class="uri">http://omlc.ogi.edu/software/mc/</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./light-environment-terrestrial.html" class="pagination-link" aria-label="The UV, VIS and NIR environment above vegetation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The UV, VIS and NIR environment above vegetation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./quantifying-radiation.html" class="pagination-link" aria-label="Quantifying radiation">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantifying radiation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.uv4plants.org">
+<p>Uv4Plants Association</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2012-2024 COST office and authors
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
