@@ -11,7 +11,7 @@ listing:
     - "radiation.qmd"
     - "optics.qmd"
     - "light-environment-terrestrial.qmd"
-    - "light-environment-aquatic.qmd"
+    - "light-environment-plants.qmd"
     - "quantifying-radiation.qmd"
     - "leaf-optics.qmd"
     - "quantifying-responses.qmd"

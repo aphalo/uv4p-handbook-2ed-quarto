@@ -20,7 +20,7 @@ book:
       affiliation: University of Copenhagen
   contributor: "Pedro J. Aphalo, Andreas Albert, Lars Olof Björn, Andy R. McLeod, T. Matthew Robson,  Eva Rosenqvist"
   license: "CC BY-SA"
-  date: "2024-07-15"
+  date: "2024-10-04"
   date-format: iso
   chapters:
     - index.qmd
@@ -36,7 +36,7 @@ book:
         - radiation.qmd
         - optics.qmd
         - light-environment-terrestrial.qmd
-        - light-environment-aquatic.qmd
+        - light-environment-plants.qmd
         
     - part: Measurements
       chapters:
@@ -95,4 +95,4 @@ format:
     documentclass: scrreprt
 
 editor: source
-
+freeze: false

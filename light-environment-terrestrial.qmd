@@ -1,5 +1,5 @@
 ---
-title: "The UV, VIS and NIR environment of terrestrial plants"
+title: "The UV, VIS and NIR environment above vegetation"
 subtitle: "Quantity, quality and timing in nature"
 author:
   - name: Pedro J. Aphalo
@@ -973,11 +973,109 @@ p.cloudy.irrad / p.cloudy.scaled +
   plot_layout(axes = "collect", guides = "collect")
 }
 ```
+#### Elevation
+
+**We have three options: 1) generate suitable data with TUV, 2) show measured data from the literature, or 3) both.** 
+
+A simulation with the TUV model shows how attenuation by the atmosphere decreases with increasing ground altitude under a clear sky, with all other parameters kept unchanged, including surface albedo. As above, we show the actual spectral irradiance and the spectral irradiances scaled to equal PAR photon irradiance. The effect is not huge and the decrease in attenuation is stronger at shorter wavelengths [@fig-spectrum-ground-altitude].
+
+```{r, echo=FALSE}
+#| label: fig-spectrum-ground-altitude
+#| fig-cap: Spectra under clear sky and a sun elevation of 45 degrees at different ground altitudes. A&#58; photon spectral irradiance as computed with the TUV model, B&#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$.
+
+{
+  photon_as_default()
+  
+# avoid repeated calls to Quick TUV server
+altitudes.file.path <- "light-environment-data/ground_altitudesx2.mspct.rda"
+if (file.exists(altitudes.file.path)) {
+  load(altitudes.file.path)
+} else {
+  ground_altitudes.mspct <-
+    qtuv_m_s.e.irrad(
+      ground.altitude = c(0, 8),
+      w.length = 290:750,
+      sun.elevation = 45
+    )
+  save(ground_altitudes.mspct, file = altitudes.file.path)
+}
+
+names(ground_altitudes.mspct) <- paste(c(0, 8), "km")
+
+p.altitude.scaled <-
+  ggplot(data = fscale(ground_altitudes.mspct,
+                       f = q_irrad , target = 1e-3, w.band = PAR()),
+         aes(w.length, s.q.irrad, colour = spct.idx)) +
+  #  geom_vline(xintercept = c(400, 700), linetype = "dotted") +
+  stat_wl_strip(ymin = -0.015e-6, ymax = -0.003e-6) +
+  scale_fill_identity() +
+  geom_line() +
+  scale_y_s.q.irrad_continuous(unit.exponent = -6) +
+  scale_x_wl_continuous() +
+  scale_colour_manual(values = c("darkgreen", "grey20")) +
+  labs(tag = "B", colour = "")
+
+p.altitude.irrad <-
+  ggplot(data = e2q(ground_altitudes.mspct),
+         aes(w.length, s.q.irrad, colour = spct.idx)) +
+  #  geom_vline(xintercept = c(400, 700), linetype = "dotted") +
+  stat_wl_strip(ymin = -0.19e-6, ymax = -0.03e-6) +
+  geom_line() +
+  scale_fill_identity() +
+  scale_y_s.q.irrad_continuous(unit.exponent = -6) +
+  scale_x_wl_continuous() +
+  scale_colour_manual(values = c("darkgreen", "grey20")) +
+  labs(tag = "A", colour = "")
+
+p.altitude.irrad / p.altitude.scaled +
+  plot_layout(axes = "collect", guides = "collect")
+}
+```
+
+In @fig-spectrum-ground-altitude we show the spectra for two extreme altitudes, sea level and 8000 m above sea level. In @fig-irradiance-ground-altitude we show the increase in UV-B, UV-A2, UV-A1 and PAR with ground altitude.
+
+```{r, echo=FALSE}
+#| label: fig-irradiance-ground-altitude
+#| fig-cap: Increase in PAR and UV irradiances at ground level under clear sky as a function of ground altitude above sea level. Based on spectral simulations with TUV for sun elevation 45 degrees. UVA-1, violet; UV-A2, purple; UV-B, black.
+
+{
+  photon_as_default()
+  
+# avoid repeated calls to Quick TUV server
+altitudes.file.path <- "light-environment-data/ground_altitudesx9.mspct.rda"
+if (file.exists(altitudes.file.path)) {
+  load(altitudes.file.path)
+} else {
+  ground_altitudesx9.mspct <-
+  qtuv_m_s.e.irrad(
+    ground.altitude = 0:8,
+    w.length = 290:750,
+    sun.elevation = 45
+  )
+  save(ground_altitudesx9.mspct, file = altitudes.file.path)
+}
+
+names(ground_altitudesx9.mspct) <- as.character(0:8)
+ground_altitudesx9.spct <- rbindspct(ground_altitudesx9.mspct, idfactor = "Altitude")
+q_irrads_altitude.tb <- q_irrad(ground_altitudesx9.spct, Plant_bands("CIE"), scale.factor = 1e6)
+q_irrads_altitude.tb$Altitude <- as.numeric(q_irrads_altitude.tb$Altitude)
+
+ggplot(q_irrads_altitude.tb, aes(Altitude)) +
+  geom_line(aes(y = ((`Q_]UVB.CIE` / `Q_]UVB.CIE`[1]) - 1) * 100), colour = "black") +
+  geom_line(aes(y = ((Q_UVA2.CIE / Q_UVA2.CIE[1]) - 1) * 100), colour = "purple") +
+  geom_line(aes(y = ((Q_UVA1.CIE / Q_UVA1.CIE[1]) - 1) * 100), colour = "violet") +
+  geom_line(aes(y = ((Q_PAR / Q_PAR[1]) - 1) * 100), colour = "orange") +
+  scale_y_continuous(name = "Increase in photon irradiance (%)") +
+  scale_x_continuous(name = "Ground altitude (km a.s.l.)")
+
+}
+```
+
+In reality, the different variables shown individually in the examples in this chapter, can vary in ways that their effects add up, so the total range of variation is larger than is apparent in the examples above.
+
 #### Seasons and latitude
 
-**Maps for PAR, UV-A and UV-A could be added to this section.**
-
-**I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added. Maybe a figure with daily averages per month of week. Or a moving average.**
+The main determinant of changes in spectral irradiance with seasons and latitude is the changing path of the sun through the sky, and consequently of the sun elevation angle. However, several other variables play a role. The depth of the ozone column varies with latitude and seasonally. Clouds and the water column depth vary locally and with latitude, as does ground elevation and albedo. The result is that spectral irradiance varies in time and space. One way of summarising this is to describe the local climatology using maps with monthly averages over several years interpolated over a geographic grid. One approach is to use data retrieved by instruments on board satellites. An alternative approach is to describe terrestrial solar radiation at locations where ground-level measurements are available. We start with examples based on this second approach and observations with broadband sensors from ELDONET. From the perspective of research with plants the availability of UV-B, UV-A and PhR data measured concurrently is important.
 
 Considering a longer time scale of years, seasonal and daily variation are combined. The seasonal pattern of variation in UV-B daily exposure is very clear but has day to day variation superimposed [@fig-UVB-Erlangen A]. The strong change in the UV-B:PAR photon ratio with sun elevation creates a strong seasonal pattern in this photon ratio [@fig-UVB-Erlangen B].
 
@@ -1007,13 +1105,13 @@ fig_ratio <- ggplot(data=Erlangen.data,aes(x=date,y=UVB/PAR*1000)) +
 print((fig / fig_ratio) + plot_layout(axes = "collect") )
 ```
 
-UV-B irradiance increases with elevation in mountains and with decreasing latitude [@fig-UVB-latitude] and is particularly high on high mountains in equatorial regions. This has been hypothesized to be a factor in the determination of the tree line[^2] in these mountains [@Flenley1992].
+UV-B irradiance increases with elevation in mountains and with decreasing latitude [@fig-UVB-latitude] and is particularly high on high mountains in equatorial regions. 
 
 [^2]: *Tree line* is the highest elevation on a mountain slope at which tree species are naturally able to grow.
 
 ```{r, echo=FALSE, message=FALSE}
 #| label: fig-UVB-latitude
-#| fig-cap: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments [see, @Haeder2007].
+#| fig-cap: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments. The ground altitude for these locations varies [see, @Haeder2007].
 
 latitudinal.data <- 
   read.csv("./light-environment-data/latitudinal_data.csv") |>
@@ -1046,16 +1144,9 @@ fig_UVA <- ggplot(data=latitudinal.data,aes(x=latitude,y=UVA)) +
 print((fig_UVB / fig_UVA) + plot_layout(axes = "collect"))
 ```
 
-#### Elevation
-
-**We have three options: 1) generate suitable data with TUV, 2) show measured data from the literature, or 3) both.** 
+**I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added as they include separate measurements of UV-B, UV-A2, UV-A1, blue, red, far-red and PAR irradiances. Maybe a figure with daily averages per month of week or showing a moving average or moving median could be informative. What do you think?**
 
 
-## Solar radiation within plant canopies
+**Maps for global radiation, UV-B, UV-A2 and UV-A1 could be added to this section.**
 
-The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. Here we give only a description of the simplest approach, the use of an approximation based on Beer's law as modified by @Monsi1953, reviewed by @Hirose2005. Beer's law (Equation [\[eq:Beer-Lambert\]](#eq:Beer-Lambert){reference-type="ref" reference="eq:Beer-Lambert"}) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). $$I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}$$ Equation [\[eq:Monsi:Saeki\]](#eq:Monsi:Saeki){reference-type="ref" reference="eq:Monsi:Saeki"} describes the radiation attenuated as a function of leaf area index ($L$ or ) at a given canopy depth ($z$). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical extinction coefficient ($K$) obtained may vary depending on these factors. $K$ is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year---as a consequence of solar zenith angle---and degree of scattering of the incident radiation. As the degree of scattering depends on clouds, and also on wavelength, the extinction coefficient is different for and visible radiation. Radiation extinction in canopies has yet to be studied in detail with respect to radiation, mainly because of difficulties in the measurement of radiation compared to , a spectral region which has been extensively studied.
-
-Ultraviolet radiation is strongly absorbed by plant surfaces, although cuticular waxes and pubescence on leaves can sometimes increase reflectance. The diffuse component of radiation is larger than that of visible light (Figure [[fig:diffuse.light]](#fig:diffuse.light){reference-type="ref" reference="fig:diffuse.light"}). In sunlit patches in forest gaps the diffuse radiation percentage is lower than in open areas, because [direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"} is not attenuated but part of the sky is occluded by the surrounding forest. Attenuation with canopy depth is on average usually more gradual for than for . The irradiance decreases with depth in tree canopies, but the ratio tends to increase [see @Brown1994]. In contrast, @Deckmyn2001 observed a decrease in ratio in white clover canopies with planophyle leaves. @Allen1975 modelled the penetration in plant canopies, under normal and depleted ozone conditions. @Parisi1996 measured doses within model plant canopies using dosimeters. The position of leaves affects exposure, and it has been observed that heliotropism can moderate exposure and could be a factor contributing to differences in tolerance among crop cultivars [@Grant1998; @Grant1999; @Grant1999a; @Grant2004].
-
-Detailed accounts of different models describing the interaction of radiation and plant canopies, taking into account the properties of foliage, are given by @Campbell1998 and @Monteith2008.
 

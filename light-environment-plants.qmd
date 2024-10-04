@@ -1,13 +1,17 @@
 ---
-title: "The UV, VIS and NIR environment of aquatic plants"
+title: "The UV, VIS and NIR environment of plants"
 subtitle: "Quantity, quality and timing in nature"
 author:
+  - name: Maxime Durand
+    affiliation: University of Helsinki
   - name: Pirjo Huovinen
     orcid: 0000-0002-7754-4933
-    affiliation: Universidad Auatral de Chile
+    affiliation: Universidad Austral de Chile
   - name: (Iván Gómez)
     orcid: 0000-0001-8381-3792
-    affiliation: Universidad Auatral de Chile
+    affiliation: Universidad Austral de Chile
+  - name: T. Matthew Robson
+    affiliation: University of Cumbria
   - name: (Félix López Figueroa)
   - name: Pedro J. Aphalo
     orcid: 0000-0003-3385-972X
@@ -21,7 +25,8 @@ format:
     embed-resources: false
 editor: source
 abstract: | 
-  This chapter discusses the light environment of aquatic plants.
+  This chapter discusses the light environment of plants. Plants themeselves alter the light environment by selective absorption and reflection. In the case of terrestrial plants the air medium sourrounding the plants has little if any inpact on radiation within vegetation canopies. In the case of aquatic plants, the light received by submerged parts is affected in quality and quantity by the properties of water and solutes in addition to the effects of other plants. In the case of both terrestrial and aquatic plants the temporal dynamics of illumination are different than in the open.
+  
 ---
 
 ::: callout-note
@@ -117,8 +122,17 @@ $$
 $$
 :::
 
+## Radiation in terrestrial plants' environment
 
-## UV radiation in aquatic environments {#sec:UV:aquatic}
+The attenuation of visible and radiation by canopies is difficult to describe mathematically because it is a complex phenomenon. The spatial distribution of leaves is in most cases not uniform, the display angle of the leaves is not random, and may change with depth in the canopy, and even in some cases with time-of-day. Here we give only a description of the simplest approach, the use of an approximation based on Beer's law as modified by @Monsi1953, reviewed by @Hirose2005. Beer's law (Equation [\[eq:Beer-Lambert\]](#eq:Beer-Lambert){reference-type="ref" reference="eq:Beer-Lambert"}) assumes a homogeneous light absorbing medium such as a solution. However, a canopy is heterogenous, with discrete light absorbing objects (the leaves and stems) distributed in a transparent medium (air). $$I_z = I_0\cdot\mathrm{e}^{-K\,L_z} \label{eq:Monsi:Saeki}$$ Equation [\[eq:Monsi:Saeki\]](#eq:Monsi:Saeki){reference-type="ref" reference="eq:Monsi:Saeki"} describes the radiation attenuated as a function of leaf area index ($L$ or ) at a given canopy depth ($z$). The equation does not explicitly account for the effects of the statistical spatial distribution of leaves and the effects of changing incidence angle of the radiation. Consequently, the empirical extinction coefficient ($K$) obtained may vary depending on these factors. $K$ is not only a function of plant species (through leaf optical properties, and how leaves are displayed), but also of time-of-day, and season-of-year---as a consequence of solar zenith angle---and degree of scattering of the incident radiation. As the degree of scattering depends on clouds, and also on wavelength, the extinction coefficient is different for and visible radiation. Radiation extinction in canopies has yet to be studied in detail with respect to radiation, mainly because of difficulties in the measurement of radiation compared to , a spectral region which has been extensively studied.
+
+Ultraviolet radiation is strongly absorbed by plant surfaces, although cuticular waxes and pubescence on leaves can sometimes increase reflectance. The diffuse component of radiation is larger than that of visible light (Figure [[fig:diffuse.light]](#fig:diffuse.light){reference-type="ref" reference="fig:diffuse.light"}). In sunlit patches in forest gaps the diffuse radiation percentage is lower than in open areas, because [direct:rad]{acronym-label="direct:rad" acronym-form="singular+short"} is not attenuated but part of the sky is occluded by the surrounding forest. Attenuation with canopy depth is on average usually more gradual for than for . The irradiance decreases with depth in tree canopies, but the ratio tends to increase [see @Brown1994]. In contrast, @Deckmyn2001 observed a decrease in ratio in white clover canopies with planophyle leaves. @Allen1975 modelled the penetration in plant canopies, under normal and depleted ozone conditions. @Parisi1996 measured doses within model plant canopies using dosimeters. The position of leaves affects exposure, and it has been observed that heliotropism can moderate exposure and could be a factor contributing to differences in tolerance among crop cultivars [@Grant1998; @Grant1999; @Grant1999a; @Grant2004].
+
+Detailed accounts of different models describing the interaction of radiation and plant canopies, taking into account the properties of foliage, are given by @Campbell1998 and @Monteith2008.
+
+
+
+## Radiation in aquatic plants' environment
 
 As solar radiation passes through a body of water, its spectrum changes with depth in a wavelength-dependent manner, determined by the optical characteristics of that water body. The penetration of UV radiation through water bodies can vary from only few centimetres in highly humic lakes [@Kirk1994; @Kirk1994b; @Huovinen2003] to dozens of metres in the oceans [@Smith1992; @Kirk1994; @Kirk1994b]. Some irradiance is reflected at the water surface, but the extent to which wavelengths in the UV to IR range penetrate water bodies depends mainly on (1) attenuation by water itself, (2) coloured dissolved organic matter (CDOM), and seston. Seston is the sum of living organic material (mainly phytoplankton) and non-living material (tripton). Non-living particles are further distinguished between organic material (detritus) and inorganic suspended matter. Each fraction has its own characteristic spectral absorption and scattering properties [reviewed by @dekke93; @Kirk1994; @Kirk1994b; @Hargreaves2003; @Wozniak2007].
 
