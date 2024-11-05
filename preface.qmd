@@ -55,3 +55,7 @@ The structure of the book is not yet final. We are following a plan, but as long
     12.  Manipulating UV and VIS radiation
     13.  Cultivation of terrestrial plants for UV and other photobiological experiments
     14.  Cultivation of aquatic plants for UV and other photobiological experiments
+
+## Acknowledgements
+
+We thank the [AC SAF project of the EUMETSAT](https://acsaf.org) for providing data and/or products used in this publication.
