@@ -2442,7 +2442,6 @@ available in printed form.
 The book edited by @Diffey1989 includes information on detectors and
 methods not described in this handbook, or that are described here in
 less detail.
-:::::::::::::::::::::::::::::::::::::::
 
 ## Appendix: Formulations for action spectra used as BSWFs {#app:formulations}
 
