@@ -82,6 +82,7 @@ bibliography:
   - light-environment.bib
   - statistics-reproducibility.bib
   - references-from-1ed.bib
+  - leaf-optics.bib
 
 format:
   html:
@@ -90,6 +91,8 @@ format:
       - ./images
       - ./figures
     search: true
+    code-fold: true
+    code-tools: true
 
   pdf:
     documentclass: scrreprt

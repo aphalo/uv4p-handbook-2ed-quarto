@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -352,7 +386,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quantifying-radiation.html">Measurements</a></li><li class="breadcrumb-item"><a href="./quantifying-responses.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quantifying plants’ responses</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Response- and action spectra</p>
 </div>
 
@@ -543,6 +577,8 @@ $$
 <p>This example describes just one possibility to solve a multi-variable and non-linear problem. For example, there is also a plugin available for Calc in OpenOffice.org. Therefore, if using Calc instead of Excel, the file <code>NLPSolver.oxt</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> has to be installed by the extension manager. Other search algorithms are used in this tool, but the result will be the same.</p>
 
 
+<!-- -->
+
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Bjorn2007" class="csl-entry" role="listitem">
 Björn, Lars Olof, ed. 2007. <em>Photobiology: The Science of Life and Light</em>. 2nd ed. Springer.
@@ -694,6 +730,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1035,7 +1122,194 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Imaging in UV, VIS and short IR radiation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Quantifying plants' responses"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Response- and action spectra"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: _unknown_</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>\newcommand{\Chem}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{{\mathrm{#1}}\xspace}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>\newcommand{\Unit}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{{\mathrm{#1}}\xspace}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>\newcommand{\mymu}{\mu}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>\newcommand{\um}{\Unit{\mymu m}}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>\newcommand{\ulitre}{\Unit{\mymu l}}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\ms}{\Unit{m\,s^{-1}}}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\newcommand{\umolflow}{\Unit{\mymu mol\,s^{-1}}}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\newcommand{\umol}{\Unit{\mymu mol\,m^{-2}\,s^{-1}}}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\newcommand{\molms}{\Unit{mol\,m^{-2}\,s^{-1}}}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\umolt}{\Unit{\frac{\mymu mol}{m^2\,s}}}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\umolnm}{\Unit{\mymu mol\,m^{-2}\,s^{-1}\,nm^{-1}}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\mmol}{\Unit{mmol\,m^{-2}\,s^{-1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\mmolt}{\Unit{\frac{mmol}{m^2\,s}}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\mol}{\Unit{mol\,m^{-2}\,s^{-1}}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>\newcommand{\ppm}{\Unit{\mymu mol\,mol^{-1}}}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\newcommand{\ppmt}{\Unit{\frac{\mymu mol}{mol}}}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>\newcommand{\mmolmol}{\Unit{mmol\,mol^{-1}}}</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>\newcommand{\mmolmolt}{\Unit{\frac{mmol}{mol}}}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>\newcommand{\molday}{\Unit{mol\,m^{-2}\,d^{-1}}}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\newcommand{\kjday}{\Unit{kJ\,m^{-2}\,d^{-1}}}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>\newcommand{\kjhour}{\Unit{kJ\,m^{-2}\,h^{-1}}}</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>\newcommand{\kjdaynm}{\Unit{kJ\,m^{-2}\,d^{-1}\,nm^{-1}}}</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>\newcommand{\kjmole}{\Unit{kJ\,mol^{-1}}}</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\newcommand{\jsecond}{\Unit{J\,s}}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>\newcommand{\msecond}{\Unit{m\,s^{-1}}}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>\newcommand{\Js}{\Unit{J\,s}}</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>\newcommand{\watt}{\Unit{W\,m^{-2}}}</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>\newcommand{\wattcm}{\Unit{W\,cm^{-2}}}</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>\newcommand{\wattt}{\Unit{\frac{W}{m^2}}}</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>\newcommand{\wattsr}{\Unit{W\,sr^{-1}\,m^{-2}}}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>\newcommand{\wattnm}{\Unit{W\,m^{-2}\,nm^{-1}}}</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>\newcommand{\mwattnm}{\Unit{mW\,cm^{-2}\,nm^{-1}}}</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>\newcommand{\mwattmnm}{\Unit{mW\,m^{-2}\,nm^{-1}}}</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>\newcommand{\wattcmnm}{\Unit{W\,cm^{-2}\,nm^{-1}}}</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>\newcommand{\gmcubic}{\Unit{g\,m^{-3}}}</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>\newcommand{\irr}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{E_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>\newcommand{\sirr}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{E_{\mathrm{#1}}(\lambda)}\xspace}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>\newcommand{\pfd}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{Q_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>\newcommand{\spfd}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{Q_{\mathrm{#1}}(\lambda)}\xspace}</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>\newcommand{\quantum}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{q^{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>\newcommand{\molequanta}{\quantum<span class="co">[</span><span class="ot">\prime</span><span class="co">]</span>}</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>\newcommand{\flrat}{\irr<span class="co">[</span><span class="ot">0</span><span class="co">]</span>} % fluence rate</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>\newcommand{\PAR}{{\mathrm{PAR}}\xspace}</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>\newcommand{\PPFD}{{\mathrm{PPFD}}\xspace}</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>\newcommand{\RAF}{{\mathrm{RAF}}\xspace}</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>\newcommand{\eeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>\newcommand{\seeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}(\lambda)}\xspace}</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>\newcommand{\qeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}^\mathrm{p}}\xspace}</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>\newcommand{\sqeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}^\mathrm{p}(\lambda)}\xspace}</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>\newcommand{\intensity}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{I_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>\newcommand{\radiance}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{L_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>\newcommand{\exposure}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>\newcommand{\dose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>\newcommand{\sdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}(\lambda)}\xspace}</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>\newcommand{\qdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}_\mathrm{p}}\xspace}</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>\newcommand{\sqdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}_\mathrm{p}(\lambda}\xspace}</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\newcommand{\rad}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{L_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>\newcommand{\trans}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\tau_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\newcommand{\strans}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\tau_{\mathrm{#1}}(\lambda)}\xspace}</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>\newcommand{\absb}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{A_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>\newcommand{\abst}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\alpha_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>\newcommand{\sabst}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\alpha_{\mathrm{#1}}(\lambda)}\xspace}</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>\newcommand{\refl}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\rho_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>\newcommand{\srefl}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\rho_{\mathrm{#1}}(\lambda)}\xspace}</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>\newcommand{\emitt}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\epsilon_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>\newcommand{\SZA}{{\theta}\xspace}</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>\newcommand{\TOthree}{{\omega}\xspace}</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>\newcommand{\degree}{{\mathrm{^{\circ}}}\xspace}</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>\newcommand{\voltage}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{U_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>\newcommand{\temperature}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{T_{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>\newcommand{\Coscor}{{\varphi}\xspace}</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## Action and response spectra {#sec:action:spectra}</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Plants do not respond equally to all wavelengths of , and this spectral response can be described by a response spectrum and/or by an action spectrum. It is important to be aware that an action spectrum is not the same thing as a response spectrum. Although they are both used to describe the wavelength dependency of a biological response to radiation they are measured and used differently. Because they are measured in different ways they yield curves of different shapes. A response spectrum shows the size of the response at a *fixed photon fluence*[^7] of radiation across a series of different wavelengths. However, since UV radiation never comes at fixed irradiances over the entire spectrum the response spectrum is of limited use when estimating the physiological response to solar- or broadband UV exposure. In contrast, an action spectrum shows the effectiveness of radiation of different wavelengths in *achieving a given size of response*. This is a very important difference because dose response curves are not necessarily parallel or linear.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ot">[^7]: </span>Different values of photon fluence can be obtained either by varying the irradiance, or the irradiation time. However, if the irradiation time is varied it is important to check that reciprocity holds. In other words, that the same fluence achieved through different irradiation times elicits the same size of response.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>When estimating biologically effective irradiances (see section <span class="co">[</span><span class="ot">\[sec:BSWFs:UVeff\]</span><span class="co">](#sec:BSWFs:UVeff)</span>{reference-type="ref" reference="sec:BSWFs:UVeff"} on page ) it is very important to use appropriate action spectra for each biological process. However, since the action spectra of many biological responses are not known, this provides a dilemma for researchers who must try to chose the action spectrum that best approximates the process they are studying. Using the wrong action spectrum can produce very large errors when predicting effective irradiance and, therefore, UV effects on plants due to e.g. ozone depletion <span class="co">[</span><span class="ot">@Rundel1983; @Cullen1997</span><span class="co">]</span>. This is also a good reason for continued efforts to measure action spectra.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Building a response spectrum is fairly simple; we need to measure a plant response at a single (photon) irradiance (or fluence) for each wavelength (or narrow band), whereas for constructing an action spectrum ones needs to measure the response at several different photon fluence values for each wavelength of interest.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Constructing a monochromatic action spectrum</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Action spectra are most frequently measured using monochromatic light, i.e. radiation of a single or narrow range of wavelengths. This can be achieved by the use of systems which transmit, or emit, only a defined and usually narrow range of wavelengths, e.g. band-pass filters, LEDs, spectrographs, or lasers (see Chapter <span class="co">[</span><span class="ot">\[chap:manipulating\]</span><span class="co">](#chap:manipulating)</span>{reference-type="ref" reference="chap:manipulating"} for details about radiation sources). It is also possible to build, for example, an UV action spectrum with background irradiation of other wavelengths such us PAR.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>@Shropshire1972 describes in detail the theory behind monochromatic action spectra, and the assumptions needed for an action spectrum to match the absorption spectrum of a photoreceptor pigment. He also considers the problem of how screening by other or the same pigments can distort the shape of action spectra. He gives examples for visible radiation but the theoretical considerations are fully applicable to ultraviolet radiation.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>To construct a true action spectrum we first need to measure dose response curves for radiation of different wavelengths (Figure <span class="co">[</span><span class="ot">\[fig:construct:action:spectrum\]</span><span class="co">](#fig:construct:action:spectrum)</span>{reference-type="ref" reference="fig:construct:action:spectrum"}). The more curves we measure and the narrower the wavelength range used for each of these, the more spectral detail will be visible in the action spectrum built from them. For each of these curves, we should use a range of photon fluences yielding response sizes going from relatively small responses to close to the maximum response size (close to saturation). The photon fluence values used should increase exponentially. Photon fluence can be varied both by varying irradiance and/or irradiation times. If irradiation time is varied, it should be checked that reciprocity holds<span class="ot">[^8]</span>. We fit a curve to each set of dose response data, using the logarithm of the photon fluence as an independent variable. Using a logarithmic scale is expected to yield a more linear response curve than untransformed photon fluence values. From the fitted dose-response curves we calculate by interpolation the photon fluence required at each measured wavelength to obtain a response of the selected target response size. We use the photon fluence values to calculate effectiveness as $1/ (\pfd \cdot t)$ where fluence is given by the product of photon irradiance () by the irradiation time ($t$), and we finally plot these effectiveness values against wavelength ($\lambda$). If the dose response curves are not parallel, the shape of the action spectrum will depend on the target response level chosen. Different causes have been suggested for the lack of parallelism of dose response curves that is sometimes observed. Two of these suggestions are self-screening effects and involvement of two or more interacting pigments in the response <span class="co">[</span><span class="ot">@Shropshire1972</span><span class="co">]</span>. One can in principle use either quantum (=photon) or energy units, but quantum units are preferable as for any photochemical reaction absorption events always involve quanta. The shape of the spectrum will depend on whether an energy or photon basis is used.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="ot">[^8]: </span>Reciprocity refers to the assumption that equal values of photon fluence achieved by irradiation differing in length and photon irradiance, but supplying the same total number of photons, are expected to elicit an identical response.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/fig_dose_responses.pdf)</span>{width="0.8<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>As the main feature of interest is the shape of the curve, UV action spectra are usually normalized to an action that is equal to one at 300 nm. This is achieved, by dividing all the quantum (or photon) effectiveness values measured at different wavelengths, by the effectiveness at 300 nm. The use of $\lambda =300$ nm is an arbitrary convention, of rather recent adoption, so you will find, especially in the older literature, other wavelengths used for the normalization.</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>A response spectrum will rarely match the absorption spectrum of the photoreceptor because of non-linearities in later steps between light absorption by the photoreceptor and an observed response. In the case of action spectra, by keeping the size of the response constant across wavelengths we attempt to minimize the effect of these non-linearities on the measured spectrum. Because of this, a properly measured action spectrum will usually closely follow the absorption spectrum of the pigment acting as photoreceptor, except from possible effect from interfering pigments. Figure <span class="co">[</span><span class="ot">\[fig:action:spectra\]</span><span class="co">](#fig:action:spectra)</span>{reference-type="ref" reference="fig:action:spectra"} and Table <span class="co">[</span><span class="ot">\[tab:action:spectra\]</span><span class="co">](#tab:action:spectra)</span>{reference-type="ref" reference="tab:action:spectra"} show several action spectra relevant to research on the effects of UV on plants. See the article by @Gorton2010 for a deeper discussion on biological action spectra.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/fig_action_spectra.pdf)</span>{width="0.7<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Constructing a polychromatic action spectrum {#sec:polychromatic:action:spectra}</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>Monochromatic action spectra are useful to understand the nature of a specific response, e.g. damage, but are not suitable for calculating real effects under solar radiation. The response of a plant to light and UV radiation depends on both the amount of energy (dose-response) and the spectral composition of the radiation. Polychromatic action spectroscopy is based on a background of broad-band white light from artificial sources or natural daylight supplemented by various wavelength, for example between 280 and 360 nm <span class="co">[</span><span class="ot">@Holmes1997</span><span class="co">]</span>. This polychromatic approach provides an action spectrum useful for assessing effects of UV under normal plant growing conditions, because the simultaneous exposure to a broad wavelength interval has a different net effect than that of an exposure to separate monochromatic radiation, due to synergisms or antagonisms between complex chemical and biological processes, for example repair mechanisms <span class="co">[</span><span class="ot">@Coohill1992; @madronich1993</span><span class="co">]</span>. In practice, such a realistic polychromatic radiation spectrum is achieved using a series of cut-off filters, which cut off radiation of wavelengths shorter or longer than a certain wavelength. The effect of such filters can be compared to the effect of the variable thickness of the stratospheric ozone layer. Figure <span class="co">[</span><span class="ot">\[fig:Poly:Spectra\]</span><span class="co">](#fig:Poly:Spectra)</span>{reference-type="ref" reference="fig:Poly:Spectra"} shows examples of spectral irradiance for broad band light from lamps filtered by different cut-off filters. The cut-off wavelength usually refers to the wavelength of 50% transmission.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/fig_polychrom.pdf)</span>{width="0.8<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>The original approach, so called differential polychromatic action spectroscopy, is described by @Rundel1983. Different biological responses are proportional to different specific treatments, for example exposures. Thus, an action spectrum can be estimated by quantifying differences in responses between successive treatments. The number of treatments required depends on the relative change in response over a wavelength interval. One example of a quantifiable effect would be change in the observed concentrations of flavonols.</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The mathematics behind polychromatic action spectra {#app:polychromatic:math}</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>The average proportionality $\overline{s}$ between differences in the biological effective response of successive treatments $i$, $\Delta W_{be,i}$, and differences in exposure (fluence rate multiplied by exposure time), $\Delta\exposure<span class="co">[</span><span class="ot">i</span><span class="co">]</span>$ is given by an average quantity $$\overline{s_i} = \frac{\Delta W_{be,i}}{\Delta\exposure<span class="co">[</span><span class="ot">i</span><span class="co">]</span>}$$ All the values of $\overline{s_i}$ together are represented in the action spectrum. If the wavebands of each treatment are small enough, an action spectrum $s(\lambda)$ can be expressed by a mathematical function. Different functions are discussed <span class="co">[</span><span class="ot">@Rundel1983; @Cullen1997</span><span class="co">]</span>. In the simplest case the factors $\overline{s_i}$ are positive and decrease exponentially with increasing wavelength. Thus, one common form of $s(\lambda)$ is $$s(\lambda) = \mathrm{e}^{-k(\lambda-\lambda_0)} \label{Equ:BSWF:exp}$$ where $k$ is a parameter, which has to be obtained for each different biological effect using a fitting procedure, and a wavelength $\lambda_0$, where the action spectra are normalised to unity, e.g. $\lambda_0=300$ nm. Other functions including a polynomial dependence on $\lambda$ are also possible and perhaps necessary for describing complex mechanisms.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>For the interpretation of the experimental data, the biological effective response $W_{be}$, it is necessary to consider the wavelength dependency. Thus, it is crucial that the entire spectral irradiance $\irr(\lambda,t)$ during the experiment is known. Broad-band meters are not suitable in most cases. This dependency is included in the biological effective dose function (exposure) $\exposure<span class="co">[</span><span class="ot">be</span><span class="co">]</span>$, given by</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>\exposure<span class="co">[</span><span class="ot">be</span><span class="co">]</span> &amp; = &amp; \int_\lambda \int_t \enspace s(\lambda) \cdot \irr(\lambda,t) \enspace{\rm d}t\enspace{\rm d}\lambda \nonumber <span class="sc">\\</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a> &amp; = &amp; \int_\lambda \enspace s(\lambda) \cdot \exposure(\lambda) \enspace{\rm d}\lambda \label{Equ:Dose:be}</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$ A mathematical model can separate wavelength and dose dependency for a set of experimental data by the use of mathematical functions describing $W_{be}(\exposure<span class="co">[</span><span class="ot">be</span><span class="co">]</span>)$ and optimisation procedures, e.g. non-linear curve fitting <span class="co">[</span><span class="ot">@Cullen1997; @Ghetti1999; @Ibdah2002; @goetz10</span><span class="co">]</span>. The model assumes that photons at different wavelengths act independently, but with different quantum efficiency at the same absorption site, and therefore with the same mechanism. Regarding the shape and saturation of the observed effect, different functions can describe the data of $W_{be}(H_{be})$, for example a linear, hyperbolic or sigmoid function. A simple linear relation is $$W_{be}(\exposure<span class="co">[</span><span class="ot">be</span><span class="co">]</span>) = W_0 \cdot \exposure<span class="co">[</span><span class="ot">be</span><span class="co">]</span> \label{Equ:Response:lin}$$ with the parameter $W_0$, which has to be determined by the fitting procedure. If for example the exposure time of the radiation is constant and, therefore, not depending on the duration of the experiment $t$, the combination of Eqs. <span class="co">[</span><span class="ot">\[Equ:BSWF:exp\]</span><span class="co">](#Equ:BSWF:exp)</span>{reference-type="ref" reference="Equ:BSWF:exp"} to <span class="co">[</span><span class="ot">\[Equ:Response:lin\]</span><span class="co">](#Equ:Response:lin)</span>{reference-type="ref" reference="Equ:Response:lin"} yields $$W_{be}(\exposure<span class="co">[</span><span class="ot">be</span><span class="co">]</span>) = W_0 \cdot t \cdot \int_\lambda \enspace \mathrm{e}^{-k(\lambda-\lambda_0)} \cdot \irr(\lambda) \enspace{\rm d}\lambda \label{Equ:Response:lin2}$$ To solve the equation for the unknown parameters $W_0$ and $k$, measurements of the biological response $W_{be}$ and the spectral irradiance $\irr(\lambda,t)$ have to be put into a fitting routine, to optimise $W_0$ and $k$ by minimising the differences, e.g. the (root) mean square, between measured and modelled values of $W_{be}$. In Figure <span class="co">[</span><span class="ot">\[fig:Poly:Spectra\]</span><span class="co">](#fig:Poly:Spectra)</span>{reference-type="ref" reference="fig:Poly:Spectra"} are six different scenarios shown. In this case, the differences among six individual measured and modelled responses have to be calculated and the sum of these needs to be minimised by a non-linear optimisation technique, such as that provided by the add-in "Solver" in Excel.</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Action spectra in the field</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Under field conditions it is more difficult to build UV action spectra, and most frequently what are measured are polychromatic action spectra <span class="co">[</span><span class="ot">e.g. @Keiller2003; @Cooley2000a</span><span class="co">]</span>.</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>As many whole-plant responses result from a long signal transduction chain, which depends on the action of more than one photoreceptor, the action spectrum for many responses at the whole-plant or organ level, seems to vary among species, with the seasons of the year or growing conditions. For responses like these it is almost impossible to define a unique and stable action spectrum for plants growing outdoors, as these responses are too far decoupled from the photoreceptors.</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>Even if they do not faithfully reflect the properties of a single photoreceptor, action spectra can be extremely useful, as we need them as <span class="co">[</span><span class="ot">BSWFs</span><span class="co">]</span>{acronym-label="BSWF" acronym-form="plural+short"} (BSWFs) when calculating biologically effective UV doses (see section <span class="co">[</span><span class="ot">\[sec:BSWFs:UVeff\]</span><span class="co">](#sec:BSWFs:UVeff)</span>{reference-type="ref" reference="sec:BSWFs:UVeff"} on page ), since the same UV radiation spectrum has a different effect on different plant responses (Figure <span class="co">[</span><span class="ot">\[fig:action:spectra\]</span><span class="co">](#fig:action:spectra)</span>{reference-type="ref" reference="fig:action:spectra"}).</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further reading {#sec:readings:intro}</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://www.photobiology.info/&gt;</span>, photobiological sciences online. At this web site there are many articles, several of them relevant to plant photobiology. The book by @Bjorn2007 is a general introduction to photobiology, that complements well this chapter. The mechanism of ozone depletion and its consequences has been accessibly described by @Graedel1993 in the book . The UNEP reports <span class="co">[</span><span class="ot">@unep2007; @unep2003; @UNEP2011 and earlier</span><span class="co">]</span> provide up-to-date reviews on the environmental consequences of stratospheric ozone depletion.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Appendix: Calculation of polychromatic action spectra with Excel (using add-in "Solver") {#sec:appendix:polychromatic:action:spectra}</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>This is an example of one possibility to derive the parameters of a polychromatic action spectrum by non-linear optimisation as explained in section <span class="co">[</span><span class="ot">1.8.2</span><span class="co">](#sec:polychromatic:action:spectra)</span>{reference-type="ref" reference="sec:polychromatic:action:spectra"} on page . The Excel add-in "Solver" is listed in the menu "Tools". If this is not the case, it has to be installed in <span class="in">`Tools&gt;Add-Ins`</span>. This experiment was performed in the small sun simulator of the Helmholtz Zentrum München, Neuherberg, Germany (see section <span class="co">[</span><span class="ot">\[sec:simulators\]</span><span class="co">](#sec:simulators)</span>{reference-type="ref" reference="sec:simulators"} at page ) in a special cuvette, which allows simultaneous exposure of plants under different radiation <span class="co">[</span><span class="ot">@Ibdah2002; @goetz10</span><span class="co">]</span>. Figure <span class="co">[</span><span class="ot">\[fig:Sosi:Cuvette\]</span><span class="co">](#fig:Sosi:Cuvette)</span>{reference-type="ref" reference="fig:Sosi:Cuvette"} shows the cuvette placed in the sun simulator with five rows of glass filters from Schott, Mainz, Germany (WG295, WG305, WG320, WG335, WG360).</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/sosi_cuvette.pdf)</span>{width="1.0<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>At the beginning we have to put all our measured data into different sheets in Excel. In this example, the biological response $W_{be}$ is the -induced flavonoid lutonarin (in $\mymu$mol g$^{-1}$ FW (fresh weight)) of the first leaf of the barley cultivar "Barke". The amount was estimated by HPLC (high performance liquid chromatography). Three young plants in each of three independent experiments were harvested under six different scenarios, which spectral irradiances are shown in figure <span class="co">[</span><span class="ot">\[fig:Poly:Spectra\]</span><span class="co">](#fig:Poly:Spectra)</span>{reference-type="ref" reference="fig:Poly:Spectra"} in section <span class="co">[</span><span class="ot">1.8.2</span><span class="co">](#sec:polychromatic:action:spectra)</span>{reference-type="ref" reference="sec:polychromatic:action:spectra"} on page . The data are put into the first sheet "leaf data" and mean values and standard deviations for each scenario were calculated as illustrated in figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Sheet1\]</span><span class="co">](#fig:App:Poly:Spectra:Sheet1)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Sheet1"}).</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/app_polyspec_sheet1.pdf)</span>{width="1.0<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>The second sheet "spectra" contains all measured spectra of the six different scenarios under the glass filters. For the calculation of a polychromatic action spectrum in the range it is recommended that the spectrum is measured using a double-monochromator system from 280 to 400 nm in steps of 1 nm. In this experiment, the irradiance was increased from the morning until noon and then decreased until the evening, to simulate natural variation in solar radiation. This was done in four steps as shown in the picture of the third sheet "daily exposure" in figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Sheet3\]</span><span class="co">](#fig:App:Poly:Spectra:Sheet3)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Sheet3"}. As an example, typical radiation data under the glass filter WG305, measured during the experiment, are presented in table <span class="co">[</span><span class="ot">\[tab:App:Poly:Spectra:UV-PAR\]</span><span class="co">](#tab:App:Poly:Spectra:UV-PAR)</span>{reference-type="ref" reference="tab:App:Poly:Spectra:UV-PAR"}. This sheet is only necessary to calculate the exposure time at each light level in seconds as shown in the marked cell F8. Sheet "spectra" contains the wavelengths in column A and all the 24 spectra (six scenarios and four light levels) from column B to Y.</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/app_polyspec_sheet3.pdf)</span>{width="1.0<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>::: table*</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>::: center</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>| Light level |   1   |   2   |   3   |   4   |             Unit             |</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>|:-----------:|:-----:|:-----:|:-----:|:-----:|:----------------------------:|</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>|             | 0.152 | 0.584 | 1.135 | 1.531 |          W m$^{-2}$          |</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>|             | 8.76  | 19.78 | 24.67 | 38.74 |          W m$^{-2}$          |</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>|             |  114  |  228  |  256  |  363  |          W m$^{-2}$          |</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>|     or      |  537  | 1073  | 1198  | 1692  | $\mymu$mol m$^{-2}$ s$^{-1}$ |</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>Now all sheets for input data are finished and the sheets for solving our system of equations has to be prepared. Therefore, the next sheet "weighted spectra" is filled with the information about the action spectrum function as shown in figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Sheet4\]</span><span class="co">](#fig:App:Poly:Spectra:Sheet4)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Sheet4"}. This sheet contains the calculation of the biological effective dose function $H_{be}$ as presented in equation <span class="co">[</span><span class="ot">\[Equ:Dose:be\]</span><span class="co">](#Equ:Dose:be)</span>{reference-type="ref" reference="Equ:Dose:be"} on page . First, for the action spectrum $s(\lambda)$ an exponential function in chosen, as explained for equation <span class="co">[</span><span class="ot">\[Equ:BSWF:exp\]</span><span class="co">](#Equ:BSWF:exp)</span>{reference-type="ref" reference="Equ:BSWF:exp"} on page . Column A includes the wavelengths and column B the estimated value of the action spectrum using the parameter $\lambda_0=300$ nm of cell B4 and $k=0.200$ nm$^{-1}$ of cell B5 (marked red in figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Sheet4\]</span><span class="co">](#fig:App:Poly:Spectra:Sheet4)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Sheet4"}). This cell is only a link to cell B11 in the next sheet "SOLVER". Because it is only the starting value of the optimisation procedure, the values of column B do not represent the real action spectrum. These values will change during optimisation. Below row 6, column D and the following columns (in this case to column AA) include the values of the action spectrum of column B multiplied by the spectral irradiances of each scenario and light levels of sheet "spectra". Row 1 and 2 include the estimation of the doses. The cells in row 2 from column D and the following columns represent the integration over the wavelengths from 280 to 400 nm of each column beneath multiplied by the exposure time of the respective scenario and light level as previously calculated in the sheet "daily exposure". Integration in Excel is done by adding the values of the cells regarding the wavelength step as shown for the marked cell D2 in figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Sheet4\]</span><span class="co">](#fig:App:Poly:Spectra:Sheet4)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Sheet4"}. Here it is 1 nm. To get doses in units of Ws m$^{-2}$ (J m$^{-2}$), the sum is divided by a factor of 1000 because the spectral irradiances were measured in mW m$^{-2}$ nm$^{-1}$. The daily dose (in kJ m$^{-2}$) is then calculated in row 1 for each scenario by adding the four values of the light levels. These daily doses are now needed for further calculations in the next sheet "SOLVER".</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/app_polyspec_sheet4.pdf)</span>{width="1.0<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>The sheet "SOLVER" as illustrated in figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Solver0\]</span><span class="co">](#fig:App:Poly:Spectra:Solver0)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Solver0"} includes the comparison of the measured and modelled data---as table and figure. The first five rows are a short explanation of the entire model. Especially row 5 contains the mathematical function describing the measured biological response $W_{be}$, which was the flavonoid content of lutonarin in the first leaf of barley. Here, a sigmoid function was chosen, given by $$W_{be} = \frac{W_0}{1+\mathrm{e}^{-\frac{\exposure<span class="co">[</span><span class="ot">be</span><span class="co">]</span>-\exposure<span class="co">[</span><span class="ot">0</span><span class="co">]</span>}{b}}} \label{Equ:Response:sigmoid}$$ Using this function, the values of each scenario of row 15 were calculated. Therefore, the variable coefficients $W_0$, $\exposure<span class="co">[</span><span class="ot">0</span><span class="co">]</span>$, $b$, and $k$ as well as their constraints from row 8 to 11 were used. Row 14 includes the mean values of each treatment derived in the first sheet "leaf data". The squared differences of measured and modelled data are calculated in row 16 and added up in cell C17. All cells are now prepared and we can start to optimise our variable coefficients by minimising the value of cell C17. Thus, we mark this cell by clicking on it and choose from the menu <span class="in">`Tools`</span>$&gt;$<span class="in">`Solver`</span>. A new small window called "Solver Parameters" will appear as shown in the left part of figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Solverparam\]</span><span class="co">](#fig:App:Poly:Spectra:Solverparam)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Solverparam"}. Here, the target cell was C17 and the box for minimisation was checked. The optimisation was done by changing the cells B8 to B11 concerning all constraints listed in the sheet. By clicking on the button "Options", another window will pop up, where the parameters for the optimisation algorithm are defined (right part of figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Solverparam\]</span><span class="co">](#fig:App:Poly:Spectra:Solverparam)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Solverparam"}). In this example, a non-linear Newton method was used. The parameters of the upper left part of the window define the number of iterations or the maximum time for calculation as well as the precision or tolerance of the result. After inserting the numbers and checking the necessary boxes, click "OK" to return to the window "Solver Parameters". Here, the optimisation starts by clicking on "Solve". After a while, the program returns a message if the search succeeded and by accepting, the result is written into the cells of sheet "SOLVER" chosen for changing.</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/app_polyspec_solver0.pdf)</span>{width="1.0<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/app_polyspec_solverparam.pdf)</span>{width="0.56<span class="sc">\\</span>myfigwidth"}<span class="al">![image](figures/app_polyspec_solveropt.pdf)</span>{width="43%"}</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>The final result for the data in this example is shown in figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Solved\]</span><span class="co">](#fig:App:Poly:Spectra:Solved)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Solved"}. The sum of the squared differences was minimised to 0.13. The left graph in the bottom of figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Solved\]</span><span class="co">](#fig:App:Poly:Spectra:Solved)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Solved"} shows two bars for each scenario, one for the measured leaf data of row 14 (yellow) and the other one for the modelled data of row 15 (purple). The result looks promising. The most important parameter regarding the action spectrum is $k=0.126$ nm$^{-1}$ in cell B11. This value was used to plot the actual action spectrum of this study in the upper right graph of figure <span class="co">[</span><span class="ot">\[fig:App:Poly:Spectra:Solved\]</span><span class="co">](#fig:App:Poly:Spectra:Solved)</span>{reference-type="ref" reference="fig:App:Poly:Spectra:Solved"}. Our action spectrum is valid for wavelengths between 280 and 400 nm, that interval which was chosen for integration in sheet "weighted spectra".</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/app_polyspec_solved.pdf)</span>{width="1.0<span class="sc">\\</span>myfigwidth"}</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>This example describes just one possibility to solve a multi-variable and non-linear problem. For example, there is also a plugin available for Calc in OpenOffice.org. Therefore, if using Calc instead of Excel, the file <span class="in">`NLPSolver.oxt`</span><span class="ot">[^9]</span> has to be installed by the extension manager. Other search algorithms are used in this tool, but the result will be the same.</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="ot">[^9]: </span>available from <span class="ot">&lt;http://extensions.services.openoffice.org/project/NLPSolver&gt;</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
