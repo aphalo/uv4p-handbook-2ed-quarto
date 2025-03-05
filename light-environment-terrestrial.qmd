@@ -793,8 +793,7 @@ anim <- ggplot(data = fscale(sun_one_day.spct, f = q_irrad, target = 1e-3, w.ban
   transition_states(get(idfactor),
                     transition_length = 2,
                     state_length = 1) +
-  ggtitle('Now showing {closest_state} UTC',
-          subtitle = 'Frame {frame} of {nframes}')
+  ggtitle('{closest_state} UTC')
 animate(anim, duration = 20, fps = 10)
 ```
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -98,7 +98,7 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -2499,371 +2499,370 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a><span class="in">  transition_states(get(idfactor),</span></span>
 <span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a><span class="in">                    transition_length = 2,</span></span>
 <span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a><span class="in">                    state_length = 1) +</span></span>
-<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle('Now showing {closest_state} UTC',</span></span>
-<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a><span class="in">          subtitle = 'Frame {frame} of {nframes}')</span></span>
-<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a><span class="in">animate(anim, duration = 20, fps = 10)</span></span>
-<span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a>It should be noted that, through reflection, broken clouds can locally increase irradiance to values above those under clear-sky conditions <span class="co">[</span><span class="ot">@Frederick1993; @Diaz1996</span><span class="co">]</span>. These are transient increases of short duration and easily detected with fast measurements, and the irradiance increase can be 30% or more compared to under a clear sky. This is well illustrated by measurements at 1 min interval during four consecutive days <span class="co">[</span><span class="ot">@fig-PAR-four-days</span><span class="co">]</span>.</span>
-<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-PAR-four-days</span></span>
-<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Time course of PAR, UV-A and UV-B photon irradiance during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s. The step changes at very low sun elevations are caused by shading from far-away buildings.</span></span>
-<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a><span class="in">((ggplot(four_days_1min.data, aes(time_EET, PAR_umol)) +</span></span>
-<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
-<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "PAR", npcy = 0.95, npcx = 0.05) +</span></span>
-<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = "")) /</span></span>
-<span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, aes(time_EET, UVA_umol)) +</span></span>
-<span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
-<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-A", npcy = 0.95, npcx = 0.05) +</span></span>
-<span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = expression("Photon irradiance "*(mu*mol~s^{-1}~m^{-2})))) /</span></span>
-<span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, aes(time_EET, UVB_umol)) +</span></span>
-<span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct()) +</span></span>
-<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-B", npcy = 0.95, npcx = 0.05) +</span></span>
-<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Time", y = "")) + </span></span>
-<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = 'collect')</span></span>
-<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a>The photon ratios for the same four days <span class="co">[</span><span class="ot">@fig-ratios-four-days</span><span class="co">]</span> shows the </span>
-<span id="cb1-823"><a href="#cb1-823" aria-hidden="true" tabindex="-1"></a>influence of clouds and of sun elevation, both affecting the PAR diffuse </span>
-<span id="cb1-824"><a href="#cb1-824" aria-hidden="true" tabindex="-1"></a>fraction. In particular, broken clouds on </span>
-<span id="cb1-825"><a href="#cb1-825" aria-hidden="true" tabindex="-1"></a>10 July cause momentary nearly doubling of the UV-A:PAR and UV-B:PAR photon </span>
-<span id="cb1-826"><a href="#cb1-826" aria-hidden="true" tabindex="-1"></a>ratios. The short-term effect on the R:FR is smaller, but the differences</span>
-<span id="cb1-827"><a href="#cb1-827" aria-hidden="true" tabindex="-1"></a>between days larger, possibly because of its dependence on the atmospheric</span>
-<span id="cb1-828"><a href="#cb1-828" aria-hidden="true" tabindex="-1"></a>water content <span class="co">[</span><span class="ot">@kotilainenxxxx</span><span class="co">]</span>.</span>
-<span id="cb1-829"><a href="#cb1-829" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-ratios-four-days</span></span>
-<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings. The PAR diffuse ratio varies with sun elevation in the range 0.12 to 1.0, as shown in @fig-diffuse-TUV for clear sky conditions. With the solar disk fully occluded by clouds or objects the diffuse ratio approches 1 at all sun elevations. </span></span>
-<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a><span class="in">((ggplot(four_days_1min.data, </span></span>
-<span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(time_EET, </span></span>
-<span id="cb1-836"><a href="#cb1-836" aria-hidden="true" tabindex="-1"></a><span class="in">             ifelse(sun_elevation &gt; 0, red_umol / far_red_umol, NA),</span></span>
-<span id="cb1-837"><a href="#cb1-837" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = PAR_diff_fr)) +</span></span>
-<span id="cb1-838"><a href="#cb1-838" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(na.rm = TRUE, size = 0.3) +</span></span>
-<span id="cb1-839"><a href="#cb1-839" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "R:FR", npcy = 0.95, npcx = 0.05) +</span></span>
-<span id="cb1-840"><a href="#cb1-840" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = "",</span></span>
-<span id="cb1-841"><a href="#cb1-841" aria-hidden="true" tabindex="-1"></a><span class="in">         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t]))) /</span></span>
-<span id="cb1-842"><a href="#cb1-842" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, </span></span>
-<span id="cb1-843"><a href="#cb1-843" aria-hidden="true" tabindex="-1"></a><span class="in">        aes(time_EET, </span></span>
-<span id="cb1-844"><a href="#cb1-844" aria-hidden="true" tabindex="-1"></a><span class="in">            ifelse(sun_elevation &gt; 0, UVA_umol / PAR_umol, NA),</span></span>
-<span id="cb1-845"><a href="#cb1-845" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = PAR_diff_fr)) +</span></span>
-<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(na.rm = TRUE, size = 0.3) +</span></span>
-<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-A:PAR", npcy = 0.95, npcx = 0.05) +</span></span>
-<span id="cb1-848"><a href="#cb1-848" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = expression("Photon ratio "*(mol~mol^{-1})),</span></span>
-<span id="cb1-849"><a href="#cb1-849" aria-hidden="true" tabindex="-1"></a><span class="in">         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t]))) /</span></span>
-<span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, aes(time_EET, </span></span>
-<span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a><span class="in">            ifelse(sun_elevation &gt; 0, UVB_umol / PAR_umol, NA),</span></span>
-<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = PAR_diff_fr)) +</span></span>
-<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(na.rm = TRUE, size = 0.3) +</span></span>
-<span id="cb1-854"><a href="#cb1-854" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-B:PAR", npcy = 0.95, npcx = 0.05) +</span></span>
-<span id="cb1-855"><a href="#cb1-855" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Time", y = "",</span></span>
-<span id="cb1-856"><a href="#cb1-856" aria-hidden="true" tabindex="-1"></a><span class="in">         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t])))) + </span></span>
-<span id="cb1-857"><a href="#cb1-857" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = 'collect', guides = 'collect')</span></span>
-<span id="cb1-858"><a href="#cb1-858" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-860"><a href="#cb1-860" aria-hidden="true" tabindex="-1"></a>In @fig-ratios-four-days we can see fast changes in the ratios towards the end of the day. The time-series of spectra measured once a minute during 5 minutes shows how the shape of the spectrum can rapidly change leading to rapid changes in the R:FR photon ratio <span class="co">[</span><span class="ot">@fig-spectra-anim-five-min</span><span class="co">]</span>.</span>
-<span id="cb1-861"><a href="#cb1-861" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-862"><a href="#cb1-862" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include=FALSE}</span></span>
-<span id="cb1-863"><a href="#cb1-863" aria-hidden="true" tabindex="-1"></a><span class="in"># prepare data</span></span>
-<span id="cb1-864"><a href="#cb1-864" aria-hidden="true" tabindex="-1"></a><span class="in">my_sun.spct &lt;- sun_evening.spct</span></span>
-<span id="cb1-865"><a href="#cb1-865" aria-hidden="true" tabindex="-1"></a><span class="in">time &lt;- when_measured(my_sun.spct, as.df = TRUE)</span></span>
-<span id="cb1-866"><a href="#cb1-866" aria-hidden="true" tabindex="-1"></a><span class="in">my_sun.spct$spct.idx &lt;- </span></span>
-<span id="cb1-867"><a href="#cb1-867" aria-hidden="true" tabindex="-1"></a><span class="in">  factor(my_sun.spct$spct.idx, </span></span>
-<span id="cb1-868"><a href="#cb1-868" aria-hidden="true" tabindex="-1"></a><span class="in">         levels = time[["spct.idx"]], </span></span>
-<span id="cb1-869"><a href="#cb1-869" aria-hidden="true" tabindex="-1"></a><span class="in">         labels = as.character(round_date(time[["when.measured"]], unit = "minute")))</span></span>
-<span id="cb1-870"><a href="#cb1-870" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-871"><a href="#cb1-871" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-872"><a href="#cb1-872" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-873"><a href="#cb1-873" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-spectra-anim-five-min</span></span>
-<span id="cb1-874"><a href="#cb1-874" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Time series of spectra near sunset. Five minutes of solar spectra measurements. Measured with an array spectrometer at Viikki, Helsinki, Finland.</span></span>
-<span id="cb1-875"><a href="#cb1-875" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-876"><a href="#cb1-876" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = my_sun.spct, unit.out = "photon") +</span></span>
-<span id="cb1-877"><a href="#cb1-877" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
-<span id="cb1-878"><a href="#cb1-878" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
-<span id="cb1-879"><a href="#cb1-879" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous() +</span></span>
-<span id="cb1-880"><a href="#cb1-880" aria-hidden="true" tabindex="-1"></a><span class="in">  transition_states(spct.idx,</span></span>
-<span id="cb1-881"><a href="#cb1-881" aria-hidden="true" tabindex="-1"></a><span class="in">                    transition_length = 2,</span></span>
-<span id="cb1-882"><a href="#cb1-882" aria-hidden="true" tabindex="-1"></a><span class="in">                    state_length = 1) +</span></span>
-<span id="cb1-883"><a href="#cb1-883" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle('Now showing {closest_state} UTC',</span></span>
-<span id="cb1-884"><a href="#cb1-884" aria-hidden="true" tabindex="-1"></a><span class="in">          subtitle = 'Frame {frame} of {nframes}')</span></span>
-<span id="cb1-885"><a href="#cb1-885" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-886"><a href="#cb1-886" aria-hidden="true" tabindex="-1"></a>The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloud flecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function for their duration <span class="co">[</span><span class="ot">@fig-cloudflecks-edf inset</span><span class="co">]</span>. The distribution is not Normal, and skewed to the right. Semi-transparent and small clouds attenuate irradiance less that large thick clouds and at the same time create cloud flecks of shorter duration <span class="co">[</span><span class="ot">@fig-cloudflecks-edf main panel</span><span class="co">]</span>.</span>
-<span id="cb1-887"><a href="#cb1-887" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-888"><a href="#cb1-888" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-889"><a href="#cb1-889" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-cloudflecks-edf</span></span>
-<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: xxxxxxxxxxxxxxx. In the main panel a quantile regression is shown, with the line repesenting the median, the dark band enclosing the two central quantiles (simmilar to the box in a box plot) and the pale band enclosing 90% of the observations. The inset shows the fitted empirical density function (EDF) for the duration of the cloudflecks. Source @Sellaro2024.</span></span>
-<span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a><span class="in">dfS &lt;- read.csv("light-environment-data/dfCloudfleck_figure.csv")</span></span>
-<span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-894"><a href="#cb1-894" aria-hidden="true" tabindex="-1"></a><span class="in">p2 &lt;-</span></span>
-<span id="cb1-895"><a href="#cb1-895" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = dfS, aes(percDiff * 100, duration)) +</span></span>
-<span id="cb1-896"><a href="#cb1-896" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_quant_band(formula = y ~ qss(x, lambda = 50, constraint = "I"), method = "rqss:sfnc",</span></span>
-<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a><span class="in">                  quantiles = c(0.05, 0.5, 0.95), alpha = 0.2) +</span></span>
-<span id="cb1-898"><a href="#cb1-898" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_quant_band(formula = y ~ qss(x, lambda = 50, constraint = "I"), method = "rqss:sfnc") +</span></span>
-<span id="cb1-899"><a href="#cb1-899" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_quadrant_counts(quadrants = 0L,</span></span>
-<span id="cb1-900"><a href="#cb1-900" aria-hidden="true" tabindex="-1"></a><span class="in">                       label.x = 0.95,</span></span>
-<span id="cb1-901"><a href="#cb1-901" aria-hidden="true" tabindex="-1"></a><span class="in">                       label.y = 0.05) +</span></span>
-<span id="cb1-902"><a href="#cb1-902" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "PAR attenuation during cloudfleck (%)",</span></span>
-<span id="cb1-903"><a href="#cb1-903" aria-hidden="true" tabindex="-1"></a><span class="in">       y = "Cloudfleck duration (min)") +</span></span>
-<span id="cb1-904"><a href="#cb1-904" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_classic()</span></span>
-<span id="cb1-905"><a href="#cb1-905" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-906"><a href="#cb1-906" aria-hidden="true" tabindex="-1"></a><span class="in">p3 &lt;- ggplot(data = dfS, aes(duration)) +</span></span>
-<span id="cb1-907"><a href="#cb1-907" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_density(bw = "nrd", alpha = 0.3) +</span></span>
-<span id="cb1-908"><a href="#cb1-908" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_log10(breaks = c(2, 5, 10, 20, 50, 100, 200, 500)) +</span></span>
-<span id="cb1-909"><a href="#cb1-909" aria-hidden="true" tabindex="-1"></a><span class="in">  expand_limits(x = c(1.7, 500)) +</span></span>
-<span id="cb1-910"><a href="#cb1-910" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "Cloudfleck duration (min)",</span></span>
-<span id="cb1-911"><a href="#cb1-911" aria-hidden="true" tabindex="-1"></a><span class="in">       y = "Empirical probability density")</span></span>
-<span id="cb1-912"><a href="#cb1-912" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-913"><a href="#cb1-913" aria-hidden="true" tabindex="-1"></a><span class="in">print(p2 + scale_y_continuous(breaks = c(0, 60, 120, 180, 240, 300)) +</span></span>
-<span id="cb1-914"><a href="#cb1-914" aria-hidden="true" tabindex="-1"></a><span class="in">  annotate(geom = "plot", x = I(0.05), y = I(1), label = p3, vp.width = 2/3, vp.height = 2/3))</span></span>
-<span id="cb1-915"><a href="#cb1-915" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-916"><a href="#cb1-916" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-917"><a href="#cb1-917" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-918"><a href="#cb1-918" aria-hidden="true" tabindex="-1"></a><span class="in">## cloudfleck spectrum</span></span>
-<span id="cb1-919"><a href="#cb1-919" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-920"><a href="#cb1-920" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
-<span id="cb1-921"><a href="#cb1-921" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
-<span id="cb1-922"><a href="#cb1-922" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.df &lt;- read.csv("light-environment-data/dfCSCLDY.csv")[ , -1]</span></span>
-<span id="cb1-924"><a href="#cb1-924" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-925"><a href="#cb1-925" aria-hidden="true" tabindex="-1"></a><span class="in">names(CSCLDY.df)[names(CSCLDY.df) == "s.q.irrad"] &lt;- "s.e.irrad" # error in data file</span></span>
-<span id="cb1-926"><a href="#cb1-926" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-927"><a href="#cb1-927" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.df &lt;- subset(CSCLDY.df, w.length &gt; 295 &amp; w.length &lt; 850)</span></span>
-<span id="cb1-928"><a href="#cb1-928" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.df$type.label &lt;- gsub("\\.", " ", CSCLDY.df$type)</span></span>
-<span id="cb1-929"><a href="#cb1-929" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-930"><a href="#cb1-930" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.spct &lt;- as.source_spct(CSCLDY.df,</span></span>
-<span id="cb1-931"><a href="#cb1-931" aria-hidden="true" tabindex="-1"></a><span class="in">                              idfactor = "type",</span></span>
-<span id="cb1-932"><a href="#cb1-932" aria-hidden="true" tabindex="-1"></a><span class="in">                              multiple.wl = length(unique(CSCLDY.df$type)))</span></span>
-<span id="cb1-933"><a href="#cb1-933" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-934"><a href="#cb1-934" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.mspct &lt;- e2q(subset2mspct(CSCLDY.spct))</span></span>
-<span id="cb1-935"><a href="#cb1-935" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-938"><a href="#cb1-938" aria-hidden="true" tabindex="-1"></a>Irradiance is much lower under cloud cover than in full sunlight under a clear sky <span class="co">[</span><span class="ot">@fig-spectrum-cloudfleck A</span><span class="co">]</span>. The cloud light spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight, more easily seen after scaling the spectra to equal irradiance <span class="co">[</span><span class="ot">@fig-spectrum-cloudfleck B</span><span class="co">]</span>. For this example the coordinated colour temperature (CCT) was <span class="in">`r round(spct_CCT(CSCLDY.mspct[["overcast"]]), -1)`</span> K and <span class="in">`r round(spct_CCT(CSCLDY.mspct[["clear.sky"]]), -1)`</span> K for the overcast and clear sky, respectively. </span>
-<span id="cb1-939"><a href="#cb1-939" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-940"><a href="#cb1-940" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-941"><a href="#cb1-941" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-spectrum-cloudfleck</span></span>
-<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Spectra during and immediately after a cloudfleck. A&amp;#58; photon spectral irradiance as measured, B&amp;#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$. Source @Sellaro2024.</span></span>
-<span id="cb1-943"><a href="#cb1-943" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-944"><a href="#cb1-944" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
-<span id="cb1-945"><a href="#cb1-945" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
-<span id="cb1-946"><a href="#cb1-946" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-947"><a href="#cb1-947" aria-hidden="true" tabindex="-1"></a><span class="in">p.cloudy.scaled &lt;-</span></span>
-<span id="cb1-948"><a href="#cb1-948" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = fscale(CSCLDY.spct,</span></span>
-<span id="cb1-949"><a href="#cb1-949" aria-hidden="true" tabindex="-1"></a><span class="in">                       f = q_irrad , target = 1e-3, w.band = PAR()),</span></span>
-<span id="cb1-950"><a href="#cb1-950" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = type)) +</span></span>
-<span id="cb1-951"><a href="#cb1-951" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
-<span id="cb1-952"><a href="#cb1-952" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.015e-6, ymax = -0.003e-6) +</span></span>
-<span id="cb1-953"><a href="#cb1-953" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
-<span id="cb1-954"><a href="#cb1-954" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
-<span id="cb1-955"><a href="#cb1-955" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
-<span id="cb1-956"><a href="#cb1-956" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
-<span id="cb1-957"><a href="#cb1-957" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("steelblue3", "grey20")) +</span></span>
-<span id="cb1-958"><a href="#cb1-958" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "B", colour = "")</span></span>
-<span id="cb1-959"><a href="#cb1-959" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-960"><a href="#cb1-960" aria-hidden="true" tabindex="-1"></a><span class="in">p.cloudy.irrad &lt;-</span></span>
-<span id="cb1-961"><a href="#cb1-961" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = e2q(CSCLDY.spct),</span></span>
-<span id="cb1-962"><a href="#cb1-962" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = type)) +</span></span>
-<span id="cb1-963"><a href="#cb1-963" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
-<span id="cb1-964"><a href="#cb1-964" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.19e-6, ymax = -0.03e-6) +</span></span>
-<span id="cb1-965"><a href="#cb1-965" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
-<span id="cb1-966"><a href="#cb1-966" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
-<span id="cb1-967"><a href="#cb1-967" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
-<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
-<span id="cb1-969"><a href="#cb1-969" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("steelblue3", "grey20")) +</span></span>
-<span id="cb1-970"><a href="#cb1-970" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "A", colour = "")</span></span>
-<span id="cb1-971"><a href="#cb1-971" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-972"><a href="#cb1-972" aria-hidden="true" tabindex="-1"></a><span class="in">p.cloudy.irrad / p.cloudy.scaled +</span></span>
-<span id="cb1-973"><a href="#cb1-973" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = "collect", guides = "collect")</span></span>
-<span id="cb1-974"><a href="#cb1-974" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-975"><a href="#cb1-975" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-976"><a href="#cb1-976" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Elevation</span></span>
-<span id="cb1-977"><a href="#cb1-977" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a>**We have three options: 1) generate suitable data with TUV, 2) show measured data from the literature, or 3) both.** </span>
-<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a>A simulation with the TUV model shows how attenuation by the atmosphere decreases with increasing ground altitude under a clear sky, with all other parameters kept unchanged, including surface albedo. As above, we show the actual spectral irradiance and the spectral irradiances scaled to equal PAR photon irradiance. The effect is not huge and the decrease in attenuation is stronger at shorter wavelengths <span class="co">[</span><span class="ot">@fig-spectrum-ground-altitude</span><span class="co">]</span>.</span>
-<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-spectrum-ground-altitude</span></span>
-<span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Spectra under clear sky and a sun elevation of 45 degrees at different ground altitudes. A&amp;#58; photon spectral irradiance as computed with the TUV model, B&amp;#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$.</span></span>
-<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
-<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
-<span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
-<span id="cb1-989"><a href="#cb1-989" aria-hidden="true" tabindex="-1"></a><span class="in"># avoid repeated calls to Quick TUV server</span></span>
-<span id="cb1-990"><a href="#cb1-990" aria-hidden="true" tabindex="-1"></a><span class="in">altitudes.file.path &lt;- "light-environment-data/ground_altitudesx2.mspct.rda"</span></span>
-<span id="cb1-991"><a href="#cb1-991" aria-hidden="true" tabindex="-1"></a><span class="in">if (file.exists(altitudes.file.path)) {</span></span>
-<span id="cb1-992"><a href="#cb1-992" aria-hidden="true" tabindex="-1"></a><span class="in">  load(altitudes.file.path)</span></span>
-<span id="cb1-993"><a href="#cb1-993" aria-hidden="true" tabindex="-1"></a><span class="in">} else {</span></span>
-<span id="cb1-994"><a href="#cb1-994" aria-hidden="true" tabindex="-1"></a><span class="in">  ground_altitudes.mspct &lt;-</span></span>
-<span id="cb1-995"><a href="#cb1-995" aria-hidden="true" tabindex="-1"></a><span class="in">    qtuv_m_s.e.irrad(</span></span>
-<span id="cb1-996"><a href="#cb1-996" aria-hidden="true" tabindex="-1"></a><span class="in">      ground.altitude = c(0, 8),</span></span>
-<span id="cb1-997"><a href="#cb1-997" aria-hidden="true" tabindex="-1"></a><span class="in">      w.length = 290:750,</span></span>
-<span id="cb1-998"><a href="#cb1-998" aria-hidden="true" tabindex="-1"></a><span class="in">      sun.elevation = 45</span></span>
-<span id="cb1-999"><a href="#cb1-999" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
-<span id="cb1-1000"><a href="#cb1-1000" aria-hidden="true" tabindex="-1"></a><span class="in">  save(ground_altitudes.mspct, file = altitudes.file.path)</span></span>
-<span id="cb1-1001"><a href="#cb1-1001" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-1002"><a href="#cb1-1002" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1003"><a href="#cb1-1003" aria-hidden="true" tabindex="-1"></a><span class="in">names(ground_altitudes.mspct) &lt;- paste(c(0, 8), "km")</span></span>
-<span id="cb1-1004"><a href="#cb1-1004" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1005"><a href="#cb1-1005" aria-hidden="true" tabindex="-1"></a><span class="in">p.altitude.scaled &lt;-</span></span>
-<span id="cb1-1006"><a href="#cb1-1006" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = fscale(ground_altitudes.mspct,</span></span>
-<span id="cb1-1007"><a href="#cb1-1007" aria-hidden="true" tabindex="-1"></a><span class="in">                       f = q_irrad , target = 1e-3, w.band = PAR()),</span></span>
-<span id="cb1-1008"><a href="#cb1-1008" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = spct.idx)) +</span></span>
-<span id="cb1-1009"><a href="#cb1-1009" aria-hidden="true" tabindex="-1"></a><span class="in">  #  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
-<span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.015e-6, ymax = -0.003e-6) +</span></span>
-<span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
-<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
-<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
-<span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
-<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("darkgreen", "grey20")) +</span></span>
-<span id="cb1-1016"><a href="#cb1-1016" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "B", colour = "")</span></span>
-<span id="cb1-1017"><a href="#cb1-1017" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1018"><a href="#cb1-1018" aria-hidden="true" tabindex="-1"></a><span class="in">p.altitude.irrad &lt;-</span></span>
-<span id="cb1-1019"><a href="#cb1-1019" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = e2q(ground_altitudes.mspct),</span></span>
-<span id="cb1-1020"><a href="#cb1-1020" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = spct.idx)) +</span></span>
-<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a><span class="in">  #  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
-<span id="cb1-1022"><a href="#cb1-1022" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.19e-6, ymax = -0.03e-6) +</span></span>
-<span id="cb1-1023"><a href="#cb1-1023" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
-<span id="cb1-1024"><a href="#cb1-1024" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
-<span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
-<span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
-<span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("darkgreen", "grey20")) +</span></span>
-<span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "A", colour = "")</span></span>
-<span id="cb1-1029"><a href="#cb1-1029" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a><span class="in">p.altitude.irrad / p.altitude.scaled +</span></span>
-<span id="cb1-1031"><a href="#cb1-1031" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = "collect", guides = "collect")</span></span>
-<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-1033"><a href="#cb1-1033" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1034"><a href="#cb1-1034" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1035"><a href="#cb1-1035" aria-hidden="true" tabindex="-1"></a>In @fig-spectrum-ground-altitude we show the spectra for two extreme altitudes, sea level and 8000 m above sea level. In @fig-irradiance-ground-altitude we show the increase in UV-B, UV-A2, UV-A1 and PAR with ground altitude.</span>
-<span id="cb1-1036"><a href="#cb1-1036" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1037"><a href="#cb1-1037" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-1038"><a href="#cb1-1038" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-irradiance-ground-altitude</span></span>
-<span id="cb1-1039"><a href="#cb1-1039" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Increase in PAR and UV irradiances at ground level under clear sky as a function of ground altitude above sea level. Based on spectral simulations with TUV for sun elevation 45 degrees. UVA-1, violet; UV-A2, purple; UV-B, black.</span></span>
-<span id="cb1-1040"><a href="#cb1-1040" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1041"><a href="#cb1-1041" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
-<span id="cb1-1042"><a href="#cb1-1042" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
-<span id="cb1-1043"><a href="#cb1-1043" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
-<span id="cb1-1044"><a href="#cb1-1044" aria-hidden="true" tabindex="-1"></a><span class="in"># avoid repeated calls to Quick TUV server</span></span>
-<span id="cb1-1045"><a href="#cb1-1045" aria-hidden="true" tabindex="-1"></a><span class="in">altitudes.file.path &lt;- "light-environment-data/ground_altitudesx9.mspct.rda"</span></span>
-<span id="cb1-1046"><a href="#cb1-1046" aria-hidden="true" tabindex="-1"></a><span class="in">if (file.exists(altitudes.file.path)) {</span></span>
-<span id="cb1-1047"><a href="#cb1-1047" aria-hidden="true" tabindex="-1"></a><span class="in">  load(altitudes.file.path)</span></span>
-<span id="cb1-1048"><a href="#cb1-1048" aria-hidden="true" tabindex="-1"></a><span class="in">} else {</span></span>
-<span id="cb1-1049"><a href="#cb1-1049" aria-hidden="true" tabindex="-1"></a><span class="in">  ground_altitudesx9.mspct &lt;-</span></span>
-<span id="cb1-1050"><a href="#cb1-1050" aria-hidden="true" tabindex="-1"></a><span class="in">  qtuv_m_s.e.irrad(</span></span>
-<span id="cb1-1051"><a href="#cb1-1051" aria-hidden="true" tabindex="-1"></a><span class="in">    ground.altitude = 0:8,</span></span>
-<span id="cb1-1052"><a href="#cb1-1052" aria-hidden="true" tabindex="-1"></a><span class="in">    w.length = 290:750,</span></span>
-<span id="cb1-1053"><a href="#cb1-1053" aria-hidden="true" tabindex="-1"></a><span class="in">    sun.elevation = 45</span></span>
-<span id="cb1-1054"><a href="#cb1-1054" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a><span class="in">  save(ground_altitudesx9.mspct, file = altitudes.file.path)</span></span>
-<span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a><span class="in">names(ground_altitudesx9.mspct) &lt;- as.character(0:8)</span></span>
-<span id="cb1-1059"><a href="#cb1-1059" aria-hidden="true" tabindex="-1"></a><span class="in">ground_altitudesx9.spct &lt;- rbindspct(ground_altitudesx9.mspct, idfactor = "Altitude")</span></span>
-<span id="cb1-1060"><a href="#cb1-1060" aria-hidden="true" tabindex="-1"></a><span class="in">q_irrads_altitude.tb &lt;- q_irrad(ground_altitudesx9.spct, Plant_bands("CIE"), scale.factor = 1e6)</span></span>
-<span id="cb1-1061"><a href="#cb1-1061" aria-hidden="true" tabindex="-1"></a><span class="in">q_irrads_altitude.tb$Altitude &lt;- as.numeric(q_irrads_altitude.tb$Altitude)</span></span>
-<span id="cb1-1062"><a href="#cb1-1062" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1063"><a href="#cb1-1063" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(q_irrads_altitude.tb, aes(Altitude)) +</span></span>
-<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((`Q_]UVB.CIE` / `Q_]UVB.CIE`[1]) - 1) * 100), colour = "black") +</span></span>
-<span id="cb1-1065"><a href="#cb1-1065" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((Q_UVA2.CIE / Q_UVA2.CIE[1]) - 1) * 100), colour = "purple") +</span></span>
-<span id="cb1-1066"><a href="#cb1-1066" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((Q_UVA1.CIE / Q_UVA1.CIE[1]) - 1) * 100), colour = "violet") +</span></span>
-<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((Q_PAR / Q_PAR[1]) - 1) * 100), colour = "orange") +</span></span>
-<span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_continuous(name = "Increase in photon irradiance (%)") +</span></span>
-<span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_continuous(name = "Ground altitude (km a.s.l.)")</span></span>
-<span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1071"><a href="#cb1-1071" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-1072"><a href="#cb1-1072" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1073"><a href="#cb1-1073" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1074"><a href="#cb1-1074" aria-hidden="true" tabindex="-1"></a>In reality, the different variables shown individually in the examples in this chapter, can vary in ways that their effects add up, so the total range of variation is larger than is apparent in the examples above.</span>
-<span id="cb1-1075"><a href="#cb1-1075" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1076"><a href="#cb1-1076" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Seasons and latitude</span></span>
-<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1078"><a href="#cb1-1078" aria-hidden="true" tabindex="-1"></a>The main determinant of changes in spectral irradiance with seasons and latitude is the changing path of the sun through the sky, and consequently of the sun elevation angle. However, several other variables play a role. The depth of the ozone column varies with latitude and seasonally. Clouds and the water column depth vary locally and with latitude, as does ground elevation and albedo. The result is that spectral irradiance varies in time and space. One way of summarising this is to describe the local climatology using maps with monthly averages over several years interpolated over a geographic grid. One approach is to use data retrieved by instruments on board satellites. An alternative approach is to describe terrestrial solar radiation at locations where ground-level measurements are available. We start with examples based on this second approach and observations with broadband sensors from ELDONET. From the perspective of research with plants the availability of UV-B, UV-A and PhR data measured concurrently is important.</span>
-<span id="cb1-1079"><a href="#cb1-1079" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1080"><a href="#cb1-1080" aria-hidden="true" tabindex="-1"></a>Considering a longer time scale of years, seasonal and daily variation are combined. The seasonal pattern of variation in UV-B daily exposure is very clear but has day to day variation superimposed <span class="co">[</span><span class="ot">@fig-UVB-Erlangen A</span><span class="co">]</span>. The strong change in the UV-B:PAR photon ratio with sun elevation creates a strong seasonal pattern in this photon ratio <span class="co">[</span><span class="ot">@fig-UVB-Erlangen B</span><span class="co">]</span>.</span>
-<span id="cb1-1081"><a href="#cb1-1081" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1082"><a href="#cb1-1082" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, message=FALSE, warning=FALSE}</span></span>
-<span id="cb1-1083"><a href="#cb1-1083" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-UVB-Erlangen</span></span>
-<span id="cb1-1084"><a href="#cb1-1084" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Seasonal variation in daily UV-B energy exposure Erlangen, Germany ($54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}$, 280 m asl). A&amp;#58; daily UV-B energy exposure; B&amp;#58; UV-B:PhR daily-energy-exposures ratio. Note&amp;#58; there are gaps with missing data in the time-series data. Measured with ELDONET instruments [see, @Haeder2007].</span></span>
-<span id="cb1-1085"><a href="#cb1-1085" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1086"><a href="#cb1-1086" aria-hidden="true" tabindex="-1"></a><span class="in">Erlangen.data &lt;- read.csv("./light-environment-data/Erlangen_data.csv") |&gt;</span></span>
-<span id="cb1-1087"><a href="#cb1-1087" aria-hidden="true" tabindex="-1"></a><span class="in">  subset(!grepl("1997$", Datum))</span></span>
-<span id="cb1-1088"><a href="#cb1-1088" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1089"><a href="#cb1-1089" aria-hidden="true" tabindex="-1"></a><span class="in">Erlangen.data &lt;- within(Erlangen.data, date &lt;- as.Date(Datum, "%d/%m/%Y"))</span></span>
-<span id="cb1-1090"><a href="#cb1-1090" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1091"><a href="#cb1-1091" aria-hidden="true" tabindex="-1"></a><span class="in">fig &lt;- ggplot(data=Erlangen.data,aes(x=date,y=UVB/1000)) + </span></span>
-<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
-<span id="cb1-1093"><a href="#cb1-1093" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_point(size=1, colour="black", alpha=0.33) + </span></span>
-<span id="cb1-1094"><a href="#cb1-1094" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_date(date_breaks = "1 year", date_labels = "%Y") + </span></span>
-<span id="cb1-1095"><a href="#cb1-1095" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Time", y=expression("UV-B exposure"~~(kJ~d^{-1}~m^{-2})),</span></span>
-<span id="cb1-1096"><a href="#cb1-1096" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "A")</span></span>
-<span id="cb1-1097"><a href="#cb1-1097" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1098"><a href="#cb1-1098" aria-hidden="true" tabindex="-1"></a><span class="in">fig_ratio &lt;- ggplot(data=Erlangen.data,aes(x=date,y=UVB/PAR*1000)) +</span></span>
-<span id="cb1-1099"><a href="#cb1-1099" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
-<span id="cb1-1100"><a href="#cb1-1100" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_point(size=1, colour="black", alpha=0.33) + </span></span>
-<span id="cb1-1101"><a href="#cb1-1101" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_date(date_breaks = "1 year", date_labels = "%Y") + </span></span>
-<span id="cb1-1102"><a href="#cb1-1102" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Time", y=expression("UV-B:PhR ratio"~~(1%*%10^3)),</span></span>
-<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "B")</span></span>
-<span id="cb1-1104"><a href="#cb1-1104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1105"><a href="#cb1-1105" aria-hidden="true" tabindex="-1"></a><span class="in">print((fig / fig_ratio) + plot_layout(axes = "collect") )</span></span>
-<span id="cb1-1106"><a href="#cb1-1106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1107"><a href="#cb1-1107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1108"><a href="#cb1-1108" aria-hidden="true" tabindex="-1"></a>UV-B irradiance increases with elevation in mountains and with decreasing latitude <span class="co">[</span><span class="ot">@fig-UVB-latitude</span><span class="co">]</span> and is particularly high on high mountains in equatorial regions. </span>
-<span id="cb1-1109"><a href="#cb1-1109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1110"><a href="#cb1-1110" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>*Tree line* is the highest elevation on a mountain slope at which tree species are naturally able to grow.</span>
-<span id="cb1-1111"><a href="#cb1-1111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1112"><a href="#cb1-1112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, message=FALSE}</span></span>
-<span id="cb1-1113"><a href="#cb1-1113" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-UVB-latitude</span></span>
-<span id="cb1-1114"><a href="#cb1-1114" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments. The ground altitude for these locations varies [see, @Haeder2007].</span></span>
-<span id="cb1-1115"><a href="#cb1-1115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a><span class="in">latitudinal.data &lt;- </span></span>
-<span id="cb1-1117"><a href="#cb1-1117" aria-hidden="true" tabindex="-1"></a><span class="in">  read.csv("./light-environment-data/latitudinal_data.csv") |&gt;</span></span>
-<span id="cb1-1118"><a href="#cb1-1118" aria-hidden="true" tabindex="-1"></a><span class="in">  within(latitude &lt;- degrees + minutes/60)</span></span>
-<span id="cb1-1119"><a href="#cb1-1119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1120"><a href="#cb1-1120" aria-hidden="true" tabindex="-1"></a><span class="in">fig_UVB &lt;- ggplot(data=latitudinal.data,aes(x=latitude,y=UVB)) + </span></span>
-<span id="cb1-1121"><a href="#cb1-1121" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_poly_line(linetype = "dashed", se = FALSE) +</span></span>
-<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(size=3, pch=16, colour="red")+ </span></span>
-<span id="cb1-1123"><a href="#cb1-1123" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_text_repel(aes(label=Location), colour="Black", size=3.5,</span></span>
-<span id="cb1-1124"><a href="#cb1-1124" aria-hidden="true" tabindex="-1"></a><span class="in">                  position = position_nudge_line(x = 0.05, y = 0.5, direction = "split",</span></span>
-<span id="cb1-1125"><a href="#cb1-1125" aria-hidden="true" tabindex="-1"></a><span class="in">                                                 line_nudge = 5),</span></span>
-<span id="cb1-1126"><a href="#cb1-1126" aria-hidden="true" tabindex="-1"></a><span class="in">                  min.segment.length = 0, point.padding = 0.4, box.padding = 0.3) +</span></span>
-<span id="cb1-1127"><a href="#cb1-1127" aria-hidden="true" tabindex="-1"></a><span class="in">  expand_limits(y = c(0,13), x = c(25,75)) + </span></span>
-<span id="cb1-1128"><a href="#cb1-1128" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Latitude N (degrees)", </span></span>
-<span id="cb1-1129"><a href="#cb1-1129" aria-hidden="true" tabindex="-1"></a><span class="in">       y=expression("Annual exposure"~~(MJ~m^{-2})),</span></span>
-<span id="cb1-1130"><a href="#cb1-1130" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "UV-B")</span></span>
-<span id="cb1-1131"><a href="#cb1-1131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1132"><a href="#cb1-1132" aria-hidden="true" tabindex="-1"></a><span class="in">fig_UVA &lt;- ggplot(data=latitudinal.data,aes(x=latitude,y=UVA)) + </span></span>
-<span id="cb1-1133"><a href="#cb1-1133" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_poly_line(linetype = "dashed", se = FALSE) +</span></span>
-<span id="cb1-1134"><a href="#cb1-1134" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(size=3, pch=16, colour="red")+ </span></span>
-<span id="cb1-1135"><a href="#cb1-1135" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_text_repel(aes(label=Location), colour="Black", size=3.5,</span></span>
-<span id="cb1-1136"><a href="#cb1-1136" aria-hidden="true" tabindex="-1"></a><span class="in">            position = position_nudge_line(x = 0.03, y = 200, direction = "split",</span></span>
-<span id="cb1-1137"><a href="#cb1-1137" aria-hidden="true" tabindex="-1"></a><span class="in">                                           line_nudge = 3),</span></span>
-<span id="cb1-1138"><a href="#cb1-1138" aria-hidden="true" tabindex="-1"></a><span class="in">            min.segment.length = 0, point.padding = 0.4, box.padding = 0.3) +</span></span>
-<span id="cb1-1139"><a href="#cb1-1139" aria-hidden="true" tabindex="-1"></a><span class="in">  expand_limits(y = c(0,3300), x = c(25,75)) + </span></span>
-<span id="cb1-1140"><a href="#cb1-1140" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Latitude N (degrees)", </span></span>
-<span id="cb1-1141"><a href="#cb1-1141" aria-hidden="true" tabindex="-1"></a><span class="in">       y=expression("Annual exposure"~~(MJ~m^{-2})),</span></span>
-<span id="cb1-1142"><a href="#cb1-1142" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "UV-A")</span></span>
-<span id="cb1-1143"><a href="#cb1-1143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1144"><a href="#cb1-1144" aria-hidden="true" tabindex="-1"></a><span class="in">print((fig_UVB / fig_UVA) + plot_layout(axes = "collect"))</span></span>
-<span id="cb1-1145"><a href="#cb1-1145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1146"><a href="#cb1-1146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1147"><a href="#cb1-1147" aria-hidden="true" tabindex="-1"></a>**I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added as they include separate measurements of UV-B, UV-A2, UV-A1, blue, red, far-red and PAR irradiances. Maybe a figure with daily averages per month or week or showing a moving average or moving median could be informative. What do you think?**</span>
-<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1149"><a href="#cb1-1149" aria-hidden="true" tabindex="-1"></a>**Maps for global radiation, UV-B, and UV-A could be added to this section. The daily data are available on-line on a 1/2 degree grid for the last &gt;10 years. Some biologically effective exposures are also available. This is a lot of data. I have already downloaded the last 12 months. Downloading the whole time series with worldwide coverage and computing long-term means would be doable I think, but time consuming. For the time being here are maps for UV-B and UV-A with monthly means of daily doses for the whole world.**</span>
-<span id="cb1-1150"><a href="#cb1-1150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-B. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-B irradiance is very low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVB-world-map-monthly.png)</span>{#fig-uvb-world-map width=100%}</span>
+<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle('{closest_state} UTC')</span></span>
+<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a><span class="in">animate(anim, duration = 20, fps = 10)</span></span>
+<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a>It should be noted that, through reflection, broken clouds can locally increase irradiance to values above those under clear-sky conditions <span class="co">[</span><span class="ot">@Frederick1993; @Diaz1996</span><span class="co">]</span>. These are transient increases of short duration and easily detected with fast measurements, and the irradiance increase can be 30% or more compared to under a clear sky. This is well illustrated by measurements at 1 min interval during four consecutive days <span class="co">[</span><span class="ot">@fig-PAR-four-days</span><span class="co">]</span>.</span>
+<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-PAR-four-days</span></span>
+<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Time course of PAR, UV-A and UV-B photon irradiance during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s. The step changes at very low sun elevations are caused by shading from far-away buildings.</span></span>
+<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a><span class="in">((ggplot(four_days_1min.data, aes(time_EET, PAR_umol)) +</span></span>
+<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
+<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "PAR", npcy = 0.95, npcx = 0.05) +</span></span>
+<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = "")) /</span></span>
+<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, aes(time_EET, UVA_umol)) +</span></span>
+<span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
+<span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-A", npcy = 0.95, npcx = 0.05) +</span></span>
+<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = expression("Photon irradiance "*(mu*mol~s^{-1}~m^{-2})))) /</span></span>
+<span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, aes(time_EET, UVB_umol)) +</span></span>
+<span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct()) +</span></span>
+<span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-B", npcy = 0.95, npcx = 0.05) +</span></span>
+<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Time", y = "")) + </span></span>
+<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = 'collect')</span></span>
+<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a>The photon ratios for the same four days <span class="co">[</span><span class="ot">@fig-ratios-four-days</span><span class="co">]</span> shows the </span>
+<span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a>influence of clouds and of sun elevation, both affecting the PAR diffuse </span>
+<span id="cb1-823"><a href="#cb1-823" aria-hidden="true" tabindex="-1"></a>fraction. In particular, broken clouds on </span>
+<span id="cb1-824"><a href="#cb1-824" aria-hidden="true" tabindex="-1"></a>10 July cause momentary nearly doubling of the UV-A:PAR and UV-B:PAR photon </span>
+<span id="cb1-825"><a href="#cb1-825" aria-hidden="true" tabindex="-1"></a>ratios. The short-term effect on the R:FR is smaller, but the differences</span>
+<span id="cb1-826"><a href="#cb1-826" aria-hidden="true" tabindex="-1"></a>between days larger, possibly because of its dependence on the atmospheric</span>
+<span id="cb1-827"><a href="#cb1-827" aria-hidden="true" tabindex="-1"></a>water content <span class="co">[</span><span class="ot">@kotilainenxxxx</span><span class="co">]</span>.</span>
+<span id="cb1-828"><a href="#cb1-828" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-829"><a href="#cb1-829" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-ratios-four-days</span></span>
+<span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Time course of red:far-red, UV-A:PAR and UV-B:PAR photon ratios during four consecutive days with different cloud conditions. Measured with broad band-sensors at Viikki, Helsinki, Finland. The values plotted are 1 min means from measurements once every 5 s; data shown for sun above the horizon. The step changes at very low sun elevations are caused by shading from far-away buildings. The PAR diffuse ratio varies with sun elevation in the range 0.12 to 1.0, as shown in @fig-diffuse-TUV for clear sky conditions. With the solar disk fully occluded by clouds or objects the diffuse ratio approches 1 at all sun elevations. </span></span>
+<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a><span class="in">((ggplot(four_days_1min.data, </span></span>
+<span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(time_EET, </span></span>
+<span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a><span class="in">             ifelse(sun_elevation &gt; 0, red_umol / far_red_umol, NA),</span></span>
+<span id="cb1-836"><a href="#cb1-836" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = PAR_diff_fr)) +</span></span>
+<span id="cb1-837"><a href="#cb1-837" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(na.rm = TRUE, size = 0.3) +</span></span>
+<span id="cb1-838"><a href="#cb1-838" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "R:FR", npcy = 0.95, npcx = 0.05) +</span></span>
+<span id="cb1-839"><a href="#cb1-839" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = "",</span></span>
+<span id="cb1-840"><a href="#cb1-840" aria-hidden="true" tabindex="-1"></a><span class="in">         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t]))) /</span></span>
+<span id="cb1-841"><a href="#cb1-841" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, </span></span>
+<span id="cb1-842"><a href="#cb1-842" aria-hidden="true" tabindex="-1"></a><span class="in">        aes(time_EET, </span></span>
+<span id="cb1-843"><a href="#cb1-843" aria-hidden="true" tabindex="-1"></a><span class="in">            ifelse(sun_elevation &gt; 0, UVA_umol / PAR_umol, NA),</span></span>
+<span id="cb1-844"><a href="#cb1-844" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = PAR_diff_fr)) +</span></span>
+<span id="cb1-845"><a href="#cb1-845" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(na.rm = TRUE, size = 0.3) +</span></span>
+<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-A:PAR", npcy = 0.95, npcx = 0.05) +</span></span>
+<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Local time", y = expression("Photon ratio "*(mol~mol^{-1})),</span></span>
+<span id="cb1-848"><a href="#cb1-848" aria-hidden="true" tabindex="-1"></a><span class="in">         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t]))) /</span></span>
+<span id="cb1-849"><a href="#cb1-849" aria-hidden="true" tabindex="-1"></a><span class="in">(ggplot(four_days_1min.data, aes(time_EET, </span></span>
+<span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a><span class="in">            ifelse(sun_elevation &gt; 0, UVB_umol / PAR_umol, NA),</span></span>
+<span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = PAR_diff_fr)) +</span></span>
+<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(na.rm = TRUE, size = 0.3) +</span></span>
+<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a><span class="in">    annotate(geom = "text_npc", label = "UV-B:PAR", npcy = 0.95, npcx = 0.05) +</span></span>
+<span id="cb1-854"><a href="#cb1-854" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = "Time", y = "",</span></span>
+<span id="cb1-855"><a href="#cb1-855" aria-hidden="true" tabindex="-1"></a><span class="in">         colour = expression("PAR diffuse fraction  "*Q[s]/Q[t])))) + </span></span>
+<span id="cb1-856"><a href="#cb1-856" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = 'collect', guides = 'collect')</span></span>
+<span id="cb1-857"><a href="#cb1-857" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-858"><a href="#cb1-858" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a>In @fig-ratios-four-days we can see fast changes in the ratios towards the end of the day. The time-series of spectra measured once a minute during 5 minutes shows how the shape of the spectrum can rapidly change leading to rapid changes in the R:FR photon ratio <span class="co">[</span><span class="ot">@fig-spectra-anim-five-min</span><span class="co">]</span>.</span>
+<span id="cb1-860"><a href="#cb1-860" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-861"><a href="#cb1-861" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include=FALSE}</span></span>
+<span id="cb1-862"><a href="#cb1-862" aria-hidden="true" tabindex="-1"></a><span class="in"># prepare data</span></span>
+<span id="cb1-863"><a href="#cb1-863" aria-hidden="true" tabindex="-1"></a><span class="in">my_sun.spct &lt;- sun_evening.spct</span></span>
+<span id="cb1-864"><a href="#cb1-864" aria-hidden="true" tabindex="-1"></a><span class="in">time &lt;- when_measured(my_sun.spct, as.df = TRUE)</span></span>
+<span id="cb1-865"><a href="#cb1-865" aria-hidden="true" tabindex="-1"></a><span class="in">my_sun.spct$spct.idx &lt;- </span></span>
+<span id="cb1-866"><a href="#cb1-866" aria-hidden="true" tabindex="-1"></a><span class="in">  factor(my_sun.spct$spct.idx, </span></span>
+<span id="cb1-867"><a href="#cb1-867" aria-hidden="true" tabindex="-1"></a><span class="in">         levels = time[["spct.idx"]], </span></span>
+<span id="cb1-868"><a href="#cb1-868" aria-hidden="true" tabindex="-1"></a><span class="in">         labels = as.character(round_date(time[["when.measured"]], unit = "minute")))</span></span>
+<span id="cb1-869"><a href="#cb1-869" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-870"><a href="#cb1-870" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-871"><a href="#cb1-871" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-872"><a href="#cb1-872" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-spectra-anim-five-min</span></span>
+<span id="cb1-873"><a href="#cb1-873" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Time series of spectra near sunset. Five minutes of solar spectra measurements. Measured with an array spectrometer at Viikki, Helsinki, Finland.</span></span>
+<span id="cb1-874"><a href="#cb1-874" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-875"><a href="#cb1-875" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = my_sun.spct, unit.out = "photon") +</span></span>
+<span id="cb1-876"><a href="#cb1-876" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
+<span id="cb1-877"><a href="#cb1-877" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
+<span id="cb1-878"><a href="#cb1-878" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous() +</span></span>
+<span id="cb1-879"><a href="#cb1-879" aria-hidden="true" tabindex="-1"></a><span class="in">  transition_states(spct.idx,</span></span>
+<span id="cb1-880"><a href="#cb1-880" aria-hidden="true" tabindex="-1"></a><span class="in">                    transition_length = 2,</span></span>
+<span id="cb1-881"><a href="#cb1-881" aria-hidden="true" tabindex="-1"></a><span class="in">                    state_length = 1) +</span></span>
+<span id="cb1-882"><a href="#cb1-882" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle('Now showing {closest_state} UTC',</span></span>
+<span id="cb1-883"><a href="#cb1-883" aria-hidden="true" tabindex="-1"></a><span class="in">          subtitle = 'Frame {frame} of {nframes}')</span></span>
+<span id="cb1-884"><a href="#cb1-884" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-885"><a href="#cb1-885" aria-hidden="true" tabindex="-1"></a>The low irradiance periods interspersed with higher irradiance ones, caused by moving clouds intermittently occluding the sun, or cloud flecks, have a haphazard dynamics that is very dependent on the cloud type and wind conditions. One way of describing them is by estimating an empirical probability density function for their duration <span class="co">[</span><span class="ot">@fig-cloudflecks-edf inset</span><span class="co">]</span>. The distribution is not Normal, and skewed to the right. Semi-transparent and small clouds attenuate irradiance less that large thick clouds and at the same time create cloud flecks of shorter duration <span class="co">[</span><span class="ot">@fig-cloudflecks-edf main panel</span><span class="co">]</span>.</span>
+<span id="cb1-886"><a href="#cb1-886" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-887"><a href="#cb1-887" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-888"><a href="#cb1-888" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-cloudflecks-edf</span></span>
+<span id="cb1-889"><a href="#cb1-889" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: xxxxxxxxxxxxxxx. In the main panel a quantile regression is shown, with the line repesenting the median, the dark band enclosing the two central quantiles (simmilar to the box in a box plot) and the pale band enclosing 90% of the observations. The inset shows the fitted empirical density function (EDF) for the duration of the cloudflecks. Source @Sellaro2024.</span></span>
+<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a><span class="in">dfS &lt;- read.csv("light-environment-data/dfCloudfleck_figure.csv")</span></span>
+<span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a><span class="in">p2 &lt;-</span></span>
+<span id="cb1-894"><a href="#cb1-894" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = dfS, aes(percDiff * 100, duration)) +</span></span>
+<span id="cb1-895"><a href="#cb1-895" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_quant_band(formula = y ~ qss(x, lambda = 50, constraint = "I"), method = "rqss:sfnc",</span></span>
+<span id="cb1-896"><a href="#cb1-896" aria-hidden="true" tabindex="-1"></a><span class="in">                  quantiles = c(0.05, 0.5, 0.95), alpha = 0.2) +</span></span>
+<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_quant_band(formula = y ~ qss(x, lambda = 50, constraint = "I"), method = "rqss:sfnc") +</span></span>
+<span id="cb1-898"><a href="#cb1-898" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_quadrant_counts(quadrants = 0L,</span></span>
+<span id="cb1-899"><a href="#cb1-899" aria-hidden="true" tabindex="-1"></a><span class="in">                       label.x = 0.95,</span></span>
+<span id="cb1-900"><a href="#cb1-900" aria-hidden="true" tabindex="-1"></a><span class="in">                       label.y = 0.05) +</span></span>
+<span id="cb1-901"><a href="#cb1-901" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "PAR attenuation during cloudfleck (%)",</span></span>
+<span id="cb1-902"><a href="#cb1-902" aria-hidden="true" tabindex="-1"></a><span class="in">       y = "Cloudfleck duration (min)") +</span></span>
+<span id="cb1-903"><a href="#cb1-903" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_classic()</span></span>
+<span id="cb1-904"><a href="#cb1-904" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-905"><a href="#cb1-905" aria-hidden="true" tabindex="-1"></a><span class="in">p3 &lt;- ggplot(data = dfS, aes(duration)) +</span></span>
+<span id="cb1-906"><a href="#cb1-906" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_density(bw = "nrd", alpha = 0.3) +</span></span>
+<span id="cb1-907"><a href="#cb1-907" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_log10(breaks = c(2, 5, 10, 20, 50, 100, 200, 500)) +</span></span>
+<span id="cb1-908"><a href="#cb1-908" aria-hidden="true" tabindex="-1"></a><span class="in">  expand_limits(x = c(1.7, 500)) +</span></span>
+<span id="cb1-909"><a href="#cb1-909" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "Cloudfleck duration (min)",</span></span>
+<span id="cb1-910"><a href="#cb1-910" aria-hidden="true" tabindex="-1"></a><span class="in">       y = "Empirical probability density")</span></span>
+<span id="cb1-911"><a href="#cb1-911" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-912"><a href="#cb1-912" aria-hidden="true" tabindex="-1"></a><span class="in">print(p2 + scale_y_continuous(breaks = c(0, 60, 120, 180, 240, 300)) +</span></span>
+<span id="cb1-913"><a href="#cb1-913" aria-hidden="true" tabindex="-1"></a><span class="in">  annotate(geom = "plot", x = I(0.05), y = I(1), label = p3, vp.width = 2/3, vp.height = 2/3))</span></span>
+<span id="cb1-914"><a href="#cb1-914" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-915"><a href="#cb1-915" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-916"><a href="#cb1-916" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-917"><a href="#cb1-917" aria-hidden="true" tabindex="-1"></a><span class="in">## cloudfleck spectrum</span></span>
+<span id="cb1-918"><a href="#cb1-918" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-919"><a href="#cb1-919" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb1-920"><a href="#cb1-920" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
+<span id="cb1-921"><a href="#cb1-921" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-922"><a href="#cb1-922" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.df &lt;- read.csv("light-environment-data/dfCSCLDY.csv")[ , -1]</span></span>
+<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-924"><a href="#cb1-924" aria-hidden="true" tabindex="-1"></a><span class="in">names(CSCLDY.df)[names(CSCLDY.df) == "s.q.irrad"] &lt;- "s.e.irrad" # error in data file</span></span>
+<span id="cb1-925"><a href="#cb1-925" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-926"><a href="#cb1-926" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.df &lt;- subset(CSCLDY.df, w.length &gt; 295 &amp; w.length &lt; 850)</span></span>
+<span id="cb1-927"><a href="#cb1-927" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.df$type.label &lt;- gsub("\\.", " ", CSCLDY.df$type)</span></span>
+<span id="cb1-928"><a href="#cb1-928" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-929"><a href="#cb1-929" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.spct &lt;- as.source_spct(CSCLDY.df,</span></span>
+<span id="cb1-930"><a href="#cb1-930" aria-hidden="true" tabindex="-1"></a><span class="in">                              idfactor = "type",</span></span>
+<span id="cb1-931"><a href="#cb1-931" aria-hidden="true" tabindex="-1"></a><span class="in">                              multiple.wl = length(unique(CSCLDY.df$type)))</span></span>
+<span id="cb1-932"><a href="#cb1-932" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-933"><a href="#cb1-933" aria-hidden="true" tabindex="-1"></a><span class="in">CSCLDY.mspct &lt;- e2q(subset2mspct(CSCLDY.spct))</span></span>
+<span id="cb1-934"><a href="#cb1-934" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-935"><a href="#cb1-935" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a>Irradiance is much lower under cloud cover than in full sunlight under a clear sky <span class="co">[</span><span class="ot">@fig-spectrum-cloudfleck A</span><span class="co">]</span>. The cloud light spectrum is shifted towards shorter wavelengths, i.e., shade light is bluer (or cooler) than full sunlight, more easily seen after scaling the spectra to equal irradiance <span class="co">[</span><span class="ot">@fig-spectrum-cloudfleck B</span><span class="co">]</span>. For this example the coordinated colour temperature (CCT) was <span class="in">`r round(spct_CCT(CSCLDY.mspct[["overcast"]]), -1)`</span> K and <span class="in">`r round(spct_CCT(CSCLDY.mspct[["clear.sky"]]), -1)`</span> K for the overcast and clear sky, respectively. </span>
+<span id="cb1-938"><a href="#cb1-938" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-939"><a href="#cb1-939" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-940"><a href="#cb1-940" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-spectrum-cloudfleck</span></span>
+<span id="cb1-941"><a href="#cb1-941" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Spectra during and immediately after a cloudfleck. A&amp;#58; photon spectral irradiance as measured, B&amp;#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$. Source @Sellaro2024.</span></span>
+<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-943"><a href="#cb1-943" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb1-944"><a href="#cb1-944" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
+<span id="cb1-945"><a href="#cb1-945" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-946"><a href="#cb1-946" aria-hidden="true" tabindex="-1"></a><span class="in">p.cloudy.scaled &lt;-</span></span>
+<span id="cb1-947"><a href="#cb1-947" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = fscale(CSCLDY.spct,</span></span>
+<span id="cb1-948"><a href="#cb1-948" aria-hidden="true" tabindex="-1"></a><span class="in">                       f = q_irrad , target = 1e-3, w.band = PAR()),</span></span>
+<span id="cb1-949"><a href="#cb1-949" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = type)) +</span></span>
+<span id="cb1-950"><a href="#cb1-950" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
+<span id="cb1-951"><a href="#cb1-951" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.015e-6, ymax = -0.003e-6) +</span></span>
+<span id="cb1-952"><a href="#cb1-952" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
+<span id="cb1-953"><a href="#cb1-953" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
+<span id="cb1-954"><a href="#cb1-954" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
+<span id="cb1-955"><a href="#cb1-955" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
+<span id="cb1-956"><a href="#cb1-956" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("steelblue3", "grey20")) +</span></span>
+<span id="cb1-957"><a href="#cb1-957" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "B", colour = "")</span></span>
+<span id="cb1-958"><a href="#cb1-958" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-959"><a href="#cb1-959" aria-hidden="true" tabindex="-1"></a><span class="in">p.cloudy.irrad &lt;-</span></span>
+<span id="cb1-960"><a href="#cb1-960" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = e2q(CSCLDY.spct),</span></span>
+<span id="cb1-961"><a href="#cb1-961" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = type)) +</span></span>
+<span id="cb1-962"><a href="#cb1-962" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
+<span id="cb1-963"><a href="#cb1-963" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.19e-6, ymax = -0.03e-6) +</span></span>
+<span id="cb1-964"><a href="#cb1-964" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
+<span id="cb1-965"><a href="#cb1-965" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
+<span id="cb1-966"><a href="#cb1-966" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
+<span id="cb1-967"><a href="#cb1-967" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
+<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("steelblue3", "grey20")) +</span></span>
+<span id="cb1-969"><a href="#cb1-969" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "A", colour = "")</span></span>
+<span id="cb1-970"><a href="#cb1-970" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-971"><a href="#cb1-971" aria-hidden="true" tabindex="-1"></a><span class="in">p.cloudy.irrad / p.cloudy.scaled +</span></span>
+<span id="cb1-972"><a href="#cb1-972" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = "collect", guides = "collect")</span></span>
+<span id="cb1-973"><a href="#cb1-973" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-974"><a href="#cb1-974" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-975"><a href="#cb1-975" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Elevation</span></span>
+<span id="cb1-976"><a href="#cb1-976" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-977"><a href="#cb1-977" aria-hidden="true" tabindex="-1"></a>**We have three options: 1) generate suitable data with TUV, 2) show measured data from the literature, or 3) both.** </span>
+<span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a>A simulation with the TUV model shows how attenuation by the atmosphere decreases with increasing ground altitude under a clear sky, with all other parameters kept unchanged, including surface albedo. As above, we show the actual spectral irradiance and the spectral irradiances scaled to equal PAR photon irradiance. The effect is not huge and the decrease in attenuation is stronger at shorter wavelengths <span class="co">[</span><span class="ot">@fig-spectrum-ground-altitude</span><span class="co">]</span>.</span>
+<span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-spectrum-ground-altitude</span></span>
+<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Spectra under clear sky and a sun elevation of 45 degrees at different ground altitudes. A&amp;#58; photon spectral irradiance as computed with the TUV model, B&amp;#58; same data scaled to equal PAR of $1\,000 \mu mol\,s^{-1}\,m^{-2}$.</span></span>
+<span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
+<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a><span class="in"># avoid repeated calls to Quick TUV server</span></span>
+<span id="cb1-989"><a href="#cb1-989" aria-hidden="true" tabindex="-1"></a><span class="in">altitudes.file.path &lt;- "light-environment-data/ground_altitudesx2.mspct.rda"</span></span>
+<span id="cb1-990"><a href="#cb1-990" aria-hidden="true" tabindex="-1"></a><span class="in">if (file.exists(altitudes.file.path)) {</span></span>
+<span id="cb1-991"><a href="#cb1-991" aria-hidden="true" tabindex="-1"></a><span class="in">  load(altitudes.file.path)</span></span>
+<span id="cb1-992"><a href="#cb1-992" aria-hidden="true" tabindex="-1"></a><span class="in">} else {</span></span>
+<span id="cb1-993"><a href="#cb1-993" aria-hidden="true" tabindex="-1"></a><span class="in">  ground_altitudes.mspct &lt;-</span></span>
+<span id="cb1-994"><a href="#cb1-994" aria-hidden="true" tabindex="-1"></a><span class="in">    qtuv_m_s.e.irrad(</span></span>
+<span id="cb1-995"><a href="#cb1-995" aria-hidden="true" tabindex="-1"></a><span class="in">      ground.altitude = c(0, 8),</span></span>
+<span id="cb1-996"><a href="#cb1-996" aria-hidden="true" tabindex="-1"></a><span class="in">      w.length = 290:750,</span></span>
+<span id="cb1-997"><a href="#cb1-997" aria-hidden="true" tabindex="-1"></a><span class="in">      sun.elevation = 45</span></span>
+<span id="cb1-998"><a href="#cb1-998" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb1-999"><a href="#cb1-999" aria-hidden="true" tabindex="-1"></a><span class="in">  save(ground_altitudes.mspct, file = altitudes.file.path)</span></span>
+<span id="cb1-1000"><a href="#cb1-1000" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-1001"><a href="#cb1-1001" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1002"><a href="#cb1-1002" aria-hidden="true" tabindex="-1"></a><span class="in">names(ground_altitudes.mspct) &lt;- paste(c(0, 8), "km")</span></span>
+<span id="cb1-1003"><a href="#cb1-1003" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1004"><a href="#cb1-1004" aria-hidden="true" tabindex="-1"></a><span class="in">p.altitude.scaled &lt;-</span></span>
+<span id="cb1-1005"><a href="#cb1-1005" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = fscale(ground_altitudes.mspct,</span></span>
+<span id="cb1-1006"><a href="#cb1-1006" aria-hidden="true" tabindex="-1"></a><span class="in">                       f = q_irrad , target = 1e-3, w.band = PAR()),</span></span>
+<span id="cb1-1007"><a href="#cb1-1007" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = spct.idx)) +</span></span>
+<span id="cb1-1008"><a href="#cb1-1008" aria-hidden="true" tabindex="-1"></a><span class="in">  #  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
+<span id="cb1-1009"><a href="#cb1-1009" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.015e-6, ymax = -0.003e-6) +</span></span>
+<span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
+<span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
+<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
+<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
+<span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("darkgreen", "grey20")) +</span></span>
+<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "B", colour = "")</span></span>
+<span id="cb1-1016"><a href="#cb1-1016" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1017"><a href="#cb1-1017" aria-hidden="true" tabindex="-1"></a><span class="in">p.altitude.irrad &lt;-</span></span>
+<span id="cb1-1018"><a href="#cb1-1018" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(data = e2q(ground_altitudes.mspct),</span></span>
+<span id="cb1-1019"><a href="#cb1-1019" aria-hidden="true" tabindex="-1"></a><span class="in">         aes(w.length, s.q.irrad, colour = spct.idx)) +</span></span>
+<span id="cb1-1020"><a href="#cb1-1020" aria-hidden="true" tabindex="-1"></a><span class="in">  #  geom_vline(xintercept = c(400, 700), linetype = "dotted") +</span></span>
+<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_wl_strip(ymin = -0.19e-6, ymax = -0.03e-6) +</span></span>
+<span id="cb1-1022"><a href="#cb1-1022" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line() +</span></span>
+<span id="cb1-1023"><a href="#cb1-1023" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_identity() +</span></span>
+<span id="cb1-1024"><a href="#cb1-1024" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_s.q.irrad_continuous(unit.exponent = -6) +</span></span>
+<span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_wl_continuous() +</span></span>
+<span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_colour_manual(values = c("darkgreen", "grey20")) +</span></span>
+<span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(tag = "A", colour = "")</span></span>
+<span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1029"><a href="#cb1-1029" aria-hidden="true" tabindex="-1"></a><span class="in">p.altitude.irrad / p.altitude.scaled +</span></span>
+<span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_layout(axes = "collect", guides = "collect")</span></span>
+<span id="cb1-1031"><a href="#cb1-1031" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1033"><a href="#cb1-1033" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1034"><a href="#cb1-1034" aria-hidden="true" tabindex="-1"></a>In @fig-spectrum-ground-altitude we show the spectra for two extreme altitudes, sea level and 8000 m above sea level. In @fig-irradiance-ground-altitude we show the increase in UV-B, UV-A2, UV-A1 and PAR with ground altitude.</span>
+<span id="cb1-1035"><a href="#cb1-1035" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1036"><a href="#cb1-1036" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-1037"><a href="#cb1-1037" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-irradiance-ground-altitude</span></span>
+<span id="cb1-1038"><a href="#cb1-1038" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Increase in PAR and UV irradiances at ground level under clear sky as a function of ground altitude above sea level. Based on spectral simulations with TUV for sun elevation 45 degrees. UVA-1, violet; UV-A2, purple; UV-B, black.</span></span>
+<span id="cb1-1039"><a href="#cb1-1039" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1040"><a href="#cb1-1040" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb1-1041"><a href="#cb1-1041" aria-hidden="true" tabindex="-1"></a><span class="in">  photon_as_default()</span></span>
+<span id="cb1-1042"><a href="#cb1-1042" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb1-1043"><a href="#cb1-1043" aria-hidden="true" tabindex="-1"></a><span class="in"># avoid repeated calls to Quick TUV server</span></span>
+<span id="cb1-1044"><a href="#cb1-1044" aria-hidden="true" tabindex="-1"></a><span class="in">altitudes.file.path &lt;- "light-environment-data/ground_altitudesx9.mspct.rda"</span></span>
+<span id="cb1-1045"><a href="#cb1-1045" aria-hidden="true" tabindex="-1"></a><span class="in">if (file.exists(altitudes.file.path)) {</span></span>
+<span id="cb1-1046"><a href="#cb1-1046" aria-hidden="true" tabindex="-1"></a><span class="in">  load(altitudes.file.path)</span></span>
+<span id="cb1-1047"><a href="#cb1-1047" aria-hidden="true" tabindex="-1"></a><span class="in">} else {</span></span>
+<span id="cb1-1048"><a href="#cb1-1048" aria-hidden="true" tabindex="-1"></a><span class="in">  ground_altitudesx9.mspct &lt;-</span></span>
+<span id="cb1-1049"><a href="#cb1-1049" aria-hidden="true" tabindex="-1"></a><span class="in">  qtuv_m_s.e.irrad(</span></span>
+<span id="cb1-1050"><a href="#cb1-1050" aria-hidden="true" tabindex="-1"></a><span class="in">    ground.altitude = 0:8,</span></span>
+<span id="cb1-1051"><a href="#cb1-1051" aria-hidden="true" tabindex="-1"></a><span class="in">    w.length = 290:750,</span></span>
+<span id="cb1-1052"><a href="#cb1-1052" aria-hidden="true" tabindex="-1"></a><span class="in">    sun.elevation = 45</span></span>
+<span id="cb1-1053"><a href="#cb1-1053" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb1-1054"><a href="#cb1-1054" aria-hidden="true" tabindex="-1"></a><span class="in">  save(ground_altitudesx9.mspct, file = altitudes.file.path)</span></span>
+<span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a><span class="in">names(ground_altitudesx9.mspct) &lt;- as.character(0:8)</span></span>
+<span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a><span class="in">ground_altitudesx9.spct &lt;- rbindspct(ground_altitudesx9.mspct, idfactor = "Altitude")</span></span>
+<span id="cb1-1059"><a href="#cb1-1059" aria-hidden="true" tabindex="-1"></a><span class="in">q_irrads_altitude.tb &lt;- q_irrad(ground_altitudesx9.spct, Plant_bands("CIE"), scale.factor = 1e6)</span></span>
+<span id="cb1-1060"><a href="#cb1-1060" aria-hidden="true" tabindex="-1"></a><span class="in">q_irrads_altitude.tb$Altitude &lt;- as.numeric(q_irrads_altitude.tb$Altitude)</span></span>
+<span id="cb1-1061"><a href="#cb1-1061" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1062"><a href="#cb1-1062" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(q_irrads_altitude.tb, aes(Altitude)) +</span></span>
+<span id="cb1-1063"><a href="#cb1-1063" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((`Q_]UVB.CIE` / `Q_]UVB.CIE`[1]) - 1) * 100), colour = "black") +</span></span>
+<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((Q_UVA2.CIE / Q_UVA2.CIE[1]) - 1) * 100), colour = "purple") +</span></span>
+<span id="cb1-1065"><a href="#cb1-1065" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((Q_UVA1.CIE / Q_UVA1.CIE[1]) - 1) * 100), colour = "violet") +</span></span>
+<span id="cb1-1066"><a href="#cb1-1066" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(y = ((Q_PAR / Q_PAR[1]) - 1) * 100), colour = "orange") +</span></span>
+<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_continuous(name = "Increase in photon irradiance (%)") +</span></span>
+<span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_continuous(name = "Ground altitude (km a.s.l.)")</span></span>
+<span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-1071"><a href="#cb1-1071" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1072"><a href="#cb1-1072" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1073"><a href="#cb1-1073" aria-hidden="true" tabindex="-1"></a>In reality, the different variables shown individually in the examples in this chapter, can vary in ways that their effects add up, so the total range of variation is larger than is apparent in the examples above.</span>
+<span id="cb1-1074"><a href="#cb1-1074" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1075"><a href="#cb1-1075" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Seasons and latitude</span></span>
+<span id="cb1-1076"><a href="#cb1-1076" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a>The main determinant of changes in spectral irradiance with seasons and latitude is the changing path of the sun through the sky, and consequently of the sun elevation angle. However, several other variables play a role. The depth of the ozone column varies with latitude and seasonally. Clouds and the water column depth vary locally and with latitude, as does ground elevation and albedo. The result is that spectral irradiance varies in time and space. One way of summarising this is to describe the local climatology using maps with monthly averages over several years interpolated over a geographic grid. One approach is to use data retrieved by instruments on board satellites. An alternative approach is to describe terrestrial solar radiation at locations where ground-level measurements are available. We start with examples based on this second approach and observations with broadband sensors from ELDONET. From the perspective of research with plants the availability of UV-B, UV-A and PhR data measured concurrently is important.</span>
+<span id="cb1-1078"><a href="#cb1-1078" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1079"><a href="#cb1-1079" aria-hidden="true" tabindex="-1"></a>Considering a longer time scale of years, seasonal and daily variation are combined. The seasonal pattern of variation in UV-B daily exposure is very clear but has day to day variation superimposed <span class="co">[</span><span class="ot">@fig-UVB-Erlangen A</span><span class="co">]</span>. The strong change in the UV-B:PAR photon ratio with sun elevation creates a strong seasonal pattern in this photon ratio <span class="co">[</span><span class="ot">@fig-UVB-Erlangen B</span><span class="co">]</span>.</span>
+<span id="cb1-1080"><a href="#cb1-1080" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1081"><a href="#cb1-1081" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, message=FALSE, warning=FALSE}</span></span>
+<span id="cb1-1082"><a href="#cb1-1082" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-UVB-Erlangen</span></span>
+<span id="cb1-1083"><a href="#cb1-1083" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Seasonal variation in daily UV-B energy exposure Erlangen, Germany ($54^\circ 10^\prime \mathrm{N}, 07^\circ 51^\prime \mathrm{E}$, 280 m asl). A&amp;#58; daily UV-B energy exposure; B&amp;#58; UV-B:PhR daily-energy-exposures ratio. Note&amp;#58; there are gaps with missing data in the time-series data. Measured with ELDONET instruments [see, @Haeder2007].</span></span>
+<span id="cb1-1084"><a href="#cb1-1084" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1085"><a href="#cb1-1085" aria-hidden="true" tabindex="-1"></a><span class="in">Erlangen.data &lt;- read.csv("./light-environment-data/Erlangen_data.csv") |&gt;</span></span>
+<span id="cb1-1086"><a href="#cb1-1086" aria-hidden="true" tabindex="-1"></a><span class="in">  subset(!grepl("1997$", Datum))</span></span>
+<span id="cb1-1087"><a href="#cb1-1087" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1088"><a href="#cb1-1088" aria-hidden="true" tabindex="-1"></a><span class="in">Erlangen.data &lt;- within(Erlangen.data, date &lt;- as.Date(Datum, "%d/%m/%Y"))</span></span>
+<span id="cb1-1089"><a href="#cb1-1089" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1090"><a href="#cb1-1090" aria-hidden="true" tabindex="-1"></a><span class="in">fig &lt;- ggplot(data=Erlangen.data,aes(x=date,y=UVB/1000)) + </span></span>
+<span id="cb1-1091"><a href="#cb1-1091" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
+<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_point(size=1, colour="black", alpha=0.33) + </span></span>
+<span id="cb1-1093"><a href="#cb1-1093" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_date(date_breaks = "1 year", date_labels = "%Y") + </span></span>
+<span id="cb1-1094"><a href="#cb1-1094" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Time", y=expression("UV-B exposure"~~(kJ~d^{-1}~m^{-2})),</span></span>
+<span id="cb1-1095"><a href="#cb1-1095" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "A")</span></span>
+<span id="cb1-1096"><a href="#cb1-1096" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1097"><a href="#cb1-1097" aria-hidden="true" tabindex="-1"></a><span class="in">fig_ratio &lt;- ggplot(data=Erlangen.data,aes(x=date,y=UVB/PAR*1000)) +</span></span>
+<span id="cb1-1098"><a href="#cb1-1098" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_spct() +</span></span>
+<span id="cb1-1099"><a href="#cb1-1099" aria-hidden="true" tabindex="-1"></a><span class="in">#  geom_point(size=1, colour="black", alpha=0.33) + </span></span>
+<span id="cb1-1100"><a href="#cb1-1100" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_date(date_breaks = "1 year", date_labels = "%Y") + </span></span>
+<span id="cb1-1101"><a href="#cb1-1101" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Time", y=expression("UV-B:PhR ratio"~~(1%*%10^3)),</span></span>
+<span id="cb1-1102"><a href="#cb1-1102" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "B")</span></span>
+<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1104"><a href="#cb1-1104" aria-hidden="true" tabindex="-1"></a><span class="in">print((fig / fig_ratio) + plot_layout(axes = "collect") )</span></span>
+<span id="cb1-1105"><a href="#cb1-1105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1106"><a href="#cb1-1106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1107"><a href="#cb1-1107" aria-hidden="true" tabindex="-1"></a>UV-B irradiance increases with elevation in mountains and with decreasing latitude <span class="co">[</span><span class="ot">@fig-UVB-latitude</span><span class="co">]</span> and is particularly high on high mountains in equatorial regions. </span>
+<span id="cb1-1108"><a href="#cb1-1108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1109"><a href="#cb1-1109" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>*Tree line* is the highest elevation on a mountain slope at which tree species are naturally able to grow.</span>
+<span id="cb1-1110"><a href="#cb1-1110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1111"><a href="#cb1-1111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, message=FALSE}</span></span>
+<span id="cb1-1112"><a href="#cb1-1112" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-UVB-latitude</span></span>
+<span id="cb1-1113"><a href="#cb1-1113" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: Latitudinal variation in annual UV-B and UV-A energy exposure in the Northern Hemisphere. Measured with ELDONET instruments. The ground altitude for these locations varies [see, @Haeder2007].</span></span>
+<span id="cb1-1114"><a href="#cb1-1114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1115"><a href="#cb1-1115" aria-hidden="true" tabindex="-1"></a><span class="in">latitudinal.data &lt;- </span></span>
+<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a><span class="in">  read.csv("./light-environment-data/latitudinal_data.csv") |&gt;</span></span>
+<span id="cb1-1117"><a href="#cb1-1117" aria-hidden="true" tabindex="-1"></a><span class="in">  within(latitude &lt;- degrees + minutes/60)</span></span>
+<span id="cb1-1118"><a href="#cb1-1118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1119"><a href="#cb1-1119" aria-hidden="true" tabindex="-1"></a><span class="in">fig_UVB &lt;- ggplot(data=latitudinal.data,aes(x=latitude,y=UVB)) + </span></span>
+<span id="cb1-1120"><a href="#cb1-1120" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_poly_line(linetype = "dashed", se = FALSE) +</span></span>
+<span id="cb1-1121"><a href="#cb1-1121" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(size=3, pch=16, colour="red")+ </span></span>
+<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_text_repel(aes(label=Location), colour="Black", size=3.5,</span></span>
+<span id="cb1-1123"><a href="#cb1-1123" aria-hidden="true" tabindex="-1"></a><span class="in">                  position = position_nudge_line(x = 0.05, y = 0.5, direction = "split",</span></span>
+<span id="cb1-1124"><a href="#cb1-1124" aria-hidden="true" tabindex="-1"></a><span class="in">                                                 line_nudge = 5),</span></span>
+<span id="cb1-1125"><a href="#cb1-1125" aria-hidden="true" tabindex="-1"></a><span class="in">                  min.segment.length = 0, point.padding = 0.4, box.padding = 0.3) +</span></span>
+<span id="cb1-1126"><a href="#cb1-1126" aria-hidden="true" tabindex="-1"></a><span class="in">  expand_limits(y = c(0,13), x = c(25,75)) + </span></span>
+<span id="cb1-1127"><a href="#cb1-1127" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Latitude N (degrees)", </span></span>
+<span id="cb1-1128"><a href="#cb1-1128" aria-hidden="true" tabindex="-1"></a><span class="in">       y=expression("Annual exposure"~~(MJ~m^{-2})),</span></span>
+<span id="cb1-1129"><a href="#cb1-1129" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "UV-B")</span></span>
+<span id="cb1-1130"><a href="#cb1-1130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1131"><a href="#cb1-1131" aria-hidden="true" tabindex="-1"></a><span class="in">fig_UVA &lt;- ggplot(data=latitudinal.data,aes(x=latitude,y=UVA)) + </span></span>
+<span id="cb1-1132"><a href="#cb1-1132" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_poly_line(linetype = "dashed", se = FALSE) +</span></span>
+<span id="cb1-1133"><a href="#cb1-1133" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(size=3, pch=16, colour="red")+ </span></span>
+<span id="cb1-1134"><a href="#cb1-1134" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_text_repel(aes(label=Location), colour="Black", size=3.5,</span></span>
+<span id="cb1-1135"><a href="#cb1-1135" aria-hidden="true" tabindex="-1"></a><span class="in">            position = position_nudge_line(x = 0.03, y = 200, direction = "split",</span></span>
+<span id="cb1-1136"><a href="#cb1-1136" aria-hidden="true" tabindex="-1"></a><span class="in">                                           line_nudge = 3),</span></span>
+<span id="cb1-1137"><a href="#cb1-1137" aria-hidden="true" tabindex="-1"></a><span class="in">            min.segment.length = 0, point.padding = 0.4, box.padding = 0.3) +</span></span>
+<span id="cb1-1138"><a href="#cb1-1138" aria-hidden="true" tabindex="-1"></a><span class="in">  expand_limits(y = c(0,3300), x = c(25,75)) + </span></span>
+<span id="cb1-1139"><a href="#cb1-1139" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x="Latitude N (degrees)", </span></span>
+<span id="cb1-1140"><a href="#cb1-1140" aria-hidden="true" tabindex="-1"></a><span class="in">       y=expression("Annual exposure"~~(MJ~m^{-2})),</span></span>
+<span id="cb1-1141"><a href="#cb1-1141" aria-hidden="true" tabindex="-1"></a><span class="in">       tag = "UV-A")</span></span>
+<span id="cb1-1142"><a href="#cb1-1142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1143"><a href="#cb1-1143" aria-hidden="true" tabindex="-1"></a><span class="in">print((fig_UVB / fig_UVA) + plot_layout(axes = "collect"))</span></span>
+<span id="cb1-1144"><a href="#cb1-1144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1145"><a href="#cb1-1145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1146"><a href="#cb1-1146" aria-hidden="true" tabindex="-1"></a>**I have data for 2-3 years time series measured with the same sensors as the four days plot above. Could be added as they include separate measurements of UV-B, UV-A2, UV-A1, blue, red, far-red and PAR irradiances. Maybe a figure with daily averages per month or week or showing a moving average or moving median could be informative. What do you think?**</span>
+<span id="cb1-1147"><a href="#cb1-1147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a>**Maps for global radiation, UV-B, and UV-A could be added to this section. The daily data are available on-line on a 1/2 degree grid for the last &gt;10 years. Some biologically effective exposures are also available. This is a lot of data. I have already downloaded the last 12 months. Downloading the whole time series with worldwide coverage and computing long-term means would be doable I think, but time consuming. For the time being here are maps for UV-B and UV-A with monthly means of daily doses for the whole world.**</span>
+<span id="cb1-1149"><a href="#cb1-1149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1150"><a href="#cb1-1150" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-B. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-B irradiance is very low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVB-world-map-monthly.png)</span>{#fig-uvb-world-map width=100%}</span>
+<span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1152"><a href="#cb1-1152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1153"><a href="#cb1-1153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1154"><a href="#cb1-1154" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-A. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-A irradiance is low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVA-world-map-monthly.png)</span>{#fig-uva-world-map width=100%}</span>
+<span id="cb1-1153"><a href="#cb1-1153" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-A. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-A irradiance is low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVA-world-map-monthly.png)</span>{#fig-uva-world-map width=100%}</span>
+<span id="cb1-1154"><a href="#cb1-1154" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1155"><a href="#cb1-1155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1156"><a href="#cb1-1156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1157"><a href="#cb1-1157" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-B for Europe. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-B irradiance is very low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVB-europe-map-monthly.png)</span>{#fig-uvb-europe-map width=100%}</span>
+<span id="cb1-1156"><a href="#cb1-1156" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-B for Europe. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-B irradiance is very low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVB-europe-map-monthly.png)</span>{#fig-uvb-europe-map width=100%}</span>
+<span id="cb1-1157"><a href="#cb1-1157" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1158"><a href="#cb1-1158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1159"><a href="#cb1-1159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1160"><a href="#cb1-1160" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-A for Europe. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-A irradiance is low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVA-europe-map-monthly.png)</span>{#fig-uva-europe-map width=100%}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-1159"><a href="#cb1-1159" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-A for Europe. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-A irradiance is low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVA-europe-map-monthly.png)</span>{#fig-uva-europe-map width=100%}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
