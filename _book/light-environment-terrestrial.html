@@ -1759,8 +1759,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>\newcommand{\Chem}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{{\mathrm{#1}}\xspace}</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>\newcommand{\Unit}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{{\mathrm{#1}}\xspace}</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>\newcommand{\Chem}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{{\mathrm{#1}}}</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>\newcommand{\Unit}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{{\mathrm{#1}}}</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>\newcommand{\mymu}{\mu}</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>\newcommand{\um}{\Unit{\mymu m}}</span>
@@ -1796,42 +1796,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>\newcommand{\wattcmnm}{\Unit{W\,cm^{-2}\,nm^{-1}}}</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>\newcommand{\gmcubic}{\Unit{g\,m^{-3}}}</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>\newcommand{\irr}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{E_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>\newcommand{\sirr}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{E_{\mathrm{#1}}(\lambda)}\xspace}</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>\newcommand{\pfd}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{Q_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>\newcommand{\spfd}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{Q_{\mathrm{#1}}(\lambda)}\xspace}</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>\newcommand{\quantum}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{q^{\mathrm{#1}}}\xspace}</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>\newcommand{\irr}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{E_{\mathrm{#1}}}}</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>\newcommand{\sirr}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{E_{\mathrm{#1}}(\lambda)}}</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>\newcommand{\pfd}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{Q_{\mathrm{#1}}}}</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>\newcommand{\spfd}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{Q_{\mathrm{#1}}(\lambda)}}</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>\newcommand{\quantum}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{q^{\mathrm{#1}}}}</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>\newcommand{\molequanta}{\quantum<span class="co">[</span><span class="ot">\prime</span><span class="co">]</span>}</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>\newcommand{\flrat}{\irr<span class="co">[</span><span class="ot">0</span><span class="co">]</span>} % fluence rate</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>\newcommand{\PAR}{{\mathrm{PAR}}\xspace}</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>\newcommand{\PPFD}{{\mathrm{PPFD}}\xspace}</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>\newcommand{\RAF}{{\mathrm{RAF}}\xspace}</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>\newcommand{\eeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>\newcommand{\seeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}(\lambda)}\xspace}</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\newcommand{\qeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}^\mathrm{p}}\xspace}</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>\newcommand{\sqeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}^\mathrm{p}(\lambda)}\xspace}</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>\newcommand{\intensity}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{I_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>\newcommand{\radiance}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{L_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>\newcommand{\exposure}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>\newcommand{\dose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>\newcommand{\sdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}(\lambda)}\xspace}</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>\newcommand{\qdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}_\mathrm{p}}\xspace}</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>\newcommand{\sqdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}_\mathrm{p}(\lambda}\xspace}</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>\newcommand{\rad}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{L_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>\newcommand{\trans}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\tau_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>\newcommand{\strans}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\tau_{\mathrm{#1}}(\lambda)}\xspace}</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>\newcommand{\absb}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{A_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>\newcommand{\abst}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\alpha_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>\newcommand{\sabst}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\alpha_{\mathrm{#1}}(\lambda)}\xspace}</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>\newcommand{\refl}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\rho_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>\newcommand{\srefl}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\rho_{\mathrm{#1}}(\lambda)}\xspace}</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>\newcommand{\emitt}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\epsilon_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>\newcommand{\SZA}{{\theta}\xspace}</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>\newcommand{\TOthree}{{\omega}\xspace}</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>\newcommand{\degree}{{\mathrm{^{\circ}}}\xspace}</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>\newcommand{\voltage}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{U_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>\newcommand{\temperature}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{T_{\mathrm{#1}}}\xspace}</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>\newcommand{\Coscor}{{\varphi}\xspace}</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>\newcommand{\PAR}{{\mathrm{PAR}}}</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>\newcommand{\PPFD}{{\mathrm{PPFD}}}</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>\newcommand{\RAF}{{\mathrm{RAF}}}</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>\newcommand{\eeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}}}</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>\newcommand{\seeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}(\lambda)}}</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\newcommand{\qeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}^\mathrm{p}}}</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>\newcommand{\sqeff}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{s_{\mathrm{#1}}^\mathrm{p}(\lambda)}}</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>\newcommand{\intensity}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{I_{\mathrm{#1}}}}</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>\newcommand{\radiance}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{L_{\mathrm{#1}}}}</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>\newcommand{\exposure}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H_{\mathrm{#1}}}}</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>\newcommand{\dose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}}}</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>\newcommand{\sdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}(\lambda)}}</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>\newcommand{\qdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}_\mathrm{p}}}</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>\newcommand{\sqdose}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{H^{\mathrm{#1}}_\mathrm{p}(\lambda}}</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>\newcommand{\rad}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{L_{\mathrm{#1}}}}</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>\newcommand{\trans}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\tau_{\mathrm{#1}}}}</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>\newcommand{\strans}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\tau_{\mathrm{#1}}(\lambda)}}</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>\newcommand{\absb}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{A_{\mathrm{#1}}}}</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>\newcommand{\abst}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\alpha_{\mathrm{#1}}}}</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>\newcommand{\sabst}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\alpha_{\mathrm{#1}}(\lambda)}}</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>\newcommand{\refl}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\rho_{\mathrm{#1}}}}</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>\newcommand{\srefl}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\rho_{\mathrm{#1}}(\lambda)}}</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>\newcommand{\emitt}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{\epsilon_{\mathrm{#1}}}}</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>\newcommand{\SZA}{{\theta}}</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>\newcommand{\TOthree}{{\omega}}</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>\newcommand{\degree}{{\mathrm{^{\circ}}}}</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>\newcommand{\voltage}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{U_{\mathrm{#1}}}}</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>\newcommand{\temperature}<span class="co">[</span><span class="ot">1</span><span class="co">][]</span>{{T_{\mathrm{#1}}}}</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>\newcommand{\Coscor}{{\varphi}}</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>

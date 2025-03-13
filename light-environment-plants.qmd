@@ -46,8 +46,8 @@ library(lubridate)
 
 ::: {.hidden}
 $$
-\newcommand{\Chem}[1]{{\mathrm{#1}}\xspace}
-\newcommand{\Unit}[1]{{\mathrm{#1}}\xspace}
+\newcommand{\Chem}[1]{{\mathrm{#1}}}
+\newcommand{\Unit}[1]{{\mathrm{#1}}}
 \newcommand{\mymu}{\mu}
 
 \newcommand{\um}{\Unit{\mymu m}}
@@ -83,42 +83,42 @@ $$
 \newcommand{\wattcmnm}{\Unit{W\,cm^{-2}\,nm^{-1}}}
 \newcommand{\gmcubic}{\Unit{g\,m^{-3}}}
 
-\newcommand{\irr}[1][]{{E_{\mathrm{#1}}}\xspace}
-\newcommand{\sirr}[1][]{{E_{\mathrm{#1}}(\lambda)}\xspace}
-\newcommand{\pfd}[1][]{{Q_{\mathrm{#1}}}\xspace}
-\newcommand{\spfd}[1][]{{Q_{\mathrm{#1}}(\lambda)}\xspace}
-\newcommand{\quantum}[1][]{{q^{\mathrm{#1}}}\xspace}
+\newcommand{\irr}[1][]{{E_{\mathrm{#1}}}}
+\newcommand{\sirr}[1][]{{E_{\mathrm{#1}}(\lambda)}}
+\newcommand{\pfd}[1][]{{Q_{\mathrm{#1}}}}
+\newcommand{\spfd}[1][]{{Q_{\mathrm{#1}}(\lambda)}}
+\newcommand{\quantum}[1][]{{q^{\mathrm{#1}}}}
 \newcommand{\molequanta}{\quantum[\prime]}
 \newcommand{\flrat}{\irr[0]} % fluence rate
-\newcommand{\PAR}{{\mathrm{PAR}}\xspace}
-\newcommand{\PPFD}{{\mathrm{PPFD}}\xspace}
-\newcommand{\RAF}{{\mathrm{RAF}}\xspace}
-\newcommand{\eeff}[1][]{{s_{\mathrm{#1}}}\xspace}
-\newcommand{\seeff}[1][]{{s_{\mathrm{#1}}(\lambda)}\xspace}
-\newcommand{\qeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}}\xspace}
-\newcommand{\sqeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}(\lambda)}\xspace}
-\newcommand{\intensity}[1][]{{I_{\mathrm{#1}}}\xspace}
-\newcommand{\radiance}[1][]{{L_{\mathrm{#1}}}\xspace}
-\newcommand{\exposure}[1][]{{H_{\mathrm{#1}}}\xspace}
-\newcommand{\dose}[1][]{{H^{\mathrm{#1}}}\xspace}
-\newcommand{\sdose}[1][]{{H^{\mathrm{#1}}(\lambda)}\xspace}
-\newcommand{\qdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}}\xspace}
-\newcommand{\sqdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}(\lambda}\xspace}
-\newcommand{\rad}[1][]{{L_{\mathrm{#1}}}\xspace}
-\newcommand{\trans}[1][]{{\tau_{\mathrm{#1}}}\xspace}
-\newcommand{\strans}[1][]{{\tau_{\mathrm{#1}}(\lambda)}\xspace}
-\newcommand{\absb}[1][]{{A_{\mathrm{#1}}}\xspace}
-\newcommand{\abst}[1][]{{\alpha_{\mathrm{#1}}}\xspace}
-\newcommand{\sabst}[1][]{{\alpha_{\mathrm{#1}}(\lambda)}\xspace}
-\newcommand{\refl}[1][]{{\rho_{\mathrm{#1}}}\xspace}
-\newcommand{\srefl}[1][]{{\rho_{\mathrm{#1}}(\lambda)}\xspace}
-\newcommand{\emitt}[1][]{{\epsilon_{\mathrm{#1}}}\xspace}
-\newcommand{\SZA}{{\theta}\xspace}
-\newcommand{\TOthree}{{\omega}\xspace}
-\newcommand{\degree}{{\mathrm{^{\circ}}}\xspace}
-\newcommand{\voltage}[1][]{{U_{\mathrm{#1}}}\xspace}
-\newcommand{\temperature}[1][]{{T_{\mathrm{#1}}}\xspace}
-\newcommand{\Coscor}{{\varphi}\xspace}
+\newcommand{\PAR}{{\mathrm{PAR}}}
+\newcommand{\PPFD}{{\mathrm{PPFD}}}
+\newcommand{\RAF}{{\mathrm{RAF}}}
+\newcommand{\eeff}[1][]{{s_{\mathrm{#1}}}}
+\newcommand{\seeff}[1][]{{s_{\mathrm{#1}}(\lambda)}}
+\newcommand{\qeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}}}
+\newcommand{\sqeff}[1][]{{s_{\mathrm{#1}}^\mathrm{p}(\lambda)}}
+\newcommand{\intensity}[1][]{{I_{\mathrm{#1}}}}
+\newcommand{\radiance}[1][]{{L_{\mathrm{#1}}}}
+\newcommand{\exposure}[1][]{{H_{\mathrm{#1}}}}
+\newcommand{\dose}[1][]{{H^{\mathrm{#1}}}}
+\newcommand{\sdose}[1][]{{H^{\mathrm{#1}}(\lambda)}}
+\newcommand{\qdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}}}
+\newcommand{\sqdose}[1][]{{H^{\mathrm{#1}}_\mathrm{p}(\lambda}}
+\newcommand{\rad}[1][]{{L_{\mathrm{#1}}}}
+\newcommand{\trans}[1][]{{\tau_{\mathrm{#1}}}}
+\newcommand{\strans}[1][]{{\tau_{\mathrm{#1}}(\lambda)}}
+\newcommand{\absb}[1][]{{A_{\mathrm{#1}}}}
+\newcommand{\abst}[1][]{{\alpha_{\mathrm{#1}}}}
+\newcommand{\sabst}[1][]{{\alpha_{\mathrm{#1}}(\lambda)}}
+\newcommand{\refl}[1][]{{\rho_{\mathrm{#1}}}}
+\newcommand{\srefl}[1][]{{\rho_{\mathrm{#1}}(\lambda)}}
+\newcommand{\emitt}[1][]{{\epsilon_{\mathrm{#1}}}}
+\newcommand{\SZA}{{\theta}}
+\newcommand{\TOthree}{{\omega}}
+\newcommand{\degree}{{\mathrm{^{\circ}}}}
+\newcommand{\voltage}[1][]{{U_{\mathrm{#1}}}}
+\newcommand{\temperature}[1][]{{T_{\mathrm{#1}}}}
+\newcommand{\Coscor}{{\varphi}}
 $$
 :::
 

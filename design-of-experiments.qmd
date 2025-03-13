@@ -18,26 +18,42 @@ abstract: |
   This chapter discusses design of experiments and data analysis from the perspective of basic and applied research in plant photobiology, providing geenral guidelines and specific example cases.
 ---
 
+## Prediction and attribution vs. prediction and estimation
 
-## Tests of hypotheses and model fitting
+Data analysis can have two different aims _prediction and attribution_ or
+_prediction and estimation_. In the first case, we test a hypotheses formulated
+_a priori_, assigning a significance to predictors. In the second case, we aim
+at estimating curves or surfaces that describe a relationship and possibly
+predict new yet unobserved cases. Traditional statistics are useful in both
+cases. Newer methods that rely on big data can be called "pure prediction
+algorithms", e.g., neural nets, deep learning, random forests, and similar
+methods. These methods taken broadly are unsuitable for attribution, i.e., for
+hypothesis testing in scientific research [@Efron2020].
 
-The guidelines given here for good experimental design have been
-formulated with particular consideration given to experiments based on the manipulation of the UV, VIS and NIR radiation environemnt. Nevertheless most of the principles behind these guidelines
-can be generally applied to the design of experiments.
+The guidelines given here for good experimental design have been formulated with
+particular consideration given to experiments based on the manipulation of the
+UV, VIS and NIR radiation environemnt. Nevertheless most of the principles
+behind these guidelines can be generally applied to the design of experiments.
 
-Experiments can be designed to test hypotheses or to estimate the values
-of parameters in a model. In the first case, we should be careful not to
+Experiments can be designed to test attribution (hypothesis testing), to
+estimate relationships between explanatory and response variables. In this
+second case we may be content to estimate the likely value of parameters given a
+model, or do model selection, estimating not only parameter values and their
+confidence, but also selecting based on data the formulation of the model.
+
+In the case when attribution is the aim, we should be careful not to
 let our knowledge of the data influence the tested hypothesis[^35]. In
-the second case, model choice may to some extent depend on the data, but
-we should be aware that this *a posteriori* choice of a functional
-relationship, could make the $P$-values less strict and thus invalid for testing the significance of treatment effects.
+the second case, model choice can to some extent depend on the data, but
+we should be aware that this _a posteriori_ choice of a functional
+relationship, could make the $P$-values less strict and thus invalid for 
+assigning attribution.
 
-Fitting models is especially useful when the parameters of the model
-have a biological interpretation. In this case, it is important to
-obtain estimates of the reliability of your estimates of the values
-obtained for the parameters. In other words, we need to present not only
-the fitted values, but also their confidence intervals, or at least
-standard deviations.
+Fitting models, for attribution or estimation, is especially useful when the
+parameters of the model have a biological or physical interpretation. In the
+case of estimation, it is important to also obtain estimates of the reliability
+of the estimates of the parameters values. In other words, we need to present
+not only the fitted values, but also their confidence intervals, or at least
+their standard deviations.
 
 All estimates of $P$-values are based on a comparison of the variation
 between differently treated experimental units, and the variation among
@@ -53,7 +69,7 @@ units is called *experimental error*.
 
 When using tests of significance one should be aware that the $P$-value
 will depend on both the size of the treatment effect and on the standard
-deviation of the estimate (e.g. standard error of the mean) which
+deviation of the estimate (e.g., standard error of the mean) which
 strongly depends on the number of replicates. In an experiment with
 hundreds of replicates one is very likely to detect treatment effects
 that are statistically-significant, even if these effects are too small
