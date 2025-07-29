@@ -1,0 +1,23 @@
+{
+  "listing": "/contents.html",
+  "items": [
+    "/index.html",
+    "/preface-1ed.html",
+    "/preface.html",
+    "/abbreviations.html",
+    "/introduction.html",
+    "/radiation.html",
+    "/optics.html",
+    "/light-environment-terrestrial.html",
+    "/light-environment-plants.html",
+    "/quantifying-radiation.html",
+    "/leaf-optics.html",
+    "/quantifying-responses.html",
+    "/imaging.html",
+    "/design-of-experiments.html",
+    "/reproducibility.html",
+    "/manipulating-radiation.html",
+    "/plant-cultivation.html",
+    "/references.html"
+  ]
+}

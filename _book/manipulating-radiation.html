@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,8 +23,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -88,15 +89,16 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./plant-cultivation.html" rel="next">
 <link href="./reproducibility.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -137,8 +139,22 @@ div.csl-indent {
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -169,7 +185,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -441,7 +457,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 3, 2025</p>
+      <p class="date-modified">July 28, 2025</p>
     </div>
   </div>
     
@@ -557,12 +573,12 @@ First edition authors
 </figure>
 </div>
 </div>
-<p>In addition to the essential safety considerations when using any UV sources (detailed in section <a href="#sec:safety" data-reference-type="ref" data-reference="sec:safety">8.1</a>), important additional safety precautions are necessary when using xenon arc lamps. The high pressure inside the lamps creates a risk of explosion during installation and during operation, which increases with lamp age. An impact resistant face shield and heavy protective gloves should be worn when handling a lamp and it must never be touched with the fingers as grease marks increase the risk of failure. Lamps are supplied in a protective cover which should remain in place until installation and they should only be used inside a specialised housing that provides explosion protection to contain flying glass should an explosion occur. A specialised lamp housing is normally provided with a fan for cooling the lamp which gets extremely hot and ventilation should continue for at least five minutes after the lamp is switched off. This is usually achieved in a specialised housing with temperature sensors or timers. However, some lamps (sometimes called ‘UV-enhanced’) produce short UV wavelengths (<span class="math inline">\(&lt;\)</span><!-- -->250 nm) that generate large quantities of ozone which is toxic and can cause respiratory problems and asthma attacks. The ozone must be removed from the room and building by additional ventilation systems or absorbed and destroyed by special filters. Alternatively, ‘ozone-free’ lamps are most often used and have a quartz envelope that absorbs below 250 nm and so prevents excessive ozone formation. A xenon arc lamp is extremely bright and the intense visible radiation can damage the eyes in addition to UV effects. The arc or its intense image must never be viewed directly as it can cause permanent eye damage. When using the equipment, the illuminated areas may also be extremely bright and dark coloured goggles should be worn, such as those used in welding that also provide UV protection, ensuring that the eyes are also protected from side illumination as well as directly. It is essential to follow the manufacturers’ instructions with respect to lamp life and operating current in order to maximise their useful life and minimise the risk of failure due to explosion. Further information on xenon arc sources and other high intensity lamp sources sometimes used in photobiology is provided by <span class="citation" data-cites="Holmes1984a">Holmes (<a href="references.html#ref-Holmes1984a" role="doc-biblioref">1984</a>)</span>.</p>
+<p>In addition to the essential safety considerations when using any UV sources (detailed in section <a href="#sec:safety" data-reference-type="ref" data-reference="sec:safety">8.1</a>), important additional safety precautions are necessary when using xenon arc lamps. The high pressure inside the lamps creates a risk of explosion during installation and during operation, which increases with lamp age. An impact resistant face shield and heavy protective gloves should be worn when handling a lamp and it must never be touched with the fingers as grease marks increase the risk of failure. Lamps are supplied in a protective cover which should remain in place until installation and they should only be used inside a specialised housing that provides explosion protection to contain flying glass should an explosion occur. A specialised lamp housing is normally provided with a fan for cooling the lamp which gets extremely hot and ventilation should continue for at least five minutes after the lamp is switched off. This is usually achieved in a specialised housing with temperature sensors or timers. However, some lamps (sometimes called ‘UV-enhanced’) produce short UV wavelengths (<span class="math inline">&lt;</span><!-- -->250 nm) that generate large quantities of ozone which is toxic and can cause respiratory problems and asthma attacks. The ozone must be removed from the room and building by additional ventilation systems or absorbed and destroyed by special filters. Alternatively, ‘ozone-free’ lamps are most often used and have a quartz envelope that absorbs below 250 nm and so prevents excessive ozone formation. A xenon arc lamp is extremely bright and the intense visible radiation can damage the eyes in addition to UV effects. The arc or its intense image must never be viewed directly as it can cause permanent eye damage. When using the equipment, the illuminated areas may also be extremely bright and dark coloured goggles should be worn, such as those used in welding that also provide UV protection, ensuring that the eyes are also protected from side illumination as well as directly. It is essential to follow the manufacturers’ instructions with respect to lamp life and operating current in order to maximise their useful life and minimise the risk of failure due to explosion. Further information on xenon arc sources and other high intensity lamp sources sometimes used in photobiology is provided by <span class="citation" data-cites="Holmes1984a">Holmes (<a href="references.html#ref-Holmes1984a" role="doc-biblioref">1984</a>)</span>.</p>
 </section>
 </section>
 <section id="sec:lamps:deuterium" class="level3" data-number="12.2.2">
 <h3 data-number="12.2.2" class="anchored" data-anchor-id="sec:lamps:deuterium"><span class="header-section-number">12.2.2</span> Deuterium lamps</h3>
-<p>High intensity water-cooled deuterium lamps (150 W) have a fairly flat radiant intensity curve in the UV-B region (approximately 1.5–3.0 between 280 and 300 nm at a distance of 30 cm) that is appropriate for mechanistic plant UV photobiology studies. This type of radiation sources (e.g.&nbsp;produced by Hamamatsu Photonics) requires a dedicated control box for operation but is still an affordable alternative to lasers, starting at about 2,500€ for a setup. High intensity deuterium lamps have been used for wavelength dependence measurements both in photobiology <span class="citation" data-cites="Kalbin2005 Kalbina2008">(<a href="references.html#ref-Kalbin2005" role="doc-biblioref">Kalbin et al. 2005</a>; <a href="references.html#ref-Kalbina2008" role="doc-biblioref">Kalbina et al. 2008</a>)</span> and photochemistry <span class="citation" data-cites="Kalbin2005">(<a href="references.html#ref-Kalbin2005" role="doc-biblioref">Kalbin et al. 2005</a>)</span> when fitted with the appropriate filters. The lamp has to be mounted horizontally to allow efficient water cooling but using spreading lenses and a mirror mounted in a 45<span class="math inline">\(^\circ\)</span> angle to the incident radiation a full rosette can easily be irradiated <span class="citation" data-cites="Kalbina2008">(<a href="references.html#ref-Kalbina2008" role="doc-biblioref">Kalbina et al. 2008</a>)</span> and, the UV irradiation can be supplemented with PAR from external sources as desired. A drawback of this type of equipment is the short life of the radiation source (a few hundred hours). Spare lamps cost approximately 1 500 €.</p>
+<p>High intensity water-cooled deuterium lamps (150 W) have a fairly flat radiant intensity curve in the UV-B region (approximately 1.5–3.0 between 280 and 300 nm at a distance of 30 cm) that is appropriate for mechanistic plant UV photobiology studies. This type of radiation sources (e.g.&nbsp;produced by Hamamatsu Photonics) requires a dedicated control box for operation but is still an affordable alternative to lasers, starting at about 2,500€ for a setup. High intensity deuterium lamps have been used for wavelength dependence measurements both in photobiology <span class="citation" data-cites="Kalbin2005 Kalbina2008">(<a href="references.html#ref-Kalbin2005" role="doc-biblioref">Kalbin et al. 2005</a>; <a href="references.html#ref-Kalbina2008" role="doc-biblioref">Kalbina et al. 2008</a>)</span> and photochemistry <span class="citation" data-cites="Kalbin2005">(<a href="references.html#ref-Kalbin2005" role="doc-biblioref">Kalbin et al. 2005</a>)</span> when fitted with the appropriate filters. The lamp has to be mounted horizontally to allow efficient water cooling but using spreading lenses and a mirror mounted in a 45<span class="math inline">^\circ</span> angle to the incident radiation a full rosette can easily be irradiated <span class="citation" data-cites="Kalbina2008">(<a href="references.html#ref-Kalbina2008" role="doc-biblioref">Kalbina et al. 2008</a>)</span> and, the UV irradiation can be supplemented with PAR from external sources as desired. A drawback of this type of equipment is the short life of the radiation source (a few hundred hours). Spare lamps cost approximately 1 500 €.</p>
 </section>
 <section id="sec:LEDs" class="level3" data-number="12.2.3">
 <h3 data-number="12.2.3" class="anchored" data-anchor-id="sec:LEDs"><span class="header-section-number">12.2.3</span> LEDs</h3>
@@ -628,7 +644,7 @@ First edition authors
 <p>Laser diodes are semiconductor lasers. They are solid state devices producing a laser beam based on the same principle as other lasers. They are pumped by the light emitted when electrons and ‘holes’ interact in the semiconductor junction. They are used to excite other types of lasers, in printers and CD/DVD/BD players. Blu-ray disc players use laser diodes which emit blue-violet light. There are emitting laser diodes of low power, for example, emitting 20 mW at 375 nm. The semiconductor material used in this case is . In addition the catalogue of Roithner Lasertechnik GmbH (Vienna, Austria) lists ‘diode pumped solid state lasers’ emitting at 266 nm and at 355 nm. Non solid-state lasers that emit in the region are also available. For example argon ion lasers continuously emit at wavelengths of 334 and 351 nm.</p>
 <p>The power of lasers varies from 1–5 mW for laser pointers to 100 kW for lasers under development for military use. The coherent and concentrated beam can cause serious damage to eyesight, and safety precautions should be taken during their use, unless they are of very low power (see section <a href="#sec:safety" data-reference-type="ref" data-reference="sec:safety">8.1</a> on page ).</p>
 <p>Lasers can be used for example in characterizing the slit function of spectrometers (see section <a href="quantifying-radiation.html#sec:array:calibration" data-reference-type="ref" data-reference="sec:array:calibration">9.7.2.2</a> on page ), for aligning optics, and in the ubiquitous barcode readers used in supermarkets and laser pointers used by speakers during lectures. They are used in instruments like confocal microscopes and different analytical procedures in chemistry and biology. They can also be used to excite photochemical or photobiological systems if the target is small.</p>
-<p>For the purpose of UV photobiology, tunable optical parametric oscillator (OPO) pump lasers (pump wavelength 355 nm) are especially useful in mechanistic studies such as in accurate wavelength dependence determinations or action spectroscopy (O’Hara, Strid and Jenkins, in preparation). Placing a cuvette holder in the beam, a plant extract or a protein solution can be accurately irradiated using 50 or 100 cuvettes. By using the appropriate optics (lenses, mirrors, etc.; Figure <a href="#fig:tunable:laser" data-reference-type="ref" data-reference="fig:tunable:laser">[fig:tunable:laser]</a>), the geometry of the beam can be manipulated so that a larger area or sample (several cm<span class="math inline">\(^2\)</span>) can be illuminated. This is large enough for exposing for instance part of an rosette, or for simultaneously irradiating two detached leaves. Tuneable lasers can also be used for studies of complex mechanistic interactions between several plant photoreceptors, since they can be used within a short time interval (seconds) at different wavelengths, e.g.&nbsp;for irradiation first in the , then in the blue or red.</p>
+<p>For the purpose of UV photobiology, tunable optical parametric oscillator (OPO) pump lasers (pump wavelength 355 nm) are especially useful in mechanistic studies such as in accurate wavelength dependence determinations or action spectroscopy (O’Hara, Strid and Jenkins, in preparation). Placing a cuvette holder in the beam, a plant extract or a protein solution can be accurately irradiated using 50 or 100 cuvettes. By using the appropriate optics (lenses, mirrors, etc.; Figure <a href="#fig:tunable:laser" data-reference-type="ref" data-reference="fig:tunable:laser">[fig:tunable:laser]</a>), the geometry of the beam can be manipulated so that a larger area or sample (several cm<span class="math inline">^2</span>) can be illuminated. This is large enough for exposing for instance part of an rosette, or for simultaneously irradiating two detached leaves. Tuneable lasers can also be used for studies of complex mechanistic interactions between several plant photoreceptors, since they can be used within a short time interval (seconds) at different wavelengths, e.g.&nbsp;for irradiation first in the , then in the blue or red.</p>
 <div class="figure*">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -684,11 +700,11 @@ First edition authors
 <section id="sec:simulators" class="level3" data-number="12.2.7">
 <h3 data-number="12.2.7" class="anchored" data-anchor-id="sec:simulators"><span class="header-section-number">12.2.7</span> Exposure chambers and sun simulators</h3>
 <p>Two main types of sun simulators exist: small systems based, for example, on xenon-arc lamps (see <a href="#sec:xenon" data-reference-type="ref" data-reference="sec:xenon">8.2.1.2</a> on page ), and large systems built by combining several types of lamps and filters to achieve a simulation of the solar spectrum; so called “sun simulators” and “(walk-in-size) exposure chambers”. The latter are sometimes called a ‘phytotron’ <span class="citation" data-cites="Bickford1972">(<a href="references.html#ref-Bickford1972" role="doc-biblioref">Bickford and Dunn 1972</a>)</span>. The principal concept of how to design plant growth chambers can be found for example in <span class="citation" data-cites="Langhans1997">Langhans and Tibbitts (<a href="references.html#ref-Langhans1997" role="doc-biblioref">1997</a>)</span>.</p>
-<p>Here, a description is given in more detail of the phytotron built at the Research Unit Environmental Simulation of the Helmholtz Zentrum München, Neuherberg, Germany[^17]. This phytotron facility consists of a set of seven closed chambers (length <span class="math inline">\(\cdot\)</span> width <span class="math inline">\(\cdot\)</span> height):</p>
+<p>Here, a description is given in more detail of the phytotron built at the Research Unit Environmental Simulation of the Helmholtz Zentrum München, Neuherberg, Germany[^17]. This phytotron facility consists of a set of seven closed chambers (length <span class="math inline">\cdot</span> width <span class="math inline">\cdot</span> height):</p>
 <ul>
-<li><p>four walk-in-size chambers (3.4 m <span class="math inline">\(\times\)</span> 2.8 m <span class="math inline">\(\times\)</span> 2.5 m),</p></li>
-<li><p>two medium-size sun simulators (1.4 m <span class="math inline">\(\times\)</span> 1.4 m <span class="math inline">\(\times\)</span> 1.0 m),</p></li>
-<li><p>one small sun simulator (1.2 m <span class="math inline">\(\times\)</span> 1.2 m <span class="math inline">\(\times\)</span> 0.4 m).</p></li>
+<li><p>four walk-in-size chambers (3.4 m <span class="math inline">\times</span> 2.8 m <span class="math inline">\times</span> 2.5 m),</p></li>
+<li><p>two medium-size sun simulators (1.4 m <span class="math inline">\times</span> 1.4 m <span class="math inline">\times</span> 1.0 m),</p></li>
+<li><p>one small sun simulator (1.2 m <span class="math inline">\times</span> 1.2 m <span class="math inline">\times</span> 0.4 m).</p></li>
 </ul>
 <p>In order to extrapolate response of plants from experiments to those in their natural habitat, these experiments need to be performed under realistic and reproducible conditions. The radiation provided must be as realistic as possible. Not only the quantity but also the spectral quality of radiation has to match the seasonal and diurnal variations occurring in nature <span class="citation" data-cites="caldw94">(<a href="references.html#ref-caldw94" role="doc-biblioref">Caldwell and Flint 1994</a>)</span>. This includes the steep absorption characteristics of radiation that result from the filtering of solar irradiance by stratospheric ozone as well as the balance between the , , and . As no single artificial light source can simulate both spectral quality and spectral quantity of global irradiance, a combination of metal halide lamps (400 W HQI Daylight, Osram, Germany), quartz halogen lamps (500 W Halostar, Osram, Germany), and blue fluorescent tubes (40 W TLD 18, Philips, the Netherlands) are used in order to simulate the spectrum from the to the near IR wavelengths. Excess infra-red radiation is removed by a layer of water. Underneath this water filter, additional quartz halogen lamps (300 W Halostar, Osram, Germany) are installed to adjust the mid and far IR radiation. The missing irradiance is supplemented by fluorescent tubes (40 W TL 12, Philips, the Netherlands). The radiation output of these fluorescent tubes, however, extends to well below 280 nm. This portion must be blocked very efficiently. Selected borosilicate and lime glass filters as well as acrylic ‘glass’ filters and plastic sheets provide a sufficiently steep cut-off at the desired wavelength. Different combinations of these glasses and films allow the cut-off wavelength to be altered, thus enabling a simulation various scenarios as shown for example in figure <a href="#fig:Poly:Spectra" data-reference-type="ref" data-reference="fig:Poly:Spectra">[fig:Poly:Spectra]</a> in section <a href="quantifying-responses.html#sec:action:spectra" data-reference-type="ref" data-reference="sec:action:spectra">7.8</a> on page . The diurnal variations of the irradiance are achieved by switching appropriate groups of lamps on and off. The optimised lamp configuration of the ceiling is presented in Figure <a href="#fig:SoSi:Lamps" data-reference-type="ref" data-reference="fig:SoSi:Lamps">[fig:SoSi:Lamps]</a>. A more detailed description is given by <span class="citation" data-cites="Seckmeyer1993">Seckmeyer and Payer (<a href="references.html#ref-Seckmeyer1993" role="doc-biblioref">1993</a>)</span>, <span class="citation" data-cites="doehr96">Döhring et al. (<a href="references.html#ref-doehr96" role="doc-biblioref">1996</a>)</span> and <span class="citation" data-cites="Thiel1996">Thiel et al. (<a href="references.html#ref-Thiel1996" role="doc-biblioref">1996</a>)</span>. Figure <a href="#fig:sunsimulator" data-reference-type="ref" data-reference="fig:sunsimulator">[fig:sunsimulator]</a> shows a picture of a sun simulator and the schematic outline.</p>
 <div class="figure*">
@@ -711,12 +727,12 @@ First edition authors
 </figure>
 </div>
 </div>
-<p>Figure <a href="#fig:SoSi:sun" data-reference-type="ref" data-reference="fig:SoSi:sun">[fig:SoSi:sun]</a> shows a comparison of the spectral irradiance of the small sun simulator, provided with a double layer of Tempax glass (Schott, Germany), and a typical outdoor spectrum measured at the field station of the Helmholtz Zentrum München, Neuherberg, Germany. Measurements in the sun simulator show that the steep, realistic shape of the edge and the ratio can be simulated very close to nature. The ratio of the sun simulator is <span class="math inline">\(1:23:194\)</span> and matches the natural conditions of <span class="math inline">\(1:25:206\)</span> very well.</p>
+<p>Figure <a href="#fig:SoSi:sun" data-reference-type="ref" data-reference="fig:SoSi:sun">[fig:SoSi:sun]</a> shows a comparison of the spectral irradiance of the small sun simulator, provided with a double layer of Tempax glass (Schott, Germany), and a typical outdoor spectrum measured at the field station of the Helmholtz Zentrum München, Neuherberg, Germany. Measurements in the sun simulator show that the steep, realistic shape of the edge and the ratio can be simulated very close to nature. The ratio of the sun simulator is <span class="math inline">1:23:194</span> and matches the natural conditions of <span class="math inline">1:25:206</span> very well.</p>
 <div class="figure*">
 <p><embed src="figures/fig_sosi_sun.pdf" class="img-fluid"><br>
 <embed src="figures/fig_sosi_sun_log.pdf" class="img-fluid"></p>
 </div>
-<p>Typical irradiance data from the phytotron compared to a field measurement (on 17 April 1996 at the Helmholtz Zentrum München, Neuherberg, Germany, solar zenith angle <span class="math inline">\(\theta_s = 38\degree\)</span>) are listed in table <a href="#tab:SoSi:values" data-reference-type="ref" data-reference="tab:SoSi:values">[tab:SoSi:values]</a>.</p>
+<p>Typical irradiance data from the phytotron compared to a field measurement (on 17 April 1996 at the Helmholtz Zentrum München, Neuherberg, Germany, solar zenith angle <span class="math inline">\theta_s = 38\degree</span>) are listed in table <a href="#tab:SoSi:values" data-reference-type="ref" data-reference="tab:SoSi:values">[tab:SoSi:values]</a>.</p>
 <div class="table*">
 <div class="center">
 <table class="caption-top table">
@@ -761,12 +777,12 @@ First edition authors
 <section id="sec:filters:properties" class="level3" data-number="12.3.1">
 <h3 data-number="12.3.1" class="anchored" data-anchor-id="sec:filters:properties"><span class="header-section-number">12.3.1</span> Optical properties of filters</h3>
 <p>There are different types of filters. Band-pass filters transmit radiation in a given range of wavelengths or band, and absorb or reflect light outside this range. The band can be either wide or narrow. Cut-off filters can be either long-pass, or short-pass: respectively transmitting all radiation of longer wavelengths than a cutoff wavelength and transmitting all radiation of wavelengths shorter than a cutoff (less common). The transition is a slope that can be steep or gradual depending on the filter.</p>
-<p>Just like any object, filters reflect, absorb or transmit radiation. These are the only three possible fates of incident radiation. <span data-acronym-label="reflectance" data-acronym-form="singular+short">reflectance</span> (), <span data-acronym-label="absorptance" data-acronym-form="singular+short">absorptance</span> () and <span data-acronym-label="transmittance" data-acronym-form="singular+short">transmittance</span> () are the corresponding fractions of the incident radiation such that <span class="math inline">\(\refl + \abst + \trans = 1\)</span> (or if expressed as percentages they add up to 100%). Absorptance should not the confused with <span data-acronym-label="absorbance" data-acronym-form="singular+short">absorbance</span> () which is a different quantity given by <span class="math inline">\(\absb = \log \frac{1}{\trans}\)</span>. All these quantities can be defined either for a broad band, or for very narrow band (e.g.&nbsp;where <span class="math inline">\(\lambda\)</span> is the wavelength). In the latter case, we can measure across wavelengths obtaining a spectrum.</p>
+<p>Just like any object, filters reflect, absorb or transmit radiation. These are the only three possible fates of incident radiation. <span data-acronym-label="reflectance" data-acronym-form="singular+short">reflectance</span> (), <span data-acronym-label="absorptance" data-acronym-form="singular+short">absorptance</span> () and <span data-acronym-label="transmittance" data-acronym-form="singular+short">transmittance</span> () are the corresponding fractions of the incident radiation such that <span class="math inline">\refl + \abst + \trans = 1</span> (or if expressed as percentages they add up to 100%). Absorptance should not the confused with <span data-acronym-label="absorbance" data-acronym-form="singular+short">absorbance</span> () which is a different quantity given by <span class="math inline">\absb = \log \frac{1}{\trans}</span>. All these quantities can be defined either for a broad band, or for very narrow band (e.g.&nbsp;where <span class="math inline">\lambda</span> is the wavelength). In the latter case, we can measure across wavelengths obtaining a spectrum.</p>
 <p>When describing filters, the main property of interest is spectral transmittance. Most filters work by absorbing radiation of the unwanted wavelengths. However, some special filters work by reflecting the unwanted radiation. This is important when working with high power light sources: reflecting filters warm up much less that absorbing filters. An example of reflecting filters are the so called heat mirrors, which reflect infra-red radiation.</p>
 <p>For light absorbing filters, like many of those made from plastic or optical glass, the optical characteristics depend not only on the material but also on its thickness. For this reason it is important to always indicate both type and thickness when describing a filter. In many cases one can take advantage of this phenomenon when planning experiments as the cutoff wavelength depends on the thickness of the filter.</p>
 <p>Another important property of filters is whether they scatter radiation or not. When light is scattered the diffuse radiation component increases. For example, normal glass does not scatter visible radiation while opaline (white glass) does. As the proportion of diffuse radiation in PAR affects canopy photosynthesis <span class="citation" data-cites="Okerblom1992 Urban2007 Markvart2010 Urban2012">(<a href="references.html#ref-Okerblom1992" role="doc-biblioref">Okerblom, Lahti, and Smolander 1992</a>; <a href="references.html#ref-Urban2007" role="doc-biblioref">Urban et al. 2007</a>, <a href="references.html#ref-Urban2012" role="doc-biblioref">2012</a>; <a href="references.html#ref-Markvart2010" role="doc-biblioref">Markvart et al. 2010</a>)</span> one should use filters with similar scattering properties for all treatments.</p>
 <p>Filters can be made from optical glass, gelatine, and many different synthetic organic compounds. In many cases, coloured substances are used as additives to the whole thickness of the material but sometimes a layer is merely applied to the surface or between two layers of transparent material. Glass filters tend to be very stable, but many plastics and the additives they contain react when illuminated, and deteriorate gradually when exposed to visible- and especially UV radiation. Filters made from optical glass are a more expensive than those made from plastics and tend to be readily available only in small sizes. Plastic films used as filters tend to be available in large sheets or rolls. Sometimes, liquid filters, usually aqueous solutions of chemicals, can also be useful <span class="citation" data-cites="Montalti2006">(see Chapter 11 in <a href="references.html#ref-Montalti2006" role="doc-biblioref">Montalti et al. 2006</a> for spectral transmittance for several liquid filters)</span>. <span class="citation" data-cites="Sampath-Wiley2011">Sampath-Wiley and Jahnke (<a href="references.html#ref-Sampath-Wiley2011" role="doc-biblioref">2011</a>)</span> describe a new type of liquid filter which makes it possible to obtain a realistic simulation of the solar spectrum under laboratory conditions using normal fluorescent lamps.</p>
-<p>The engineering quality of atmospheric UV absorption by glass filter techniques is sufficient for most plant experiments. However, this method has its limitations. Strong UV exposure causes rapid ageing of borosilicate glass filters due to a physico-chemical effect known as solarisation. This originates in UV-induced changes in the oxidation state of iron contaminants present in the glass matrix. The oxidation of Fe<span class="math inline">\(^{2+}\)</span> to Fe<span class="math inline">\(^{3+}\)</span> is accompanied by an absorption shift to longer wavelengths within the UV range. A decrease in the transmittance of fresh glass filters occurs within their first few hours of use, followed by a more-gradual long-term decline. Hence, changes in transmission during an experiment can be largely avoided by the pre-ageing of new filters. In addition, there is a gradient of ageing with the depth of the glass. Soda-lime glass exhibits very much reduced ageing compared to borosilicate glass. The solarisation of the soda-lime glass ceases after a few hours of UV treatment and this may be due to its lower content of iron contaminants <span class="citation" data-cites="doehr96">(<a href="references.html#ref-doehr96" role="doc-biblioref">Döhring et al. 1996</a>)</span>.</p>
+<p>The engineering quality of atmospheric UV absorption by glass filter techniques is sufficient for most plant experiments. However, this method has its limitations. Strong UV exposure causes rapid ageing of borosilicate glass filters due to a physico-chemical effect known as solarisation. This originates in UV-induced changes in the oxidation state of iron contaminants present in the glass matrix. The oxidation of Fe<span class="math inline">^{2+}</span> to Fe<span class="math inline">^{3+}</span> is accompanied by an absorption shift to longer wavelengths within the UV range. A decrease in the transmittance of fresh glass filters occurs within their first few hours of use, followed by a more-gradual long-term decline. Hence, changes in transmission during an experiment can be largely avoided by the pre-ageing of new filters. In addition, there is a gradient of ageing with the depth of the glass. Soda-lime glass exhibits very much reduced ageing compared to borosilicate glass. The solarisation of the soda-lime glass ceases after a few hours of UV treatment and this may be due to its lower content of iron contaminants <span class="citation" data-cites="doehr96">(<a href="references.html#ref-doehr96" role="doc-biblioref">Döhring et al. 1996</a>)</span>.</p>
 </section>
 <section id="sec:filters:manipulating:sunlight" class="level3" data-number="12.3.2">
 <h3 data-number="12.3.2" class="anchored" data-anchor-id="sec:filters:manipulating:sunlight"><span class="header-section-number">12.3.2</span> Manipulating UV radiation in sunlight</h3>
@@ -936,7 +952,7 @@ First edition authors
 </dd>
 <dt>Design 1</dt>
 <dd>
-<p>We attenuate radiation (but not radiation) in the <span class="math inline">\(-\)</span>treatment by filtering sunlight with a polyester film. We use as a control a film that transmits and . This ensures that most of the effect of the films on precipitation, wind and temperature is similar for treated and control plants. Also shading of sunlight by supporting structures is similar. This type of control is usually called ‘near ambient control’.<span id="item:example:filters:design:one" data-label="item:example:filters:design:one"></span></p>
+<p>We attenuate radiation (but not radiation) in the <span class="math inline">-</span>treatment by filtering sunlight with a polyester film. We use as a control a film that transmits and . This ensures that most of the effect of the films on precipitation, wind and temperature is similar for treated and control plants. Also shading of sunlight by supporting structures is similar. This type of control is usually called ‘near ambient control’.<span id="item:example:filters:design:one" data-label="item:example:filters:design:one"></span></p>
 </dd>
 <dt>Design 2</dt>
 <dd>
@@ -948,7 +964,7 @@ First edition authors
 </dd>
 <dt>Design 4</dt>
 <dd>
-<p>We attenuate radiation in our <span class="math inline">\(-\)</span>treatment by filtering sunlight with a polyester film. We have as controls plots with no filters or supporting structures. In this case the effect of is confounded with other effects of the filters.<span id="item:example:filters:design:four" data-label="item:example:filters:design:four"></span></p>
+<p>We attenuate radiation in our <span class="math inline">-</span>treatment by filtering sunlight with a polyester film. We have as controls plots with no filters or supporting structures. In this case the effect of is confounded with other effects of the filters.<span id="item:example:filters:design:four" data-label="item:example:filters:design:four"></span></p>
 </dd>
 <dt>Caveat</dt>
 <dd>
@@ -1182,287 +1198,295 @@ WHO. 2002. <span>“Global Solar <span>UV</span> Index: A Practical Guide.”</s
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
         }
-        return container.innerHTML
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1470,185 +1494,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./reproducibility.html" class="pagination-link" aria-label="Ensuring reproducibility">
@@ -1711,7 +1711,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>signs. Although there is no standardized symbol for radiation hazard,</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>the warning symbol for optical radiation (Figure</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:warning:optical\]</span><span class="co">](#fig:warning:optical)</span>{reference-type="ref"</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>reference="fig:warning:optical"}) accompanied by the text 'UV radiation'</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:warning:</span>optical"}) accompanied by the text 'UV radiation'</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>can be used. Additional text, 'protect eyes and skin' or 'do not look</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>directly at light source' can be added. Access to outdoor experiments</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>should be restricted by fences with locked gates, and by locking access</span>
@@ -1796,7 +1796,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>lamps emit across a rather broad wavelength band, and have several minor</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>secondary peaks in the and visible regions. Figure</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:TL12:UVB313:UVA340\]</span><span class="co">](#fig:TL12:UVB313:UVA340)</span>{reference-type="ref"</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>reference="fig:TL12:UVB313:UVA340"} shows the emission spectra of some</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:TL12:</span>UVB313:UVA340"} shows the emission spectra of some</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>UV lamps.</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>::: figure*</span>
@@ -1831,7 +1831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>Using fluorescent lamps requires some additional equipment (Figure</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:fluorescent:tube\]</span><span class="co">](#fig:fluorescent:tube)</span>{reference-type="ref"</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>reference="fig:fluorescent:tube"}). The main component is a "ballast"</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:fluorescent:</span>tube"}). The main component is a "ballast"</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>which limits the current through the lamp. Traditional ballasts are</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>electromagnetic, comprising a coil wound on a ferrous core, and require</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>one more component, a 'starter' for turning on the lamps. Lamps driven</span>
@@ -1869,7 +1869,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>Radiation output from fluorescent lamps varies markedly with ambient</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>temperature as shown in Figure</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:UV:lamp:temperature\]</span><span class="co">](#fig:UV:lamp:temperature)</span>{reference-type="ref"</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>reference="fig:UV:lamp:temperature"}. The data in this figure were</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:UV:</span>lamp:temperature"}. The data in this figure were</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>obtained by varying the temperature in a growth chamber where the lamps</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>were located, and measuring the spectral irradiance with a</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>spectroradiometer maintained at near constant temperature outside the</span>
@@ -1906,28 +1906,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>used to simulate the spatial distribution of irradiance or fluence rate</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>under such an array of lamps (for a reimplementation of the model as an</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>R package see section <span class="co">[</span><span class="ot">8.8</span><span class="co">](#sec:calc:light:field)</span>{reference-type="ref"</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>reference="sec:calc:light:field"} on page ). Figure</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:calc:</span>light:field"} on page ). Figure</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:position:tubes\]</span><span class="co">](#fig:position:tubes)</span>{reference-type="ref"</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>reference="fig:position:tubes"} shows the results of six such</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:position:</span>tubes"} shows the results of six such</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>simulations, three for tubes evenly distributed along the frame</span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>('equidistant') and three for tubes arranged following the projection on</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>a plane of what would be equidistant distribution around the perimeter</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>of a half circle ('cosine' pattern). The closer together the contour</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>lines are, the steeper the change in irradiance. The examples in Figure</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:position:tubes\]</span><span class="co">](#fig:position:tubes)</span>{reference-type="ref"</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>reference="fig:position:tubes"} are for irradiance, and these results do</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:position:</span>tubes"} are for irradiance, and these results do</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>not apply to fluence rate. For each size and number of lamps and size of</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>frames, it should be possible to optimize either the evenness of</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>irradiance or of fluence rate by means of the model (Figure</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:position:tubes:square\]</span><span class="co">](#fig:position:tubes:square)</span>{reference-type="ref"</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>reference="fig:position:tubes:square"}). The unevenness of the radiation</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:position:</span>tubes:square"}). The unevenness of the radiation</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>field should be taken into account when deciding where to the place</span>
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>plants, and also when measuring exposures under the frames.</span>
 <span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>When using UV lamps to supplement solar radiation, shading by the lamps</span>
 <span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>and their supporting structures can become a problem. This is discussed</span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>in section <span class="co">[</span><span class="ot">9.10.3</span><span class="co">](#sec:enhancement:errors)</span>{reference-type="ref"</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>reference="sec:enhancement:errors"} on page in relation to effective</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:enhancement:</span>errors"} on page in relation to effective</span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>doses and enhancement errors.</span>
 <span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>::: figure*</span>
@@ -1949,10 +1949,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>6000--6500 K temperature generating a spectral output throughout the</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>visible and UV (Figure</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:xenon:lamp:spectrum\]</span><span class="co">](#fig:xenon:lamp:spectrum)</span>{reference-type="ref"</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>reference="fig:xenon:lamp:spectrum"}). Xenon arc lamps must be operated</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:xenon:</span>lamp:spectrum"}). Xenon arc lamps must be operated</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>in a fully enclosed housing (Figure</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:xenon:lamp:photo\]</span><span class="co">](#fig:xenon:lamp:photo)</span>{reference-type="ref"</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>reference="fig:xenon:lamp:photo"}) that usually provides mirrors and</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:xenon:</span>lamp:photo"}) that usually provides mirrors and</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>focussing adjustments, electrical ignition and ventilation to cool the</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>lamp. Xenon arcs provide intense point sources but with careful</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>operation and adjustment are sometimes useful for experiments in</span>
@@ -2041,7 +2041,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>(colour) that depends on the band gap energy of the materials comprising</span>
 <span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>each of the two layers (Figure</span>
 <span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:LED:junction\]</span><span class="co">](#fig:LED:junction)</span>{reference-type="ref"</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>reference="fig:LED:junction"}).</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:LED:</span>junction"}).</span>
 <span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>::: figure*</span>
 <span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/PnJunction-LED-E.pdf)</span>{width="0.8<span class="sc">\\</span>myfigwidth"}</span>
@@ -2233,7 +2233,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>Lasers can be used for example in characterizing the slit function of</span>
 <span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>spectrometers (see section</span>
 <span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">9.7.2.2</span><span class="co">](#sec:array:calibration)</span>{reference-type="ref"</span>
-<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>reference="sec:array:calibration"} on page ), for aligning optics, and</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:array:</span>calibration"} on page ), for aligning optics, and</span>
 <span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>in the ubiquitous barcode readers used in supermarkets and laser</span>
 <span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>pointers used by speakers during lectures. They are used in instruments</span>
 <span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>like confocal microscopes and different analytical procedures in</span>
@@ -2248,7 +2248,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>protein solution can be accurately irradiated using 50 or 100 cuvettes.</span>
 <span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>By using the appropriate optics (lenses, mirrors, etc.; Figure</span>
 <span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:tunable:laser\]</span><span class="co">](#fig:tunable:laser)</span>{reference-type="ref"</span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>reference="fig:tunable:laser"}), the geometry of the beam can be</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:tunable:</span>laser"}), the geometry of the beam can be</span>
 <span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>manipulated so that a larger area or sample (several cm$^2$) can be</span>
 <span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>illuminated. This is large enough for exposing for instance part of an</span>
 <span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>rosette, or for simultaneously irradiating two detached leaves. Tuneable</span>
@@ -2271,7 +2271,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>obtained. The pulses are typically 5--10 ns in length and the linewidth</span>
 <span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>is usually around 0.5 nm (Figure</span>
 <span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:laser:output\]</span><span class="co">](#fig:laser:output)</span>{reference-type="ref"</span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>reference="fig:laser:output"}), making this type of instrumentation</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:laser:</span>output"}), making this type of instrumentation</span>
 <span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>ideal for studies of the initial UV signalling events on the biochemical</span>
 <span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>and cell biological levels. Also, due to the physical principles on</span>
 <span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>which a tunable laser in the UV region relies, some residual radiation</span>
@@ -2295,7 +2295,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>bandwidth and the accuracy of the wavelength setting should be checked</span>
 <span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>prior to use with a calibrated diode array spectroradiometer (Figure</span>
 <span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:laser:output\]</span><span class="co">](#fig:laser:output)</span>{reference-type="ref"</span>
-<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>reference="fig:laser:output"}). As might be expected, the major drawback</span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:laser:</span>output"}). As might be expected, the major drawback</span>
 <span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>of using lasers, in addition to the small area that usually can be</span>
 <span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>irradiated, is the cost. Lasers useful for UV-B photobiological purposes</span>
 <span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>at present start at approximately 50 000 €.</span>
@@ -2318,7 +2318,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:botania\]</span><span class="co">](#fig:botania)</span>{reference-type="ref"</span>
 <span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a>reference="fig:botania"} shows one lamp frame from a modulated system,</span>
 <span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a>and Figure <span class="co">[</span><span class="ot">\[fig:botania:new\]</span><span class="co">](#fig:botania:new)</span>{reference-type="ref"</span>
-<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a>reference="fig:botania:new"} shows an overhead view.</span>
+<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:botania:</span>new"} shows an overhead view.</span>
 <span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a>::: figure*</span>
 <span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a><span class="al">![image](photos/Botania.pdf)</span>{width="0.5<span class="sc">\\</span>myfigwidth"}</span>
@@ -2338,7 +2338,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a>@Aphalo1999a describe a system built from off-the-shelf components and</span>
 <span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a>controlled by a datalogger, which does not work at temperatures below 0.</span>
 <span id="cb1-677"><a href="#cb1-677" aria-hidden="true" tabindex="-1"></a>Figure <span class="co">[</span><span class="ot">\[fig:UV:modulated\]</span><span class="co">](#fig:UV:modulated)</span>{reference-type="ref"</span>
-<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a>reference="fig:UV:modulated"} shows, for this system, the daily course</span>
+<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:UV:</span>modulated"} shows, for this system, the daily course</span>
 <span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a>of irradiance under near-ambient control and enhancement frames</span>
 <span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a>throughout two days with different cloud conditions. Occasionally,</span>
 <span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a>modulated systems have also been used inside greenhouses [e.g.</span>
@@ -2385,7 +2385,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-722"><a href="#cb1-722" aria-hidden="true" tabindex="-1"></a>Enhancement errors in the calculation of effective irradiance are</span>
 <span id="cb1-723"><a href="#cb1-723" aria-hidden="true" tabindex="-1"></a>discussed in section</span>
 <span id="cb1-724"><a href="#cb1-724" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">9.10.3</span><span class="co">](#sec:enhancement:errors)</span>{reference-type="ref"</span>
-<span id="cb1-725"><a href="#cb1-725" aria-hidden="true" tabindex="-1"></a>reference="sec:enhancement:errors"} on page .</span>
+<span id="cb1-725"><a href="#cb1-725" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:enhancement:</span>errors"} on page .</span>
 <span id="cb1-726"><a href="#cb1-726" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-727"><a href="#cb1-727" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exposure chambers and sun simulators {#sec:simulators}</span></span>
 <span id="cb1-728"><a href="#cb1-728" aria-hidden="true" tabindex="-1"></a></span>
@@ -2437,13 +2437,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-774"><a href="#cb1-774" aria-hidden="true" tabindex="-1"></a>glasses and films allow the cut-off wavelength to be altered, thus</span>
 <span id="cb1-775"><a href="#cb1-775" aria-hidden="true" tabindex="-1"></a>enabling a simulation various scenarios as shown for example in figure</span>
 <span id="cb1-776"><a href="#cb1-776" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:Poly:Spectra\]</span><span class="co">](#fig:Poly:Spectra)</span>{reference-type="ref"</span>
-<span id="cb1-777"><a href="#cb1-777" aria-hidden="true" tabindex="-1"></a>reference="fig:Poly:Spectra"} in section</span>
+<span id="cb1-777"><a href="#cb1-777" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:Poly:</span>Spectra"} in section</span>
 <span id="cb1-778"><a href="#cb1-778" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">7.8</span><span class="co">](#sec:action:spectra)</span>{reference-type="ref"</span>
-<span id="cb1-779"><a href="#cb1-779" aria-hidden="true" tabindex="-1"></a>reference="sec:action:spectra"} on page . The diurnal variations of the</span>
+<span id="cb1-779"><a href="#cb1-779" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:action:</span>spectra"} on page . The diurnal variations of the</span>
 <span id="cb1-780"><a href="#cb1-780" aria-hidden="true" tabindex="-1"></a>irradiance are achieved by switching appropriate groups of lamps on and</span>
 <span id="cb1-781"><a href="#cb1-781" aria-hidden="true" tabindex="-1"></a>off. The optimised lamp configuration of the ceiling is presented in</span>
 <span id="cb1-782"><a href="#cb1-782" aria-hidden="true" tabindex="-1"></a>Figure <span class="co">[</span><span class="ot">\[fig:SoSi:Lamps\]</span><span class="co">](#fig:SoSi:Lamps)</span>{reference-type="ref"</span>
-<span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a>reference="fig:SoSi:Lamps"}. A more detailed description is given by</span>
+<span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:SoSi:</span>Lamps"}. A more detailed description is given by</span>
 <span id="cb1-784"><a href="#cb1-784" aria-hidden="true" tabindex="-1"></a>@Seckmeyer1993, @doehr96 and @Thiel1996. Figure</span>
 <span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:sunsimulator\]</span><span class="co">](#fig:sunsimulator)</span>{reference-type="ref"</span>
 <span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a>reference="fig:sunsimulator"} shows a picture of a sun simulator and the</span>
@@ -2465,7 +2465,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a>wavelength. The horizontal distribution of in the cultivation area is</span>
 <span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a>shown in figure</span>
 <span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:SoSi:horizontal\]</span><span class="co">](#fig:SoSi:horizontal)</span>{reference-type="ref"</span>
-<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a>reference="fig:SoSi:horizontal"}. The horizontal distribution of and</span>
+<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:SoSi:</span>horizontal"}. The horizontal distribution of and</span>
 <span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a>radiation is similar and not shown here.</span>
 <span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a>::: figure*</span>
@@ -2473,14 +2473,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a>Figure <span class="co">[</span><span class="ot">\[fig:SoSi:sun\]</span><span class="co">](#fig:SoSi:sun)</span>{reference-type="ref"</span>
-<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a>reference="fig:SoSi:sun"} shows a comparison of the spectral irradiance</span>
+<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:SoSi:</span>sun"} shows a comparison of the spectral irradiance</span>
 <span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a>of the small sun simulator, provided with a double layer of Tempax glass</span>
 <span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a>(Schott, Germany), and a typical outdoor spectrum measured at the field</span>
 <span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a>station of the Helmholtz Zentrum München, Neuherberg, Germany.</span>
 <span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a>Measurements in the sun simulator show that the steep, realistic shape</span>
 <span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a>of the edge and the ratio can be simulated very close to nature. The</span>
-<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a>ratio of the sun simulator is $1:23:194$ and matches the natural</span>
-<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a>conditions of $1:25:206$ very well.</span>
+<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a>ratio of the sun simulator is $1<span class="sc">:23:</span>194$ and matches the natural</span>
+<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a>conditions of $1<span class="sc">:25:</span>206$ very well.</span>
 <span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a>::: figure*</span>
 <span id="cb1-823"><a href="#cb1-823" aria-hidden="true" tabindex="-1"></a><span class="al">![image](figures/fig_sosi_sun.pdf)</span>{width="0.8<span class="sc">\\</span>myfigwidth"}\</span>
@@ -2492,7 +2492,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-829"><a href="#cb1-829" aria-hidden="true" tabindex="-1"></a>Neuherberg, Germany, solar zenith angle $\theta_s = 38\degree$) are</span>
 <span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a>listed in table</span>
 <span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[tab:SoSi:values\]</span><span class="co">](#tab:SoSi:values)</span>{reference-type="ref"</span>
-<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a>reference="tab:SoSi:values"}.</span>
+<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a>reference="tab<span class="sc">:SoSi:</span>values"}.</span>
 <span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a>:::: table*</span>
 <span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a>::: center</span>
@@ -2639,13 +2639,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-976"><a href="#cb1-976" aria-hidden="true" tabindex="-1"></a>controls are needed: a control with a UV transparent filter and a</span>
 <span id="cb1-977"><a href="#cb1-977" aria-hidden="true" tabindex="-1"></a>control without any filter. Figures</span>
 <span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filters:photo:field\]</span><span class="co">](#fig:filters:photo:field)</span>{reference-type="ref"</span>
-<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a>reference="fig:filters:photo:field"},</span>
+<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filters:</span>photo:field"},</span>
 <span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filters:photo:field1\]</span><span class="co">](#fig:filters:photo:field1)</span>{reference-type="ref"</span>
-<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a>reference="fig:filters:photo:field1"},</span>
+<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filters:</span>photo:field1"},</span>
 <span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filters:photo:one:frame\]</span><span class="co">](#fig:filters:photo:one:frame)</span>{reference-type="ref"</span>
-<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a>reference="fig:filters:photo:one:frame"} and</span>
+<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filters:</span>photo<span class="sc">:one:</span>frame"} and</span>
 <span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filters:photo:branch\]</span><span class="co">](#fig:filters:photo:branch)</span>{reference-type="ref"</span>
-<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a>reference="fig:filters:photo:branch"} show some typical setups for</span>
+<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filters:</span>photo:branch"} show some typical setups for</span>
 <span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a>potted plants and branches respectively. Filters on tree branches have</span>
 <span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a>been used by @Rousseaux2004, @Kotilainen2008 and others. Filters have</span>
 <span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a>also been used to cover patches of natural vegetation by @Phoenix2003,</span>
@@ -2672,20 +2672,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1009"><a href="#cb1-1009" aria-hidden="true" tabindex="-1"></a>The spectral transmittance of several commonly used films is shown in</span>
 <span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a>Figure</span>
 <span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filter:T:spectra\]</span><span class="co">](#fig:filter:T:spectra)</span>{reference-type="ref"</span>
-<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a>reference="fig:filter:T:spectra"}, and the resulting filtered sunlight</span>
+<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filter:</span>T:spectra"}, and the resulting filtered sunlight</span>
 <span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a>spectral irradiance in Figure</span>
 <span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filter:sunlight:spectra\]</span><span class="co">](#fig:filter:sunlight:spectra)</span>{reference-type="ref"</span>
-<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a>reference="fig:filter:sunlight:spectra"}. For near-ambient-UV controls</span>
+<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filter:</span>sunlight:spectra"}. For near-ambient-UV controls</span>
 <span id="cb1-1016"><a href="#cb1-1016" aria-hidden="true" tabindex="-1"></a>cellulose diacetate, polythene or polytetrafluoroethylene (PTFE) are</span>
 <span id="cb1-1017"><a href="#cb1-1017" aria-hidden="true" tabindex="-1"></a>normally used. Cellulose diacetate is not a good option as its optical</span>
 <span id="cb1-1018"><a href="#cb1-1018" aria-hidden="true" tabindex="-1"></a>properties deteriorate fast, and after deterioration it absorbs more</span>
 <span id="cb1-1019"><a href="#cb1-1019" aria-hidden="true" tabindex="-1"></a>UV-B radiation (Figure</span>
 <span id="cb1-1020"><a href="#cb1-1020" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filter:T:spectra:aging\]</span><span class="co">](#fig:filter:T:spectra:aging)</span>{reference-type="ref"</span>
-<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a>reference="fig:filter:T:spectra:aging"}), tears easily, and is affected</span>
+<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filter:</span>T<span class="sc">:spectra:</span>aging"}), tears easily, and is affected</span>
 <span id="cb1-1022"><a href="#cb1-1022" aria-hidden="true" tabindex="-1"></a>by water. Cellulose diacetate is used for removing from the radiation</span>
 <span id="cb1-1023"><a href="#cb1-1023" aria-hidden="true" tabindex="-1"></a>emitted by lamps (see section</span>
 <span id="cb1-1024"><a href="#cb1-1024" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">8.2.1.1</span><span class="co">](#sec:fluorescent:tubes)</span>{reference-type="ref"</span>
-<span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a>reference="sec:fluorescent:tubes"} on page ). In contrast as there is no</span>
+<span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:fluorescent:</span>tubes"} on page ). In contrast as there is no</span>
 <span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a>in solar radiation at ground level, other materials that are more</span>
 <span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a>durable can be used for near-ambient controls in attenuation</span>
 <span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a>experiments. Polythene film (types without UV absorbing additives only)</span>
@@ -2715,7 +2715,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1052"><a href="#cb1-1052" aria-hidden="true" tabindex="-1"></a>polythene films are available in several different thicknesses.</span>
 <span id="cb1-1053"><a href="#cb1-1053" aria-hidden="true" tabindex="-1"></a>Thickness affects both mechanical and optical properties (Figure</span>
 <span id="cb1-1054"><a href="#cb1-1054" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filter:T:spectra:thickness\]</span><span class="co">](#fig:filter:T:spectra:thickness)</span>{reference-type="ref"</span>
-<span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a>reference="fig:filter:T:spectra:thickness"}). The most common</span>
+<span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filter:</span>T<span class="sc">:spectra:</span>thickness"}). The most common</span>
 <span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a>thicknesses used for cellulose diacetate and polyester are 100 to 125 .</span>
 <span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a>For polythene, thinner films can be used to minimize scattering if</span>
 <span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a>mechanical strength is not limiting (e.g. 50 ). As PTFE is a strong</span>
@@ -2752,7 +2752,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1089"><a href="#cb1-1089" aria-hidden="true" tabindex="-1"></a>rods/poles clamped under tension to a structure anchored in the ground</span>
 <span id="cb1-1090"><a href="#cb1-1090" aria-hidden="true" tabindex="-1"></a>(Figure</span>
 <span id="cb1-1091"><a href="#cb1-1091" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filters:photo:field1\]</span><span class="co">](#fig:filters:photo:field1)</span>{reference-type="ref"</span>
-<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a>reference="fig:filters:photo:field1"} on page ), . This approach also</span>
+<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filters:</span>photo:field1"} on page ), . This approach also</span>
 <span id="cb1-1093"><a href="#cb1-1093" aria-hidden="true" tabindex="-1"></a>has the benefit over wooden frames of enabling a large number of filters</span>
 <span id="cb1-1094"><a href="#cb1-1094" aria-hidden="true" tabindex="-1"></a>to be carried to the field at once undamaged, so can be of use to</span>
 <span id="cb1-1095"><a href="#cb1-1095" aria-hidden="true" tabindex="-1"></a>researchers working at inaccessible field sites. When mounting the</span>
@@ -2812,7 +2812,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1149"><a href="#cb1-1149" aria-hidden="true" tabindex="-1"></a>attenuation, and this can be achieved by mounting strips of one type of</span>
 <span id="cb1-1150"><a href="#cb1-1150" aria-hidden="true" tabindex="-1"></a>plastic film on a base of another type (Figure</span>
 <span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filters:photo:one:frame\]</span><span class="co">](#fig:filters:photo:one:frame)</span>{reference-type="ref"</span>
-<span id="cb1-1152"><a href="#cb1-1152" aria-hidden="true" tabindex="-1"></a>reference="fig:filters:photo:one:frame"}). In such a system the strips</span>
+<span id="cb1-1152"><a href="#cb1-1152" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filters:</span>photo<span class="sc">:one:</span>frame"}). In such a system the strips</span>
 <span id="cb1-1153"><a href="#cb1-1153" aria-hidden="true" tabindex="-1"></a>are usually fastened at the edges of the wooden or wire frame on which</span>
 <span id="cb1-1154"><a href="#cb1-1154" aria-hidden="true" tabindex="-1"></a>the whole filter is attached. Unless the frames are small (less than 30</span>
 <span id="cb1-1155"><a href="#cb1-1155" aria-hidden="true" tabindex="-1"></a>to 50 cm long sides) it may also be necessary to attach the strips in</span>
@@ -2833,9 +2833,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1170"><a href="#cb1-1170" aria-hidden="true" tabindex="-1"></a>will not lead to total UV-B exclusion. That is why we use the phrase</span>
 <span id="cb1-1171"><a href="#cb1-1171" aria-hidden="true" tabindex="-1"></a>'UV-B attenuation' for such treatments (Figure</span>
 <span id="cb1-1172"><a href="#cb1-1172" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:filter:maps\]</span><span class="co">](#fig:filter:maps)</span>{reference-type="ref"</span>
-<span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a>reference="fig:filter:maps"}). As discussed in section</span>
+<span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:filter:</span>maps"}). As discussed in section</span>
 <span id="cb1-1174"><a href="#cb1-1174" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">7.4</span><span class="co">](#sec:solar:radiation)</span>{reference-type="ref"</span>
-<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a>reference="sec:solar:radiation"} on page , solar UV radiation includes a</span>
+<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:solar:</span>radiation"} on page , solar UV radiation includes a</span>
 <span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a>large proportion of diffuse radiation coming from the sky, even under</span>
 <span id="cb1-1177"><a href="#cb1-1177" aria-hidden="true" tabindex="-1"></a>non-cloudy conditions. Consequently, some UV radiation penetrates under</span>
 <span id="cb1-1178"><a href="#cb1-1178" aria-hidden="true" tabindex="-1"></a>the edges of filters. It is therefore necessary to avoid locating</span>
@@ -2908,7 +2908,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1245"><a href="#cb1-1245" aria-hidden="true" tabindex="-1"></a>different diameters and forms depending of the size of the macrophyte</span>
 <span id="cb1-1246"><a href="#cb1-1246" aria-hidden="true" tabindex="-1"></a>(Figure</span>
 <span id="cb1-1247"><a href="#cb1-1247" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:marine:incubation\]</span><span class="co">](#fig:marine:incubation)</span>{reference-type="ref"</span>
-<span id="cb1-1248"><a href="#cb1-1248" aria-hidden="true" tabindex="-1"></a>reference="fig:marine:incubation"}). Both the cylindrical and sheet</span>
+<span id="cb1-1248"><a href="#cb1-1248" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:marine:</span>incubation"}). Both the cylindrical and sheet</span>
 <span id="cb1-1249"><a href="#cb1-1249" aria-hidden="true" tabindex="-1"></a>Plexiglass incubators can be covered by appropriate UV cut-off films and</span>
 <span id="cb1-1250"><a href="#cb1-1250" aria-hidden="true" tabindex="-1"></a>located at different water depths by using ropes or buoys. E.g. as used</span>
 <span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a>by @Gomez2005 with the red alga in the Quempillen Estuary (Chile). The</span>
@@ -2958,7 +2958,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1295"><a href="#cb1-1295" aria-hidden="true" tabindex="-1"></a>incubations under controlled illumination conditions (using lamps) in</span>
 <span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a>the laboratory (Figure</span>
 <span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:lab:incubation\]</span><span class="co">](#fig:lab:incubation)</span>{reference-type="ref"</span>
-<span id="cb1-1298"><a href="#cb1-1298" aria-hidden="true" tabindex="-1"></a>reference="fig:lab:incubation"}). Normally the sources are similar to</span>
+<span id="cb1-1298"><a href="#cb1-1298" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:lab:</span>incubation"}). Normally the sources are similar to</span>
 <span id="cb1-1299"><a href="#cb1-1299" aria-hidden="true" tabindex="-1"></a>those used for incubations of terrestrial plants (see section</span>
 <span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">8.2.1</span><span class="co">](#sec:lamps)</span>{reference-type="ref" reference="sec:lamps"}).</span>
 <span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a></span>
@@ -2994,7 +2994,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1331"><a href="#cb1-1331" aria-hidden="true" tabindex="-1"></a>their habitat, e.g. some deep water and polar algae. Thermoregulated</span>
 <span id="cb1-1332"><a href="#cb1-1332" aria-hidden="true" tabindex="-1"></a>water baths can minimize this problem</span>
 <span id="cb1-1333"><a href="#cb1-1333" aria-hidden="true" tabindex="-1"></a>(Figure <span class="co">[</span><span class="ot">\[fig:lab:incubation\]</span><span class="co">](#fig:lab:incubation)</span>{reference-type="ref"</span>
-<span id="cb1-1334"><a href="#cb1-1334" aria-hidden="true" tabindex="-1"></a>reference="fig:lab:incubation"}).</span>
+<span id="cb1-1334"><a href="#cb1-1334" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:lab:</span>incubation"}).</span>
 <span id="cb1-1335"><a href="#cb1-1335" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1336"><a href="#cb1-1336" aria-hidden="true" tabindex="-1"></a>The use of artificial sources presents various advantages. Firstly, the</span>
 <span id="cb1-1337"><a href="#cb1-1337" aria-hidden="true" tabindex="-1"></a>manipulation of the :ratio can permit the examination of some processes</span>
@@ -3018,11 +3018,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1355"><a href="#cb1-1355" aria-hidden="true" tabindex="-1"></a>fluorescent and some other UV sources emit small amounts of radiation,</span>
 <span id="cb1-1356"><a href="#cb1-1356" aria-hidden="true" tabindex="-1"></a>which is absent in sunlight, radiation must be removed by filtration.</span>
 <span id="cb1-1357"><a href="#cb1-1357" aria-hidden="true" tabindex="-1"></a>See Box <span class="co">[</span><span class="ot">\[ex:lamps:controls\]</span><span class="co">](#ex:lamps:controls)</span>{reference-type="ref"</span>
-<span id="cb1-1358"><a href="#cb1-1358" aria-hidden="true" tabindex="-1"></a>reference="ex:lamps:controls"} for descriptions of some typical</span>
+<span id="cb1-1358"><a href="#cb1-1358" aria-hidden="true" tabindex="-1"></a>reference="ex<span class="sc">:lamps:</span>controls"} for descriptions of some typical</span>
 <span id="cb1-1359"><a href="#cb1-1359" aria-hidden="true" tabindex="-1"></a>experimental designs and their advantages and pitfalls.</span>
 <span id="cb1-1360"><a href="#cb1-1360" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1361"><a href="#cb1-1361" aria-hidden="true" tabindex="-1"></a>::: example*</span>
-<span id="cb1-1362"><a href="#cb1-1362" aria-hidden="true" tabindex="-1"></a>[]{#ex:lamps:controls label="ex:lamps:controls"}</span>
+<span id="cb1-1362"><a href="#cb1-1362" aria-hidden="true" tabindex="-1"></a>[]{#ex<span class="sc">:lamps:</span>controls label="ex<span class="sc">:lamps:</span>controls"}</span>
 <span id="cb1-1363"><a href="#cb1-1363" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1364"><a href="#cb1-1364" aria-hidden="true" tabindex="-1"></a>Case</span>
 <span id="cb1-1365"><a href="#cb1-1365" aria-hidden="true" tabindex="-1"></a></span>
@@ -3031,7 +3031,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1368"><a href="#cb1-1368" aria-hidden="true" tabindex="-1"></a>    radiation of other wavelengths (, , and visible) in addition to (see</span>
 <span id="cb1-1369"><a href="#cb1-1369" aria-hidden="true" tabindex="-1"></a>    Figure</span>
 <span id="cb1-1370"><a href="#cb1-1370" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">\[fig:TL12:UVB313:UVA340\]</span><span class="co">](#fig:TL12:UVB313:UVA340)</span>{reference-type="ref"</span>
-<span id="cb1-1371"><a href="#cb1-1371" aria-hidden="true" tabindex="-1"></a>    reference="fig:TL12:UVB313:UVA340"} on page ). Our objective is to</span>
+<span id="cb1-1371"><a href="#cb1-1371" aria-hidden="true" tabindex="-1"></a>    reference="fig<span class="sc">:TL12:</span>UVB313:UVA340"} on page ). Our objective is to</span>
 <span id="cb1-1372"><a href="#cb1-1372" aria-hidden="true" tabindex="-1"></a>    study the effect of radiation.</span>
 <span id="cb1-1373"><a href="#cb1-1373" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1374"><a href="#cb1-1374" aria-hidden="true" tabindex="-1"></a>Design 1</span>
@@ -3039,46 +3039,46 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1376"><a href="#cb1-1376" aria-hidden="true" tabindex="-1"></a>:   We remove from the treatment by filtering the lamps with cellulose</span>
 <span id="cb1-1377"><a href="#cb1-1377" aria-hidden="true" tabindex="-1"></a>    diacetate (see Figure</span>
 <span id="cb1-1378"><a href="#cb1-1378" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">\[fig:filter:T:spectra\]</span><span class="co">](#fig:filter:T:spectra)</span>{reference-type="ref"</span>
-<span id="cb1-1379"><a href="#cb1-1379" aria-hidden="true" tabindex="-1"></a>    reference="fig:filter:T:spectra"} on page ). We add (and a very</span>
+<span id="cb1-1379"><a href="#cb1-1379" aria-hidden="true" tabindex="-1"></a>    reference="fig<span class="sc">:filter:</span>T:spectra"} on page ). We add (and a very</span>
 <span id="cb1-1380"><a href="#cb1-1380" aria-hidden="true" tabindex="-1"></a>    small amount of visible radiation) to the controls by having</span>
 <span id="cb1-1381"><a href="#cb1-1381" aria-hidden="true" tabindex="-1"></a>    identical lamps as in the treatments but filtered with polyester</span>
 <span id="cb1-1382"><a href="#cb1-1382" aria-hidden="true" tabindex="-1"></a>    film, which absorbs and . This also ensures that any effect of the</span>
 <span id="cb1-1383"><a href="#cb1-1383" aria-hidden="true" tabindex="-1"></a>    lamps on the temperature of plants is similar in treated and control</span>
 <span id="cb1-1384"><a href="#cb1-1384" aria-hidden="true" tabindex="-1"></a>    plants, and shading of sunlight is similar. This type of control is</span>
-<span id="cb1-1385"><a href="#cb1-1385" aria-hidden="true" tabindex="-1"></a>    usually called 'control'.[]{#item:example:lamps:design:one</span>
-<span id="cb1-1386"><a href="#cb1-1386" aria-hidden="true" tabindex="-1"></a>    label="item:example:lamps:design:one"}</span>
+<span id="cb1-1385"><a href="#cb1-1385" aria-hidden="true" tabindex="-1"></a>    usually called 'control'.[]{#item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>one</span>
+<span id="cb1-1386"><a href="#cb1-1386" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>one"}</span>
 <span id="cb1-1387"><a href="#cb1-1387" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1388"><a href="#cb1-1388" aria-hidden="true" tabindex="-1"></a>Design 2</span>
 <span id="cb1-1389"><a href="#cb1-1389" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1390"><a href="#cb1-1390" aria-hidden="true" tabindex="-1"></a>:   As above, but in addition we add a second control with unenergized</span>
 <span id="cb1-1391"><a href="#cb1-1391" aria-hidden="true" tabindex="-1"></a>    lamps. We can compare this control to the control to assess whether</span>
 <span id="cb1-1392"><a href="#cb1-1392" aria-hidden="true" tabindex="-1"></a>    there is any side effect related to the functioning of the lamps but</span>
-<span id="cb1-1393"><a href="#cb1-1393" aria-hidden="true" tabindex="-1"></a>    unrelated to radiation.[]{#item:example:lamps:design:two</span>
-<span id="cb1-1394"><a href="#cb1-1394" aria-hidden="true" tabindex="-1"></a>    label="item:example:lamps:design:two"}</span>
+<span id="cb1-1393"><a href="#cb1-1393" aria-hidden="true" tabindex="-1"></a>    unrelated to radiation.[]{#item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>two</span>
+<span id="cb1-1394"><a href="#cb1-1394" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>two"}</span>
 <span id="cb1-1395"><a href="#cb1-1395" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1396"><a href="#cb1-1396" aria-hidden="true" tabindex="-1"></a>Design 3</span>
 <span id="cb1-1397"><a href="#cb1-1397" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1398"><a href="#cb1-1398" aria-hidden="true" tabindex="-1"></a>:   We add a third control with no lamps or frames. By comparing this</span>
 <span id="cb1-1399"><a href="#cb1-1399" aria-hidden="true" tabindex="-1"></a>    control with the control with unenergized lamps we can test for the</span>
 <span id="cb1-1400"><a href="#cb1-1400" aria-hidden="true" tabindex="-1"></a>    effect of shading by lamps and supporting</span>
-<span id="cb1-1401"><a href="#cb1-1401" aria-hidden="true" tabindex="-1"></a>    structures.[]{#item:example:lamps:design:three</span>
-<span id="cb1-1402"><a href="#cb1-1402" aria-hidden="true" tabindex="-1"></a>    label="item:example:lamps:design:three"}</span>
+<span id="cb1-1401"><a href="#cb1-1401" aria-hidden="true" tabindex="-1"></a>    structures.[]{#item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>three</span>
+<span id="cb1-1402"><a href="#cb1-1402" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>three"}</span>
 <span id="cb1-1403"><a href="#cb1-1403" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1404"><a href="#cb1-1404" aria-hidden="true" tabindex="-1"></a>Design 4</span>
 <span id="cb1-1405"><a href="#cb1-1405" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1406"><a href="#cb1-1406" aria-hidden="true" tabindex="-1"></a>:   We use cellulose diacetate-filtered lamps for treatments and</span>
 <span id="cb1-1407"><a href="#cb1-1407" aria-hidden="true" tabindex="-1"></a>    unenergized lamps for controls. In this case the effect of is</span>
 <span id="cb1-1408"><a href="#cb1-1408" aria-hidden="true" tabindex="-1"></a>    confounded with other effects of the lamps, except for</span>
-<span id="cb1-1409"><a href="#cb1-1409" aria-hidden="true" tabindex="-1"></a>    shading.[]{#item:example:lamps:design:four</span>
-<span id="cb1-1410"><a href="#cb1-1410" aria-hidden="true" tabindex="-1"></a>    label="item:example:lamps:design:four"}</span>
+<span id="cb1-1409"><a href="#cb1-1409" aria-hidden="true" tabindex="-1"></a>    shading.[]{#item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>four</span>
+<span id="cb1-1410"><a href="#cb1-1410" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>four"}</span>
 <span id="cb1-1411"><a href="#cb1-1411" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1412"><a href="#cb1-1412" aria-hidden="true" tabindex="-1"></a>Design 5</span>
 <span id="cb1-1413"><a href="#cb1-1413" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1414"><a href="#cb1-1414" aria-hidden="true" tabindex="-1"></a>:   We use cellulose diacetate-filtered lamps for treatments and no</span>
 <span id="cb1-1415"><a href="#cb1-1415" aria-hidden="true" tabindex="-1"></a>    lamps or frames for the controls. In this case the effect of is</span>
 <span id="cb1-1416"><a href="#cb1-1416" aria-hidden="true" tabindex="-1"></a>    confounded with all other effects of using</span>
-<span id="cb1-1417"><a href="#cb1-1417" aria-hidden="true" tabindex="-1"></a>    lamps.[]{#item:example:lamps:design:five</span>
-<span id="cb1-1418"><a href="#cb1-1418" aria-hidden="true" tabindex="-1"></a>    label="item:example:lamps:design:five"}</span>
+<span id="cb1-1417"><a href="#cb1-1417" aria-hidden="true" tabindex="-1"></a>    lamps.[]{#item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>five</span>
+<span id="cb1-1418"><a href="#cb1-1418" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>lamps<span class="sc">:design:</span>five"}</span>
 <span id="cb1-1419"><a href="#cb1-1419" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1420"><a href="#cb1-1420" aria-hidden="true" tabindex="-1"></a>Caveat</span>
 <span id="cb1-1421"><a href="#cb1-1421" aria-hidden="true" tabindex="-1"></a></span>
@@ -3091,7 +3091,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1428"><a href="#cb1-1428" aria-hidden="true" tabindex="-1"></a>    acronym-form="singular+short"} spanning tenths of nanometres in</span>
 <span id="cb1-1429"><a href="#cb1-1429" aria-hidden="true" tabindex="-1"></a>    wavelength (see Figure</span>
 <span id="cb1-1430"><a href="#cb1-1430" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">\[fig:filter:T:spectra\]</span><span class="co">](#fig:filter:T:spectra)</span>{reference-type="ref"</span>
-<span id="cb1-1431"><a href="#cb1-1431" aria-hidden="true" tabindex="-1"></a>    reference="fig:filter:T:spectra"}). Consequently, controls will not</span>
+<span id="cb1-1431"><a href="#cb1-1431" aria-hidden="true" tabindex="-1"></a>    reference="fig<span class="sc">:filter:</span>T:spectra"}). Consequently, controls will not</span>
 <span id="cb1-1432"><a href="#cb1-1432" aria-hidden="true" tabindex="-1"></a>    be exposed to exactly the same irradiance of as treated plants.</span>
 <span id="cb1-1433"><a href="#cb1-1433" aria-hidden="true" tabindex="-1"></a>    Usually they will be exposed to a slightly lower irradiance of plus</span>
 <span id="cb1-1434"><a href="#cb1-1434" aria-hidden="true" tabindex="-1"></a>    a trace of .</span>
@@ -3120,18 +3120,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1457"><a href="#cb1-1457" aria-hidden="true" tabindex="-1"></a>as the control for assessing effects of attenuation, a transparent</span>
 <span id="cb1-1458"><a href="#cb1-1458" aria-hidden="true" tabindex="-1"></a>filter rather than no filter. See Box</span>
 <span id="cb1-1459"><a href="#cb1-1459" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[ex:filters:controls\]</span><span class="co">](#ex:filters:controls)</span>{reference-type="ref"</span>
-<span id="cb1-1460"><a href="#cb1-1460" aria-hidden="true" tabindex="-1"></a>reference="ex:filters:controls"} for some examples of good and bad</span>
+<span id="cb1-1460"><a href="#cb1-1460" aria-hidden="true" tabindex="-1"></a>reference="ex<span class="sc">:filters:</span>controls"} for some examples of good and bad</span>
 <span id="cb1-1461"><a href="#cb1-1461" aria-hidden="true" tabindex="-1"></a>experimental setups.</span>
 <span id="cb1-1462"><a href="#cb1-1462" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1463"><a href="#cb1-1463" aria-hidden="true" tabindex="-1"></a>::: example*</span>
-<span id="cb1-1464"><a href="#cb1-1464" aria-hidden="true" tabindex="-1"></a>[]{#ex:filters:controls label="ex:filters:controls"}</span>
+<span id="cb1-1464"><a href="#cb1-1464" aria-hidden="true" tabindex="-1"></a>[]{#ex<span class="sc">:filters:</span>controls label="ex<span class="sc">:filters:</span>controls"}</span>
 <span id="cb1-1465"><a href="#cb1-1465" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1466"><a href="#cb1-1466" aria-hidden="true" tabindex="-1"></a>Case</span>
 <span id="cb1-1467"><a href="#cb1-1467" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1468"><a href="#cb1-1468" aria-hidden="true" tabindex="-1"></a>:   We use polyester ('Mylar') film outdoors to attenuate radiation (see</span>
 <span id="cb1-1469"><a href="#cb1-1469" aria-hidden="true" tabindex="-1"></a>    Figure</span>
 <span id="cb1-1470"><a href="#cb1-1470" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">\[fig:filter:sunlight:spectra\]</span><span class="co">](#fig:filter:sunlight:spectra)</span>{reference-type="ref"</span>
-<span id="cb1-1471"><a href="#cb1-1471" aria-hidden="true" tabindex="-1"></a>    reference="fig:filter:sunlight:spectra"} on page ). Our objective is</span>
+<span id="cb1-1471"><a href="#cb1-1471" aria-hidden="true" tabindex="-1"></a>    reference="fig<span class="sc">:filter:</span>sunlight:spectra"} on page ). Our objective is</span>
 <span id="cb1-1472"><a href="#cb1-1472" aria-hidden="true" tabindex="-1"></a>    to study the effect of solar radiation.</span>
 <span id="cb1-1473"><a href="#cb1-1473" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1474"><a href="#cb1-1474" aria-hidden="true" tabindex="-1"></a>Design 1</span>
@@ -3142,32 +3142,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1479"><a href="#cb1-1479" aria-hidden="true" tabindex="-1"></a>    films on precipitation, wind and temperature is similar for treated</span>
 <span id="cb1-1480"><a href="#cb1-1480" aria-hidden="true" tabindex="-1"></a>    and control plants. Also shading of sunlight by supporting</span>
 <span id="cb1-1481"><a href="#cb1-1481" aria-hidden="true" tabindex="-1"></a>    structures is similar. This type of control is usually called 'near</span>
-<span id="cb1-1482"><a href="#cb1-1482" aria-hidden="true" tabindex="-1"></a>    ambient control'.[]{#item:example:filters:design:one</span>
-<span id="cb1-1483"><a href="#cb1-1483" aria-hidden="true" tabindex="-1"></a>    label="item:example:filters:design:one"}</span>
+<span id="cb1-1482"><a href="#cb1-1482" aria-hidden="true" tabindex="-1"></a>    ambient control'.[]{#item<span class="sc">:example:</span>filters<span class="sc">:design:</span>one</span>
+<span id="cb1-1483"><a href="#cb1-1483" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>filters<span class="sc">:design:</span>one"}</span>
 <span id="cb1-1484"><a href="#cb1-1484" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1485"><a href="#cb1-1485" aria-hidden="true" tabindex="-1"></a>Design 2</span>
 <span id="cb1-1486"><a href="#cb1-1486" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1487"><a href="#cb1-1487" aria-hidden="true" tabindex="-1"></a>:   As above, but in addition we add a second treatment with a filter</span>
 <span id="cb1-1488"><a href="#cb1-1488" aria-hidden="true" tabindex="-1"></a>    absorbing both - and radiation. We can compare this treatment to the</span>
 <span id="cb1-1489"><a href="#cb1-1489" aria-hidden="true" tabindex="-1"></a>    attenuation treatment to assess whether there is an effect of</span>
-<span id="cb1-1490"><a href="#cb1-1490" aria-hidden="true" tabindex="-1"></a>    radiation. []{#item:example:filters:design:two</span>
-<span id="cb1-1491"><a href="#cb1-1491" aria-hidden="true" tabindex="-1"></a>    label="item:example:filters:design:two"}</span>
+<span id="cb1-1490"><a href="#cb1-1490" aria-hidden="true" tabindex="-1"></a>    radiation. []{#item<span class="sc">:example:</span>filters<span class="sc">:design:</span>two</span>
+<span id="cb1-1491"><a href="#cb1-1491" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>filters<span class="sc">:design:</span>two"}</span>
 <span id="cb1-1492"><a href="#cb1-1492" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1493"><a href="#cb1-1493" aria-hidden="true" tabindex="-1"></a>Design 3</span>
 <span id="cb1-1494"><a href="#cb1-1494" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1495"><a href="#cb1-1495" aria-hidden="true" tabindex="-1"></a>:   We add a second control without filters or frames ('ambient</span>
 <span id="cb1-1496"><a href="#cb1-1496" aria-hidden="true" tabindex="-1"></a>    control'). By comparing this control with the near-ambient control</span>
 <span id="cb1-1497"><a href="#cb1-1497" aria-hidden="true" tabindex="-1"></a>    we can test for the effect of filters and supporting</span>
-<span id="cb1-1498"><a href="#cb1-1498" aria-hidden="true" tabindex="-1"></a>    structures.[]{#item:example:filters:design:three</span>
-<span id="cb1-1499"><a href="#cb1-1499" aria-hidden="true" tabindex="-1"></a>    label="item:example:filters:design:three"}</span>
+<span id="cb1-1498"><a href="#cb1-1498" aria-hidden="true" tabindex="-1"></a>    structures.[]{#item<span class="sc">:example:</span>filters<span class="sc">:design:</span>three</span>
+<span id="cb1-1499"><a href="#cb1-1499" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>filters<span class="sc">:design:</span>three"}</span>
 <span id="cb1-1500"><a href="#cb1-1500" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1501"><a href="#cb1-1501" aria-hidden="true" tabindex="-1"></a>Design 4</span>
 <span id="cb1-1502"><a href="#cb1-1502" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1503"><a href="#cb1-1503" aria-hidden="true" tabindex="-1"></a>:   We attenuate radiation in our $-$treatment by filtering sunlight</span>
 <span id="cb1-1504"><a href="#cb1-1504" aria-hidden="true" tabindex="-1"></a>    with a polyester film. We have as controls plots with no filters or</span>
 <span id="cb1-1505"><a href="#cb1-1505" aria-hidden="true" tabindex="-1"></a>    supporting structures. In this case the effect of is confounded with</span>
-<span id="cb1-1506"><a href="#cb1-1506" aria-hidden="true" tabindex="-1"></a>    other effects of the filters.[]{#item:example:filters:design:four</span>
-<span id="cb1-1507"><a href="#cb1-1507" aria-hidden="true" tabindex="-1"></a>    label="item:example:filters:design:four"}</span>
+<span id="cb1-1506"><a href="#cb1-1506" aria-hidden="true" tabindex="-1"></a>    other effects of the filters.[]{#item<span class="sc">:example:</span>filters<span class="sc">:design:</span>four</span>
+<span id="cb1-1507"><a href="#cb1-1507" aria-hidden="true" tabindex="-1"></a>    label="item<span class="sc">:example:</span>filters<span class="sc">:design:</span>four"}</span>
 <span id="cb1-1508"><a href="#cb1-1508" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1509"><a href="#cb1-1509" aria-hidden="true" tabindex="-1"></a>Caveat</span>
 <span id="cb1-1510"><a href="#cb1-1510" aria-hidden="true" tabindex="-1"></a></span>
@@ -3180,7 +3180,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1517"><a href="#cb1-1517" aria-hidden="true" tabindex="-1"></a>    acronym-form="singular+short"} spanning tenths of nanometres in</span>
 <span id="cb1-1518"><a href="#cb1-1518" aria-hidden="true" tabindex="-1"></a>    wavelength (see Figure</span>
 <span id="cb1-1519"><a href="#cb1-1519" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">\[fig:filter:T:spectra\]</span><span class="co">](#fig:filter:T:spectra)</span>{reference-type="ref"</span>
-<span id="cb1-1520"><a href="#cb1-1520" aria-hidden="true" tabindex="-1"></a>    reference="fig:filter:T:spectra"} on page ). Consequently, near</span>
+<span id="cb1-1520"><a href="#cb1-1520" aria-hidden="true" tabindex="-1"></a>    reference="fig<span class="sc">:filter:</span>T:spectra"} on page ). Consequently, near</span>
 <span id="cb1-1521"><a href="#cb1-1521" aria-hidden="true" tabindex="-1"></a>    ambient controls will not be exposed to exactly the same irradiance</span>
 <span id="cb1-1522"><a href="#cb1-1522" aria-hidden="true" tabindex="-1"></a>    of as plants under the -attenuation treated plants. Usually they</span>
 <span id="cb1-1523"><a href="#cb1-1523" aria-hidden="true" tabindex="-1"></a>    will be exposed to a slightly lower irradiance of plus a trace of</span>
@@ -3209,9 +3209,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1546"><a href="#cb1-1546" aria-hidden="true" tabindex="-1"></a>filters between the lamps and plants. The same principles as discussed</span>
 <span id="cb1-1547"><a href="#cb1-1547" aria-hidden="true" tabindex="-1"></a>in Examples</span>
 <span id="cb1-1548"><a href="#cb1-1548" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[ex:lamps:controls\]</span><span class="co">](#ex:lamps:controls)</span>{reference-type="ref"</span>
-<span id="cb1-1549"><a href="#cb1-1549" aria-hidden="true" tabindex="-1"></a>reference="ex:lamps:controls"} and</span>
+<span id="cb1-1549"><a href="#cb1-1549" aria-hidden="true" tabindex="-1"></a>reference="ex<span class="sc">:lamps:</span>controls"} and</span>
 <span id="cb1-1550"><a href="#cb1-1550" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[ex:filters:controls\]</span><span class="co">](#ex:filters:controls)</span>{reference-type="ref"</span>
-<span id="cb1-1551"><a href="#cb1-1551" aria-hidden="true" tabindex="-1"></a>reference="ex:filters:controls"} apply to experiments in controlled</span>
+<span id="cb1-1551"><a href="#cb1-1551" aria-hidden="true" tabindex="-1"></a>reference="ex<span class="sc">:filters:</span>controls"} apply to experiments in controlled</span>
 <span id="cb1-1552"><a href="#cb1-1552" aria-hidden="true" tabindex="-1"></a>experiments.</span>
 <span id="cb1-1553"><a href="#cb1-1553" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1554"><a href="#cb1-1554" aria-hidden="true" tabindex="-1"></a><span class="fu">## </span></span>
@@ -3221,17 +3221,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1558"><a href="#cb1-1558" aria-hidden="true" tabindex="-1"></a>In this section we list recommendations related to the manipulation of</span>
 <span id="cb1-1559"><a href="#cb1-1559" aria-hidden="true" tabindex="-1"></a>radiation in outdoor experiments, and in section</span>
 <span id="cb1-1560"><a href="#cb1-1560" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">8.6.2</span><span class="co">](#sec:recommend:indoor:manip)</span>{reference-type="ref"</span>
-<span id="cb1-1561"><a href="#cb1-1561" aria-hidden="true" tabindex="-1"></a>reference="sec:recommend:indoor:manip"} list some additional</span>
+<span id="cb1-1561"><a href="#cb1-1561" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:recommend:</span>indoor:manip"} list some additional</span>
 <span id="cb1-1562"><a href="#cb1-1562" aria-hidden="true" tabindex="-1"></a>recommendations on radiation manipulations inside greenhouses and</span>
 <span id="cb1-1563"><a href="#cb1-1563" aria-hidden="true" tabindex="-1"></a>controlled environments. See section</span>
 <span id="cb1-1564"><a href="#cb1-1564" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">9.15</span><span class="co">](#sec:recommend:quantifying)</span>{reference-type="ref"</span>
-<span id="cb1-1565"><a href="#cb1-1565" aria-hidden="true" tabindex="-1"></a>reference="sec:recommend:quantifying"} for recommendations on how to</span>
+<span id="cb1-1565"><a href="#cb1-1565" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:recommend:</span>quantifying"} for recommendations on how to</span>
 <span id="cb1-1566"><a href="#cb1-1566" aria-hidden="true" tabindex="-1"></a>quantify radiation, section</span>
 <span id="cb1-1567"><a href="#cb1-1567" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">10.9</span><span class="co">](#sec:recommend:grow)</span>{reference-type="ref"</span>
-<span id="cb1-1568"><a href="#cb1-1568" aria-hidden="true" tabindex="-1"></a>reference="sec:recommend:grow"} for recommendations about growing</span>
+<span id="cb1-1568"><a href="#cb1-1568" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:recommend:</span>grow"} for recommendations about growing</span>
 <span id="cb1-1569"><a href="#cb1-1569" aria-hidden="true" tabindex="-1"></a>conditions, and section</span>
 <span id="cb1-1570"><a href="#cb1-1570" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">11.12</span><span class="co">](#sec:recommend:stat)</span>{reference-type="ref"</span>
-<span id="cb1-1571"><a href="#cb1-1571" aria-hidden="true" tabindex="-1"></a>reference="sec:recommend:stat"} for recommendations about statistical</span>
+<span id="cb1-1571"><a href="#cb1-1571" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:recommend:</span>stat"} for recommendations about statistical</span>
 <span id="cb1-1572"><a href="#cb1-1572" aria-hidden="true" tabindex="-1"></a>design of experiments.</span>
 <span id="cb1-1573"><a href="#cb1-1573" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1574"><a href="#cb1-1574" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Make sure that the only difference between the treatments you</span>
@@ -3325,7 +3325,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1662"><a href="#cb1-1662" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1663"><a href="#cb1-1663" aria-hidden="true" tabindex="-1"></a>Many of the recommendations in section</span>
 <span id="cb1-1664"><a href="#cb1-1664" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">8.6.1</span><span class="co">](#sec:recommend:outdoor:manip)</span>{reference-type="ref"</span>
-<span id="cb1-1665"><a href="#cb1-1665" aria-hidden="true" tabindex="-1"></a>reference="sec:recommend:outdoor:manip"} can be adapted to apply to</span>
+<span id="cb1-1665"><a href="#cb1-1665" aria-hidden="true" tabindex="-1"></a>reference="sec<span class="sc">:recommend:</span>outdoor:manip"} can be adapted to apply to</span>
 <span id="cb1-1666"><a href="#cb1-1666" aria-hidden="true" tabindex="-1"></a>indoor experiments. Here we list additional recommendations applicable</span>
 <span id="cb1-1667"><a href="#cb1-1667" aria-hidden="true" tabindex="-1"></a>to experiments in greenhouses and controlled experiments.</span>
 <span id="cb1-1668"><a href="#cb1-1668" aria-hidden="true" tabindex="-1"></a></span>
@@ -3380,9 +3380,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1717"><a href="#cb1-1717" aria-hidden="true" tabindex="-1"></a>This section includes code for calculating the radiation field under</span>
 <span id="cb1-1718"><a href="#cb1-1718" aria-hidden="true" tabindex="-1"></a>different arrays of lamps (Figures</span>
 <span id="cb1-1719"><a href="#cb1-1719" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:position:tubes\]</span><span class="co">](#fig:position:tubes)</span>{reference-type="ref"</span>
-<span id="cb1-1720"><a href="#cb1-1720" aria-hidden="true" tabindex="-1"></a>reference="fig:position:tubes"} and</span>
+<span id="cb1-1720"><a href="#cb1-1720" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:position:</span>tubes"} and</span>
 <span id="cb1-1721"><a href="#cb1-1721" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[fig:position:tubes:square\]</span><span class="co">](#fig:position:tubes:square)</span>{reference-type="ref"</span>
-<span id="cb1-1722"><a href="#cb1-1722" aria-hidden="true" tabindex="-1"></a>reference="fig:position:tubes:square"}). The algorithm is that in the</span>
+<span id="cb1-1722"><a href="#cb1-1722" aria-hidden="true" tabindex="-1"></a>reference="fig<span class="sc">:position:</span>tubes:square"}). The algorithm is that in the</span>
 <span id="cb1-1723"><a href="#cb1-1723" aria-hidden="true" tabindex="-1"></a>BASIC program in @Bjorn1993a with a few changes related to the density</span>
 <span id="cb1-1724"><a href="#cb1-1724" aria-hidden="true" tabindex="-1"></a>of grid points used, and the area of the grid for which the light field</span>
 <span id="cb1-1725"><a href="#cb1-1725" aria-hidden="true" tabindex="-1"></a>is calculated. The grid area is expanded as it is also important to</span>
@@ -3397,21 +3397,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-1734"><a href="#cb1-1734" aria-hidden="true" tabindex="-1"></a>available from CRAN (comprehensive R archive network, at</span>
 <span id="cb1-1735"><a href="#cb1-1735" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://cran.r-project.org/&gt;</span> and many mirror sites). The first example</span>
 <span id="cb1-1736"><a href="#cb1-1736" aria-hidden="true" tabindex="-1"></a>(Box <span class="co">[</span><span class="ot">\[box:light:field:R\]</span><span class="co">](#box:light:field:R)</span>{reference-type="ref"</span>
-<span id="cb1-1737"><a href="#cb1-1737" aria-hidden="true" tabindex="-1"></a>reference="box:light:field:R"}) is for calculating and plotting the</span>
+<span id="cb1-1737"><a href="#cb1-1737" aria-hidden="true" tabindex="-1"></a>reference="box<span class="sc">:light:</span>field:R"}) is for calculating and plotting the</span>
 <span id="cb1-1738"><a href="#cb1-1738" aria-hidden="true" tabindex="-1"></a>radiation field under and array of fluorescent tubes, using mostly the</span>
 <span id="cb1-1739"><a href="#cb1-1739" aria-hidden="true" tabindex="-1"></a>defaults. See the package documentation for the many function arguments</span>
 <span id="cb1-1740"><a href="#cb1-1740" aria-hidden="true" tabindex="-1"></a>available. The second example shows how to draw the positions of the</span>
 <span id="cb1-1741"><a href="#cb1-1741" aria-hidden="true" tabindex="-1"></a>fluorescent tubes (Box</span>
 <span id="cb1-1742"><a href="#cb1-1742" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[box:tube:positions:R\]</span><span class="co">](#box:tube:positions:R)</span>{reference-type="ref"</span>
-<span id="cb1-1743"><a href="#cb1-1743" aria-hidden="true" tabindex="-1"></a>reference="box:tube:positions:R"}).</span>
+<span id="cb1-1743"><a href="#cb1-1743" aria-hidden="true" tabindex="-1"></a>reference="box<span class="sc">:tube:</span>positions:R"}).</span>
 <span id="cb1-1744"><a href="#cb1-1744" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1745"><a href="#cb1-1745" aria-hidden="true" tabindex="-1"></a>::: example*</span>
-<span id="cb1-1746"><a href="#cb1-1746" aria-hidden="true" tabindex="-1"></a>[]{#box:light:field:R label="box:light:field:R"}</span>
+<span id="cb1-1746"><a href="#cb1-1746" aria-hidden="true" tabindex="-1"></a>[]{#box<span class="sc">:light:</span>field:R label="box<span class="sc">:light:</span>field:R"}</span>
 <span id="cb1-1747"><a href="#cb1-1747" aria-hidden="true" tabindex="-1"></a><span class="al">![image](listings/light_field_example.pdf)</span>{width="<span class="sc">\\</span>linewidth"}</span>
 <span id="cb1-1748"><a href="#cb1-1748" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-1749"><a href="#cb1-1749" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1750"><a href="#cb1-1750" aria-hidden="true" tabindex="-1"></a>::: example*</span>
-<span id="cb1-1751"><a href="#cb1-1751" aria-hidden="true" tabindex="-1"></a>[]{#box:tube:positions:R label="box:tube:positions:R"}</span>
+<span id="cb1-1751"><a href="#cb1-1751" aria-hidden="true" tabindex="-1"></a>[]{#box<span class="sc">:tube:</span>positions:R label="box<span class="sc">:tube:</span>positions:R"}</span>
 <span id="cb1-1752"><a href="#cb1-1752" aria-hidden="true" tabindex="-1"></a><span class="al">![image](listings/tube_positions_example.pdf)</span>{width="<span class="sc">\\</span>linewidth"}</span>
 <span id="cb1-1753"><a href="#cb1-1753" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-1754"><a href="#cb1-1754" aria-hidden="true" tabindex="-1"></a></span>

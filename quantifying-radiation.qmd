@@ -91,266 +91,1174 @@ $$
 $$
 :::
 
-## Basic concepts and terminology {#sec:basic:concepts}
+```{r, include=FALSE}
+library(dplyr)
+library(photobiology)
+library(photobiologyWavebands)
+library(photobiologyPlants)
+library(photobiologyLamps)
+library(photobiologyLEDs)
+library(photobiologySun)
+library(photobiologySensors)
+library(knitr)
+```
 
-### Introduction to UV, VIS and NIR radiation
+## Introduction radiation measurement
 
-In this section we will discuss the quantities, units and terminology
-used to describe visible and UV radiation, and explain how to use and
-interpret information about radiation. We will explain the basic
-concepts associated with quantifying radiation and how the different
-aspects of this topic are applied to UV experimentation.
+In this chapter the quantities guidance is given on how to measure and how to
+interpret quantities describing the properties radiation, including the
+application of the concepts of radiation physics presented in Chapter 2 to the
+description and quantification of radiation in ways relevant to experimentation
+in photobiology and management of crops.
 
-When describing experimental conditions we need to avoid all ambiguity,
-so that our results can be interpreted and experiments repeated. For
-this reason "Light intensity" and "amount of light", which are ambiguous
-terms, should be avoided in scientific contexts unless it is made
-absolutely clear what they stand for.
+In research, When describing experimental conditions it is necessary to avoid
+all ambiguity, so that current results can be interpreted correctly and
+experiments reproduced. Expressions such as "light intensity" and "amount of
+light", which are ambiguous, must be avoided. In addition to in scientific and
+technical research, ambiguity must be avoided in equipment specifications and
+management recommendations targeted at growers and other stakeholders that use
+the information provided as a base for decisions affecting the success of their
+activities or even the implementation of government policies.
 
-Radiation always consists of different wavelength components, although
-we often use the term "monochromatic" when the spectral range is narrow.
-Not even a single photon can be assigned an exact wavelength. As
-radiation also travels in various directions, it is also always
-associated with a distribution of directions. When we say
-"[collimated]{acronym-label="collimated" acronym-form="singular+short"}
-radiation", we mean that the angular distribution is very narrow. When
-we say "[diffuse:rad]{acronym-label="diffuse:rad"
-acronym-form="singular+short"}", we mean that the angular distribution
-is wide. In order to fully describe radiation, we must therefore
-describe the distribution of its wavelength components (the spectral
-distribution) and their direction in addition to "amount". Polarization
-is another property of radiation, but it will not be dealt with here.
-Finally, we should consider the time dimension; radiation changes over
-time. Radiation can be measured almost instantaneously and expressed as
-a rate, or integrated over time. Consequently we must distinguish
-between total energy, or the total number (or total number of moles) of
-photons, and the energy-or-photons per unit time. The first case gives
-an accumulated quantity, and the second case gives a rate. A clear
-distinction should also be made between the incident radiation on a
-target and the amount of radiation absorbed. When dealing with ionizing
-radiation, the term "dose" is always used to mean the radiation
-absorbed, however the same term often designates incident radiation when
-used in connection with ultraviolet-B and visible radiation.
+Instruments used to measure the properties of radiation are imperfect. All
+measurements are subject to errors and uncontrolled variation. Some of this
+variation inherent to the individual instrument including bias but variation
+also occurs in response to other variables in the environment such as
+temperature. The radiation-detectors used in some sensors as well as electronic
+components used in the circuits that amplify and record the measured quantities,
+age, i.e., their properties change with time. Thus,to ensure accuracy and
+reproducibility, recalibration of instruments at regular intervals is a must.
 
-A comprehensive glossary of terms relating to visible and ultraviolet
-radiation has been published by @Braslavsky2007. It can be downloaded
-from the Internet (see link in reference list).
+How the instruments are used, i.e., consistency in following a correct 
+measurement protocol and awareness of the limitations of the equipment are 
+unavoidable requirements for accurate and reproducible measurements of all 
+properties of radiation.
 
-### Direction {#sec:basic:concepts:direction}
+With a spectroradiometer spectral irradiance is measured, usually expressed in
+$\mathrm{W\,m^2\,nm^{-1}}$ or equivalent units differing only by a scaling
+factor such as $\mathrm{mW\,cm^2\,nm^{-1}}$. The wavelength resolution of
+spectrometers can vary from a fraction of a nanometer to a few tens of
+nanometers. What distinguishes data obtained with a spectroradiometer is that
+radiation over a wide range of wavelength is quantified at each of many ($\gg
+100$) contiguous narrow wavelength "slices" or bands. Spectrometers can be
+grouped into two main groups: spectrometers based on an array of detectors and a
+single static monochromator grating, and scanning spectrometers based on a
+single detector and one or two moving monochromators. Within each approach there
+are different types of detectors in use.
 
-Daylight radiation has two components: (a) radiation arriving directly
-from the sun, or [direct:rad]{acronym-label="direct:rad"
-acronym-form="singular+short"}, and (b) radiation arriving from the sky,
-or [diffuse:rad]{acronym-label="diffuse:rad"
-acronym-form="singular+short"}. Because it is very distant compared to
-its size, the sun behaves almost as a point source. For this reason
-direct radiation at the Earth surface comes from a single direction, so
-that its 'rays' are parallel or [collimated]{acronym-label="collimated"
-acronym-form="singular+short"}. Diffuse radiation is due to scattering
-and reflection in the atmosphere, and arrives from the whole sky, its
-'rays' are not parallel. Diffuse radiation is not collimated.
+Broadband sensors in most cases measure irradiance in a single broad range of
+wavelengths or band. Some sensors, however, measure two or even a few bands.
+In practical use the main difference compared to spectroradiometers is that
+the range of wavelengths integrated to compute the irradiance is fixed. Thus,
+many different types of broadband sensors exist, targetting different bands
+of the spectrum or implemented using different approaches.
 
-Light meters and radiation sensors are usually calibrated using
-radiation from (approximately) a single direction, i.e., collimated
-radiation from a lamp, but in nature (where most plants live!) radiation
-is not collimated. The solar radiation reaching the ground on clear
-cloud-free days as direct sunlight is rather well collimated, but in
-addition to direct radiation there is diffuse radiation from the sky.
-Furthermore, radiation reflected by the ground and objects in the
-surroundings also contributes to the diffuse radiation received by
-plants. A plant scientist wishing to understand how plants use and react
-to radiation has to take both direct and diffuse radiation into account.
+A comprehensive glossary of terms relating to visible and ultraviolet radiation
+has been published by @Braslavsky2007. It can be downloaded from the Internet
+(see link in reference list). 
 
-Many radiation meters have a flat receiving surface, just like many
-plant leaves, and so should in principle be well suited to measuring the
-radiation reaching a leaf. But if we are interested in the whole plant
-rather than a single leaf the situation is different, since plants are
-three-dimensional not flat and different surfaces on the plant face in
-different directions. In such situations where we wish to obtain an
-approximate estimate of the quantity of radiation incident on a plant,
-it is better to use a sphere than a flat radiation meter. This is
-achieved with a measuring instrument that is equally sensitive to
-radiation from any direction.
+After an introduction to the different types of instruments and discussing
+generic features of measurement protocols including some caveats, the remaining
+of this chapter is organized by physical and biologically relevant quantities,
+starting from those covering the widest range of wavelengths. For each quantity
+commonly used sensors and instruments are described together with specific
+measurement protocols and common errors and pitfalls affecting them. Suppliers
+known to the authors are also listed.
 
-This brings us to the distinction between
+## Spectroradiometers {#sec:spectroradiometers}
 
-1.  Irradiance, i.e., radiation power incident on a flat surface of unit
-    area, and[]{#item:irradiance label="item:irradiance"}
+Spectroradiometers[^22] are instruments used to measure spectral
+irradiance. There are two types of spectroradiometer: 1) scanning
+spectroradiometers, and 2) array detector spectroradiometers. The former
+have a single sensor, which is used to sequentially measure the spectral
+irradiance at each wavelength, while the latter have an array of sensors
+onto which the refracted spectrum is projected and measured
+simultaneously at all wavelengths. Sometimes the more general term
+spectrometer is adopted to indicate that the same instrument can be also
+used to measure spectral absorbance, -transmittance, or -reflectance, in
+addition to spectral irradiance. Scanning spectroradiometers scan a
+range of wavelengths. To do this they require mechanically moving parts
+inside the optic path and therefore need very stable housing for the
+instrument. For this reason, scanning spectroradiometers are larger and
+more difficult to transport than array detector spectroradiometers. They
+are also less rugged and usually require mains power. However, in
+scanning spectroradiometers it is possible to use a double monochromator
+arrangement that makes their optical performance far superior to that of
+array spectroradiometers which always use a single monochromator.
 
-2.  Energy fluence rate (or fluence rate for short), i.e., radiation
-    power incident on a sphere of unit cross section. The term fluence
-    rate was introduced by @Rupert1974.[]{#item:fluence:rate
-    label="item:fluence:rate"}
+### Scanning spectroradiometers
 
-Other terms with the same meaning as energy fluence rate are space
-irradiance, scalar irradiance and actinic flux. The latter is used
-mostly by atmospheric scientists. The term spherical irradiance has been
-used in similar contexts, but means one quarter of the fluence rate.
-Vectorial irradiance is just the same as irradiance.
+#### Basic structure and principles of operation
 
-Both irradiance and energy fluence rate, can also be described in terms
-of photons. For item
-[\[item:irradiance\]](#item:irradiance){reference-type="ref"
-reference="item:irradiance"} above, the corresponding photon
-nomenclature has not yet been standardised. It would be logical to use
-the term photon irradiance, but many people, especially in the
-photosynthesis field, use the term photon flux density and the
-abbreviation PFD (PPFD for [PPFD]{acronym-label="PPFD"
-acronym-form="singular+short"}). For item
-[\[item:fluence:rate\]](#item:fluence:rate){reference-type="ref"
-reference="item:fluence:rate"} the term photon fluence rate is well
-accepted among plant physiologists, but hardly among scientists in
-general (for example meteorologists call it 'actinic flux' or 'scalar
-irradiance'). Energy fluence is the energy fluence rate integrated over
-time. The word energy is frequently omitted, so that 'fluence' has the
-same meaning as 'energy fluence'. In contrast, when 'photon fluence' is
-meant, the word 'photon' is always explicitly mentioned.
+The basic components of a scanning spectroradiometer are the following:
+a) input optics for collecting radiation from the sky and guiding it
+further into the spectroradiometer b) a monochromator for resolving the
+input radiation into separate wavelengths c) a photomultiplier tube
+(PMT) for detecting the energy possessed by each spectral component in
+the measured spectrum. In addition, an external computer for
+communication with the microprocessor of the spectroradiometer and for
+collection, processing and storage of data is needed.
 
-When giving a value for irradiance, the direction of the plane for which
-the irradiance is considered must be specified. This is often the
-horizontal plane but will depend on the object studied: for instance,
-the surface a leaf is frequently not horizontal. For
-[collimated]{acronym-label="collimated" acronym-form="singular+short"}
-radiation (coming from a single direction), irradiance and fluence rate
-have the same numerical value if the beam of radiation is perpendicular
-to the plane on which irradiance is measured (Figure
-[\[fig:cosine\]](#fig:cosine){reference-type="ref"
-reference="fig:cosine"}.A). For completely
-[isotropic]{acronym-label="isotropic" acronym-form="singular+short"}
-radiation coming from above (equally from any direction above the
-horizontal) the fluence rate is twice the irradiance on a horizontal
-plane (Figure [\[fig:cosine\]](#fig:cosine){reference-type="ref"
-reference="fig:cosine"}.C). Sometimes one may also have to consider
-radiation from below, especially in aquatic environments (Figure
-[\[fig:cosine\]](#fig:cosine){reference-type="ref"
-reference="fig:cosine"}.D).
+The input optics typically consists of a flat teflon diffuser covered by
+a quartz dome. The diffuser collects the incident photons from the
+overhead hemisphere. The resulting diffuse radiation is guided to the
+entrance slit of the monochromator, sometimes by means of an optical
+fibre. The monochromator may be a single or a double monochromator (see
+section [8.2.4](#sec:spectrographs){reference-type="ref"
+reference="sec:spectrographs"} on page ). In scanning
+spectroradiometers, a system based on a step motor drives a mask that
+allows only photons of a certain wavelength at a time to enter the exit
+slit of the monochromator. The exit slit serves as the entrance window
+to the cathode of the PMT. The photon pulses are amplified and
+transmitted to a photon counter for registration.
+
+Some spectroradiometers are constructed on a solar tracker that follows
+the position of the sun. This eliminates the effects of potential
+azimuthal dependencies in the detection of radiation. A measurement head
+at the end of an optical fibre may be also installed on a separate sun
+tracker. The temperature of the instrument is usually either stabilized
+or kept above a certain temperature limit to ensure proper functioning.
+The dome of the measurement head may be equipped with a heater and/or
+air blower to keep the temperature of the teflon within certain limits
+and to avoid emergence of frost onto the dome.
+
+Other spectroradiometers are less rugged and are intended for laboratory
+or spot measurements outdoors. They are more portable but more sensitive
+to temperature extremes and are not water proof. Examples of such
+instruments are Optronics OL 756 and Macam SR9910 spectroradiometers.
+Figure
+[\[fig:Optronics:OL_756\]](#fig:Optronics:OL_756){reference-type="ref"
+reference="fig:Optronics:OL_756"} shows the different parts of the first
+of these instruments.
 
 ::: figure*
-![image](figures/cosine_arrows.pdf){width="0.8\\myfigwidth"}
+![image](figures/OL_756_diagram.pdf){width="0.9\\myfigwidth"}\
 :::
 
-When a delimited beam of radiation hits a plane surface perpendicularly,
-it results in the irradiance, , but the same beam when tilted at an
-angle $\alpha$ to the vertical will be more spread out, and thus the
-irradiance will be lower. More specifically, the irradiance will be
-$\irr \cdot \cos \alpha$ (Figure
-[\[fig:cosine\]](#fig:cosine){reference-type="ref"
-reference="fig:cosine"}.B).
+The more rugged instruments, usually permanently installed at a fixed
+location, are commonly used for measuring long (several years long) time
+series of spectral irradiance data. The more portable instruments are
+used for spot measurements in plant canopies, and under lamps, and or
+filters. The first type of instrument is most commonly used by
+meteorologists, while the portable instruments are most useful to
+biologists.
 
-### Spectral irradiance
+#### Characteristics
 
-When we deal with *how a quantity of radiation varies with wavelength*,
-for instance when plotting a spectrum, we add "spectral" to the name of
-the quantity to give "spectral irradiance" and "spectral fluence rate".
-We must also adjust the units to account for the width of the part of
-the spectrum that is included in the value specified (in photobiology
-nm$^{-1}$ is often used to indicate wavelength interval, but the scale
-can also be defined in terms of wave number or frequency, as in,
-cm$^{-1}$ or s$^{-1}$ respectively).
+**Dark current** and **dead time** are characteristics possessed by the
+PMT. Dark current is a measure of the drift photons going from the
+cathode to the anode of the PMT without any real incident photons
+entering the instrument. Dead time is a measure of that PMT which is in
+a paralysed state after a photon detection event. Stray light is
+composed of photons echoed from wavelengths other than the nominal
+wavelength being measured. In commercially available scanning
+spectroradiometers, these phenomena are usually measured and handled by
+the measurement software.
 
-### Wavelength {#sec:basic:concepts:wavelength}
+The **wavelength alignment** of a spectroradiometer has to be checked
+regularly. Most instruments taking daily measurements contain an
+internal mercury lamp aimed at ensuring the stability of the alignment.
+The wavelength and the position of the micrometer turning the grating of
+the monochromator are related to each other by a second-order equation
+using so called dispersion coefficients. The determination of the
+dispersion coefficients should be part of the annual maintenance of the
+instruments.
 
-It is impractical to always quantify radiation by giving its complete
-spectral composition; so simplifications have to be made that account
-for the most important features of a spectrum. From a purely physical
-viewpoint, there are two basic ways of quantifying radiation. Either we
-express the quantity related to the number of photons, or the quantity
-related to the energy of radiation. When considering radiation of a
-single wavelength, the energy of a photon, or quantum (in a vacuum), is
-inversely proportional to the wavelength and the proportionality
-constant is Planck's constant multiplied by the speed of light in a
-vacuum (see section
-[7.3](#sec:radiation:properties){reference-type="ref"
-reference="sec:radiation:properties"}).
-$$\quantum(\lambda) = h \cdot \nu = h \cdot \frac{c}{\lambda} \label{eq:photon}$$
-where $\quantum(\lambda)$ is a quantum, or the amount of energy that one
-photon has, $h$ is Planck's constant ($h=6.626\times 10^{-34}$ Js),
-$\nu$ is frequency, $\lambda$ is wavelength, and $c$ is the speed of
-light in a vacuum ($c=2.998\times 10^8$ m s$^{-1}$). Please, see section
-[7.4](#sec:solar:radiation){reference-type="ref"
-reference="sec:solar:radiation"} on page for a numerical example. When
-dealing with a band of wavelengths it is necessary to repeat these
-calculations for each wavelength (in practice a very narrow band) and
-only then integrate across wavelengths. For example, PAR in units of W
-m$^{-2}$ is obtained by integrating the spectral irradiance from 400 to
-700 nm. As explained in Box
-[\[box:quantum:quantities\]](#box:quantum:quantities){reference-type="ref"
-reference="box:quantum:quantities"} on page , to determine a quantity in
-terms of photons, an energetic quantity has to be weighted by the number
-of photons, i.e. divided by the energy of a single photon at each
-wavelength from equation
-[\[eq:photon\]](#eq:photon){reference-type="ref" reference="eq:photon"}.
-To get moles of photons, the value has to be divided further by
-Avogadro's number ($N_A=6.022\times 10^{23}$ mol$^{-1}$). For example,
-the photon irradiance or in units of is obtained by
-$$\PPFD = \frac{1}{N_A}\int_{400\;\mathrm{nm}}^{700\,\mathrm{nm}}\frac{\lambda}{hc}\;E(\lambda)\;\mathrm{d}\lambda \label{eq:ppfd}$$
-If we have measured (energy) irradiance, and want to convert this value
-to photon irradiance, the conversion will be possible only if we have
-information about the spectral composition of the radiation we measured.
-For , 1 of "average daylight" (400--700 nm) is approximately 4.6 . This
-figure is exact only if the radiation is equal from 400 to 700 nm,
-because it represents the value at the central wavelength of 550 nm. But
-to make the exact conversion, we must know the spectrum of irradiance
-measured at the time of measurement, as the solar spectrum varies
-through the day and with the seasons. In the band this is even more
-important as the tail of the solar spectrum varies much more than the
-band. When dealing with lamps, we can sometimes use conversion factors
-obtained for a particular sensor and lamp combination to convert
-measured values from energy to photon irradiance. If the lamps are
-filtered, for example with cellulose diacetate, the spectrum transmitted
-by the filter will change as the filter ages, and consequently each time
-irradiance beneath the filter is measured the spectrum of the radiation
-source (i.e. the lamps) must also be measured.
+Solar irradiance spectra sometimes exhibit so called **noise spikes**,
+which mean sudden abnormally high or low intensity readings on a single
+wavelength. The origin of the spikes is not fully resolved, but
+straylight is considered a partial explanation. The spikes can be
+detected and eliminated making use of suitable reference spectra.
 
-### Units used for photons and energy
+Ideally, the angular response of the measurement head follows the shape
+of a cosine curve. In practice, the response deviates somewhat from
+this. Typically, the larger the solar zenith angle, the larger the
+deviation. The **cosine response** of the measurement head should be
+measured in laboratory and a corresponding correction applied to all
+measured data.
 
-Radiation considered as photons can be expressed either as number of
-photons, or as moles of photons (the symbol for moles is mol). An
-obsolete term for a mole of photons is an Einstein (E); it should no
-longer be used. According to Avogadro's number ($N_A$), one mole is
-$6.02217 \times 10^{23}$ photons, but in most cases a more convenient
-unit is $\mymu$mol (micromole of photons, $6.02217 \times 10^{17}$
-photons). Either of these units can be expressed per time and per area
-or (rarely in biological contexts) per volume.
+If the spectroradiometer is not stabilized for temperature, its response
+usually exhibits **temperature dependence**. This dependence should be
+determined in the laboratory by measuring a calibration lamp with a
+spectroradiometer heated/cooled over a range of different wavelengths.
+The measurements can be used for deriving the temperature correction
+factors to be applied in the post-processing of the sky measurements.
 
-The unit of energy is a joule (J). Energy per time is power, and a joule
-per second is a watt (W). Both can be expressed per area (or, rarely in
-biological contexts, per volume, i.e., energy density or power density).
-Simply giving a value followed by "" without further qualification is
-not meaningful and should be avoided, since this leaves the surface you
-are expressing with m$^2$ undefined. Is it a flat surface or a curved
-one? If it is flat, what is its orientation? When reporting experimental
-conditions, all these factors have to be specified.
+The **slit function** determines the transmittance of a monochromator as
+a function wavelength. The ideal shape of the function would be
+triangular. The full width at half maximum of the slit function is
+commonly used as a quantity characterizing the slit function. The slit
+function can be derived by measuring the irradiance emitted by a tunable
+laser. Removal of the effect of the slit function on the measured
+spectra should be considered if spectra measured by two or several
+instruments are to be compared with each other.
 
-### Ratios of UV and visible radiation
+The **spectral responsivity** of a spectroradiometer should be based on
+regular measurements of a certified calibration lamp. If the
+responsivity seems to have changed, basically two alternative ways to
+handle the change exist. The change may be introduced in the
+responsivity of the instrument and the processing of the sky
+measurements as such. A step-wise change in response is hence introduced
+in the time series of the measurements. Alternatively, a gradually
+changing response time-series may be defined using a moving average with
+a suitable time window. In this way, the change in the response is
+introduced gradually in the time series of the sky irradiance
+measurements.
 
-As already mentioned in section
-[7.1](#sec:plants:UVB){reference-type="ref" reference="sec:plants:UVB"}
-on page , it is very important to conduct experiments under realistic
-environmental conditions. For the control of these experimental
-conditions, it is helpful---besides using
-[biologically effective exposures]{acronym-label="biologically effective exposure"
-acronym-form="plural+short"}---to calculate ratios and . The ratios can
-also be used for comparison of different experimental conditions or
-experimental conditions with natural conditions outside in the field, as
+#### Maintenance
+
+The maintenance of a scanning spectroradiometer operating in an outdoor
+environment involves the following practices: a) general daily
+maintenance; b) checks on the wavelength setting and stability of
+irradiance scale; c) calibration of irradiance against primary standards
+in a dark room.
+
+Daily routine maintenance includes cleaning of the quartz dome and
+checking on the general functioning as well as the correct levelling of
+the instrument. The quartz dome should also be cleaned/dried after rain
+or snow. The operator should be familiar with the control software of
+the instrument. Additional simple routines based on, for instance,
+selected reference spectra may be used for instant checking of the
+measured data. These kinds of routines are invaluable in the prompt
+detection of occasional malfunctions of the instrument.
+
+An internal Hg lamp is used for checking of the wavelength scale in some
+spectroradiometers. In these cases, it is convenient to imbed the Hg
+lamp measurement into the daily measurement schedule. If the instrument
+lacks an internal lamp, this check has to be done using an external
+lamp. For checking the stability of the irradiance scale, portable
+calibration units are available. These enable, for instance, stability
+checks of the instrument at the measuring site on a weekly basis. It is
+advisable that the humidity indicators are also checked on a weekly
+basis.
+
+Irradiance calibration of a spectroradiometer should be performed in a
+dark room (Figure
+[\[fig:Brewer:calibration\]](#fig:Brewer:calibration){reference-type="ref"
+reference="fig:Brewer:calibration"}). A primary standard lamp with an
+irradiance certificate provided by a certified laboratory of standards
+is needed. To extend the lifetime of the primary standard lamp, it is
+recommended that it is not used as a regular calibration lamp. Instead,
+the irradiance scale of the primary lamp should be transferred to a
+secondary standard lamp that is used as a working calibration lamp. Use
+of several working lamps is recommended to enable recognition of
+potential drifts in the radiant output of the lamps as they age.
+Calibration against the primary/secondary standard lamp should be
+performed at least every two months. The desiccant bags inside the cover
+of the spectrometer should be taken out and dried at least every two
+months as well. Proper levelling of the instrument has to be ensured
+after having it relocated for outdoor measurements.
+
+![image](photos/Brewer107_in_dark_room_COST.jpg)
+
+On the annual maintenance practices of a spectroradiometer, each
+manufacturer has its own services and recommendations. Participation in
+intercomparison campaigns gathering a number of state-of-the-art
+instruments to conduct measurements on a jointly agreed schedule for a
+period of time has proven a fruitful way to investigate the long-term
+stabilities and overall performances of scanning spectroradiometers
+(Figure
+[\[fig:Brewer:intercomparison\]](#fig:Brewer:intercomparison){reference-type="ref"
+reference="fig:Brewer:intercomparison"}).
+
+![image](photos/Brewer107_in_Huelva_2005_COST.jpg)
+
+
+### Array detector spectroradiometers
+
+In contrast to scanning spectroradiometers, array detector instruments
+measure spectral irradiance simultaneously at all wavelengths. The
+detector in this case is a linear array of light sensors, similar in
+structure to the imaging sensors used in digital cameras, but long and
+narrow. The number of detector elements ('pixels') along the array
+varies, 2000 to 3000 pixels being common[^23]. The array can be a
+'charge coupled device' (CCD), or an array of photodiodes (DAD). The
+'image' of the spectrum produced by the monochromator is projected and
+focused by means of mirrors onto the linear detector array, each
+detector in the array receiving light of a certain wavelength. In the
+case of array spectrometers it is not possible to use two monochromators
+in tandem to reduce stray light. Array spectrometers are small and
+portable (Figure
+[\[fig:Maya2000Pro\]](#fig:Maya2000Pro){reference-type="ref"
+reference="fig:Maya2000Pro"}).
+
+![image](photos/Maya2000Pro.jpg)
+![image](photos/Maya2000Pro-1.jpg)
+
+For measuring energy or photon spectral irradiance a cosine diffuser is
+used as input optics. This ensures that the angular response follows the
+cosine law, and so the instrument measures the radiation as received on
+a flat surface. Other input optics are also available, for example, with
+a narrow angle of view. However, the quantity measured with them is not
+irradiance. Cosine diffusers differ widely in how closely they follow
+the cosine law. Some cheaper models are prone to large errors,
+especially when radiation impinges at a sharp angle to their surface.
+This will be further discussed in section
+[9.7.2.1](#sec:array:errors){reference-type="ref"
+reference="sec:array:errors"} on page .
+
+The input optics is usually connected to the array spectrometer with an
+optical fibre. The type of fibre to be used depends on the wavelength
+range to be measured. If smaller than the entrance of the
+spectroradiometer, the diameter of the fibre will affect the amount of
+radiation entering the instrument. The diameter also affects the
+mechanical properties of the fibre: thin fibres are more flexible and
+tolerate bending into curves of smaller diameter. Fibres also vary with
+regards to the type of cladding material used to protect them. Fibres
+with metal cladding tolerate rougher handling than those with plastic
+cladding. The most common connector for these fibres and accessories is
+the SMA 905, originally designed for light fibres used in digital
+communication systems. For this reason their positioning upon repeated
+attachment is not exactly the same. Consequently, the recommendation is
+**not** to detach and reattach the fibre from the spectrometer without
+recalibrating the system[^24].
+
+At the entrance of the spectrometer, just behind the connector to which
+the fibre is attached, there is a slit (Figure
+[\[fig:CCD:slit\]](#fig:CCD:slit){reference-type="ref"
+reference="fig:CCD:slit"}), which limits the width and height of the
+incoming light beam. The width is of the order of a few micrometres and
+the exact value chosen determines, together with the monochromator, the
+spectral resolution of the spectroradiometer. The narrower the slit, the
+narrower the beam hitting the monochromator and the better the
+resolution (the narrower the peaks that can be resolved). In a
+Czerny-Turner configuration (Figure
+[\[fig:optical:bench\]](#fig:optical:bench){reference-type="ref"
+reference="fig:optical:bench"}), the next component is a collimating
+mirror which projects the beam onto a monochromator. Gratings are used
+as monochromators. Gratings have a surface with very closely spaced
+rulings of a specific profile, and they separate radiation of different
+wavelengths in a similar way to a prism. One important parameter is the
+density of rulings which is one of the determinants of spectral
+resolution and useful wavelength range. The 'image' produced by the
+grating is focused onto the array detector by another collimating
+mirror. Some newer models of spectrometer from StellarNet
+(e.g. BLACK-Comet spectrometer) and now also from Ocean Optics (Torus
+spectrometer) use a concave grating instead of a planar one. Since the
+grating itself focuses the light onto the array detector, collimating
+mirrors are not needed. Having fewer optical components, an instrument
+with better stray light performance is obtained.
+
+::: figure*
+![image](figures/024-OFLV-200.pdf)
+![image](figures/slits.pdf)
+:::
+
+::: figure*
+![image](figures/avabank.pdf)
+![image](figures/OO-USBBbench.pdf)
+
+:::
+
+The array detector normally has rectangular 'pixels', orientated so that
+their shorter dimension is on the axis along which the different
+wavelengths have been separated by the monochromator, and their longer
+dimension is perpendicular to it. The entrance slit is positioned to
+have the long dimension coincident with the long dimension of the
+pixels. In some detectors the long pixels are in reality rows of square
+pixels with their electrical output combined into a single output
+signal. The output signal from the pixels is averaged by the detector
+itself over what is called 'integration time'. The longer the
+integration used, the lower the irradiance that can be measured.
+However, the 'dark noise' increases with the integration time. In
+addition, it is possible to take several scans and average them. A
+coarse dark noise correction is sometimes done by subtracting the signal
+from special pixels at the end of the array that are not exposed to
+radiation. However a dark scan, with the input optics protected from the
+incoming radiation, should also be measured, and its value, wavelength
+by wavelength subtracted from the measurements. The dark noise depends
+on temperature. This has two implications, dark scans should be taken
+frequently, sometimes before or after each measurement, and the
+spectrometer should be allowed to warm up for some minutes before
+starting to take readings. Furthermore, when working outdoors it should
+be protected from direct sunlight, so as to keep its temperature stable
+and close to that at which it was calibrated. Some spectrometers have a
+thermoelement (TE), working according to the Peltier principle, which
+cools the array detector to a preset temperature and thereby stabilizes
+it.
+
+Most array spectrometers, the exception being some older models with
+thermoelectrically cooled detectors, are powered through the USB port.
+This can be the same USB link to a personal computer used to control them
+and retrieve the acquire spectral data. With the power delivery (PD) charging
+protocol now available, USB-C ports can provide much more power that the
+original USB 1.0 and 2.0 standards.
+
+For field and mobile use a laptop is frequently used to control array
+spectrometers. Special software, sold by the manufacturer of the spectrometer,
+is frequently used to control the instrument and acquire and plot the spectra.
+
+For most instruments there are also drivers and software development kits (SDK)
+available for developing programs for special applications. When special
+corrections, for example for stray light, are performed it may be necessary to
+acquire raw spectral data and apply corrections and calibrations off-line using
+other software, for example Excel or R. In some cases it is possible to control
+spectrometers and acquire data using a microcontroller board such as the
+Raspberry Pi.
+
+Many modern array spectrometers can communicate through Ethernet in addition
+to through USB. This makes it possible to control them through a local area
+network (LAN) or through a wide area network (WAN) such as the Internet.
+
+::: figure*
+![image](photos/SpectraSuite.pdf){width="0.67\\myfigwidth"}
+:::
+
+In recent years handheld array spectroradiometers have become available that
+have a screen and small keyboard to control them. Nost of them are not designed
+to measure ultraviolet or infrared radiation but only vsisible. Several of these
+can be controlled wirelessly with a mobile phone through Bluetooth. Many of
+these are not intended for or accurate enough for use in scientific research.
+However, a few of them are. One example in the LI-180 from LI-COR. The
+proliferation of suppliers of low cost spectrometers, frequently providing 
+incomplete descriptions and specifications, makes it hard to recommend any of
+them for serious use, even if some could be fine and be available in the
+future to provide support, repairs and updates.
+
+#### Measuring errors and limitations in accuracy {#sec:array:errors}
+
+Array spectroradiometers have a great advantage when quickly measuring
+changing radiation as they acquire all wavelengths simultaneously. This
+ensures that the values of spectral irradiance measured at all
+wavelengths are consistent. In contrast, under conditions where
+irradiance varies rapidly with time, the shape of the measured spectrum
+can get badly distorted when measured with a scanning spectroradiometer.
+However, array spectrometers have a serious limitation in that they
+cannot be built with double monochromators. As any spectroradiometer
+with a single monochromator, they suffer from relatively high values of
+stray light. Stray light originates from scattered light of incorrect
+wavelengths falling on a pixel of the array detector. In other words,
+radiation of one wavelength is detected (and measured) as radiation of a
+different wavelength. Perfectly scattered radiation would affect all
+pixels in the same way, but when there are reflections within the
+optical bench that are not perfectly scattered, some pixels in the array
+detector are more affected by stray light than others. Stray light is a
+critical specification when measuring UV-B in sunlight, as UV-B
+irradiance is very low compared to the irradiance of visible and near
+infra-red radiation. Consequently, if even a small proportion of visible
+radiation is scattered and reflected as stray light within the
+instrument, this stray light can generate a signal on the 'UV-B pixels'
+of the array of a magnitude similar to, or larger than, that produced by
+the radiation that we are trying to measure. Stray light is such a big
+problem that without very complicated and special corrections these
+instruments cannot be used at all to measure radiation in sunlight.
+Errors of more than 100%[^25] for biologically effective doses can be
+incurred even with a well calibrated instrument. Failure to take this
+into account has led to important mistakes, like the erroneous
+measurement of solar radiation at ground level by NASA researchers which
+was published in *Geophysical Research Letters*. This was most likely an
+artifact due to the limitations of the array spectrometer used. See the
+paper by @DAntoni2007 and the refutation by @Flint2008 and the answer by
+@DAntoni2008. Equally, the values of the UV-B doses used in many recent
+biological experiments, as reported in the publications, are suspect,
+since they have been based on measurements performed with
+single-monochromator instruments.
+
+Gratings disperse radiation according to what are called 'orders'. For
+example first order dispersion may be 10 nm/mm, second order dispersion
+5 nm/mm, third order dispersion 2.5 nm/mm, and so on. The first order
+spectrum is what is of interest, and is what we want the array detector
+to see. However, any given 'pixel' in the array, in addition to
+radiation corresponding to the first order (e.g. 800 nm), also sees
+radiation corresponding to higher orders (e.g. 400 nm, 266.6 nm, 200 nm,
+and so on) if those wavelengths are present in the incoming radiation.
+The solution to this problem is to use 'order-sorting filters' in the
+light pass. In array spectrometers order-sorting filters may be directly
+coated onto the array detector, or attached to it. For example Ocean
+Optics spectrometers can be bought with a *variable longpass
+order-sorting filter* as an option (Figure
+[\[fig:CCD:slit\]](#fig:CCD:slit){reference-type="ref"
+reference="fig:CCD:slit"}).
+
+Another problem with array detector spectrometers is that the radiation
+may be better focused on some parts of the array than on others, and
+this causes changes in spectral resolution with changing wavelengths. In
+addition, the wavelength difference between adjacent pixels is not
+always the same across the whole spectrum, neither is the step size an
+integer number. Usually the software supplied with the instrument can
+generate files with data at integer steps (e.g. 1 nm, or 5 nm) but this
+is done by interpolating and averaging, rather than changing the
+measurement itself. In contrast the scanning step of scanning
+spectroradiometers can be controlled through its software.
+
+The overall accuracy of the measurements is also reliant on the angular
+response of the entrance optics. For measuring spectral irradiance we
+generally use a cosine diffusor as entrance optics, although it is also
+possible to use an integrating sphere. Deviations of cosine diffusers
+from the theoretical angular response tend to increase at large angles
+from the vertical. If the spectrum of the light coming from different
+angles is different (e.g. sun and sky) not only the irradiance measured
+may be inaccurate but also the shape of the spectrum may be distorted.
+When measuring outdoors, the size of this error will change through a
+day as the sun moves across the sky. The very small cosine diffusers
+sold by the spectrometer manufacturers tend to be prone to large errors,
+and individually calibrated, high quality diffusers like the D7-SMA and
+D7-H-SMA from Bentham (see section
+[9.20](#sec:quant:suppliers){reference-type="ref"
+reference="sec:quant:suppliers"} on page for full address) are
+preferable, although they are much more expensive (Figure
+[\[fig:Bentham:diffuser\]](#fig:Bentham:diffuser){reference-type="ref"
+reference="fig:Bentham:diffuser"}).
+
+::: figure*
+![image](photos/BenthamD7-H-SMA.pdf){width="0.5\\myfigwidth"}
+:::
+
+#### Calibration and corrections {#sec:array:calibration}
+
+When measuring UV-B with an array spectroradiometer it is not enough to
+have it properly calibrated, its optical characteristics (slit function
+at different wavelengths, stray light properties) need to be measured
+and a correction algorithm developed and later applied to each
+measurement. This makes the use of array spectroradiometers for
+characterizing UV-B doses complicated and error prone. This type of use
+has to be attempted only by experienced operators and the correction
+algorithm itself requires lots of effort to develop and implement. Given
+the lack of standardized procedures for stray light correction, its
+implementation requires advanced knowledge of optics and metrology. We
+will first discuss spectral calibration and thereafter stray light
+correction procedures.
+
+Spectral calibration against standard lamps needs to be repeated
+regularly. For measurements not requiring very high precision, annual
+re-calibrations may be enough. However, the main consideration should be
+how valuable is the data that will be acquired. If the spectral
+sensitivity of the instrument has changed significantly from one
+calibration to the next, the data from all measurements done in between
+these calibrations are suspect, and should be discarded. Consequently if
+one does yearly re-calibrations one can lose one year's worth of data,
+while if one does monthly re-calibrations one only risks losing one
+month's worth of data. Consequently, the decision on how frequently to
+calibrate should, in addition to instrument stability, be based on the
+maximum size of the tolerable errors and on the value of the data
+(i.e. the cost of replacing the data if they need to be discarded).
+
+The most common and stable calibration light sources are incandescent
+lamps (e.g. FEL lamps) with electronics in the power source which keeps
+the electrical power at the filament constant within very narrow
+margins. The distance between the lamp and the entrance optics, and
+their alignment, should also fall within a very narrow margin of the
+expected values. Calibration lamps are secondary or tertiary standards,
+connected by a chain of calibration steps to a standard kept at a
+metrology agency like NIST. Calibration lamps are supplied with spectral
+data about their emission characteristics. Calibration of the instrument
+is done by measuring the known spectrum and irradiance of the
+calibration lamp. Of course the output of the lamp will not exactly
+match the data supplied with it, because its original calibration is
+also subject to errors. Furthermore, there are errors deriving from
+slight differences between the burning conditions (current and voltage)
+during measurements and those when it was calibrated at the factory.
+Further errors can be introduced by small differences in the geometry of
+the optical setup. So, do not forget that calibrations are subject to
+errors. Furthermore, you cannot obtain an absolute estimate of
+calibration errors by comparing two instruments calibrated with the same
+lamp, unless this lamp is the primary standard.
+
+Calibrating a spectroradiometer in the UV-B band with a FEL lamp is not
+recommended, because FEL lamps emit very little UV-B. For calibration in
+the UV-B deuterium lamps need to be used. Irradiance emitted by
+deuterium lamps is less stable than that emitted by FEL lamps. For
+coarse calibration the use of a deuterium lamp may be enough, but for
+accurate calibration it is best to use FEL and deuterium lamps in
+tandem. The shape of the spectrum emitted by deuterium lamps is stable,
+by matching the irradiances at wavelengths where the emission of both
+types of lamps overlap, one can extend an accurate calibration to
+shorter wavelengths. Spectrometer manufacturers also sell calibration
+light sources (lamp plus electronics) that may be good for routine
+calibration or especially for checking that calibrations performed in an
+optical bench remain valid. Again, what type of calibration procedure
+and lamp to use will depend on the accuracy required. If we want our
+measurements to be within $\pm 10$% of the true value we will need to
+use very good equipment and protocols for the calibration. If we can
+tolerate errors of, for example, $\pm 25$%, calibrations can be less
+accurate.
+
+It is also very important to do a wavelength calibration and to check
+this calibration regularly. It should not be forgotten when doing this
+calibration that it is affected by the temperature of the instrument as
+temperature affects (by thermal expansion) the dimensions of the optical
+bench and its components. Wavelength calibration is done based on
+elemental emission lines in discharge lamps (or even the sun). For quick
+checks low pressure mercury or germicidal lamps may be used. The
+manufacturers of spectrometers also sell special light sources for
+wavelength calibration. One should choose carefully which wavelengths to
+use (for example 253.652 nm, 296.728 nm, 334.148 nm, and 404.657 nm for
+mercury lamps, as they are simple peaks rather than multiple peaks very
+close together like those at 302 nm, 313 nm and 365 nm). If one desires
+a calibration accurate to a fraction of the wavelength step of the array
+one needs to fit a bell-shaped curve to the pixel showing the highest
+signal and those adjacent to it, to find the true location of the peak
+centre, most likely in-between two pixels.
+
+To keep errors within $\pm 10$% in the UV-B when measuring sunlight, and
+especially to keep errors within $\pm 10$% for biologically effective
+doses, a good calibration is not enough when using single monochromator
+spectroradiometers. There is also a need to correct for stray light. If
+we do not correct for stray light some biologically effective doses will
+be overestimated by more than 100%. The ratio between stray light in the
+UV-B band and the maximum spectral irradiance measured in good single
+monochromator spectrometers is approximately 1$\times 10^{-3}$, while in
+double monochromator spectroradiometers it can be as low as
+$1 \times 10^{-6}$. If time for scanning, cost and lack of portability
+are no obstacles, it's preferable to use double monochromator
+instruments and these should also be used as the main instrument in a
+laboratory.
+
+When applying the stray light correction, a thorough characterization of
+the slit function at different wavelengths and a check of the wavelength
+dependence of stray light are needed. This characterization does not
+need to be repeated, unless changes are made to the optical bench of the
+instrument. So, in contrast to the spectral calibration, the stray light
+characterization needs to be performed only once during the lifetime of
+the instrument unless major repairs or modifications are made.
+
+In some array spectrometers, depending on the configuration, the width
+of the slit function may vary with the wavelength. This can introduce
+errors that are very difficult to correct. In some cases it might be
+preferable to chose a grating giving the instrument a relatively narrow
+wavelength range, for example 250 nm to 500 nm if the intended use is to
+measure ultraviolet radiation.
+
+The use and calibration of array spectroradiometers for measurement of
+UV-B radiation in sunlight is discussed in detail in the WMO report by
+@Seckmeyer2010. Stray light correction methods are discussed in the
+papers by @Ylianttila2005, @Coleman2008, and @Kreuter2009 and the
+references therein.
+
+## Broadband sensors
+
+Broadband sensors in most cases measure irradiance in a single broad range of
+wavelengths or band. Most broadband sensors used in plant research are based on
+a photodiode, a filter to constrain the range of wavelengths reaching the 
+photodiode and a diffuser that provides an angular response close to that 
+proportional to the cosine of the angle of incidence of light over $\pm90^\circ$
+from the normal, in three dimensions.
+
+Not all broadband sensors measure irradiance: sensors with a different angular
+response that proportional to the cosine of the angle are also available. Of
+these, most common are those with a narrow aperture angle such as $\pm5^\circ$
+from the normal. Spherical diffusers are used in aquatic sciences to measure
+fluence rate and spherical irradiance. Least common are hemispherical diffusers 
+used to measure hemispherical irradiance or the fluence rate on a plane.
+
+In traditional multichannel boadband sensors, such as red and far-red sensors,
+each channel consists in a discrete photodiode and filter, with the channels 
+sharing the same cosine diffuser.
+
+Not all broadband sensors rely on Silicon photodiodes. Some broadband
+sensors are based of photodiodes made of other semiconductor materials such as
+Silicon Carbide, Germanium, and Indium Gallium Arsenide. In addition, some
+ultraviolet sensors rely on the secondary emission from an intermediate compound
+to convert ultraviolet radiation into visible radiation that can be more easily
+detected with Silicon photodiodes. These will be discussed later as the detector
+choice depends on the wavelength band measured.
+
+Although many broadband sensors simply provide the raw electric current from the
+photodiodes as output, others have built-in amplification with a voltage output,
+More recent designs include analogue to digital conversion circuitry and provide
+as output through a digital interface. Nowadays, some suppliers even sell
+multiple versions of each of their sensors, differing only in the interface used
+to retrieve the readings. As these interfaces are unrelated to the measured
+quantities, they are described here.
+
+### Photodiode current
+
+The electrical current generated by a photodiode is almost proportional to the
+absorbed photons of a given wavelength, until its response saturates. The dark 
+current is extremely low. Thus, the best Si photodiodes show a linear response
+over several orders of magnitude of irradiance. As the current depends on the
+captured photons, the larger the area of the photodiode the higher the current
+generated. The principle of operation is similar to that of solar panels used
+for power generation. The diodes used in sensors have relatively small area and
+the generated current is small, in the order of a few mA. Thus long wiring can
+distort the signal or pick electrical noise from other devices. A sensitive and
+accurate measuring device is necessary to measure medium and low irradiances.
+Each sensor and sensor channel needs to be wired individually to a current
+measuring device with a high enough impedance not to affect to the functioning
+of the sensor. These sensors do not require a power supply and only two wires
+needed between the sensor and meter or datalogger. The time constant of the
+these sensors is very short, in some cases less that a ms and dependent on the
+capacitance of the wiring.
+
+### Amplified voltage
+
+Some sensors have a built-in amplifier that converts the small current generated
+by the photodiode into a voltage, commonly in $0\ldots 5$ V or $0\ldots 10$ V.
+Unless the amplifier is very well designed, it can introduce a small zero offset
+and introduce temeprature dependence. These sensors do require power for the
+amplifier to operate. The wiring is less sensitive to electrical noise and a
+measuring device of lower sensitivity and impedance can be used without
+affecting the accuracy of the measurement. The time constant of the response of
+these sensors vary as it is mainly dependent on the design of the built-in
+amplifiers. It can vary from a few ms to 1 s or longer.
+
+### Amplified current
+
+Rarely used in research but frequently used in indutrial automation are 
+amplified sensor with a current output in the range $4\ldots 20$ mA. In this
+protocol 4 mA corresponds to a zero reading. This relative high current makes
+this type of wiring rather inmune to electrical noise. The drawback is that
+these sensors consume more power than those using alternative approaches, making
+them unsuitable for battery or solar-panel powered systems.
+
+### Digitital communication
+
+Digital communication protocols can provide two big advantages: the sharing of
+wiring among separate sensors or between channels in a single sensor. As data
+are transmitted as encoded numbers, their integrity can be checked. The most
+frequently used wired protocol is SDI12 (serial data interface at 1200 bit s-1).
+These sensors have built in circuitry for converting the current from the sensor
+or the amplified voltage into a digital value. Many are also able to computed
+time averages from individual measurements and keep the most recent value in 
+local memory. The "measuring" device, computer or logger, queries the sensor
+for specific data and the sensor replies by sending a number encoded as train
+of binary 0 and 1 plus a code to check integrity. Each sensor has an address
+that identifies it within the sharing wiring and the logger or other measuring
+device addresses its queries to a single sensor at a time. Multiple commands
+can be implemented in a single sensor, even commands that change its behaviour.
+It allows long wiring in addition to sharing it. Its drawback is that the data
+rate is low, so data can be retrieved from sensors at most once every few 
+seconds. This time increases the more sensors share the wiring as they need to
+be queried sequentially. Sensors implementing the SDI12 tend to be more
+expensive than those based on simpler approaches. On the other hand they
+remove the need to use loggers capable of accurate and high resolution analogue
+to digital conversion.
+
+In addtion to SDI12 other digital electrical and communication protocols are in
+use for sensors. Two well-known serial protocols are RS-232 and RS-485. The
+first of them is point to point with no sharing of wiring and it was common in
+personal computers in the 1980's and 1990's. RS-232 even is data are sent serial
+through a single pair of wires, acknowledgement and synchronization takes places
+through additional wires. In RS-485, from around the same time, wiring can be
+shared and addressing and coordination requires fewer wires. These are
+electrical protocols. MODBUS is a comand protocol that uses RS485 and is still
+in use, mainly in industrial automation but occasionaly also for tasks like
+greenhouse automation and sensors.
+
+### Miniature integrated sensors
+
+A newer type of sensors, originally developed for use in mobile phones and TV
+sets, are integrated circuits that have multiple photodiodes and the ancillary
+amplification and analogue to digital conversion electronics built-in. They come
+in SMD pacakages with footprints as small as $2\times 3$ mm. In some cases the
+photodiodes have interference filters deposited directly onto the silicon chip
+surface creating channels responsive to different wavelength bands. These
+sensors are extremely small with all channels tightly clustered within an area
+of the order of one to a few square millimetres. Some of these sensors can do
+simple digital data processing to convert the measurements into physical or
+photobiological quantities of interest. These sensors are designed to be paired
+to microcontrollers and communicate with them using short-range digital serial
+communication protocols and installed in devices. Ready to use devices,
+specially weather-proof ones, are not yet commercially available. Some very
+cheap handheld spectrometers are probably already based on these sensors,
+although the suppliers do not disclose their design. Small modules including a
+logger have been developed based on these integrated circuits. Also
+instructions, breakout boards, code libraries are available for different
+popular micro-controller-based boards like different flavours of Arduino,
+Rasperry Pi and ESP32. Compared to traditional sensors these modules are much
+cheaper and less accurate but still very versatile. For example the 14-channels
+AS7343 spectral sensor from ams OSRAM sells for 7 € individually and much
+cheaper in quantity. The USB module Yoto-Spectral from Yocto-Puce with
+built-logger based on this same spectral sensor sells for 60 €. These sensors
+are less accurate than traditional ones but the cost advantage is overwhelming
+allowing high replication while the built in logger makes deployment easy.
+
+### Wireless communication
+
+There are multiple approaches to wireless transmission of sensor data. Some
+rely on protocols widely used in other domains, such as Wifi, Bluetooth or
+even GSM. In recent years the popularization of the internet of things (IoT)
+has encouraged the development of protocols optimised for transmission of
+sparse data from sensors, including LoRa and low throughput/low energy variants
+of Wifi and GSM.
+
+Selecting the wireless protocol to use depends mainly on necessary range, data
+transmission throughput and the availability of power sources. The architecture,
+meaning which data links are wired and which ones wireless can also vary. One 
+approach is to have individual sensors communicating wirelessly to a base 
+station where data are collected and possibly forwarded to remote storage 
+(e.g., Aranet's). Alternatively, multiple sensors can be wired to a hub and
+the hub connected wirelessly to a router by Wifi, wired through ethernet or
+through GSM or some other protocol.
+
+## Data retrieval and logging
+
+On-site data loggers with wired sensors is a common and relaible approach,
+both at accessible and remote sites. Data are stored locally but in most
+cases can be accessed locally, remotely or both. Data are normally downloaded
+from the logger in batches. Modern loggers with ample memory can safely store
+large data sets. Most loggers have an assortment of inputs, both analogue and
+digital making it possible to attach sensors based on a mix of different
+analogue and digital communication protocols. The best data loggers have
+analogue to digital converters (ADC) with a resolution of 24 bits and auto
+ranging. Some dataloggers like Campbell Scientific CR6 can take up to 100
+readings per second simultaneously on more than one analogue input. They can
+be programmed to take measurements only under certain conditions, compute and
+store summaries like means and histograms instead of raw data, to power on and
+off instruments and control ancillary equipment like cameras. Data loggers for
+use in the field have been around for over 50 years and are a stable and 
+reliable, but expensive.
+
+Small loggers, with only one or two channels and built-in sensors have been 
+available for some decades. Illumination loggers and PAR loggers are available. 
+Most of these sensors do not provide as good a performance as separate
+sensors and loggers but are overall cheaper and easier to deploy, although
+on site data collection from multiple loggers can become time consuming. The
+iButton Thermocron temperature loggers in a button-cell-like case are widely
+used, rugged and small. Nothing like them is available for measuring light.
+PAR loggers are larger in size.
+
+Some sensors with logging capabilities are also capable of being remotely
+accessed. They provide the best of both worlds as data are locally stored
+independently of any break in communication, but can be accessed remotely
+to download the data, change settings or even update the firmware.
+
+
+## Summaries based on wavelength ranges
+
+The rest of this section is organized with one section for each group of
+related measured quantities. In each of these sections the different 
+instruments and sensors and well as computations used to compute them from
+spectral irradiance are presented.
+
+### Global radiation and pyranometers
+
+The term global radiation describes the radiation at ground level that arrives
+from the sun, what in meteorology is called _shortwave radiation_, extending
+from approximately 290 nm in the UV to nearly 4000 nm in the IR. Pyranometers 
+measure radiation in this range as energy irradiance ($\mathrm{W\,m^{-2}}$).
+
+Pyranometers are the most common radiation sensor used in meteorology, and
+long-term time series of data from weather stations are available. The best
+performing pyranometers use as sensor a blackened thermopile (multiple
+thermocuples in series) enclosed to isolate it from the air and external
+temperature chanes. The thermopile behaves like a black body and warms up in
+response to the incident energy flux. A difference in temperature between the
+two sides of the thermopile generates a voltage difference approximately
+proportional to the energy flux. The design ensures that radiation of all
+wavelengths in the global radiation range are nearly fully and equally absorbed.
+Consequently, for radiation within the range 290 nm to nearly 4000 nm a single
+calibration is valid. In contrast to most other radiation sensors, the spectral
+response of thermopile pyranometers is in nearly perfect agreement with the
+theoretical quantity they are intended to measure. The performance of thermopile
+pyranometers is described using standardised "classes", with each class having
+different requirements for performance and accuracy. The current ISO 9060:2018
+standard, calls the classes: A, B, and C, with required minimum performance
+decreasing from A to C (formerly named "secondary standard", "first class" and
+"second class". Thermopiles in pyranometers are protected by one or two
+concentric quartz domes. Some thermopiles used to measure radiation in
+laboratories have more rudimentary or no protection. The best know supplier of
+pyranometers is Kipp. The original design of the thermopile and domes has
+remained nearly unchanged for decades. Versions with amplified and calibrated
+voltage output, amplified current output as well as digital output have been
+released more recently and coexist with earlier ones.
+
+Cheaper "silicon" pyranometers work on a very different principle: a
+semiconductor photodiode generates a current of electrons proportional to
+absorbed photons. The response varies with wavelength not only because of the
+varying energy per photon, but also because the quantum efficiency varies with
+wavelength. The spectral response of these pyranometers is not flat with respect
+energy or photon irradinace. In other words, there is a mismatch between the
+spectral response of the sensor and the spectral weighting of the physical
+quantity measured. The consequence of this is that sensor calibration is not
+independent of the spectrum of the radiation being measured! This is also the
+case with most other broadband sensors based on silicon, silicon carbide, and
+other semiconductors.
+
+**A very frequent and grave mistake is to assume that a calibration provided by 
+the sensor supplier, e.g., for sunlight is applicable to artificial light
+sources, such as discharge lamps, incandescent lamps or LEDs.** Some suppliers
+provide approximate correction factors (e.g. Apogee) or clear warnings in the
+documentation, while others do not even warn users.
+
+Global radiation cannot normally be computed from measured spectral irradiance,
+as spectrometers in common use do not have a wide enough wavelength sensitivity
+range.
+
+### Photosynthetic radiation and quantum sensors
+
+The most frequently measured irradiance in relation to plants, is the photon 
+irradiance of photosynthetically active radiation ($Q_\mathrm{PAR}$) frequently
+described as photosynthetic photon flux density and abbreviated PPFD. Given the
+central role of photosynthesis, multiple radiation quantities have been proposed
+over the years and a few competing ones remain currently in use to
+quantify radiation that can drive the light reactions of photosynthesis.
+
+The simplest approach is to define a range of active wavelengths and integrate
+the energy irradiance or the photon irradiance within these limits. However,
+conceptually, the use of photon or energy irradiance implies that either the
+flux of photons or the flux of energy drives photosynthesis.
+
+In other words, PAR, which is by definition the integral over wavelengths of 
+the photon irradiance 
+
+$$Q_\mathrm{PAR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} Q(\lambda)\ d \lambda$$
+
+is not directly equivalent to the integral of the spectral energy irradiance
+over the same range of wavelengths,
+
+$$E_\mathrm{PAR} \neq E_\mathrm{PhR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} E(\lambda)\ d \lambda$$
+
+where we $E_\mathrm{PhR}$ is photosynthetic energy irradiance as defined by
+@GaastraXXXX and no longer in use in plant and agriculture research but still
+used in meteorology, under the wrong name of PAR. **The relationship between
+$Q_\mathrm{PAR}$ and $E_\mathrm{PhR}$ depends on the shape of spectrum of the
+light measured.
+
+::: callout-note
+PAR as defined by @McCree1972b is based on a very simple biological spectral
+weighting function (BSWF) according to which all photons in 
+$\lambda\ \mathrm{in} 400\ldots700\,\mathrm{nm}$ drive photosynthesis with 
+equal efficiency.
+Thus, the PAR BSWF used with photon irradiance, is implicit in the equation above, 
+which could be written also as
+
+$$Q_\mathrm{PAR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} a_q(\lambda)\times Q(\lambda)\ d \lambda$$
+
+where 
+
+$$a_q(\lambda) = 1\ \forall\ 400 \leq \lambda \leq 700$$
+
+That the action per photon is invariant with wavelengths implies that the 
+effectiveness of energy depends inversely on wavelength based on Plank's law. 
+This makes it possible to re-express the PAR BSWF in energy units.
+However, the conversion is not unique, as it needs to normalised based on a 
+reference wavelength. Below $550$ nm, the wavelength at the centre of the 
+$400\ldots 700$ nm wavelength range was chosen rather arbitrarily.
+
+$$E_\mathrm{PAR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} a_e(\lambda)\times E(\lambda)\ d \lambda$$
+
+where $a_e(\lambda) = \lambda / 550$ when using $\lambda = 550$ nm as 
+normalization wavelength for the BSWF.
+
+
+The purpose of this explanation is to demonstrate that PAR is intrinsically
+defined as a photon irradiance, not as a wavelength range as sometimes
+erroneously assumed (even by this author in the past). PAR should always be
+reported as a photon irradiance ($Q_\mathrm{PAR}$ = PPFD) and a different name 
+used for the energy irradiance $E_\mathrm{PhR}$, if used at all.
+:::
+
+The definition by @McCree1972b was inspired by action spectra for photosynthesis
+he had measured in leaves of several different crop plants. These action spectra
+were based on absorbed photons rather than on the incident photon flux. When
+we use PAR to quantify light we assume all photons in $400\ldots 700$ nm are
+absorbed, which may be in many cases nearly true for vegetation canopies, but
+almost never true for individual leaves.
+
+PAR does not attempt to describe the light response of photosynthesis of plants
+of any given species growing in a specific environment. PAR is a method for
+quantification of light in a way relevant to plants in general, _approximating_
+close enough the response expected from important crop plants. It is similar to
+how the brightness of illumination is assessed based on a typical response of
+human vision. Both standard definitions of coordinated colour temperature (CCT),
+colour rendition index (CRI) and also PAR are designed to be most useful in
+nearly white light.
+
+Some years after McCree proposed the use of PAR, another quantity was proposed
+using the actual average of the action spectra measured by McCree as BSWF. It
+was originally named Yield Photon Flux (originally YPF, here PQYR). As McCree
+published two different mean action spectra, one for field-grown crop plants and
+one for growth-chamber-grown crop plants we end up with two new variations of
+PAR. This approach seems to also extend the wavelength range to that in the
+measured action spectra. It must be kept in mind that the original spectra were
+measured under single colour light in bands approximately xx nm wide spaced by
+25 to 30 nm. Differently to with McCree's definition, when calculating these
+quantities the weights ($a_q(\lambda)$) applied are extracted directky from the
+mean action spectrum curve. The weights will be different for energy and photon
+spectral irradiance, corresponding to action spectra being expressed per unit
+energy or per mole of photons.
+
+$$Q_\mathrm{PQYR} = \int_{\mathrm{350\,nm}}^\mathrm{750\,nm} a_q(\lambda)\times 
+Q(\lambda)\ d \lambda$$
+
+A more recent variation on PAR is extended PAR (ePAR) @ZhenXXX. It is based on the same 
+photon-based BSWF as McCree's PAR but with the wavelength range extended by 50 nm into
+the far red extending the wavelength range into $400\ldots 750$ nm. 
+
+$$Q_\mathrm{ePAR} = \int_\mathrm{400\,nm}^\mathrm{750\,nm} Q(\lambda)\ d \lambda$$
+
+However, the role of far red light in photosynthesis is synergistic, and known
+as Emerson's effect. Far red light cannot drive photosynthesis on its own, but
+only when shorter wavelengths are concurrently present with high enough photon
+irradiance. Simple ePAR sensors like xxx from Apogee ignore this, and do give an
+ePAR reading higher than zero under pure far-red radiation. When computing
+extended PAR from spectral data, the VIS light requirement can be considered in
+the calculations and the value capped when needed to account for the nature of
+the response to far red. We use xPAR to describe the constrained version of 
+ePAR.
+
+$$Q_\mathrm{xPAR} = \mathrm{min}\left(1.4 \times \int_\mathrm{400\,nm}^\mathrm{700\,nm} Q(\lambda)\ d \lambda,\ \ \
+\int_\mathrm{400\,nm}^\mathrm{750\,nm} Q(\lambda)\ d \lambda\right)$$
+
+Before the proposal of PAR by McCree two quantities based on similar wavelength
+ranges were proposed as relevant to photosynthesis, but based on integrating
+spectral energy irradiance. The quantity proposed by used the same wavelength
+range as PAR ($400\ldots 700$ nm) while that proposed by xxxx used a slightly
+different one ($400\ldots 700$ nm).
+
+
+With a spectroradiometer we can measure the spectral energy irradiance, if
+necessary convert it into spectral photon irradiance, and apply any of the
+equations above to obtain measured values for the different quantities
+described above. The table below shows the results of applying this approach
+to several different natural and artificial light sources.
+
+```{r, echo = FALSE}
+all_sources.mspct <-
+  source_mspct(list(sun = sun.spct,
+                    sunlike.warm.led = leds.mspct$SeoulSemicon_S4SM_1564359736_0B500H3S_00001,
+                    sunlike.cool.led = leds.mspct$SeoulSemicon_S4SM_1564509736_0B500H3S_00001,
+                    blue.red.led = leds.mspct$Luminus_CXM_14_HS_12_36_AC30,
+                    white.fr.led = leds.mspct$Ledguhon_10WBVGIR14G24_Y6C_T4,
+                    cool.white.fluo = lamps.mspct$Osram.FT.L36W.865,
+                    warm.white.fluo = lamps.mspct$Philips.CF.PLS.11W.927,
+                    hps.discharge = lamps.mspct$Osram.HPS.Super.Vialox,
+                    incandescent = lamps.mspct$Osram.Inc.20W,
+                    hqit.multi.metal = lamps.mspct$Osram.MH.HQIT.400W,
+                    Solray385.led = lamps.mspct$Valoya.LED.RX600HW.Solray385.grow.lamp,
+                    AP67.led = lamps.mspct$Valoya.LED.B50.AP67.grow.lamp,
+                    far.red.led = leds.mspct$Osram_GF_CSHPM2.24_2T4T_1))
+
+all_sources.mspct <- setScaled(all_sources.mspct, scaled = FALSE)
+all_sources.mspct <- msmsply(all_sources.mspct, setNormalised, norm = FALSE)
+
+q_irrads.tb <- xPAR_irrad(all_sources.mspct, scale.factor = 1e6, w.band = list(PAR("McCree.field.mean"), PAR("McCree.chamber.mean"), PAR("Gaastra"), PAR("Nichiporovich")))
+q_irrads.tb |>
+  mutate(Q_xPAR = round(Q_xPAR / Q_PAR, digits = 2),
+         Q_ePAR = round(Q_ePAR / Q_PAR, digits = 2),
+         Q_FR = round(Q_FR.700.750 / Q_PAR, digits = 2),
+         Q_FR.700.750 = NULL,
+         Q_PQYR.f = round(Q_PQYR.McCree.field.mean.550 / Q_PAR, digits = 2),
+         Q_PQYR.McCree.field.mean.550 = NULL,
+         Q_PQYR.c = round(Q_PQYR.McCree.chamber.mean.550 / Q_PAR, digits = 2),
+         Q_PQYR.McCree.chamber.mean.550 = NULL,
+         Q_Gaa. = round(Q_PAR.Gaastra / Q_PAR, digits = 2),
+         Q_PAR.Gaastra = NULL,
+         Q_Nich. = round(Q_PAR.Nichiporovich / Q_PAR, digits = 2),
+         Q_PAR.Nichiporovich = NULL,
+         Q_PAR = 1) |>
+  arrange(Q_FR) |> 
+  kable()
+```
+
+Most PAR, or "quantum", sensors are based on silicon photodiodes, a filter to
+constrain the range of wavelengths and a diffuser that provides an angular
+response close to that proportinal to the cosine of the angle of incidence of
+light. No PAR sensor matches exactly the spectral response in the definition
+of PAR or the cosine response. The best sensors provide a good approximation and
+simpler (usually cheaper) sensors deviate more from PAR's definition.
+
+In any light with a broad spectrum and no high peaks or deep valleys a good PAR
+sensor will measure reasonably well PAR even if calibrated for sunlight. In
+contrast, a simple PAR sensor calibrated in sunlight can be off by as much as
+30% if used to measure light from an incandescent lamp. If used to measure a
+light source with a narrow emission spectrum, such as a low pressure sodium lamp
+or single colour LED, the error can be even larger. Such problems can be 
+resolved by use of light-source specific calibrations. Taken to the extreme,
+if the light spectrum does not change, any sensor, even a bare photodiode that
+responds to some of this light can be calibrated and used to measure PAR. Even
+with the best PAR sensors, measurements of light from single-colour LEDs 
+emitting at some wavelengths, specially those near the boundaries near 400 and 
+700 nm, can be biased. When measuring single-colour LEDs using a broadband
+sensor it is recommended to validate the sensor calibration against a
+parallel measurement against a spectroradiometer. A photodiodes have a nearly
+perfectly linear response to irradiance, in most case a single point calibration
+is enough.
+
+## Photon and energy ratios
+
+One way of coarsely describing the shape of spectra is to express irradiance
+in one region of the spectrum relative to that in a different region. In
+photobiology photon ratios are the main interest, while in some applications
+energy ratios or photon to energy ratios are relevant.
+
+We can, for example, compute the red to far-red (R:FR) photon ratio, relevant to
+responses mediated by the photoreceptor phytochromw, as the ratio between two
+photon irradiances.
+
+$$Q_\mathrm{red}:Q_\mathrm{far\ red} = \frac{\int_{\lambda = 650\,\mathrm{nm}}^{\lambda = 670\,\mathrm{nm}} Q(\lambda) \,d\lambda}{\int_{\lambda = 725\,\mathrm{nm}}^{\lambda = 745\,\mathrm{nm}} Q(\lambda) \,d\lambda}$$
+
+where $\lambda$ is wavelength, $Q$ photon (= quantum) is irradiance and
+$Q(\lambda)$ spectral photon irradiance. In this example using the most
+frequently used 20-nm-wide wavelength bands centred at 
+$\lambda = 660\,\mathrm{nm}$ for red light and at $\lambda = 735\,\mathrm{nm}$ 
+for far red light (\cite{Smith1981}). (It is possible to use in place of 
+irradiances, time integrated quantities such as fluence, as long as the time 
+and spatial bases of expression used for the numerator and denominator are 
+the same).
+
+Two main kinds of photon ratios are in use in plant photobiology. Ratios like
+the red to far-red (R:FR) photon ratio computed above in which the photon
+irradiances in the numerator and denominator are for non-overlapping wavelength
+regions, and ratios such as the ultraviolet-B to total ultraviolet (UVB:UV)
+photon ratio where the wavelength band used for the numerator is a spectral
+region within that used for the denominator. Ratios between non-overlapping
+regions can _in principle_ take any unit-less numeric value in $-\inf\ldots\inf$
+while ratios in which the numerator wavelength range is nested in the wavelength
+range of the denominator can take _at most_ numeric values in $0\ldots1$.
+
+```{r, eval=TRUE, include=FALSE}
+# pre-compute for in-line printing below
+qq <- 
+  round(
+    as.numeric(
+      photobiology::q_ratio(photobiology::sun.spct, 
+                            UVB(), PAR())) * 1000,
+    digits = 1)
+ee <-  
+  round(
+    as.numeric(photobiology::e_ratio(photobiology::sun.spct, 
+                                       UVB(), PAR())) * 1000,
+    digits = 1)
+
+```
+
+It is also possible, although less common, to define ratios based on energy. It
+important to keep in mind that a photo ratio and an energy ratio based on the
+same wavelength ranges will differ. As seen for the conversion between photon
+and energy irradiances in section XXXXX, the conversion is possible only if the
+spectral irradiance is know as it is a function of wavelength. For example,
+based on a sunlight spectrum for the mid-morning in the Spring in Helsinki the
+UV-B:PAR photon ratio of `{r} qq` &permil; corresponds to an UV-B:PAR energy
+ratio of `{r} ee` &permil;.
+
+Finally, photon to energy ratios are also in use. In this case the range of
+wavelengths used for the numerator and denominator are the same but the 
+irradiance in the numerator is expressed as a flux of photons and that in the
+denominator as a flux of energy. As the energy per photon depends on wavelength,
+the photon to energy ratio increases with increasing wavelength.
+
+Although less accurate than a spectrum with higher wavelength resolution, ratios
+provide summaries that are easier to interpret and analyse, and in many cases
+also easier to measure. One should, however, be careful with the interpretation
+of ratios as they are coarse summaries. Ratios discard important information
+about the shape of the spectrum as a whole and consequently the relationship
+between photon ratios and biological responses frequently is interpretable only
+when regions of the spectrum are reasonably close to those in the daylight
+spectrum.
+
+It is very important to conduct experiments under realistic
+environmental conditions, i.e., conditions relevant to the aims of a study. For
+studies to be relevant to plants growing outdoors, these conditions include
+the daylight spectrum, while in contrast, for controlled environment farming,
+a good match to the spectrum of the artificial light used.
+
+For the assessment and control of experimental conditions, it is
+helpful---besides using biologically effective irradiances and exposures---to
+calculate photon ratios to assess the similarity or not of illumination. Photon
+ratios inform succinctly about differences among experimental conditions or
+between experimental conditions and
+
+As
 for example shown in section
 [8.2.7](#sec:simulators){reference-type="ref"
 reference="sec:simulators"} on page and in table
 [\[tab:typical:irrad:values\]](#tab:typical:irrad:values){reference-type="ref"
-reference="tab:typical:irrad:values"} on page . For the calculation of
-these ratios, it is absolutely essential to use the same quantity of
-radiation or the same weighting procedure, respectively, i.e. energetic
-units or photon units, but not a mixture. The term "energetic" means
-that the spectral irradiance is simply integrated over the respective
-spectral band yielding units like W m$^{-2}$. For the calculation of
-photon ratios it is also necessary to integrate over the respective
-spectral bands, but additionally weighted by the number of photons at
-each wavelength (see section
-[9.1.4](#sec:basic:concepts:wavelength){reference-type="ref"
-reference="sec:basic:concepts:wavelength"}). A function to calculate
-photon ratios in R is described in section
-[9.19.4](#app:R:ratios:photon){reference-type="ref"
-reference="app:R:ratios:photon"} on page .
+reference="tab:typical:irrad:values"} on page. For the calculation of
+these ratios, it is essential to use the same quantity of
+radiation or the same weighting procedure, i.e. energetic
+units or photon units for the ratios being compared.
 
 ### A practical example
 
@@ -748,15 +1656,6 @@ transparent material.
 
 ## Broadband instruments
 
-Broadband radiometers are instruments used to measure irradiance over a
-broad region of the solar (or lamp) spectrum, weighted with an
-instrument spectral response. A broadband radiometer consists of a
-sensor that is designed to measure the solar radiation flux density ()
-from a field of view of $2\pi$ steradians (180, or $\pi$ radians, when
-projected on a perpendicular plane). The plane of the sensor is usually
-positioned horizontally, but it can also be located, for example,
-parallel to the surface of a leaf.
-
 UV broadband radiometers integrate over either the UV-A or UV-B band or
 both, which encompasses the entire UV region of daylight. The names
 broadband and narrowband refer to the width of the 'window' or range of
@@ -1083,545 +1982,6 @@ reference="sec:underwater:radiometers"} on page .
 
 ![image](photos/Eldonet_terrestre.jpg)
 
-
-## Spectroradiometers {#sec:spectroradiometers}
-
-Spectroradiometers[^22] are instruments used to measure spectral
-irradiance. There are two types of spectroradiometer: 1) scanning
-spectroradiometers, and 2) array detector spectroradiometers. The former
-have a single sensor, which is used to sequentially measure the spectral
-irradiance at each wavelength, while the latter have an array of sensors
-onto which the refracted spectrum is projected and measured
-simultaneously at all wavelengths. Sometimes the more general term
-spectrometer is adopted to indicate that the same instrument can be also
-used to measure spectral absorbance, -transmittance, or -reflectance, in
-addition to spectral irradiance. Scanning spectroradiometers scan a
-range of wavelengths. To do this they require mechanically moving parts
-inside the optic path and therefore need very stable housing for the
-instrument. For this reason, scanning spectroradiometers are larger and
-more difficult to transport than array detector spectroradiometers. They
-are also less rugged and usually require mains power. However, in
-scanning spectroradiometers it is possible to use a double monochromator
-arrangement that makes their optical performance far superior to that of
-array spectroradiometers which always use a single monochromator.
-
-### Scanning spectroradiometers
-
-#### Basic structure and principles of operation
-
-The basic components of a scanning spectroradiometer are the following:
-a) input optics for collecting radiation from the sky and guiding it
-further into the spectroradiometer b) a monochromator for resolving the
-input radiation into separate wavelengths c) a photomultiplier tube
-(PMT) for detecting the energy possessed by each spectral component in
-the measured spectrum. In addition, an external computer for
-communication with the microprocessor of the spectroradiometer and for
-collection, processing and storage of data is needed.
-
-The input optics typically consists of a flat teflon diffuser covered by
-a quartz dome. The diffuser collects the incident photons from the
-overhead hemisphere. The resulting diffuse radiation is guided to the
-entrance slit of the monochromator, sometimes by means of an optical
-fibre. The monochromator may be a single or a double monochromator (see
-section [8.2.4](#sec:spectrographs){reference-type="ref"
-reference="sec:spectrographs"} on page ). In scanning
-spectroradiometers, a system based on a step motor drives a mask that
-allows only photons of a certain wavelength at a time to enter the exit
-slit of the monochromator. The exit slit serves as the entrance window
-to the cathode of the PMT. The photon pulses are amplified and
-transmitted to a photon counter for registration.
-
-Some spectroradiometers are constructed on a solar tracker that follows
-the position of the sun. This eliminates the effects of potential
-azimuthal dependencies in the detection of radiation. A measurement head
-at the end of an optical fibre may be also installed on a separate sun
-tracker. The temperature of the instrument is usually either stabilized
-or kept above a certain temperature limit to ensure proper functioning.
-The dome of the measurement head may be equipped with a heater and/or
-air blower to keep the temperature of the teflon within certain limits
-and to avoid emergence of frost onto the dome.
-
-Other spectroradiometers are less rugged and are intended for laboratory
-or spot measurements outdoors. They are more portable but more sensitive
-to temperature extremes and are not water proof. Examples of such
-instruments are Optronics OL 756 and Macam SR9910 spectroradiometers.
-Figure
-[\[fig:Optronics:OL_756\]](#fig:Optronics:OL_756){reference-type="ref"
-reference="fig:Optronics:OL_756"} shows the different parts of the first
-of these instruments.
-
-::: figure*
-![image](figures/OL_756_diagram.pdf){width="0.9\\myfigwidth"}\
-:::
-
-The more rugged instruments, usually permanently installed at a fixed
-location, are commonly used for measuring long (several years long) time
-series of spectral irradiance data. The more portable instruments are
-used for spot measurements in plant canopies, and under lamps, and or
-filters. The first type of instrument is most commonly used by
-meteorologists, while the portable instruments are most useful to
-biologists.
-
-#### Characteristics
-
-**Dark current** and **dead time** are characteristics possessed by the
-PMT. Dark current is a measure of the drift photons going from the
-cathode to the anode of the PMT without any real incident photons
-entering the instrument. Dead time is a measure of that PMT which is in
-a paralysed state after a photon detection event. Stray light is
-composed of photons echoed from wavelengths other than the nominal
-wavelength being measured. In commercially available scanning
-spectroradiometers, these phenomena are usually measured and handled by
-the measurement software.
-
-The **wavelength alignment** of a spectroradiometer has to be checked
-regularly. Most instruments taking daily measurements contain an
-internal mercury lamp aimed at ensuring the stability of the alignment.
-The wavelength and the position of the micrometer turning the grating of
-the monochromator are related to each other by a second-order equation
-using so called dispersion coefficients. The determination of the
-dispersion coefficients should be part of the annual maintenance of the
-instruments.
-
-Solar irradiance spectra sometimes exhibit so called **noise spikes**,
-which mean sudden abnormally high or low intensity readings on a single
-wavelength. The origin of the spikes is not fully resolved, but
-straylight is considered a partial explanation. The spikes can be
-detected and eliminated making use of suitable reference spectra.
-
-Ideally, the angular response of the measurement head follows the shape
-of a cosine curve. In practice, the response deviates somewhat from
-this. Typically, the larger the solar zenith angle, the larger the
-deviation. The **cosine response** of the measurement head should be
-measured in laboratory and a corresponding correction applied to all
-measured data.
-
-If the spectroradiometer is not stabilized for temperature, its response
-usually exhibits **temperature dependence**. This dependence should be
-determined in the laboratory by measuring a calibration lamp with a
-spectroradiometer heated/cooled over a range of different wavelengths.
-The measurements can be used for deriving the temperature correction
-factors to be applied in the post-processing of the sky measurements.
-
-The **slit function** determines the transmittance of a monochromator as
-a function wavelength. The ideal shape of the function would be
-triangular. The full width at half maximum of the slit function is
-commonly used as a quantity characterizing the slit function. The slit
-function can be derived by measuring the irradiance emitted by a tunable
-laser. Removal of the effect of the slit function on the measured
-spectra should be considered if spectra measured by two or several
-instruments are to be compared with each other.
-
-The **spectral responsivity** of a spectroradiometer should be based on
-regular measurements of a certified calibration lamp. If the
-responsivity seems to have changed, basically two alternative ways to
-handle the change exist. The change may be introduced in the
-responsivity of the instrument and the processing of the sky
-measurements as such. A step-wise change in response is hence introduced
-in the time series of the measurements. Alternatively, a gradually
-changing response time-series may be defined using a moving average with
-a suitable time window. In this way, the change in the response is
-introduced gradually in the time series of the sky irradiance
-measurements.
-
-#### Maintenance
-
-The maintenance of a scanning spectroradiometer operating in an outdoor
-environment involves the following practices: a) general daily
-maintenance; b) checks on the wavelength setting and stability of
-irradiance scale; c) calibration of irradiance against primary standards
-in a dark room.
-
-Daily routine maintenance includes cleaning of the quartz dome and
-checking on the general functioning as well as the correct levelling of
-the instrument. The quartz dome should also be cleaned/dried after rain
-or snow. The operator should be familiar with the control software of
-the instrument. Additional simple routines based on, for instance,
-selected reference spectra may be used for instant checking of the
-measured data. These kinds of routines are invaluable in the prompt
-detection of occasional malfunctions of the instrument.
-
-An internal Hg lamp is used for checking of the wavelength scale in some
-spectroradiometers. In these cases, it is convenient to imbed the Hg
-lamp measurement into the daily measurement schedule. If the instrument
-lacks an internal lamp, this check has to be done using an external
-lamp. For checking the stability of the irradiance scale, portable
-calibration units are available. These enable, for instance, stability
-checks of the instrument at the measuring site on a weekly basis. It is
-advisable that the humidity indicators are also checked on a weekly
-basis.
-
-Irradiance calibration of a spectroradiometer should be performed in a
-dark room (Figure
-[\[fig:Brewer:calibration\]](#fig:Brewer:calibration){reference-type="ref"
-reference="fig:Brewer:calibration"}). A primary standard lamp with an
-irradiance certificate provided by a certified laboratory of standards
-is needed. To extend the lifetime of the primary standard lamp, it is
-recommended that it is not used as a regular calibration lamp. Instead,
-the irradiance scale of the primary lamp should be transferred to a
-secondary standard lamp that is used as a working calibration lamp. Use
-of several working lamps is recommended to enable recognition of
-potential drifts in the radiant output of the lamps as they age.
-Calibration against the primary/secondary standard lamp should be
-performed at least every two months. The desiccant bags inside the cover
-of the spectrometer should be taken out and dried at least every two
-months as well. Proper levelling of the instrument has to be ensured
-after having it relocated for outdoor measurements.
-
-![image](photos/Brewer107_in_dark_room_COST.jpg)
-
-On the annual maintenance practices of a spectroradiometer, each
-manufacturer has its own services and recommendations. Participation in
-intercomparison campaigns gathering a number of state-of-the-art
-instruments to conduct measurements on a jointly agreed schedule for a
-period of time has proven a fruitful way to investigate the long-term
-stabilities and overall performances of scanning spectroradiometers
-(Figure
-[\[fig:Brewer:intercomparison\]](#fig:Brewer:intercomparison){reference-type="ref"
-reference="fig:Brewer:intercomparison"}).
-
-![image](photos/Brewer107_in_Huelva_2005_COST.jpg)
-
-
-### Array detector spectroradiometers
-
-In contrast to scanning spectroradiometers, array detector instruments
-measure spectral irradiance simultaneously at all wavelengths. The
-detector in this case is a linear array of light sensors, similar in
-structure to the imaging sensors used in digital cameras, but long and
-narrow. The number of detector elements ('pixels') along the array
-varies, 2000 to 3000 pixels being common[^23]. The array can be a
-'charge coupled device' (CCD), or an array of photodiodes (DAD). The
-'image' of the spectrum produced by the monochromator is projected and
-focused by means of mirrors onto the linear detector array, each
-detector in the array receiving light of a certain wavelength. In the
-case of array spectrometers it is not possible to use two monochromators
-in tandem to reduce stray light. Array spectrometers are small and
-portable (Figure
-[\[fig:Maya2000Pro\]](#fig:Maya2000Pro){reference-type="ref"
-reference="fig:Maya2000Pro"}).
-
-![image](photos/Maya2000Pro.jpg)
-![image](photos/Maya2000Pro-1.jpg)
-
-For measuring energy or photon spectral irradiance a cosine diffuser is
-used as input optics. This ensures that the angular response follows the
-cosine law, and so the instrument measures the radiation as received on
-a flat surface. Other input optics are also available, for example, with
-a narrow angle of view. However, the quantity measured with them is not
-irradiance. Cosine diffusers differ widely in how closely they follow
-the cosine law. Some cheaper models are prone to large errors,
-especially when radiation impinges at a sharp angle to their surface.
-This will be further discussed in section
-[9.7.2.1](#sec:array:errors){reference-type="ref"
-reference="sec:array:errors"} on page .
-
-The input optics is usually connected to the array spectrometer with an
-optical fibre. The type of fibre to be used depends on the wavelength
-range to be measured. If smaller than the entrance of the
-spectroradiometer, the diameter of the fibre will affect the amount of
-radiation entering the instrument. The diameter also affects the
-mechanical properties of the fibre: thin fibres are more flexible and
-tolerate bending into curves of smaller diameter. Fibres also vary with
-regards to the type of cladding material used to protect them. Fibres
-with metal cladding tolerate rougher handling than those with plastic
-cladding. The most common connector for these fibres and accessories is
-the SMA 905, originally designed for light fibres used in digital
-communication systems. For this reason their positioning upon repeated
-attachment is not exactly the same. Consequently, the recommendation is
-**not** to detach and reattach the fibre from the spectrometer without
-recalibrating the system[^24].
-
-At the entrance of the spectrometer, just behind the connector to which
-the fibre is attached, there is a slit (Figure
-[\[fig:CCD:slit\]](#fig:CCD:slit){reference-type="ref"
-reference="fig:CCD:slit"}), which limits the width and height of the
-incoming light beam. The width is of the order of a few micrometres and
-the exact value chosen determines, together with the monochromator, the
-spectral resolution of the spectroradiometer. The narrower the slit, the
-narrower the beam hitting the monochromator and the better the
-resolution (the narrower the peaks that can be resolved). In a
-Czerny-Turner configuration (Figure
-[\[fig:optical:bench\]](#fig:optical:bench){reference-type="ref"
-reference="fig:optical:bench"}), the next component is a collimating
-mirror which projects the beam onto a monochromator. Gratings are used
-as monochromators. Gratings have a surface with very closely spaced
-rulings of a specific profile, and they separate radiation of different
-wavelengths in a similar way to a prism. One important parameter is the
-density of rulings which is one of the determinants of spectral
-resolution and useful wavelength range. The 'image' produced by the
-grating is focused onto the array detector by another collimating
-mirror. Some newer models of spectrometer from StellarNet
-(e.g. BLACK-Comet spectrometer) and now also from Ocean Optics (Torus
-spectrometer) use a concave grating instead of a planar one. Since the
-grating itself focuses the light onto the array detector, collimating
-mirrors are not needed. Having fewer optical components, an instrument
-with better stray light performance is obtained.
-
-::: figure*
-![image](figures/024-OFLV-200.pdf)
-![image](figures/slits.pdf)
-:::
-
-::: figure*
-![image](figures/avabank.pdf)
-![image](figures/OO-USBBbench.pdf)
-
-:::
-
-The array detector normally has rectangular 'pixels', orientated so that
-their shorter dimension is on the axis along which the different
-wavelengths have been separated by the monochromator, and their longer
-dimension is perpendicular to it. The entrance slit is positioned to
-have the long dimension coincident with the long dimension of the
-pixels. In some detectors the long pixels are in reality rows of square
-pixels with their electrical output combined into a single output
-signal. The output signal from the pixels is averaged by the detector
-itself over what is called 'integration time'. The longer the
-integration used, the lower the irradiance that can be measured.
-However, the 'dark noise' increases with the integration time. In
-addition, it is possible to take several scans and average them. A
-coarse dark noise correction is sometimes done by subtracting the signal
-from special pixels at the end of the array that are not exposed to
-radiation. However a dark scan, with the input optics protected from the
-incoming radiation, should also be measured, and its value, wavelength
-by wavelength subtracted from the measurements. The dark noise depends
-on temperature. This has two implications, dark scans should be taken
-frequently, sometimes before or after each measurement, and the
-spectrometer should be allowed to warm up for some minutes before
-starting to take readings. Furthermore, when working outdoors it should
-be protected from direct sunlight, so as to keep its temperature stable
-and close to that at which it was calibrated. Some spectrometers have a
-thermoelement (TE), working according to the Peltier principle, which
-cools the array detector to a preset temperature and thereby stabilizes
-it.
-
-Most current array spectrometers, the exception being some models with
-thermoelectrically cooled detectors, are powered through the USB port of
-a personal computer. For portable use a laptop is frequently used.
-Special software, sold by the manufacturer of the spectrometer, is used
-to control the instrument and acquire and plot the spectra (Figure
-[\[fig:SpectraSuite\]](#fig:SpectraSuite){reference-type="ref"
-reference="fig:SpectraSuite"}). For most instruments there are also
-drivers and software development kits (SDK) available for developing
-programs for special applications. When special corrections, for example
-for stray light, are performed it may be necessary to acquire raw
-spectral data and apply corrections and calibrations off-line using
-other software, for example Excel or R.
-
-::: figure*
-![image](photos/SpectraSuite.pdf){width="0.67\\myfigwidth"}
-:::
-
-#### Measuring errors and limitations in accuracy {#sec:array:errors}
-
-Array spectroradiometers have a great advantage when quickly measuring
-changing radiation as they acquire all wavelengths simultaneously. This
-ensures that the values of spectral irradiance measured at all
-wavelengths are consistent. In contrast, under conditions where
-irradiance varies rapidly with time, the shape of the measured spectrum
-can get badly distorted when measured with a scanning spectroradiometer.
-However, array spectrometers have a serious limitation in that they
-cannot be built with double monochromators. As any spectroradiometer
-with a single monochromator, they suffer from relatively high values of
-stray light. Stray light originates from scattered light of incorrect
-wavelengths falling on a pixel of the array detector. In other words,
-radiation of one wavelength is detected (and measured) as radiation of a
-different wavelength. Perfectly scattered radiation would affect all
-pixels in the same way, but when there are reflections within the
-optical bench that are not perfectly scattered, some pixels in the array
-detector are more affected by stray light than others. Stray light is a
-critical specification when measuring UV-B in sunlight, as UV-B
-irradiance is very low compared to the irradiance of visible and near
-infra-red radiation. Consequently, if even a small proportion of visible
-radiation is scattered and reflected as stray light within the
-instrument, this stray light can generate a signal on the 'UV-B pixels'
-of the array of a magnitude similar to, or larger than, that produced by
-the radiation that we are trying to measure. Stray light is such a big
-problem that without very complicated and special corrections these
-instruments cannot be used at all to measure radiation in sunlight.
-Errors of more than 100%[^25] for biologically effective doses can be
-incurred even with a well calibrated instrument. Failure to take this
-into account has led to important mistakes, like the erroneous
-measurement of solar radiation at ground level by NASA researchers which
-was published in *Geophysical Research Letters*. This was most likely an
-artifact due to the limitations of the array spectrometer used. See the
-paper by @DAntoni2007 and the refutation by @Flint2008 and the answer by
-@DAntoni2008. Equally, the values of the UV-B doses used in many recent
-biological experiments, as reported in the publications, are suspect,
-since they have been based on measurements performed with
-single-monochromator instruments.
-
-Gratings disperse radiation according to what are called 'orders'. For
-example first order dispersion may be 10 nm/mm, second order dispersion
-5 nm/mm, third order dispersion 2.5 nm/mm, and so on. The first order
-spectrum is what is of interest, and is what we want the array detector
-to see. However, any given 'pixel' in the array, in addition to
-radiation corresponding to the first order (e.g. 800 nm), also sees
-radiation corresponding to higher orders (e.g. 400 nm, 266.6 nm, 200 nm,
-and so on) if those wavelengths are present in the incoming radiation.
-The solution to this problem is to use 'order-sorting filters' in the
-light pass. In array spectrometers order-sorting filters may be directly
-coated onto the array detector, or attached to it. For example Ocean
-Optics spectrometers can be bought with a *variable longpass
-order-sorting filter* as an option (Figure
-[\[fig:CCD:slit\]](#fig:CCD:slit){reference-type="ref"
-reference="fig:CCD:slit"}).
-
-Another problem with array detector spectrometers is that the radiation
-may be better focused on some parts of the array than on others, and
-this causes changes in spectral resolution with changing wavelengths. In
-addition, the wavelength difference between adjacent pixels is not
-always the same across the whole spectrum, neither is the step size an
-integer number. Usually the software supplied with the instrument can
-generate files with data at integer steps (e.g. 1 nm, or 5 nm) but this
-is done by interpolating and averaging, rather than changing the
-measurement itself. In contrast the scanning step of scanning
-spectroradiometers can be controlled through its software.
-
-The overall accuracy of the measurements is also reliant on the angular
-response of the entrance optics. For measuring spectral irradiance we
-generally use a cosine diffusor as entrance optics, although it is also
-possible to use an integrating sphere. Deviations of cosine diffusers
-from the theoretical angular response tend to increase at large angles
-from the vertical. If the spectrum of the light coming from different
-angles is different (e.g. sun and sky) not only the irradiance measured
-may be inaccurate but also the shape of the spectrum may be distorted.
-When measuring outdoors, the size of this error will change through a
-day as the sun moves across the sky. The very small cosine diffusers
-sold by the spectrometer manufacturers tend to be prone to large errors,
-and individually calibrated, high quality diffusers like the D7-SMA and
-D7-H-SMA from Bentham (see section
-[9.20](#sec:quant:suppliers){reference-type="ref"
-reference="sec:quant:suppliers"} on page for full address) are
-preferable, although they are much more expensive (Figure
-[\[fig:Bentham:diffuser\]](#fig:Bentham:diffuser){reference-type="ref"
-reference="fig:Bentham:diffuser"}).
-
-::: figure*
-![image](photos/BenthamD7-H-SMA.pdf){width="0.5\\myfigwidth"}
-:::
-
-#### Calibration and corrections {#sec:array:calibration}
-
-When measuring UV-B with an array spectroradiometer it is not enough to
-have it properly calibrated, its optical characteristics (slit function
-at different wavelengths, stray light properties) need to be measured
-and a correction algorithm developed and later applied to each
-measurement. This makes the use of array spectroradiometers for
-characterizing UV-B doses complicated and error prone. This type of use
-has to be attempted only by experienced operators and the correction
-algorithm itself requires lots of effort to develop and implement. Given
-the lack of standardized procedures for stray light correction, its
-implementation requires advanced knowledge of optics and metrology. We
-will first discuss spectral calibration and thereafter stray light
-correction procedures.
-
-Spectral calibration against standard lamps needs to be repeated
-regularly. For measurements not requiring very high precision, annual
-re-calibrations may be enough. However, the main consideration should be
-how valuable is the data that will be acquired. If the spectral
-sensitivity of the instrument has changed significantly from one
-calibration to the next, the data from all measurements done in between
-these calibrations are suspect, and should be discarded. Consequently if
-one does yearly re-calibrations one can lose one year's worth of data,
-while if one does monthly re-calibrations one only risks losing one
-month's worth of data. Consequently, the decision on how frequently to
-calibrate should, in addition to instrument stability, be based on the
-maximum size of the tolerable errors and on the value of the data
-(i.e. the cost of replacing the data if they need to be discarded).
-
-The most common and stable calibration light sources are incandescent
-lamps (e.g. FEL lamps) with electronics in the power source which keeps
-the electrical power at the filament constant within very narrow
-margins. The distance between the lamp and the entrance optics, and
-their alignment, should also fall within a very narrow margin of the
-expected values. Calibration lamps are secondary or tertiary standards,
-connected by a chain of calibration steps to a standard kept at a
-metrology agency like NIST. Calibration lamps are supplied with spectral
-data about their emission characteristics. Calibration of the instrument
-is done by measuring the known spectrum and irradiance of the
-calibration lamp. Of course the output of the lamp will not exactly
-match the data supplied with it, because its original calibration is
-also subject to errors. Furthermore, there are errors deriving from
-slight differences between the burning conditions (current and voltage)
-during measurements and those when it was calibrated at the factory.
-Further errors can be introduced by small differences in the geometry of
-the optical setup. So, do not forget that calibrations are subject to
-errors. Furthermore, you cannot obtain an absolute estimate of
-calibration errors by comparing two instruments calibrated with the same
-lamp, unless this lamp is the primary standard.
-
-Calibrating a spectroradiometer in the UV-B band with a FEL lamp is not
-recommended, because FEL lamps emit very little UV-B. For calibration in
-the UV-B deuterium lamps need to be used. Irradiance emitted by
-deuterium lamps is less stable than that emitted by FEL lamps. For
-coarse calibration the use of a deuterium lamp may be enough, but for
-accurate calibration it is best to use FEL and deuterium lamps in
-tandem. The shape of the spectrum emitted by deuterium lamps is stable,
-by matching the irradiances at wavelengths where the emission of both
-types of lamps overlap, one can extend an accurate calibration to
-shorter wavelengths. Spectrometer manufacturers also sell calibration
-light sources (lamp plus electronics) that may be good for routine
-calibration or especially for checking that calibrations performed in an
-optical bench remain valid. Again, what type of calibration procedure
-and lamp to use will depend on the accuracy required. If we want our
-measurements to be within $\pm 10$% of the true value we will need to
-use very good equipment and protocols for the calibration. If we can
-tolerate errors of, for example, $\pm 25$%, calibrations can be less
-accurate.
-
-It is also very important to do a wavelength calibration and to check
-this calibration regularly. It should not be forgotten when doing this
-calibration that it is affected by the temperature of the instrument as
-temperature affects (by thermal expansion) the dimensions of the optical
-bench and its components. Wavelength calibration is done based on
-elemental emission lines in discharge lamps (or even the sun). For quick
-checks low pressure mercury or germicidal lamps may be used. The
-manufacturers of spectrometers also sell special light sources for
-wavelength calibration. One should choose carefully which wavelengths to
-use (for example 253.652 nm, 296.728 nm, 334.148 nm, and 404.657 nm for
-mercury lamps, as they are simple peaks rather than multiple peaks very
-close together like those at 302 nm, 313 nm and 365 nm). If one desires
-a calibration accurate to a fraction of the wavelength step of the array
-one needs to fit a bell-shaped curve to the pixel showing the highest
-signal and those adjacent to it, to find the true location of the peak
-centre, most likely in-between two pixels.
-
-To keep errors within $\pm 10$% in the UV-B when measuring sunlight, and
-especially to keep errors within $\pm 10$% for biologically effective
-doses, a good calibration is not enough when using single monochromator
-spectroradiometers. There is also a need to correct for stray light. If
-we do not correct for stray light some biologically effective doses will
-be overestimated by more than 100%. The ratio between stray light in the
-UV-B band and the maximum spectral irradiance measured in good single
-monochromator spectrometers is approximately 1$\times 10^{-3}$, while in
-double monochromator spectroradiometers it can be as low as
-$1 \times 10^{-6}$. If time for scanning, cost and lack of portability
-are no obstacles, it's preferable to use double monochromator
-instruments and these should also be used as the main instrument in a
-laboratory.
-
-When applying the stray light correction, a thorough characterization of
-the slit function at different wavelengths and a check of the wavelength
-dependence of stray light are needed. This characterization does not
-need to be repeated, unless changes are made to the optical bench of the
-instrument. So, in contrast to the spectral calibration, the stray light
-characterization needs to be performed only once during the lifetime of
-the instrument unless major repairs or modifications are made.
-
-In some array spectrometers, depending on the configuration, the width
-of the slit function may vary with the wavelength. This can introduce
-errors that are very difficult to correct. In some cases it might be
-preferable to chose a grating giving the instrument a relatively narrow
-wavelength range, for example 250 nm to 500 nm if the intended use is to
-measure irradiance.
-
-The use and calibration of array spectroradiometers for measurement of
-UV-B radiation in sunlight is discussed in detail in the WMO report by
-@Seckmeyer2010. Stray light correction methods are discussed in the
-papers by @Ylianttila2005, @Coleman2008, and @Kreuter2009 and the
-references therein.
 
 ## Underwater sensors and profiling
 

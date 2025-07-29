@@ -93,7 +93,8 @@ format:
     search: true
     code-fold: true
     code-tools: true
-
+    html-math-method: katex
+    link-external-icon: true
   pdf:
     documentclass: scrreprt
 
