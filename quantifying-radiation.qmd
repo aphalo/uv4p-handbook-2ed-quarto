@@ -100,6 +100,8 @@ library(photobiologyLamps)
 library(photobiologyLEDs)
 library(photobiologySun)
 library(photobiologySensors)
+library(ggspectra)
+library(patchwork)
 library(knitr)
 ```
 
@@ -741,7 +743,7 @@ from the normal. Spherical diffusers are used in aquatic sciences to measure
 fluence rate and spherical irradiance. Least common are hemispherical diffusers 
 used to measure hemispherical irradiance or the fluence rate on a plane.
 
-In traditional multichannel boadband sensors, such as red and far-red sensors,
+In traditional multichannel broadband sensors, such as red and far-red sensors,
 each channel consists in a discrete photodiode and filter, with the channels 
 sharing the same cosine diffuser.
 
@@ -760,6 +762,31 @@ as output through a digital interface. Nowadays, some suppliers even sell
 multiple versions of each of their sensors, differing only in the interface used
 to retrieve the readings. As these interfaces are unrelated to the measured
 quantities, they are described here.
+
+::: callout-warning
+# Spectral response of broadband sensors
+
+The spectral response of broadband sensors almost always differs to a larger or
+smaller extent from that in the definition of the quantity being measured. The
+consequence of this is that the calibration of any broadband sensors is not
+constant, it varies depending on the spectrum of the radiation being measured.
+In some cases these differences are so small that can be ignored, but in other
+cases ignoring they can introduce large biases, invalidating the measurements.
+In general the broader and more featureless radiation spectrum is, the less
+likely a large bias is. In addition, some patterns of spectral response are technically easier to create than others.
+
+**A very frequent and grave mistake is to assume _a priori_ that a calibration
+provided by the sensor supplier, e.g., for sunlight is applicable to artificial
+light sources, such as discharge lamps, incandescent lamps or LEDs.** Some
+suppliers provide approximate correction factors (e.g., Apogee for sensor
+SQ-301X-SS) or clear warnings in the documentation, while others do not even
+warn users. In the case of sensors good enough to be used in research, suppliers
+do provide _typical_ spectral response curves. Such curves are not guaranteed,
+and should be taken with a grain of salt but can be used to estimate the
+possible calibration errors. This does not replace a light-source specific
+calibration.
+
+:::
 
 ### Photodiode current
 
@@ -965,29 +992,41 @@ independent of the spectrum of the radiation being measured! This is also the
 case with most other broadband sensors based on silicon, silicon carbide, and
 other semiconductors.
 
-**A very frequent and grave mistake is to assume that a calibration provided by 
-the sensor supplier, e.g., for sunlight is applicable to artificial light
-sources, such as discharge lamps, incandescent lamps or LEDs.** Some suppliers
-provide approximate correction factors (e.g. Apogee) or clear warnings in the
-documentation, while others do not even warn users.
-
 Global radiation cannot normally be computed from measured spectral irradiance,
 as spectrometers in common use do not have a wide enough wavelength sensitivity
 range.
 
 ### Photosynthetic radiation and quantum sensors
 
-The most frequently measured irradiance in relation to plants, is the photon 
-irradiance of photosynthetically active radiation ($Q_\mathrm{PAR}$) frequently
-described as photosynthetic photon flux density and abbreviated PPFD. Given the
-central role of photosynthesis, multiple radiation quantities have been proposed
-over the years and a few competing ones remain currently in use to
-quantify radiation that can drive the light reactions of photosynthesis.
+Given the central role of photosynthesis, multiple radiation quantities have
+been proposed over the years and a few competing ones remain currently in use to
+quantify radiation that can drive the light reactions of photosynthesis. The
+currently most frequently measured irradiance in relation to plants, is the
+photon irradiance of photosynthetically active radiation ($Q_\mathrm{PAR}$)
+frequently described as _photosynthetic photon flux density_ and abbreviated
+PPFD. However, several other quantities can be found in the current and past
+scientific literature on plant biology, plant ecology and meteorology.
 
-The simplest approach is to define a range of active wavelengths and integrate
-the energy irradiance or the photon irradiance within these limits. However,
-conceptually, the use of photon or energy irradiance implies that either the
-flux of photons or the flux of energy drives photosynthesis.
+Early on, given the availability of illuminance sensors, values expressed in
+lux and foot candles were frequently used. In meteorology pyranometers, and
+in Physics thermopiles, described above, have been in use for a long time, and
+were also used to report energy irradiances. Both of these approaches are
+inadequate and have been mostly abandoned.
+
+The earliest and simplest approach that considered the response to light of
+photosynthesis was to constrain the range of wavelengths over which spectral
+energy irradiance was integrated to those contributing to photosynthesis. Of
+course, spectral photon irradiance can also be integrated over a wavelength
+range. However, as described in chapter XXXX, the use of photon or energy as
+base of expression quantify radiation are not equivalent, and interconversion is
+only possible if the spectrum shape is known. As for any photochemically driven
+reaction, absorption of photons excites chlorophyll molecules and this
+excitation energy drives the chemical reactions. Thus, from a mechanistic
+perspective photon irradiance should be preferred. Still in the early 1970's
+there was no consensus and multiple ways of describing the radiation in
+studies with plants, including photosynthesis, where in use. To make things
+worse, interconversion was in most cases impossible as spectral information
+was missing @McCree1972a, @McCree1972b, @McCree1976.
 
 In other words, PAR, which is by definition the integral over wavelengths of 
 the photon irradiance 
@@ -1000,16 +1039,23 @@ over the same range of wavelengths,
 $$E_\mathrm{PAR} \neq E_\mathrm{PhR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} E(\lambda)\ d \lambda$$
 
 where we $E_\mathrm{PhR}$ is photosynthetic energy irradiance as defined by
-@GaastraXXXX and no longer in use in plant and agriculture research but still
-used in meteorology, under the wrong name of PAR. **The relationship between
-$Q_\mathrm{PAR}$ and $E_\mathrm{PhR}$ depends on the shape of spectrum of the
-light measured.
+@Gabrielsen1940 and no longer in use in plant and agriculture research but still
+used in meteorology, under the name of PAR.
 
 ::: callout-note
 PAR as defined by @McCree1972b is based on a very simple biological spectral
 weighting function (BSWF) according to which all photons in 
 $\lambda\ \mathrm{in} 400\ldots700\,\mathrm{nm}$ drive photosynthesis with 
-equal efficiency.
+equal efficiency @fig-PAR-BSWF.
+
+```{r}
+#| label: fig-PAR-BSWF
+#| fig-cap: The biological spectral weighting function (BSWF) of PAR as defined by McCree, plotted as quantum = photon resposne and as an energy response.
+ 
+autoplot(PAR(), unit.in = "photon", unit.out = "photon") | 
+  autoplot(PAR(), unit.in = "photon", unit.out = "energy") 
+```
+
 Thus, the PAR BSWF used with photon irradiance, is implicit in the equation above, 
 which could be written also as
 
@@ -1022,15 +1068,14 @@ $$a_q(\lambda) = 1\ \forall\ 400 \leq \lambda \leq 700$$
 That the action per photon is invariant with wavelengths implies that the 
 effectiveness of energy depends inversely on wavelength based on Plank's law. 
 This makes it possible to re-express the PAR BSWF in energy units.
-However, the conversion is not unique, as it needs to normalised based on a 
-reference wavelength. Below $550$ nm, the wavelength at the centre of the 
-$400\ldots 700$ nm wavelength range was chosen rather arbitrarily.
+However, the conversion is not unique, as it needs to be normalised based on a 
+reference wavelength. Below, $550$ nm, the wavelength at the centre of the 
+$400\ldots 700$ nm wavelength range, was chosen rather arbitrarily.
 
 $$E_\mathrm{PAR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} a_e(\lambda)\times E(\lambda)\ d \lambda$$
 
 where $a_e(\lambda) = \lambda / 550$ when using $\lambda = 550$ nm as 
 normalization wavelength for the BSWF.
-
 
 The purpose of this explanation is to demonstrate that PAR is intrinsically
 defined as a photon irradiance, not as a wavelength range as sometimes
@@ -1039,32 +1084,49 @@ reported as a photon irradiance ($Q_\mathrm{PAR}$ = PPFD) and a different name
 used for the energy irradiance $E_\mathrm{PhR}$, if used at all.
 :::
 
-The definition by @McCree1972b was inspired by action spectra for photosynthesis
-he had measured in leaves of several different crop plants. These action spectra
-were based on absorbed photons rather than on the incident photon flux. When
-we use PAR to quantify light we assume all photons in $400\ldots 700$ nm are
-absorbed, which may be in many cases nearly true for vegetation canopies, but
-almost never true for individual leaves.
+The definition of PAR proposed by @McCree1972b was inspired by how illuminance,
+the brightness of light as perceived by humans is routinelly measured. He
+proposed a definition based on numerous action spectra of photosynthesis he had
+measured in leaves of several different crop plants. These action spectra were
+based on absorbed photons rather than on the incident photon flux. He decided to
+ignore the effect of variation in absorptance on the basis that absorptance is
+very high in leaves of helathy plants. Thus, when we use PAR to quantify light
+we assume all incident photons in the range $400\ldots 700$ nm absorbed and
+equally effective.
 
 PAR does not attempt to describe the light response of photosynthesis of plants
-of any given species growing in a specific environment. PAR is a method for
-quantification of light in a way relevant to plants in general, _approximating_
-close enough the response expected from important crop plants. It is similar to
-how the brightness of illumination is assessed based on a typical response of
-human vision. Both standard definitions of coordinated colour temperature (CCT),
-colour rendition index (CRI) and also PAR are designed to be most useful in
-nearly white light.
+of any given species growing in any specific environment. PAR is a technical
+method for quantification of light in a way relevant to plants in general,
+_approximating_ the response expected from important crop plants just enough for
+it to be useful. In this respect, it is similar to how the brightness of
+illumination is assessed based on the typical response of human vision, ignoring
+variation among individuals.
 
 Some years after McCree proposed the use of PAR, another quantity was proposed
-using the actual average of the action spectra measured by McCree as BSWF. It
-was originally named Yield Photon Flux (originally YPF, here PQYR). As McCree
-published two different mean action spectra, one for field-grown crop plants and
-one for growth-chamber-grown crop plants we end up with two new variations of
-PAR. This approach seems to also extend the wavelength range to that in the
-measured action spectra. It must be kept in mind that the original spectra were
-measured under single colour light in bands approximately xx nm wide spaced by
+using the actual average of the action spectra measured by McCree as BSWF.
+
+It
+was originally named Yield Photon Flux (originally YPF, here PQYR for
+photosynthetic-quantum-yield weighted radiation). As McCree published two
+different mean action spectra, one for field-grown crop plants and one for
+growth-chamber-grown crop plants we end up with two new variations on PAR. This
+approach also extends the wavelength range to that in the measured action
+spectra. xxxx bugbee et al tested the difference....
+
+```{r}
+#| label: fig-PQYR-BSWF
+#| fig-cap: The mean action spectra reported by McCree for leaves from field- and controlled-environment-grown crop plants and later used in the definition of YFD (PQYR eher).
+ 
+autoplot(PAR("McCree.field.mean"), 
+         unit.in = "photon", unit.out = "photon") | 
+  autoplot(PAR("McCree.chamber.mean"), 
+           unit.in = "photon", unit.out = "photon") 
+```
+
+It must be kept in mind that the original spectra were
+measured under single colour light in bands 25 nm wide spaced by
 25 to 30 nm. Differently to with McCree's definition, when calculating these
-quantities the weights ($a_q(\lambda)$) applied are extracted directky from the
+quantities the weights ($a_q(\lambda)$) applied are extracted directly from the
 mean action spectrum curve. The weights will be different for energy and photon
 spectral irradiance, corresponding to action spectra being expressed per unit
 energy or per mole of photons.
@@ -1074,37 +1136,43 @@ Q(\lambda)\ d \lambda$$
 
 A more recent variation on PAR is extended PAR (ePAR) @ZhenXXX. It is based on the same 
 photon-based BSWF as McCree's PAR but with the wavelength range extended by 50 nm into
-the far red extending the wavelength range into $400\ldots 750$ nm. 
+the far red, thus, a wavelength range of $400\ldots 750$ nm. 
 
 $$Q_\mathrm{ePAR} = \int_\mathrm{400\,nm}^\mathrm{750\,nm} Q(\lambda)\ d \lambda$$
 
-However, the role of far red light in photosynthesis is synergistic, and known
-as Emerson's effect. Far red light cannot drive photosynthesis on its own, but
-only when shorter wavelengths are concurrently present with high enough photon
-irradiance. Simple ePAR sensors like xxx from Apogee ignore this, and do give an
-ePAR reading higher than zero under pure far-red radiation. When computing
-extended PAR from spectral data, the VIS light requirement can be considered in
-the calculations and the value capped when needed to account for the nature of
-the response to far red. We use xPAR to describe the constrained version of 
-ePAR.
+However, the role of far red light in photosynthesis is synergistic, known as
+Emerson's effect. Far red light cannot drive photosynthesis on its own, but only
+when shorter wavelengths are concurrently present with high enough photon
+irradiance. Simple ePAR sensors like the SQ-610-SS from Apogee ignore this, and
+do give an ePAR reading higher than zero under pure far-red radiation from LEDs
+and possibly too high readings under light from incandescent lamps. When
+computing extended PAR from spectral data, the VIS light requirement can be
+considered in the calculations and the value capped when needed to account for
+the nature of the response to far red. We use xPAR to describe the constrained
+version of ePAR.
 
 $$Q_\mathrm{xPAR} = \mathrm{min}\left(1.4 \times \int_\mathrm{400\,nm}^\mathrm{700\,nm} Q(\lambda)\ d \lambda,\ \ \
 \int_\mathrm{400\,nm}^\mathrm{750\,nm} Q(\lambda)\ d \lambda\right)$$
 
+Apogee sells a two channel sensor, PAR + FR , that makes this check possible.
+
 Before the proposal of PAR by McCree two quantities based on similar wavelength
 ranges were proposed as relevant to photosynthesis, but based on integrating
-spectral energy irradiance. The quantity proposed by used the same wavelength
-range as PAR ($400\ldots 700$ nm) while that proposed by xxxx used a slightly
-different one ($400\ldots 700$ nm).
+spectral energy irradiance. The @Gabrielsen1940 used the same wavelength
+range as McCree's PAR ($400\ldots 700$ nm) while that proposed by Nichiporovich used a slightly
+wider band of wavelengths one ($380\ldots 710$ nm).
 
-
-With a spectroradiometer we can measure the spectral energy irradiance, if
+With a spectroradiometer we can measure the spectral energy irradiance, and if
 necessary convert it into spectral photon irradiance, and apply any of the
 equations above to obtain measured values for the different quantities
-described above. The table below shows the results of applying this approach
-to several different natural and artificial light sources.
+described above. @tbl-PAR-ePAR-xPAR shows the results of applying this approach
+to several different natural and artificial light sources. Most important is
+that the differences among them depend on the spectrum of the light source.
 
 ```{r, echo = FALSE}
+#| label: tbl-PAR-ePAR-xPAR
+#| tbl-cap: Various photon irradiances ($Q_i$) used to quantify light useful for photosynthesis. PAR = McCree's PAR, ePAR = unconstrained extended PAR, xPAR = constrained extended PAR, FR = the far-red component of ePAR, PQYR = yield-spectrum weighted with .f for field and .c for chamber plants. For each light source, all values divided by $Q_\mathrm{PAR}$.
+
 all_sources.mspct <-
   source_mspct(list(sun = sun.spct,
                     sunlike.warm.led = leds.mspct$SeoulSemicon_S4SM_1564359736_0B500H3S_00001,
@@ -1144,10 +1212,11 @@ q_irrads.tb |>
 
 Most PAR, or "quantum", sensors are based on silicon photodiodes, a filter to
 constrain the range of wavelengths and a diffuser that provides an angular
-response close to that proportinal to the cosine of the angle of incidence of
+response close to that proportional to the cosine of the angle of incidence of
 light. No PAR sensor matches exactly the spectral response in the definition
 of PAR or the cosine response. The best sensors provide a good approximation and
-simpler (usually cheaper) sensors deviate more from PAR's definition.
+simpler (usually cheaper) sensors deviate more from PAR's definition and at low
+angles of incidence.
 
 In any light with a broad spectrum and no high peaks or deep valleys a good PAR
 sensor will measure reasonably well PAR even if calibrated for sunlight. In
@@ -1162,9 +1231,28 @@ with the best PAR sensors, measurements of light from single-colour LEDs
 emitting at some wavelengths, specially those near the boundaries near 400 and 
 700 nm, can be biased. When measuring single-colour LEDs using a broadband
 sensor it is recommended to validate the sensor calibration against a
-parallel measurement against a spectroradiometer. A photodiodes have a nearly
-perfectly linear response to irradiance, in most case a single point calibration
+parallel measurement against a spectroradiometer. As photodiodes have an almost
+perfectly linear response to irradiance, in most cases a single point calibration
 is enough.
+
+::: callout-warning
+# Incident vs. absorbed photons
+
+PAR photon irradiance quantifies the _incident_ flux of photons and is usually
+measured on a horizontal plane. When studying the mechanism of photosynthesis,
+in many cases it must be remembered that PAR irradiance can be very far from
+being a measure of the flux of absorbed photons per unit leaf area. Leaves
+differing in chlorophyll concentration per unit area, thickness, mesophyll cell
+size and shapes, hairiness, cuticular waxes, and any other feature that modifies
+their optical properties, can absorb different proportions of the PAR photons
+incident on their surfaces. These differences as well as differences in
+irradiance at the leaf plane due to differences in leaf display angle or in
+light interception as a result of canopy structure must be taken into
+consideration when interpreting responses to PAR. In fact, leaf absorptance is
+dynamic as it depends on the accumulation movements of chloroplasts that have
+time constants in the order of minutes.
+
+:::
 
 ## Photon and energy ratios
 
