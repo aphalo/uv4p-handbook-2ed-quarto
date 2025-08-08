@@ -996,6 +996,22 @@ Global radiation cannot normally be computed from measured spectral irradiance,
 as spectrometers in common use do not have a wide enough wavelength sensitivity
 range.
 
+```{r}
+#| fig-asp: 1
+
+global.wb <- waveband(c(280, 2800), 
+                      SWF.e.fun = function(x) {1}, 
+                      norm = 550, 
+                      SWF.norm = 550,
+                      wb.name = "global radiation")
+autoplot(global.wb, range = c(200, 3000), geom = "spct") /
+autoplot(sensors.mspct[c("Skye_SKS1110", "LICOR_LI_200", "KIPP_CM21")],
+         range = c(0, 3000),
+         w.band = global.wb) + plot_layout(axes = "collect")
+  
+```
+
+
 ### Photosynthetic radiation and quantum sensors
 
 Given the central role of photosynthesis, multiple radiation quantities have
@@ -1079,9 +1095,14 @@ normalization wavelength for the BSWF.
 
 The purpose of this explanation is to demonstrate that PAR is intrinsically
 defined as a photon irradiance, not as a wavelength range as sometimes
-erroneously assumed (even by this author in the past). PAR should always be
+erroneously assumed. PAR should always be
 reported as a photon irradiance ($Q_\mathrm{PAR}$ = PPFD) and a different name 
 used for the energy irradiance $E_\mathrm{PhR}$, if used at all.
+
+For sunlight, when using $\lambda = 550\,\mothrm{nm}$ for normalization, the
+difference between $E_\mathrm{PhR}$ and $E_\mathrm{PAR}$ is quantitatively
+rather small, but for some other light sources the difference is too large
+to be ignored.
 :::
 
 The definition of PAR proposed by @McCree1972b was inspired by how illuminance,
