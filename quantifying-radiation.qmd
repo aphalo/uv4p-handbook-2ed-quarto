@@ -1004,11 +1004,16 @@ global.wb <- waveband(c(280, 2800),
                       norm = 550, 
                       SWF.norm = 550,
                       wb.name = "global radiation")
-autoplot(global.wb, range = c(200, 3000), geom = "spct") /
-autoplot(sensors.mspct[c("Skye_SKS1110", "LICOR_LI_200", "KIPP_CM21")],
-         range = c(0, 3000),
-         w.band = global.wb) + plot_layout(axes = "collect")
-  
+autoplot(global.wb, range = c(200, 3500), geom = "spct") /
+  (autoplot(sensors.mspct[c("Skye_SKS1110", "LICOR_LI_200", "KIPP_CM21")],
+            idfactor = "Pyranometer:",
+            range = c(200, 3500),
+            annotations =c("-", "peaks"), 
+            w.band = global.wb) +
+     theme(legend.position = "bottom")
+  ) +
+  plot_layout(axes = "collect")
+
 ```
 
 
