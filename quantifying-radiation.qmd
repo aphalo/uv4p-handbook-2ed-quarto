@@ -950,29 +950,32 @@ spectral irradiance are presented.
 
 ### Global radiation and pyranometers
 
-The term global radiation describes the radiation at ground level that arrives
-from the sun, what in meteorology is called _shortwave radiation_, extending
-from approximately 290 nm in the UV to nearly 4000 nm in the IR. Pyranometers 
-measure radiation in this range as energy irradiance ($\mathrm{W\,m^{-2}}$).
+The term global radiation describes most of the radiation at ground level that
+arrives from the sun, what in meteorology is called _shortwave radiation_,
+extending from approximately 280 nm in the UV to nearly 2800--3000 nm in the IR.
+Pyranometers measure radiation in this range as energy irradiance
+($\mathrm{W\,m^{-2}}$).
 
 Pyranometers are the most common radiation sensor used in meteorology, and
-long-term time series of data from weather stations are available. The best
-performing pyranometers use as sensor a blackened thermopile (multiple
-thermocuples in series) enclosed to isolate it from the air and external
-temperature chanes. The thermopile behaves like a black body and warms up in
-response to the incident energy flux. A difference in temperature between the
-two sides of the thermopile generates a voltage difference approximately
-proportional to the energy flux. The design ensures that radiation of all
+long-term time series of global radiation data from weather stations are
+available. The best performing pyranometers use as sensor a blackened thermopile
+(multiple thermocouples in series) enclosed to isolate it from the air and
+external temperature changes. The thermopile behaves like a black body and warms
+up in response to the incident energy flux. A difference in temperature between
+the two sides of the thermopile generates a voltage difference approximately
+proportional to the energy flux. The design ensures that radiation of nearly all
 wavelengths in the global radiation range are nearly fully and equally absorbed.
-Consequently, for radiation within the range 290 nm to nearly 4000 nm a single
-calibration is valid. In contrast to most other radiation sensors, the spectral
-response of thermopile pyranometers is in nearly perfect agreement with the
+Consequently, for radiation within the range 290 nm to nearly 2800 nm a single
+calibration is usually valid @fig-global-radiation-spct.
+
+In contrast to most other radiation sensors, the spectral
+response of thermopile pyranometers is in close agreement with the
 theoretical quantity they are intended to measure. The performance of thermopile
 pyranometers is described using standardised "classes", with each class having
 different requirements for performance and accuracy. The current ISO 9060:2018
 standard, calls the classes: A, B, and C, with required minimum performance
 decreasing from A to C (formerly named "secondary standard", "first class" and
-"second class". Thermopiles in pyranometers are protected by one or two
+"second class"). Thermopiles in pyranometers are protected by one or two
 concentric quartz domes. Some thermopiles used to measure radiation in
 laboratories have more rudimentary or no protection. The best know supplier of
 pyranometers is Kipp. The original design of the thermopile and domes has
@@ -983,31 +986,30 @@ released more recently and coexist with earlier ones.
 Cheaper "silicon" pyranometers work on a very different principle: a
 semiconductor photodiode generates a current of electrons proportional to
 absorbed photons. The response varies with wavelength not only because of the
-varying energy per photon, but also because the quantum efficiency varies with
+varying energy per photon, but also because their quantum efficiency varies with
 wavelength. The spectral response of these pyranometers is not flat with respect
-energy or photon irradinace. In other words, there is a mismatch between the
-spectral response of the sensor and the spectral weighting of the physical
-quantity measured. The consequence of this is that sensor calibration is not
-independent of the spectrum of the radiation being measured! This is also the
-case with most other broadband sensors based on silicon, silicon carbide, and
-other semiconductors.
-
-Global radiation cannot normally be computed from measured spectral irradiance,
-as spectrometers in common use do not have a wide enough wavelength sensitivity
-range.
+energy or photon irradinace @fig-global-radiation-spct. In other words, there is
+a mismatch between the spectral response of the sensor and the spectral
+weighting of the physical quantity measured. _The consequence of this is that
+sensor calibration is not independent of the spectrum of the radiation being
+measured!_ This is also the case with most other broadband sensors based on
+silicon-, silicon carbide-, and photodiodes made from other semiconductor 
+materials.
 
 ```{r}
+#| label: fig-global-radiation-spct
 #| fig-asp: 1
+#| fig-cap: Comparison of the definition of global radiation to the spectral response of three pyranometers. The Kipp CM21 pyranometer is a thermopile-based instrument with an spectral response approximating the theoretical response. The Skye SKS1110 and LI-COR LI-200 are based on silicon photodiodes and even if their spectral response differs drastically from the expected one, they are calibrated to give a reading approximating global radiation **only** when used in sunlight. 
 
 global.wb <- waveband(c(280, 2800), 
                       SWF.e.fun = function(x) {1}, 
                       norm = 550, 
                       SWF.norm = 550,
                       wb.name = "global radiation")
-autoplot(global.wb, range = c(200, 3500), geom = "spct") /
+autoplot(global.wb, range = c(100, 3500), geom = "spct") /
   (autoplot(sensors.mspct[c("Skye_SKS1110", "LICOR_LI_200", "KIPP_CM21")],
             idfactor = "Pyranometer:",
-            range = c(200, 3500),
+            range = c(100, 3500),
             annotations =c("-", "peaks"), 
             w.band = global.wb) +
      theme(legend.position = "bottom")
@@ -1016,52 +1018,64 @@ autoplot(global.wb, range = c(200, 3500), geom = "spct") /
 
 ```
 
+Global radiation cannot normally be computed from measured spectral irradiance,
+as spectrometers in common use do not have a wide enough wavelength sensitivity
+range.
 
 ### Photosynthetic radiation and quantum sensors
 
-Given the central role of photosynthesis, multiple radiation quantities have
-been proposed over the years and a few competing ones remain currently in use to
-quantify radiation that can drive the light reactions of photosynthesis. The
-currently most frequently measured irradiance in relation to plants, is the
-photon irradiance of photosynthetically active radiation ($Q_\mathrm{PAR}$)
-frequently described as _photosynthetic photon flux density_ and abbreviated
-PPFD. However, several other quantities can be found in the current and past
-scientific literature on plant biology, plant ecology and meteorology.
+Given the central role of photosynthesis, multiple radiation quantities to
+quantify radiation that can drive the light reactions of photosynthesis have
+been proposed over the years. A few competing quantities remain currently in
+use. McCree's definition of the photon irradiance of photosynthetically active
+radiation ($Q_\mathrm{PAR}$) is overwhelmingly preferred nowadays.
+$Q_\mathrm{PAR}$ is frequently described as _photosynthetic photon flux density_
+and abbreviated PPFD. PPFD is not used outside the plant sciences, "photon flux
+density" widely accepted name is "photon irradiance" and its symbol is $Q$.
+However, several other quantities can be found in the current and specially past
+scientific literature on plant biology, plant ecology and meteorology. Some of
+them, locationally, even under the same name "photosynthetically active
+radiation" or PAR as McCree's.
 
 Early on, given the availability of illuminance sensors, values expressed in
 lux and foot candles were frequently used. In meteorology pyranometers, and
 in Physics thermopiles, described above, have been in use for a long time, and
 were also used to report energy irradiances. Both of these approaches are
-inadequate and have been mostly abandoned.
+inadequate and have been mostly abandoned in studies related to photosynthesis
+and plant biology.
 
 The earliest and simplest approach that considered the response to light of
 photosynthesis was to constrain the range of wavelengths over which spectral
-energy irradiance was integrated to those contributing to photosynthesis. Of
-course, spectral photon irradiance can also be integrated over a wavelength
-range. However, as described in chapter XXXX, the use of photon or energy as
-base of expression quantify radiation are not equivalent, and interconversion is
-only possible if the spectrum shape is known. As for any photochemically driven
-reaction, absorption of photons excites chlorophyll molecules and this
-excitation energy drives the chemical reactions. Thus, from a mechanistic
-perspective photon irradiance should be preferred. Still in the early 1970's
-there was no consensus and multiple ways of describing the radiation in
-studies with plants, including photosynthesis, where in use. To make things
-worse, interconversion was in most cases impossible as spectral information
-was missing @McCree1972a, @McCree1972b, @McCree1976.
+_energy_ irradiance was integrated to those contributing to photosynthesis,
+however, with no agreement on the best range of wavelengths to use.
 
-In other words, PAR, which is by definition the integral over wavelengths of 
-the photon irradiance 
+Spectral _photon_ irradiance can also be integrated over a wavelength range. As
+described in chapter XXXX, the use of photon or energy as base of expression to
+quantify radiation are not equivalent, and interconversion is only possible if
+the light spectrum shape is known. As for any photochemically driven reaction,
+absorption of photons excites chlorophyll molecules and this excitation energy
+drives the chemical reactions. Thus, from a mechanistic perspective photon
+irradiance should be preferred. Still in the early 1970's there was no consensus
+and multiple ways of describing the radiation in studies with plants, including
+photosynthesis, where in use. To make things worse, interconversion was in most
+cases impossible as spectral information was not available @McCree1972a,
+@McCree1972b, @McCree1976. McCree's proposal of PAR aimed to address this
+problem, and was based on a large set of measurements of the spectral response
+of photosynthesis.
+
+In other words, PAR, as defined by @McCree1972b is the integral over wavelengths
+of the spectral _photon_ irradiance
 
 $$Q_\mathrm{PAR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} Q(\lambda)\ d \lambda$$
 
-is not directly equivalent to the integral of the spectral energy irradiance
-over the same range of wavelengths,
+and is not directly equivalent to the _integral_ of the spectral energy
+irradiance over the same range of wavelengths,
 
 $$E_\mathrm{PAR} \neq E_\mathrm{PhR} = \int_\mathrm{400\,nm}^\mathrm{700\,nm} E(\lambda)\ d \lambda$$
 
 where we $E_\mathrm{PhR}$ is photosynthetic energy irradiance as defined by
 @Gabrielsen1940 and no longer in use in plant and agriculture research but still
-used in meteorology, under the name of PAR.
+used in meteorology, also under the name of PAR.
 
 ::: callout-note
 PAR as defined by @McCree1972b is based on a very simple biological spectral
@@ -1071,7 +1085,7 @@ equal efficiency @fig-PAR-BSWF.
 
 ```{r}
 #| label: fig-PAR-BSWF
-#| fig-cap: The biological spectral weighting function (BSWF) of PAR as defined by McCree, plotted as quantum = photon resposne and as an energy response.
+#| fig-cap: The biological spectral weighting function (BSWF) of PAR as defined by McCree, plotted as normalised response per energy quantum (or photon) and per energy of incident light.
  
 autoplot(PAR(), unit.in = "photon", unit.out = "photon") | 
   autoplot(PAR(), unit.in = "photon", unit.out = "energy") 
@@ -1104,19 +1118,19 @@ erroneously assumed. PAR should always be
 reported as a photon irradiance ($Q_\mathrm{PAR}$ = PPFD) and a different name 
 used for the energy irradiance $E_\mathrm{PhR}$, if used at all.
 
-For sunlight, when using $\lambda = 550\,\mothrm{nm}$ for normalization, the
+For sunlight, when using $\lambda = 550\,\mathrm{nm}$ for normalization, the
 difference between $E_\mathrm{PhR}$ and $E_\mathrm{PAR}$ is quantitatively
 rather small, but for some other light sources the difference is too large
 to be ignored.
 :::
 
 The definition of PAR proposed by @McCree1972b was inspired by how illuminance,
-the brightness of light as perceived by humans is routinelly measured. He
+the brightness of light as perceived by humans is routinely measured. He
 proposed a definition based on numerous action spectra of photosynthesis he had
 measured in leaves of several different crop plants. These action spectra were
 based on absorbed photons rather than on the incident photon flux. He decided to
 ignore the effect of variation in absorptance on the basis that absorptance is
-very high in leaves of helathy plants. Thus, when we use PAR to quantify light
+very high in leaves of healthy plants. Thus, when we use PAR to quantify light
 we assume all incident photons in the range $400\ldots 700$ nm absorbed and
 equally effective.
 
@@ -1128,20 +1142,49 @@ it to be useful. In this respect, it is similar to how the brightness of
 illumination is assessed based on the typical response of human vision, ignoring
 variation among individuals.
 
-Some years after McCree proposed the use of PAR, another quantity was proposed
-using the actual average of the action spectra measured by McCree as BSWF.
+PAR sensors are in most cases based on silicon photodiodes filtered to change
+the spectral response to better approximate that of the PAR BSWF. There is
+considerable variation in how close this match is, although in no case the
+deviation is as extreme as with photodiode-based pyranometers @fig-PAR-spct. Thus,
+calibrations are dependent on the light spectrum to variable extents, and these
+deviations should be taken into account when not using the sensors under the
+light source they are calibrated to. In most cases, manufacturers calibrate PAR
+sensors for sunlight.
 
-It
+```{r}
+#| label: fig-PAR-spct
+#| fig-asp: 1
+#| fig-cap: Comparison of McCree's defintion of photosinthetically active radiation (PAR) to the spectral response of three PAR (=quantum) sensors. The three sensors are based on silicon photodiodes, with different filters. The Apogee SQ-100X is a low cost sensor while the other two are more expensive and using special optical filters. They are sold calibrated to give a reading approximating PAR when used in sunlight. The errors incurred when using such calibrations to measure light from other sources depends both on the sensor and on the light source. 
+
+autoplot(PAR(), range = c(300, 800), geom = "spct",
+            unit.in = "photon", unit.out = "photon") /
+  (autoplot(sensors.mspct[c("LICOR_LI_190R", "apogee_sq_500", "apogee_sq_100X")],
+            idfactor = "PAR sensor:",
+            w.band = PAR(),
+            range = c(300, 800),
+            annotations =c("-", "peaks"), 
+            unit.out = "photon") +
+     theme(legend.position = "bottom")
+  ) +
+  plot_layout(axes = "collect")
+
+```
+
+Some years after McCree proposed the use of PAR, another quantity was proposed
+using the actual average of the action spectra measured by McCree as BSWF. It
 was originally named Yield Photon Flux (originally YPF, here PQYR for
 photosynthetic-quantum-yield weighted radiation). As McCree published two
 different mean action spectra, one for field-grown crop plants and one for
-growth-chamber-grown crop plants we end up with two new variations on PAR. This
-approach also extends the wavelength range to that in the measured action
-spectra. xxxx bugbee et al tested the difference....
+growth-chamber-grown crop plants we end up with two new variations on
+photosynthetically active radiation. This approach also extends the wavelength
+range to that in the measured action spectra. No broadband sensors are available
+for measuring PQYR and needs to be measured with a spectroradiometer or a PAR
+sensor with a light-source specific calibration. @xxxx Bugbee et al tested the
+difference....
 
 ```{r}
 #| label: fig-PQYR-BSWF
-#| fig-cap: The mean action spectra reported by McCree for leaves from field- and controlled-environment-grown crop plants and later used in the definition of YFD (PQYR eher).
+#| fig-cap: The mean action spectra reported by McCree for leaves from field- and controlled-environment-grown crop plants and later used in the definition of YFD (PQYR eher). Normalised response as $\mathrm{CO_2}$ fixed per absorbed photon is plotted on the central wavelegth of 25 nm wide bands of illuminations used. The curves are interpolating natural spline.
  
 autoplot(PAR("McCree.field.mean"), 
          unit.in = "photon", unit.out = "photon") | 
@@ -1153,34 +1196,58 @@ It must be kept in mind that the original spectra were
 measured under single colour light in bands 25 nm wide spaced by
 25 to 30 nm. Differently to with McCree's definition, when calculating these
 quantities the weights ($a_q(\lambda)$) applied are extracted directly from the
-mean action spectrum curve. The weights will be different for energy and photon
+mean action spectrum curve, as for PAR, ignoring the difference between incident
+and absorbed photons. The weights are different for energy and photon
 spectral irradiance, corresponding to action spectra being expressed per unit
-energy or per mole of photons.
+energy or per photon (or mole of photons).
 
 $$Q_\mathrm{PQYR} = \int_{\mathrm{350\,nm}}^\mathrm{750\,nm} a_q(\lambda)\times 
 Q(\lambda)\ d \lambda$$
 
-A more recent variation on PAR is extended PAR (ePAR) @ZhenXXX. It is based on the same 
-photon-based BSWF as McCree's PAR but with the wavelength range extended by 50 nm into
-the far red, thus, a wavelength range of $400\ldots 750$ nm. 
+A more recent variation on PAR is extended PAR (ePAR) @ZhenXXX and justified in
+that far-red photons can drive photosynthesis. Extended PAR is based on the same
+simple photon-based BSWF as McCree's PAR but with the wavelength range extended
+by 50 nm into the far red region, thus, based on a wavelength range of
+$400\ldots 750$ nm.
 
 $$Q_\mathrm{ePAR} = \int_\mathrm{400\,nm}^\mathrm{750\,nm} Q(\lambda)\ d \lambda$$
 
 However, the role of far red light in photosynthesis is synergistic, known as
 Emerson's effect. Far red light cannot drive photosynthesis on its own, but only
 when shorter wavelengths are concurrently present with high enough photon
-irradiance. Simple ePAR sensors like the SQ-610-SS from Apogee ignore this, and
-do give an ePAR reading higher than zero under pure far-red radiation from LEDs
-and possibly too high readings under light from incandescent lamps. When
-computing extended PAR from spectral data, the VIS light requirement can be
-considered in the calculations and the value capped when needed to account for
-the nature of the response to far red. We use xPAR to describe the constrained
-version of ePAR.
+irradiance. Simple ePAR sensors like the SQ-610-SS from Apogee @fig-ePAR-spct
+ignore this, and do give an ePAR reading higher than zero under pure far-red
+radiation from LEDs and possibly too high readings under light from incandescent
+lamps. When computing extended PAR from spectral data, the VIS light requirement
+can be considered in the calculations and the value capped when needed to
+account for the synergistic nature of the response to far red. We use xPAR to
+describe the constrained version of ePAR. The factor 1.4 used in the equation
+below is a coarse approximation.
 
 $$Q_\mathrm{xPAR} = \mathrm{min}\left(1.4 \times \int_\mathrm{400\,nm}^\mathrm{700\,nm} Q(\lambda)\ d \lambda,\ \ \
 \int_\mathrm{400\,nm}^\mathrm{750\,nm} Q(\lambda)\ d \lambda\right)$$
 
-Apogee sells a two channel sensor, PAR + FR , that makes this check possible.
+Apogee sells a two channel sensor, PAR + FR, (S2-141-SS) that makes this check possible.
+
+```{r}
+#| label: fig-ePAR-spct
+#| fig-asp: 1
+#| fig-cap: Comparison of the definition of the ePAR to the spectral response of one single-channel ePAR sensor and a two-channel PAR + FR sensor. The two Apogee sensors are based on filterd silicon photodiodes, they are callibrated to give a reading approximating ePAR, PAR and FR in 700 to 750 nm when used in sunlight. 
+
+autoplot(PAR("ePAR"), range = c(300, 800), geom = "spct",
+         unit.in = "photon", unit.out = "photon") /
+  (autoplot(sensors.mspct[c("apogee_sq_610")],
+            idfactor = "Pyranometer:",
+            range = c(300, 800),
+            annotations =c("-", "peaks", "summaries"), 
+            w.band = list(ePAR = PAR("ePAR")),
+            unit.out = "photon") +
+     theme(legend.position = "bottom")
+  ) +
+  plot_layout(axes = "collect")
+
+```
+
 
 Before the proposal of PAR by McCree two quantities based on similar wavelength
 ranges were proposed as relevant to photosynthesis, but based on integrating
