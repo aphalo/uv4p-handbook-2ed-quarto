@@ -105,55 +105,76 @@ library(patchwork)
 library(knitr)
 ```
 
-## Introduction radiation measurement
+## Introduction to radiation measurement
 
-In this chapter the quantities guidance is given on how to measure and how to
+In this chapter guidance is given on how to measure and how to
 interpret quantities describing the properties radiation, including the
 application of the concepts of radiation physics presented in Chapter 2 to the
 description and quantification of radiation in ways relevant to experimentation
-in photobiology and management of crops.
+in plant photobiology and the management of crops.
 
 In research, When describing experimental conditions it is necessary to avoid
 all ambiguity, so that current results can be interpreted correctly and
 experiments reproduced. Expressions such as "light intensity" and "amount of
-light", which are ambiguous, must be avoided. In addition to in scientific and
-technical research, ambiguity must be avoided in equipment specifications and
-management recommendations targeted at growers and other stakeholders that use
-the information provided as a base for decisions affecting the success of their
-activities or even the implementation of government policies.
+light", which are ambiguous, must be avoided. In addition, ambiguity must be
+also avoided in equipment specifications and management recommendations targeted
+at growers and other stakeholders. They depend on the information provided as a
+basis for decisions affecting the success of their activities or even the
+succesful implementation of government policies.
 
 Instruments used to measure the properties of radiation are imperfect. All
 measurements are subject to errors and uncontrolled variation. Some of this
-variation inherent to the individual instrument including bias but variation
-also occurs in response to other variables in the environment such as
-temperature. The radiation-detectors used in some sensors as well as electronic
-components used in the circuits that amplify and record the measured quantities,
-age, i.e., their properties change with time. Thus,to ensure accuracy and
-reproducibility, recalibration of instruments at regular intervals is a must.
+variation is inherent to the individual instrument, including bias. However,
+variation also occurs in response to other variables in the environment such as
+temperature and humidity. In addition, the radiation-detectors used in some
+sensors as well as electronic components used in the circuits that amplify and
+record the measured quantities, age, i.e., their properties change with time.
+Thus,to ensure accuracy and reproducibility, recalibration of instruments at
+regular intervals is a must.
 
-How the instruments are used, i.e., consistency in following a correct 
-measurement protocol and awareness of the limitations of the equipment are 
-unavoidable requirements for accurate and reproducible measurements of all 
+How the instruments are used, i.e., consistently following a correct measurement
+protocol together with good awareness of the limitations of the equipment are
+unavoidable requirements for accurate and reproducible measurements of all
 properties of radiation.
 
-With a spectroradiometer spectral irradiance is measured, usually expressed in
-$\mathrm{W\,m^2\,nm^{-1}}$ or equivalent units differing only by a scaling
-factor such as $\mathrm{mW\,cm^2\,nm^{-1}}$. The wavelength resolution of
-spectrometers can vary from a fraction of a nanometer to a few tens of
-nanometers. What distinguishes data obtained with a spectroradiometer is that
-radiation over a wide range of wavelength is quantified at each of many ($\gg
-100$) contiguous narrow wavelength "slices" or bands. Spectrometers can be
-grouped into two main groups: spectrometers based on an array of detectors and a
-single static monochromator grating, and scanning spectrometers based on a
-single detector and one or two moving monochromators. Within each approach there
-are different types of detectors in use.
+::: callout-tip
+# Accuracy and precision of radiation measurements
 
-Broadband sensors in most cases measure irradiance in a single broad range of
-wavelengths or band. Some sensors, however, measure two or even a few bands.
-In practical use the main difference compared to spectroradiometers is that
-the range of wavelengths integrated to compute the irradiance is fixed. Thus,
-many different types of broadband sensors exist, targetting different bands
-of the spectrum or implemented using different approaches.
+It is important to consider in each situation what are the required accuracy and
+precision. When estimating changes in irradiance over long periods of time, instrument calibration drift is the most important source of bias. When 
+comparing measurements done with different instruments, the accuracy of their
+calibrations and possible bias introduced by extraneous variables such as temperature are most important. These are the hurdles that meteorologists most
+frequently have to deal with.
+
+In a biological experiment were the different light conditions are measured with
+the same broadband sensor, the main consideration is whether the calibration of
+the instrument is valid under each light condition. When measuring a light
+source at near range (up to several meters), using the correct distance between
+source and sensor becomes crucial. When small differences among conditions are
+more important that absolute values, precision is more important than accuracy.
+
+Extraneous shading and reflections by objects and by the operator during
+measurements can introduce very large errors haphazardly. Poor levelling of
+diffusers, and in permanent installations, soiling of diffusers can also
+become important sources of bias.
+
+Replication in time and space are needed to quantify real-world variation. On
+the other hand, the accuracy of calibrations is reported in calibration
+certificates. This accuracy applies only to the calibration itself under the
+conditions under which it was done, and weakens with differences in temperature
+and with time. Sensor specifications sometimes include a description of the
+dependency on temperature and in most cases recommended annual or bi-annual
+recalibration.
+
+It is also important to keep in mind that many instruments reach rated accuracy
+only after a warming-up period. This applies also to artificial light sources,
+including LEDs. They should be measured only after their temperature is stable 
+and obviously at the same temperature as when used.
+
+It is worrying that in biological research these points are rarely taken into
+full consideration, and almost never described in the methods section of publications.
+
+:::
 
 A comprehensive glossary of terms relating to visible and ultraviolet radiation
 has been published by @Braslavsky2007. It can be downloaded from the Internet
@@ -169,66 +190,92 @@ known to the authors are also listed.
 
 ## Spectroradiometers {#sec:spectroradiometers}
 
-Spectroradiometers[^22] are instruments used to measure spectral
-irradiance. There are two types of spectroradiometer: 1) scanning
-spectroradiometers, and 2) array detector spectroradiometers. The former
-have a single sensor, which is used to sequentially measure the spectral
-irradiance at each wavelength, while the latter have an array of sensors
-onto which the refracted spectrum is projected and measured
-simultaneously at all wavelengths. Sometimes the more general term
-spectrometer is adopted to indicate that the same instrument can be also
-used to measure spectral absorbance, -transmittance, or -reflectance, in
-addition to spectral irradiance. Scanning spectroradiometers scan a
-range of wavelengths. To do this they require mechanically moving parts
-inside the optic path and therefore need very stable housing for the
-instrument. For this reason, scanning spectroradiometers are larger and
-more difficult to transport than array detector spectroradiometers. They
-are also less rugged and usually require mains power. However, in
-scanning spectroradiometers it is possible to use a double monochromator
-arrangement that makes their optical performance far superior to that of
-array spectroradiometers which always use a single monochromator.
+Spectroradiometers measure spectral irradiance, usually expressed in
+$\mathrm{W\,m^2\,nm^{-1}}$ or equivalent units differing only by a scaling
+factor, e.g., $\mathrm{mW\,cm^2\,nm^{-1}}$. The wavelength resolution of
+spectrometers can vary from a fraction of a nanometre to a few tens of
+nanometres. What distinguishes data obtained with a spectroradiometer is that
+radiation over a wide range of wavelengths is quantified at each of many ($\gg
+100$) contiguous narrow wavelength "slices" or bands. Spectroradiometers are
+spectrometers with entrance optics that makes it possible to measure irradiance
+or, exceptionaly, fluence rate.
+
+Spectrometers fall into two main groups: _array spectrometers_ based on an
+array of detectors and a single static monochromator grating, and _scanning
+spectrometers_ based on a single detector and one or two moving monochromators.
+Within each approach there are different types of detectors in use, different
+types of monochromators, and different optics. However, in some respects array
+and scanning spectrometers are fundamentally different.
+
+In array spectrometers the monochromator projects radiation of different wavelengths onto different sensors arranged as a linear (1-dimentional) array. Thus, the
+whole spectrum is measured simultaneously. In a scanning spectrometer, the
+moving grating projects the radiation of different wavelengths sequentially
+onto the same and only sensor. Thus, radiation at each wavelength "slice" is
+measured at a different point in time.
+
+Scanning spectroradiometers a based on a mechanism that accurately moves the
+manochromator(s) in very small steps, in most cases motorised. Mechanical 
+accuracy and sturdiness depend a rigid, and heavy structure. For this reason, scanning spectrometers are in general much bigger and heavier, and, thus, more 
+difficult to transport than array detector spectroradiometers. They
+are also less tolerant to rough handling and usually require mains power. However, scanning spectrometers can accomodate a double monochromator
+arrangement. The two monochromators are "in series" such that the light beam 
+passes through both of them before reaching the sensor. This improves markedly
+the separation of light of different wavelengths reaching the sensor.
+
+::: callout-note
+The term _spectrometer_ is used to indicate that the same instrument, depending
+on its attachments and calibration, can be also used to measure spectral
+absorbance, -transmittance, or -reflectance, in addition to spectral irradiance.
+:::
 
 ### Scanning spectroradiometers
 
+THIS SECTION FOCUSES MAINLY ON THE SPECTRORADIOMETERS USED FOR LONG TIME
+SERIES OF UV MEASUREMENTS IN METEOROLOGY. IT ONLY MENTIONS IN PASSING
+SCANNING SPECTRORADIOMETERS FREQUENTLY USED BY BIOLOGISTS. THIS SECTION NEEDS
+SOME EXPANSION AND REORGANIZATION. MENTION OR MANUAL INSTRUMENTS NOW NO
+LONGER USED, COULD HOWEVER, WORK AS AN INTRODUCTION AS THEY ARE SIMPLER WHILE
+BASED ON THE SAME PRINCIPLES. e.g. LI-COR LI-1800 from 1980's and ISCO SR from
+1970's.
+
 #### Basic structure and principles of operation
 
-The basic components of a scanning spectroradiometer are the following:
-a) input optics for collecting radiation from the sky and guiding it
-further into the spectroradiometer b) a monochromator for resolving the
-input radiation into separate wavelengths c) a photomultiplier tube
-(PMT) for detecting the energy possessed by each spectral component in
-the measured spectrum. In addition, an external computer for
-communication with the microprocessor of the spectroradiometer and for
-collection, processing and storage of data is needed.
+The basic components of a scanning spectroradiometer designed for fixed
+installation outdoors are: a) input optics for collecting radiation from the sky
+and guiding it further into the spectroradiometer b) a monochromator for
+resolving the input radiation into separate wavelengths c) a photomultiplier
+tube (PMT) or a solid state detector for sequentially quantifying the energy in
+each spectral component of the measured radiation. In addition, scanning
+spectroradiometers in most cases need to be used tethered to a personal computer
+or tablet as they usually lack a built-in screen for user interface or enough
+memory for data storage. EXAMPLE SPECTRORADIOMETER is needed here!! Biospherical and Brewer. 
 
-The input optics typically consists of a flat teflon diffuser covered by
-a quartz dome. The diffuser collects the incident photons from the
-overhead hemisphere. The resulting diffuse radiation is guided to the
-entrance slit of the monochromator, sometimes by means of an optical
-fibre. The monochromator may be a single or a double monochromator (see
-section [8.2.4](#sec:spectrographs){reference-type="ref"
-reference="sec:spectrographs"} on page ). In scanning
-spectroradiometers, a system based on a step motor drives a mask that
-allows only photons of a certain wavelength at a time to enter the exit
-slit of the monochromator. The exit slit serves as the entrance window
-to the cathode of the PMT. The photon pulses are amplified and
+The input optics typically consist of a flat PTFE ("Teflon") diffuser disk
+covered by a quartz dome. The diffuser collects the incident photons from the
+overhead hemisphere. The resulting diffuse radiation is guided to the entrance
+slit of the monochromator, sometimes by means of an optical fibre. The
+monochromator may be a single or a double monochromator (see section
+spectrographs). In scanning spectroradiometers, a system based on a step motor
+drives a mask that allows only photons of a certain wavelength at a time to
+enter the exit slit of the monochromator. The exit slit serves as the entrance
+window to the cathode of the PMT. The photon pulses are amplified and
 transmitted to a photon counter for registration.
 
-Some spectroradiometers are constructed on a solar tracker that follows
-the position of the sun. This eliminates the effects of potential
-azimuthal dependencies in the detection of radiation. A measurement head
-at the end of an optical fibre may be also installed on a separate sun
-tracker. The temperature of the instrument is usually either stabilized
-or kept above a certain temperature limit to ensure proper functioning.
-The dome of the measurement head may be equipped with a heater and/or
-air blower to keep the temperature of the teflon within certain limits
-and to avoid emergence of frost onto the dome.
+While most frequently irradiance is measured on a plane parallel to the ground,
+to measure "normal solar irradiance" spectroradiometers can be mounted on a solar
+tracker that follows the position of the sun maintaining the plane of the diffuser
+facing directly into the sun. A measurement head at the end of an optical fibre
+may be also installed on a separate sun tracker. The temperature of the
+instrument is usually either stabilized or kept above a certain temperature
+limit to ensure proper functioning. The dome of the measurement head may be
+equipped with a heater and/or air blower to keep the temperature of the teflon
+within certain limits and to avoid formation of frost or dew on the dome
+surface.
 
-Other spectroradiometers are less rugged and are intended for laboratory
-or spot measurements outdoors. They are more portable but more sensitive
-to temperature extremes and are not water proof. Examples of such
-instruments are Optronics OL 756 and Macam SR9910 spectroradiometers.
-Figure
+Scanning spectroradiometers intended for laboratory or spot measurements
+outdoors are smaller and less rugged. They are more portable but more sensitive
+to temperature extremes and are not water proof. Examples of such instruments
+are Optronics OL 756 and Macam SR9910 spectroradiometers. Figure
 [\[fig:Optronics:OL_756\]](#fig:Optronics:OL_756){reference-type="ref"
 reference="fig:Optronics:OL_756"} shows the different parts of the first
 of these instruments.
@@ -252,23 +299,22 @@ PMT. Dark current is a measure of the drift photons going from the
 cathode to the anode of the PMT without any real incident photons
 entering the instrument. Dead time is a measure of that PMT which is in
 a paralysed state after a photon detection event. Stray light is
-composed of photons echoed from wavelengths other than the nominal
+composed of photons reflected from wavelengths other than the nominal
 wavelength being measured. In commercially available scanning
 spectroradiometers, these phenomena are usually measured and handled by
 the measurement software.
 
-The **wavelength alignment** of a spectroradiometer has to be checked
-regularly. Most instruments taking daily measurements contain an
-internal mercury lamp aimed at ensuring the stability of the alignment.
-The wavelength and the position of the micrometer turning the grating of
-the monochromator are related to each other by a second-order equation
-using so called dispersion coefficients. The determination of the
-dispersion coefficients should be part of the annual maintenance of the
-instruments.
+The **wavelength alignment** of a spectroradiometer has to be checked regularly.
+Most instruments taking continuously sequential measurements contain an internal
+mercury lamp aimed at ensuring the stability of the alignment. The wavelength
+and the position of the micrometer turning the grating of the monochromator are
+related to each other by a second-order equation using so called dispersion
+coefficients. The determination of the dispersion coefficients should be part of
+the annual maintenance of the instruments.
 
 Solar irradiance spectra sometimes exhibit so called **noise spikes**,
 which mean sudden abnormally high or low intensity readings on a single
-wavelength. The origin of the spikes is not fully resolved, but
+wavelength. The origin of the spikes is not fully known, but
 straylight is considered a partial explanation. The spikes can be
 detected and eliminated making use of suitable reference spectra.
 
@@ -276,7 +322,7 @@ Ideally, the angular response of the measurement head follows the shape
 of a cosine curve. In practice, the response deviates somewhat from
 this. Typically, the larger the solar zenith angle, the larger the
 deviation. The **cosine response** of the measurement head should be
-measured in laboratory and a corresponding correction applied to all
+measured in laboratory and a corresponding correction applied to
 measured data.
 
 If the spectroradiometer is not stabilized for temperature, its response
@@ -368,16 +414,18 @@ reference="fig:Brewer:intercomparison"}).
 
 ### Array detector spectroradiometers
 
-In contrast to scanning spectroradiometers, array detector instruments
+In contrast to scanning spectrometers, array detector instruments
 measure spectral irradiance simultaneously at all wavelengths. The
 detector in this case is a linear array of light sensors, similar in
 structure to the imaging sensors used in digital cameras, but long and
 narrow. The number of detector elements ('pixels') along the array
-varies, 2000 to 3000 pixels being common[^23]. The array can be a
+varies, 2000 to 3000 pixels being common for visible light and fewer in
+IR-only spectrometers. The array can be a
 'charge coupled device' (CCD), or an array of photodiodes (DAD). The
 'image' of the spectrum produced by the monochromator is projected and
 focused by means of mirrors onto the linear detector array, each
-detector in the array receiving light of a certain wavelength. In the
+detector in the array receiving light of a certain very narrow range of 
+wavelengths. In the
 case of array spectrometers it is not possible to use two monochromators
 in tandem to reduce stray light. Array spectrometers are small and
 portable (Figure
