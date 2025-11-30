@@ -99,3 +99,77 @@ In the case of NIR all three sources are effective: sunlight, Xenon flash and LE
 
 ## Procedures
 
+```{r}
+library(ggspectra)
+library(photobiologyFilters)
+library(photobiologyLamps)
+library(photobiologyPlants)
+library(patchwork)
+photon_as_default()
+Tfr_as_default()
+```
+
+### UVIVF
+
+- Camera: It is best to use a digital mirrorless (ML) camera. An off-the-shelf
+camera is the best tool unless NIR fluorescence is of interest.
+
+- Objective: Most lenses work well but given the very low light levels a lens with an f/2.8 apperture or wider is preferable.
+
+- Light source: A 365 nm LED-based flashlight works well if of enough power
+(>= 3 W for a 0.25 m to 2.0 m range and static subjects), preferably with a Nichia LED and an VIS-blocking filter such as 3 mm or 2 mm-thick SWB2 filter. The induced fluorescence is weak so that if any visible light emitted by the UV source can go through both filters, it will show in the photographs.
+
+```{r}
+autoplot(smooth_spct(lamps.mspct[c("Convoy.S2plus.LED.UVA.flashlight")], 
+                     method = "supsmu", strength = 0.001),
+         range = c(315, 450))
+```
+
+- On-camera filter: A high-quality UV-blocking filter is needed. Most UV-filters
+sold for photography have a cut-in at too short wavelengths (330 to 380 nm). However, when using a 365 nm LED as light source the filter used on the lens has to block wavelengths just past 400 nm. The best, but rather expensive, option is a Zeiss UV T* filter, second best is a significantly cheaper Firecrest UV400 filter (from Formatt-Hitech, apparently gone bankrupt), and a third option is a Tiffen Haze 2A filter (rather difficult to find outside USA). The first two are interference filters and reflect UV, rather than absorb it. The Tiffen filter, a rather old type in the tradition of Kodak Wratten filters, has a thin UV-absorbing gelatine layer encased between two glass sheets. None of these three filters fluoresce significantly when exposed to UV radiation. Most yellow, orange and red filters are made of ionic glass and when illuminated with UV fluoresce strongly. They can be used only behind a UV-absorbing filter. NIR pass filters are also ionic and do also fluoresce, but less intensively (I am not sure of which wavelengths induce the strongest fluorescence in NIR filters, but likely from the VIS range).
+
+```{r}
+autoplot(filters.mspct[c("Zeiss_UV_Tstar_2.0mm_52mm",
+                          "Hoya_UV0_HMC_2.0mm_52mm")],
+         range = c(315, 450)) + theme(legend.position = "top") 
+```
+
+```{r}
+(autoplot(smooth_spct(normalise(lamps.mspct[["Convoy.S2plus.LED.UVA.flashlight"]], norm = "undo") *
+                       filters.mspct[["Zeiss_UV_Tstar_2.0mm_52mm"]], method = "supsmu", strength = 0.5),
+         range = c(315, 450), ylim = c(NA, 6.2), 
+         annotations = c("-", "peaks")) + ggtitle("Zeiss UV T* filter") +
+   theme(legend.position = "top")) |
+(autoplot(smooth_spct(normalise(lamps.mspct[["Convoy.S2plus.LED.UVA.flashlight"]], norm = "undo") *
+                       filters.mspct[["Hoya_UV0_HMC_2.0mm_52mm"]], method = "supsmu", strength = 0.5),
+         range = c(315, 450), ylim = c(NA, 6.2), 
+         annotations = c("-", "peaks")) + ggtitle("Hoya UV(0) filter") + 
+   theme(legend.position = "top")) + plot_layout(axis_titles = "collect")
+```
+
+::: callout-tip
+# UV-induced fluorescence of filters
+
+
+:::
+
+- Support: Exposure times between 20 s and a 2 min are common, so the camera must be mounted so that it cannot move. I normally use a tripod outdoors and a copy stand or a tripod indoors. Many modern camera can be controlled with a phone app, while older ones can be triggered with a cable or radio-remote. If a IR remote is to be used, better test that its light does not show in the photographs.
+- Location, outdoors: The best location is far from any artificial illumination in a moon-less night. How dark it needs to be depends on the length of expossure, so brightly fluorescing subjects like some lichens are more forgiving. At high latitudes, in the late spring and summer, it remains too bright through out the night. The autumun is the best season, especially if one gets a windless night.
+- Location, indoors: Even in a dark room, there are usually items that strongly fluoresce such as light-coloured clothing, white papers and even some plastics. One needs to move such items away and if not possible, set the UV-radiation beam to illuminate the subject but not those items. 
+
+::: callout-tip
+# Tools I use
+
+- Camera: mirrorless digital cameras. Since three years ago Olympus OM-1, five years ago an Olympus E-M1 Mk II and about 10 years ago an Olympus E-M1. The OM-1 has a feature that is especially good for very long exposures: it can display the image while it is being captured, even on the screen of a phone or tablet. Used with the shutter in _bulb_ mode one can close the shutter when the image looks bright enough. In addition, one can see live how light painting with the flashlight affects the image.
+- Objectives: I have used for many years most frequently a Sigma 30 mm f/1.4, and more recently an M.Zuiko 25 mm f/1.2 in its place. When needing other focal lengths the M.Zuiko 12-40 mm f/2.8 zoom has worked well. After all, one is just photographing VIS light, so almost any lens should work nicely optically.
+- On camera filter: the three mentioned above, interchangeably. Sometimes combined with long-pass filters.
+- Flashlight UVA: Convoy 2+ with 365 nm Nichia LED rated at 3 W. I replaced the clear window with a VIS-blocking filter. This flashlight has a narrow and very intense UV beam that works very well for light painting. Jaxman 1aC 365 nm 6W "flood" flashlight has a broader and less intense UV beam. It came already with a VIS-blocking filter installed. The two flashlight are physically very similar but differ in the LED and most significantly the reflector.
+- Flashlight, VIS: As I tend to take a paired reference photograph in white light for each fluorescence image, I use a 5W video fill light (SunwayFoto FL96). Many similar lamps are avaialble, but not all of them have a high colour rendition index (CRI). A value of 95 or higher is good for colour reproduction.
+- White reference slab: A normal colour chart is unsuitable. Some grey cards sold for white balancing can be used but I consider them too expensive to use in the field, especially in the dark. I use instead a piece a white "vigin" (not recycled) PTFE (=Teflon) about 6 mm thick. _Pure clean_ PTFE has similar and very high reflectance in the UV, VIS and NIR, and can be easily washed to clean it.
+:::
+
+::: callout-caution
+# White balancing fluorescence photographs
+
+Objectively white balancing a photograph of fluorescence is nearly impossible. After trying other approaches I have mostly settled into editing the colour in these photographs to "look right", i.e., matching my recollection of how the subject looked like when I photographed it. However, in some cases I use just a daylight balance and alternatively edit the colour to remove intense casts so as to increase the apparent colour range.
+:::

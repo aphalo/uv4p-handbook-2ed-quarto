@@ -20,7 +20,7 @@ book:
       affiliation: University of Copenhagen
   contributor: "Pedro J. Aphalo, Andreas Albert, Lars Olof Björn, Andy R. McLeod, T. Matthew Robson,  Eva Rosenqvist"
   license: "CC BY-SA"
-  date: "2024-10-04"
+  date: "2025-11-19"
   date-format: iso
   chapters:
     - index.qmd
@@ -58,7 +58,7 @@ book:
     - references.qmd
   page-footer:
     right:
-      - text: "&copy; 2012-2024 COST office and authors"
+      - text: "&copy; 2012-2025 COST office and authors"
     left:
       - text: "Uv4Plants Association"
         href: https://www.uv4plants.org
