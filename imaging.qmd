@@ -1,17 +1,19 @@
 ---
 title: "Imaging in UV, VIS and NIR radiation"
-subtitle: "Methods and equipment"
+subtitle: "Equipment and methods"
 author: "Pedro J. Aphalo, (Eva Rosenqvist), (Lasse Ylianttila)"
 ---
 
-```{r}
+```{r, message=FALSE}
 library(ggspectra)
 library(photobiologyFilters)
 library(photobiologyLamps)
+library(photobiologyLEDs)
 library(photobiologyPlants)
 library(patchwork)
 photon_as_default()
 Tfr_as_default()
+set_theme(theme_bw())
 ```
 
 With some exceptions, producing photographic images, either digitally or chemically, requires a camera, a lens and a light source. To limit the imaging to specific regions of the spectrum, optical filters are used. Illumination can be sunlight or artificial. If artificial it can have a broad spectrum or be limited to a specific range of wavelengths.
@@ -139,13 +141,18 @@ Reflections are not the only problems low quality adapters and tubes can introdu
 
 Optical filters select wavelengths through absortion and/or through reflection. Each type has its limitations and benefits, both in performance and cost. How good a filter is needed depends on multiple factors, including illumination spectrum and irradiance compared to the strength of the radiation captured in the image. As fluorescence of plants has in geenral a rather low quantum yield, photographying fluorescence requires filters that block out-of-band radiation extremely well ($\approx \mathrm{OD} >= 5$, or $T <= 0.00001$). UV-A photography in sunlight is not so challenging, but still many filters do not block NIR or VIS well enough ($\approx \mathrm{OD} > 3$, or $T < 0.001$, is usually recommended).
 
-**Absorptive glass filters** are based on "ionic" glass, i.e., glasses including different ions in their composition. Some of the ions tradditionaly used are metals like iron, lead, copper and chrome. As with any material absorbing photons, fluorescence is one of the possible energy dissipation mechanisms. Thus, some of these filters, e.g., when illuminated with UV-A radiation emit fluorescence in the visible range, and others emit NIR fluorescence when illuminated with blue light. The absorptance depends on their thickness as the glass as a whole has uniform properties across its depth. The change in the absorptance spectrum with the angle of light incidence is moderate. Their cut-offs and cut-ins are gradual, and these filters are available as band-pass, short-pass and long-pass filters. From the perspective of their use, as the transmitted bands are broad, the distinction between short-pass and band-pass gets blured, i.e., most UV-A and UV-B "short-pass" filters are really band-pass filters as they do block UV-C wavelengths. Ionic-glass are not good enough for fluorescence or UV imaging, but work well for refelcted NIR photography. One exception to this rule is that very thick glass filters can have high out-of-band absorptance with not to low in-band transmittance (e.g., TSN340 from Tangsinuo is a glass filter about 10 mm-thick). 
+**Absorptive glass filters** are based on "ionic" glass, i.e., glasses including different ions in their composition. Some of the ions tradditionaly used are metals like iron, lead, copper and chrome. As with any material absorbing photons, fluorescence is one of the possible energy dissipation mechanisms. Thus, some of these filters, e.g., when illuminated with UV-A radiation emit fluorescence in the visible range, and others emit NIR fluorescence when illuminated with blue light. The absorptance depends on their thickness as the glass as a whole has uniform properties across its depth. The change in the absorptance spectrum with the angle of light incidence is moderate. Their cut-offs and cut-ins are gradual, and these filters are available as band-pass, short-pass and long-pass filters (@fig-img-filters-ionic). From the perspective of their use, as the transmitted bands are broad, the distinction between short-pass and band-pass gets blured, i.e., most UV-A and UV-B "short-pass" filters are really band-pass filters as they do block UV-C wavelengths. Ionic-glass are not good enough for fluorescence or UV imaging, but work well for refelcted NIR photography. One exception to this rule is that very thick glass filters can have high out-of-band absorptance with not to low in-band transmittance (e.g., TSN340 from Tangsinuo is a glass filter about 10 mm-thick). 
 
-```{r, eval=FALSE}
-# edit with ionic filter examples UV and NIR pass
-autoplot(filters.mspct[c("Zeiss_UV_Tstar_2.0mm_52mm",
-                          "Hoya_UV0_HMC_2.0mm_52mm")],
-         range = c(315, 450)) + theme(legend.position = "top") 
+```{r}
+#| label: fig-img-filters-ionic
+#| fig-asp: 0.90
+#| fig-cap: >
+#|   Total transmittance spectra of two absoptive ionic filters. A short-pass UV filter (UG1 fron Schott) and a long-pass NIR filter (RG695, from Schott).
+#| 
+autoplot(convertTfrType(filters.mspct[c("Schott_RG695", "Schott_UG1")],
+                        Tfr.type = "total"), 
+                        range = c(250, 900), 
+                        facets = 1)
 ```
 
 ::: callout-tip
@@ -163,25 +170,173 @@ Scratches on the coatings or the glass surface, if small and superficial, tend t
 
 Until approximately 50 years ago **gelatine filters** were common. Obviously a thin layer of dry coloured gelatine is extremely fragile, but because they are so thin affect an optical system much less than thicker filters. They are still used, especially for filters located between the back of a lens and the sensor or film. When a thicker glass filter is located between sensor or film and objective, the focus point shifts, in extreme cases restricting the focusing range of the objective.
 
-There is an additional type of absorptive filters, formely very common in photography: a thin light-absorbing layer of coloured **gelatine encased between two layers of optical glass**. As far as I know, only [Tiffen](https://tiffen.com) still makes filters of this kind.
+There is an additional type of absorptive filters, formely very common in photography: a thin light-absorbing layer of coloured **gelatine encased between two layers of optical glass**. As far as I know, only [Tiffen](https://tiffen.com) still makes filters of this kind (@fig-img-filters-tiffen-haze).
 
-**Interference filters** work by reflection from surface multilayer thin coatings. As with reflection in general, reflectance by the thin layers is affected by the light incidence angle. In this type of filters the cut-off and cut-in wavelengths shift significantly at shallow light incidence angles compared to normal incidence. Their main advantage is that they can be designed to have very sharp cut-in and cut-offs, can have multiple discontinuous trtansmission bands and very strong blocking of off-band radiation. They are available with transmitted bands as narrow as a couple of nm to 100's of nanometres. However, only the best and most expensive interference filters achieve such high performance. The better filters have more thin-layers with more accurate thickness, which increases the fabrication cost. As they are usually deposited on optical-grade quartz as subtrate, the thikness of the substrate of these filters has little if any effect on their spectral properties. The thin films are fragile, so some of these filters have a hard-coating added at their surface for protection. In spite of working by reflection, which face of the filter points to the light source does not significantly affect their spectral transmittance. Some of these filters have coatings on only one surface, while other can have different coatings on their two surfaces. It is important to remember here that reflections take place at each interface between media of different refractive indexes.
+```{r}
+#| label: fig-img-filters-tiffen-haze
+#| fig-asp: 0.5
+#| fig-cap: >
+#|   Total transmittance spectra of a filter made as an film encased
+#|   between two glass layers. A UV-blocking filter, or "haze" filter
+#|   (type 2A from Tiffen).  
+#| 
+autoplot(convertTfrType(filters.mspct$Tiffen_Haze_2A_2.6mm_52mm,
+                        Tfr.type = "total"), 
+                        range = c(250, 900))
+```
 
-Some of the best VIS-blocking UV-pass filters for photography and astronomy ("Venus filters") are **interference filters with VIS-absorbing ionic glass as substrate**. Some of them, even have different interference filters deposited on each of their faces. Some photographers argue that which face of these filters faces the sensor can affect reflections within the camera resulting slightly different amounts of glare. Of the ordinary filters used in VIS photography, only some UV-blocking filters, some neutral density filters and all UV + NIR blocking filters are interference filters, most other filters are absprptive.
+
+**Interference filters** work by reflection from surface multilayer thin coatings. As with reflection in general, reflectance by the thin layers is affected by the light incidence angle. In this type of filters the cut-off and cut-in wavelengths shift significantly at shallow light incidence angles compared to normal incidence. Their main advantage is that they can be designed to have very sharp cut-in and cut-offs, can have multiple discontinuous trtansmission bands and very strong blocking of off-band radiation (@fig-img-filters-uvcut-interference). They are available with transmitted bands as narrow as a couple of nm to 100's of nanometres. However, only the best and most expensive interference filters achieve such high performance. The better filters have more thin-layers with more accurate thickness, which increases the fabrication cost. As they are usually deposited on optical-grade quartz as subtrate, the thikness of the substrate of these filters has little if any effect on their spectral properties. The thin films are fragile, so some of these filters have a hard-coating added at their surface for protection. In spite of working by reflection, which face of the filter points to the light source does not significantly affect their spectral transmittance. Some of these filters have coatings on only one surface, while other can have different coatings on their two surfaces. It is important to remember here that reflections take place at each interface between media of different refractive indexes.
+
+```{r}
+#| label: fig-img-filters-uvcut-interference
+#| fig-asp: 0.90
+#| fig-cap: >
+#|   Total transmittance spectra of two dichroic or interference
+#|   filters, one UV-blocking (Zeiss UV T*) and one UV and IR-blocking
+#|   (Firecrest UVIR cut). Both filters are in addition antireflection
+#|   multicoated.
+#| 
+autoplot(
+    convertTfrType(
+      filters.mspct[c("Zeiss_UV_Tstar_2.0mm_52mm", 
+                      "Firecrest_UVIR_Cut_0.96mm_52mm")],
+      Tfr.type = "total"), 
+    range = c(250, 900), 
+    facets = 1)
+```
+
+
+Some of the best VIS-blocking UV-pass filters for photography and astronomy ("Venus filters") are interference filters with VIS-absorbing ionic glass as substrate. Some of them, even have different interference filters deposited on each of their faces. The added interference filter coatings blocks the IR "leaks" that the ionic glass has (@fig-img-filters-uv-pass). Some photographers argue that which face of these filters faces the sensor can affect reflections within the camera resulting slightly different amounts of glare. Of the ordinary filters used in VIS photography, only some UV-blocking filters, some neutral density filters and all UV + NIR blocking filters are interference filters, most other filters are absprptive.
+
+```{r}
+#| label: fig-img-filters-uv-pass
+#| fig-asp: 0.90
+#| fig-cap: >
+#|   Total transmittance spectra of two short-pass UV filters, one 
+#|   an dichroic or interference filters on a 1 mm-thick Schott UG11
+#|   ionic glass substrate (Bader Venus-U), and the other a plain 
+#|   2 mm-thick UG11 ionic glass filter
+#|   (Firecrest UVIR cut). Both filters are in addition antireflection
+#|   multicoated.
+#| 
+autoplot(
+    convertTfrType(
+      filters.mspct[c("Baader_U_filter_1.0mm_48mm", 
+                      "Schott_UG11")],
+      Tfr.type = "total"), 
+    range = c(250, 900), 
+    facets = 1)
+```
 
 Each glass-air interface reflects approximately 4.5% of the light traversing it as result of the difference in refractive index ($n$). Modern lenses and good photographic filters are **anti-reflection multicoated**, and the best ones reflect $< 0.1\%$ of the light impinging on their surface. These coatings are similar in principle to interference filters, they change $n$ at the surface. However, they are designed to minimize reflections across a given range of wavelengths instead of increeasing them. In recent years a further additional coating is being applied to outer lens surfaces and filters, a fluorine compound coating that alters surface properties so that water runs off the surface and dirt does not stick. Antireflection coatings do modify the spectral transmittance, increasing it in the target range of wavelengths but frequently decreasing it in other regions of the spectrum. 
 
 ## UV, VIS and NIR radiation sources
 
+As in many applications, LEDs have replaced incandescent lamps as light sources for VIS photography, while Xenon-arc flashes remain popular. The spectrum of white light sources based on LEDs used in photography has improved in recent years. The suitability of white LED light is rated based on indexes, of which the most frequently reported is the colour rendition index (CRI), expressed in a scale from 0 to 100. In practice, good colour reproduction in photographs requires CRI >= 95 (@fig-imge-white-leds-cri). Most white LEDs used in households, public spaces and growth chambers have CRI << 90 and sometimes CRI < 80. This should be taken into consideration when photographs are used to record the outcome of experiemnts.
+
+```{r}
+#| label: fig-imge-white-leds-cri
+#| fig-asp: 1.5
+#| fig-cap: >
+#|   Emission spectra of four white LED of different types, two with high CRI (Sunlike, from Seoul Semicon and Optisolis from Nichia) and two with lower CRI (an older Nichia LED and a modern LED for horticulture from Luminus).
+#| 
+autoplot(leds.mspct[c("SeoulSemicon_S4SM_1564509736_0B500H3S_00001",
+                      "Nichia_NFCWL036B_V3_Rfcb0", 
+                       "Nichia_unknown_757",
+                       "Luminus_CXM_14_HS_12_36_AC30")],
+         range = c(250, 900), 
+         facets = 1)
+```
+
+
 Daylight is a good source of UV-A1 radiation during most of the day. When the sun is more than 30 or 40 degrees above the horizon UV-A1, UV-A2 and UV-B are usualy enough for photograpying still subjects. The irradiance of NIR compared to VIS in daylight varies less than that of UV-B and UV-A. As described in Chapter XX, the scattering of sunlight in the atmosphere is more at shorter than at longer wavelengths. Lanscapes look very different in a UV and in a NIR image. The proportion of UV-A in the shade can be high but the low irradiance makes very long exposures necessary. When using "accidental" UV objectives their rather low transmittance compounded with a decreased sensor sensitivity at short wavelength usually makes UV photography in natural light challenging because of long exposure times.  
 
-Xenon flash lamps emit as much or more UV-A radiation than VIS light, but those sold for VIS photography are in most cases filtered so as to block all UV to make their use safer and to avoid a blue cast in photographs. As Xenon flash lamps emit across the whole UV-A, UV-B and UV-C regions, similarly to sunlight, produce false-colour UV images. This is true, even if filtered to block UV-B and UV-C for safety, as these wavelengths are blocked by "accidental" UV objectives and anyway not detected by digital sensors even in full-spectrum modified cameras.
+Xenon flash lamps emit as much or more UV-A radiation than VIS light, but those sold for VIS photography are in most cases filtered so as to block all UV to make their use safer and to avoid a blue cast in photographs. A Xenon flash arc inherently emits across the whole UV-A, UV-B and UV-C, VIS, and NIR regions. However, depending on the glass or quartz lamp envelope, the shorter wavelengths may not exit the lamp. However, even Xenon flash lamps with a glass envelope emit UV-A radiation. The spectrum even if full of features (peaks and valleys), is rather continuous (@fig-img-xe-flash).
 
-LEDs with peaks of emission between 365 nm and 415 nm do emit UV-A1 and are cheap and readily available. However, because of their rather narrow peaks of emission they create nearly monochromatic images, with little false colour, when used singly. One possibility is to use an array with a mix of LEDs emitting at different but partly overlapping UV-A wavelengths.
+```{r}
+#| label: fig-img-xe-flash
+#| fig-asp: 0.90
+#| fig-cap: >
+#|   Emission spectra of two different "heads" on the same Xenon flash
+#|   (Godox AD200) one original and filtered to block all UV radiation 
+#|   and one with quartz flash tube, not filtered, from a different
+#|   supplier (FTSTS40W quartz Xenon lamp on a Godox H200j bare-lamp
+#|   flash head).
+#| 
+autoplot(lamps.mspct[c("Godox.XeF.AD200.H200j.FTSTS40w.flash", 
+                       "Godox.XeF.AD200.H200.flash")],
+         range = c(250, 900), 
+         facets = 1)
+```
+
+Radiation from Xenon flashes, similarly to sunlight, can produce false-colour UV and NIR images. This is true, even if filtered to block UV-B and UV-C for safety. UV-B and UV-C wavelengths are blocked by "accidental" UV objectives and anyway not detected by digital sensors even in full-spectrum modified cameras.
+
+LEDs with peaks of emission between 365 nm and 415 nm do emit UV-A1 and are cheap and readily available. However, because of their rather narrow peaks of emission (@fig-img-leds-uva) they create nearly monochromatic images, with little false colour, when used singly. One possibility is to use an array with a mix of LEDs emitting at different but partly overlapping UV-A wavelengths.
+
+```{r}
+#| label: fig-img-leds-uva
+#| fig-asp: 0.90
+#| fig-cap: >
+#|   Emission spectra of two 4W UV-A1 LEDs (types LZ1-10UV00 and 
+#|   LZ1-10UB00-00U4 from Led Engin-Osram).
+#| 
+autoplot(leds.mspct[c("LedEngin_LZ1_10UV00_365nm",
+                      "LedEngin_LZ1_10UB00_00U4_385nm")],
+         range = c(250, 900), 
+         facets = 1)
+```
+
 
 In the case of NIR all three sources are effective: sunlight, Xenon flash and LEDs. This is helped by the high native sensitivity of Si-based image sensors in this region of the spectrum. LEDs with their narrow peaks of emission unless combined, fail to produce strong false colour effects. Because of the properties of the red, green and blue filters on pixels of camera sensors, the false colour originates mostly from R and FR wavelengths $\lambda < 850 \mathrm{nm}$.
 
+::: callout-caution
+
+### Illumination flicker
+
+Many light sources including all incandescent lamps and many gas-discharge- and LED lamps, flicker at twice the frequency of the AC power line. The AC line frequency, 50 Hz or 60 Hz, has most likely been chosen so that the light fkicker is not noticeable to human vision. Modern electronic ballasts for gas-discharge lamps and drivers for LEDs tend to use higher frequencies, anywhere between 300 Hz and a few kHz. However, two contrasting approaches to LED dimming are in use. Some LED drivers use a constant-current approach to dimming, and avoid flicker completly. Meanwhile other drivers use the pulse-width-modulation approach (PWM) to dimming, that consist in switching the LEDs on and off at a usually fast frequency. Old-style mains dimmers generate strong flicker at line frequency.
+
+Flicker and the more drastic PWM dimming need to be taken into account when selecting the shutter speed used. At fast shutter speeds (= short exposure times), both in film and in most digital cameras, there is a small difference in time when different parts of an image are acquired. Under light flickering in brightness, banding in images apears as subtke differences in exposure. In the case of PWM diming banding can is some cases apears as black unexposed bands. In the case of colour-mixing LEDs based on PWM the bands can be of multiple colors.
+
+The general solution to this problem is to use a suficiently long exposure time, and when possible ensure that the exposure time is such that includes a whole number of flicker cycles. When flicker is synchronized to the AC power line frequency, the frequency is known and the exposure time can be selected accordingly. For example, in Europe this frequency is 50 Hz and the flicker frequency 100 Hz, so using an exposure time of 1/50 s is preferable to using 1/60 s. With modern LED drivers there is no known frequency, and even the frequency and phase of the flicker from different luminaires can differ. Unless the camera being used can detect the frequncy and automatically tweak exposure times, the good and bad exposure times can be learnt by trial an error. There is a further possibility, if the sensor readout time is known, the frequency of the flicker can be estimated from the banding recorded in an image.
+
+LED light sources sold for photography and video, in general use CC dimming or alternatively PWM dimming at a high frequency. The flicker in the later is noticeable only in images acquired using very fast shutter speeds.
+
+:::
+
+## Accessories
+
+### Colour and grey-scale references
+
+White, black and grey references have two main uses. One is to optimally and consistently set exposure independently of the reflectance of the subject of the photograph. The second, and more familiar use, is to set the white balance on a light grey or white reference, so that it describes the light source idependently of the subject photographed. If included in images, white balance can be adjusted objectively also in post-processing. With set of grey patches it becomes feasible, although not easy, to compensate differences in in-camera exposure in post-processing. Although, a single grey reference of 18% reflectance helps in the overall adjustments of exposure, it does not provide enough information to compensate for differences in the steepness of the response curve and dynamic range among images. These properties images are affected by exposure and ISO settings.
+
+Colour "checkers" with tiles of different colours with known spectral reflectance are routinely used in photography that requires faithful colour reproduction, e.g., commercial photography. They are available with different numbers of tiles, the more tiles the more colours that can be calibrated and corrected. The most comon colour checkers have 24 tiles, xx colours plus a gradation greys from white to black. They come in different sizes, small ones suitable for macro photography and several larger sizes. These easily available references cover only visible colours, i.e., those recorded by "normal" cameras. There exist reference tiles for UV and NIR, but they are extremely expensive.
+
+The best approach is to use them to generate a custom colour profile for a given combination of light source, camera, objective and filter. However, the "colour cast" introduced by objectives and UV-cut or UVIR-cut filters is usually rather small. 
+
+A colour profile is constructed by photographying the colour target and loading the resulting image into software that analyses it and compares the pixel values to those expected for each tile. The procedure optimizes the multiplers to apply to the the R, G and B raw values from the camera sensor to convert them as close as possible to the expected values for each colour tile. The procedure also makes use of the black, white and grey tiles to adjust the response to luminosity. Some RAW file converters also support the creating of colour profiles. There are also computer programs for the construction of colour profiles.
+
+The calibration procedure needed to obtain "true" colours consistently through time or across sites depends on colour references with accurately known spectral properties that are of high quality and have been recently acquired (because they age). In such a case we can assume that different colour targets from the same manufacturer and type are nearly identical and comparable. However, if we only aim to achieve good colour consistency across a single set of images together with imperfect but reasonably good colour reproduction, it is enough to use the same colour target as reference for all the images to be compared. Thus an older colour target or one with weaker specifications can reduce the expenses.
+
+In general, the lower the CRI rating of a light source, the more necessary it is to use a custom colour profile. When assessing illumination, reflected light must be considered. For example, a LED lamp with very high CRI rating is used in a room with walls painted in a bright colour, the spectrum of the light effectively illuminating the object photographed most likely will differ in its spectrum from that emitted by the lamp.
+
+Of all situations, the most challenging is when the light illuminating different parts of the object photographed differs in colour (= spectrum). Lamps used in household and commercial illumination have in most cases CRI <= 85, and are also available with different colour-temperature ratings. Quite frequently, lamps that have been installed at different times differ in emission spectra, even within a given colour temperature and lamp brand. An more dramatic case is a mix of warmer artificial light and cooler daylight entering through windows. Whenever possible, strive to acquire images under light with a homogenous spectrum.
+
 ## Procedures
+
+### Reproducibility
+
+When used in research, imaging can be done for illustration purposes or as an approach to quantitative measurement. In the second case, reproducibility plays a crucial role towards correct quantification, while in the first case it is important to avoid misleading the viewers of the illustrations. In some fields, illustrative photographs are used as scientific evidence, thus, avoiding bias is also crucial even no quantification is done. Bias can be introduced both when the image is captured and during image post-processing.
+
+Comparable images can be obtained by keeping illumination, image acquisition and post-processing perfectly consistent. When there is relatively small variation in illumination or camera response, the use of colour and grey references can allow corrections to partly remove bias. References within images can also serve as a built-in quality control. When the colours need to closely match the object photographed the use of "a colour managed workflow" is required. In such a workflow colur calibrations are used at each stage, and at each step loss of information is avoided. For example, a white light source deficient in violet or green light makes correctly recording those colours impossible. It is important to remember that digital photographics cameras, do not sense colours as narrow wavelength bands, but instead reconstruct the colours we see, discarding a lot of information. This makes the colour bias caused by illumination with a low CRI light source difficult to fully correct after the fact.
+
+Most digital cameras set exposure automatically. However, when consistency is important, exposure must be set using a grey reference card (18% reflectance) either manually or the automatically found setting locked. Otherwise, the auto-exposure algorithm will compensate at least in part for the differences in luminance between objects, for example small vs. large plants on a dark or light background, or between dark and pale plants. If we are only interested in the shape of the plants, size, etc., some amount of bias can be tolerated. In contrast if reflectance or spectral reflectance (darkness or colour) are relevant, consistent exposure is crucial.
+
+
+
+### UV photography
+
+### NIR photography
 
 ### UVIVF
 
