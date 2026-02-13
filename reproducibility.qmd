@@ -7,7 +7,7 @@ author:
     email: pedro.aphalo@helsinki.fi
     affiliation: University of Helsinki
 date: 2024-06-08
-date-modified: 2024-06-08
+date-modified: 2026-02-14
 format:
   html:
     embed-resources: true
@@ -210,9 +210,11 @@ Specifying a lamp type in many cases does not provide enough information. In the
 
 The peaks of emission can be at different wavelengths for equivalent lamps from different suppliers (e.g., “black light blue” or BLB lamps have maximum emission at either 385 nm or 368 nm depending on supplier or vintage). In addition the output of both fluorescent lamps and LEDs depends on ambient temperature and on their age. In the case of UV-B fluorescent lamps the effect of temperature on the irradiance is very large, something that many researchers seem not to be aware of. In the case of white flourescent tubes, not only the irradiance but also the emission spectrum can be affected by temperature.
 
-Be aware that reflections from walls, tables, glass and metal objects, and even clothes can distort the spectrum impinging on plants. Not only reflection is important in the case of UV radiation, many objects fluoresce strongly in the blue or other regions when illuminated with UV radiation, e.g., whitepaper and clothes, and laundry powders contain fluorescent additives that are added so that paper and clothes look whiter (Björn et al.2012).
+Be aware that reflections from walls, tables, glass and metal objects, and even clothes can distort the spectrum impinging on plants. Not only reflection is important in the case of UV radiation, many objects fluoresce strongly in the blue or other regions when illuminated with UV radiation, e.g., whitepaper and clothes, and laundry powders contain fluorescent additives that are added so that paper and clothes look whiter (Björn et al. 2012).
 
 Whenever possible we should provide a measured spectrum for the UV and visible radiation source(s) actually used, measured under the same ambient conditions and at the same physical location as in the reported experiment. Measurements should be done close in time to when the sources were used if not at the same time. Do not trust previous measurements or manufacturer specifications to be representative of your use case.
+
+Plants respond to the degree of scattering of light and to the direction of the light. Light sources differing in their collimation are not equivalent. If the aim is to study effects of irradiance or wavelength, the geometry of the light field must be consistent. Typical cases when this is not true are: 1) Identical light sources at different distance from plants; 2) LEDs with different HMFW angle for light emission; 3) LEDs and laser diodes; 4) gas discharge lamps and LED arays; 5) sunlight on opposite sides of a greenhouse; 6) different distance to reflecting walls; etc.
 
 ### Petri dishes, microscope cover slides and other barriers
 

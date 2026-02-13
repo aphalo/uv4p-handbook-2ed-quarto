@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -96,14 +96,15 @@ div.csl-indent {
 <link href="./optics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -172,7 +173,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -212,7 +213,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Field Methods in Plant Photobiology</a> 
     </div>
@@ -486,7 +489,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-First edition authors
+<span class="screen-reader-only">Note</span>First edition authors
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -623,7 +626,7 @@ Figure&nbsp;4.6: Sun elevation angle through the day at five different latitudes
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Geometric calculation
+<span class="screen-reader-only">Note</span>Geometric calculation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -693,7 +696,7 @@ Caution
 </div>
 </div>
 <p>The spectral irradiance of the sun <span class="math inline">{E_{\mathrm{s}}}(\lambda)</span> can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table <a href="#tab:Phys:Quants" data-reference-type="ref" data-reference="tab:Phys:Quants">[tab:Phys:Quants]</a>. The intensity of the sun <span class="math inline">{I_{\mathrm{s}}}(\lambda)</span> is given by the radiance <span class="math inline">{L_{\mathrm{s}}}(\lambda)</span> multiplied by the apparent sun surface (a non-tilted disk of radius <span class="math inline">r_s=7\times 10^5</span> km). To calculate the decreased solar irradiance at the moment of reaching the Earth’s atmosphere, the distance of the sun to the Earth (<span class="math inline">r_0=150\times 10^6</span> km) has to be taken into account due to the inverse square law of irradiance of equation (<a href="#equ_r2law" data-reference-type="ref" data-reference="equ_r2law">[equ_r2law]</a>). Thus, the extraterrestrial solar irradiance is</p>
-<p><span class="math display">{E_{\mathrm{s}}}(\lambda)={L_{\mathrm{s}}}(\lambda)\cdot\frac{\pi r_s^2}{r_0^2}\label{equ_extraterrestrial}</span> Remembering the solid angle of equation (<a href="#equ_solidangle" data-reference-type="ref" data-reference="equ_solidangle">[equ_solidangle]</a>), the right multiplication factor represents the solid angle of the sun’s disk as seen from the Earth’s surface (<span class="math inline">\approx 6.8\times 10^{-5}</span> sr). Figure <a href="#fig_sun" data-reference-type="ref" data-reference="fig_sun">[fig_sun]</a> shows the spectrum of the measured extraterrestrial solar radiation (Wehrli, 1985)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and the spectrum calculated by equation 1.14 using Planck’s law of equation 1.12 at a black body temperature of 5800 K. Integrated over all wavelengths, <span class="math inline">{E_{\mathrm{s}}}</span> is about 1361 to 1362 at top of the atmosphere <span class="citation" data-cites="Kopp2011">(<a href="references.html#ref-Kopp2011" role="doc-biblioref">Kopp and Lean 2011</a>)</span>. This value is called the ‘solar constant’. In former times, depending on different measurements, <span class="math inline">{E_{\mathrm{s}}}</span> varies by a few percent <span class="citation" data-cites="iqbal83">(<a href="references.html#ref-iqbal83" role="doc-biblioref">Iqbal 1983</a>)</span>. For example, the irradiance at the top of the atmosphere (the integrated value) changes by <span class="math inline">\pm 50</span> (3.7 %) during the year due to distance variation caused by orbit excentricity <span class="citation" data-cites="moble94">(<a href="references.html#ref-moble94" role="doc-biblioref">Mobley 1994</a>)</span>. More accurate measurements during the last 25 years by spaceborne radiometers show a variability of the solar radiation of a few tenth of a percent. A detailed analysis is given by <span class="citation" data-cites="froeh04">Fröhlich and Lean (<a href="references.html#ref-froeh04" role="doc-biblioref">2004</a>)</span>. <span class="math inline">{E_{\mathrm{s}}}</span> can also be calculated by the Stefan-Boltzmann Law: the total energy emitted from the surface of a black body is proportional to the fourth power of its temperature. For an isotropically emitting source (Lambertian emitter), this means <span class="math display">{L_{\mathrm{}}}= \frac{\sigma}{\pi} \cdot T^4 \label{equ_boltzmann}</span> with the Stefan-Boltzmann constant <span class="math inline">\sigma=5.6705\times 10^{-8}</span> W m<span class="math inline">^{-2}</span> K<span class="math inline">^{-4}</span>. With <span class="math inline">T = 5800</span> K equation <a href="#equ_boltzmann" data-reference-type="ref" data-reference="equ_boltzmann">[equ_boltzmann]</a> gives the radiance of the solar disc. From this value, we can obtain an approximation of the solar constant, by taking into account the distance from the Earth to the Sun and the apparent size of the solar disc (see equations <a href="#equ_solidangle" data-reference-type="ref" data-reference="equ_solidangle">[equ_solidangle]</a> and <a href="#equ_r2law" data-reference-type="ref" data-reference="equ_r2law">[equ_r2law]</a>).</p>
+<p><span class="math display">{E_{\mathrm{s}}}(\lambda)={L_{\mathrm{s}}}(\lambda)\cdot\frac{\pi r_s^2}{r_0^2}</span> Remembering the solid angle of equation (<a href="#equ_solidangle" data-reference-type="ref" data-reference="equ_solidangle">[equ_solidangle]</a>), the right multiplication factor represents the solid angle of the sun’s disk as seen from the Earth’s surface (<span class="math inline">\approx 6.8\times 10^{-5}</span> sr). Figure <a href="#fig_sun" data-reference-type="ref" data-reference="fig_sun">[fig_sun]</a> shows the spectrum of the measured extraterrestrial solar radiation (Wehrli, 1985)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and the spectrum calculated by equation 1.14 using Planck’s law of equation 1.12 at a black body temperature of 5800 K. Integrated over all wavelengths, <span class="math inline">{E_{\mathrm{s}}}</span> is about 1361 to 1362 at top of the atmosphere <span class="citation" data-cites="Kopp2011">(<a href="references.html#ref-Kopp2011" role="doc-biblioref">Kopp and Lean 2011</a>)</span>. This value is called the ‘solar constant’. In former times, depending on different measurements, <span class="math inline">{E_{\mathrm{s}}}</span> varies by a few percent <span class="citation" data-cites="iqbal83">(<a href="references.html#ref-iqbal83" role="doc-biblioref">Iqbal 1983</a>)</span>. For example, the irradiance at the top of the atmosphere (the integrated value) changes by <span class="math inline">\pm 50</span> (3.7 %) during the year due to distance variation caused by orbit excentricity <span class="citation" data-cites="moble94">(<a href="references.html#ref-moble94" role="doc-biblioref">Mobley 1994</a>)</span>. More accurate measurements during the last 25 years by spaceborne radiometers show a variability of the solar radiation of a few tenth of a percent. A detailed analysis is given by <span class="citation" data-cites="froeh04">Fröhlich and Lean (<a href="references.html#ref-froeh04" role="doc-biblioref">2004</a>)</span>. <span class="math inline">{E_{\mathrm{s}}}</span> can also be calculated by the Stefan-Boltzmann Law: the total energy emitted from the surface of a black body is proportional to the fourth power of its temperature. For an isotropically emitting source (Lambertian emitter), this means <span class="math display">{L_{\mathrm{}}}= \frac{\sigma}{\pi} \cdot T^4</span> with the Stefan-Boltzmann constant <span class="math inline">\sigma=5.6705\times 10^{-8}</span> W m<span class="math inline">^{-2}</span> K<span class="math inline">^{-4}</span>. With <span class="math inline">T = 5800</span> K equation <a href="#equ_boltzmann" data-reference-type="ref" data-reference="equ_boltzmann">[equ_boltzmann]</a> gives the radiance of the solar disc. From this value, we can obtain an approximation of the solar constant, by taking into account the distance from the Earth to the Sun and the apparent size of the solar disc (see equations <a href="#equ_solidangle" data-reference-type="ref" data-reference="equ_solidangle">[equ_solidangle]</a> and <a href="#equ_r2law" data-reference-type="ref" data-reference="equ_r2law">[equ_r2law]</a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-sun-black-body" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -942,7 +945,7 @@ Figure&nbsp;4.18: Fraction of total radiation that is diffuse under a clear sky 
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Climate change and ozone depletion
+<span class="screen-reader-only">Tip</span>Climate change and ozone depletion
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1291,13 +1294,14 @@ Stanhill, Gerald, and Shabtai Cohen. 2001. <span>“Global Dimming: A Review of 
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1704,7 +1708,7 @@ Stanhill, Gerald, and Shabtai Cohen. 2001. <span>“Global Dimming: A Review of 
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The UV, VIS and NIR environment above vegetation"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Quantity, quality and timing in nature"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
@@ -2101,8 +2105,8 @@ Stanhill, Gerald, and Shabtai Cohen. 2001. <span>“Global Dimming: A Review of 
 <span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>The spectral irradiance of the sun $\irr<span class="co">[</span><span class="ot">s</span><span class="co">](\lambda)</span>$ can be estimated assuming a homogeneous flux and using the correlation of intensity and radiance from their definitions in table <span class="co">[</span><span class="ot">\[tab:Phys:Quants\]</span><span class="co">](#tab:Phys:Quants)</span>{reference-type="ref" reference="tab<span class="sc">:Phys:</span>Quants"}. The intensity of the sun $\intensity<span class="co">[</span><span class="ot">s</span><span class="co">](\lambda)</span>$ is given by the radiance $\radiance<span class="co">[</span><span class="ot">s</span><span class="co">](\lambda)</span>$ multiplied by the apparent sun surface (a non-tilted disk of radius $r_s=7\times 10^5$ km). To calculate the decreased solar irradiance at the moment of reaching the Earth's atmosphere, the distance of the sun to the Earth ($r_0=150\times 10^6$ km) has to be taken into account due to the inverse square law of irradiance of equation (<span class="co">[</span><span class="ot">\[equ_r2law\]</span><span class="co">](#equ_r2law)</span>{reference-type="ref" reference="equ_r2law"}). Thus, the extraterrestrial solar irradiance is </span>
 <span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>$$\irr<span class="co">[</span><span class="ot">s</span><span class="co">](\lambda)</span>=\radiance<span class="co">[</span><span class="ot">s</span><span class="co">](\lambda)</span>\cdot\frac{\pi r_s^2}{r_0^2}\label{equ_extraterrestrial}$$</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>Remembering the solid angle of equation (<span class="co">[</span><span class="ot">\[equ_solidangle\]</span><span class="co">](#equ_solidangle)</span>{reference-type="ref" reference="equ_solidangle"}), the right multiplication factor represents the solid angle of the sun's disk as seen from the Earth's surface ($\approx 6.8\times 10^{-5}$ sr). Figure <span class="co">[</span><span class="ot">\[fig_sun\]</span><span class="co">](#fig_sun)</span>{reference-type="ref" reference="fig_sun"} shows the spectrum of the measured extraterrestrial solar radiation (Wehrli, 1985)<span class="ot">[^1]</span> and the spectrum calculated by equation 1.14 using Planck's law of equation 1.12 at a black body temperature of 5800 K. Integrated over all wavelengths, $\irr<span class="co">[</span><span class="ot">s</span><span class="co">]</span>$ is about 1361 to 1362 at top of the atmosphere <span class="co">[</span><span class="ot">@Kopp2011</span><span class="co">]</span>. This value is called the 'solar constant'. In former times, depending on different measurements, $\irr<span class="co">[</span><span class="ot">s</span><span class="co">]</span>$ varies by a few percent <span class="co">[</span><span class="ot">@iqbal83</span><span class="co">]</span>. For example, the irradiance at the top of the atmosphere (the integrated value) changes by $\pm 50$ (3.7 %) during the year due to distance variation caused by orbit excentricity <span class="co">[</span><span class="ot">@moble94</span><span class="co">]</span>. More accurate measurements during the last 25 years by spaceborne radiometers show a variability of the solar radiation of a few tenth of a percent. A detailed analysis is given by @froeh04. $\irr<span class="co">[</span><span class="ot">s</span><span class="co">]</span>$ can also be calculated by the Stefan-Boltzmann Law: the total energy emitted from the surface of a black body is proportional to the fourth power of its temperature. For an isotropically emitting source (Lambertian emitter), this means $$\radiance = \frac{\sigma}{\pi} \cdot T^4 \label{equ_boltzmann}$$ with the Stefan-Boltzmann constant $\sigma=5.6705\times 10^{-8}$ W m$^{-2}$ K$^{-4}$. With $T = 5800$ K equation <span class="co">[</span><span class="ot">\[equ_boltzmann\]</span><span class="co">](#equ_boltzmann)</span>{reference-type="ref" reference="equ_boltzmann"} gives the radiance of the solar disc. From this value, we can obtain an approximation of the solar constant, by taking into account the distance from the Earth to the Sun and the apparent size of the solar disc (see equations <span class="co">[</span><span class="ot">\[equ_solidangle\]</span><span class="co">](#equ_solidangle)</span>{reference-type="ref" reference="equ_solidangle"} and <span class="co">[</span><span class="ot">\[equ_r2law\]</span><span class="co">](#equ_r2law)</span>{reference-type="ref" reference="equ_r2law"}).</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>$$\irr<span class="co">[</span><span class="ot">s</span><span class="co">](\lambda)</span>=\radiance<span class="co">[</span><span class="ot">s</span><span class="co">](\lambda)</span>\cdot\frac{\pi r_s^2}{r_0^2}$$</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>Remembering the solid angle of equation (<span class="co">[</span><span class="ot">\[equ_solidangle\]</span><span class="co">](#equ_solidangle)</span>{reference-type="ref" reference="equ_solidangle"}), the right multiplication factor represents the solid angle of the sun's disk as seen from the Earth's surface ($\approx 6.8\times 10^{-5}$ sr). Figure <span class="co">[</span><span class="ot">\[fig_sun\]</span><span class="co">](#fig_sun)</span>{reference-type="ref" reference="fig_sun"} shows the spectrum of the measured extraterrestrial solar radiation (Wehrli, 1985)<span class="ot">[^1]</span> and the spectrum calculated by equation 1.14 using Planck's law of equation 1.12 at a black body temperature of 5800 K. Integrated over all wavelengths, $\irr<span class="co">[</span><span class="ot">s</span><span class="co">]</span>$ is about 1361 to 1362 at top of the atmosphere <span class="co">[</span><span class="ot">@Kopp2011</span><span class="co">]</span>. This value is called the 'solar constant'. In former times, depending on different measurements, $\irr<span class="co">[</span><span class="ot">s</span><span class="co">]</span>$ varies by a few percent <span class="co">[</span><span class="ot">@iqbal83</span><span class="co">]</span>. For example, the irradiance at the top of the atmosphere (the integrated value) changes by $\pm 50$ (3.7 %) during the year due to distance variation caused by orbit excentricity <span class="co">[</span><span class="ot">@moble94</span><span class="co">]</span>. More accurate measurements during the last 25 years by spaceborne radiometers show a variability of the solar radiation of a few tenth of a percent. A detailed analysis is given by @froeh04. $\irr<span class="co">[</span><span class="ot">s</span><span class="co">]</span>$ can also be calculated by the Stefan-Boltzmann Law: the total energy emitted from the surface of a black body is proportional to the fourth power of its temperature. For an isotropically emitting source (Lambertian emitter), this means $$\radiance = \frac{\sigma}{\pi} \cdot T^4$$ with the Stefan-Boltzmann constant $\sigma=5.6705\times 10^{-8}$ W m$^{-2}$ K$^{-4}$. With $T = 5800$ K equation <span class="co">[</span><span class="ot">\[equ_boltzmann\]</span><span class="co">](#equ_boltzmann)</span>{reference-type="ref" reference="equ_boltzmann"} gives the radiance of the solar disc. From this value, we can obtain an approximation of the solar constant, by taking into account the distance from the Earth to the Sun and the apparent size of the solar disc (see equations <span class="co">[</span><span class="ot">\[equ_solidangle\]</span><span class="co">](#equ_solidangle)</span>{reference-type="ref" reference="equ_solidangle"} and <span class="co">[</span><span class="ot">\[equ_r2law\]</span><span class="co">](#equ_r2law)</span>{reference-type="ref" reference="equ_r2law"}).</span>
 <span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>Available as ASCII file at PMODWRC, <span class="ot">&lt;ftp://ftp.pmodwrc.ch/pub/publications/pmod615.asc&gt;</span></span>
 <span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a></span>
@@ -2869,7 +2873,7 @@ Stanhill, Gerald, and Shabtai Cohen. 2001. <span>“Global Dimming: A Review of 
 <span id="cb1-1163"><a href="#cb1-1163" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-B for Europe. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-B irradiance is very low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVB-europe-map-monthly.png)</span>{#fig-uvb-europe-map width=100%}</span>
 <span id="cb1-1164"><a href="#cb1-1164" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1165"><a href="#cb1-1165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1166"><a href="#cb1-1166" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-A for Europe. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-A irradiance is low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVA-europe-map-monthly.png)</span>{#fig-uva-europe-map width=100%}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-1166"><a href="#cb1-1166" aria-hidden="true" tabindex="-1"></a><span class="al">![Monthly means of daily doses of UV-A for Europe. Daily data from 2023-10-01 to 2024-09-30 on a 0.5 by 0.5 degrees grid were used to compute monthly means. Grey areas in the map correspond to continuous night or low sun elevation at solar noon, which prevent remote sensing. Under these conditions UV-A irradiance is low or null. We thank the AC SAF project of the EUMETSAT for providing data and/or products used in this figure.](images/UVA-europe-map-monthly.png)</span>{#fig-uva-europe-map width=100%}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -2889,7 +2893,7 @@ Stanhill, Gerald, and Shabtai Cohen. 2001. <span>“Global Dimming: A Review of 
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2012-2025 COST office and authors
+ © 2012-2026 COST office and authors
   </li>  
 </ul>
     </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,14 +91,15 @@ div.csl-indent {
 <link href="./light-environment-plants.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -167,7 +168,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -207,7 +208,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Field Methods in Plant Photobiology</a> 
     </div>
@@ -486,7 +489,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 19, 2025</p>
+      <p class="date-modified">February 14, 2026</p>
     </div>
   </div>
     
@@ -503,7 +506,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-First edition authors
+<span class="screen-reader-only">Note</span>First edition authors
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -527,7 +530,7 @@ $$
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Accuracy and precision of radiation measurements
+<span class="screen-reader-only">Tip</span>Accuracy and precision of radiation measurements
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -677,7 +680,7 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Spectral response of broadband sensors
+<span class="screen-reader-only">Warning</span>Spectral response of broadband sensors
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -730,7 +733,7 @@ Spectral response of broadband sensors
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>global.wb <span class="ot">&lt;-</span> <span class="fu">waveband</span>(<span class="fu">c</span>(<span class="dv">280</span>, <span class="dv">2800</span>), </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>global.wb <span class="ot">&lt;-</span> <span class="fu">waveband</span>(<span class="fu">c</span>(<span class="dv">280</span>, <span class="dv">2800</span>), </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">SWF.e.fun =</span> <span class="cf">function</span>(x) {<span class="dv">1</span>}, </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">norm =</span> <span class="dv">550</span>, </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">SWF.norm =</span> <span class="dv">550</span>,</span>
@@ -743,7 +746,7 @@ Spectral response of broadband sensors
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">w.band =</span> global.wb) <span class="sc">+</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">axes =</span> <span class="st">"collect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">axes =</span> <span class="st">"collect"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-global-radiation-spct" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -785,8 +788,8 @@ Note
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(), <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"photon"</span>) <span class="sc">|</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(<span class="fu">PAR</span>(), <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"energy"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(), <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"photon"</span>) <span class="sc">|</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(<span class="fu">PAR</span>(), <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"energy"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-PAR-BSWF" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -818,7 +821,7 @@ Figure&nbsp;6.2: The biological spectral weighting function (BSWF) of PAR as def
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(), <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">800</span>), <span class="at">geom =</span> <span class="st">"spct"</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(), <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">800</span>), <span class="at">geom =</span> <span class="st">"spct"</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"photon"</span>) <span class="sc">/</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">autoplot</span>(sensors.mspct[<span class="fu">c</span>(<span class="st">"LICOR_LI_190R"</span>, <span class="st">"apogee_sq_500"</span>, <span class="st">"apogee_sq_100X"</span>)],</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">idfactor =</span> <span class="st">"PAR sensor:"</span>,</span>
@@ -828,7 +831,7 @@ Figure&nbsp;6.2: The biological spectral weighting function (BSWF) of PAR as def
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">unit.out =</span> <span class="st">"photon"</span>) <span class="sc">+</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">axes =</span> <span class="st">"collect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">axes =</span> <span class="st">"collect"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-PAR-spct" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -847,10 +850,10 @@ Figure&nbsp;6.3: Comparison of McCree’s defintion of photosinthetically active
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(<span class="st">"McCree.field.mean"</span>), </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(<span class="st">"McCree.field.mean"</span>), </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"photon"</span>) <span class="sc">|</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(<span class="fu">PAR</span>(<span class="st">"McCree.chamber.mean"</span>), </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"photon"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"photon"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-PQYR-BSWF" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -877,7 +880,7 @@ Q(\lambda)\ d \lambda</span></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(<span class="st">"ePAR"</span>), <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">800</span>), <span class="at">geom =</span> <span class="st">"spct"</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">PAR</span>(<span class="st">"ePAR"</span>), <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">800</span>), <span class="at">geom =</span> <span class="st">"spct"</span>,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">unit.in =</span> <span class="st">"photon"</span>, <span class="at">unit.out =</span> <span class="st">"photon"</span>) <span class="sc">/</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">autoplot</span>(sensors.mspct[<span class="fu">c</span>(<span class="st">"apogee_sq_610"</span>)],</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">idfactor =</span> <span class="st">"Pyranometer:"</span>,</span>
@@ -887,7 +890,7 @@ Q(\lambda)\ d \lambda</span></p>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">unit.out =</span> <span class="st">"photon"</span>) <span class="sc">+</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">axes =</span> <span class="st">"collect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">axes =</span> <span class="st">"collect"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-ePAR-spct" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1096,7 +1099,7 @@ Table&nbsp;6.1: Various photon irradiances (<span class="math inline">Q_i</span>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Incident vs.&nbsp;absorbed photons
+<span class="screen-reader-only">Warning</span>Incident vs.&nbsp;absorbed photons
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2063,13 +2066,14 @@ Ylianttila, Lasse, Reijo Visuri, Laura Huurto, and Kari Jokela. 2005. <span>“E
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2476,7 +2480,7 @@ Ylianttila, Lasse, Reijo Visuri, Laura Huurto, and Kari Jokela. 2005. <span>“E
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Quantifying radiation"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "UV, VIS and NIR "</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-07-15</span></span>
@@ -5971,7 +5975,7 @@ Ylianttila, Lasse, Reijo Visuri, Laura Huurto, and Kari Jokela. 2005. <span>“E
 <span id="cb8-3503"><a href="#cb8-3503" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://trios.de/&gt;</span> (RAMSES radiometers)\</span>
 <span id="cb8-3504"><a href="#cb8-3504" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://www.yesinc.com/&gt;</span> (Yankee Environmental Systems)\</span>
 <span id="cb8-3505"><a href="#cb8-3505" aria-hidden="true" tabindex="-1"></a></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -5991,7 +5995,7 @@ Ylianttila, Lasse, Reijo Visuri, Laura Huurto, and Kari Jokela. 2005. <span>“E
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2012-2025 COST office and authors
+ © 2012-2026 COST office and authors
   </li>  
 </ul>
     </div>

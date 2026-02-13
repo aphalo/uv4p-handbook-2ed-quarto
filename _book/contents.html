@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -174,7 +175,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -225,7 +226,7 @@ window.Quarto = {
 
 <!-- -->
 <div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  contents:</span></span>
@@ -257,7 +258,7 @@ window.Quarto = {
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Table of Contents  {.unnumbered}</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Table of Contents  {.unnumbered}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 
 
@@ -312,13 +313,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -749,7 +751,7 @@ window.Quarto = {
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-file-modified-sort="1768040370812" data-listing-reading-time-sort="1" data-listing-word-count-sort="58" data-listing-title-sort="Welcome" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1768483002704" data-listing-reading-time-sort="1" data-listing-word-count-sort="58" data-listing-title-sort="Welcome" data-listing-filename-sort="index.qmd">
 <td>
 <a href="./index.html" class="title listing-title">Welcome</a>
 </td>
@@ -769,7 +771,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="2" data-listing-date-sort="1720904400000" data-listing-file-modified-sort="1756153931101" data-listing-date-modified-sort="1767996000000" data-listing-reading-time-sort="2" data-listing-word-count-sort="347" data-listing-title-sort="Preface to the 2nd edition" data-listing-filename-sort="preface.qmd">
+<tr data-index="2" data-listing-date-sort="1720904400000" data-listing-file-modified-sort="1756153931101" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="2" data-listing-word-count-sort="347" data-listing-title-sort="Preface to the 2nd edition" data-listing-filename-sort="preface.qmd">
 <td>
 <a href="./preface.html" class="title listing-title">Preface to the 2nd edition</a>
 </td>
@@ -789,7 +791,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="4" data-listing-date-sort="1711404000000" data-listing-file-modified-sort="1741879005468" data-listing-date-modified-sort="1767996000000" data-listing-reading-time-sort="26" data-listing-word-count-sort="5062" data-listing-title-sort="Introduction" data-listing-filename-sort="introduction.qmd">
+<tr data-index="4" data-listing-date-sort="1711404000000" data-listing-file-modified-sort="1741879005468" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="26" data-listing-word-count-sort="5062" data-listing-title-sort="Introduction" data-listing-filename-sort="introduction.qmd">
 <td>
 <a href="./introduction.html" class="title listing-title">Introduction</a>
 </td>
@@ -799,7 +801,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="5" data-listing-date-sort="1717794000000" data-listing-file-modified-sort="1722612491111" data-listing-date-modified-sort="1717794000000" data-listing-reading-time-sort="50" data-listing-word-count-sort="9950" data-listing-title-sort="Radiation Physics" data-listing-filename-sort="radiation.qmd">
+<tr data-index="5" data-listing-date-sort="1717794000000" data-listing-file-modified-sort="1771013982946" data-listing-date-modified-sort="1717794000000" data-listing-reading-time-sort="50" data-listing-word-count-sort="9945" data-listing-title-sort="Radiation Physics" data-listing-filename-sort="radiation.qmd">
 <td>
 <a href="./radiation.html" class="title listing-title">Radiation Physics</a>
 </td>
@@ -809,7 +811,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="6" data-listing-date-sort="1722459600000" data-listing-file-modified-sort="1728242737335" data-listing-date-modified-sort="1722459600000" data-listing-reading-time-sort="40" data-listing-word-count-sort="7866" data-listing-title-sort="Radiation-matter Interactions and Optics" data-listing-filename-sort="optics.qmd">
+<tr data-index="6" data-listing-date-sort="1722459600000" data-listing-file-modified-sort="1768482639245" data-listing-date-modified-sort="1722459600000" data-listing-reading-time-sort="40" data-listing-word-count-sort="7866" data-listing-title-sort="Radiation-matter Interactions and Optics" data-listing-filename-sort="optics.qmd">
 <td>
 <a href="./optics.html" class="title listing-title">Radiation-matter Interactions and Optics</a>
 </td>
@@ -819,7 +821,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="7" data-listing-date-sort="1718571600000" data-listing-file-modified-sort="1753900789189" data-listing-date-modified-sort="1721163600000" data-listing-reading-time-sort="58" data-listing-word-count-sort="11596" data-listing-title-sort="The UV, VIS and NIR environment above vegetation" data-listing-filename-sort="light-environment-terrestrial.qmd">
+<tr data-index="7" data-listing-date-sort="1718571600000" data-listing-file-modified-sort="1771014376123" data-listing-date-modified-sort="1721163600000" data-listing-reading-time-sort="58" data-listing-word-count-sort="11595" data-listing-title-sort="The UV, VIS and NIR environment above vegetation" data-listing-filename-sort="light-environment-terrestrial.qmd">
 <td>
 <a href="./light-environment-terrestrial.html" class="title listing-title">The UV, VIS and NIR environment above vegetation</a>
 </td>
@@ -829,7 +831,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="8" data-listing-date-sort="1718571600000" data-listing-file-modified-sort="1741879640308" data-listing-date-modified-sort="1721163600000" data-listing-reading-time-sort="22" data-listing-word-count-sort="4351" data-listing-title-sort="The UV, VIS and NIR environment of plants" data-listing-filename-sort="light-environment-plants.qmd">
+<tr data-index="8" data-listing-date-sort="1718571600000" data-listing-file-modified-sort="1771018993074" data-listing-date-modified-sort="1721163600000" data-listing-reading-time-sort="22" data-listing-word-count-sort="4345" data-listing-title-sort="The UV, VIS and NIR environment of plants" data-listing-filename-sort="light-environment-plants.qmd">
 <td>
 <a href="./light-environment-plants.html" class="title listing-title">The UV, VIS and NIR environment of plants</a>
 </td>
@@ -839,7 +841,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="9" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1757035747422" data-listing-date-modified-sort="1767996000000" data-listing-reading-time-sort="123" data-listing-word-count-sort="24481" data-listing-title-sort="Quantifying radiation" data-listing-filename-sort="quantifying-radiation.qmd">
+<tr data-index="9" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1757035747422" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="123" data-listing-word-count-sort="24481" data-listing-title-sort="Quantifying radiation" data-listing-filename-sort="quantifying-radiation.qmd">
 <td>
 <a href="./quantifying-radiation.html" class="title listing-title">Quantifying radiation</a>
 </td>
@@ -869,17 +871,17 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="12" data-listing-file-modified-sort="1763566876307" data-listing-reading-time-sort="24" data-listing-word-count-sort="4655" data-listing-title-sort="Imaging in UV, VIS and NIR radiation" data-listing-filename-sort="imaging.qmd">
+<tr data-index="12" data-listing-file-modified-sort="1771011689954" data-listing-reading-time-sort="58" data-listing-word-count-sort="11410" data-listing-title-sort="Imaging in UV, VIS and NIR radiation" data-listing-filename-sort="imaging.qmd">
 <td>
 <a href="./imaging.html" class="title listing-title">Imaging in UV, VIS and NIR radiation</a>
 </td>
 <td>
-<span class="listing-author">Pedro J. Aphalo, (Eva Rosenqvist), (Lasse Ylianttila)</span>
+<span class="listing-author">Pedro J. Aphalo</span>
 </td>
 
 </tr>
 
-<tr data-index="13" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1757035598121" data-listing-date-modified-sort="1767996000000" data-listing-reading-time-sort="32" data-listing-word-count-sort="6238" data-listing-title-sort="Design of Experiments and Statistics" data-listing-filename-sort="design-of-experiments.qmd">
+<tr data-index="13" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1757035598121" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="32" data-listing-word-count-sort="6238" data-listing-title-sort="Design of Experiments and Statistics" data-listing-filename-sort="design-of-experiments.qmd">
 <td>
 <a href="./design-of-experiments.html" class="title listing-title">Design of Experiments and Statistics</a>
 </td>
@@ -889,7 +891,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="14" data-listing-date-sort="1717794000000" data-listing-file-modified-sort="1722509583580" data-listing-date-modified-sort="1717794000000" data-listing-reading-time-sort="23" data-listing-word-count-sort="4498" data-listing-title-sort="Ensuring reproducibility" data-listing-filename-sort="reproducibility.qmd">
+<tr data-index="14" data-listing-date-sort="1717794000000" data-listing-file-modified-sort="1771020424845" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="23" data-listing-word-count-sort="4596" data-listing-title-sort="Ensuring reproducibility" data-listing-filename-sort="reproducibility.qmd">
 <td>
 <a href="./reproducibility.html" class="title listing-title">Ensuring reproducibility</a>
 </td>
@@ -899,7 +901,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="15" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1722509143188" data-listing-date-modified-sort="1767996000000" data-listing-reading-time-sort="63" data-listing-word-count-sort="12486" data-listing-title-sort="Manipulating UV, VIS and NIR radiation" data-listing-filename-sort="manipulating-radiation.qmd">
+<tr data-index="15" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1722509143188" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="63" data-listing-word-count-sort="12486" data-listing-title-sort="Manipulating UV, VIS and NIR radiation" data-listing-filename-sort="manipulating-radiation.qmd">
 <td>
 <a href="./manipulating-radiation.html" class="title listing-title">Manipulating UV, VIS and NIR radiation</a>
 </td>
@@ -909,7 +911,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="16" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1722548475378" data-listing-date-modified-sort="1767996000000" data-listing-reading-time-sort="59" data-listing-word-count-sort="11652" data-listing-title-sort="Plant cultivation" data-listing-filename-sort="plant-cultivation.qmd">
+<tr data-index="16" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1722548475378" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="59" data-listing-word-count-sort="11652" data-listing-title-sort="Plant cultivation" data-listing-filename-sort="plant-cultivation.qmd">
 <td>
 <a href="./plant-cultivation.html" class="title listing-title">Plant cultivation</a>
 </td>
@@ -919,7 +921,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="17" data-listing-date-sort="1720904400000" data-listing-file-modified-sort="1721145948085" data-listing-date-modified-sort="1767996000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="References" data-listing-filename-sort="references.qmd">
+<tr data-index="17" data-listing-date-sort="1720904400000" data-listing-file-modified-sort="1721145948085" data-listing-date-modified-sort="1771020000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="References" data-listing-filename-sort="references.qmd">
 <td>
 <a href="./references.html" class="title listing-title">References</a>
 </td>
@@ -950,7 +952,7 @@ window.Quarto = {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2012-2025 COST office and authors
+ © 2012-2026 COST office and authors
   </li>  
 </ul>
     </div>

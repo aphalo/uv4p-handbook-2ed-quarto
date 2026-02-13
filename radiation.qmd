@@ -148,8 +148,8 @@ Most frequently we describe the flux of radiation on a plane, usually, but not a
 There are, in principle, two possible approaches to measuring radiation. The first is to observe light from one specific direction or viewing angle, which is the radiance $L$. The second is to use a detector, which senses radiation from more than one direction and measures radiation impinging it from all directions from an enclosing sphere or hemisphere. The relation between irradiance $E$ and radiance $L$ at wavelength $\lambda$ is given by integrating incoming photons over these directions.
 
 $$\begin{aligned}
-E[0](\lambda) & = \int_\Omega L(\lambda,\Omega) {\rm d}\Omega \label{equ_E0} \\
-E(\lambda) & = \int_\Omega I(\lambda,\Omega) |\cos\alpha| {\rm d}\Omega \label{equ_E}
+E[0](\lambda) & = \int_\Omega L(\lambda,\Omega) {\rm d}\Omega \\
+E(\lambda) & = \int_\Omega I(\lambda,\Omega) |\cos\alpha| {\rm d}\Omega
 %\end{eqnarray}
 \end{aligned}$$
 
@@ -181,13 +181,13 @@ While in @fig-azimuth, we had the sensor or observer at the centre, and the ligh
 
 The solid angle is calculated from the zenith angle $\theta$ and azimuth angle $\phi$, which denote the direction of the radiation beam
 
-$${\rm d}\Omega = {\rm d}\theta\cdot\sin\theta{\rm d}\phi \label{equ_dsolidangle}$$ The area of the receiving surface is calculated by a combination of the solid angle of the beam, the distance $r$ from the radiation source and the angle $\alpha$ of the tilt:
+$${\rm d}\Omega = {\rm d}\theta\cdot\sin\theta{\rm d}\phi$$ The area of the receiving surface is calculated by a combination of the solid angle of the beam, the distance $r$ from the radiation source and the angle $\alpha$ of the tilt:
 
 $${\rm d}A  =  \frac{r{\rm d}\theta}{\cos\alpha}\cdot r\sin\theta{\rm d}\phi$$ which can be rearranged to
 
 $$\Rightarrow {\rm d}A  =  \frac{r^2}{\cos\alpha}\quad{\rm d}\Omega$$ Thus, the solid angle is given by
 
-$$\Omega = \int_A \frac{{\rm d}A\cdot\cos\alpha}{r^2} \label{equ_solidangle}$$ The unit of the solid angle is a steradian (sr). The solid angle of an entire sphere is calculated by integration of the equation above over the zenith ($\theta$) and azimuth ($\phi$) angles, $0\le\theta\le\pi(180^\circ)$ and $0\le\phi\le2\pi(360^\circ)$, and is $4\pi$ sr.
+$$\Omega = \int_A \frac{{\rm d}A\cdot\cos\alpha}{r^2}$$ The unit of the solid angle is a steradian (sr). The solid angle of an entire sphere is calculated by integration of the equation above over the zenith ($\theta$) and azimuth ($\phi$) angles, $0\le\theta\le\pi(180^\circ)$ and $0\le\phi\le2\pi(360^\circ)$, and is $4\pi$ sr.
 :::
 
 ### Radiation Quantities {#sec-optics-radiation-quantities}
@@ -209,7 +209,7 @@ The amount of radiation can be quantified in different ways. Each quantity is us
 :::
 :::
 
-Taking into account @fig-space, the corresponding equations and assuming a homogenous flux, the relation between irradiance $E$ and intensity $I$ is given by $$E = \frac{I \times \cos\alpha}{r^2} \label{equ_r2law}$$. The irradiance decreases by the square of the distance to the source and depends on the tilt of the detecting surface area, $\alpha$. This is valid only for theretical point sources, and a good approximation for small ones. For outdoor measurements the sun can be assumed to be a point source. For artificial light sources simple LEDs (light-emitting diodes) without optics on top are also effectively point sources. However, LEDs with optics---and other artificial light sources with optics or reflectors designed to give a narrower light beam---deviate to various extents from the rule of a decrease of irradiance proportional to the square of the distance from the light source.
+Taking into account @fig-space, the corresponding equations and assuming a homogenous flux, the relation between irradiance $E$ and intensity $I$ is given by $$E = \frac{I \times \cos\alpha}{r^2}$$. The irradiance decreases by the square of the distance to the source and depends on the tilt of the detecting surface area, $\alpha$. This is valid only for theretical point sources, and a good approximation for small ones. For outdoor measurements the sun can be assumed to be a point source. For artificial light sources simple LEDs (light-emitting diodes) without optics on top are also effectively point sources. However, LEDs with optics---and other artificial light sources with optics or reflectors designed to give a narrower light beam---deviate to various extents from the rule of a decrease of irradiance proportional to the square of the distance from the light source.
 
 When we are interested in photochemical reactions, the most relevant radiation quantities are those expressed in photons. The reason for this is that, as discussed in @sec-radiation-photochemistry-principles, molecules are excited by the absorption of certain fixed amounts of energy or quanta. The surplus energy "decays" by non-photochemical processes. When studying photosynthesis, where many photons of different wavelengths are simultaneously important, we normally use photon irradiance to describe amount of . The name photosynthetic photon flux density, or , is also frequently used when referring to photon irradiance. When dealing with energy balance of an object instead of photochemistry, we use (energy) irradiance. In meteorology both and visible radiation, are quantified using energy-based quantities. When dealing with photochemistry as in responses mediated by UVR8, a photoreceptor, the use of quantum quantities is preferred. Photon based radiation quantities are listed in @tbl-photon-quantities, the symbol $Q$ ("quanta") is used for photon irradiance.
 
