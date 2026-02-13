@@ -83,6 +83,7 @@ bibliography:
   - statistics-reproducibility.bib
   - references-from-1ed.bib
   - leaf-optics.bib
+  - imaging.bib
 
 format:
   html:
