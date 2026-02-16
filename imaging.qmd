@@ -5,10 +5,13 @@ author: "Pedro J. Aphalo"
 ---
 
 ```{r, message=FALSE}
+library(dplyr)
+library(tidyr)
 library(ggspectra)
 library(photobiologyFilters)
 library(photobiologyLamps)
 library(photobiologyLEDs)
+library(photobiologySensors)
 library(photobiologyPlants)
 library(patchwork)
 photon_as_default()
@@ -18,13 +21,13 @@ set_theme(theme_bw())
 
 ## Introduction
 
-With some exceptions, producing photographic images, either photo-electronically or photo-chemically, requires a camera, a lens and a light source. To limit the imaging to specific regions of the spectrum, optical filters are used. Illumination can be sunlight or artificial. If artificial it can have a broad spectrum or be limited to a specific range of wavelengths.
+With some exceptions, producing photographic images, either photo-electronically or photo-chemically, requires a camera, a lens and a light source. To limit the imaging to specific regions of the spectrum, optical filters are used. Illumination can be natural or artificial. If artificial it can have a broad spectrum or be limited to a specific range of wavelengths.
 
-Most frequently, landscape and other types of low magnification and even macro photography are based on reflected light. In microscopy it is common to image the light transmited through a specimen. Imaging of fluorescence is also used in the plant sciences in relation to photosyntheis and other pigments, and in microscopy. In this chapter, we exclude high magnification microscopy, and concern with photography at magnifications of less than $\times 5$.
+Most frequently, landscape and other types of low magnification and even macro photography are based on reflected light. In microscopy it is common to image the light transmited through a specimen. Imaging of fluorescence is also used in the plant sciences in relation to photosyntheis and other pigments, and in microscopy using dies or fluorescent moieties. In this chapter, we exclude high magnification microscopy, and concern with photography at magnifications of less than $\times 5$ based on reflected light and autofluorescence of plant specimes.
 
 Black and white (grey scale) images contain only brightness information, which can be intuitively mapped also in images obtained at wavelengths invisible to humans. In contrast, colour photographs are intuitively expected to represent colours as seen by humans. When mapping wavelengths invisible to us into colours, the choice of mapping stops being obvious, and different more or less arbitrary mappings can be used. In some cases, the mapping is just accidental, as a consequence of the properties of the R, G, and B filters of image sensors in the UV or NIR regions, wavelengths not taken into account in their design.
  
-This chapter is structured in sections describing cameras, lenses, filters, light sources and accesories. Image editing and special techniques based on image merging are discussed next. These sections are followed by a description of example setups and procedures for UV, VIS, and NIR imaging, fluorescence imaging, as well as macro photography. A whole book could be written on the subject but this chapter intends to be an introduction to imaging methods of special interest to photobiologists. 
+This chapter is structured in sections describing cameras, lenses, filters, light sources and accessories. _Image editing and special techniques based on image merging are discussed next (not yet)_. These sections are followed by a description of example set-ups and procedures for UV, VIS, and NIR imaging, fluorescence imaging, as well as macro photography. A whole book could be written on the subject, but this chapter intends to be only an introduction to imaging methods of special interest to photobiologists. The chapter ends with a section with suggestions for further reading.
 
 ## Types of cameras
 
@@ -58,18 +61,101 @@ The wavelength range can be constrained with optical filters, on individual phot
 
 :::
 
-The sensors used in photographic cammeras are natively sensitive to wavelengths in the range $\approx 330-1100$ nm and the R, G and B filters, do transmit outside the VIS range. At both ends of this range, sensitivity ($\approx$ quantum yield) decreases very gradually. In photographic cameras, the wavelength range is constrained by an optical UV and IR cut filter attached to the front of the whole sensor assembly to create a wavelength response closer to that of human vision. Depending on the camera, the shortest wavelengths that are detected by the sensor plus filter combined vary between $370 nm$ and $420 nm$, and the longest ones between $680 nm$ and $730 nm$. The filters used are frequently absoptive ionic and the cut-in and cut-off, specialy at the NIR end, is gradual, i.e., in most digital photography cameras it is possible to use a $720 nm$ long-pass filter to take images in the NIR but only by increasing exposure by orders of magnitude.
+The sensors used in photographic cameras are natively sensitive to wavelengths in the range $\approx 330-1100$ nm (@fig-monochrome-sensor) and the R, G and B filters, do transmit outside the VIS range. At both ends of this range, sensitivity ($\approx$ quantum yield) decreases very gradually. In photographic cameras, the wavelength range is constrained by an optical UV and IR cut filter attached to the front of the whole sensor assembly to create a wavelength response closer to that of human vision. Depending on the camera, the shortest wavelengths that are detected by the sensor plus filter combined vary between $370 nm$ and $420 nm$, and the longest ones between $680 nm$ and $730 nm$. The filters used are frequently absoptive ionic and the cut-in and cut-off, specialy at the NIR end, is gradual, i.e., in most digital photography cameras it is possible to use a $720 nm$ long-pass filter to take images in the NIR but only by increasing exposure by orders of magnitude.
 
-It is possible to _convert_ cameras to _"full spectrum"_ (meaning the native sensitivity of the sensor with its R, G and B filters) by replacing the sensor filter with quartz glass or a long-pass filter with a suitable cut-in, such as at 280 nm. In a _"full spectrum"_ converted camera additional filters can be used in front or behind the lens to restrict the wavelength range as needed. Alternatively a camera can be modified to be constitutively sensitive to a especific range of wavelengths installing a wavelength-selective filter onto the sensor. 
+```{r}
+#| label: fig-monochrome-sensor
+#| fig-cap: Spectral response of monochrome image sensors. Data for a TSL257 light-to-voltage amplified sensor in a clear plastic package. **To be replaced by the response of an image sensor**.
+
+autoplot(sensors.mspct$ams_TSL257)
+```
+
+It is possible to _convert_ cameras to _"full spectrum"_ (meaning the native sensitivity of the sensor with its R, G and B filters) by replacing the sensor filter with quartz glass or a long-pass filter with a suitable cut-in, such as at 280 nm. In a _"full spectrum"_ converted camera additional filters can be used in front or behind the lens to restrict the wavelength range as needed. Alternatively a camera can be modified to be constitutively sensitive to a especific range of wavelengths installing a wavelength-selective filter onto the sensor. Given the optical properties of foliage and light scattered in the atmosphere, in NIR images the sky apears very dark and foliage very bright [@fig-trees-NIR-photograph].
 
 Conversion involves disassembling the camera but is relatively simple, and costs between 200 € and 500 € depending on the camera model and who does the conversion. In a _"full spectrum"_ or _"filter"_ conversion, the sensor itself in not modified, and the RGB filters remain on the sensors pixels. Several companies, both is the USA and in Europe do conversions, but not all of them are equally reliable. 
+
+::: {#fig-trees-NIR-photograph}
+![](temporary-images/trees-NIR.jpg)
+
+![](temporary-images/trees-NIR-as-is.jpg)
+
+Digital photograph showing high NIR reflectance of trees and other vegetation. Image captured with a full-spectrum-converted Olympus E-M1 digital mirrorless camera with an M.Zuiko 12-40 mm f2.8 zoom lens and a long-pass filter with cut-in close to 700 nm. (a) Image converted to monochrome; (b) same image adjusted to CCT = 5500 K (daylight).
+:::
 
 The conversion of a colour camera into a monochrome camera is much more difficult and there is a risk of damaging the sensor making it unusable, as it involves the removal filters that are part of the sensor itself. Very few companies do this type of conversion, charging from 1200 € to > 1500 €, usually only accepting for conversion specific models or brands of cameras. A _"full spectrum monochrome"_ conversion is also possible, either by modifying a natively monochrome camera or by removal of R, G and B filters plus replacement of Uv and IR cut filter.
 
 ::: callout-note
 ### False colour in UV-A and NIR
 
-In a full-spectrum-converted camera the R, G, and B filters on the sensor array remain. These filters also differ in their transmittance for wavelengths in the UV-A and NIR regions, thus, in UV-A and NIR the R, G, and B channels in the sensor respond differently to different wavelengths, even in the absence of red, green and blue light. When the data are "interpreted" by the software (raw converter) as for visible light a false-colour image results. Depending on the case the false colour can be informative or a nuisance. If found a nuisance or confusing the image can be converted from _colour_ into _greyscale_ based on the three channels or by extracting the data for a single colour channel.
+In a full-spectrum-converted camera the R, G, and B filters on the sensor array remain. These filters also differ in their transmittance for wavelengths in the UV-A and NIR regions, thus, in UV-A and NIR the R, G, and B channels in the sensor respond differently to different wavelengths, even in the absence of red, green and blue light (@fig-E-M1fs-rel-spectra-response). When the image sensor data are "interpreted" by the software (raw converter) as for visible light a false-colour image results. Depending on the case the false colour can be informative or a nuisance. If found a nuisance or confusing, the image can be converted from _colour_ into _greyscale_ based on the three channels as in @fig-trees-NIR-photograph or by extracting the data for a single colour channel.
+
+```{r}
+load("data/camera-response-df.rda")
+camera_response.df |>
+  mutate(RGB.sum = Ravg + Gavg + Bavg,
+         Ravg.rel = Ravg / RGB.sum,
+         Gavg.rel = Gavg / RGB.sum,
+         Bavg.rel = Bavg / RGB.sum) |>
+    select(Filename:Id, ISO:Aperture_Value, LED.Id:Bavg.rel) -> camera_response_rel.df
+```
+
+::: {#fig-E-M1fs-spct}
+
+```{r, warning=FALSE}
+#| label: fig-E-M1fs-rel-spectra-response
+#| fig-asp: 0.5
+
+camera_response_rel.df |>
+  select(-RGB.sum) |>
+  filter(! Filename %in% c("_U250126.ORF", "_U250126.ORF", # sigma lens blocks 340 nm
+                           "_U250091.ORF", "_U250088.ORF", # fluorescence in image
+                           "_U250128.ORF") # underexposed
+         & Id == 1) |> 
+  pivot_longer(cols = c("Ravg.rel", "Gavg.rel", "Bavg.rel")) |>
+  mutate(Channel = factor(gsub("avg.rel$", "", name), levels = c("R", "G", "B"))) |>
+  ggplot(aes(Wavelength, value, colour = Channel)) +
+#  geom_line() +
+  stat_smooth(span = 0.16, se = FALSE, method = "loess", formula = y ~ x) +
+#  geom_point() +
+#  facet_wrap(facets = vars(Id), ncol = 1) +
+  wl_guide(ymin = -0.02, ymax = 0) +
+  scale_color_discrete(direction = 1) +
+  scale_x_wl_continuous(n.breaks = 6) +
+  scale_y_continuous(name = "Raw pixel signal (relative to RGB sum)",
+                     sec.axis = dup_axis(name = character(),
+                                         breaks = c(0, 1/3, 2/3, 1),
+                                         labels = c("0/1", "1/3", "2/3", "1/1")))
+```
+
+```{r, warning=FALSE}
+#| label: fig-E-M1fs-rel-spectra-response-stacked
+#| fig-asp: 0.5
+
+camera_response_rel.df |>
+  select(-RGB.sum) |>
+  filter(! Filename %in% c("_U250126.ORF", "_U250126.ORF", # sigma lense blocks 340 nm
+                           "_U250091.ORF", "_U250088.ORF", # fluorescence in image
+                           "_U250128.ORF") # underexposed
+         & Id == 1) |> 
+  pivot_longer(cols = c("Ravg.rel", "Gavg.rel", "Bavg.rel")) |>
+  mutate(Channel = factor(gsub("avg.rel$", "", name), levels = c("R", "G", "B"))) |>
+  ggplot(aes(Wavelength, value, fill = Channel, colour = Channel)) +
+  stat_smooth(geom = "area", outline.type = "both", alpha = 0.5,
+              position = position_stack(),
+              span = 0.16, se = FALSE, method = "loess", formula = y ~ x) +
+#  geom_area(alpha = 1) +
+#  facet_wrap(facets = vars(Id), ncol = 1) +
+  scale_fill_discrete(direction = 1) +
+  scale_color_discrete(direction = 1) +
+  scale_x_wl_continuous(n.breaks = 6) +
+  scale_y_continuous(name = "Raw pixel signal (relative to RGB sum)",
+                     sec.axis = dup_axis(name = character(),
+                                         breaks = c(0, 1/3, 2/3, 1),
+                                         labels = c("0/1", "1/3", "2/3", "1/1")))
+```
+Relative spectral response of the red, green and blue sensor channels of a full-spectrum-converted Olympus E-M1 digital mirrorless camera. The data are normalised so that the sum of the readings from the three channels add up to one. (a) Channel response data as a line plot, (b) same data as a stacked area plot. For details, see [report](https://www.photo-spectrum.info/pages/camera-spectral-response/E-M1-fs-spectral-response.html). The colour scale on the _x_-scale shows the colour matching the wavelength, not that represented by the RGB values. Note: the smallest bumps in the curves are most likely artifacts.
+
+:::
 
 :::
 
@@ -95,8 +181,10 @@ Two examples of very cheap headless cameras, and two examples of expensive camer
 
 :::
 
-Specialised digital cameras used in industrial automation (= "machine vision"), astronomy, microscopy, etc., frequently use the same or similar image sensors as photographic cameras, but unusual wavelength sensitivity ranges are more common. Monochrome head-less cameras are also more abundant than monochrome photographic cameras. Digital NIR cameras are common, i.e., sold as surveilance and "night-vision" cameras. Cameras for UV-A are rather common for especific uses, as many Si-based sensors are natively sensitive to it. Very few digital cameras designed for UV-B and even UV-C imaging are available, based on especialized sensors with an extended wavelength sensitivity range. One example is LUCID's Atlas10 UV camera based on Sony's IMX487 UV sensor, recomended for imaging in the range 200 to 400 nm. This new UV sensor produces 8 MP images at up 137 fps. At the other edge of the VIS band
-LUCID's Atlas10 SWIR camera based on Sony's IMX992 TE-cooled SWIR image sensor is usable for imaging in the range 400 nm to 1700 nm at 119 fps. These momochrome cameras although aimed at industrial inspection and garbage sorting cover wavelengths of special interest in plant photobiology research and close-range remote sensing.
+Specialised digital cameras used in industrial automation (= "machine vision"), astronomy, microscopy, etc., sometimes use the same or similar image sensors as photographic cameras, but unusual wavelength sensitivity ranges are more common. Monochrome head-less cameras are also much more abundant than monochrome photographic cameras. Digital NIR cameras are common, i.e., sold as surveilance and "night-vision" cameras. Cameras for UV-A1 are rather common for especific uses, as many Si-based sensors are natively sensitive to it. Very few digital cameras designed for UV-B and even UV-C imaging are available, based on especialized sensors with an extended wavelength sensitivity range. One example is LUCID's Atlas10 UV camera based on Sony's IMX487 UV sensor, recomended for imaging in the range 200 to 400 nm. This new UV sensor produces 8 MP images at up 137 fps. At the other edge of the VIS band
+LUCID's Atlas10 SWIR camera based on Sony's IMX992 TE-cooled SWIR image sensor is usable for imaging in the range 400 nm to 1700 nm at 119 fps. These momochrome cameras although aimed at industrial inspection and sorting cover wavelengths of special interest in plant photobiology research and close-range remote sensing. There are even cameras, both colour and monochrome, with polariser filters on individual photosites so that for each cluster of four one cluster has a filter at a different angle. 
+
+ADD FIGURE HERE FOR SPECTRAL RESPONSE!
 
 While many headless cameras are intended to be mounted at a fixed position, others are suitable for use in drones. While industrial cameras are built for a harsh environemnt those for use in drones are smaller and lighter. In most cases these cameras produce live images, and can be fully controlled remotely. They are connected either "by wire" (ethernet or USB interfaces) or wirelessly (Wifi). Given that they are not used handheld but instead fixed and in many cases continuosly switched on, they in most cases lack an internal battery and depend on an external power source such as a mains adapter, power over ethernet, USB or external battery.
 
@@ -158,9 +246,15 @@ Images acquired with an OM-1 digital camera with the subjects illuminated with a
 
 Thermal IR cameras, designed for temperature measurements are monochromatic and sensitive to radiation in the range $8\,\mu m$ to $14\,\mu m$ (for $-20^\circ\mathrm{C}$ to $1500^\circ\mathrm{C}$), $0.85\,\mu m$ to $1.1\,\mu m$ (for $450^\circ\mathrm{C}$ to $1800^\circ\mathrm{C}$, used for hot metal), and variations. As with other cameras, both thermal cameras with a built-in display and headless ones are available. There are available even miniature thermal cameras designed to be attached to smart phones.
 
-::: {#fig-thermal-cameras}
+::: {#fig-thermal-cameras  layout-ncol="3"}
 
-![Thermal image as grey scale](temporary-images/)
+![](temporary-images/Flir-One-Pro-web.png)
+
+![](temporary-images/Flir-i34-web.png)
+
+![](temporary-images/OPTPI4XXi-right.webp)
+
+Smartphone-attachment, handheld and headless thermal cameras. One Pro and i34 from Flir (???), and Pi450 LT from Optris (Berlin, Germany).
 
 :::
 
@@ -338,9 +432,53 @@ autoplot(
 
 Each glass-air interface reflects approximately 4.5% of the light traversing it as result of the difference in refractive index ($n$). Modern lenses and good photographic filters are **anti-reflection multicoated**, and the best ones reflect $< 0.1\%$ of the light impinging on their surface. These coatings are similar in principle to interference filters, they change $n$ at the surface. However, they are designed to minimize reflections across a given range of wavelengths instead of increeasing them. In recent years a further additional coating is being applied to outer lens surfaces and filters, a fluorine compound coating that alters surface properties so that water runs off the surface and dirt does not stick. Antireflection coatings do modify the spectral transmittance, increasing it in the target range of wavelengths but frequently decreasing it in other regions of the spectrum. 
 
+::: callout-warning
+### Flourescence of ionic glass
+
+Many filters made of ionic absorbing glass are strongly fluorescent when illuminated. The effectiveness of the excition depends on wavelength. Long-pass yellow, orange and red filters strongly fluorescence, long-pass NIR filters fluoresce weakly. Some clear glasses can contain impurities that yield weak fluorescence.
+
+::: {#fig-filters-fluorescence layout-ncol="2"}
+![A: Filters in white
+light.](temporary-images/filters-in-VIS.jpg){fig-alt="Four long-pass glass filters, yellow, orange, red and NIR"
+group="filters"}
+
+![B: Filters in UV-A (365 nm) radiation, visible (> 410 nm) fluorescence (true
+colour).](temporary-images/filters-UVIVF-01.jpg){fig-alt="Four filters glowing to varying extents."
+group="filters"}
+
+![C: Filters in UV-A (365 nm) radiation, near-infrared (> 680 nm) fluorescence
+(false
+colour).](temporary-images/filters-UVIIRF-01.jpg){fig-alt="Four filters glowing to varying extents."
+group="filters"}
+
+![D: Filters in UV-A (365 nm) radiation, near-infrared (> 730 nm) fluorescence
+(false
+colour).](temporary-images/filtesr-UVIIRF-02.jpg){fig-alt="Four filters glowing to varying extents."
+group="filters"}
+
+Photographs of four long-pass glass filters under white visible and
+ultraviolet-A radiation. The background is in all photographs the same
+slab of white PTFE (Teflon), but in B--D the filters used on the camera
+lens blocked the UV-A radiation used to excite fluorescence. Clockwise
+from the top left corner: Hoya Red 25A (603 nm), Hoya R72 (716
+nm),Heliopan Orange 22 (568 nm) and Heliopan Yellow 5 (466 nm), all AR
+coated. Light sources: Sunwayfoto FL96 at 5500K LED fill light and
+Jaxman Uc1 flashlight. Cameras A, B: Olympus OM-1; C, D: Olympus E-M1
+full-spectrum converted. For visible fluorescence barrier filter:
+Firecrest UV400 + Tiffen 2A, and for NIR fluorescence Firecrest UV400 +
+C:Zomei IR680 or D:Haida IR720 (726 nm) + Tiffen 2A. Lens: M.Zuiko 25
+mm 1:1.2 Pro. Photographs white-balanced and edited in Capture One Pro
+version 16.5.
+:::
+
+Further details including flurescence spectra for some filters can be found at my web site in page [_UV-A-Induced VIS Fluorescence—Methods_](https://www.photo-spectrum.info/pages/fluorescence/uvaivf-methods.html).
+
+
+:::
+
 ## UV, VIS and NIR radiation sources
 
-As in many applications, LEDs have replaced incandescent lamps as light sources for VIS photography, while Xenon-arc flashes remain popular. The spectrum of white light sources based on LEDs used in photography has improved in recent years. The suitability of white LED light is rated based on indexes, of which the most frequently reported is the colour rendition index (CRI), expressed in a scale from 0 to 100. In practice, good colour reproduction in photographs requires CRI >= 95 (@fig-imge-white-leds-cri). Most white LEDs used in households, public spaces and growth chambers have CRI << 90 and sometimes CRI < 80. This should be taken into consideration when photographs are used to record the outcome of experiemnts.
+Daylight is a good source of UV-A, VIS, NIR and SWIR, although colour temperature varies with weather and with shade. As in many applications, LEDs have replaced incandescent lamps as artificial light sources for VIS photography, while Xenon-arc flashes remain popular. The spectrum of white light sources based on LEDs used in photography has improved in recent years. The suitability of white LED light is rated based on indexes, of which the most frequently reported is the colour rendition index (CRI), expressed in a scale from 0 to 100. In practice, good colour reproduction in photographs requires CRI >= 95 (@fig-imge-white-leds-cri). Most white LEDs used in households, public spaces and growth chambers have CRI << 90 and sometimes CRI < 80. This should be taken into consideration when photographs are used to record the outcome of experiemnts.
 
 ```{r}
 #| label: fig-imge-white-leds-cri
@@ -357,7 +495,7 @@ autoplot(leds.mspct[c("SeoulSemicon_S4SM_1564509736_0B500H3S_00001",
 ```
 
 
-Daylight is a good source of UV-A1 radiation during most of the day. When the sun is more than 30 or 40 degrees above the horizon UV-A1, UV-A2 and UV-B are usualy enough for photograpying still subjects. The irradiance of NIR compared to VIS in daylight varies less than that of UV-B and UV-A. As described in Chapter XX, the scattering of sunlight in the atmosphere is more at shorter than at longer wavelengths. Lanscapes look very different in a UV and in a NIR image. The proportion of UV-A in the shade can be high but the low irradiance makes very long exposures necessary. When using "accidental" UV objectives their rather low transmittance compounded with a decreased sensor sensitivity at short wavelength usually makes UV photography in natural light challenging because of long exposure times.  
+Daylight is a good source of UV-A1 radiation during most of the day. When the sun is more than 30 or 40 degrees above the horizon UV-A1, and UV-A2 are usualy enough for photograpying still subjects. The irradiance of NIR compared to VIS in daylight varies less than that of UV-B and UV-A. As described in Chapter XX, the scattering of sunlight in the atmosphere is more at shorter than at longer wavelengths. Lanscapes look very different in a UV and in a NIR image. The proportion of UV-A in the shade can be high but the low irradiance makes very long exposures necessary. When using "accidental" UV objectives their rather low transmittance compounded with a decreased sensor sensitivity at short wavelength usually makes UV photography in natural light challenging because of long exposure times.  
 
 Xenon flash lamps emit as much or more UV-A radiation than VIS light, but those sold for VIS photography are in most cases filtered so as to block all UV to make their use safer and to avoid a blue cast in photographs. A Xenon flash arc inherently emits across the whole UV-A, UV-B and UV-C, VIS, and NIR regions. However, depending on the glass or quartz lamp envelope, the shorter wavelengths may not exit the lamp. However, even Xenon flash lamps with a glass envelope emit UV-A radiation. The spectrum even if full of features (peaks and valleys), is rather continuous (@fig-img-xe-flash).
 
@@ -394,7 +532,22 @@ autoplot(leds.mspct[c("LedEngin_LZ1_10UV00_365nm",
          facets = 1)
 ```
 
-In the case of NIR all three sources are effective: sunlight, Xenon flash and LEDs. This is helped by the high native sensitivity of Si-based image sensors in this region of the spectrum. LEDs with their narrow peaks of emission unless combined, fail to produce strong false colour effects. Because of the properties of the red, green and blue filters on pixels of camera sensors, the false colour originates mostly from R and FR wavelengths $\lambda < 850 \mathrm{nm}$.
+Some good flash light sold for checking authenticity of bank notes and searching for scorpions are useful for photography (@fig-flashlight-uva).
+
+
+```{r}
+#| label: fig-flashlight-uva
+#| fig-asp: 0.90
+#| fig-cap: >
+#|   Emission spectra of Convoy 2+ UV-A flashlight with a Nichia 3 W  (nominal) LED emitting at 365 nm and a VIS-blocking SWB2 built-in filter.
+
+autoplot(smooth_spct(lamps.mspct[c("Convoy.S2plus.LED.UVA.flashlight")], 
+                     method = "supsmu", strength = 0.001),
+         range = c(315, 450))
+```
+
+
+In the case of NIR all three sources are effective: sunlight, Xenon flash and LEDs. This is helped by the high native sensitivity of Si-based image sensors in this region of the spectrum. LEDs with their narrow peaks of emission unless combined, fail to produce strong false colour effects. Because of the properties of the red, green and blue filters on pixels of camera sensors, the false colour originates mostly from R and FR wavelengths $\lambda < 850 \mathrm{nm}$ (@fig-E-M1fs-spct).
 
 ::: callout-caution
 
@@ -408,15 +561,31 @@ The general solution to this problem is to use a suficiently long exposure time,
 
 LED light sources sold for photography and video, in general use CC dimming or alternatively PWM dimming at a high frequency. The flicker in the later is noticeable only in images acquired using very fast shutter speeds.
 
+Further details and examples of image banding using both electronic and mechanical camera shutters can be found at my web site in page [_PWM dimming and digital photography_](https://www.photo-spectrum.info/pages/illumination/PWM-banding-readout.html). 
+
 :::
 
 ## Accessories
+
+### Supports
+
+TO BE ADDED.
 
 ### Colour and grey-scale references
 
 White, black and grey references have two main uses. One is to optimally and consistently set exposure independently of the reflectance of the subject of the photograph. The second, and more familiar use, is to set the white balance on a light grey or white reference, so that it describes the light source idependently of the subject photographed. If included in images, white balance can be adjusted objectively also in post-processing. With set of grey patches it becomes feasible, although not easy, to compensate differences in in-camera exposure in post-processing. Although, a single grey reference of 18% reflectance helps in the overall adjustments of exposure, it does not provide enough information to compensate for differences in the steepness of the response curve and dynamic range among images. These properties images are affected by exposure and ISO settings.
 
 Colour "checkers" with tiles of different colours with known spectral reflectance are routinely used in photography that requires faithful colour reproduction, e.g., commercial photography. They are available with different numbers of tiles, the more tiles the more colours that can be calibrated and corrected. The most comon colour checkers have 24 tiles, xx colours plus a gradation greys from white to black. They come in different sizes, small ones suitable for macro photography and several larger sizes. These easily available references cover only visible colours, i.e., those recorded by "normal" cameras. There exist reference tiles for UV and NIR, but they are extremely expensive.
+
+::: {#fig-colour-checkers layout="[75, 25]"}
+
+![](temporary-images/colour-checker.jpg)
+
+![](temporary-images/chartu-micro.jpg)
+
+Two simple colour reference cards, differing in size, layout and spectral reflectrances. Spyder Checkr 24 from Datacolor ($20 \times 14$ cm) and Charttu 24 ColorChecker Classic Nano ($7 \times 5$ cm).
+
+:::
 
 The best approach is to use them to generate a custom colour profile for a given combination of light source, camera, objective and filter. However, the "colour cast" introduced by objectives and UV-cut or UVIR-cut filters is usually rather small. 
 
@@ -430,44 +599,88 @@ Of all situations, the most challenging is when the light illuminating different
 
 ## Procedures
 
-### Reproducibility
+::: {#fig-photography-approaches layout-ncol="2"}
+
+![VIS](temporary-images/lichen-vis-birch.jpg)
+
+![UV-A1](temporary-images/lichen-UVA-birch.jpg)
+
+![NIR](temporary-images/lichen-NIR-birch.jpg)
+
+![UVIVF](temporary-images/lichen-UVIVF-birch.jpg)
+
+Four images from the same birch trunk region, with attached lichens. A white reference of white PTFE (5 mm-thick) can be seen along the left edge of the images. It was used as a white reference for white balancing the no-fluorescence images (VIS, UV-A1, and NIR), and served as control for UV-A1-induced-VIS-fluorescence.
+
+:::
+
+### All scientific photography
 
 When used in research, imaging can be done for illustration purposes or as an approach to quantitative measurement. In the second case, reproducibility plays a crucial role towards correct quantification, while in the first case it is important to avoid misleading the viewers of the illustrations. In some fields, illustrative photographs are used as scientific evidence, thus, avoiding bias is also crucial even no quantification is done. Bias can be introduced both when the image is captured and during image post-processing.
 
 Comparable images can be obtained by keeping illumination, image acquisition and post-processing perfectly consistent. When there is relatively small variation in illumination or camera response, the use of colour and grey references can allow corrections to partly remove bias. References within images can also serve as a built-in quality control. When the colours need to closely match the object photographed the use of "a colour managed workflow" is required. In such a workflow colur calibrations are used at each stage, and at each step loss of information is avoided. For example, a white light source deficient in violet or green light makes correctly recording those colours impossible. It is important to remember that digital photographics cameras, do not sense colours as narrow wavelength bands, but instead reconstruct the colours we see, discarding a lot of information. This makes the colour bias caused by illumination with a low CRI light source difficult to fully correct after the fact.
 
-Most digital cameras set exposure automatically. However, when consistency is important, exposure must be set using a grey reference card (18% reflectance) either manually or the automatically found setting locked. Otherwise, the auto-exposure algorithm will compensate at least in part for the differences in luminance between objects, for example small vs. large plants on a dark or light background, or between dark and pale plants. If we are only interested in the shape of the plants, size, etc., some amount of bias can be tolerated. In contrast if reflectance or spectral reflectance (darkness or colour) are relevant, consistent exposure is crucial.
+Most digital cameras set exposure automatically. However, when consistency is important, exposure must be set using a grey reference card (18% reflectance) either manually or the automatically found setting locked. Otherwise, the auto-exposure algorithm will compensate at least in part for the differences in luminance/reflectance between objects, for example small vs. large plants on a dark or light background, or between dark and pale plants. If we are only interested in the shape of the plants, size, etc., some amount of bias can be tolerated. In contrast if reflectance or spectral reflectance (darkness or colour) are relevant, consistent exposure and illumination are crucial.
 
+### UV-A1 photography
 
+Imaging in UV-A1 is relatively simple. Imaging in UV-A2, UV-B and UV-C requires cameras with special sensors as well as special lenses and UV sources.
 
-### UV photography
+- Camera: Full-spectrum converted or natively UV sensitive digital camera. 
+
+- Objective: UV-transmitting by design or by "accident".
+
+- Filter: UV-pass, VIS and NIR blocking. Minimum > 3 OD off-band rejection, recommended >= 5 OD.
+
+- UV-source: Sunlight (sun elevation angle > 30 degrees, UV-A), UV-native or UV-enambled Xenon flash (UV-B, UV-A), LEDs (UV-A1), or "Black light blue" BLB and other UVA fluorescent tubes. Compared to the other sources, LEDs emit in narrower bands of the UV spectrum.
+
+- Support: Unless a flash or a very strong UV source is available, for small subjects like individual plants a tripod. In-camera image stabilization can help if available and functional in UV.
+
+- Protection: For eyes and skin.
+
+Further details on the equipment and methods that I use can be found at my web site in pages [_UV short-pass filters_](https://www.photo-spectrum.info/pages/filters/UV-filters.html), [_Camera objectives for digital UV photography_](https://www.photo-spectrum.info/pages/lenses/lenses-for-uv.html) and .
 
 ### NIR photography
 
-### UVIVF
+- Camera: Full-spectrum converted or natively NIR sensitive digital camera.
 
-- Camera: It is best to use a digital mirrorless (ML) camera. An off-the-shelf
-camera is the best tool unless NIR fluorescence is of interest.
+- Objective: NIR-suitable objective (not prone to hot spots and reflections).
 
-- Objective: Most lenses work well but given the very low light levels a lens with an f/2.8 apperture or wider is preferable.
+- Filter: NIR-pass, VIS (and UV) blocking. Recommended > 3 OD off-band rejection.
 
-- Light source: A 365 nm LED-based flashlight works well if of enough power
-(>= 3 W for a 0.25 m to 2.0 m range and static subjects), preferably with a Nichia LED and an VIS-blocking filter such as 3 mm or 2 mm-thick SWB2 filter. The induced fluorescence is weak so that if any visible light emitted by the UV source can go through both filters, it will show in the photographs.
+- NIR-source: Sunlight (any sun elevation angle), NIR-native or NIR-enambled Xenon flash (NIR, SWIR), LEDs (NIR).
 
-```{r}
-autoplot(smooth_spct(lamps.mspct[c("Convoy.S2plus.LED.UVA.flashlight")], 
-                     method = "supsmu", strength = 0.001),
-         range = c(315, 450))
-```
+- Support: Rarely needed with a converted camera, necessary with an off-the-shelf VIS camera.
 
-- On-camera filter: A high-quality UV-blocking filter is needed. Most UV-filters
-sold for photography have a cut-in at too short wavelengths (330 to 380 nm). However, when using a 365 nm LED as light source the filter used on the lens has to block wavelengths just past 400 nm. The best, but rather expensive, option is a Zeiss UV T* filter, second best is a significantly cheaper Firecrest UV400 filter (from Formatt-Hitech, apparently gone bankrupt), and a third option is a Tiffen Haze 2A filter (rather difficult to find outside USA). The first two are interference filters and reflect UV, rather than absorb it. The Tiffen filter, a rather old type in the tradition of Kodak Wratten filters, has a thin UV-absorbing gelatine layer encased between two glass sheets. None of these three filters fluoresce significantly when exposed to UV radiation. Most yellow, orange and red filters are made of ionic glass and when illuminated with UV fluoresce strongly. They can be used only behind a UV-absorbing filter. NIR pass filters are also ionic and do also fluoresce, but less intensively (I am not sure of which wavelengths induce the strongest fluorescence in NIR filters, but likely from the VIS range).
+- Protection: For eyes for high NIR irradiance.
 
-```{r}
-autoplot(filters.mspct[c("Zeiss_UV_Tstar_2.0mm_52mm",
-                          "Hoya_UV0_HMC_2.0mm_52mm")],
-         range = c(315, 450)) + theme(legend.position = "top") 
-```
+Further details about the equipment and methods that I use can be found at my web site in pages [_NIR Sources for Photography_](https://www.photo-spectrum.info/pages/illumination/NIR-sources.html) and [_NIR long-pass filters_](https://www.photo-spectrum.info/pages/filters/NIR-filters.html).
+
+### UV-induced visible fluorescence (UVIVF)
+
+The induced fluorescence is weak so that if any excitation light can reach the camera sensor it will be visible in the images. For the same reason a camera with a modern sensor with a low dark noise floor works best.
+
+- Camera: Digital mirrorless (ML) camera or a special headless camera with a cooled sensor. An off-the-shelf camera natively blind to UV and sensitive to VIS is the best tool unless NIR fluorescence is of interest.
+
+- Objective: Most lenses work well but given the very low light levels a lens with an f/2.8 aperture or wider is preferable.
+
+- Filter: UV-blocking, VIS long-pass, OD 4-5. A pair of matched filters in light source and camera are the best option. 
+
+- Light source: LEDs, e.g., a 365 nm LED-based flashlight (>= 3 W for a 0.25 m to 2.0 m range and static subjects, preferably with a Nichia LED and a VIS-blocking filter such as 3 mm or 2 mm-thick SWB2 filter). Other UV sources like black light fluorescent lamps are not ideal as they emit more VIS light that LEDs.
+
+- Support: Exposure times between 20 s and a 2 min are common, so the camera must be mounted so that it cannot move. A tripod can be used outdoors and a copy stand or a tripod indoors.
+
+- Location, outdoors: The best location is far from any artificial illumination in a moon-less night. How dark it needs to be depends on the length of expossure, so brightly fluorescing subjects like some lichens are more forgiving.
+
+- Location, indoors: Even in a dark room, there are usually items that strongly fluoresce such as light-coloured clothing, white papers and even some plastics. One needs to move such items away and if not possible, set the UV-radiation beam to illuminate the subject but not those items. 
+
+- Safety: *Eye protection is a must* as strong UV-A radiation is used in the absence of VIS light! 
+
+Further details can be found at my web site in pages [_UV-A-Induced VIS Fluorescence—Methods_](https://www.photo-spectrum.info/pages/fluorescence/uvaivf-methods.html) and [_UV-cut filters_](https://www.photo-spectrum.info/pages/filters/uv-cut-filters.html).
+
+::: callout-tip
+### Blocking UV radiation
+
+UV radiation is rarely an issue for normal visible photography, and many "UV-filters" sold for everyday photography are not very different from clear "protection" filters. One notable exception is the Zeiss UV T* filter. We can estimate how much excitation light is not blocked when using two different filters on the camera when illuminating a subject with the UV-A flashlight whose expectrum is shown above in @fig-flashlight-uva. Both filters are of high optical quality and sold by well-known photographic optics suppliers, however, the difference in transmittance makes only the Zeiss filter suitable for UVIVF photography. 
 
 ```{r}
 (autoplot(smooth_spct(normalise(lamps.mspct[["Convoy.S2plus.LED.UVA.flashlight"]], norm = "undo") *
@@ -482,33 +695,23 @@ autoplot(filters.mspct[c("Zeiss_UV_Tstar_2.0mm_52mm",
    theme(legend.position = "top")) + plot_layout(axis_titles = "collect")
 ```
 
-::: callout-tip
-# UV-induced fluorescence of filters
-
-
 :::
 
-- Support: Exposure times between 20 s and a 2 min are common, so the camera must be mounted so that it cannot move. I normally use a tripod outdoors and a copy stand or a tripod indoors. Many modern camera can be controlled with a phone app, while older ones can be triggered with a cable or radio-remote. If a IR remote is to be used, better test that its light does not show in the photographs.
-- Location, outdoors: The best location is far from any artificial illumination in a moon-less night. How dark it needs to be depends on the length of expossure, so brightly fluorescing subjects like some lichens are more forgiving. At high latitudes, in the late spring and summer, it remains too bright through out the night. The autumun is the best season, especially if one gets a windless night.
-- Location, indoors: Even in a dark room, there are usually items that strongly fluoresce such as light-coloured clothing, white papers and even some plastics. One needs to move such items away and if not possible, set the UV-radiation beam to illuminate the subject but not those items. 
+### VIS-induced NIR fluorescence (VIIRF)
 
-::: callout-tip
-# Tools I use
-
-- Camera: mirrorless digital cameras. Since three years ago Olympus OM-1, five years ago an Olympus E-M1 Mk II and about 10 years ago an Olympus E-M1. The OM-1 has a feature that is especially good for very long exposures: it can display the image while it is being captured, even on the screen of a phone or tablet. Used with the shutter in _bulb_ mode one can close the shutter when the image looks bright enough. In addition, one can see live how light painting with the flashlight affects the image.
-- Objectives: I have used for many years most frequently a Sigma 30 mm f/1.4, and more recently an M.Zuiko 25 mm f/1.2 in its place. When needing other focal lengths the M.Zuiko 12-40 mm f/2.8 zoom has worked well. After all, one is just photographing VIS light, so almost any lens should work nicely optically.
-- On camera filter: the three mentioned above, interchangeably. Sometimes combined with long-pass filters.
-- Flashlight UVA: Convoy 2+ with 365 nm Nichia LED rated at 3 W. I replaced the clear window with a VIS-blocking filter. This flashlight has a narrow and very intense UV beam that works very well for light painting. Jaxman 1aC 365 nm 6W "flood" flashlight has a broader and less intense UV beam. It came already with a VIS-blocking filter installed. The two flashlight are physically very similar but differ in the LED and most significantly the reflector.
-- Flashlight, VIS: As I tend to take a paired reference photograph in white light for each fluorescence image, I use a 5W video fill light (SunwayFoto FL96). Many similar lamps are avaialble, but not all of them have a high colour rendition index (CRI). A value of 95 or higher is good for colour reproduction.
-- White reference slab: A normal colour chart is unsuitable. Some grey cards sold for white balancing can be used but I consider them too expensive to use in the field, especially in the dark. I use instead a piece a white "vigin" (not recycled) PTFE (=Teflon) about 6 mm thick. _Pure clean_ PTFE has similar and very high reflectance in the UV, VIS and NIR, and can be easily washed to clean it.
-:::
+The setup is similar as for UVIVF, but finding suitable long-pass filters is more challenging, being in most cases necessary to rely on suppliers of optical equipment. A additional difficulty is that filters sold for microscopy or machine vision sometimes are not available at the necessary sizes, or suitable rings. Otherwise, if we use blue light for excitation, a long-pass filter that blocks these wavelengths is needed on the camera. With a full-spectrum modified camera it is, for example, straighforward to photograph in-vivo chlorophyll fluorescence.
 
 ::: callout-caution
-# White balancing fluorescence photographs
+### White balancing fluorescence photographs
 
 Objectively white balancing a photograph of fluorescence is nearly impossible. After trying other approaches I have mostly settled into editing the colour in these photographs to "look right", i.e., matching my recollection of how the subject looked like when I photographed it. However, in some cases I use just a daylight balance and alternatively edit the colour to remove intense casts so as to increase the apparent colour range.
 :::
 
+### Close up and macro photography
+
+Close-up- and macro-photography are possible in combination with any of the techniques described above.
+
+MORE TO COME HERE.
 
 ## Further reading
 
