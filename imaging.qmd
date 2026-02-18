@@ -186,9 +186,9 @@ LUCID's Atlas10 SWIR camera based on Sony's IMX992 TE-cooled SWIR image sensor i
 
 ```{r, message=FALSE}
 #| label: fig-spectrum-RGB-LUCID-camera
-#| fig-cap: Spectral sensitivity of the three channels of the industrial colour camera Triton TRT071S-C from LUCID Vision Labs (Burnaby B.C. Canada) based on the RGB version of the Sony IMX482 image sensor. Data extracted from plot (EMVA 1288 Data) at https://thinklucid.com/ (visited on 2026-02-16).
+#| fig-cap: Spectral sensitivity of the three channels of the industrial colour camera Triton TRI071S-C from LUCID Vision Labs (Burnaby B.C. Canada) based on the RGB version of the Sony IMX482 image sensor. Data extracted from plot (EMVA 1288 Data) at https://thinklucid.com/ (visited on 2026-02-16).
 
-autoplot(image_sensors.mspct[4], norm = "max", unit.out = "energy",
+autoplot(image_sensors.mspct[4], norm = "max",
          w.band = c(Plant_bands("Sellaro"), IR_bands()),
          range = c(250, 1100))
 ```
@@ -196,10 +196,11 @@ autoplot(image_sensors.mspct[4], norm = "max", unit.out = "energy",
 ```{r, message=FALSE}
 #| label: fig-spectrum-monochrome-LUCID-cameras
 #| fig-asp: 2
-#| fig-cap: Spectral sensitivity of three different monochromatic industrial cameras from LUCID Vision Labs (Burnaby B.C. Canada). Triton TRT071S-M  based on the monochrome version of the IMX482 CMOS image sensor from Sony; Atlas ATX081S-UC based on the special CMOS UV image sensor IMX487 from Sony; Triton2 TRT033S-WC based on the SWIR InGaAs image sensor IMX993 from Sony. Data extracted from plots (EMVA 1288 Data) at https://thinklucid.com/ (visited on 2026-02-16).
+#| fig-cap: Spectral sensitivity of three different monochromatic industrial cameras from LUCID Vision Labs (Burnaby B.C. Canada). Triton TRI071S-M  based on the monochrome version of the IMX482 CMOS image sensor from Sony; Atlas10 ATX081S-UC based on the special CMOS UV image sensor IMX487 from Sony; Triton2 TRT033S-WC based on the SWIR InGaAs image sensor IMX993 from Sony. Data extracted from plots (EMVA 1288 Data) at https://thinklucid.com/ (visited on 2026-02-16).
 
-autoplot(image_sensors.mspct[c(1,3,2)], facets = 1, norm = "max",
-         w.band = c(Plant_bands("Sellaro"), IR_bands()), unit.out = "energy",
+autoplot(image_sensors.mspct[c(1,3,2)], 
+         facets = 1, norm = "max",
+         w.band = c(Plant_bands("Sellaro"), IR_bands()),
          range = c(200, 1800))
 ```
 
