@@ -7,8 +7,11 @@ draft: false
 ::: callout-note
 This is work in progress towards a second edition of the handbook _Beyond the Visible_ [@Aphalo2012c].
 
-The first edition is available under open-access under [doi:10.31885/9789521083631](http://doi.org/10.31885/9789521083631).
+The first edition is available under open-access at [doi:10.31885/9789521083631](http://doi.org/10.31885/9789521083631).
 :::
 
-This work is under copyright (2012) EU's COST office and copyright (2012-2024) the authors and editors. The copyright of some illustrations is different and/or has more restrictive licence conditions and are used under permission.
+This work is under copyright (2012) EU's COST office and copyright (2012-2026) the authors and editors. The first edition is under CC-SA licence for text and original illustrations. The licences for illustrations used relying on other copyright owners' permissions are in most cases more restrictive. The exception are illustrations sourced from [Wikimedia Commons](https://commons.wikimedia.org/) that frequently have more permissive licences. 
+
+The upcoming second edition's original text and illustrations are under CC-SA-NC-ND licence while unfinished. 
+**This manuscript for the 2ed is still an early draft and surely contains significant errors and omissions. Thus, no assurance on the correctness of any facts, protocols or instructions is provided. Use at your own risk!**
 

@@ -76,7 +76,7 @@ calculations needed when measuring action spectra, and for calculating
 biologically effective doses both with Excel and R. An R package which
 facilitates such calculations accompanies this handbook, and will be
 made available through CRAN (the Comprehensive R Archive Network) and
-the handbook's web pages at <http://uv4growth.dyndns.org>.
+the handbook's web pages at <https://www.uv4plants.org/publications/beyond-the-visible-a-handbook/>.
 
 Both for terrestrial and aquatic plants the enclosing materials should
 be carefully chosen based on their transmittance and reflectance
@@ -114,7 +114,7 @@ directly to the lead editor at
 [mailto:pedro.aphalo@helsinki.fi?subject=UV Handbook Edition01](mailto:pedro.aphalo@helsinki.fi?subject=UV Handbook Edition01){.uri}.
 
 The PDF file can be freely distributed and the latest version will be
-available from the handbook web page at <http://uv4growth.dyndns.org/>.
+available from the handbook web page at <https://www.uv4plants.org/publications/beyond-the-visible-a-handbook/>.
 Printed copies can be obtained from <http://www.amazon.co.uk>,
 <http://www.amazon.de> or <http://www.amazon.com>.
 
