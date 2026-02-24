@@ -151,7 +151,7 @@ the same broadband sensor, the main consideration is whether the calibration of
 the instrument is valid under each light condition. When measuring a light
 source at near range (up to several meters), using the correct distance between
 source and sensor becomes crucial. When small differences among conditions are
-more important that absolute values, precision is more important than accuracy.
+more important than absolute values, precision is more important than accuracy.
 
 Extraneous shading and reflections by objects and by the operator during
 measurements can introduce very large errors haphazardly. Poor levelling of
@@ -172,7 +172,14 @@ including LEDs. They should be measured only after their temperature is stable
 and obviously at the same temperature as when used.
 
 It is worrying that in biological research these points are rarely taken into
-full consideration, and almost never described in the methods section of publications.
+full consideration, and almost never described in the methods section of 
+publications. _The clearer the description of the methods used
+is in a reaserach paper and the more carefully measurements are done, the longer
+the "shelf-life" of 
+a piece of research will be. This is in part because the longer the time since publication
+what is not explicitly explained becomes more difficult for readers to fathom.
+Fulfilling the requirements for reproducibility, makes research aoutcomes more likely to be cited in literture reviews and used in 
+meta-analyses increasing the long-term impact._
 
 :::
 
@@ -209,17 +216,17 @@ and scanning spectrometers are fundamentally different.
 
 In array spectrometers the monochromator projects radiation of different wavelengths onto different sensors arranged as a linear (1-dimentional) array. Thus, the
 whole spectrum is measured simultaneously. In a scanning spectrometer, the
-moving grating projects the radiation of different wavelengths sequentially
+moving grating projects radiation of different wavelengths sequentially
 onto the same and only sensor. Thus, radiation at each wavelength "slice" is
 measured at a different point in time.
 
 Scanning spectroradiometers a based on a mechanism that accurately moves the
 manochromator(s) in very small steps, in most cases motorised. Mechanical 
-accuracy and sturdiness depend a rigid, and heavy structure. For this reason, scanning spectrometers are in general much bigger and heavier, and, thus, more 
+accuracy and sturdiness depend on a rigid, and heavy structure. For this reason, scanning spectrometers are in general much bigger and heavier, and, thus, more 
 difficult to transport than array detector spectroradiometers. They
-are also less tolerant to rough handling and usually require mains power. However, scanning spectrometers can accomodate a double monochromator
+are also less tolerant to rough handling and vibration, and they usually require mains power. However, scanning spectrometers can accomodate a double monochromator
 arrangement. The two monochromators are "in series" such that the light beam 
-passes through both of them before reaching the sensor. This improves markedly
+passes through both of them before reaching the sensor. This improves markedly (by a few orders of magnitude)
 the separation of light of different wavelengths reaching the sensor.
 
 ::: callout-note
