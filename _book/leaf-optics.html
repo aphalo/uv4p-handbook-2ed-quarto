@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -97,7 +97,7 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -392,7 +392,7 @@ window.Quarto = {
   <li><a href="#introduction-to-leaf-optics" id="toc-introduction-to-leaf-optics" class="nav-link active" data-scroll-target="#introduction-to-leaf-optics"><span class="header-section-number">7.1</span> Introduction to leaf optics</a></li>
   <li><a href="#whole-leaves" id="toc-whole-leaves" class="nav-link" data-scroll-target="#whole-leaves"><span class="header-section-number">7.2</span> Whole leaves</a>
   <ul class="collapse">
-  <li><a href="#spectroscpy" id="toc-spectroscpy" class="nav-link" data-scroll-target="#spectroscpy"><span class="header-section-number">7.2.1</span> Spectroscpy</a></li>
+  <li><a href="#spectroscopy" id="toc-spectroscopy" class="nav-link" data-scroll-target="#spectroscopy"><span class="header-section-number">7.2.1</span> Spectroscopy</a></li>
   <li><a href="#optical-estimation-of-chlorophyll-content" id="toc-optical-estimation-of-chlorophyll-content" class="nav-link" data-scroll-target="#optical-estimation-of-chlorophyll-content"><span class="header-section-number">7.2.2</span> Optical estimation of chlorophyll content</a></li>
   <li><a href="#monitoring-of-chloroplast-accumulation" id="toc-monitoring-of-chloroplast-accumulation" class="nav-link" data-scroll-target="#monitoring-of-chloroplast-accumulation"><span class="header-section-number">7.2.3</span> Monitoring of chloroplast accumulation</a></li>
   </ul></li>
@@ -406,6 +406,22 @@ window.Quarto = {
   </ul></li>
   <li><a href="#additional-parameters" id="toc-additional-parameters" class="nav-link" data-scroll-target="#additional-parameters"><span class="header-section-number">7.5</span> Additional parameters</a></li>
   <li><a href="#precautions-and-pitfalls" id="toc-precautions-and-pitfalls" class="nav-link" data-scroll-target="#precautions-and-pitfalls"><span class="header-section-number">7.6</span> Precautions and pitfalls</a></li>
+  <li><a href="#instruments-for-assessing-chlorophyll" id="toc-instruments-for-assessing-chlorophyll" class="nav-link" data-scroll-target="#instruments-for-assessing-chlorophyll"><span class="header-section-number">7.7</span> Instruments for assessing chlorophyll</a>
+  <ul class="collapse">
+  <li><a href="#using-transmittance" id="toc-using-transmittance" class="nav-link" data-scroll-target="#using-transmittance"><span class="header-section-number">7.7.1</span> Using transmittance</a></li>
+  <li><a href="#using-leaf-reflectance" id="toc-using-leaf-reflectance" class="nav-link" data-scroll-target="#using-leaf-reflectance"><span class="header-section-number">7.7.2</span> Using leaf reflectance</a></li>
+  </ul></li>
+  <li><a href="#instruments-for-assessing-epidermal-transmittance" id="toc-instruments-for-assessing-epidermal-transmittance" class="nav-link" data-scroll-target="#instruments-for-assessing-epidermal-transmittance"><span class="header-section-number">7.8</span> Instruments for assessing epidermal transmittance</a>
+  <ul class="collapse">
+  <li><a href="#using-chlorophyll-fluorescence-as-reporter" id="toc-using-chlorophyll-fluorescence-as-reporter" class="nav-link" data-scroll-target="#using-chlorophyll-fluorescence-as-reporter"><span class="header-section-number">7.8.1</span> Using chlorophyll fluorescence as reporter</a></li>
+  </ul></li>
+  <li><a href="#alternative-approaches" id="toc-alternative-approaches" class="nav-link" data-scroll-target="#alternative-approaches"><span class="header-section-number">7.9</span> Alternative approaches</a></li>
+  <li><a href="#instruments" id="toc-instruments" class="nav-link" data-scroll-target="#instruments"><span class="header-section-number">7.10</span> Instruments</a>
+  <ul class="collapse">
+  <li><a href="#ergonomics-and-usability" id="toc-ergonomics-and-usability" class="nav-link" data-scroll-target="#ergonomics-and-usability"><span class="header-section-number">7.10.1</span> Ergonomics and usability</a></li>
+  <li><a href="#cost-and-availability" id="toc-cost-and-availability" class="nav-link" data-scroll-target="#cost-and-availability"><span class="header-section-number">7.10.2</span> Cost and availability</a></li>
+  </ul></li>
+  <li><a href="#instrument-tests-and-intercomparisons" id="toc-instrument-tests-and-intercomparisons" class="nav-link" data-scroll-target="#instrument-tests-and-intercomparisons"><span class="header-section-number">7.11</span> Instrument tests and intercomparisons</a></li>
   </ul>
 </nav>
     </div>
@@ -463,12 +479,12 @@ window.Quarto = {
 </section>
 <section id="whole-leaves" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="whole-leaves"><span class="header-section-number">7.2</span> Whole leaves</h2>
-<section id="spectroscpy" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="spectroscpy"><span class="header-section-number">7.2.1</span> Spectroscpy</h3>
+<section id="spectroscopy" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="spectroscopy"><span class="header-section-number">7.2.1</span> Spectroscopy</h3>
 <p>Spectroscopy of reflected radiation is the basis of optical remote sensing, in the case of drones, aeroplanes and satellites. Spectroscopy can be also a very useful measuring approach at the scale of individual plants and plant organs, including leaves. Reflectance, absorptance and transmittance of whole leaves and flower petals and sepals informs about combined effects of pigments and structural features.</p>
 <p>It is important to remember when studying plants that light scattering plays a very important role in determining optical properties <span class="citation" data-cites="Lee2010">(<a href="references.html#ref-Lee2010" role="doc-biblioref">Lee 2010</a>)</span>. One possible way of quantifying scattering within leaves is to measure the time a very brief laser pulse takes to travel across a leaf, from adaxial to abaxial epidermis (L.O. Björn, personal communication). A way of visualizing the contribution to light scattering of the water-air interfaces within leaves is to infiltrate the air spaces with water in a vacuum chamber. If we infiltrate a variegated leaf, the white parts lacking chlorophyll turn almost transparent and the dark green regions containing chlorophyll become semi-transparent with a green tint. This demonstrates that scattering increases the probability of photons being absorbed. This increase results from lengthening the path of photons within the leaf and a concomitant increase in the probability of each photon being intercepted by a pigment molecule.</p>
-<p>The surface of leaves varies among species and also through acclimation within a single genotype or even parts of an individual. Not only pubescence and whitish wax deposits on the surface of leaves affect reflectance, also the shine of the surface resulting from its smoothness affects how reflectance varies with the light incidence angle. Phenomena at the surface interface affect light passage in both directions, both in-going and out-going photons. This is probably why only leaves that receive light equally from both sides have similar surface and epidermal properties in adaxial and abaxial epidermes. Surface properties also affect wettability, accumulation of dirt and interactions with insects and microbes. In the case of flowers, not only pigments play a role in their colours. In some cases, very-small-scale surface properties contribute to enhancing their colours, or even creating them by interference effects. In general, colours generated through interference by micro-structure vary with the angle between a light beam and the surface, e.g., petal or leaf epidermis. We see this incidence-abgle-dependence as iridescence. For example, the colour of tulip flowers is based on pigments but intensified by structural features at the surface.</p>
-<p>For spectroscopic measurement of optical properties we need a light source, references, and a spectrometer. Measurements are relative to reference standards, e.g., white standard tiles with very high and known spectral reflectance across or waveelngths of interest. The light source must have a stable or consistent enough light output to allow comparable sequential measurements. As reference standards are used for each measurement, the spectrometer needs to be calibrated for wavelength and a linearization function available. However, an irradiance calibration is not needed. There are two approaches in common use to collect the reflected light, a probe with a narrow aperture angle, or an integrating sphere. With a probe, we measure only part the the reflected light, collinear with the incident light beam, but possibly at different angles to the surface of the leaf. When using an integrating sphere, the incident beam is most frequently is within 10 degrees of normal to the surface, and the integrating sphere collects radiation reflected in all directions. These to approaches provide measurements that are <strong>not comparable</strong>. Furthermore, the effect of physical surface properties is different.</p>
+<p>The surface of leaves varies among species and also through acclimation within a single genotype or even parts of an individual. Not only pubescence and whitish wax deposits on the surface of leaves affect reflectance, also the shine of the surface resulting from its smoothness affects how reflectance varies with the light incidence angle. Phenomena at the surface interface affect light passage in both directions, both in-going and out-going photons. This is probably why only leaves that receive light equally from both sides have similar surface and epidermal properties in adaxial and abaxial epidermes. Surface properties also affect wettability, accumulation of dirt and interactions with insects and microbes. In the case of flowers, not only pigments play a role in their colours. In some cases, very-small-scale surface properties contribute to enhancing their colours, or even creating them by interference effects. In general, colours generated through interference by micro-structure vary with the angle between a light beam and the surface, e.g., petal or leaf epidermis. We see this incidence-angle-dependence as iridescence. For example, the colour of tulip flowers is based on pigments but intensified by structural features at the surface.</p>
+<p>For spectroscopic measurement of optical properties we need a light source, references, and a spectrometer. Measurements are relative to reference standards, e.g., white standard tiles with very high and known spectral reflectance across all wavelengths of interest. The light source must have a stable and consistent enough light output to allow comparable sequential measurements. As reference standards are used for each measurement, the spectrometer needs to be calibrated for wavelength and a linearization function available. However, an irradiance calibration is not needed. There are two approaches in common use to collect the reflected light, a probe with a narrow aperture angle, or an integrating sphere. With a probe, we measure only part the the reflected light, collinear with the incident light beam, but possibly at different angles to the surface of the leaf. When using an integrating sphere, the incident beam is most frequently within 10 degrees of normal to the surface, and the integrating sphere collects radiation reflected in all directions. These two approaches provide measurements that are <strong>not comparable</strong>. Furthermore, the effect of physical surface properties on them is different.</p>
 <p>The best material for reference “tiles” is Spectralon, a fluoropolymer. It exhibits highly Lambertian behavior, and very high reflectance (<span class="math inline">&gt;0.95</span> from 250 nm to 2500 nm). Spectralon is fairly tolerant of handling, thus in this respect better than Barium sulphate in the form of compacted powder or sprays. Sets of Spectralon tiles with different <em>calibrated</em> reflectance values are commercially available, with tiles of different strengths having each a nearly constant reflectance across a wide range of wavelengths. Their drawback is that they are expensive, even at small sizes, and that must the handled carefully so as not to affect their calibrated reflection properties. For measuring low reflectance values accurately, the use of “grey” tiles of comparable reflectance to the object measured is recommended, as using a white tile assumes perfect linearity of the spectrometer’s response. Grey Spectralon tiles contain some carbon black to decrease reflectance. A set of four 1.25” tiles, white, and grayscale costs over <span class="math inline">1\,500</span>€ uncalibrated, and nearly <span class="math inline">2\,000</span>€ with a traceable calibrating (early 2025 prices).</p>
 <p>While for accurate (spectral) reflectance measurements we need reference tiles, for transmittance, in practice we normally block the light path or remove of the measured object out of the path, once again assuming linearity. A calibrated neutral density (ND) filter can play a similar role as a grey tile for reflectance. Absorptance, is calculated by difference from the measured spectral reflectance and transmittance. See chapter <a href="./optics.html"><em>Radiation-matter Interactions and Optics</em></a> for the theory and calculation details.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -482,7 +498,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>Less expensive than a Spectralon standard is a slab of commercial grade fluoropolymer PTFE (e.g., Teflon) &gt;6 mm thick. In fact, Spectralon is made of synthered pure PTFE powder, with enhanced scattering properties. Only high quality non-recycled PTFE is pure enough to be used as a white reference. The need for a thick slab of solid PTFE to subtitute for Spectralon is because it scatters less. The best approach is to use a Spectralon tile as a reference to measure the PTFE tile, i.e., transferring the calibration from a known-good standard to much cheaper working standards. All references must scatter the light they reflect, so their surface must look mat rather than shiny. To prevent specular reflections from the surface of PTFE slabs, their surface must be wet-sanded with a fine grit (e.g., 600) sand paper. A solid PTFE slab can be washed to clean it, and even sanded again if its surface gets marred.</p>
-<p>A substitute for a calibrated black tile can be based on black flocking as used on the inside of optical instruments, special black paint used for this same purpose, or special artist’s black paints. Paints must provide a fully mat, or scattering, surface once dry. As with PTFE slabs, the reflectance can be compared to that of calibrated black standard. Artists’ paint sold under the name of <em>Black 3.0</em> from <a href="https://culturehustle.com/">Culture Hustle</a> has very high absorbance in both visible and NIR regions of the spectrum (This supplier has provided me with spectral data showing that the blackness of Black 3.0 extends into the NIR.) <em>Black 4.0</em> also from Culture Hustle might also work as it is even less reflective in the visible, but I lack spectral data for it and its surface has been reported as fragile. <em>Musou Black</em> (available here)[https://www.musoublack.com/] is NIR reflective but might be useful in VIS. There is a compromise, as the more pigment a paint contains the more fragile the painted surface becomes. <em>Black 3.0</em> is non-toxic while <em>Musou black</em> is reported to have an obnoxious smell. As long as spectral reflectance is known, a grey reference can be used with additional simple calculations. White paints on the other hand, are in many cases unsuitable as they frequently contain fluorescent pigments to enhance their apparent reflectivity, thus modify the spectrum of the incident light that they reflect.</p>
+<p>A substitute for a calibrated black tile can be based on black flocking as used on the inside of optical instruments, special black paint used for this same purpose, or special artist’s black paints. Paints must provide a fully mat, or scattering, surface once dry. As with PTFE slabs, the reflectance can be compared to that of calibrated black standard. Artists’ paint sold under the name of <em>Black 3.0</em> from <a href="https://culturehustle.com/">Culture Hustle</a> has very high absorbance in both visible and NIR regions of the spectrum (This supplier has provided PJA with spectral data showing that the blackness of Black 3.0 extends into the NIR.) <em>Black 4.0</em> also from Culture Hustle might also work as it is even less reflective in the visible, but I lack spectral data for it and its surface has been reported as fragile. <em>Musou Black</em> (available here)[https://www.musoublack.com/] is NIR reflective but might be useful in VIS. There is a compromise, as the more pigment a paint contains the more fragile the painted surface becomes. <em>Black 3.0</em> is non-toxic while <em>Musou black</em> is reported to have an obnoxious smell. As long as spectral reflectance is known, a grey reference can be used with additional simple calculations. White paints on the other hand, are in many cases unsuitable as they frequently contain fluorescent pigments to enhance their apparent reflectivity, and thus modify the spectrum of the incident light that they reflect.</p>
 <p>Of course, using secondary standards will always degrade accuracy compared to using calibrated Spectralon tiles.</p>
 </div>
 </div>
@@ -552,6 +568,9 @@ Figure&nbsp;7.2: Fitted SPAD-502 callibration curve for three species of Malagas
 </section>
 <section id="monitoring-of-chloroplast-accumulation" class="level3" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="monitoring-of-chloroplast-accumulation"><span class="header-section-number">7.2.3</span> Monitoring of chloroplast accumulation</h3>
+<ul>
+<li>Pawel and Justyna (?)</li>
+</ul>
 </section>
 </section>
 <section id="fibre-optic-measurements" class="level2" data-number="7.3">
@@ -617,6 +636,445 @@ Figure&nbsp;7.2: Fitted SPAD-502 callibration curve for three species of Malagas
 <p>The existence of diel time courses of UV screening in leaves has been demonstrated for several plant species (Barnes et al.&nbsp;2016). Although these species seem rather an exception, the absence of such short term variations should always be checked. When these are observed, one should be careful before deducing an according rapid metabolisation of the responsible screening pigments.</p>
 <p>With its introduction the fluorescence method was coined as a method for the determination of epidermal UV transmittance or epidermal UV screening. However, although the majority of UV protection is achieved by UV absorbing compounds located in the epidermis of leaves (see, e.g., Burchard et al.&nbsp;2000), a contribution by compounds in the mesophyll cannot be excluded. This has become very obvious when investigating the screening properties of anthocyanins in Berberis thunbergii, a species in whose leaves the anthocyanins are only located in the mesophyll. Despite this location, screening of up to 50% of integrated solar irradiation was calculated (Nichelmann et al.&nbsp;2017). After growth at conditions strongly inducing the accumulation of screening pigments, leaves from which the epidermis was removed also showed reduced UV fluorescence excitation efficiency. Hence, also compounds located in vacuoles at the side of chloroplasts may provide light protection, albeit with a lower efficiency than compounds in epidermal vacuoles. Strong light scattering within leaves may one of the mechanisms by which this is achieved.</p>
 <p>When leaves with reduced chlorophyll contents are investigated, fluorescence excitation ratios can be affected as already highlighted above. This is especially obvious with fluorescence excitation in the green absorption gap of chlorophyll, but may at further reduced chlorophyll contents also affect UV excitation ratios. Since human vision is especially sensitive in the green spectral region, where anthocyanins have their absorption maximum, human eyes are well equipped to detect anthocyanins in leaves. Hence, if an instrument is indicating the presence of anthocyanins in leaves, which are obviously greenish, further checks of plausibility are strongly recommended.</p>
+</section>
+<section id="instruments-for-assessing-chlorophyll" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="instruments-for-assessing-chlorophyll"><span class="header-section-number">7.7</span> Instruments for assessing chlorophyll</h2>
+<section id="using-transmittance" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="using-transmittance"><span class="header-section-number">7.7.1</span> Using transmittance</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All <em>in vivo</em> measurements based on estimating leaf transmittance when expressed as concentrations are on a unit leaf area basis. Given that many variables in the growing environment affect specific leaf area (SLA) and leaf water content, differences in chlorophyll concentration between treatments depend strongly on the base of expression. <em>In practice, the direction of a response to a treatment can be opposite when concentrations are expressed per unit area and per unit dry-mass or per unit fresh-mass.</em></p>
+<p>Leaves have a heterogeneous internal structure with many gas-liquid and liquid-solid interfaces. These interfaces scatter and reflect light while travelling inside a leaf. This lengthens the path of photons within the leaf enhancing absorption by pigments and altering the relationship between absorbance and concentration compared to the same concentration of pigments in a homogeneous solution. Because of this, the methods described below, when used to estimate concentrations depend on a calibration that is affected by the anatomy, water content and even recent illumination of the leaf.</p>
+</div>
+</div>
+<p>Different implementations of the use <em>in-vivo</em> leaf transmittance to assess <em>chlorophyll concentration per unit leaf area</em> are available. Several instruments based on this approach are currently commercially available both from major well-known suppliers and from various smaller outfits selling low-cost clones. The main differences reside in the wavelengths used for excitation, the sampled area, and less importantly in the position of sensors relative to the light and near-infrared sources. The table below summarizes information about some well-known devices.</p>
+<table class="caption-top table">
+<caption>Instruments for the non-destructive measurement of chlorophyll concentration based on leaf transmittance. Target and reference wavelengths, full width half maximum (FWHM) given in parentheses when available. Qauntities are approximate concentrations or indexes with arbitrary units. The measured area is given in <span class="math inline">\mathrm{mm}^2</span> and in the case of the LSA-2050 can be reduced with a supplied mask for use on small leaves. Notes: <sup>*</sup>no user experience by author. <sup>+</sup>The SPAD-502 and SPAD-502 Plus, are identical except for the data logging available in the Plus version. The MPM-100 is available in customized versions based on LEDs emitting at non-standard wavelengths. The Walz LSA-2050 measures in addition to transmittance chlorophyll fluorescence <span class="math inline">Fv/Fm</span>.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Instrument</th>
+<th style="text-align: left;">Target</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LSA-2050</td>
+<td style="text-align: left;">715 (25)</td>
+<td style="text-align: left;">770 (30)</td>
+<td style="text-align: left;">conc.</td>
+<td style="text-align: left;">79/28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MPM-100</td>
+<td style="text-align: left;">720</td>
+<td style="text-align: left;">850</td>
+<td style="text-align: left;">conc.</td>
+<td style="text-align: left;">71</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MPM-100/S<sup>*</sup></td>
+<td style="text-align: left;">650</td>
+<td style="text-align: left;">940</td>
+<td style="text-align: left;">SPAD index</td>
+<td style="text-align: left;">71</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dualex 4</td>
+<td style="text-align: left;">720</td>
+<td style="text-align: left;">810?</td>
+<td style="text-align: left;">conc.</td>
+<td style="text-align: left;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MC-100<sup>*</sup></td>
+<td style="text-align: left;">650</td>
+<td style="text-align: left;">930</td>
+<td style="text-align: left;">conc.</td>
+<td style="text-align: left;">71</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CCM-200<sup>*</sup></td>
+<td style="text-align: left;">650</td>
+<td style="text-align: left;">930</td>
+<td style="text-align: left;">CCI index</td>
+<td style="text-align: left;">71</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SPAD-502<sup>+</sup></td>
+<td style="text-align: left;">650</td>
+<td style="text-align: left;">940</td>
+<td style="text-align: left;">SPAD index</td>
+<td style="text-align: left;">6</td>
+</tr>
+</tbody>
+</table>
+<p>The readings are expected not to depend on which side of the leaf is illuminated. In fact, the Dualex 4 and the LSA-2050, measure transmittance in opposite directions through leaves. The Dualex has the LEDs in the upper jaw and the sensor in the lower one, while the LSA-2050 locates them the other way around. Like the Dualex, the SPAD-502, MPM-100, MPM-100/S, CMM-200 and MC-100 have the LED in the upper jaw.</p>
+<p>The Walz LSA-2050 is aimed at scientific research, with built-in support for recalibration and corrections for different types of leaves. The Dualex 4 aims at being both useful in research and as a tool for crop management. The MPM-100 seems to target the same users as the Dualex 4. The CMM-200, MC-100 and specially the SPAD-502 are marketed as tools for crop management, although they are in practice also frequently used in plant research.</p>
+<p>The indexes are given by <span class="citation" data-cites="Parry2014">(<a href="references.html#ref-Parry2014" role="doc-biblioref">Parry et al. 2014</a>)</span> as:</p>
+<p><span class="math display">\mathrm{SPAD} = k \times \log \frac{T_{940}}{T_{650}} + C</span> where <span class="math inline">k</span> and <span class="math inline">C</span> are calibration constants.</p>
+<p><span class="math display">\mathrm{CCI} = \frac{T_{931}}{T_{653}}</span></p>
+<p>Even if the reading from the SPAD is a value rather similar to absorbance, it is not linearly related to concentration of chlorophyll in the measured leaves. <span class="citation" data-cites="Markwell1995">Markwell et al. (<a href="references.html#ref-Markwell1995" role="doc-biblioref">1995</a>)</span> proposed building a calibration curve to convert SPAD units into chlorophyll concentration by fitting a non-linear function of the form:</p>
+<p><span class="math display">y = 10^{x^k}</span> where <span class="math inline">x</span> is the reading in SPAD units and <span class="math inline">y</span> the concentration of chlorophyll per unit leaf area. The value of <span class="math inline">k</span> depends on the individual SPAD instrument and obviously also on the units in which the chlorophyll concentration is expressed. <span class="citation" data-cites="Markwell1995">Markwell et al. (<a href="references.html#ref-Markwell1995" role="doc-biblioref">1995</a>)</span> described the value of <span class="math inline">k</span> as more dependent on the instrument than on the plant species or genotype. However, differences in anatomy can be expected to affect the relationship between transmittance and concentration, independently of the instrument used. The advantage of using this function comapred to a polynomial or spline, is that it constrains the shape of the curve, which is important when calibrations are based on limited data.</p>
+</section>
+<section id="using-leaf-reflectance" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="using-leaf-reflectance"><span class="header-section-number">7.7.2</span> Using leaf reflectance</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All <em>in vivo</em> measurements based on estimating leaf reflectance when expressed as concentrations are on a unit leaf area basis. Given that many variables in the growing environment affect specific leaf area (SLA) and leaf water content, differences in chlorophyll concentration between treatments depend strongly on the base of expression. <em>In practice, the direction of a response to a treatment can be opposite when concentrations are expressed per unit area and per unit dry-mass or per unit fresh-mass.</em></p>
+<p>Leaves have a heterogeneous internal structure with many gas-liquid and liquid-solid interfaces. These interfaces scatter and reflect light while travelling inside a leaf. Thus, reflectance of leaves only in part depends on the properties of the leaf surface as reflection within the leaf contributes to the observed reflectance. The probability of photons being scattered back to the surface from within the leaf increases in the abscence of absorption by pigments. Given the role played by scattering, as for transmittance, indexes computed using two wavelengths are commonly used. The methods described below, when used to estimate concentrations depend on a calibration that can be affected by the anatomy, water content and even recent illumination of the leaf.</p>
+</div>
+</div>
+<p>The instruments described in <span class="citation" data-cites="tab-leaf-rfr">(<a href="references.html#ref-tab-leaf-rfr" role="doc-biblioref"><strong>tab-leaf-rfr?</strong></a>)</span> measure reflectance of leaves, each at a pair of wavelengths. These reflectance values can be combined into indexes that are correlated to specific plant conditions. These indexes are typically used in remote sensing but instruments for their measurement on individual leaves are also available. NDVI and NDGI mainly assess how green vegetation is while PRI assesses differences within the green region of the spectrum.</p>
+<table class="caption-top table">
+<caption>Instruments for the non-destructive measurement of indexes based on leaf reflectance. Excitation wavelengths, full width half maximum (FWHM) given in parentheses when available. Instruments names followed by <sup>*</sup> indicate that the author has no direct experience in their use.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Instrument</th>
+<th style="text-align: left;">Target</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: left;">Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PlantPen NDVI 310<sup>*</sup></td>
+<td style="text-align: left;">660</td>
+<td style="text-align: left;">770</td>
+<td style="text-align: left;">NDVI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PlantPen PRI 210<sup>*</sup></td>
+<td style="text-align: left;">531</td>
+<td style="text-align: left;">570</td>
+<td style="text-align: left;">PRI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PlantPen/NPen N 110<sup>*</sup></td>
+<td style="text-align: left;">560</td>
+<td style="text-align: left;">780</td>
+<td style="text-align: left;">NDGI</td>
+</tr>
+</tbody>
+</table>
+<p>A significant part of light “reflected” from a leaf is scattered light that has travelled inside the leaf and been partly absorbed by pigments, rather than reflected at the leaf surface. Thus, similarly to transmittance, reflectance at specific wavelengths, can inform about pigments within leaves. The PlantPen instruments from PSI, as well as remote sensing, RGB and spectral imaging of vegetation rely on this phenomenon.</p>
+<p>All of the instruments described in <span class="citation" data-cites="tab-leaf-rfr">(<a href="references.html#ref-tab-leaf-rfr" role="doc-biblioref"><strong>tab-leaf-rfr?</strong></a>)</span> return values that are indexes rather than concentrations. The indexes as implemented in these instruments are:</p>
+<p><span class="math display">\mathrm{PRI} = \frac{R_{531} – R_{570}}{R_{531} + R_{570}}</span></p>
+<p><span class="math display">\mathrm{NDVI} = \frac{R_{660} – R_{770}}{R_{660} + R_{770}}</span></p>
+<p><span class="math display">\mathrm{NDGI} = \frac{R_{560} – R_{780}}{R_{560} + R_{780}}</span> where <span class="math inline">R_\lambda</span> is reflectance on a band centred at a given wavelength in nanometres. The half maximum full width (HMFW) of the excitation is not given in the specifications. There are variations on the exact wavelengths and HMFW used for these indexes that are in wide use, and this must be taken into account when comparing measurements.</p>
+<p>There are indexes like NBI that combine different types of measurements, and these can be obtained only with the more advanced instruments, Dualex 4 and LSA-2050. The Nitrogen Balance Index (NBI) is obtained by dividing the chlorophyll concentration index (<span class="math inline">\approx \mu g\, cm^{-2}</span>) by the epidermal flavonols index, AFLAV (<span class="math inline">\approx A_{375}</span>) (using inconsistent units), to obtain a value sometimes described as “unitless”.</p>
+</section>
+</section>
+<section id="instruments-for-assessing-epidermal-transmittance" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="instruments-for-assessing-epidermal-transmittance"><span class="header-section-number">7.8</span> Instruments for assessing epidermal transmittance</h2>
+<section id="using-chlorophyll-fluorescence-as-reporter" class="level3" data-number="7.8.1">
+<h3 data-number="7.8.1" class="anchored" data-anchor-id="using-chlorophyll-fluorescence-as-reporter"><span class="header-section-number">7.8.1</span> Using chlorophyll fluorescence as reporter</h3>
+<p>Fluorescence is dependent on the number of absorbed photons, this also applies to chlorophyll. Thus, a measurement of fluorescence behind the epidermis, from the chlorophyll in the mesophyll, can be used to estimate the transmittance of the epidermis if it is possible to estimate the fluorescence yield that can be expected in the absence of the epidermis. One approximation is to use a wavelength that is known not to be absorbed by the epidermis to obtain a reference value of fluorescence. This value can be compared against fluorescence excited by other wavelengths where the epidermis can absorb.</p>
+<p>This the principle of the Dualex (dual excitation), similar to the earlier approach used by the UVA-PAM, a modified Walz Mini-PAM. The Dualex, however, measures the fluorescence on the opposite side of the leaf from the excitation, while the UVA-PAM and the Walz LSA-2050 measure the fluorescence from the side of the leaf where the excitation light impings. While the Dualex can be used only on thin leaves, the UVA-PAM and the LSA-2050 can be used on thicker objects like fruits. In the case of the LSA-2050 by removing the lower jaw, which contains the light sources for estimation of chlorophyll based on transmittance across the leaf. The UVA_PAM uses a single light guide, and does not measure transmittance. The MPM-100 senses the chlorophyll fluorescence on the same side of the leaf as the excitation impings. However the head has a maximum opening that limits its use to thin objects like leaves.</p>
+<p>The instruments described in <span class="citation" data-cites="tab-epidermis-tfr">(<a href="references.html#ref-tab-epidermis-tfr" role="doc-biblioref"><strong>tab-epidermis-tfr?</strong></a>)</span> use LEDs as light sources and photodiodes, in most cases filtered, as detectors. They are hand-held devices for non destructive measurements of thin leaves, and in some cases also suitable for thick leaves, fruits and stems. Walz’s Xe-PAM in the exception, it uses a filtered Xenon lamp as light source and a photo-multiplier tube as detector, is not hanheld and usually used in a laboratory.</p>
+<p>The instruemnts in <span class="citation" data-cites="tab-epidermis-tfr">(<a href="references.html#ref-tab-epidermis-tfr" role="doc-biblioref"><strong>tab-epidermis-tfr?</strong></a>)</span> rely on the excitation of chlorophyll fluorescence with its intensity used as reporter inside the leaf for estimation of the transmittance of the epidermis. All the Dualex instruments sense the fluorescence on the opposite side of the leaf to the excitation, while other instruments sense it on the same side. These instruments differ in the target and reference wavelengths used for assessing epidermal transmittance. The different transmittances depend on the accumulation of different metabolites: UV-B, phenolic acids, UV-A1, flavonoids, blue, non-photosynthetic-related carotenoids, green, anthocyanins. Either blue- or red-excited fluorescence is used as reference assuming that these wavelengths are minimally absorbed in the epidermis.</p>
+<table class="caption-top table">
+<caption>Instruments for the non-destructive measurement of epidermal transmittance using chlorophyll fluorescence as reporter. Excitation wavelengths, full width half maximum (FWHM) given in parentheses when available. Instruments names followed by <sup>*</sup> indicate that the author has no direct experience in their use. The MPM-100 is also available in customized versions based on LEDs emitting at non-standard wavelengths. The Walz LSA-2050 measures in addition to transmittance chlorophyll fluorescence Fv/Fm.</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Instrument</th>
+<th style="text-align: left;">UV-B</th>
+<th style="text-align: left;">UV-A1</th>
+<th style="text-align: left;">Blue</th>
+<th style="text-align: left;">Green</th>
+<th style="text-align: left;">Red<sup>**</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LSA-2050</td>
+<td style="text-align: left;">310 (15)</td>
+<td style="text-align: left;">365 (12)</td>
+<td style="text-align: left;">450 (14)</td>
+<td style="text-align: left;">530 (27)</td>
+<td style="text-align: left;">630 (24)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MPM-100</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">375</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">525</td>
+<td style="text-align: left;">660</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MPM-100/S<sup>*</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">375</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">525</td>
+<td style="text-align: left;">660</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dualex 4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">375</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">520</td>
+<td style="text-align: left;">630</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dualex 3 FLAV</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">375</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">630</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dualex 3 ANTH<sup>*</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">520</td>
+<td style="text-align: left;">630</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dualex 3 CA</td>
+<td style="text-align: left;">310</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">630</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UVA-PAM<sup>*</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">375</td>
+<td style="text-align: left;">470</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UVA-PAM/red<sup>*</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">375</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">630?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Xe-PAM<sup>*</sup></td>
+<td style="text-align: left;">314 (18)</td>
+<td style="text-align: left;">366 (32)</td>
+<td style="text-align: left;">475 (140)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="alternative-approaches" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="alternative-approaches"><span class="header-section-number">7.9</span> Alternative approaches</h2>
+<p>With a spectrometer it is possible to measure whole leaf spectral reflectance and transmittance, and from them derive absorptance over arbitrary wavelength ranges within the overlapping sensitivity range of the spectrometers and the wavelength range of the illumination. The measurement of epidermal transmittance with a spectrometer is limited to the few species in which the epidermis can be stripped from leaves and measured by itself.</p>
+<p>Ocean Optics used to make a portable spectrometer equipped with small integrating spheres in a clip-like arrangement with one sphere in each jaw. In its use one should be aware that two spheres collecting light and reflecting it back onto the leaf can result in erroneous readings as some light can travel back and forth across the leaf. This must be taken into consideration in the measuring protocol used, but it is not a design flaw.</p>
+<p>It must be mentioned here the <em>SpectraVue Leaf Spectrometer</em> from CID Bio-Science. This is a <strong>badly designed</strong> instrument that returns <strong>bad data</strong>. It should not be used in scientific research. First it suffers from extreme problems of dark noise and stray light, as can be seen in the images in the company’s own advertising. More importantly, because of the light source used and the configuration of the instrument’s entrance optics the sum of reflectance, transmittance and absorptance reported is very far from the theoretical value of one, and in practice much larger, i.e., the values reported as reflectance, transmittance and absorptance, are not these physical quantities! (The company has been aware of these design problems for several years, as they recognized when one of the authors (PJA) reported them several years ago in a exchange of several e-mails.)</p>
+</section>
+<section id="instruments" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="instruments"><span class="header-section-number">7.10</span> Instruments</h2>
+<section id="ergonomics-and-usability" class="level3" data-number="7.10.1">
+<h3 data-number="7.10.1" class="anchored" data-anchor-id="ergonomics-and-usability"><span class="header-section-number">7.10.1</span> Ergonomics and usability</h3>
+<p>The first impression of the <em>Walz LSA-2050</em> is that of a refined design and very well tested instrument, making it reliable, ergonomically easy to use and with very well thought out and clear firmware user interface. In some respects it benefits from Walz’s long experience in chlorophyll fluorescence measurements, as well as from the approaches used in the Dualex instruments. The <em>LSA-2050</em> does the measurements very fast. With the help from its good ergonomics, I was able to measure 15 leaves, each from a different plant, across four growth-chamber shelves in 4 min.</p>
+<p>The <em>MPM-100</em> is not really a clone of the Dualex in its measurement approach but attempts to be a replacement for it. At least the version I have used, has a display with very small text, even if in colour, and some significant rough edges in the firmware user interface. The most important being that when a measurement fails, the screen displays the results from the last good measurement, which is prone to cause mistakes in the manual recording of readings. Another quirk is that when the estimation of one parameter fails the MPM-100 returns no results, which is problematic. In contrast, the Dualex reports those values that could be measured. The MPM-100 is also slower than the Dualex as it averages several consecutive measurements.</p>
+<p>The <em>Dualex 4</em> is also a well designed instrument, a refinement of the earlier <em>Dualex 3</em> series. It has a couple weak points, though: the hinge is rather weak and with long-term use can develop play or even break. In the first case some misalignment of the two halves of the measurement head can occur. The Dualex has more options for encoding treatments than the Walz, making it more cumbersome, but more flexible in the tagging of logged data.</p>
+<p>The <em>SPAD-502</em> is no longer available in the simple version I have used. The <em>SPAD-502Plus</em> with data logging capabilities is also a well designed and easy to use instrument. I have not used any of the cheaper clones.</p>
+</section>
+<section id="cost-and-availability" class="level3" data-number="7.10.2">
+<h3 data-number="7.10.2" class="anchored" data-anchor-id="cost-and-availability"><span class="header-section-number">7.10.2</span> Cost and availability</h3>
+<table class="caption-top table">
+<caption>Instruments for the non-destructive measurement of leaf optical properties related to metabolite concentrations.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Instrument</th>
+<th style="text-align: left;">Handheld</th>
+<th style="text-align: left;">Make</th>
+<th style="text-align: left;">Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LSA-2050</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Walz</td>
+<td style="text-align: left;">2024-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MPM-100</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Opti-Sciences</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MPM-100/S</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Opti-Sciences</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dualex 4</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Force-A</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dualex 3 FLAV</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Force-A</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dualex 3 ANTH</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Force-A</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dualex 3 CA</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Force-A</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UVA-PAM</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Walz/</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UVA-PAM/red</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Walz/</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Xe-PAM</td>
+<td style="text-align: left;">n</td>
+<td style="text-align: left;">Walz</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SPAD-502</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Konica/Minolta</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PlantPen NDVI 310</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">PSI</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PlantPen PRI 210</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">PSI</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NPen N 110 (NDGI)</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">PSI</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MC-100</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Apogee</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CCM-200</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: left;">Opti-Sciences</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>The <em>SPAD-502Plus</em> sells for 2500-3000 €, with various clones available in the range 600-1500 €. The <em>Dualex 4</em>, now Metos from Pessl after the bankruptcy of Force-A, costs close to 4500 €, the <em>MPM-100</em> costs close to 3000 € and the <em>Walz LSA-2050</em> costs close to 6000 €. (These prices are approximate as they vary depending on supplier, import taxes, etc., as well as with accessories ordered and in some cases with the instrument configuration).</p>
+</section>
+</section>
+<section id="instrument-tests-and-intercomparisons" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="instrument-tests-and-intercomparisons"><span class="header-section-number">7.11</span> Instrument tests and intercomparisons</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Instruments compared</th>
+<th style="text-align: left;">Measured</th>
+<th style="text-align: left;">Variation from</th>
+<th style="text-align: left;">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SPAD-502, MC-100, Multiplex 3.6, atLEAF+</td>
+<td style="text-align: left;">Chl</td>
+<td style="text-align: left;">Nitrogen supply</td>
+<td style="text-align: left;"><span class="citation" data-cites="Padilla2018">Padilla et al. (<a href="references.html#ref-Padilla2018" role="doc-biblioref">2018</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SPAD-502, CCM-200, Dualex 4</td>
+<td style="text-align: left;">Chl</td>
+<td style="text-align: left;">Four crops</td>
+<td style="text-align: left;"><span class="citation" data-cites="Dong2019">Dong et al. (<a href="references.html#ref-Dong2019" role="doc-biblioref">2019</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SPAD-502, CCM-200</td>
+<td style="text-align: left;">Chl</td>
+<td style="text-align: left;">22 species</td>
+<td style="text-align: left;"><span class="citation" data-cites="Parry2014">Parry et al. (<a href="references.html#ref-Parry2014" role="doc-biblioref">2014</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SPAD-502, Dualex</td>
+<td style="text-align: left;">Chl + Flav</td>
+<td style="text-align: left;">Multiple</td>
+<td style="text-align: left;"><span class="citation" data-cites="Meyer2006">(<a href="references.html#ref-Meyer2006" role="doc-biblioref"><strong>Meyer2006?</strong></a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dualex 4, LSA-2050, UV-A-PAM</td>
+<td style="text-align: left;">Chl + Flav + Anth</td>
+<td style="text-align: left;">Irradiance</td>
+<td style="text-align: left;"><span class="citation" data-cites="Bilger2026">(<a href="references.html#ref-Bilger2026" role="doc-biblioref"><strong>Bilger2026?</strong></a>)</span></td>
+</tr>
+</tbody>
+</table>
 
 
 <!-- -->
@@ -629,10 +1087,10 @@ Aphalo, Pedro José. 1991. <span>“Interactions in Stomatal Function.”</span>
 Barnes, Paul W, Stephan D Flint, James R Slusser, Wei Gao, and Ronald J Ryel. 2008. <span>“Diurnal Changes in Epidermal UV Transmittance of Plants in Naturally High UV Environments.”</span> <em>Physiologia Plantarum</em> 133: 363–72. <a href="https://doi.org/10.1111/j.1399-3054.2008.01084.x">https://doi.org/10.1111/j.1399-3054.2008.01084.x</a>.
 </div>
 <div id="ref-Bilger2001" class="csl-entry" role="listitem">
-Bilger, W., T. Johnsen, and U. Schreiber. 2001. <span>“<span>UV</span>-Excited Chlorophyll Fluorescence as a Tool for the Assessment of <span>UV</span>-Protection by Epidermins of Plants.”</span> <em>Journal of Experimental Botany</em> 52: 2007–14. <a href="https://doi.org/10.1093/jexbot/52.363.2007">https://doi.org/10.1093/jexbot/52.363.2007</a>.
+Bilger, W., T. Johnsen, and U. Schreiber. 2001. <span>“<span>UV</span>-Excited Chlorophyll Fluorescence as a Tool for the Assessment of <span>UV</span>-Protection by Epidermins of Plants.”</span> <em>Journal of Experimental Botany</em> (reprint pedro (7036)) 52 (363): 2007–14. <a href="https://doi.org/10.1093/jexbot/52.363.2007">https://doi.org/10.1093/jexbot/52.363.2007</a>.
 </div>
 <div id="ref-Bilger1997" class="csl-entry" role="listitem">
-Bilger, W., M. Veit, L. Schreiber, and U. Schreiber. 1997. <span>“Measurement of Leaf Epidermal Transmittance of <span>UV</span> Radiation by Chlorophyll Fluorescence.”</span> <em>Physiologia Plantarum</em> 101 (4): 754–63. <a href="https://doi.org/10.1111/j.1399-3054.1997.tb01060.x">https://doi.org/10.1111/j.1399-3054.1997.tb01060.x</a>.
+Bilger, W., M. Veit, L. Schreiber, and U. Schreiber. 1997. <span>“Measurement of Leaf Epidermal Transmittance of <span>UV</span> Radiation by Chlorophyll Fluorescence.”</span> <em>Physiologia Plantarum</em> 101 (4): 754–63. <a href="https://doi.org/10.1034/j.1399-3054.1997.1010411.x">https://doi.org/10.1034/j.1399-3054.1997.1010411.x</a>.
 </div>
 <div id="ref-Bornman1988" class="csl-entry" role="listitem">
 Bornman, J. F., and T. C. Vogelmann. 1988. <span>“Penetration by Blue and <span>UV</span> Radiation Measured by Fiber Optics in Spruce and Fir Needles.”</span> <em>Physiologia Plantarum</em> 72 (4): 699–705. <a href="https://doi.org/10.1111/j.1399-3054.1988.tb06368.x">https://doi.org/10.1111/j.1399-3054.1988.tb06368.x</a>.
@@ -649,11 +1107,14 @@ Cen, Yan-Ping, and Janet F. Bornman. 1993. <span>“The Effect of Exposure to En
 <div id="ref-DeLucia1992" class="csl-entry" role="listitem">
 DeLucia, E. H., T. A. Day, and T. C. Vogelman. 1992. <span>“Ultraviolet-<span>B</span> and Visible Light Penetration into Needles of Two Species of Subalpine Conifers During Foliar Development.”</span> <em>Plant, Cell and Environment</em> 15 (8): 921–29. <a href="https://doi.org/10.1111/j.1365-3040.1992.tb01024.x">https://doi.org/10.1111/j.1365-3040.1992.tb01024.x</a>.
 </div>
+<div id="ref-Dong2019" class="csl-entry" role="listitem">
+Dong, Taifeng, Jiali Shang, Jing M. Chen, et al. 2019. <span>“Assessment of Portable Chlorophyll Meters for Measuring Crop Leaf Chlorophyll Concentration.”</span> <em>Remote Sensing</em> 11 (22): 2706. <a href="https://doi.org/10.3390/rs11222706">https://doi.org/10.3390/rs11222706</a>.
+</div>
 <div id="ref-Garcia-Pichel1995" class="csl-entry" role="listitem">
 García-Pichel, F. 1995. <span>“A Scalar Irradiance Fiber-Optic Microprobe for the Measurement of Ultraviolet Radiation at High Spatial Resolution.”</span> <em>Photochemistry and Photobiology</em> 61: 248–54. <a href="https://doi.org/10.1111/j.1751-1097.1995.tb03967.x">https://doi.org/10.1111/j.1751-1097.1995.tb03967.x</a>.
 </div>
 <div id="ref-Goulas2004" class="csl-entry" role="listitem">
-Goulas, Yves, Zoran G Cerovic, Aurélie Cartelat, and Ismaël Moya. 2004. <span>“Dualex: A New Instrument for Field Measurements of Epidermal Ultraviolet Absorbance by Chlorophyll Fluorescence.”</span> <em>Applied Optics</em> 43 (23): 4488–96. <a href="https://doi.org/10.1364/AO.43.004488">https://doi.org/10.1364/AO.43.004488</a>.
+Goulas, Yves, Zoran G Cerovic, Aurélie Cartelat, and Ismaël Moya. 2004. <span>“Dualex: A New Instrument for Field Measurements of Epidermal Ultraviolet Absorbance by Chlorophyll Fluorescence.”</span> <em>Applied Optics</em> 43 (23): 4488–96. <a href="https://doi.org/10.1364/ao.43.004488">https://doi.org/10.1364/ao.43.004488</a>.
 </div>
 <div id="ref-Gould2002" class="csl-entry" role="listitem">
 Gould, Kevin S, Thomas C Vogelmann, Tao Han, and Michael J Clearwater. 2002. <span>“Profiles of Photosynthesis Within Red and Green Leaves of .”</span> <em>Physiologia Plantarum</em> 116 (1): 127–33. <a href="https://doi.org/10.1034/j.1399-3054.2002.1160116.x">https://doi.org/10.1034/j.1399-3054.2002.1160116.x</a>.
@@ -671,7 +1132,7 @@ Johnsen, Sonke. 2011. <em>Optics of Life</em>. University Press Group Ltd.
 Karabourniotis, George, and Janet F. Bornman. 1999. <span>“Penetration of UV-a, UV-b and Blue Light Through the Leaf Trichome Layers of Two Xeromorphic Plants, Olive and Oak, Measured by Optical Fibre Microprobes.”</span> <em>Physiologia Plantarum</em> 105: 655–61. <a href="https://doi.org/10.1034/j.1399-3054.1999.105409.x">https://doi.org/10.1034/j.1399-3054.1999.105409.x</a>.
 </div>
 <div id="ref-Kolb2005" class="csl-entry" role="listitem">
-Kolb, C. A., U. Schreiber, R. Gademann, and E. E. Pfündel. 2005. <span>“UV-a Screening in Plants Determined Using a New Portable Fluorimeter.”</span> <em>Photosynthetica</em> 43 (3): 371–77. <a href="https://doi.org/10.1007/s11099-005-0061-7">https://doi.org/10.1007/s11099-005-0061-7</a>.
+Kolb, C. A., U. Schreiber, R. Gademann, and E. E. Pfündel. 2005. <span>“<span>UV-A</span> Screening in Plants Determined Using a New Portable Fluorimeter.”</span> <em>Photosynthetica</em> (reprint pedro (7169)) 43 (3): 371–77. <a href="https://doi.org/10.1007/s11099-005-0061-7">https://doi.org/10.1007/s11099-005-0061-7</a>.
 </div>
 <div id="ref-Lee2010" class="csl-entry" role="listitem">
 Lee, David. 2010. <em>Nature’s Palette: The Science of Plant Color</em>. University of Chicago Press.
@@ -679,8 +1140,11 @@ Lee, David. 2010. <em>Nature’s Palette: The Science of Plant Color</em>. Unive
 <div id="ref-Markwell1995" class="csl-entry" role="listitem">
 Markwell, John, John Osterman, and Jennifer Mitchell. 1995. <span>“Calibration of the Minolta <span>SPAD-502</span> Leaf Chlorophyll Meter.”</span> <em>Photosynthesis Research</em> 46 (3): 467–72. <a href="https://doi.org/10.1007/BF00032301">https://doi.org/10.1007/BF00032301</a>.
 </div>
+<div id="ref-Padilla2018" class="csl-entry" role="listitem">
+Padilla, Francisco M., Romina de Souza, M. Teresa Peña-Fleitas, Marisa Gallardo, Carmen Giménez, and Rodney B. Thompson. 2018. <span>“Different Responses of Various Chlorophyll Meters to Increasing Nitrogen Supply in Sweet Pepper.”</span> <em>Frontiers in Plant Science</em> 9 (November). <a href="https://doi.org/10.3389/fpls.2018.01752">https://doi.org/10.3389/fpls.2018.01752</a>.
+</div>
 <div id="ref-Parry2014" class="csl-entry" role="listitem">
-Parry, Christopher, J. Mark Blonquist, and Bruce Bugbee. 2014. <span>“In Situ Measurement of Leaf Chlorophyll Concentration: Analysis of the Optical/Absolute Relationship.”</span> <em>Plant, Cell &amp;Amp; Environment</em> 37 (11): 2508–20. <a href="https://doi.org/10.1111/pce.12324">https://doi.org/10.1111/pce.12324</a>.
+Parry, Christopher, J. Mark Blonquist, and Bruce Bugbee. 2014. <span>“In Situ Measurement of Leaf Chlorophyll Concentration: Analysis of the Optical/Absolute Relationship.”</span> <em>Plant, Cell and Environment</em> 37 (11): 2508–20. <a href="https://doi.org/10.1111/pce.12324">https://doi.org/10.1111/pce.12324</a>.
 </div>
 <div id="ref-Randriamanana2012" class="csl-entry" role="listitem">
 Randriamanana, T., F. Wang, T. Lehto, and P. J. Aphalo. 2012. <span>“Water Use Strategies of Seedlings of Three Malagasy <em>Adansonia</em> Species Under Drought.”</span> <em>South African Journal of Botany</em> 81: 61–70. <a href="https://doi.org/10.1016/j.sajb.2012.05.005">https://doi.org/10.1016/j.sajb.2012.05.005</a>.
@@ -1194,15 +1658,15 @@ Vogelmann, T. C., and L. O. Björn. 1984. <span>“Measurement of Light Gradient
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Whole leaves</span></span>
 <span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Spectroscpy</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Spectroscopy</span></span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>Spectroscopy of reflected radiation is the basis of optical remote sensing, in the case of drones, aeroplanes and satellites. Spectroscopy can be also a very useful measuring approach at the scale of individual plants and plant organs, including leaves. Reflectance, absorptance and transmittance of whole leaves and flower petals and sepals informs about combined effects of pigments and structural features.</span>
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>It is important to remember when studying plants that light scattering plays a very important role in determining optical properties <span class="co">[</span><span class="ot">@Lee2010</span><span class="co">]</span>. One possible way of quantifying scattering within leaves is to measure the time a very brief laser pulse takes to travel across a leaf, from adaxial to abaxial epidermis (L.O. Björn, personal communication). A way of visualizing the contribution to light scattering of the water-air interfaces within leaves is to infiltrate the air spaces with water in a vacuum chamber. If we infiltrate a variegated leaf, the white parts lacking chlorophyll turn almost transparent and the dark green regions containing chlorophyll become semi-transparent with a green tint. This demonstrates that scattering increases the probability of photons being absorbed. This increase results from lengthening the path of photons within the leaf and a concomitant increase in the probability of each photon being intercepted by a pigment molecule.</span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>The surface of leaves varies among species and also through acclimation within a single genotype or even parts of an individual. Not only pubescence and whitish wax deposits on the surface of leaves affect reflectance, also the shine of the surface resulting from its smoothness affects how reflectance varies with the light incidence angle. Phenomena at the surface interface affect light passage in both directions, both in-going and out-going photons. This is probably why only leaves that receive light equally from both sides have similar surface and epidermal properties in adaxial and abaxial epidermes. Surface properties also affect wettability, accumulation of dirt and interactions with insects and microbes. In the case of flowers, not only pigments play a role in their colours. In some cases, very-small-scale surface properties contribute to enhancing their colours, or even creating them by interference effects. In general, colours generated through interference by micro-structure vary with the angle between a light beam and the surface, e.g., petal or leaf epidermis. We see this incidence-abgle-dependence as iridescence. For example, the colour of tulip flowers is based on pigments but intensified by structural features at the surface.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>The surface of leaves varies among species and also through acclimation within a single genotype or even parts of an individual. Not only pubescence and whitish wax deposits on the surface of leaves affect reflectance, also the shine of the surface resulting from its smoothness affects how reflectance varies with the light incidence angle. Phenomena at the surface interface affect light passage in both directions, both in-going and out-going photons. This is probably why only leaves that receive light equally from both sides have similar surface and epidermal properties in adaxial and abaxial epidermes. Surface properties also affect wettability, accumulation of dirt and interactions with insects and microbes. In the case of flowers, not only pigments play a role in their colours. In some cases, very-small-scale surface properties contribute to enhancing their colours, or even creating them by interference effects. In general, colours generated through interference by micro-structure vary with the angle between a light beam and the surface, e.g., petal or leaf epidermis. We see this incidence-angle-dependence as iridescence. For example, the colour of tulip flowers is based on pigments but intensified by structural features at the surface.</span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>For spectroscopic measurement of optical properties we need a light source, references, and a spectrometer. Measurements are relative to reference standards, e.g., white standard tiles with very high and known spectral reflectance across or waveelngths of interest. The light source must have a stable or consistent enough light output to allow comparable sequential measurements. As reference standards are used for each measurement, the spectrometer needs to be calibrated for wavelength and a linearization function available. However, an irradiance calibration is not needed. There are two approaches in common use to collect the reflected light, a probe with a narrow aperture angle, or an integrating sphere. With a probe, we measure only part the the reflected light, collinear with the incident light beam, but possibly at different angles to the surface of the leaf. When using an integrating sphere, the incident beam is most frequently is within 10 degrees of normal to the surface, and the integrating sphere collects radiation reflected in all directions. These to approaches provide measurements that are **not comparable**. Furthermore, the effect of physical surface properties is different.</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>For spectroscopic measurement of optical properties we need a light source, references, and a spectrometer. Measurements are relative to reference standards, e.g., white standard tiles with very high and known spectral reflectance across all wavelengths of interest. The light source must have a stable and consistent enough light output to allow comparable sequential measurements. As reference standards are used for each measurement, the spectrometer needs to be calibrated for wavelength and a linearization function available. However, an irradiance calibration is not needed. There are two approaches in common use to collect the reflected light, a probe with a narrow aperture angle, or an integrating sphere. With a probe, we measure only part the the reflected light, collinear with the incident light beam, but possibly at different angles to the surface of the leaf. When using an integrating sphere, the incident beam is most frequently within 10 degrees of normal to the surface, and the integrating sphere collects radiation reflected in all directions. These two approaches provide measurements that are **not comparable**. Furthermore, the effect of physical surface properties on them is different.</span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>The best material for reference "tiles" is Spectralon, a fluoropolymer. It exhibits highly Lambertian behavior, and very high reflectance ($&gt;0.95$ from 250 nm to 2500 nm). Spectralon is fairly tolerant of handling, thus in this respect better than Barium sulphate in the form of compacted powder or sprays. Sets of Spectralon tiles with different _calibrated_ reflectance values are commercially available, with tiles of different strengths having each a nearly constant reflectance across a wide range of wavelengths. Their drawback is that they are expensive, even at small sizes, and that must the handled carefully so as not to affect their calibrated reflection properties. For measuring low reflectance values accurately, the use of "grey" tiles of comparable reflectance to the object measured is recommended, as using a white tile assumes perfect linearity of the spectrometer's response. Grey Spectralon tiles contain some carbon black to decrease reflectance. A set of four 1.25" tiles, white, and grayscale costs over $1\,500$€ uncalibrated, and nearly $2\,000$€ with a traceable calibrating (early 2025 prices).</span>
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
@@ -1213,7 +1677,7 @@ Vogelmann, T. C., and L. O. Björn. 1984. <span>“Measurement of Light Gradient
 <span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>Less expensive than a Spectralon standard is a slab of commercial grade fluoropolymer PTFE (e.g., Teflon) &gt;6 mm thick. In fact, Spectralon is made of synthered pure PTFE powder, with enhanced scattering properties. Only high quality non-recycled PTFE is pure enough to be used as a white reference. The need for a thick slab of solid PTFE to subtitute for Spectralon is because it scatters less. The best approach is to use a Spectralon tile as a reference to measure the PTFE tile, i.e., transferring the calibration from a known-good standard to much cheaper working standards. All references must scatter the light they reflect, so their surface must look mat rather than shiny. To prevent specular reflections from the surface of PTFE slabs, their surface must be wet-sanded with a fine grit (e.g., 600) sand paper. A solid PTFE slab can be washed to clean it, and even sanded again if its surface gets marred.</span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>A substitute for a calibrated black tile can be based on black flocking as used on the inside of optical instruments, special black paint used for this same purpose, or special artist's black paints. Paints must provide a fully mat, or scattering, surface once dry. As with PTFE slabs, the reflectance can be compared to that of calibrated black standard. Artists' paint sold under the name of _Black 3.0_  from [Culture Hustle](https://culturehustle.com/) has very high absorbance in both visible and NIR regions of the spectrum (This supplier has provided me with spectral data showing that the blackness of Black 3.0 extends into the NIR.) _Black 4.0_ also from Culture Hustle might also work as it is even less reflective in the visible, but I lack spectral data for it and its surface has been reported as fragile. _Musou Black_ (available here)[https://www.musoublack.com/] is NIR reflective but might be useful in VIS. There is a compromise, as the more pigment a paint contains the more fragile the painted surface becomes. _Black 3.0_ is non-toxic while _Musou black_ is reported to have an obnoxious smell. As long as spectral reflectance is known, a grey reference can be used with additional simple calculations. White paints on the other hand, are in many cases unsuitable as they frequently contain fluorescent pigments to enhance their apparent reflectivity, thus modify the spectrum of the incident light that they reflect.</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>A substitute for a calibrated black tile can be based on black flocking as used on the inside of optical instruments, special black paint used for this same purpose, or special artist's black paints. Paints must provide a fully mat, or scattering, surface once dry. As with PTFE slabs, the reflectance can be compared to that of calibrated black standard. Artists' paint sold under the name of _Black 3.0_  from [Culture Hustle](https://culturehustle.com/) has very high absorbance in both visible and NIR regions of the spectrum (This supplier has provided PJA with spectral data showing that the blackness of Black 3.0 extends into the NIR.) _Black 4.0_ also from Culture Hustle might also work as it is even less reflective in the visible, but I lack spectral data for it and its surface has been reported as fragile. _Musou Black_ (available here)[https://www.musoublack.com/] is NIR reflective but might be useful in VIS. There is a compromise, as the more pigment a paint contains the more fragile the painted surface becomes. _Black 3.0_ is non-toxic while _Musou black_ is reported to have an obnoxious smell. As long as spectral reflectance is known, a grey reference can be used with additional simple calculations. White paints on the other hand, are in many cases unsuitable as they frequently contain fluorescent pigments to enhance their apparent reflectivity, and thus modify the spectrum of the incident light that they reflect.</span>
 <span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Of course, using secondary standards will always degrade accuracy compared to using calibrated Spectralon tiles. </span>
 <span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1280,101 +1744,432 @@ Vogelmann, T. C., and L. O. Björn. 1984. <span>“Measurement of Light Gradient
 <span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monitoring of chloroplast accumulation</span></span>
 <span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fibre-optic measurements</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pawel and Justyna (?)</span>
 <span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>This method was introduced for visible light by @Vogelmann1984, and has been adapted for ultraviolet radiation by Vogelmann, Bornman and coworkers <span class="co">[</span><span class="ot">@Bornman1988; @DeLucia1992; @Cen1993</span><span class="co">]</span>. The method cannot be used for absolute measurements due to uncertainties about the local conditions and the acceptance angle at the fibre tip, but it has yielded valuable comparisons between attenuation of different wavelengths and the resulting depth profile of radiation within leaves. Fibre probes can be made less angle-dependent <span class="co">[</span><span class="ot">@Garcia-Pichel1995</span><span class="co">]</span>, but then become too bulky for measurements inside plant leaves.</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fibre-optic measurements</span></span>
 <span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>NEEDS DETAILS AND CHECKING OF ANY MORE RECENT USES.</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>This method was introduced for visible light by @Vogelmann1984, and has been adapted for ultraviolet radiation by Vogelmann, Bornman and coworkers <span class="co">[</span><span class="ot">@Bornman1988; @DeLucia1992; @Cen1993</span><span class="co">]</span>. The method cannot be used for absolute measurements due to uncertainties about the local conditions and the acceptance angle at the fibre tip, but it has yielded valuable comparisons between attenuation of different wavelengths and the resulting depth profile of radiation within leaves. Fibre probes can be made less angle-dependent <span class="co">[</span><span class="ot">@Garcia-Pichel1995</span><span class="co">]</span>, but then become too bulky for measurements inside plant leaves.</span>
 <span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chlorophyll fluorescence as a reporter of UV screening</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>NEEDS DETAILS AND CHECKING OF ANY MORE RECENT USES.</span>
 <span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="fu">### Old text (to merge below or delete)</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chlorophyll fluorescence as a reporter of UV screening</span></span>
 <span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>This method has so far only been employed by excitation and measurement at the leaf surface. It thus mainly monitors penetration of UV radiation through the epidermis into the chlorophyll-containing mesophyll, i.e. transmission through the epidermis. Chlorophyll fluorescence excited by blue light usually serves as a standard <span class="co">[</span><span class="ot">@Bilger1997; @Bilger2001</span><span class="co">]</span>, more recently excitation by red light has also been used to avoid interference by anthocyanins <span class="co">[</span><span class="ot">@Goulas2004</span><span class="co">]</span>. The principle has been used in commercial instruments that assess the UV <span class="co">[</span><span class="ot">absorbance</span><span class="co">]</span>{acronym-label="absorbance" acronym-form="singular+short"} of the epidermis <span class="co">[</span><span class="ot">@Kolb2005; @Goulas2004</span><span class="co">]</span>. The first portable instruments, *UVA-PAM* and *Dualex FLAV* used UV-A radiation for excitation rather than UV-B radiation, but now there is at least one instrument, *Dualex HCA*, measuring UV-B absorbance.</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Old text (to merge below or delete)</span></span>
 <span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>In principle, chlorophyll fluorescence could also be used for monitoring UV penetration in another way, by recording fluorescence in cross-sections of leaves, as has already been done for the penetration of visible light <span class="co">[</span><span class="ot">@Vogelmann2000; @Vogelmann2002; @Gould2002</span><span class="co">]</span>.</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>This method has so far only been employed by excitation and measurement at the leaf surface. It thus mainly monitors penetration of UV radiation through the epidermis into the chlorophyll-containing mesophyll, i.e. transmission through the epidermis. Chlorophyll fluorescence excited by blue light usually serves as a standard <span class="co">[</span><span class="ot">@Bilger1997; @Bilger2001</span><span class="co">]</span>, more recently excitation by red light has also been used to avoid interference by anthocyanins <span class="co">[</span><span class="ot">@Goulas2004</span><span class="co">]</span>. The principle has been used in commercial instruments that assess the UV <span class="co">[</span><span class="ot">absorbance</span><span class="co">]</span>{acronym-label="absorbance" acronym-form="singular+short"} of the epidermis <span class="co">[</span><span class="ot">@Kolb2005; @Goulas2004</span><span class="co">]</span>. The first portable instruments, *UVA-PAM* and *Dualex FLAV* used UV-A radiation for excitation rather than UV-B radiation, but now there is at least one instrument, *Dualex HCA*, measuring UV-B absorbance.</span>
 <span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>In principle, chlorophyll fluorescence could also be used for monitoring UV penetration in another way, by recording fluorescence in cross-sections of leaves, as has already been done for the penetration of visible light <span class="co">[</span><span class="ot">@Vogelmann2000; @Vogelmann2002; @Gould2002</span><span class="co">]</span>.</span>
 <span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>For protection against the detrimental action of UV radiation plants use UV absorbing compounds which are located primarily in external tissues such as the epidermis of leaves. There, they act as filters, or "screens", protecting the sensitive targets of UV radiation in the tissues below. The extent of this protection is strongly dependent on environmental conditions (Pescheck &amp; Bilger 2020), especially exposure to UV-B radiation, high light and low temperature, but also nitrogen deficiency and high CO2 concentrations enhance the synthesis and accumulation of UV screening compounds. In addition, screening may change during the development of leaves. Therefore, it is a priori unknown if two different leaves of the same species display also the same UV protection. However, for the reproducibility and interpretation of experiments testing the UV sensitivity of plants, it is important to know the amount of radiation absorbed in the epidermis before it can reach sensitive targets within the leaf. On the other hand, the effects of the environment on the accumulation of screening pigments can be much easier studied, when the latter can be determined in intact plant leaves.</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction</span></span>
 <span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>First determinations of the depth to which UV radiation penetrates into a leaf were accomplished using fine quartz fibres, which were slowly led through a leaf (Bornman and Vogelmann 1988). This technique is very elaborate, requiring, e.g., a precise measurement of the depth of penetration, such that only very few laboratories in the world were able to apply it. Furthermore, the technique is destructive and requires rather stable research objects. It cannot be used with mosses or algae.</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>For protection against the detrimental action of UV radiation plants use UV absorbing compounds which are located primarily in external tissues such as the epidermis of leaves. There, they act as filters, or "screens", protecting the sensitive targets of UV radiation in the tissues below. The extent of this protection is strongly dependent on environmental conditions (Pescheck &amp; Bilger 2020), especially exposure to UV-B radiation, high light and low temperature, but also nitrogen deficiency and high CO2 concentrations enhance the synthesis and accumulation of UV screening compounds. In addition, screening may change during the development of leaves. Therefore, it is a priori unknown if two different leaves of the same species display also the same UV protection. However, for the reproducibility and interpretation of experiments testing the UV sensitivity of plants, it is important to know the amount of radiation absorbed in the epidermis before it can reach sensitive targets within the leaf. On the other hand, the effects of the environment on the accumulation of screening pigments can be much easier studied, when the latter can be determined in intact plant leaves.</span>
 <span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>A method restricted to even fewer plants species in which large-enough pieces of epidermis can be peeled or dissected is to directly measure spectral transmittance of the isolated epidermis with a spectrometer (@BarnesXXX). This not only involves the in many cases difficult task of separating the epidermis, but also maintaining its integrity during the course of the measurements. </span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>First determinations of the depth to which UV radiation penetrates into a leaf were accomplished using fine quartz fibres, which were slowly led through a leaf (Bornman and Vogelmann 1988). This technique is very elaborate, requiring, e.g., a precise measurement of the depth of penetration, such that only very few laboratories in the world were able to apply it. Furthermore, the technique is destructive and requires rather stable research objects. It cannot be used with mosses or algae.</span>
 <span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>The drawbacks of these methods are avoided by a technique, which uses chlorophyll fluorescence excitation by a UV measuring beam (Bilger et al. 1997). Based on the measuring principle described below, several commercially available devices were developed, of which the Dualex Scientific originally manufactured by Force A (France) in various versions, has been the most popular in recent years. This technique takes advantage of the high transmittance of the epidermis in the visible region, including those of the chlorophyll fluorescence. </span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>A method restricted to even fewer plants species in which large-enough pieces of epidermis can be peeled or dissected is to directly measure spectral transmittance of the isolated epidermis with a spectrometer (@BarnesXXX). This not only involves the in many cases difficult task of separating the epidermis, but also maintaining its integrity during the course of the measurements. </span>
 <span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="fu">### UV-induced chlorophyll fluorescence as a reporter</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>The drawbacks of these methods are avoided by a technique, which uses chlorophyll fluorescence excitation by a UV measuring beam (Bilger et al. 1997). Based on the measuring principle described below, several commercially available devices were developed, of which the Dualex Scientific originally manufactured by Force A (France) in various versions, has been the most popular in recent years. This technique takes advantage of the high transmittance of the epidermis in the visible region, including those of the chlorophyll fluorescence. </span>
 <span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>The measuring principle of all devices basing on chlorophyll fluorescence excitation depends on two preconditions. First, the chlorophyll fluorescence intensity is proportional to the irradiance absorbed by the chlorophyll and a yield factor, which is dependent on the state of photosystem II. (To be correct, also the state of PS I may have a certain influence. This is, however, only relevant at high excitation densities, which are not used here. Therefore, PS I fluorescence contributes with a constant fraction to the fluorescence intensity.) As long as the electrons transferred by PSII to the primary acceptor QA do not accumulate there, the yield factor remains constant. This is the case when the light received by PS II is sufficiently weak. Then, the fluorescence intensity is dependent only on the number of quanta reaching the chloroplasts.</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="fu">### UV-induced chlorophyll fluorescence as a reporter</span></span>
 <span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>::: {label=fig-chl-bilger}</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>The measuring principle of all devices basing on chlorophyll fluorescence excitation depends on two preconditions. First, the chlorophyll fluorescence intensity is proportional to the irradiance absorbed by the chlorophyll and a yield factor, which is dependent on the state of photosystem II. (To be correct, also the state of PS I may have a certain influence. This is, however, only relevant at high excitation densities, which are not used here. Therefore, PS I fluorescence contributes with a constant fraction to the fluorescence intensity.) As long as the electrons transferred by PSII to the primary acceptor QA do not accumulate there, the yield factor remains constant. This is the case when the light received by PS II is sufficiently weak. Then, the fluorescence intensity is dependent only on the number of quanta reaching the chloroplasts.</span>
 <span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="al">![](./drafts-docx/chl-absorbance-normalized.png)</span>{width=80%}</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>::: {label=fig-chl-bilger}</span>
 <span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>Normalized absorbance spectra of chlorophyll _a_ (isolated from _Asterocapsa nidulans_ (N.L. Gardner) Komárek &amp; Komárková-Legnerová) and chlorophyll _b_ (purchased from Sigma-Aldrich) in 100% methanol.</span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>Second, chlorophyll must absorb UV radiation. This is indeed the case, as absorption spectra of chlorophyll _a_ and _b_ reveal (@fig-chl-bilger). Given these facts, the fluorescence yield of a (UV) measuring beam depends on the fraction of it that reaches chloroplasts. In higher plant leaves, the measuring beam must pass the epidermis, which is largely free of chloroplasts, before chlorophyll fluorescence can be excited. Hence, UV absorbing compounds located in epidermal vacuoles or cell walls will affect fluorescence emission. In lower plants, such as ferns and algae, UV absorbing compounds located in external cell walls can fulfil this function (e.g., Pescheck et al. 2014). Since fluorescence emission is also affected by independent factors such as the measuring geometry, the amount of chlorophyll in the leaves, scattering properties of the anatomical structure of the leaves, or in some measuring arrangements simply by the sample size, a reference beam is used which is similarly affected by these factors but not absorbed by screening pigments. In the early measuring apparatus, a blue reference beam was used (Bilger et al. 1997, 2001), since it was assumed that at this wavelength scattering within the leaf would be most similar to the scattering of the UV measuring beam. Later it was recognized that the fluorescence yield of a blue beam is dependent on the amount of the xanthophyll cycle carotenoids in the chloroplasts (Pfündel et al. 2007, Nichelmann et al. 2016), and a red reference beam is used nowadays. <span class="co">[</span><span class="ot">@fig-fluor-principle-bilger</span><span class="co">]</span> shows a scheme of the measuring principle as implemented in the UVA-PAM and Dualex. In the UVA-PAM, both excitation and measurement take place on the same epidermis, while in the Dualex, the fluorescence is detected on the opposite surface of the leaf. Both excitation beams have to pass the epidermis. UV absorbing pigments in the epidermis reduce the intensity of the UV beam, whereas this is not the case for the red reference beam. The latter as well as the emitted chlorophyll fluorescence will not be absorbed in the epidermis and be similarly scattered by it. </span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="al">![](./drafts-docx/chl-absorbance-normalized.png)</span>{width=80%}</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>Normalized absorbance spectra of chlorophyll _a_ (isolated from _Asterocapsa nidulans_ (N.L. Gardner) Komárek &amp; Komárková-Legnerová) and chlorophyll _b_ (purchased from Sigma-Aldrich) in 100% methanol.</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>::: {label=fig-fluor-principle-bilger}</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Second, chlorophyll must absorb UV radiation. This is indeed the case, as absorption spectra of chlorophyll _a_ and _b_ reveal (@fig-chl-bilger). Given these facts, the fluorescence yield of a (UV) measuring beam depends on the fraction of it that reaches chloroplasts. In higher plant leaves, the measuring beam must pass the epidermis, which is largely free of chloroplasts, before chlorophyll fluorescence can be excited. Hence, UV absorbing compounds located in epidermal vacuoles or cell walls will affect fluorescence emission. In lower plants, such as ferns and algae, UV absorbing compounds located in external cell walls can fulfil this function (e.g., Pescheck et al. 2014). Since fluorescence emission is also affected by independent factors such as the measuring geometry, the amount of chlorophyll in the leaves, scattering properties of the anatomical structure of the leaves, or in some measuring arrangements simply by the sample size, a reference beam is used which is similarly affected by these factors but not absorbed by screening pigments. In the early measuring apparatus, a blue reference beam was used (Bilger et al. 1997, 2001), since it was assumed that at this wavelength scattering within the leaf would be most similar to the scattering of the UV measuring beam. Later it was recognized that the fluorescence yield of a blue beam is dependent on the amount of the xanthophyll cycle carotenoids in the chloroplasts (Pfündel et al. 2007, Nichelmann et al. 2016), and a red reference beam is used nowadays. <span class="co">[</span><span class="ot">@fig-fluor-principle-bilger</span><span class="co">]</span> shows a scheme of the measuring principle as implemented in the UVA-PAM and Dualex. In the UVA-PAM, both excitation and measurement take place on the same epidermis, while in the Dualex, the fluorescence is detected on the opposite surface of the leaf. Both excitation beams have to pass the epidermis. UV absorbing pigments in the epidermis reduce the intensity of the UV beam, whereas this is not the case for the red reference beam. The latter as well as the emitted chlorophyll fluorescence will not be absorbed in the epidermis and be similarly scattered by it. </span>
 <span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="al">![](./drafts-docx/dulaex-et-al-principle-edited.png)</span>{width=80%}</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>::: {label=fig-fluor-principle-bilger}</span>
 <span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Schematic illustration of the measuring principle showing the cross section of the upper cells of a leaf. UV-absorbing compounds in the epidermis attenuate the UV excitation beam, whereas the red excitation beam and the chlorophyll fluorescence excited by the two beams are passing the epidermis unhindered. The ratio between UV- and red-excited fluorescence, F(UV) / F(R), is dependent on the amount of UV-absorbing compounds between the leaf surface and the chloroplasts.</span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>We need a whole-leaf cross section and to distinguish the approach currently shown, used in the UVA-PAM and the approach used in the Dualex with fluorescence assessed on the opposite side of the leaf. We need also to find-out what approch is used ib the LSA-2050, the MPM-100  and other readily available chlorophyll meters.</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="al">![](./drafts-docx/dulaex-et-al-principle-edited.png)</span>{width=80%}</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>Schematic illustration of the measuring principle showing the cross section of the upper cells of a leaf. UV-absorbing compounds in the epidermis attenuate the UV excitation beam, whereas the red excitation beam and the chlorophyll fluorescence excited by the two beams are passing the epidermis unhindered. The ratio between UV- and red-excited fluorescence, F(UV) / F(R), is dependent on the amount of UV-absorbing compounds between the leaf surface and the chloroplasts.</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### Calculating UV transmittance</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>We need a whole-leaf cross section and to distinguish the approach currently shown, used in the UVA-PAM and the approach used in the Dualex with fluorescence assessed on the opposite side of the leaf. We need also to find-out what approch is used ib the LSA-2050, the MPM-100  and other readily available chlorophyll meters.</span>
 <span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>The ratio of the UV-induced fluorescence to the red-induced fluorescence (F(UV) / F(R)) is also dependent on the intensities of the measuring beams. In order to calculate a transmittance of the UV beam, it is necessary to know F(UV) / F(R) induced in the absence of any absorbing pigments with identical measuring beam intensities. For most investigated plants, such a state cannot be reached easily. Therefore, various approaches have been used to come as close as possible to such a reference value for 100% transmittance. In our hands, Epipremnum aureum growing in a room far away from a window showed 100% UV-A transmittance and high UV-B transmittance on the adaxial leaf side. However, such high transmittances are extremely exceptional. In the vast majority of plant species, it would be necessary to remove the epidermis, which again is not possible in most plants. However, there exist species where at least the abaxial epidermis can be removed, and in some cases, this is even possible with the adaxial epidermis. Especially plants with succulent or at least slightly succulent leaves are amenable. To these plants belong many species from the family Crassulaceae, but also Vicia faba, Pisum sativum and Viola tricolor. Primary leaves from grasses, such as Hordeum vulgare, proved successful for peeling the epidermis. At growth conditions strongly inducing the formation of screening compounds, these may accumulate also in mesophyll cells (Agati et al. 2011). Therefore, shade acclimated leaves grown at optimal temperatures should be used for the 100% transmittance standard. </span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### Calculating UV transmittance</span></span>
 <span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>:::  {label=fig-fluo-ratios-bilger}</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>The ratio of the UV-induced fluorescence to the red-induced fluorescence (F(UV) / F(R)) is also dependent on the intensities of the measuring beams. In order to calculate a transmittance of the UV beam, it is necessary to know F(UV) / F(R) induced in the absence of any absorbing pigments with identical measuring beam intensities. For most investigated plants, such a state cannot be reached easily. Therefore, various approaches have been used to come as close as possible to such a reference value for 100% transmittance. In our hands, Epipremnum aureum growing in a room far away from a window showed 100% UV-A transmittance and high UV-B transmittance on the adaxial leaf side. However, such high transmittances are extremely exceptional. In the vast majority of plant species, it would be necessary to remove the epidermis, which again is not possible in most plants. However, there exist species where at least the abaxial epidermis can be removed, and in some cases, this is even possible with the adaxial epidermis. Especially plants with succulent or at least slightly succulent leaves are amenable. To these plants belong many species from the family Crassulaceae, but also Vicia faba, Pisum sativum and Viola tricolor. Primary leaves from grasses, such as Hordeum vulgare, proved successful for peeling the epidermis. At growth conditions strongly inducing the formation of screening compounds, these may accumulate also in mesophyll cells (Agati et al. 2011). Therefore, shade acclimated leaves grown at optimal temperatures should be used for the 100% transmittance standard. </span>
 <span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a><span class="al">![](./drafts-docx/fluorescence-exitation-ratios.png)</span>{width=100%}</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>:::  {label=fig-fluo-ratios-bilger}</span>
 <span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>Fluorescence excitation ratios determined with a Xe-PAM fluorometer (Walz, Effeltrich, Germany; Bilger et al. 1997) from 5 dicotyledoneous species (circles) and 6 varieties from 4 monocotyledoneous species grown from fall 2000 to spring 2001 at Ås, Norway, in a phytotron at 21°C (closed symbols) or at 9°C (open symbols). Excitation ratios using a UV-A beam (left panel) or a UV-B beam (right panel) with reference to a broad blue-green (BG) excitation beam were determined from abaxial sides of leaves before (x-axis) and after (y-axis) removal of the epidermis. The following species and varieties were used: Arabidopsis thaliana acc. Columbia, Pisum sativum subsp. sativum cv. axiphium, Brassica napus cv. Bambu, Brassica rapa cv. Agneta, Vicia faba cv. Witkiem, Hordeum vulgare cv. Frost, H. vulgare cv. Tyra, Secale cereale cv. Danko, S. cereale cv. Rogo, Triticale cv. Prego, Triticum aestivum cv. Bastian. Unpublished data by Mari Rolland and Wolfgang Bilger. </span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>When using Poaceae, one has to bear in mind that these often contain ferulic acid derivatives in their cell walls (Harris and Hartley 1980). Hence, removing the epidermis of species from this family may not remove all UV, especially UV-B, protection (<span class="co">[</span><span class="ot">see also @fig-fluo-ratios-bilger</span><span class="co">]</span>). Besides cell wall located absorbing compounds, also scattering properties of the mesophyll cells and potentially the chlorophyll a/b ratio may affect the F(UV) / F(R) ratio. These and other still unknown factors may contribute to the observed variability of the F(UV) /F(R) ratios from epidermis free leaves of different species, even when selecting leaves from non-inducing conditions. This is demonstrated in Fig. 3, which shows data for F(UV) / F(BG) ratios from epidermis free leaves of various species, plotted against the same ratios obtained with intact leaves. The lower the fluorescence ratio of the intact leaf was, the lower was also the ratio of the epidermis free leaf. In addition, also the maximal fluorescence ratios of the epidermis free leaves vary among the different species. Since one is forced quite often to use the reference ratio from a different species for the investigated species, some caution is necessary in the interpretation of the absolute transmittance values calculated. An uncertainty of about 10% transmittance due to an inappropriate reference value must be accepted. As an alternative, it is possible to use isolated chloroplasts as reference. In these cases, chloroplasts should be applied to a filter paper or a glass fibre filter in a concentration sufficiently high to mimic the chlorophyll content per leaf area in the investigated species (Bilger et al. 1997, Nichelmann et al. 2017). This approach is needed, e.g., when algae or ferns are investigated (Pescheck et al. 2014). </span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="al">![](./drafts-docx/fluorescence-exitation-ratios.png)</span>{width=100%}</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>Fluorescence excitation ratios determined with a Xe-PAM fluorometer (Walz, Effeltrich, Germany; Bilger et al. 1997) from 5 dicotyledoneous species (circles) and 6 varieties from 4 monocotyledoneous species grown from fall 2000 to spring 2001 at Ås, Norway, in a phytotron at 21°C (closed symbols) or at 9°C (open symbols). Excitation ratios using a UV-A beam (left panel) or a UV-B beam (right panel) with reference to a broad blue-green (BG) excitation beam were determined from abaxial sides of leaves before (x-axis) and after (y-axis) removal of the epidermis. The following species and varieties were used: Arabidopsis thaliana acc. Columbia, Pisum sativum subsp. sativum cv. axiphium, Brassica napus cv. Bambu, Brassica rapa cv. Agneta, Vicia faba cv. Witkiem, Hordeum vulgare cv. Frost, H. vulgare cv. Tyra, Secale cereale cv. Danko, S. cereale cv. Rogo, Triticale cv. Prego, Triticum aestivum cv. Bastian. Unpublished data by Mari Rolland and Wolfgang Bilger. </span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>In the most popular device, the Dualex Scientific instrument, the reference value of F(UV) / F(R) for 100% transmittance has been set at the factory and cannot be changed afterwards. Unfortunately, this value may vary among different instruments, as evidenced recently in an instrument intercomparison. </span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>Advantages of the non-destructive measurements</span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Using the available portable devices rapid measurements are possible characterizing the photoprotection of leaves as well as their content of protective compounds. For the former trait, the expression as transmittance of the protective tissue/layer is most helpful. Transmittance characterizes the percentage of incident damaging radiation that reaches the chloroplasts. These contain one the most prominent targets of UV-A and UV-B radiation, the water-splitting complex of PS II (Hakala et al. 2005). With this information, it is even possible to compare after an experimental UV exposure the inflicted damage with the amount of radiation reaching the target. This calculation has been used to show that the basic sensitivity of PS II was not different in macroalgae species containing or lacking screening compounds in their cell walls (Pescheck et al. 2014). </span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>From transmittance, absorbance can be calculated, which according to the Lambert-Beer law is proportional to the concentration of absorbing compounds. Hence, what has been called the log fluorescence excitation ratio (log FER; Goulas et al 2004) can be used as a proxy for the amount of UV absorbing pigments in the epidermis. Since the Dualex instrument uses an LED emitting in the UV-A spectral region, where preferentially flavonoids are absorbing, the absorbance parameter calculated by the instrument at this wavelength was termed “Flav value”. However, one should be aware that each UV-absorbing compound adds to the total screening according its own extinction coefficient, which may strongly vary among different compounds. Therefore, the true concentration of specific compounds in the protective layer cannot be simply inferred without further wet chemical analysis. Although usage of the term Flav suggests that (mainly) flavonoids may be responsible for the screening at 365-375 nm, it is also possible that solely hydroxycinnamic acids are used as photoprotectants in this spectral region. For sunflower (Helianthus annuus L.) it was shown that the leaves contain only trace amounts of flavonoids and the screening is solely due to chlorogenic acid and its derivatives (Stelzner et al. 2019), which have their spectral absorbance maximum at 330 nm and display only residual absorption around 365 nm. Accordingly, these compounds must have a much higher concentration to reach the same UV-A protection than a flavonoid such as, e.g., quercetin derivatives. </span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>When using Poaceae, one has to bear in mind that these often contain ferulic acid derivatives in their cell walls (Harris and Hartley 1980). Hence, removing the epidermis of species from this family may not remove all UV, especially UV-B, protection (<span class="co">[</span><span class="ot">see also @fig-fluo-ratios-bilger</span><span class="co">]</span>). Besides cell wall located absorbing compounds, also scattering properties of the mesophyll cells and potentially the chlorophyll a/b ratio may affect the F(UV) / F(R) ratio. These and other still unknown factors may contribute to the observed variability of the F(UV) /F(R) ratios from epidermis free leaves of different species, even when selecting leaves from non-inducing conditions. This is demonstrated in Fig. 3, which shows data for F(UV) / F(BG) ratios from epidermis free leaves of various species, plotted against the same ratios obtained with intact leaves. The lower the fluorescence ratio of the intact leaf was, the lower was also the ratio of the epidermis free leaf. In addition, also the maximal fluorescence ratios of the epidermis free leaves vary among the different species. Since one is forced quite often to use the reference ratio from a different species for the investigated species, some caution is necessary in the interpretation of the absolute transmittance values calculated. An uncertainty of about 10% transmittance due to an inappropriate reference value must be accepted. As an alternative, it is possible to use isolated chloroplasts as reference. In these cases, chloroplasts should be applied to a filter paper or a glass fibre filter in a concentration sufficiently high to mimic the chlorophyll content per leaf area in the investigated species (Bilger et al. 1997, Nichelmann et al. 2017). This approach is needed, e.g., when algae or ferns are investigated (Pescheck et al. 2014). </span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>In the most popular device, the Dualex Scientific instrument, the reference value of F(UV) / F(R) for 100% transmittance has been set at the factory and cannot be changed afterwards. Unfortunately, this value may vary among different instruments, as evidenced recently in an instrument intercomparison. </span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>Advantages of the non-destructive measurements</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>Using the available portable devices rapid measurements are possible characterizing the photoprotection of leaves as well as their content of protective compounds. For the former trait, the expression as transmittance of the protective tissue/layer is most helpful. Transmittance characterizes the percentage of incident damaging radiation that reaches the chloroplasts. These contain one the most prominent targets of UV-A and UV-B radiation, the water-splitting complex of PS II (Hakala et al. 2005). With this information, it is even possible to compare after an experimental UV exposure the inflicted damage with the amount of radiation reaching the target. This calculation has been used to show that the basic sensitivity of PS II was not different in macroalgae species containing or lacking screening compounds in their cell walls (Pescheck et al. 2014). </span>
 <span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>The non-destructive nature of the measurements allows the repeated observation the identical leaf. This allows following the acclimation kinetics of leaves after a change in specific environmental conditions. This is extremely helpful in investigating signal transduction pathways and the evaluation of various environmental conditions, which may trigger the biosynthesis, and accumulation of protective compounds. </span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>From transmittance, absorbance can be calculated, which according to the Lambert-Beer law is proportional to the concentration of absorbing compounds. Hence, what has been called the log fluorescence excitation ratio (log FER; Goulas et al 2004) can be used as a proxy for the amount of UV absorbing pigments in the epidermis. Since the Dualex instrument uses an LED emitting in the UV-A spectral region, where preferentially flavonoids are absorbing, the absorbance parameter calculated by the instrument at this wavelength was termed “Flav value”. However, one should be aware that each UV-absorbing compound adds to the total screening according its own extinction coefficient, which may strongly vary among different compounds. Therefore, the true concentration of specific compounds in the protective layer cannot be simply inferred without further wet chemical analysis. Although usage of the term Flav suggests that (mainly) flavonoids may be responsible for the screening at 365-375 nm, it is also possible that solely hydroxycinnamic acids are used as photoprotectants in this spectral region. For sunflower (Helianthus annuus L.) it was shown that the leaves contain only trace amounts of flavonoids and the screening is solely due to chlorogenic acid and its derivatives (Stelzner et al. 2019), which have their spectral absorbance maximum at 330 nm and display only residual absorption around 365 nm. Accordingly, these compounds must have a much higher concentration to reach the same UV-A protection than a flavonoid such as, e.g., quercetin derivatives. </span>
 <span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>The ease of measurements and the portability of the devices allows extensive measurements under natural conditions. E.g., the UV-A-PAM-fluorometer (Gademann Instruments, Germany) has been used to follow protection against natural gradients in UV-B radiation (Barnes et al. 2015). Solanki et al. (2019) observed the time course of UV screening over a year in leaves of Vaccinium vitis-ideae. </span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>The non-destructive nature of the measurements allows the repeated observation the identical leaf. This allows following the acclimation kinetics of leaves after a change in specific environmental conditions. This is extremely helpful in investigating signal transduction pathways and the evaluation of various environmental conditions, which may trigger the biosynthesis, and accumulation of protective compounds. </span>
 <span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="fu">## Additional parameters</span></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>The ease of measurements and the portability of the devices allows extensive measurements under natural conditions. E.g., the UV-A-PAM-fluorometer (Gademann Instruments, Germany) has been used to follow protection against natural gradients in UV-B radiation (Barnes et al. 2015). Solanki et al. (2019) observed the time course of UV screening over a year in leaves of Vaccinium vitis-ideae. </span>
 <span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>The measuring wavelength can be adjusted to the absorption spectra of the compounds of interest. With the advent of the availability of LEDs emitting in the UV-B, it has become possible manufacturing instruments capable to measure epidermal transmittance around 310 nm. At this wavelength region, both, hydroxycinnamic acid derivatives and flavonoids absorb radiation. Furthermore, at this wavelength the damaging potential of UV radiation is even larger and the determination of protection is closer to the most important stress factor. </span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="fu">## Additional parameters</span></span>
 <span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>When using green light for the measuring beam, anthocyanins can be addressed, which have an absorption maximum in this wavelength region and which serve as photoprotectants in the PAR (Gould 2004, Nichelmann et al. 2017, Pfündel et al. 2007). Applying this rationale, the Dualex Scientific instrument provides also an anthocyanin index. However, this index needs to be considered with caution. Absorptance of a leaf in the green spectral region is much lower than in the red region. Therefore, decreases in chlorophyll content will first affect absorptance and, hence, fluorescence excitation, in the green region, before the absorptance of the red reference beam is affected. With decreasing chlorophyll content, the excitation ratio F(green) / F(red) will decline even in the absence of anthocyanins (see Nichelmann et al. 2017). In principle, the same considerations should apply also for the UV spectral region, since there absorbance of chlorophyll is lower than at the absorbance peak in the red. However, the difference in absorbance to the red region is much lower for UV than for green light. Therefore, F(UV) / F(red) should be much less affected by changes in chlorophyll content than F(green) / F(red). </span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>The measuring wavelength can be adjusted to the absorption spectra of the compounds of interest. With the advent of the availability of LEDs emitting in the UV-B, it has become possible manufacturing instruments capable to measure epidermal transmittance around 310 nm. At this wavelength region, both, hydroxycinnamic acid derivatives and flavonoids absorb radiation. Furthermore, at this wavelength the damaging potential of UV radiation is even larger and the determination of protection is closer to the most important stress factor. </span>
 <span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>In the blue wavelength region, carotenoids located in the pigment protein complexes in the thylakoid membrane of the chloroplasts compete with chlorophyll for excitation energy. Whereas lutein and neoxanthin transfer almost 100% the absorbed excitation to chlorophyll, -carotene is much less efficient (around 30%) and violaxanthin and its de-epoxidation products antheraxanthin and zeaxanthin are entirely unable to transfer energy to chlorophyll (Caffari et al. 2001). The latter pigments show an enhanced content in chloroplasts relative to chlorophyll when plants are growing at high light (Thayer &amp; Björkman 1989). This enhancement can be as high as a factor of 5, when plants grown in full sunlight are compared to plants grown in deep shade. Hence, the relative absorption of blue light by the pigments of the violaxanthin cycle and the according loss of excitation energy for chlorophyll will increase in high light grown leaves. Accordingly, the relative excitation efficiency at around 470 nm can be used as an indicator of the pool size of the violaxanthin cycle pigments (Nichelmann et al 2016). Recently, it has been shown in leaves of rocket (Diplotaxis tenuifolia), that the excitation efficiency at 470 nm follows also the dynamic changes in carotenoid content in single leaves when these are exposed to changes in irradiance (Khoramizadeh et al. 2024). It needs to pointed out, that at this wavelength range only a relative excitation efficiency can be determined, which cannot be described in terms of transmittance. Nevertheless, comparison to the maximal excitation efficiency observed in shade acclimated leaves is possible and relative trends can be deduced. With the LSA-2050 device (Walz GmbH, Germany), which contains also an LED for excitation at 450 nm, such measurements have become recently easily possible. </span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>When using green light for the measuring beam, anthocyanins can be addressed, which have an absorption maximum in this wavelength region and which serve as photoprotectants in the PAR (Gould 2004, Nichelmann et al. 2017, Pfündel et al. 2007). Applying this rationale, the Dualex Scientific instrument provides also an anthocyanin index. However, this index needs to be considered with caution. Absorptance of a leaf in the green spectral region is much lower than in the red region. Therefore, decreases in chlorophyll content will first affect absorptance and, hence, fluorescence excitation, in the green region, before the absorptance of the red reference beam is affected. With decreasing chlorophyll content, the excitation ratio F(green) / F(red) will decline even in the absence of anthocyanins (see Nichelmann et al. 2017). In principle, the same considerations should apply also for the UV spectral region, since there absorbance of chlorophyll is lower than at the absorbance peak in the red. However, the difference in absorbance to the red region is much lower for UV than for green light. Therefore, F(UV) / F(red) should be much less affected by changes in chlorophyll content than F(green) / F(red). </span>
 <span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>In addition to the pigment detection using chlorophyll fluorescence, the available devices use also measurements of transmittance through the leaves to quantify chlorophyll content. For this purpose, a wavelength absorbed by chlorophyll and one that is too long to be absorbed by chlorophyll are used. The latter serves as a reference, allowing correction for non-specific scattering properties of the leaves. It has proven advantageous to use a wavelength at the long wavelength tail of the chlorophyll absorption spectrum, which enhances the linear range of the relationship between absorbance and pigment content (Cerovic et al. 2012). </span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>In the blue wavelength region, carotenoids located in the pigment protein complexes in the thylakoid membrane of the chloroplasts compete with chlorophyll for excitation energy. Whereas lutein and neoxanthin transfer almost 100% the absorbed excitation to chlorophyll, -carotene is much less efficient (around 30%) and violaxanthin and its de-epoxidation products antheraxanthin and zeaxanthin are entirely unable to transfer energy to chlorophyll (Caffari et al. 2001). The latter pigments show an enhanced content in chloroplasts relative to chlorophyll when plants are growing at high light (Thayer &amp; Björkman 1989). This enhancement can be as high as a factor of 5, when plants grown in full sunlight are compared to plants grown in deep shade. Hence, the relative absorption of blue light by the pigments of the violaxanthin cycle and the according loss of excitation energy for chlorophyll will increase in high light grown leaves. Accordingly, the relative excitation efficiency at around 470 nm can be used as an indicator of the pool size of the violaxanthin cycle pigments (Nichelmann et al 2016). Recently, it has been shown in leaves of rocket (Diplotaxis tenuifolia), that the excitation efficiency at 470 nm follows also the dynamic changes in carotenoid content in single leaves when these are exposed to changes in irradiance (Khoramizadeh et al. 2024). It needs to pointed out, that at this wavelength range only a relative excitation efficiency can be determined, which cannot be described in terms of transmittance. Nevertheless, comparison to the maximal excitation efficiency observed in shade acclimated leaves is possible and relative trends can be deduced. With the LSA-2050 device (Walz GmbH, Germany), which contains also an LED for excitation at 450 nm, such measurements have become recently easily possible. </span>
 <span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>A further helpful information for field measurements is the use of a GPS sensor for locating the measured leaf. Using this technique allowed to map the pigment contents of grapevine leaves and use this information to draw a map of nutrient requirements in the respective vineyard (Cerovic….) . </span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>In addition to the pigment detection using chlorophyll fluorescence, the available devices use also measurements of transmittance through the leaves to quantify chlorophyll content. For this purpose, a wavelength absorbed by chlorophyll and one that is too long to be absorbed by chlorophyll are used. The latter serves as a reference, allowing correction for non-specific scattering properties of the leaves. It has proven advantageous to use a wavelength at the long wavelength tail of the chlorophyll absorption spectrum, which enhances the linear range of the relationship between absorbance and pigment content (Cerovic et al. 2012). </span>
 <span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>Recently, also sensors for leaf orientation and angle were included in a device, which combined with data on the date and location makes it possible to deduce the relative sun exposure of the investigated leaf. </span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>A further helpful information for field measurements is the use of a GPS sensor for locating the measured leaf. Using this technique allowed to map the pigment contents of grapevine leaves and use this information to draw a map of nutrient requirements in the respective vineyard (Cerovic….) . </span>
 <span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="fu">## Precautions and pitfalls</span></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>Recently, also sensors for leaf orientation and angle were included in a device, which combined with data on the date and location makes it possible to deduce the relative sun exposure of the investigated leaf. </span>
 <span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>When using chlorophyll fluorescence for assessing the function of PS II, the short-term pre-illumination history and the simultaneous irradiation of the leaf are of utmost importance. For the measurement of epidermal transmittance, necessary precautions are much less severe. Since after darkening of a leaf rapid changes of the fluorescence are finished after a few minutes, measurements with devices, which use a sequential irradiation of the sample with the different measuring beams, can be accomplished without problem 2 min after darkening a leaf. With devices using quasi simultaneous irradiation with all measuring beams such as the Dualex instruments, in principle no dark acclimation of the leaves is needed. This is specifically useful in field investigations. </span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="fu">## Precautions and pitfalls</span></span>
 <span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>As is always the case with measuring instruments, calibration of the used devices should be checked. Ideally the device should be sent to the manufacturer in regular time intervals. For a control when a calibration at the manufacturer is needed again, standards can be used to compare the stability of the signals with time. A physical standard could be a plastic foil with fluorescence excitation and emission spectra similar to those of chlorophyll. Helpful are also plants grown under standardized conditions. For example, Vicia faba, or any other plant species from which the epidermis can be easily peeled, grown under low irradiance will provide a quite stable reference system. Intercomparison among several devices in regular time intervals is also helpful to detect any changes in the performance of an instrument. </span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>When using chlorophyll fluorescence for assessing the function of PS II, the short-term pre-illumination history and the simultaneous irradiation of the leaf are of utmost importance. For the measurement of epidermal transmittance, necessary precautions are much less severe. Since after darkening of a leaf rapid changes of the fluorescence are finished after a few minutes, measurements with devices, which use a sequential irradiation of the sample with the different measuring beams, can be accomplished without problem 2 min after darkening a leaf. With devices using quasi simultaneous irradiation with all measuring beams such as the Dualex instruments, in principle no dark acclimation of the leaves is needed. This is specifically useful in field investigations. </span>
 <span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>The existence of diel time courses of UV screening in leaves has been demonstrated for several plant species (Barnes et al. 2016). Although these species seem rather an exception, the absence of such short term variations should always be checked. When these are observed, one should be careful before deducing an according rapid metabolisation of the responsible screening pigments. </span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>As is always the case with measuring instruments, calibration of the used devices should be checked. Ideally the device should be sent to the manufacturer in regular time intervals. For a control when a calibration at the manufacturer is needed again, standards can be used to compare the stability of the signals with time. A physical standard could be a plastic foil with fluorescence excitation and emission spectra similar to those of chlorophyll. Helpful are also plants grown under standardized conditions. For example, Vicia faba, or any other plant species from which the epidermis can be easily peeled, grown under low irradiance will provide a quite stable reference system. Intercomparison among several devices in regular time intervals is also helpful to detect any changes in the performance of an instrument. </span>
 <span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>With its introduction the fluorescence method was coined as a method for the determination of epidermal UV transmittance or epidermal UV screening. However, although the majority of UV protection is achieved by UV absorbing compounds located in the epidermis of leaves (see, e.g., Burchard et al. 2000), a contribution by compounds in the mesophyll cannot be excluded. This has become very obvious when investigating the screening properties of anthocyanins in Berberis thunbergii, a species in whose leaves the anthocyanins are only located in the mesophyll. Despite this location, screening of up to 50% of integrated solar irradiation was calculated (Nichelmann et al. 2017). After growth at conditions strongly inducing the accumulation of screening pigments, leaves from which the epidermis was removed also showed reduced UV fluorescence excitation efficiency. Hence, also compounds located in vacuoles at the side of chloroplasts may provide light protection, albeit with a lower efficiency than compounds in epidermal vacuoles. Strong light scattering within leaves may one of the mechanisms by which this is achieved. </span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>The existence of diel time courses of UV screening in leaves has been demonstrated for several plant species (Barnes et al. 2016). Although these species seem rather an exception, the absence of such short term variations should always be checked. When these are observed, one should be careful before deducing an according rapid metabolisation of the responsible screening pigments. </span>
 <span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>When leaves with reduced chlorophyll contents are investigated, fluorescence excitation ratios can be affected as already highlighted above. This is especially obvious with fluorescence excitation in the green absorption gap of chlorophyll, but may at further reduced chlorophyll contents also affect UV excitation ratios. Since human vision is especially sensitive in the green spectral region, where anthocyanins have their absorption maximum, human eyes are well equipped to detect anthocyanins in leaves. Hence, if an instrument is indicating the presence of anthocyanins in leaves, which are obviously greenish, further checks of plausibility are strongly recommended. </span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>With its introduction the fluorescence method was coined as a method for the determination of epidermal UV transmittance or epidermal UV screening. However, although the majority of UV protection is achieved by UV absorbing compounds located in the epidermis of leaves (see, e.g., Burchard et al. 2000), a contribution by compounds in the mesophyll cannot be excluded. This has become very obvious when investigating the screening properties of anthocyanins in Berberis thunbergii, a species in whose leaves the anthocyanins are only located in the mesophyll. Despite this location, screening of up to 50% of integrated solar irradiation was calculated (Nichelmann et al. 2017). After growth at conditions strongly inducing the accumulation of screening pigments, leaves from which the epidermis was removed also showed reduced UV fluorescence excitation efficiency. Hence, also compounds located in vacuoles at the side of chloroplasts may provide light protection, albeit with a lower efficiency than compounds in epidermal vacuoles. Strong light scattering within leaves may one of the mechanisms by which this is achieved. </span>
 <span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>When leaves with reduced chlorophyll contents are investigated, fluorescence excitation ratios can be affected as already highlighted above. This is especially obvious with fluorescence excitation in the green absorption gap of chlorophyll, but may at further reduced chlorophyll contents also affect UV excitation ratios. Since human vision is especially sensitive in the green spectral region, where anthocyanins have their absorption maximum, human eyes are well equipped to detect anthocyanins in leaves. Hence, if an instrument is indicating the presence of anthocyanins in leaves, which are obviously greenish, further checks of plausibility are strongly recommended. </span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instruments for assessing chlorophyll </span></span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using transmittance</span></span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a>All *in vivo* measurements based on estimating leaf transmittance when expressed</span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a>as concentrations are on a unit leaf area basis. Given that many variables in</span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a>the growing environment affect specific leaf area (SLA) and leaf water content,</span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a>differences in chlorophyll concentration between treatments depend strongly on</span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a>the base of expression. _In practice, the direction of a response to a treatment</span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a>can be opposite when concentrations are expressed per unit area and per unit</span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a>dry-mass or per unit fresh-mass._</span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>Leaves have a heterogeneous internal structure with many gas-liquid and </span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a>liquid-solid interfaces. These interfaces scatter and reflect light while</span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>travelling inside a leaf. This lengthens the path of photons within the leaf</span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a>enhancing absorption by pigments and altering the relationship between </span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a>absorbance and concentration compared to the same concentration of pigments</span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a>in a homogeneous solution. Because of this, the methods described below,</span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a>when used to estimate concentrations depend on a calibration that is affected</span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a>by the anatomy, water content and even recent illumination of the leaf.</span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a>Different implementations of the use _in-vivo_ leaf transmittance to assess _chlorophyll concentration per unit leaf area_ are available. Several instruments based on this approach are currently commercially available both from major well-known suppliers and from various smaller outfits selling low-cost clones. The main differences reside in the wavelengths used for excitation, the sampled area, and less importantly in the position of sensors relative to the light and near-infrared sources. The table below summarizes information about some well-known devices.</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Instrument  <span class="pp">|</span> Target  <span class="pp">|</span> Reference      <span class="pp">|</span> Quantity <span class="pp">|</span> Area <span class="pp">|</span></span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-----------|:-----------|:-----------|:-----------|:-----|</span></span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LSA-2050    <span class="pp">|</span> 715 (25) <span class="pp">|</span> 770 (30)      <span class="pp">|</span> conc.    <span class="pp">|</span> 79/28 <span class="pp">|</span></span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MPM-100     <span class="pp">|</span> 720      <span class="pp">|</span> 850           <span class="pp">|</span> conc.    <span class="pp">|</span>   71   <span class="pp">|</span></span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MPM-100/S^*^ <span class="pp">|</span> 650     <span class="pp">|</span> 940           <span class="pp">|</span> SPAD index <span class="pp">|</span> 71   <span class="pp">|</span></span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 4    <span class="pp">|</span> 720      <span class="pp">|</span> 810?          <span class="pp">|</span> conc.    <span class="pp">|</span>  20   <span class="pp">|</span></span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MC-100^*^   <span class="pp">|</span> 650      <span class="pp">|</span> 930           <span class="pp">|</span> conc.    <span class="pp">|</span>  71  <span class="pp">|</span></span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CCM-200^*^  <span class="pp">|</span> 650      <span class="pp">|</span> 930           <span class="pp">|</span> CCI index <span class="pp">|</span>  71    <span class="pp">|</span></span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SPAD-502^+^ <span class="pp">|</span> 650      <span class="pp">|</span> 940           <span class="pp">|</span> SPAD index <span class="pp">|</span>  6  <span class="pp">|</span></span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a>: Instruments for the non-destructive measurement of chlorophyll concentration</span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>based on leaf transmittance. Target and reference wavelengths, full width half</span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a>maximum (FWHM) given in parentheses when available. Qauntities are approximate</span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a>concentrations or indexes with arbitrary units. The measured area is given in </span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a>$\mathrm{mm}^2$ and in the case of the LSA-2050 can be reduced with a supplied</span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a>mask for use on small leaves. Notes: ^*^no user experience by author. </span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a>^+^The SPAD-502 and SPAD-502 Plus, are identical except for the data logging</span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a>available in the Plus version. The</span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>MPM-100 is available in customized versions based on LEDs emitting at</span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a>non-standard wavelengths. The Walz LSA-2050 measures in addition to</span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a>transmittance chlorophyll fluorescence $Fv/Fm$.</span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a>The readings are expected not to depend on which side of the leaf is</span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a>illuminated. In fact, the Dualex 4 and the LSA-2050, measure transmittance in</span>
+<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a>opposite directions through leaves. The Dualex has the LEDs in the upper jaw and</span>
+<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a>the sensor in the lower one, while the LSA-2050 locates them the other way</span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a>around. Like the Dualex, the SPAD-502, MPM-100, MPM-100/S, CMM-200 and MC-100</span>
+<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a>have the LED in the upper jaw.</span>
+<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a>The Walz LSA-2050 is aimed at scientific research, with built-in support for</span>
+<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a>recalibration and corrections for different types of leaves. The Dualex 4 aims</span>
+<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a>at being both useful in research and as a tool for crop management. The</span>
+<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a>MPM-100 seems to target the same users as the Dualex 4. The CMM-200,</span>
+<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a>MC-100 and specially the SPAD-502 are marketed as tools for crop management,</span>
+<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a>although they are in practice also frequently used in plant research.</span>
+<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a>The indexes are given by <span class="co">[</span><span class="ot">@Parry2014</span><span class="co">]</span> as:</span>
+<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a>$$\mathrm{SPAD} = k \times \log \frac{T_{940}}{T_{650}} + C$$</span>
+<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a>where $k$ and $C$ are calibration constants.</span>
+<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a>$$\mathrm{CCI} = \frac{T_{931}}{T_{653}}$$</span>
+<span id="cb2-281"><a href="#cb2-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a>Even if the reading from the SPAD is a value rather similar to absorbance, it is</span>
+<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a>not linearly related to concentration of chlorophyll in the measured leaves.</span>
+<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a>@Markwell1995 proposed building a calibration curve to convert SPAD units into</span>
+<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a>chlorophyll concentration by fitting a non-linear function of the form:</span>
+<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a>$$y = 10^{x^k}$$</span>
+<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a>where $x$ is the reading in SPAD units and $y$ the concentration of chlorophyll</span>
+<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a>per unit leaf area. The value of $k$ depends on the individual SPAD instrument</span>
+<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a>and obviously also on the units in which the chlorophyll concentration is</span>
+<span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a>expressed. @Markwell1995 described the value of $k$ as more dependent on the</span>
+<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a>instrument than on the plant species or genotype. However, differences in</span>
+<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a>anatomy can be expected to affect the relationship between transmittance and</span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a>concentration, independently of the instrument used. The advantage of using</span>
+<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a>this function comapred to a polynomial or spline, is that it constrains the</span>
+<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a>shape of the curve, which is important when calibrations are based on limited</span>
+<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a>data.</span>
+<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-299"><a href="#cb2-299" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using leaf reflectance</span></span>
+<span id="cb2-300"><a href="#cb2-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-301"><a href="#cb2-301" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a>All *in vivo* measurements based on estimating leaf reflectance when expressed</span>
+<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a>as concentrations are on a unit leaf area basis. Given that many variables in</span>
+<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a>the growing environment affect specific leaf area (SLA) and leaf water content,</span>
+<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a>differences in chlorophyll concentration between treatments depend strongly on</span>
+<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a>the base of expression. *In practice, the direction of a response to a treatment</span>
+<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a>can be opposite when concentrations are expressed per unit area and per unit</span>
+<span id="cb2-308"><a href="#cb2-308" aria-hidden="true" tabindex="-1"></a>dry-mass or per unit fresh-mass.*</span>
+<span id="cb2-309"><a href="#cb2-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-310"><a href="#cb2-310" aria-hidden="true" tabindex="-1"></a>Leaves have a heterogeneous internal structure with many gas-liquid and </span>
+<span id="cb2-311"><a href="#cb2-311" aria-hidden="true" tabindex="-1"></a>liquid-solid interfaces. These interfaces scatter and reflect light while</span>
+<span id="cb2-312"><a href="#cb2-312" aria-hidden="true" tabindex="-1"></a>travelling inside a leaf. Thus, reflectance of leaves only in part depends on </span>
+<span id="cb2-313"><a href="#cb2-313" aria-hidden="true" tabindex="-1"></a>the properties of the leaf surface as reflection within the leaf contributes </span>
+<span id="cb2-314"><a href="#cb2-314" aria-hidden="true" tabindex="-1"></a>to the observed reflectance. The probability of photons being scattered back to</span>
+<span id="cb2-315"><a href="#cb2-315" aria-hidden="true" tabindex="-1"></a>the surface from within the leaf increases in the abscence of absorption by</span>
+<span id="cb2-316"><a href="#cb2-316" aria-hidden="true" tabindex="-1"></a>pigments. Given the role played by scattering, as for transmittance, indexes </span>
+<span id="cb2-317"><a href="#cb2-317" aria-hidden="true" tabindex="-1"></a>computed using two wavelengths are commonly used. The methods described below,</span>
+<span id="cb2-318"><a href="#cb2-318" aria-hidden="true" tabindex="-1"></a>when used to estimate concentrations depend on a calibration that can be affected</span>
+<span id="cb2-319"><a href="#cb2-319" aria-hidden="true" tabindex="-1"></a>by the anatomy, water content and even recent illumination of the leaf.</span>
+<span id="cb2-320"><a href="#cb2-320" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-321"><a href="#cb2-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-322"><a href="#cb2-322" aria-hidden="true" tabindex="-1"></a>The instruments described in @tab-leaf-rfr measure reflectance of leaves, each</span>
+<span id="cb2-323"><a href="#cb2-323" aria-hidden="true" tabindex="-1"></a>at a pair of wavelengths. These reflectance values can be combined into indexes</span>
+<span id="cb2-324"><a href="#cb2-324" aria-hidden="true" tabindex="-1"></a>that are correlated to specific plant conditions. These indexes are typically</span>
+<span id="cb2-325"><a href="#cb2-325" aria-hidden="true" tabindex="-1"></a>used in remote sensing but instruments for their measurement on individual</span>
+<span id="cb2-326"><a href="#cb2-326" aria-hidden="true" tabindex="-1"></a>leaves are also available. NDVI and NDGI mainly assess how green vegetation is</span>
+<span id="cb2-327"><a href="#cb2-327" aria-hidden="true" tabindex="-1"></a>while PRI assesses differences within the green region of the spectrum.</span>
+<span id="cb2-328"><a href="#cb2-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Instrument  <span class="pp">|</span> Target  <span class="pp">|</span> Reference      <span class="pp">|</span> Quantity <span class="pp">|</span></span>
+<span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-----------|:-----------|:-----------|:-----------|</span></span>
+<span id="cb2-331"><a href="#cb2-331" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PlantPen NDVI 310^*^    <span class="pp">|</span> 660 <span class="pp">|</span> 770        <span class="pp">|</span> NDVI       <span class="pp">|</span></span>
+<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PlantPen PRI 210^*^     <span class="pp">|</span>531  <span class="pp">|</span> 570        <span class="pp">|</span> PRI        <span class="pp">|</span></span>
+<span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PlantPen/NPen N 110^*^  <span class="pp">|</span> 560 <span class="pp">|</span> 780        <span class="pp">|</span> NDGI       <span class="pp">|</span></span>
+<span id="cb2-334"><a href="#cb2-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-335"><a href="#cb2-335" aria-hidden="true" tabindex="-1"></a>: Instruments for the non-destructive measurement of indexes based on leaf</span>
+<span id="cb2-336"><a href="#cb2-336" aria-hidden="true" tabindex="-1"></a>reflectance. Excitation wavelengths, full width half maximum (FWHM) given in</span>
+<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a>parentheses when available. Instruments names followed by ^*^ indicate that the</span>
+<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a>author has no direct experience in their use.</span>
+<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a>A significant part of light "reflected" from a leaf is scattered light that</span>
+<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a>has travelled inside the leaf and been partly absorbed by pigments, rather than</span>
+<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a>reflected at the leaf surface. Thus, similarly to transmittance, reflectance </span>
+<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a>at specific wavelengths, can inform about pigments within leaves. The PlantPen</span>
+<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a>instruments from PSI, as well as remote sensing, RGB and spectral imaging of</span>
+<span id="cb2-345"><a href="#cb2-345" aria-hidden="true" tabindex="-1"></a>vegetation rely on this phenomenon.</span>
+<span id="cb2-346"><a href="#cb2-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-347"><a href="#cb2-347" aria-hidden="true" tabindex="-1"></a>All of the instruments described in @tab-leaf-rfr return values that are indexes</span>
+<span id="cb2-348"><a href="#cb2-348" aria-hidden="true" tabindex="-1"></a>rather than concentrations. The indexes as implemented in these instruments are:</span>
+<span id="cb2-349"><a href="#cb2-349" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-350"><a href="#cb2-350" aria-hidden="true" tabindex="-1"></a>$$\mathrm{PRI} = \frac{R_{531} – R_{570}}{R_{531} + R_{570}}$$</span>
+<span id="cb2-351"><a href="#cb2-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-352"><a href="#cb2-352" aria-hidden="true" tabindex="-1"></a>$$\mathrm{NDVI} = \frac{R_{660} – R_{770}}{R_{660} + R_{770}}$$</span>
+<span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a>$$\mathrm{NDGI} = \frac{R_{560} – R_{780}}{R_{560} + R_{780}}$$</span>
+<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a>where $R_\lambda$ is reflectance on a band centred at a given wavelength in</span>
+<span id="cb2-357"><a href="#cb2-357" aria-hidden="true" tabindex="-1"></a>nanometres. The half maximum full width (HMFW) of the excitation is not given</span>
+<span id="cb2-358"><a href="#cb2-358" aria-hidden="true" tabindex="-1"></a>in the specifications. There are variations on the exact wavelengths and</span>
+<span id="cb2-359"><a href="#cb2-359" aria-hidden="true" tabindex="-1"></a>HMFW used for these indexes that are in wide use, and this must be taken into</span>
+<span id="cb2-360"><a href="#cb2-360" aria-hidden="true" tabindex="-1"></a>account when comparing measurements.</span>
+<span id="cb2-361"><a href="#cb2-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-362"><a href="#cb2-362" aria-hidden="true" tabindex="-1"></a>There are indexes like NBI that combine different types of measurements, and</span>
+<span id="cb2-363"><a href="#cb2-363" aria-hidden="true" tabindex="-1"></a>these can be obtained only with the more advanced instruments, Dualex 4 and</span>
+<span id="cb2-364"><a href="#cb2-364" aria-hidden="true" tabindex="-1"></a>LSA-2050. The Nitrogen Balance Index (NBI) is obtained by dividing the</span>
+<span id="cb2-365"><a href="#cb2-365" aria-hidden="true" tabindex="-1"></a>chlorophyll concentration index ($\approx \mu g\, cm^{-2}$) by the epidermal</span>
+<span id="cb2-366"><a href="#cb2-366" aria-hidden="true" tabindex="-1"></a>flavonols index, AFLAV ($\approx A_{375}$) (using inconsistent units), to obtain</span>
+<span id="cb2-367"><a href="#cb2-367" aria-hidden="true" tabindex="-1"></a>a value sometimes described as "unitless".</span>
+<span id="cb2-368"><a href="#cb2-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-369"><a href="#cb2-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-370"><a href="#cb2-370" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instruments for assessing epidermal transmittance</span></span>
+<span id="cb2-371"><a href="#cb2-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-372"><a href="#cb2-372" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using chlorophyll fluorescence as reporter</span></span>
+<span id="cb2-373"><a href="#cb2-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-374"><a href="#cb2-374" aria-hidden="true" tabindex="-1"></a>Fluorescence is dependent on the number of absorbed photons, this also</span>
+<span id="cb2-375"><a href="#cb2-375" aria-hidden="true" tabindex="-1"></a>applies to chlorophyll. Thus, a measurement of fluorescence behind the</span>
+<span id="cb2-376"><a href="#cb2-376" aria-hidden="true" tabindex="-1"></a>epidermis, from the chlorophyll in the mesophyll, can be used to</span>
+<span id="cb2-377"><a href="#cb2-377" aria-hidden="true" tabindex="-1"></a>estimate the transmittance of the epidermis if it is possible to</span>
+<span id="cb2-378"><a href="#cb2-378" aria-hidden="true" tabindex="-1"></a>estimate the fluorescence yield that can be expected in the absence of</span>
+<span id="cb2-379"><a href="#cb2-379" aria-hidden="true" tabindex="-1"></a>the epidermis. One approximation is to use a wavelength that is known</span>
+<span id="cb2-380"><a href="#cb2-380" aria-hidden="true" tabindex="-1"></a>not to be absorbed by the epidermis to obtain a reference value of</span>
+<span id="cb2-381"><a href="#cb2-381" aria-hidden="true" tabindex="-1"></a>fluorescence. This value can be compared against fluorescence excited</span>
+<span id="cb2-382"><a href="#cb2-382" aria-hidden="true" tabindex="-1"></a>by other wavelengths where the epidermis can absorb. </span>
+<span id="cb2-383"><a href="#cb2-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-384"><a href="#cb2-384" aria-hidden="true" tabindex="-1"></a>This the principle of the Dualex (dual excitation), similar to the earlier</span>
+<span id="cb2-385"><a href="#cb2-385" aria-hidden="true" tabindex="-1"></a>approach used by the UVA-PAM, a modified Walz Mini-PAM. The Dualex, however,</span>
+<span id="cb2-386"><a href="#cb2-386" aria-hidden="true" tabindex="-1"></a>measures the fluorescence on the opposite side of the leaf from the excitation,</span>
+<span id="cb2-387"><a href="#cb2-387" aria-hidden="true" tabindex="-1"></a>while the UVA-PAM and the Walz LSA-2050 measure the fluorescence from the side</span>
+<span id="cb2-388"><a href="#cb2-388" aria-hidden="true" tabindex="-1"></a>of the leaf where the excitation light impings. While the Dualex can be used</span>
+<span id="cb2-389"><a href="#cb2-389" aria-hidden="true" tabindex="-1"></a>only on thin leaves, the UVA-PAM and the LSA-2050 can be used on thicker objects</span>
+<span id="cb2-390"><a href="#cb2-390" aria-hidden="true" tabindex="-1"></a>like fruits. In the case of the LSA-2050 by</span>
+<span id="cb2-391"><a href="#cb2-391" aria-hidden="true" tabindex="-1"></a>removing the lower jaw, which contains the light sources for</span>
+<span id="cb2-392"><a href="#cb2-392" aria-hidden="true" tabindex="-1"></a>estimation of chlorophyll based on transmittance across the leaf. The UVA_PAM</span>
+<span id="cb2-393"><a href="#cb2-393" aria-hidden="true" tabindex="-1"></a>uses a single light guide, and does not measure transmittance.</span>
+<span id="cb2-394"><a href="#cb2-394" aria-hidden="true" tabindex="-1"></a>The MPM-100 senses the chlorophyll fluorescence on the same side of the</span>
+<span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a>leaf as the excitation impings. However the head has a maximum opening</span>
+<span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a>that limits its use to thin objects like leaves.</span>
+<span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a>The instruments described in @tab-epidermis-tfr use LEDs as light sources and</span>
+<span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a>photodiodes, in most cases filtered, as detectors. They are hand-held devices</span>
+<span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a>for non destructive measurements of thin leaves, and in some cases also suitable</span>
+<span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a>for thick leaves, fruits and stems. Walz's Xe-PAM in the exception, it uses a</span>
+<span id="cb2-402"><a href="#cb2-402" aria-hidden="true" tabindex="-1"></a>filtered Xenon lamp as light source and a photo-multiplier tube as detector, is</span>
+<span id="cb2-403"><a href="#cb2-403" aria-hidden="true" tabindex="-1"></a>not hanheld and usually used in a laboratory.</span>
+<span id="cb2-404"><a href="#cb2-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-405"><a href="#cb2-405" aria-hidden="true" tabindex="-1"></a>The instruemnts in @tab-epidermis-tfr rely on the excitation of chlorophyll</span>
+<span id="cb2-406"><a href="#cb2-406" aria-hidden="true" tabindex="-1"></a>fluorescence with its intensity used as reporter inside the leaf for estimation</span>
+<span id="cb2-407"><a href="#cb2-407" aria-hidden="true" tabindex="-1"></a>of the transmittance of the epidermis. All the Dualex instruments sense the</span>
+<span id="cb2-408"><a href="#cb2-408" aria-hidden="true" tabindex="-1"></a>fluorescence on the opposite side of the leaf to the excitation, while other</span>
+<span id="cb2-409"><a href="#cb2-409" aria-hidden="true" tabindex="-1"></a>instruments sense it on the same side. These instruments differ in the target</span>
+<span id="cb2-410"><a href="#cb2-410" aria-hidden="true" tabindex="-1"></a>and reference wavelengths used for assessing epidermal transmittance. The</span>
+<span id="cb2-411"><a href="#cb2-411" aria-hidden="true" tabindex="-1"></a>different transmittances depend on the accumulation of different metabolites:</span>
+<span id="cb2-412"><a href="#cb2-412" aria-hidden="true" tabindex="-1"></a>UV-B, phenolic acids, UV-A1, flavonoids, blue, non-photosynthetic-related</span>
+<span id="cb2-413"><a href="#cb2-413" aria-hidden="true" tabindex="-1"></a>carotenoids, green, anthocyanins. Either blue- or red-excited fluorescence is</span>
+<span id="cb2-414"><a href="#cb2-414" aria-hidden="true" tabindex="-1"></a>used as reference assuming that these wavelengths are minimally absorbed in the</span>
+<span id="cb2-415"><a href="#cb2-415" aria-hidden="true" tabindex="-1"></a>epidermis.</span>
+<span id="cb2-416"><a href="#cb2-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-417"><a href="#cb2-417" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Instrument  <span class="pp">|</span> UV-B     <span class="pp">|</span> UV-A1    <span class="pp">|</span> Blue     <span class="pp">|</span> Green    <span class="pp">|</span> Red^**^  <span class="pp">|</span></span>
+<span id="cb2-418"><a href="#cb2-418" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|</span></span>
+<span id="cb2-419"><a href="#cb2-419" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LSA-2050    <span class="pp">|</span> 310 (15) <span class="pp">|</span> 365 (12) <span class="pp">|</span> 450 (14) <span class="pp">|</span> 530 (27) <span class="pp">|</span> 630 (24) <span class="pp">|</span></span>
+<span id="cb2-420"><a href="#cb2-420" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MPM-100     <span class="pp">|</span>          <span class="pp">|</span> 375      <span class="pp">|</span>          <span class="pp">|</span> 525      <span class="pp">|</span> 660      <span class="pp">|</span></span>
+<span id="cb2-421"><a href="#cb2-421" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MPM-100/S^*^ <span class="pp">|</span>         <span class="pp">|</span> 375      <span class="pp">|</span>          <span class="pp">|</span> 525      <span class="pp">|</span> 660      <span class="pp">|</span></span>
+<span id="cb2-422"><a href="#cb2-422" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 4    <span class="pp">|</span>          <span class="pp">|</span> 375      <span class="pp">|</span>          <span class="pp">|</span> 520      <span class="pp">|</span> 630      <span class="pp">|</span></span>
+<span id="cb2-423"><a href="#cb2-423" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 3 FLAV <span class="pp">|</span>        <span class="pp">|</span> 375      <span class="pp">|</span>          <span class="pp">|</span>          <span class="pp">|</span> 630      <span class="pp">|</span></span>
+<span id="cb2-424"><a href="#cb2-424" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 3 ANTH^*^ <span class="pp">|</span>     <span class="pp">|</span>          <span class="pp">|</span>          <span class="pp">|</span> 520      <span class="pp">|</span> 630      <span class="pp">|</span></span>
+<span id="cb2-425"><a href="#cb2-425" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 3 CA <span class="pp">|</span> 310      <span class="pp">|</span>          <span class="pp">|</span>          <span class="pp">|</span>          <span class="pp">|</span> 630      <span class="pp">|</span></span>
+<span id="cb2-426"><a href="#cb2-426" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> UVA-PAM^*^     <span class="pp">|</span>       <span class="pp">|</span> 375      <span class="pp">|</span> 470      <span class="pp">|</span>          <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-427"><a href="#cb2-427" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> UVA-PAM/red^*^ <span class="pp">|</span>       <span class="pp">|</span> 375      <span class="pp">|</span>          <span class="pp">|</span>          <span class="pp">|</span> 630?     <span class="pp">|</span></span>
+<span id="cb2-428"><a href="#cb2-428" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Xe-PAM^*^ <span class="pp">|</span> 314 (18)   <span class="pp">|</span> 366 (32) <span class="pp">|</span> 475 (140) <span class="pp">|</span>         <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-429"><a href="#cb2-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-430"><a href="#cb2-430" aria-hidden="true" tabindex="-1"></a>: Instruments for the non-destructive measurement of epidermal transmittance</span>
+<span id="cb2-431"><a href="#cb2-431" aria-hidden="true" tabindex="-1"></a>using chlorophyll fluorescence as reporter. Excitation wavelengths, full width</span>
+<span id="cb2-432"><a href="#cb2-432" aria-hidden="true" tabindex="-1"></a>half maximum (FWHM) given in parentheses when available. Instruments names</span>
+<span id="cb2-433"><a href="#cb2-433" aria-hidden="true" tabindex="-1"></a>followed by ^*^ indicate that the author has no direct experience in their use.</span>
+<span id="cb2-434"><a href="#cb2-434" aria-hidden="true" tabindex="-1"></a>The MPM-100 is also available in customized versions based on LEDs emitting at</span>
+<span id="cb2-435"><a href="#cb2-435" aria-hidden="true" tabindex="-1"></a>non-standard wavelengths. The Walz LSA-2050 measures in addition to</span>
+<span id="cb2-436"><a href="#cb2-436" aria-hidden="true" tabindex="-1"></a>transmittance chlorophyll fluorescence Fv/Fm.</span>
+<span id="cb2-437"><a href="#cb2-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-438"><a href="#cb2-438" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternative approaches</span></span>
+<span id="cb2-439"><a href="#cb2-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-440"><a href="#cb2-440" aria-hidden="true" tabindex="-1"></a>With a spectrometer it is possible to measure whole leaf spectral reflectance</span>
+<span id="cb2-441"><a href="#cb2-441" aria-hidden="true" tabindex="-1"></a>and transmittance, and from them derive absorptance over arbitrary wavelength</span>
+<span id="cb2-442"><a href="#cb2-442" aria-hidden="true" tabindex="-1"></a>ranges within the overlapping sensitivity range of the spectrometers and the</span>
+<span id="cb2-443"><a href="#cb2-443" aria-hidden="true" tabindex="-1"></a>wavelength range of the illumination. The measurement of epidermal transmittance</span>
+<span id="cb2-444"><a href="#cb2-444" aria-hidden="true" tabindex="-1"></a>with a spectrometer is limited to the few species in which the epidermis can be</span>
+<span id="cb2-445"><a href="#cb2-445" aria-hidden="true" tabindex="-1"></a>stripped from leaves and measured by itself.</span>
+<span id="cb2-446"><a href="#cb2-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-447"><a href="#cb2-447" aria-hidden="true" tabindex="-1"></a>Ocean Optics used to make a portable spectrometer equipped with small </span>
+<span id="cb2-448"><a href="#cb2-448" aria-hidden="true" tabindex="-1"></a>integrating spheres in a clip-like arrangement with one sphere in each jaw.</span>
+<span id="cb2-449"><a href="#cb2-449" aria-hidden="true" tabindex="-1"></a>In its use one should be aware that two spheres collecting light and reflecting it</span>
+<span id="cb2-450"><a href="#cb2-450" aria-hidden="true" tabindex="-1"></a>back onto the leaf can result in erroneous readings as some light can travel</span>
+<span id="cb2-451"><a href="#cb2-451" aria-hidden="true" tabindex="-1"></a>back and forth across the leaf. This must be taken into consideration in the</span>
+<span id="cb2-452"><a href="#cb2-452" aria-hidden="true" tabindex="-1"></a>measuring protocol used, but it is not a design flaw.</span>
+<span id="cb2-453"><a href="#cb2-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-454"><a href="#cb2-454" aria-hidden="true" tabindex="-1"></a>It must be mentioned here the *SpectraVue Leaf Spectrometer* from CID</span>
+<span id="cb2-455"><a href="#cb2-455" aria-hidden="true" tabindex="-1"></a>Bio-Science. This is a **badly designed** instrument that returns **bad</span>
+<span id="cb2-456"><a href="#cb2-456" aria-hidden="true" tabindex="-1"></a>data**. It should not be used in scientific research. First it suffers</span>
+<span id="cb2-457"><a href="#cb2-457" aria-hidden="true" tabindex="-1"></a>from extreme problems of dark noise and stray light, as can be seen in</span>
+<span id="cb2-458"><a href="#cb2-458" aria-hidden="true" tabindex="-1"></a>the images in the company's own advertising. More importantly, because</span>
+<span id="cb2-459"><a href="#cb2-459" aria-hidden="true" tabindex="-1"></a>of the light source used and the configuration of the instrument's</span>
+<span id="cb2-460"><a href="#cb2-460" aria-hidden="true" tabindex="-1"></a>entrance optics the sum of reflectance, transmittance and absorptance</span>
+<span id="cb2-461"><a href="#cb2-461" aria-hidden="true" tabindex="-1"></a>reported is very far from the theoretical value of one, and in practice </span>
+<span id="cb2-462"><a href="#cb2-462" aria-hidden="true" tabindex="-1"></a>much larger, i.e., the values reported as reflectance, transmittance and </span>
+<span id="cb2-463"><a href="#cb2-463" aria-hidden="true" tabindex="-1"></a>absorptance, are not these physical quantities! (The company has been aware of</span>
+<span id="cb2-464"><a href="#cb2-464" aria-hidden="true" tabindex="-1"></a>these design problems for several years, as they recognized when one of the</span>
+<span id="cb2-465"><a href="#cb2-465" aria-hidden="true" tabindex="-1"></a>authors (PJA) reported them several years ago in a exchange of several e-mails.)</span>
+<span id="cb2-466"><a href="#cb2-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-467"><a href="#cb2-467" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instruments</span></span>
+<span id="cb2-468"><a href="#cb2-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-469"><a href="#cb2-469" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ergonomics and usability</span></span>
+<span id="cb2-470"><a href="#cb2-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-471"><a href="#cb2-471" aria-hidden="true" tabindex="-1"></a>The first impression of the *Walz LSA-2050* is that of a refined design</span>
+<span id="cb2-472"><a href="#cb2-472" aria-hidden="true" tabindex="-1"></a>and very well tested instrument, making it reliable, ergonomically easy</span>
+<span id="cb2-473"><a href="#cb2-473" aria-hidden="true" tabindex="-1"></a>to use and with very well thought out and clear firmware user interface.</span>
+<span id="cb2-474"><a href="#cb2-474" aria-hidden="true" tabindex="-1"></a>In some respects it benefits from Walz's long experience in chlorophyll</span>
+<span id="cb2-475"><a href="#cb2-475" aria-hidden="true" tabindex="-1"></a>fluorescence measurements, as well as from the approaches used in the</span>
+<span id="cb2-476"><a href="#cb2-476" aria-hidden="true" tabindex="-1"></a>Dualex instruments. The *LSA-2050* does the measurements very fast. With</span>
+<span id="cb2-477"><a href="#cb2-477" aria-hidden="true" tabindex="-1"></a>the help from its good ergonomics, I was able to measure 15 leaves, each</span>
+<span id="cb2-478"><a href="#cb2-478" aria-hidden="true" tabindex="-1"></a>from a different plant, across four growth-chamber shelves in 4 min.</span>
+<span id="cb2-479"><a href="#cb2-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-480"><a href="#cb2-480" aria-hidden="true" tabindex="-1"></a>The *MPM-100* is not really a clone of the Dualex in its measurement approach</span>
+<span id="cb2-481"><a href="#cb2-481" aria-hidden="true" tabindex="-1"></a>but attempts to be a replacement for it. At least the version I have used, has a</span>
+<span id="cb2-482"><a href="#cb2-482" aria-hidden="true" tabindex="-1"></a>display with very small text, even if in colour, and some significant rough</span>
+<span id="cb2-483"><a href="#cb2-483" aria-hidden="true" tabindex="-1"></a>edges in the firmware user interface. The most important being that when a</span>
+<span id="cb2-484"><a href="#cb2-484" aria-hidden="true" tabindex="-1"></a>measurement fails, the screen displays the results from the last good</span>
+<span id="cb2-485"><a href="#cb2-485" aria-hidden="true" tabindex="-1"></a>measurement, which is prone to cause mistakes in the manual recording of</span>
+<span id="cb2-486"><a href="#cb2-486" aria-hidden="true" tabindex="-1"></a>readings. Another quirk is that when the estimation of one parameter fails the</span>
+<span id="cb2-487"><a href="#cb2-487" aria-hidden="true" tabindex="-1"></a>MPM-100 returns no results, which is problematic. In contrast, the Dualex</span>
+<span id="cb2-488"><a href="#cb2-488" aria-hidden="true" tabindex="-1"></a>reports those values that could be measured. The MPM-100 is also slower than the</span>
+<span id="cb2-489"><a href="#cb2-489" aria-hidden="true" tabindex="-1"></a>Dualex as it averages several consecutive measurements.</span>
+<span id="cb2-490"><a href="#cb2-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-491"><a href="#cb2-491" aria-hidden="true" tabindex="-1"></a>The *Dualex 4* is also a well designed instrument, a refinement of the</span>
+<span id="cb2-492"><a href="#cb2-492" aria-hidden="true" tabindex="-1"></a>earlier *Dualex 3* series. It has a couple weak points, though: the hinge is</span>
+<span id="cb2-493"><a href="#cb2-493" aria-hidden="true" tabindex="-1"></a>rather weak and with long-term use can develop play or even break. In the</span>
+<span id="cb2-494"><a href="#cb2-494" aria-hidden="true" tabindex="-1"></a>first case some misalignment of the two halves of the measurement head</span>
+<span id="cb2-495"><a href="#cb2-495" aria-hidden="true" tabindex="-1"></a>can occur. The Dualex has more options for encoding treatments than the</span>
+<span id="cb2-496"><a href="#cb2-496" aria-hidden="true" tabindex="-1"></a>Walz, making it more cumbersome, but more flexible in the tagging of</span>
+<span id="cb2-497"><a href="#cb2-497" aria-hidden="true" tabindex="-1"></a>logged data.</span>
+<span id="cb2-498"><a href="#cb2-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-499"><a href="#cb2-499" aria-hidden="true" tabindex="-1"></a>The *SPAD-502* is no longer available in the simple version I have used.</span>
+<span id="cb2-500"><a href="#cb2-500" aria-hidden="true" tabindex="-1"></a>The *SPAD-502Plus* with data logging capabilities is also a well</span>
+<span id="cb2-501"><a href="#cb2-501" aria-hidden="true" tabindex="-1"></a>designed and easy to use instrument. I have not used any of the cheaper</span>
+<span id="cb2-502"><a href="#cb2-502" aria-hidden="true" tabindex="-1"></a>clones.</span>
+<span id="cb2-503"><a href="#cb2-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-504"><a href="#cb2-504" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cost and availability</span></span>
+<span id="cb2-505"><a href="#cb2-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-506"><a href="#cb2-506" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Instrument  <span class="pp">|</span> Handheld  <span class="pp">|</span> Make        <span class="pp">|</span> Availability <span class="pp">|</span></span>
+<span id="cb2-507"><a href="#cb2-507" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-----------|:-----------|:-----------|:-----------|</span></span>
+<span id="cb2-508"><a href="#cb2-508" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LSA-2050    <span class="pp">|</span> y         <span class="pp">|</span> Walz        <span class="pp">|</span> 2024-     <span class="pp">|</span></span>
+<span id="cb2-509"><a href="#cb2-509" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MPM-100     <span class="pp">|</span> y         <span class="pp">|</span> Opti-Sciences <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-510"><a href="#cb2-510" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MPM-100/S   <span class="pp">|</span> y         <span class="pp">|</span> Opti-Sciences <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-511"><a href="#cb2-511" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 4    <span class="pp">|</span> y         <span class="pp">|</span> Force-A     <span class="pp">|</span>          <span class="pp">|</span> </span>
+<span id="cb2-512"><a href="#cb2-512" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 3 FLAV <span class="pp">|</span> y       <span class="pp">|</span> Force-A     <span class="pp">|</span>          <span class="pp">|</span> </span>
+<span id="cb2-513"><a href="#cb2-513" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 3 ANTH  <span class="pp">|</span>  y     <span class="pp">|</span> Force-A     <span class="pp">|</span>          <span class="pp">|</span> </span>
+<span id="cb2-514"><a href="#cb2-514" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 3 CA <span class="pp">|</span> y         <span class="pp">|</span> Force-A     <span class="pp">|</span>           <span class="pp">|</span></span>
+<span id="cb2-515"><a href="#cb2-515" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> UVA-PAM      <span class="pp">|</span> y        <span class="pp">|</span> Walz/      <span class="pp">|</span>           <span class="pp">|</span></span>
+<span id="cb2-516"><a href="#cb2-516" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> UVA-PAM/red  <span class="pp">|</span> y        <span class="pp">|</span> Walz/      <span class="pp">|</span>          <span class="pp">|</span> </span>
+<span id="cb2-517"><a href="#cb2-517" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Xe-PAM       <span class="pp">|</span> n        <span class="pp">|</span> Walz        <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-518"><a href="#cb2-518" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SPAD-502    <span class="pp">|</span> y         <span class="pp">|</span> Konica/Minolta <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-519"><a href="#cb2-519" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PlantPen NDVI 310 <span class="pp">|</span> y   <span class="pp">|</span> PSI         <span class="pp">|</span>           <span class="pp">|</span></span>
+<span id="cb2-520"><a href="#cb2-520" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PlantPen PRI 210  <span class="pp">|</span> y   <span class="pp">|</span> PSI         <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-521"><a href="#cb2-521" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> NPen N 110 (NDGI) <span class="pp">|</span> y   <span class="pp">|</span> PSI         <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-522"><a href="#cb2-522" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MC-100      <span class="pp">|</span> y         <span class="pp">|</span> Apogee     <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-523"><a href="#cb2-523" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CCM-200     <span class="pp">|</span> y         <span class="pp">|</span> Opti-Sciences <span class="pp">|</span>          <span class="pp">|</span></span>
+<span id="cb2-524"><a href="#cb2-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-525"><a href="#cb2-525" aria-hidden="true" tabindex="-1"></a>: Instruments for the non-destructive measurement of leaf optical properties related to metabolite concentrations.</span>
+<span id="cb2-526"><a href="#cb2-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a>The *SPAD-502Plus* sells for 2500-3000 €, with various clones available in the</span>
+<span id="cb2-528"><a href="#cb2-528" aria-hidden="true" tabindex="-1"></a>range 600-1500 €. The *Dualex 4*, now Metos from Pessl after the bankruptcy of</span>
+<span id="cb2-529"><a href="#cb2-529" aria-hidden="true" tabindex="-1"></a>Force-A, costs close to 4500 €, the *MPM-100* costs close to 3000 € and the</span>
+<span id="cb2-530"><a href="#cb2-530" aria-hidden="true" tabindex="-1"></a>*Walz LSA-2050* costs close to 6000 €. (These prices are approximate as they</span>
+<span id="cb2-531"><a href="#cb2-531" aria-hidden="true" tabindex="-1"></a>vary depending on supplier, import taxes, etc., as well as with accessories</span>
+<span id="cb2-532"><a href="#cb2-532" aria-hidden="true" tabindex="-1"></a>ordered and in some cases with the instrument configuration).</span>
+<span id="cb2-533"><a href="#cb2-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-534"><a href="#cb2-534" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instrument tests and intercomparisons</span></span>
+<span id="cb2-535"><a href="#cb2-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-536"><a href="#cb2-536" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Instruments compared <span class="pp">|</span> Measured <span class="pp">|</span> Variation from <span class="pp">|</span> Reference <span class="pp">|</span></span>
+<span id="cb2-537"><a href="#cb2-537" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---------------------|:------------|:------------|:----------|</span></span>
+<span id="cb2-538"><a href="#cb2-538" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SPAD-502, MC-100, Multiplex 3.6, atLEAF+ <span class="pp">|</span> Chl <span class="pp">|</span> Nitrogen supply <span class="pp">|</span> @Padilla2018 <span class="pp">|</span></span>
+<span id="cb2-539"><a href="#cb2-539" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SPAD-502, CCM-200, Dualex 4 <span class="pp">|</span> Chl <span class="pp">|</span> Four crops <span class="pp">|</span> @Dong2019 <span class="pp">|</span></span>
+<span id="cb2-540"><a href="#cb2-540" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SPAD-502, CCM-200 <span class="pp">|</span> Chl <span class="pp">|</span> 22 species <span class="pp">|</span> @Parry2014 <span class="pp">|</span></span>
+<span id="cb2-541"><a href="#cb2-541" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SPAD-502, Dualex  <span class="pp">|</span> Chl + Flav <span class="pp">|</span> Multiple <span class="pp">|</span> @Meyer2006 <span class="pp">|</span></span>
+<span id="cb2-542"><a href="#cb2-542" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dualex 4, LSA-2050, UV-A-PAM <span class="pp">|</span> Chl + Flav + Anth <span class="pp">|</span> Irradiance <span class="pp">|</span> @Bilger2026 <span class="pp">|</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
